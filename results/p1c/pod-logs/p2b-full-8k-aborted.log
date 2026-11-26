@@ -1,0 +1,2 @@
+{"pool_frames": 9472, "pool_videos": 592, "load_s": 13}
+{"model": "dvae_seed0", "step": 500, "loss": -0.799753, "mse": 0.011004, "nll": -42775.782823, "kl": 3466.334619, "log_sigma": -2.265307, "elapsed_s": 88}

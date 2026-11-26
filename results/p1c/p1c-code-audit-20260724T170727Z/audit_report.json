@@ -1,0 +1,43 @@
+{
+  "audited_source_bundle_sha256": "9463cbd435620244b1b63991de315ed11202497e4ffabd2cb7e7c258d7af61b1",
+  "audited_sources": [
+    "core/p1c_readiness.py",
+    "core/p1c_engine.py",
+    "data/p1c_loader.py",
+    "data/p1c_temporal.py",
+    "data/manifest.py",
+    "data/grouping.py",
+    "eval/metrics.py",
+    "models/classifiers.py",
+    "scripts/smoke_p1c_models.py"
+  ],
+  "checks": {
+    "cluster_key_includes_dataset_and_video": true,
+    "loader_order_is_seeded_by_run_and_epoch": true,
+    "loss_telemetry_requires_mean_reduction": true,
+    "mps_smoke_lengths_follow_clip_device": true,
+    "readiness_binds_real_registered_files": true,
+    "targeted_formula_and_invariant_tests_pass": true,
+    "temporal_planner_rejects_boundary_violations": true
+  },
+  "kind": "P1C pre-training code/formula audit; not a model run or research result",
+  "scope_assertions": {
+    "dataset_media_read": false,
+    "model_training": false,
+    "test_evaluation": false
+  },
+  "targeted_test_modules": [
+    "tests.test_p1c_readiness",
+    "tests.test_p1c_engine",
+    "tests.test_p1c_loader",
+    "tests.test_p1c_temporal",
+    "tests.test_p1c_models"
+  ],
+  "targeted_test_output_tail": [
+    ".....................",
+    "----------------------------------------------------------------------",
+    "Ran 21 tests in 0.403s",
+    "",
+    "OK"
+  ]
+}

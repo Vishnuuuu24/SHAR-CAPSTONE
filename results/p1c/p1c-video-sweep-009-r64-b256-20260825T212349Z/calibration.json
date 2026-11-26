@@ -1,0 +1,27 @@
+{
+  "device": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_name": "NVIDIA H200 MIG 1g.18gb",
+    "deterministic_warn_only": false,
+    "mps_available": false,
+    "mps_built": false,
+    "mps_fallback_environment": null,
+    "policy": "cuda_strict",
+    "selected": "cuda",
+    "supports_pin_memory": true,
+    "torch_threads": 112
+  },
+  "failure": {
+    "exception_type": "RuntimeError",
+    "message": "Caught RuntimeError in DataLoader worker process 2.\nOriginal Traceback (most recent call last):\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py\", line 374, in _worker_loop\n    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py\", line 57, in fetch\n    return self.collate_fn(data)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py\", line 401, in default_collate\n    return collate(batch, collate_fn_map=default_collate_fn_map)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py\", line 172, in collate\n    key: collate(\n         ^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py\", line 155, in collate\n    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py\", line 273, in collate_tensor_fn\n    storage = elem._typed_storage()._new_shared(numel, device=elem.device)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/storage.py\", line 1210, in _new_shared\n    untyped_storage = torch.UntypedStorage._new_shared(\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/storage.py\", line 414, in _new_shared\n    return cls._new_using_fd_cpu(size)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: unable to allocate shared memory(shm) for file </torch_2855_822405924_0>: No space left on device (28)\n",
+    "scope_assertions": {
+      "checkpoint_saved": false,
+      "configuration_selection": false,
+      "held_out_test_access": false,
+      "research_training": false
+    }
+  },
+  "kind": "P1C calibration preflight failure; not training"
+}

@@ -1,0 +1,9 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 165s ---
+/dev/md1        1870026616 143235244 1726791372       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.02 GiB (recovered 15.98 GiB)
+=== started 04:49:44Z ===
+validation: 64 clips of 16 rows over 2 videos -> dim 1024
+wrote /scratch-emptydir/vjepa2-smoke: 64 x 1024, sha256 0c58910d3fb6027c, verify max|delta| 0.000e+00 over 16 clips
+SMOKE seconds (includes weight load and sha256 of the 5 GB checkpoint): 219
+=== ALL DONE 04:53:23Z ===

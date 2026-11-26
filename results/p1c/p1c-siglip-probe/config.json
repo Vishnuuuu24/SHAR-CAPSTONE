@@ -1,0 +1,38 @@
+{
+  "arms": {
+    "baseline": {}
+  },
+  "device": "cpu",
+  "epochs_override": null,
+  "extra_selection": "per-class fixed shuffle default_rng(stable_seed(class, 0)); prefix k; same in every fold",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "gate": "+0.04 macro-F1 on 4/4 folds, fold-mean over seeds, vs baseline from this same seeded path",
+  "git_revision": "4f640ec5eab079610daf74fa85bac4b0464c05dc",
+  "head": "step_permuted; torch.manual_seed(seed) before construction; train permute 1000+seed (UCF) / 3000+seed (XD); val permute 2000+seed",
+  "loss": "plain cross-entropy, unweighted",
+  "num_threads": 4,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "smoke": false,
+  "ucf_fold_cache_sha256": {
+    "1": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "2": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "3": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "4": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a"
+  },
+  "ucf_patch_cache_cls_sha256": "bbacaaa9928d6b28eaf6212f877814320867c8c52258853f2f93351e10e79500",
+  "ucf_patch_cache_features_sha256": "6261a231446f05866492615063251ead488f0ed6a68c8894d95c12163099e4e8",
+  "validation": "UCF fold validation, all cached frames, 8-frame chunks, mean logits, video-level",
+  "xd_cache_dir": "results/p1c/p1c-xd-extra-cache",
+  "xd_features_sha256": "4478985e4173ea58627594dbcf9e70b3ce4cc4a46a027b25ca6f4d1088810b4d",
+  "xd_rows_sha256": "c41ff01585208ef545719c337f064542193bc504d718c6c467ea9a9fbb373dc4",
+  "xd_source_file_list_sha256": "783ee79ca6371f203f7bfaecddf1a04b1b731107a251079136ade98e0c7d4348"
+}

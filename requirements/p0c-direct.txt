@@ -1,0 +1,32 @@
+# P0C direct dependencies. Update only through recorded environment change control.
+numpy==2.5.1
+opencv-python-headless==4.13.0.92
+pillow==12.3.0
+psutil==7.2.2
+PyYAML==6.0.3
+scikit-image==0.26.0
+# Added 2026-08-31 for B-9 (classical probes on the B-1 feature cache). The point
+# of B-9 is a reference fit that shares nothing with our training loop, so the
+# estimators have to be an established library's, not a re-implementation here.
+# Pulls joblib, threadpoolctl, cloudpickle and narwhals; touches no training path.
+scikit-learn==1.9.0
+# Added 2026-09-02 for B-2. Supplies the DINOv2 ViT-B/14-reg4 architecture; the
+# checkpoint itself is a pinned local file (.cache/weights/, SHA-256 registered in
+# the config) and is never fetched during a run. Pulls safetensors and
+# huggingface_hub. Touches no ResNet path.
+timm==1.0.22
+# Added 2026-09-15 for the VideoMAE motion backbone (K-29 documents its load trap).
+transformers==5.17.0
+# Added 2026-10-28 for the Qwen2.5-VL-7B zero-shot probe (8-bit loading on the 18 GB MIG slice).
+bitsandbytes==0.50.2
+accelerate==1.15.0
+torch==2.13.0
+torchvision==0.28.0
+# Added 2026-09-22 for the ROI study (scripts/build_p1c_roi_cache.py,
+# scripts/check_p1c_roi_detector.py): the pinned YOLO11m-pose person detector and
+# YOLO-World v2 s weapon-vocabulary checkpoint both load through this package's
+# `YOLO` API. Installed with --no-deps in this environment -- polars, pandas,
+# matplotlib, seaborn, requests and thop are absent -- which is sufficient for
+# `.predict()`; only touches the two GPU-only ROI scripts, no training path.
+ultralytics==8.4.158
+einops==0.8.1  # added 2026-10-31 for the vendored SCUNet/Restormer RESULT 1 comparators (D-62); wheel sha256 919387eb55330f5757c6bea9165c5ff5cfe63a642682ea788a6d472576d81737

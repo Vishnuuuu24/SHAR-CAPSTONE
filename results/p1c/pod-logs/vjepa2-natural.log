@@ -1,0 +1,76 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 174s ---
+/dev/md1        1870026616 143244300 1726782316       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.01 GiB (recovered 15.99 GiB)
+=== started 05:04:21Z ===
+########## fold1 validation natural 05:04:21Z ##########
+validation: 2326 clips of 16 rows over 56 videos -> dim 1024
+  1024 clips
+  2048 clips
+wrote results/p1c/p1c-vjepa2-clip-cache-ar-fold1/validation: 2326 x 1024, sha256 2e8b5d035d3c29b7, verify max|delta| 0.000e+00 over 256 clips
+########## fold1 train natural 05:14:28Z ##########
+train: 3648 clips of 16 rows over 476 videos -> dim 1024
+  1024 clips
+  2048 clips
+  3072 clips
+wrote results/p1c/p1c-vjepa2-clip-cache-ar-fold1/train: 3648 x 1024, sha256 3a682803013df64d, verify max|delta| 0.000e+00 over 256 clips
+########## fold2 validation natural 05:27:04Z ##########
+validation: 2959 clips of 16 rows over 56 videos -> dim 1024
+  1024 clips
+  2048 clips
+wrote results/p1c/p1c-vjepa2-clip-cache-ar-fold2/validation: 2959 x 1024, sha256 ce3973640c3e4a79, verify max|delta| 0.000e+00 over 256 clips
+########## fold2 train natural 05:38:31Z ##########
+train: 3658 clips of 16 rows over 476 videos -> dim 1024
+  1024 clips
+  2048 clips
+  3072 clips
+wrote results/p1c/p1c-vjepa2-clip-cache-ar-fold2/train: 3658 x 1024, sha256 a10f799e10e74a44, verify max|delta| 0.000e+00 over 256 clips
+########## fold3 validation natural 05:51:05Z ##########
+validation: 3082 clips of 16 rows over 56 videos -> dim 1024
+  1024 clips
+  2048 clips
+  3072 clips
+wrote results/p1c/p1c-vjepa2-clip-cache-ar-fold3/validation: 3082 x 1024, sha256 f4753085dcd8f78c, verify max|delta| 0.000e+00 over 256 clips
+########## fold3 train natural 06:02:43Z ##########
+train: 3655 clips of 16 rows over 476 videos -> dim 1024
+  1024 clips
+  2048 clips
+  3072 clips
+wrote results/p1c/p1c-vjepa2-clip-cache-ar-fold3/train: 3655 x 1024, sha256 b8af770d3786429d, verify max|delta| 0.000e+00 over 256 clips
+########## fold4 validation natural 06:15:25Z ##########
+validation: 2555 clips of 16 rows over 56 videos -> dim 1024
+  1024 clips
+  2048 clips
+wrote results/p1c/p1c-vjepa2-clip-cache-ar-fold4/validation: 2555 x 1024, sha256 4ccaf39652fe14fc, verify max|delta| 0.000e+00 over 256 clips
+########## fold4 train natural 06:26:00Z ##########
+train: 3689 clips of 16 rows over 476 videos -> dim 1024
+  1024 clips
+  2048 clips
+  3072 clips
+wrote results/p1c/p1c-vjepa2-clip-cache-ar-fold4/train: 3689 x 1024, sha256 0d52162cdf70ff70, verify max|delta| 0.000e+00 over 256 clips
+fold1 dinov2           D=1536  video macro-F1 0.4100
+fold1 videomae         D=768   video macro-F1 0.4437
+fold1 vjepa2           D=1024  video macro-F1 0.3739
+fold1 fusion           D=2560  video macro-F1 0.4349
+fold2 dinov2           D=1536  video macro-F1 0.3423
+fold2 videomae         D=768   video macro-F1 0.3209
+fold2 vjepa2           D=1024  video macro-F1 0.3810
+fold2 fusion           D=2560  video macro-F1 0.4164
+fold3 dinov2           D=1536  video macro-F1 0.3625
+fold3 videomae         D=768   video macro-F1 0.3290
+fold3 vjepa2           D=1024  video macro-F1 0.3867
+fold3 fusion           D=2560  video macro-F1 0.4547
+fold4 dinov2           D=1536  video macro-F1 0.4026
+fold4 videomae         D=768   video macro-F1 0.2898
+fold4 vjepa2           D=1024  video macro-F1 0.3636
+fold4 fusion           D=2560  video macro-F1 0.3283
+
+=== cross-fold video macro-F1 (inherited-label validation, D-40) ===
+  dinov2           0.3794 +/- 0.0323  folds [0.41, 0.3423, 0.3625, 0.4026]
+  videomae         0.3459 +/- 0.0674  folds [0.4437, 0.3209, 0.329, 0.2898]
+  vjepa2           0.3763 +/- 0.0099  folds [0.3739, 0.381, 0.3867, 0.3636]
+  fusion           0.4086 +/- 0.0558  folds [0.4349, 0.4164, 0.4547, 0.3283]
+  paired vjepa2 - dinov2: -0.0031  folds ['-0.0361', '+0.0386', '+0.0242', '-0.0389']  bar +0.04 on all folds: False
+  paired vjepa2 - videomae: +0.0304  folds ['-0.0698', '+0.0601', '+0.0577', '+0.0738']  bar +0.04 on all folds: False
+  paired fusion - dinov2: +0.0292  folds ['+0.0249', '+0.0741', '+0.0922', '-0.0743']  bar +0.04 on all folds: False
+=== ALL DONE 06:53:55Z ===

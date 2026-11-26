@@ -1,0 +1,47 @@
+{
+  "git_revision": "b1f4d8143b187cdb5c2995f2e8283d161ae00dde",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "betas": [
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+  ],
+  "weights": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "primary": [
+    5.0,
+    0.5
+  ],
+  "embedding": "mean of L2-normalised fold-cache DINOv2 cls_plus_mean_patch frame features (all cached frames), L2-normalised",
+  "fold_cache_manifest_sha256": {
+    "1": {
+      "train": "11316b4662690bdeace5245674ffa1d2169093d801704f17360b0f4d8c2ceab6",
+      "validation": "59785c7b64236064ad3a2e4a0c5319d5eacc99925d9ff7aedd63b02f2fb9652e"
+    },
+    "2": {
+      "train": "334f39c78fb01e519aa84842b540b94c415141d0d947eb386233da83f380dc62",
+      "validation": "9080199450177c25f2692f4fd8a2cdf54e2735bf4ee01b9e6833224d06b0a064"
+    },
+    "3": {
+      "train": "c623a797df2a2b21de4bab4f1d8f09e33d17b9470bec7ecb92491747f2e0c8f2",
+      "validation": "f2de1f47d94c5377bc4997f7a922cc3c8c62e2c5a72ce049ec89dad512626bec"
+    },
+    "4": {
+      "train": "529b3832e84624e215c1ca99b8afff1c28e1b5eee0c32f1d345b12cdbac760cb",
+      "validation": "4018b777562e81ff751c15aa341523225af5203e99a758d53ee4fbd844bfddf5"
+    }
+  },
+  "baseline_probs_sha256": "00da0e81ed2fa53a9abb5cb3cd827e026e68453116efe3492f7f5f2e11ee5211",
+  "head_probs": "D-53 step_permuted, 4 folds x 3 seeds (stored)",
+  "test_split": "untouched"
+}

@@ -1,0 +1,36 @@
+{
+ "git_revision": "90f8a5ef17bbb33a9f0950bcc070cfa178e379a2",
+ "conventions": "configs/p2a_conventions.yaml",
+ "conventions_sha256": "21aae531aa8debc6e2342ddfcc0ead51a1355625dc973f12ac53b232cfa13d41",
+ "conditions": 50,
+ "videos": 108,
+ "frames_per_video": 32,
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "frame_rule": "sample_rows_per_video(seed=None) over each video's validation manifest rows; native 320x240 JPEG from the D-34 blob",
+ "noise_seed": "data.degradations SampleKey(relative_path=<filepath>/frame<index>, file_digest, global_seed=0)",
+ "quality_metrics": "PSNR/SSIM on float32 [0,1] after restoration (clipped), before quantization; PSNR inf for identity/identity",
+ "classifier_input": "restored frames rounded to uint8, then the registered 224x224 bilinear preprocessing (preprocess_crop)",
+ "classifier": "D-53 step_permuted head retrained per fold x seed on fold-cache train features (D-59)",
+ "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+ "clean_feature_check": {
+  "max_abs_diff": 0.06396484375,
+  "median_max_abs_diff": 0.0063018798828125,
+  "min_mean_cosine": 0.9999938011169434,
+  "videos": 108
+ },
+ "limit_videos": null,
+ "epochs_override": null,
+ "test_split": "untouched",
+ "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+ "extract_seconds": 7505
+}

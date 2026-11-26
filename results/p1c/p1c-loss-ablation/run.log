@@ -1,0 +1,56 @@
+fold 1: train 3808 rows sampled (8/video, seed=0), validation 37600 rows (full, untouched), cache 56c0312b9122
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=cross_entropy seed=0: best epoch 3 (early-stopped), validation macro-F1 0.3685 (clustered 95% CI 0.2538-0.4478), video-level macro-F1 0.4178 over 56 videos, train 3.6s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=cross_entropy seed=1: best epoch 3 (early-stopped), validation macro-F1 0.4104 (clustered 95% CI 0.2863-0.4878), video-level macro-F1 0.4923 over 56 videos, train 4.1s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=cross_entropy seed=2: best epoch 3 (early-stopped), validation macro-F1 0.3920 (clustered 95% CI 0.2732-0.4690), video-level macro-F1 0.4650 over 56 videos, train 4.3s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=weighted_cross_entropy seed=0: best epoch 3 (early-stopped), validation macro-F1 0.3685 (clustered 95% CI 0.2538-0.4478), video-level macro-F1 0.4178 over 56 videos, train 4.2s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=weighted_cross_entropy seed=1: best epoch 3 (early-stopped), validation macro-F1 0.4104 (clustered 95% CI 0.2863-0.4878), video-level macro-F1 0.4923 over 56 videos, train 3.9s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=weighted_cross_entropy seed=2: best epoch 3 (early-stopped), validation macro-F1 0.3920 (clustered 95% CI 0.2732-0.4690), video-level macro-F1 0.4650 over 56 videos, train 4.5s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=focal seed=0: best epoch 1 (early-stopped), validation macro-F1 0.3440 (clustered 95% CI 0.2287-0.4244), video-level macro-F1 0.3952 over 56 videos, train 3.7s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=focal seed=1: best epoch 1 (early-stopped), validation macro-F1 0.3846 (clustered 95% CI 0.2635-0.4638), video-level macro-F1 0.4606 over 56 videos, train 3.2s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=focal seed=2: best epoch 3 (early-stopped), validation macro-F1 0.3893 (clustered 95% CI 0.2766-0.4594), video-level macro-F1 0.4438 over 56 videos, train 4.8s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=balanced_softmax seed=0: best epoch 3 (early-stopped), validation macro-F1 0.3685 (clustered 95% CI 0.2538-0.4478), video-level macro-F1 0.4178 over 56 videos, train 4.4s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=balanced_softmax seed=1: best epoch 3 (early-stopped), validation macro-F1 0.4104 (clustered 95% CI 0.2863-0.4878), video-level macro-F1 0.4923 over 56 videos, train 4.0s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml loss=balanced_softmax seed=2: best epoch 3 (early-stopped), validation macro-F1 0.3920 (clustered 95% CI 0.2732-0.4690), video-level macro-F1 0.4650 over 56 videos, train 4.1s
+fold 2: train 3808 rows sampled (8/video, seed=0), validation 47726 rows (full, untouched), cache ea8c33fbecf3
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=cross_entropy seed=0: best epoch 7 (early-stopped), validation macro-F1 0.2726 (clustered 95% CI 0.1948-0.3474), video-level macro-F1 0.3958 over 56 videos, train 7.4s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=cross_entropy seed=1: best epoch 5 (early-stopped), validation macro-F1 0.3002 (clustered 95% CI 0.2154-0.3908), video-level macro-F1 0.4132 over 56 videos, train 4.0s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=cross_entropy seed=2: best epoch 3 (early-stopped), validation macro-F1 0.2996 (clustered 95% CI 0.2200-0.3579), video-level macro-F1 0.3884 over 56 videos, train 4.1s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=weighted_cross_entropy seed=0: best epoch 7 (early-stopped), validation macro-F1 0.2726 (clustered 95% CI 0.1948-0.3474), video-level macro-F1 0.3958 over 56 videos, train 6.2s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=weighted_cross_entropy seed=1: best epoch 5 (early-stopped), validation macro-F1 0.3002 (clustered 95% CI 0.2154-0.3908), video-level macro-F1 0.4132 over 56 videos, train 6.3s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=weighted_cross_entropy seed=2: best epoch 3 (early-stopped), validation macro-F1 0.2996 (clustered 95% CI 0.2200-0.3579), video-level macro-F1 0.3884 over 56 videos, train 3.4s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=focal seed=0: best epoch 5 (early-stopped), validation macro-F1 0.2636 (clustered 95% CI 0.1841-0.3368), video-level macro-F1 0.3177 over 56 videos, train 5.8s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=focal seed=1: best epoch 2 (early-stopped), validation macro-F1 0.2943 (clustered 95% CI 0.2082-0.3944), video-level macro-F1 0.3986 over 56 videos, train 4.0s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=focal seed=2: best epoch 2 (early-stopped), validation macro-F1 0.2953 (clustered 95% CI 0.2144-0.3565), video-level macro-F1 0.3498 over 56 videos, train 4.3s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=balanced_softmax seed=0: best epoch 7 (early-stopped), validation macro-F1 0.2726 (clustered 95% CI 0.1948-0.3474), video-level macro-F1 0.3958 over 56 videos, train 4.0s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=balanced_softmax seed=1: best epoch 5 (early-stopped), validation macro-F1 0.3002 (clustered 95% CI 0.2154-0.3908), video-level macro-F1 0.4132 over 56 videos, train 5.2s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml loss=balanced_softmax seed=2: best epoch 3 (early-stopped), validation macro-F1 0.2996 (clustered 95% CI 0.2200-0.3579), video-level macro-F1 0.3884 over 56 videos, train 4.0s
+fold 3: train 3808 rows sampled (8/video, seed=0), validation 49719 rows (full, untouched), cache 681f53307dbd
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=cross_entropy seed=0: best epoch 9 (early-stopped), validation macro-F1 0.3240 (clustered 95% CI 0.2154-0.4028), video-level macro-F1 0.4382 over 56 videos, train 7.1s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=cross_entropy seed=1: best epoch 12 (early-stopped), validation macro-F1 0.3305 (clustered 95% CI 0.2215-0.4069), video-level macro-F1 0.3750 over 56 videos, train 7.5s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=cross_entropy seed=2: best epoch 4 (early-stopped), validation macro-F1 0.3207 (clustered 95% CI 0.2186-0.3856), video-level macro-F1 0.3570 over 56 videos, train 3.5s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=weighted_cross_entropy seed=0: best epoch 9 (early-stopped), validation macro-F1 0.3240 (clustered 95% CI 0.2154-0.4028), video-level macro-F1 0.4382 over 56 videos, train 8.0s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=weighted_cross_entropy seed=1: best epoch 12 (early-stopped), validation macro-F1 0.3305 (clustered 95% CI 0.2215-0.4069), video-level macro-F1 0.3750 over 56 videos, train 8.4s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=weighted_cross_entropy seed=2: best epoch 4 (early-stopped), validation macro-F1 0.3207 (clustered 95% CI 0.2186-0.3856), video-level macro-F1 0.3570 over 56 videos, train 3.7s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=focal seed=0: best epoch 8 (early-stopped), validation macro-F1 0.3251 (clustered 95% CI 0.2200-0.4035), video-level macro-F1 0.3845 over 56 videos, train 4.7s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=focal seed=1: best epoch 8 (early-stopped), validation macro-F1 0.3331 (clustered 95% CI 0.2257-0.4137), video-level macro-F1 0.4164 over 56 videos, train 8.0s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=focal seed=2: best epoch 3 (early-stopped), validation macro-F1 0.3034 (clustered 95% CI 0.2086-0.3647), video-level macro-F1 0.3457 over 56 videos, train 4.7s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=balanced_softmax seed=0: best epoch 9 (early-stopped), validation macro-F1 0.3240 (clustered 95% CI 0.2154-0.4028), video-level macro-F1 0.4382 over 56 videos, train 5.8s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=balanced_softmax seed=1: best epoch 12 (early-stopped), validation macro-F1 0.3305 (clustered 95% CI 0.2215-0.4069), video-level macro-F1 0.3750 over 56 videos, train 8.3s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml loss=balanced_softmax seed=2: best epoch 4 (early-stopped), validation macro-F1 0.3207 (clustered 95% CI 0.2186-0.3856), video-level macro-F1 0.3570 over 56 videos, train 5.8s
+fold 4: train 3807 rows sampled (8/video, seed=0), validation 41319 rows (full, untouched), cache 3b4aaed3037e
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=cross_entropy seed=0: best epoch 3 (early-stopped), validation macro-F1 0.2985 (clustered 95% CI 0.1974-0.3797), video-level macro-F1 0.3710 over 56 videos, train 5.1s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=cross_entropy seed=1: best epoch 7 (early-stopped), validation macro-F1 0.3330 (clustered 95% CI 0.2160-0.4051), video-level macro-F1 0.4075 over 56 videos, train 6.0s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=cross_entropy seed=2: best epoch 2 (early-stopped), validation macro-F1 0.3226 (clustered 95% CI 0.2073-0.3852), video-level macro-F1 0.3600 over 56 videos, train 3.7s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=weighted_cross_entropy seed=0: best epoch 3 (early-stopped), validation macro-F1 0.2985 (clustered 95% CI 0.1974-0.3798), video-level macro-F1 0.3710 over 56 videos, train 3.2s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=weighted_cross_entropy seed=1: best epoch 7 (early-stopped), validation macro-F1 0.3331 (clustered 95% CI 0.2161-0.4052), video-level macro-F1 0.4075 over 56 videos, train 5.8s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=weighted_cross_entropy seed=2: best epoch 2 (early-stopped), validation macro-F1 0.3227 (clustered 95% CI 0.2075-0.3852), video-level macro-F1 0.3600 over 56 videos, train 3.9s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=focal seed=0: best epoch 3 (early-stopped), validation macro-F1 0.2942 (clustered 95% CI 0.1954-0.3751), video-level macro-F1 0.3640 over 56 videos, train 4.9s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=focal seed=1: best epoch 7 (early-stopped), validation macro-F1 0.3336 (clustered 95% CI 0.2220-0.4063), video-level macro-F1 0.4030 over 56 videos, train 6.2s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=focal seed=2: best epoch 2 (early-stopped), validation macro-F1 0.2962 (clustered 95% CI 0.1931-0.3681), video-level macro-F1 0.3528 over 56 videos, train 4.9s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=balanced_softmax seed=0: best epoch 3 (early-stopped), validation macro-F1 0.2985 (clustered 95% CI 0.1974-0.3798), video-level macro-F1 0.3710 over 56 videos, train 4.3s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=balanced_softmax seed=1: best epoch 7 (early-stopped), validation macro-F1 0.3331 (clustered 95% CI 0.2161-0.4051), video-level macro-F1 0.4075 over 56 videos, train 6.9s
+fold P1C-VIDEO-DINOV2-B2-AR-FOLD4.yaml loss=balanced_softmax seed=2: best epoch 2 (early-stopped), validation macro-F1 0.3228 (clustered 95% CI 0.2076-0.3852), video-level macro-F1 0.3600 over 56 videos, train 3.8s
+wrote results/p1c/p1c-loss-ablation/summary.json
+wrote results/p1c/p1c-loss-ablation/vacuity_check.json
+vacuity check weighted_cross_entropy vs cross_entropy: EXACT
+vacuity check balanced_softmax vs cross_entropy: EXACT

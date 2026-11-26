@@ -1,0 +1,51 @@
+{
+  "augmentation_name": "none",
+  "augmentation_rationale": "Preserve a conventional auditable first control; augmentation is a future one-change experiment.",
+  "backbone_family": "torchvision_resnet50",
+  "backbone_feature": "layer4_C5_pre_GAP",
+  "backbone_trainable": "frozen",
+  "backbone_weight_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+  "cache_sha256": "2fd183f7431a90a3eb648a299b76690b215ada2e0a144e3521f3162892e36055",
+  "class_names": [
+    "Abuse",
+    "Arrest",
+    "Arson",
+    "Assault",
+    "Burglary",
+    "Explosion",
+    "Fighting",
+    "Normal_Videos_event",
+    "RoadAccidents",
+    "Robbery",
+    "Shooting",
+    "Shoplifting",
+    "Stealing",
+    "Vandalism"
+  ],
+  "created_at": "2026-09-07T10:37:36.161311+00:00",
+  "dtype": "float16",
+  "feature_dim": 2048,
+  "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+  "model_control": "gap_linear",
+  "pooling": "global_average",
+  "preprocessing": {
+    "color_mode": "RGB",
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "resize_height": 224,
+    "resize_width": 224,
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "row_count": 400419,
+  "source_manifest_path": "results/p1b/p1b-video-ar-fold3/train_manifest.csv",
+  "source_manifest_sha256": "d9af01685edde45a3055b062a1eac4bf2717931e71a291e71fc6b63a6e344c8f",
+  "split": "train"
+}

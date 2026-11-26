@@ -1,0 +1,68 @@
+{
+  "generated_at_utc": "2026-08-25T06:08:06Z",
+  "io_test_mebibytes": 256,
+  "kernel": "Linux-6.8.0-71-generic-x86_64-with-glibc2.35",
+  "kind": "P1C DGX storage probe (D-33 background); measurement only, no training/calibration",
+  "node_name": "<cluster-node>",
+  "pod_name": "shar-probe-storage-20260825060758",
+  "probe_id": "probe-storage-20260825T060758Z",
+  "small_file_latency_over_home_nfs": {
+    "actual_sample_size": 300,
+    "dataset_root": "<repo>/Datasets/UCF Crime Dataset Kaggle/Train",
+    "open_read_latency_ms": {
+      "count": 300,
+      "max": 1.6069,
+      "mean": 0.4828,
+      "min": 0.2485,
+      "p50": 0.3424,
+      "p90": 0.9045,
+      "p99": 1.1343
+    },
+    "requested_sample_size": 300
+  },
+  "targets": {
+    "emptydir": {
+      "df_-Pk_output": "Filesystem     1024-blocks     Used  Available Capacity Mounted on\n/dev/md1        1870026616 57050372 1812976244       4% /scratch-emptydir",
+      "existed_before_probe": true,
+      "filesystem": "xfs    /dev/md1[/var/lib/kubelet/pods/8d4eca34-06f7-4481-838b-1f43cf398d42/volumes/kubernetes.io~empty-dir/scratch] /scratch-emptydir",
+      "kyverno_permitted": true,
+      "marker_written": true,
+      "mounts": true,
+      "node_locality_signal": "no previous marker at this path; rerun this probe (ideally scheduled onto the other worker) and compare node_name against this run's marker",
+      "note": "kyverno_permitted is inferred from pod admission having succeeded with this emptyDir volume already declared in the pod spec; if Kyverno rejected emptyDir outright the pod would never have been admitted and this JSON artifact would not exist at all",
+      "path": "/scratch-emptydir",
+      "previous_marker_found": null,
+      "read_caveat": "measured from an unprivileged container with no ability to drop the page cache; pass1 is only 'likely cold' for a freshly written file, not guaranteed cold, and both passes may be inflated relative to a truly cold read on a busy shared filesystem",
+      "sequential_read_mib_per_s_pass1": 8735.75,
+      "sequential_read_mib_per_s_pass2_page_cache_warm": 8999.99,
+      "sequential_write_mib_per_s": 1484.7,
+      "writable": true
+    },
+    "fast_dgx_storage": {
+      "existed_before_probe": true,
+      "filesystem": "xfs    /dev/md2[/fast-dgx-storage/<user>] /workspace/fast-dgx-storage/<user>",
+      "io_error": "[Errno 13] Permission denied: '/workspace/fast-dgx-storage/<user>/shar_probe_iotest_shar-probe-storage-20260825060758.bin'",
+      "marker_error": "[Errno 13] Permission denied: '/workspace/fast-dgx-storage/<user>/shar_probe_node_marker.json'",
+      "marker_written": false,
+      "mounts": true,
+      "node_locality_signal": "no previous marker at this path; rerun this probe (ideally scheduled onto the other worker) and compare node_name against this run's marker",
+      "path": "/workspace/fast-dgx-storage/<user>",
+      "previous_marker_found": null,
+      "writable": false
+    },
+    "home_nfs": {
+      "existed_before_probe": true,
+      "filesystem": "nfs4   master:<home> <home>",
+      "marker_written": true,
+      "mounts": true,
+      "node_locality_signal": "no previous marker at this path; rerun this probe (ideally scheduled onto the other worker) and compare node_name against this run's marker",
+      "path": "<home>",
+      "previous_marker_found": null,
+      "read_caveat": "measured from an unprivileged container with no ability to drop the page cache; pass1 is only 'likely cold' for a freshly written file, not guaranteed cold, and both passes may be inflated relative to a truly cold read on a busy shared filesystem",
+      "sequential_read_mib_per_s_pass1": 5353.66,
+      "sequential_read_mib_per_s_pass2_page_cache_warm": 455.16,
+      "sequential_write_mib_per_s": 562.1,
+      "writable": true
+    }
+  }
+}

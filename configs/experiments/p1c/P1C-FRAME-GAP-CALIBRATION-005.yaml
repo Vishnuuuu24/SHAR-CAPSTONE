@@ -1,0 +1,188 @@
+schema_version: 1.0.0
+# OWNER DECISION REQUIRED - THIS CONFIGURATION CANNOT LAUNCH AS WRITTEN.
+#
+# status is PLANNED. scripts/calibrate_p1c_frame_loader.py's _load_config
+# refuses any config whose experiment.status is not REGISTERED_CALIBRATION_READY
+# (with run_class=calibration), exactly as it did for P1C-FRAME-GAP-CALIBRATION-004-CUDA
+# before that file was promoted and actually run. Promotion is an owner action
+# under D-27; AI may recommend a child but never registers or launches one.
+#
+# RUNNER WIRING: COMPLETE. An earlier revision of this file recorded a known
+# gap - that scripts/calibrate_p1c_frame_loader.py's _datasets() always built
+# data.p1c_loader.P1CFrameDataset and never read data.packed_frames, so this
+# config would have measured per-file NFS loading rather than the packed blob.
+# That gap is now closed. Both _datasets() in scripts/calibrate_p1c_frame_loader.py
+# and _make_datasets() in scripts/run_p1c_frame_baseline.py branch on the
+# presence of data.packed_frames and construct P1CPackedFrameDataset from its
+# pack_closure_path; a config that registers data.packed_frames while
+# training.loader.verify_digests is not true is refused before any dataset is
+# built, so a configuration cannot claim a weaker verification posture than the
+# run performs. Run manifests record the blob's SHA-256 as
+# packed_frames_blob_sha256 and the selected path as loader_mode. Covered by
+# tests/test_p1c_frame_runner_wiring.py. No run has executed under this
+# configuration yet: it remains code-complete, not run-complete.
+#
+# Four material changes are bundled here relative to the parent baseline,
+# deliberately, because this is a calibration (D-30: "not training, model
+# selection, or Test evaluation") measuring combined operational feasibility of
+# the packed-blob loader fix on the DGX CUDA slice, not a single-factor
+# scientific ablation subject to docs/PROJECT_RULES.md rule 7's one-change discipline for
+# headline results:
+#   1. training.loader.num_workers 0 -> 6 and pin_memory/persistent_workers
+#      false -> true: P1C-FRAME-GAP-FULL-002-WORKERS separately measured 8
+#      workers sustaining far more throughput than the accelerator consumes at
+#      num_workers=0, hiding loader wait almost entirely; 6 is used here rather
+#      than 8 to leave headroom for this MIG 1g.18gb slice's shared CPU quota.
+#   2. device_policy mps_strict -> cuda_strict: P1C-FRAME-GAP-CALIBRATION-004-CUDA
+#      already measured this backend change alone (loader unchanged at
+#      num_workers=0) against P1C-FRAME-GAP-CALIBRATION-003; see results/p1c/
+#      p1c-frame-gap-calibration-004-cuda-20260824T070127Z/calibration.json.
+#   3. data.packed_frames.pack_closure_path is newly registered: the packed
+#      blob (D-33) replaces 1,136,536 + 129,809 individual PNG opens over NFS
+#      with one contiguous uint8 memmap read.
+#   4. The pack_closure_path value is a bare absolute path, not the
+#      relative-path-plus-sha256 pattern used for train/validation/weights
+#      below. The packed blob is expected to live on DGX-local or DGX-shared
+#      storage outside this repository (see scripts/dgx/probe_storage.sh,
+#      registered alongside this file, for which mount that should be once
+#      measured), whose absolute location is host-specific. The owner chose an
+#      explicit host-specific field over an environment variable for this,
+#      accepting that this file's own config_sha256 therefore changes per host
+#      it is registered on -- it is not portable byte-for-byte to a different
+#      machine the way the repo-relative manifest registrations are.
+#
+# Because these four changes are bundled, a clean per-factor attribution (e.g.
+# "how much of the wall-clock delta is the packed blob alone") is not available
+# from this artifact by itself; P1C-FRAME-GAP-CALIBRATION-004-CUDA and
+# P1C-FRAME-GAP-FULL-002-WORKERS already provide separate single-factor
+# evidence for the backend and loader-worker changes respectively. If a clean
+# packed-blob-alone delta is later required, register a further child that
+# changes only data.packed_frames against a cuda_strict/num_workers=6 parent.
+experiment:
+  id: P1C-FRAME-GAP-CALIBRATION-005
+  parent_id: P1C-FRAME-GAP-BASELINE-001
+  status: PLANNED
+  run_class: calibration
+  question: What is the real-loader wall-clock throughput and three-seed wall-time range for the frozen frame baseline when the packed frame blob, six prefetching pinned-memory workers, and one NVIDIA MIG 1g.18gb CUDA slice replace the baseline's per-file NFS loading, zero workers, and strict-MPS backend?
+  hypothesis: This non-research calibration establishes combined feasibility and ETA for the packed-blob loader fix under the D-30 wall-clock method; it bundles four operational changes and therefore cannot attribute its measured delta to any one factor, cannot choose a model configuration, and cannot be compared as a scientific result.
+  change_from_parent:
+    - training.loader.num_workers - 0 -> 6
+    - training.loader.pin_memory - false -> true
+    - training.loader.persistent_workers - false -> true
+    - device_policy - mps_strict to cuda_strict, resolved through core.device.resolve_device_policy
+    - data.packed_frames.pack_closure_path newly registered - Train/validation pixels are read from the D-33 packed blob via a numpy.memmap instead of one PNG open+decode per row; metadata/labels/provenance still come from the same frozen manifests
+    - execution host - M5 Pro local MPS to Presidency DGX worker node, one nvidia.com/mig-1g.18gb slice under the <namespace> quota
+    - no other factor changed - model, data selection, preprocessing, loss, optimizer, batch size, and precision are identical to P1C-FRAME-GAP-BASELINE-001
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism, Normal]
+  backbone:
+    family: torchvision_resnet50
+    feature: layer4_C5_pre_GAP
+    weights:
+      enum: IMAGENET1K_V2
+      source_url: https://download.pytorch.org/models/resnet50-11ad3fa6.pth
+      path: .cache/weights/resnet50-11ad3fa6.pth
+      sha256: 11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca
+  data:
+    dataset_roots:
+      ucf_crime_kaggle_frames: Datasets/UCF Crime Dataset Kaggle
+    train:
+      path: results/p1b/p1b-grouped-train-validation-57f3a29b-10pct-s0/train_manifest.csv
+      sha256: 3930ca6b3155bee6d90308447cefade66332ab20f8a3685a6de341938d35608c
+    validation:
+      path: results/p1b/p1b-grouped-train-validation-57f3a29b-10pct-s0/validation_manifest.csv
+      sha256: 3af30a56704b0753937fbca38e4e2bc2d26bce70008d361c50db2ca41ac9f8f5
+    # Bare absolute host path, deliberately not the relative-path-plus-sha256
+    # pattern used above -- see the OWNER DECISION note at the top of this
+    # file. scripts/pack_p1c_frames.py's closure JSON at this path records its
+    # own blob_sha256, item_bytes, image_shape, and per-split row_count/
+    # manifest_sha256/blob_row_offset; data.p1c_loader.PackedBlobInfo.from_closure
+    # reads exactly those fields, and P1CPackedFrameDataset verifies the blob's
+    # SHA-256 against the closure once at construction.
+    #
+    # STORAGE TARGET, settled by results/p1c/probe-storage-20260825T060758Z/
+    # probe_storage.json. The probe measured all three allowlisted candidates
+    # from inside a real pod on <cluster-node>:
+    #   - /workspace/fast-dgx-storage/<account>: mounts (xfs, /dev/md2) but is
+    #     NOT writable by this account - EACCES on every write. Unusable
+    #     without an administrator change, so it is not this path.
+    #   - /home (nfs4 from master): writable, 562 MiB/s sequential write and
+    #     ~455 MiB/s sustained sequential read, but it is the network
+    #     filesystem whose per-file latency motivated D-33 in the first place.
+    #     Random 12,288-byte memmap reads against it would reintroduce the
+    #     bottleneck the blob exists to remove.
+    #   - emptyDir (xfs on /dev/md1, node-local): 1485 MiB/s write, 8736-9000
+    #     MiB/s read, 1.81 TB free, and admitted by Kyverno. This is the one.
+    # The blob's durable master copy therefore lives on /home (it survives pod
+    # deletion), and each pod stages it to its own emptyDir before the run -
+    # 15.6 GB at 562 MiB/s is roughly 28 seconds. This path is that per-pod
+    # staged location, which is stable across runs because the mountPath is.
+    #
+    # NOT YET WIRED: scripts/dgx/pod-job.template.yaml currently declares only
+    # the /home hostPath volume. It needs an emptyDir volume at SCRATCH_MOUNT
+    # and a stage step (copy from the /home master copy) before the runner is
+    # invoked. Until that exists, this path will not resolve inside a job pod.
+    packed_frames:
+      pack_closure_path: /scratch-emptydir/p1c-packed-frames/pack_closure.json
+  preprocessing:
+    resize_height: 64
+    resize_width: 64
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    class_balance: none
+  training:
+    batch_size: 64
+    loader:
+      num_workers: 6
+      pin_memory: true
+      persistent_workers: true
+      drop_last: false
+      # Registered true for consistency with every sibling config's schema
+      # (core.p1c_readiness expects this exact key on a full-run promotion).
+      # It does not currently change P1CPackedFrameDataset's own behavior:
+      # that class hardcodes verify_files=False/verify_digests=False for its
+      # per-row path regardless of this flag, because the blob's own SHA-256
+      # is verified once at construction instead (see data/p1c_loader.py).
+      verify_digests: true
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    device_policy: cuda_strict
+    precision: float32
+  calibration:
+    seed: 0
+    warmup_train_batches: 3
+    measured_train_batches: 10
+    measured_validation_batches: 10
+    full_epochs_for_estimate: 20
+    overhead_factor_range: [1.15, 1.35]
+    scope:
+      research_training: false
+      checkpoint_saved: false
+      held_out_test_access: false
+      configuration_selection: false
+gates:
+  owner_registration_required: true
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  expected_preflight: >-
+    run scripts/dgx/probe_storage.sh and finalize data.packed_frames.pack_closure_path
+    to the storage target it selects; then run scripts/pack_p1c_frames.py to
+    materialize and close the D-33 blob; the runner wiring itself is complete
+    and covered by tests/test_p1c_frame_runner_wiring.py
+  output: immutable_calibration_artifact_and_wall_clock_eta
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - torch_or_torchvision_version_differs_from_the_registered_environment
+    - packed_blob_sha256_mismatch_or_missing_pack_closure

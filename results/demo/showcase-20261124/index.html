@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHAR Live Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #f3f4f1; --surface: #ffffff; --surface-2: #eceee9; --ink: #1b1f1c; --ink-2: #4b524d; --ink-3: #7b827d;
+  --line: #d6dad3; --accent: #1f5f4a; --accent-ink: #ffffff; --ok: #1e7a46; --bad: #b3322b; --warn: #9a6a00;
+  --alert: #c0392b;
+  --violence: #c0392b; --violence-2: #e06650; --property: #b7791f; --property-2: #d9a441;
+  --fire: #2b6cb0; --fire-2: #5a95d6; --police: #6b46c1; --accident: #2c7a7b; --normal: #8a918c;
+  --shadow: 0 1px 2px rgba(20, 30, 25, .06), 0 4px 16px rgba(20, 30, 25, .06);
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121514; --surface: #1a1e1c; --surface-2: #232825; --ink: #e8ebe7; --ink-2: #b4bbb5; --ink-3: #848c86;
+    --line: #2f3631; --accent: #5fb894; --accent-ink: #0d1411; --ok: #5cc48a; --bad: #f07a6e; --warn: #e0b04a;
+    --normal: #6f7772; --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121514; --surface: #1a1e1c; --surface-2: #232825; --ink: #e8ebe7; --ink-2: #b4bbb5; --ink-3: #848c86;
+  --line: #2f3631; --accent: #5fb894; --accent-ink: #0d1411; --ok: #5cc48a; --bad: #f07a6e; --warn: #e0b04a;
+  --normal: #6f7772; --shadow: none;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); padding-inline: 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 56px; display: grid; gap: 20px; }
+header { display: grid; gap: 6px; }
+h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.sub { color: var(--ink-2); margin: 0; max-width: 76ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.chip { font: 12px/1 var(--mono); padding: 6px 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-2); background: var(--surface); }
+.chip b { color: var(--ink); font-weight: 500; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tab { font: 600 14px/1 var(--sans); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.tab i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.tab[aria-selected="true"] { border-color: var(--accent); color: var(--ink); box-shadow: inset 0 0 0 1px var(--accent); }
+.tab:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 20px; align-items: start; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; box-shadow: var(--shadow); display: grid; gap: 14px; min-width: 0; }
+.label { font: 600 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.stage { position: relative; background: #000; border-radius: 8px; overflow: hidden; }
+.stage video { width: 100%; display: block; aspect-ratio: 4 / 3; background: #000; }
+.hud { position: absolute; inset: 0; pointer-events: none; font-family: var(--mono); color: #fff; }
+.live { position: absolute; top: 12px; left: 12px; display: inline-flex; gap: 8px; align-items: center; font: 600 12px/1 var(--mono); letter-spacing: .06em; background: rgba(0,0,0,.55); padding: 7px 10px; border-radius: 6px; }
+.live i { width: 9px; height: 9px; border-radius: 50%; background: #8a918c; }
+.live.on i { background: #ff4d3d; animation: pulse 1.2s infinite; }
+@keyframes pulse { 50% { opacity: .25; } }
+.now { position: absolute; top: 12px; right: 12px; text-align: right; background: rgba(0,0,0,.55); padding: 7px 10px; border-radius: 6px; font-size: 13px; line-height: 1.35; max-width: 60%; }
+.now b { font-size: 15px; font-weight: 500; }
+.alert { position: absolute; left: 12px; right: 12px; bottom: 14px; display: flex; gap: 10px; align-items: center; justify-content: center; background: var(--alert); color: #fff; font: 700 clamp(15px, 2.4vw, 22px)/1.2 var(--sans); padding: 12px 14px; border-radius: 8px; opacity: 0; transform: translateY(8px); transition: opacity .25s, transform .25s; text-align: center; }
+.alert.show { opacity: .94; transform: none; }
+.alert svg { flex: none; }
+@media (prefers-reduced-motion: reduce) { .alert, .live.on i { transition: none; animation: none; } }
+.controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+button { font: 600 14px/1 var(--sans); padding: 10px 16px; border-radius: 7px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+button.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.clock { font: 13px var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tl { display: grid; gap: 4px; }
+.strip { position: relative; display: flex; height: 26px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: var(--surface-2); cursor: pointer; }
+.strip div { height: 100%; }
+.head { position: absolute; top: -2px; bottom: -2px; width: 2px; background: var(--ink); left: 0; pointer-events: none; }
+.event { position: relative; height: 14px; }
+.event span { position: absolute; top: 4px; height: 6px; background: var(--ink); border-radius: 3px; }
+.axis { display: flex; justify-content: space-between; font: 12px var(--mono); color: var(--ink-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--ink-2); }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.bars { display: grid; gap: 9px; }
+.b { display: grid; grid-template-columns: 120px minmax(0, 1fr) 46px; gap: 10px; align-items: center; font-size: 14px; }
+.b .n { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.b .track { height: 12px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.b .track i { display: block; height: 100%; border-radius: 3px; width: 0; transition: width .25s; }
+.b .p { font: 13px var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-3); font-size: 14px; margin: 0; }
+.verdict .cls { font-size: 32px; font-weight: 700; line-height: 1.1; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.verdict .conf { font: 14px var(--mono); color: var(--ink-2); }
+.match { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 10px 12px; border-radius: 8px; background: var(--surface-2); font-size: 14px; }
+.pill { font: 600 12px/1 var(--sans); padding: 5px 8px; border-radius: 999px; color: #fff; background: var(--ok); }
+.hidden { display: none !important; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.frames figure { margin: 0; display: grid; gap: 6px; cursor: pointer; }
+.frames img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block; border: 3px solid transparent; }
+.frames figcaption { font: 12px var(--mono); color: var(--ink-2); display: flex; justify-content: space-between; gap: 6px; }
+.frames figcaption b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.notes { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; display: grid; gap: 6px; }
+dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; margin: 0; font-size: 13px; }
+dt { color: var(--ink-3); } dd { margin: 0; font-family: var(--mono); overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="label">SHAR · Suspicious Human Activity Recognition</p>
+    <h1>Live crime-type analysis</h1>
+    <p class="sub">The final SHAR model watches a surveillance clip and, every second, says which of the 14 UCF-Crime
+      categories the last few seconds look like. Press play.</p>
+    <div class="chips" id="chips"></div>
+  </header>
+
+  <div class="tabs" role="tablist" id="tabs"></div>
+
+  <div class="grid">
+    <section class="card">
+      <div class="stage">
+        <video id="vid" playsinline preload="auto" muted></video>
+        <div class="hud">
+          <div class="live" id="live"><i></i><span>ANALYSING</span></div>
+          <div class="now" id="now"></div>
+          <div class="alert" id="alert" role="status" aria-live="polite">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 1 21h22L12 2Zm0 6 1 7h-2l1-7Zm0 9.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+            <span id="alertText"></span>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="play">Play</button>
+        <button class="ghost" id="restart">Restart</button>
+        <span class="clock" id="clock">0.0 s</span>
+      </div>
+      <div class="tl">
+        <p class="label">What each second looked like to the model</p>
+        <div class="strip" id="strip"><div class="head" id="head"></div></div>
+        <div class="event" id="event" title="Officially annotated event time"></div>
+        <div class="axis"><span>0 s</span><span id="axisEnd"></span></div>
+        <div class="legend" id="legend"></div>
+      </div>
+    </section>
+
+    <aside style="display:grid; gap:20px; min-width:0">
+      <section class="card">
+        <p class="label">Last 5 seconds</p>
+        <div class="bars" id="bars"><p class="muted">Starts after the first 5 seconds of video.</p></div>
+      </section>
+      <section class="card verdict">
+        <p class="label">Whole-video verdict</p>
+        <div id="verdictWait"><p class="muted">Shown when the clip finishes.</p>
+          <button class="ghost" id="reveal" style="margin-top:10px">Show now</button></div>
+        <div id="verdictBody" class="hidden" style="display:grid; gap:10px">
+          <div class="cls" id="vCls"></div>
+          <div class="conf" id="vConf"></div>
+          <div class="match" id="vMatch"></div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <section class="card">
+    <p class="label">Tagged frames</p>
+    <div class="frames" id="frames"></div>
+  </section>
+
+  <section class="card">
+    <p class="label">How to read this</p>
+    <ul class="notes" id="notes"></ul>
+    <dl id="prov"></dl>
+  </section>
+</div>
+
+<script>
+const DATA = {"alert_threshold": 0.5, "alert_run": 3, "chips": ["Model <b>E3</b>: DINOv2-L \u00b7 DINOv2-B+SigLIP \u00b7 DINOv2-B+V-JEPA 2", "14-class test: accuracy <b>46.2%</b> \u00b7 macro-F1 <b>0.455</b> \u00b7 top-3 <b>72.2%</b>", "Clips shown: <b>chosen examples it gets right</b>"], "notes": ["These clips were picked because the model classifies them correctly. Across the full 14-class test it is right 46.2% of the time (macro-F1 0.455; correct class in its top three 72.2%). It is strongest on explosions, road accidents and shoplifting and weakest on Shooting, Assault, Fighting and Abuse.", "No answer here comes from a model member that trained on the clip. Each clip lists which members were used.", "Each second, the model reads the last ~5 s of frames. These are the same weights that produce the whole-video verdict, and the verdict is the reported prediction. Outputs were computed on the DGX GPU (about 5\u00d7 faster than real time) and replay in sync with the video.", "The alert appears once the same incident type has led for 3 consecutive seconds at \u226550%. It names the <i>type</i> of incident. Training labels cover whole videos, so the model does not pinpoint when or where something happens, and it often recognises the setting before the event itself.", "No bounding boxes are drawn: the model classifies the whole frame and has no localisation output."], "videos": [{"key": "Explosion021_x264", "label": "Explosion", "src": "media/Explosion021_x264.mp4", "duration_s": 26.033333333333335, "window_s": 5.2, "windows": [{"start_s": 0.0, "end_s": 5.2, "top3": [{"label": "Explosion", "prob": 0.3121931254863739}, {"label": "Vandalism", "prob": 0.2643682079182731}, {"label": "Arson", "prob": 0.10206948593258858}]}, {"start_s": 1.0, "end_s": 6.2, "top3": [{"label": "Explosion", "prob": 0.44065598646799725}, {"label": "Vandalism", "prob": 0.19486061069700453}, {"label": "Arson", "prob": 0.09785715987284978}]}, {"start_s": 2.0, "end_s": 7.2, "top3": [{"label": "Explosion", "prob": 0.5880971087349786}, {"label": "Vandalism", "prob": 0.11827413820558125}, {"label": "Arson", "prob": 0.0602377090189192}]}, {"start_s": 3.0, "end_s": 8.2, "top3": [{"label": "Explosion", "prob": 0.8130444553163316}, {"label": "RoadAccidents", "prob": 0.05188788201970359}, {"label": "Arson", "prob": 0.026956906335221395}]}, {"start_s": 4.0, "end_s": 9.2, "top3": [{"label": "Explosion", "prob": 0.8839124110009935}, {"label": "RoadAccidents", "prob": 0.04316280913513361}, {"label": "Arson", "prob": 0.015064136151017414}]}, {"start_s": 5.0, "end_s": 10.2, "top3": [{"label": "Explosion", "prob": 0.9134318166308932}, {"label": "RoadAccidents", "prob": 0.03853294351655576}, {"label": "Assault", "prob": 0.009401420677830983}]}, {"start_s": 6.0, "end_s": 11.2, "top3": [{"label": "Explosion", "prob": 0.8939895629882812}, {"label": "RoadAccidents", "prob": 0.05058091177165301}, {"label": "Assault", "prob": 0.011872424432820279}]}, {"start_s": 7.0, "end_s": 12.2, "top3": [{"label": "Explosion", "prob": 0.8960304061571757}, {"label": "RoadAccidents", "prob": 0.050005146931248926}, {"label": "Burglary", "prob": 0.010441060034079581}]}, {"start_s": 8.0, "end_s": 13.2, "top3": [{"label": "Explosion", "prob": 0.8844167523913913}, {"label": "RoadAccidents", "prob": 0.04489290330740106}, {"label": "Burglary", "prob": 0.014758175494433898}]}, {"start_s": 9.0, "end_s": 14.2, "top3": [{"label": "Explosion", "prob": 0.8609758284356859}, {"label": "RoadAccidents", "prob": 0.04213089348437885}, {"label": "Burglary", "prob": 0.020024653278394706}]}, {"start_s": 10.0, "end_s": 15.2, "top3": [{"label": "Explosion", "prob": 0.8765716486506991}, {"label": "RoadAccidents", "prob": 0.034425849069116846}, {"label": "Burglary", "prob": 0.01715154412926899}]}, {"start_s": 11.0, "end_s": 16.2, "top3": [{"label": "Explosion", "prob": 0.9239823288387723}, {"label": "Arson", "prob": 0.020883328488303557}, {"label": "RoadAccidents", "prob": 0.017510657612648275}]}, {"start_s": 12.0, "end_s": 17.2, "top3": [{"label": "Explosion", "prob": 0.919073396258884}, {"label": "Arson", "prob": 0.025267181918025017}, {"label": "RoadAccidents", "prob": 0.018118327871585887}]}, {"start_s": 13.0, "end_s": 18.2, "top3": [{"label": "Explosion", "prob": 0.9164975219302707}, {"label": "Arson", "prob": 0.026431486579693027}, {"label": "RoadAccidents", "prob": 0.020061887147474207}]}, {"start_s": 14.0, "end_s": 19.2, "top3": [{"label": "Explosion", "prob": 0.9246869087219238}, {"label": "RoadAccidents", "prob": 0.02794313695954366}, {"label": "Arson", "prob": 0.013541776169505384}]}, {"start_s": 15.0, "end_s": 20.2, "top3": [{"label": "Explosion", "prob": 0.9415151741769578}, {"label": "RoadAccidents", "prob": 0.025695570029913344}, {"label": "Assault", "prob": 0.009510386571896056}]}, {"start_s": 16.0, "end_s": 21.2, "top3": [{"label": "Explosion", "prob": 0.9298293325636122}, {"label": "RoadAccidents", "prob": 0.03469263021058092}, {"label": "Assault", "prob": 0.012493738128493229}]}, {"start_s": 17.0, "end_s": 22.2, "top3": [{"label": "Explosion", "prob": 0.923723472489251}, {"label": "RoadAccidents", "prob": 0.04291344028832908}, {"label": "Assault", "prob": 0.01141685816724526}]}, {"start_s": 18.0, "end_s": 23.2, "top3": [{"label": "Explosion", "prob": 0.9266775316662259}, {"label": "RoadAccidents", "prob": 0.04194953089083558}, {"label": "Assault", "prob": 0.009639046004950715}]}, {"start_s": 19.0, "end_s": 24.2, "top3": [{"label": "Explosion", "prob": 0.9142298367288377}, {"label": "RoadAccidents", "prob": 0.041232468973046506}, {"label": "Assault", "prob": 0.011932167029752035}]}, {"start_s": 20.0, "end_s": 25.2, "top3": [{"label": "Explosion", "prob": 0.8764318029085795}, {"label": "RoadAccidents", "prob": 0.05465200500071256}, {"label": "Assault", "prob": 0.014318214815122902}]}, {"start_s": 20.833333333333332, "end_s": 26.033333333333335, "top3": [{"label": "Explosion", "prob": 0.8377671639124552}, {"label": "RoadAccidents", "prob": 0.06517517027289917}, {"label": "Burglary", "prob": 0.018335257643937238}]}], "video": {"prediction": "Explosion", "confidence": 0.8644793762101067, "top3": [{"label": "Explosion", "prob": 0.8644793762101067}, {"label": "RoadAccidents", "prob": 0.04582559543713513}, {"label": "Arson", "prob": 0.016640278122698266}]}, "alert": {"label": "Explosion", "at_s": 9.2}, "events": [[4.5, 9.0]], "frames": [{"t_s": 1.6270833333333334, "src": "media/Explosion021_x264-0.jpg", "label": null, "prob": null}, {"t_s": 4.8812500000000005, "src": "media/Explosion021_x264-1.jpg", "label": null, "prob": null}, {"t_s": 8.135416666666668, "src": "media/Explosion021_x264-2.jpg", "label": "Explosion", "prob": 0.5880971087349786}, {"t_s": 11.389583333333334, "src": "media/Explosion021_x264-3.jpg", "label": "Explosion", "prob": 0.8939895629882812}, {"t_s": 14.64375, "src": "media/Explosion021_x264-4.jpg", "label": "Explosion", "prob": 0.8609758284356859}, {"t_s": 17.897916666666667, "src": "media/Explosion021_x264-5.jpg", "label": "Explosion", "prob": 0.919073396258884}, {"t_s": 21.152083333333334, "src": "media/Explosion021_x264-6.jpg", "label": "Explosion", "prob": 0.9415151741769578}, {"t_s": 24.40625, "src": "media/Explosion021_x264-7.jpg", "label": "Explosion", "prob": 0.9142298367288377}], "provenance": {"Video": "Explosion021_x264", "Members used": "9 of 36 (folds 2: none trained on this clip)", "Reproduces saved E3 replay": "yes, max |\u0394p| = 0", "E3 config": "d555aaf66bf5e479", "Source SHA-256": "854c0e02b2cdb39a", "Code revision": "3c6dad98d8"}}, {"key": "RoadAccidents086_x264", "label": "RoadAccidents", "src": "media/RoadAccidents086_x264.mp4", "duration_s": 29.866666666666667, "window_s": 5.2, "windows": [{"start_s": 0.0, "end_s": 5.2, "top3": [{"label": "RoadAccidents", "prob": 0.9233947429392073}, {"label": "Shooting", "prob": 0.014068759342788124}, {"label": "Abuse", "prob": 0.013601444065797195}]}, {"start_s": 1.0, "end_s": 6.2, "top3": [{"label": "RoadAccidents", "prob": 0.9214903016885122}, {"label": "Abuse", "prob": 0.014157362607268928}, {"label": "Shooting", "prob": 0.013883993272126341}]}, {"start_s": 2.0, "end_s": 7.2, "top3": [{"label": "RoadAccidents", "prob": 0.9166549262073305}, {"label": "Abuse", "prob": 0.016391780198318884}, {"label": "Shooting", "prob": 0.014828060661481382}]}, {"start_s": 3.0, "end_s": 8.2, "top3": [{"label": "RoadAccidents", "prob": 0.9252531545029746}, {"label": "Abuse", "prob": 0.017004644661533855}, {"label": "Arrest", "prob": 0.013458977106589979}]}, {"start_s": 4.0, "end_s": 9.2, "top3": [{"label": "RoadAccidents", "prob": 0.9310756772756577}, {"label": "Abuse", "prob": 0.015039359306683764}, {"label": "Arrest", "prob": 0.013182220134897053}]}, {"start_s": 5.0, "end_s": 10.2, "top3": [{"label": "RoadAccidents", "prob": 0.9375229229529699}, {"label": "Abuse", "prob": 0.013060143773246737}, {"label": "Arrest", "prob": 0.012290706216946192}]}, {"start_s": 6.0, "end_s": 11.2, "top3": [{"label": "RoadAccidents", "prob": 0.9376958989434772}, {"label": "Arrest", "prob": 0.012302060504023556}, {"label": "Shooting", "prob": 0.012140824254957907}]}, {"start_s": 7.0, "end_s": 12.2, "top3": [{"label": "RoadAccidents", "prob": 0.9427215639087889}, {"label": "Arrest", "prob": 0.01214652453927556}, {"label": "Shooting", "prob": 0.010788822935460808}]}, {"start_s": 8.0, "end_s": 13.2, "top3": [{"label": "RoadAccidents", "prob": 0.9460710237423579}, {"label": "Arrest", "prob": 0.010551844808408836}, {"label": "Shooting", "prob": 0.010548366587803079}]}, {"start_s": 9.0, "end_s": 14.2, "top3": [{"label": "RoadAccidents", "prob": 0.9450437989499834}, {"label": "Arrest", "prob": 0.010884206712944433}, {"label": "Shooting", "prob": 0.010537632200996287}]}, {"start_s": 10.0, "end_s": 15.2, "top3": [{"label": "RoadAccidents", "prob": 0.9437408447265625}, {"label": "Arrest", "prob": 0.011594417703033995}, {"label": "Shooting", "prob": 0.010578436776995659}]}, {"start_s": 11.0, "end_s": 16.2, "top3": [{"label": "RoadAccidents", "prob": 0.9483772334125307}, {"label": "Arrest", "prob": 0.011910572457256623}, {"label": "Shooting", "prob": 0.00897900892838758}]}, {"start_s": 12.0, "end_s": 17.2, "top3": [{"label": "RoadAccidents", "prob": 0.9500248001681434}, {"label": "Arrest", "prob": 0.01149469292674136}, {"label": "Shooting", "prob": 0.00897769189679012}]}, {"start_s": 13.0, "end_s": 18.2, "top3": [{"label": "RoadAccidents", "prob": 0.9519771370622847}, {"label": "Arrest", "prob": 0.010708384101033315}, {"label": "Shooting", "prob": 0.008896046602684591}]}, {"start_s": 14.0, "end_s": 19.2, "top3": [{"label": "RoadAccidents", "prob": 0.9495486385292478}, {"label": "Shooting", "prob": 0.009756080752898319}, {"label": "Arrest", "prob": 0.009506749534112815}]}, {"start_s": 15.0, "end_s": 20.2, "top3": [{"label": "RoadAccidents", "prob": 0.9478257381253772}, {"label": "Shooting", "prob": 0.010514268523871174}, {"label": "Arrest", "prob": 0.009111459032283165}]}, {"start_s": 16.0, "end_s": 21.2, "top3": [{"label": "RoadAccidents", "prob": 0.9470580137438245}, {"label": "Shooting", "prob": 0.010454560175680349}, {"label": "Explosion", "prob": 0.0088013372799954}]}, {"start_s": 17.0, "end_s": 22.2, "top3": [{"label": "RoadAccidents", "prob": 0.9467405759625964}, {"label": "Shooting", "prob": 0.010409310736577027}, {"label": "Abuse", "prob": 0.008959187999910986}]}, {"start_s": 18.0, "end_s": 23.2, "top3": [{"label": "RoadAccidents", "prob": 0.945465377635426}, {"label": "Shooting", "prob": 0.010470933313222809}, {"label": "Explosion", "prob": 0.00925443690337286}]}, {"start_s": 19.0, "end_s": 24.2, "top3": [{"label": "RoadAccidents", "prob": 0.9401016367806329}, {"label": "Shooting", "prob": 0.01112846738316067}, {"label": "Arrest", "prob": 0.010437300074651526}]}, {"start_s": 20.0, "end_s": 25.2, "top3": [{"label": "RoadAccidents", "prob": 0.9382547785838445}, {"label": "Arrest", "prob": 0.011284426737499112}, {"label": "Shooting", "prob": 0.010997118104973601}]}, {"start_s": 21.0, "end_s": 26.2, "top3": [{"label": "RoadAccidents", "prob": 0.9362788481844796}, {"label": "Arrest", "prob": 0.01310218339818271}, {"label": "Explosion", "prob": 0.010695302750617783}]}, {"start_s": 22.0, "end_s": 27.2, "top3": [{"label": "RoadAccidents", "prob": 0.9237870491213269}, {"label": "Arrest", "prob": 0.017655059839146107}, {"label": "Explosion", "prob": 0.012656609182158718}]}, {"start_s": 23.0, "end_s": 28.2, "top3": [{"label": "RoadAccidents", "prob": 0.9118622607654996}, {"label": "Arrest", "prob": 0.023915819280470412}, {"label": "Explosion", "prob": 0.013681630832757542}]}, {"start_s": 24.0, "end_s": 29.2, "top3": [{"label": "RoadAccidents", "prob": 0.9021167010068893}, {"label": "Arrest", "prob": 0.02892889553267095}, {"label": "Abuse", "prob": 0.015592964343442064}]}, {"start_s": 24.666666666666668, "end_s": 29.866666666666667, "top3": [{"label": "RoadAccidents", "prob": 0.8962348583671782}, {"label": "Arrest", "prob": 0.03392333820940823}, {"label": "Abuse", "prob": 0.016491259094133664}]}], "video": {"prediction": "RoadAccidents", "confidence": 0.9366331381930245, "top3": [{"label": "RoadAccidents", "prob": 0.9366331381930245}, {"label": "Arrest", "prob": 0.012987448272825632}, {"label": "Shooting", "prob": 0.011476256085087597}]}, "alert": {"label": "RoadAccidents", "at_s": 7.2}, "events": [], "frames": [{"t_s": 1.8666666666666667, "src": "media/RoadAccidents086_x264-0.jpg", "label": null, "prob": null}, {"t_s": 5.6, "src": "media/RoadAccidents086_x264-1.jpg", "label": "RoadAccidents", "prob": 0.9233947429392073}, {"t_s": 9.333333333333334, "src": "media/RoadAccidents086_x264-2.jpg", "label": "RoadAccidents", "prob": 0.9310756772756577}, {"t_s": 13.066666666666666, "src": "media/RoadAccidents086_x264-3.jpg", "label": "RoadAccidents", "prob": 0.9427215639087889}, {"t_s": 16.8, "src": "media/RoadAccidents086_x264-4.jpg", "label": "RoadAccidents", "prob": 0.9483772334125307}, {"t_s": 20.533333333333335, "src": "media/RoadAccidents086_x264-5.jpg", "label": "RoadAccidents", "prob": 0.9478257381253772}, {"t_s": 24.266666666666666, "src": "media/RoadAccidents086_x264-6.jpg", "label": "RoadAccidents", "prob": 0.9401016367806329}, {"t_s": 28.0, "src": "media/RoadAccidents086_x264-7.jpg", "label": "RoadAccidents", "prob": 0.9237870491213269}], "provenance": {"Video": "RoadAccidents086_x264", "Members used": "36 of 36 (folds 1, 2, 3, 4: none trained on this clip)", "Reproduces saved E3 replay": "yes, max |\u0394p| = 0", "E3 config": "d555aaf66bf5e479", "Source SHA-256": "5e367b7c8d76bb91", "Code revision": "3c6dad98d8"}}, {"key": "Robbery044_x264", "label": "Robbery", "src": "media/Robbery044_x264.mp4", "duration_s": 15.533333333333333, "window_s": 5.2, "windows": [{"start_s": 0.0, "end_s": 5.2, "top3": [{"label": "Robbery", "prob": 0.9215943151050143}, {"label": "Normal_Videos_event", "prob": 0.0284649762185533}, {"label": "Burglary", "prob": 0.014708925102442864}]}, {"start_s": 1.0, "end_s": 6.2, "top3": [{"label": "Robbery", "prob": 0.9212201767497592}, {"label": "Normal_Videos_event", "prob": 0.027121331254319456}, {"label": "Burglary", "prob": 0.015347827571127305}]}, {"start_s": 2.0, "end_s": 7.2, "top3": [{"label": "Robbery", "prob": 0.9213914407624139}, {"label": "Normal_Videos_event", "prob": 0.026908088710923848}, {"label": "Burglary", "prob": 0.015455730092071462}]}, {"start_s": 3.0, "end_s": 8.2, "top3": [{"label": "Robbery", "prob": 0.9205975664986504}, {"label": "Normal_Videos_event", "prob": 0.0265392418134272}, {"label": "Burglary", "prob": 0.016279245757484913}]}, {"start_s": 4.0, "end_s": 9.2, "top3": [{"label": "Robbery", "prob": 0.9243374599350823}, {"label": "Normal_Videos_event", "prob": 0.024430650503442546}, {"label": "Burglary", "prob": 0.015800078186051298}]}, {"start_s": 5.0, "end_s": 10.2, "top3": [{"label": "Robbery", "prob": 0.9271548456615872}, {"label": "Normal_Videos_event", "prob": 0.023849061313942203}, {"label": "Burglary", "prob": 0.014848184299707}]}, {"start_s": 6.0, "end_s": 11.2, "top3": [{"label": "Robbery", "prob": 0.9288959635628594}, {"label": "Normal_Videos_event", "prob": 0.02359925984375069}, {"label": "Burglary", "prob": 0.01468207260525863}]}, {"start_s": 7.0, "end_s": 12.2, "top3": [{"label": "Robbery", "prob": 0.9283143613073561}, {"label": "Normal_Videos_event", "prob": 0.0244046094934068}, {"label": "Burglary", "prob": 0.014635267862306338}]}, {"start_s": 8.0, "end_s": 13.2, "top3": [{"label": "Robbery", "prob": 0.9280957910749648}, {"label": "Normal_Videos_event", "prob": 0.02462698435960596}, {"label": "Burglary", "prob": 0.01454605169581353}]}, {"start_s": 9.0, "end_s": 14.2, "top3": [{"label": "Robbery", "prob": 0.9284394052293565}, {"label": "Normal_Videos_event", "prob": 0.023992619799577772}, {"label": "Burglary", "prob": 0.015064534126496356}]}, {"start_s": 10.0, "end_s": 15.2, "top3": [{"label": "Robbery", "prob": 0.9294450084368387}, {"label": "Normal_Videos_event", "prob": 0.023702206191551847}, {"label": "Burglary", "prob": 0.014729835118891465}]}, {"start_s": 10.333333333333334, "end_s": 15.533333333333333, "top3": [{"label": "Robbery", "prob": 0.9298290941450331}, {"label": "Normal_Videos_event", "prob": 0.023731230072169436}, {"label": "Burglary", "prob": 0.014478687614124889}]}], "video": {"prediction": "Robbery", "confidence": 0.9267934163411459, "top3": [{"label": "Robbery", "prob": 0.9267934163411459}, {"label": "Normal_Videos_event", "prob": 0.025294777088978055}, {"label": "Burglary", "prob": 0.014530655630450282}]}, "alert": {"label": "Robbery", "at_s": 7.2}, "events": [], "frames": [{"t_s": 0.9708333333333333, "src": "media/Robbery044_x264-0.jpg", "label": null, "prob": null}, {"t_s": 2.9125, "src": "media/Robbery044_x264-1.jpg", "label": null, "prob": null}, {"t_s": 4.854166666666667, "src": "media/Robbery044_x264-2.jpg", "label": null, "prob": null}, {"t_s": 6.795833333333333, "src": "media/Robbery044_x264-3.jpg", "label": "Robbery", "prob": 0.9212201767497592}, {"t_s": 8.7375, "src": "media/Robbery044_x264-4.jpg", "label": "Robbery", "prob": 0.9205975664986504}, {"t_s": 10.679166666666667, "src": "media/Robbery044_x264-5.jpg", "label": "Robbery", "prob": 0.9271548456615872}, {"t_s": 12.620833333333334, "src": "media/Robbery044_x264-6.jpg", "label": "Robbery", "prob": 0.9283143613073561}, {"t_s": 14.5625, "src": "media/Robbery044_x264-7.jpg", "label": "Robbery", "prob": 0.9284394052293565}], "provenance": {"Video": "Robbery044_x264", "Members used": "9 of 36 (folds 4: none trained on this clip)", "Reproduces saved E3 replay": "yes, max |\u0394p| = 0", "E3 config": "d555aaf66bf5e479", "Source SHA-256": "8f7bf131980c3282", "Code revision": "3c6dad98d8"}}]};
+const GROUP = {
+  Abuse: "violence", Assault: "violence-2", Fighting: "violence", Shooting: "violence-2",
+  Arrest: "police", Arson: "fire", Explosion: "fire-2", RoadAccidents: "accident",
+  Burglary: "property", Robbery: "property-2", Shoplifting: "property", Stealing: "property-2", Vandalism: "property",
+};
+const NORMAL = "Normal_Videos_event";
+const color = c => `var(--${GROUP[c] || "normal"})`;
+const nice = c => c === NORMAL ? "Normal" : c === "RoadAccidents" ? "Road accident" : c;
+const $ = id => document.getElementById(id);
+const pct = p => `${Math.round(p * 100)}%`;
+const vid = $("vid");
+let cur = null, revealed = false;
+
+$("chips").innerHTML = DATA.chips.map(c => `<span class="chip">${c}</span>`).join("");
+$("notes").innerHTML = DATA.notes.map(n => `<li>${n}</li>`).join("");
+
+$("tabs").innerHTML = DATA.videos.map((v, i) =>
+  `<button class="tab" role="tab" data-i="${i}" aria-selected="false"><i style="background:${color(v.label)}"></i>Clip ${i + 1} · ${nice(v.label)}</button>`).join("");
+$("tabs").addEventListener("click", e => { const b = e.target.closest(".tab"); if (b) load(+b.dataset.i); });
+
+function windowAt(t) {
+  let w = null;
+  for (const x of cur.windows) { if (x.end_s <= t + 1e-6) w = x; else break; }
+  return w;
+}
+
+function render() {
+  const t = vid.currentTime, d = cur.duration_s;
+  $("clock").textContent = `${t.toFixed(1)} s / ${d.toFixed(1)} s`;
+  $("head").style.left = `${Math.min(100, (t / d) * 100)}%`;
+  const w = windowAt(t);
+  if (!w) {
+    $("now").innerHTML = `warming up…`;
+    $("alert").classList.remove("show");
+    $("bars").innerHTML = `<p class="muted">Starts after the first ${cur.window_s.toFixed(0)} seconds of video.</p>`;
+    return;
+  }
+  const top = w.top3[0];
+  $("now").innerHTML = `${w.start_s.toFixed(0)}–${w.end_s.toFixed(0)} s<br><b>${nice(top.label)}</b> ${pct(top.prob)}`;
+  const flag = !!cur.alert && t + 1e-6 >= cur.alert.at_s;  // latched, like an alarm
+  $("alertText").textContent = flag ? `Possible ${nice(cur.alert.label)} detected` : "";
+  $("alert").classList.toggle("show", flag);
+  $("bars").innerHTML = w.top3.map(x => `<div class="b"><span class="n">${nice(x.label)}</span>
+    <span class="track"><i style="width:${(x.prob * 100).toFixed(1)}%;background:${color(x.label)}"></i></span>
+    <span class="p">${pct(x.prob)}</span></div>`).join("");
+}
+
+function reveal() {
+  revealed = true;
+  $("verdictWait").classList.add("hidden");
+  $("verdictBody").classList.remove("hidden");
+  const v = cur.video;
+  $("vCls").textContent = nice(v.prediction);
+  $("vConf").textContent = `${pct(v.confidence)} · runner-up ${nice(v.top3[1].label)} ${pct(v.top3[1].prob)}`;
+  const ok = v.prediction === cur.label;
+  $("vMatch").innerHTML = `<span>Dataset label: <b>${nice(cur.label)}</b></span>` +
+    (ok ? `<span class="pill">Correct</span>` : `<span class="pill" style="background:var(--bad)">Wrong</span>`);
+}
+
+function load(i) {
+  cur = DATA.videos[i];
+  document.querySelectorAll(".tab").forEach((b, j) => b.setAttribute("aria-selected", String(j === i)));
+  vid.src = cur.src;
+  revealed = false;
+  $("verdictWait").classList.remove("hidden");
+  $("verdictBody").classList.add("hidden");
+  $("play").textContent = "Play";
+  const d = cur.duration_s;
+  $("axisEnd").textContent = `${d.toFixed(0)} s`;
+  // Colour each stretch by the window that is current during it (causal, like the live overlay).
+  const segs = [];
+  cur.windows.forEach((w, k) => {
+    const s = w.end_s, e = k + 1 < cur.windows.length ? cur.windows[k + 1].end_s : d;
+    if (e > s) segs.push(`<div title="${w.start_s.toFixed(0)}–${w.end_s.toFixed(0)} s: ${nice(w.top3[0].label)} ${pct(w.top3[0].prob)}" style="width:${((e - s) / d * 100).toFixed(3)}%;background:${color(w.top3[0].label)}"></div>`);
+  });
+  const lead = `<div style="width:${(cur.windows[0].end_s / d * 100).toFixed(3)}%"></div>`;
+  $("strip").innerHTML = lead + segs.join("") + `<div class="head" id="head"></div>`;
+  $("event").innerHTML = (cur.events || []).map(([a, b]) =>
+    `<span style="left:${(a / d * 100).toFixed(2)}%;width:${((b - a) / d * 100).toFixed(2)}%"></span>`).join("");
+  $("event").style.display = (cur.events || []).length ? "" : "none";
+  const seen = [...new Set(cur.windows.map(w => w.top3[0].label))];
+  $("legend").innerHTML = seen.map(c => `<span><i style="background:${color(c)}"></i>${nice(c)}</span>`).join("") +
+    ((cur.events || []).length ? `<span><i style="background:var(--ink);height:4px"></i>official event time</span>` : "");
+  $("frames").innerHTML = cur.frames.map(f => `<figure data-t="${f.t_s}"><img src="${f.src}" alt="frame at ${f.t_s.toFixed(1)} s" style="border-color:${f.label ? color(f.label) : "transparent"}">
+    <figcaption><span>${f.t_s.toFixed(1)} s</span><b>${f.label ? nice(f.label) + " " + pct(f.prob) : "warming up"}</b></figcaption></figure>`).join("");
+  $("prov").innerHTML = Object.entries(cur.provenance).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+  vid.currentTime = 0;
+  render();
+}
+
+$("play").onclick = () => vid.paused ? vid.play() : vid.pause();
+$("restart").onclick = () => { vid.currentTime = 0; vid.play(); };
+$("reveal").onclick = reveal;
+$("strip").addEventListener("click", e => { const r = e.currentTarget.getBoundingClientRect(); vid.currentTime = (e.clientX - r.left) / r.width * cur.duration_s; });
+$("frames").addEventListener("click", e => { const f = e.target.closest("figure"); if (f) { vid.currentTime = +f.dataset.t; } });
+vid.addEventListener("play", () => { $("play").textContent = "Pause"; $("live").classList.add("on"); });
+vid.addEventListener("pause", () => { $("play").textContent = "Play"; $("live").classList.remove("on"); });
+vid.addEventListener("ended", () => { if (!revealed) reveal(); });
+vid.addEventListener("timeupdate", render);
+vid.addEventListener("seeked", render);
+(function tick() { if (!vid.paused) render(); requestAnimationFrame(tick); })();
+load(0);
+</script>
+</body>
+</html>

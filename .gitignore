@@ -1,0 +1,91 @@
+# Local datasets are intentionally excluded from version control.
+/Datasets/
+
+# macOS metadata
+.DS_Store
+._*
+
+# Project-local Python environment and caches
+/.venv/
+/.venv*/
+/.cache/
+/build/
+/*.egg-info/
+__pycache__/
+*.py[cod]
+
+# Detailed local inventories contain licensed-data filenames. Aggregate
+# summaries and verification artifacts remain eligible for version control.
+/results/p0a/inventory-*/inventory_files.csv.gz
+/results/p0a/.inventory-tmp-*/
+# Real-data P1B manifests include licensed frame filenames and stay local.
+/results/p1b/p1b-real-views-*/
+/results/p1b/p1b-grouped-train-validation-*/
+# D-34/D-35 video-derived manifests carry licensed source-video filenames under
+# the same constraint, and are large (142 MB for one fold) and deterministically
+# regenerable from the blob plus the official splits. Only the CSVs are ignored:
+# manifest_closure.json stays tracked because it carries their SHA-256s, which is
+# the reproducibility record that makes the CSVs verifiable when rebuilt.
+/results/p1b/p1b-video-*/*.csv
+# Local faculty-preview renders contain licensed source-frame derivatives and
+# must never be committed or published through this repository.
+/results/faculty_progress/
+AF-YOLO_Asymptotic_Feature_Extraction_and_Fusion_for_Aerial_Object_Detection.zip
+SHAR/
+SHAR_Dataset/
+.agents/
+# The D-33 packed frame blob is a raw-pixel derivative of licensed UCF frames
+# (same non-redistribution constraint as the P1B real-data manifests and the
+# faculty previews above) and is ~15.6 GB. It is a registered research artifact
+# by digest, recorded in pack_closure.json, but its bytes stay local.
+/results/p1c/p1c-packed-frames/
+# The D-34/D-35 video-derived JPEG frame blob is likewise a licensed-pixel
+# derivative (of the official UCF-Crime MP4 corpus this time) and stays local.
+/results/p1c/p1c-video-frames/
+
+# Model checkpoints: multi-GB binaries. The retention policy in
+# docs/TRAINING_LOG.md keeps them on disk under results/, not in git.
+/results/**/*.pt
+
+# B-1/B-2 frozen-feature caches (results/p1c/p1c-*-feature-cache-ar-fold*/):
+# the float16 arrays are multi-GB and deterministically regenerable from the
+# frame blob plus the recorded backbone weight digest, same reasoning as the
+# checkpoints above; rows.csv carries licensed source-video filenames, same
+# constraint as the P1B/P1C video manifests above. manifest.json and every
+# verification*.json stay tracked -- they carry the digests that make the
+# arrays and CSVs verifiable when rebuilt.
+/results/p1c/p1c-*-feature-cache-ar-fold*/*/features.*.npy
+/results/p1c/p1c-*-feature-cache-ar-fold*/*/rows.csv
+
+# Block-8 VideoMAE hidden-state cache (~13 GB fp16 memmap; rows.csv carries licensed
+# source-video filenames). manifest.json stays tracked: it carries the digests.
+/results/p1c/p1c-videomae-block8-cache/*.npy
+/results/p1c/p1c-videomae-block8-cache/rows.csv
+
+# SigLIP patch-token cache (~25 GB fp16); manifest.json and rows.csv stay tracked, as for p1c-patch-cache.
+/results/p1c/p1c-siglip-patch-cache/*.npy
+
+# XD-Violence feature arrays (large; provenance in each manifest.json)
+results/xd/**/features.float16.npy
+
+# RESULT 1 feature arrays (large; provenance in config.json)
+results/p2/**/features.float16.npy
+results/p2/**/*.pt
+# D-65 DINOv2-L pooled cache (0.32 GiB); manifest.json and rows.csv stay tracked
+/results/p1c/p1c-dinov2l-cache/features.float16.npy
+
+# Licensed video derivatives from the 2026-11-05 posture visual check
+results/p1c/posture-visual-check-*/*.jpg
+results/p1c/pose-clarity-*/*.jpg
+results/p1c/pose-clarity-*/*.executed.ipynb
+
+# Presentation showcase: copied UCF clips/frames and per-frame feature arrays (licensed pixels; local only).
+/results/demo/showcase-*/media/
+/results/demo/showcase-*/features/
+
+# Video-test reports embed frames of the tested videos, and my_videos/ holds what people choose to test.
+/results/video-tests/
+/my_videos/
+
+# Demo page example clips (licensed UCF-Crime MP4s; served to token holders only, never committed).
+/results/demo/samples/*.mp4

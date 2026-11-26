@@ -1,0 +1,13 @@
+{
+  "checkpoint_disposition": "not applicable; no model execution",
+  "claim_state": "NOT_APPLICABLE",
+  "next_action": "Implement and test the integrated frame-baseline runner, then download/hash weights and run real-loader calibration.",
+  "peak_memory_bytes": 0,
+  "reason": "Targeted P1C formula/control-path audit passes after correcting launch-blocking defects; runner/calibration remain required.",
+  "runtime_seconds": 1.090131,
+  "status": "COMPLETED",
+  "stop_reason": "P1C code audit completed before any training",
+  "storage_bytes": 2646,
+  "summary_artifact_digest": "2064f1409f4005878bf3ef97046a798031e20f9a83e47aa1d263c482347d0e8f",
+  "verdict": "GOOD_ENOUGH"
+}

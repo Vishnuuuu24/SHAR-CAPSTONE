@@ -1,0 +1,28 @@
+{
+ "protocol": "docs/DETECTOR_FOLLOWUP_2026-11-12.md",
+ "code_revision": "6372b09a155a3c454df6c27adcbb565e625550456f358a0f485fdf16042f4612",
+ "intake_sha256": "c0c156cb52ee6428663ba3d90907bbdeab58e97447074eb1f1360e65611fd1c7",
+ "frames_per_clip": 16,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "C_grid": [
+  0.01,
+  0.1,
+  1.0
+ ],
+ "device": "cuda:0",
+ "torch": "2.13.0+cu126",
+ "packages": {
+  "numpy": "2.5.1",
+  "scikit-learn": "1.9.0",
+  "transformers": "5.17.0",
+  "tokenizers": "0.23.2",
+  "safetensors": "0.8.0",
+  "opencv-python-headless": "4.13.0.92"
+ },
+ "cuda": "12.6",
+ "hardware": "NVIDIA H200 MIG 1g.18gb"
+}

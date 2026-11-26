@@ -1,0 +1,35 @@
+{
+  "backbone_family": "transformers_siglip_base_p16_224",
+  "backbone_variant": "siglip",
+  "backbone_weight_sha256": "f5d84933ac67e11fcd249aba72bb2888028fc11507a4b81629c095c881031b77",
+  "batch_size": 32,
+  "cls_sha256": "bbacaaa9928d6b28eaf6212f877814320867c8c52258853f2f93351e10e79500",
+  "cls_shape": [
+    82679,
+    768
+  ],
+  "created_at": "2026-10-13T11:46:41.726426+00:00",
+  "cudnn_allow_tf32": true,
+  "dtype": "float16",
+  "feature": "patch_tokens_pre_pool_plus_cls",
+  "features_sha256": "6261a231446f05866492615063251ead488f0ed6a68c8894d95c12163099e4e8",
+  "frames_per_video": 8,
+  "num_prefix_tokens": 1,
+  "patch_grid": [
+    14,
+    14
+  ],
+  "phase_plan_deviation": "Backbone-swap comparison cache: SigLIP ViT-B/16-224 on the same 82,679-frame plan as the DINOv2 patch cache. cls.float16.npy holds SigLIP's attention-pooling-head output (it has no CLS token), features.float16.npy the 14x14 patch tokens after post_layernorm.",
+  "pooled_cache_consistency": {
+    "skipped": "no registered pooled cache exists for backbone 'siglip'"
+  },
+  "registers_excluded": true,
+  "resolution": 224,
+  "row_count": 82679,
+  "sampling_seed": 0,
+  "shape": [
+    82679,
+    196,
+    768
+  ]
+}

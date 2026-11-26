@@ -1,0 +1,35 @@
+{
+  "git_revision": "16d9c55965e8f445742966ac7ec1187d97714ee0",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "min_novelty": 6,
+  "epochs_override": null,
+  "family_map": {
+    "Abuse": "violence",
+    "Assault": "violence",
+    "Fighting": "violence",
+    "Shooting": "violence",
+    "Burglary": "theft",
+    "Robbery": "theft",
+    "Shoplifting": "theft",
+    "Stealing": "theft",
+    "Arson": "fire",
+    "Explosion": "fire",
+    "Vandalism": "damage",
+    "RoadAccidents": "traffic",
+    "Arrest": "police",
+    "Normal_Videos_event": "normal"
+  },
+  "device": "cpu",
+  "subset7_sha256": "ec7b39f3df93c7e2a32426954cef7afbafb1a008f64b9e5fb69053e50c661169",
+  "candidates": 560
+}

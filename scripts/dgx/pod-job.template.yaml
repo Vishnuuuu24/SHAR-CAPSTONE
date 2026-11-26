@@ -1,0 +1,167 @@
+# Ephemeral SHAR job pod for the Presidency DGX cluster.
+#
+# Rendered by scripts/dgx/run_pod_job.sh via envsubst; every ${VAR} below is
+# substituted from that script's environment.  This is a batch job, not the
+# Jupyter workflow in docs/DGX CONNECT.pptx: there is no Service, no NodePort,
+# and no interactive shell.  The pod runs one command against the repository on
+# the mounted home export and then terminates.
+#
+# restartPolicy: Never is required.  The default (Always) would restart the
+# container after a successful run and the pod would never reach Succeeded, so
+# the runner could not distinguish completion from failure.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ${JOB_NAME}
+  labels:
+    app: shar-job
+    shar/run-class: ${RUN_CLASS}
+spec:
+  restartPolicy: Never
+  containers:
+    - name: shar
+      image: ${IMAGE}
+      workingDir: ${REPO_DIR}
+      env:
+        # PyTorch requires a cuBLAS workspace configuration when
+        # torch.use_deterministic_algorithms(True) runs on CUDA >= 10.2.
+        # The cuda_strict policy in core/device.py sets warn_only=False, so
+        # without this the run aborts with a RuntimeError instead of executing.
+        - name: CUBLAS_WORKSPACE_CONFIG
+          value: ":4096:8"
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        - name: HOME
+          value: ${USER_HOME}
+        # workingDir sets the process's starting cwd but is not itself an
+        # environment variable inside the container, so job commands that
+        # reference $REPO_DIR (as venv/repo-relative paths do) need it
+        # exported explicitly here too.
+        - name: REPO_DIR
+          value: ${REPO_DIR}
+        # The job command is passed base64-encoded and decoded at container
+        # start, not interpolated into this YAML directly.  A raw multi-line
+        # or quote-containing command breaks YAML block-scalar indentation
+        # and quoting; base64 makes the substitution content-agnostic.
+        - name: JOB_CMD_B64
+          value: ${JOB_CMD_B64}
+        # Node-local scratch (see the scratch volume below).  Exported so job
+        # commands and configs can reference the staged copy by a stable path.
+        - name: SCRATCH_MOUNT
+          value: ${SCRATCH_MOUNT_SUBST}
+        # Optional pre-run staging.  When non-empty, this path is copied from
+        # the /home NFS mount into the node-local emptyDir before the job
+        # command runs, and the job reads the copy instead of the original.
+        # Empty means no staging, which is the correct default for jobs that
+        # touch no bulk data.
+        - name: STAGE_FROM
+          value: "${STAGE_FROM_SUBST}"
+      resources:
+        requests:
+          cpu: "${CPU}"
+          memory: "${MEM}"
+          nvidia.com/mig-1g.18gb: 1
+        limits:
+          cpu: "${CPU}"
+          memory: "${MEM}"
+          nvidia.com/mig-1g.18gb: 1
+      command: ["/bin/bash", "-lc"]
+      args:
+        - |
+          set -euo pipefail
+          # NOTE: the shell variables below ($STAGE_FROM, $SCRATCH_MOUNT) are
+          # read from the container's environment at run time, NOT substituted
+          # into this file.  envsubst rewrites both ${VAR} and bare $VAR, so
+          # the YAML-side placeholders deliberately use different names
+          # (${STAGE_FROM_SUBST}, ${SCRATCH_MOUNT_SUBST}) and run_pod_job.sh
+          # restricts envsubst to exactly those.  Do not rename them to match:
+          # that would inline the values here, which breaks on any path
+          # containing a space or quote and is the same hazard the base64
+          # JOB_CMD encoding exists to avoid.
+          if [ -n "$STAGE_FROM" ]; then
+            # D-33/D-34 staging.  /home is NFS and is where the durable blob
+            # lives; the emptyDir is node-local xfs measured at ~1485 MiB/s
+            # write and ~8.7 GiB/s read (results/p1c/probe-storage-*).  Copying
+            # once up front turns every subsequent random record read into a
+            # local read instead of an NFS round trip.
+            if [ ! -e "$STAGE_FROM" ]; then
+              echo "stage: source does not exist: $STAGE_FROM" >&2
+              exit 1
+            fi
+            echo "--- staging $STAGE_FROM -> $SCRATCH_MOUNT ---"
+            stage_start=$(date +%s)
+            mkdir -p "$SCRATCH_MOUNT"
+            cp -a "$STAGE_FROM" "$SCRATCH_MOUNT/"
+            stage_name="$(basename "$STAGE_FROM")"
+            # Fail closed on a partial copy: a truncated blob would otherwise
+            # surface much later as a confusing digest mismatch mid-run.
+            #
+            # Compare the summed size and count of REGULAR FILES, never
+            # "du -sb" of the directory. du includes the directory inode's own
+            # size, and the source is NFS while the destination is xfs - the two
+            # report directory sizes differently, so a byte-perfect copy fails a
+            # du-to-du comparison. Measured 2026-08-25: a correct 84 GiB copy
+            # reported a 28-byte "mismatch" that was entirely directory inodes.
+            src_bytes=$(find "$STAGE_FROM" -type f -printf '%s\n' | awk '{s+=$1} END{print s+0}')
+            dst_bytes=$(find "$SCRATCH_MOUNT/$stage_name" -type f -printf '%s\n' | awk '{s+=$1} END{print s+0}')
+            src_files=$(find "$STAGE_FROM" -type f | wc -l)
+            dst_files=$(find "$SCRATCH_MOUNT/$stage_name" -type f | wc -l)
+            if [ "$src_bytes" != "$dst_bytes" ] || [ "$src_files" != "$dst_files" ]; then
+              echo "stage: mismatch src=${src_bytes}b/${src_files}f dst=${dst_bytes}b/${dst_files}f" >&2
+              exit 1
+            fi
+            echo "--- staged $src_bytes bytes in $src_files files in $(($(date +%s) - stage_start))s ---"
+            df -Pk "$SCRATCH_MOUNT" | tail -1
+            # The copy just pulled every staged byte through the page cache
+            # twice, and in a container that cache is charged to memory.max.
+            # It leaves the pod at its memory ceiling before the job command
+            # starts, and the next real allocation is OOM-killed (K-15).
+            # sync first: DONTNEED only drops clean pages, so anything still
+            # dirty from the copy would otherwise stay.
+            sync
+            "$REPO_DIR/.venv/bin/python3.12" "$REPO_DIR/scripts/dgx/drop_page_cache.py" \
+              "$STAGE_FROM" "$SCRATCH_MOUNT/$stage_name" || true
+          fi
+          echo "$JOB_CMD_B64" | base64 -d | bash -s
+      volumeMounts:
+        - name: home
+          mountPath: ${HOME_MOUNT}
+        - name: scratch
+          mountPath: ${SCRATCH_MOUNT_SUBST}
+        # PyTorch DataLoader workers return batches through shared memory, so
+        # /dev/shm bounds (batch_bytes x prefetch_factor x num_workers). The
+        # Kubernetes default is 64 MiB, which is smaller than it sounds: a
+        # 256x3x64x64 float32 batch is 12.6 MiB, so six workers prefetching two
+        # each want ~151 MiB and the workers abort (K-18). Measured 2026-08-25:
+        # 64x64 batch 64 and 112x112 batch 64 fit; 64x64 batch 256 and anything
+        # at 224x224 did not.
+        - name: dshm
+          mountPath: /dev/shm
+  volumes:
+    # The worker nodes NFS-mount the headnode's /home export (Bright Cluster
+    # default).  type: Directory makes the kubelet refuse to start the pod if
+    # that path is absent, rather than silently creating an empty directory and
+    # running against no data.
+    - name: home
+      hostPath:
+        path: ${HOST_PATH}
+        type: Directory
+    # Node-local scratch for bulk data (D-33/D-34).  Measured by
+    # scripts/dgx/probe_storage.sh on <cluster-node>: xfs on /dev/md1,
+    # ~1485 MiB/s write, ~8.7 GiB/s read, 1.81 TB free, and admitted by
+    # Kyverno.  It is destroyed with the pod, which is the intended lifetime:
+    # the durable copy lives on /home and this is a per-run cache.
+    #
+    # The alternative, /workspace/fast-dgx-storage, mounts but is not writable
+    # by this account (K-02), so it is not an option here.
+    - name: scratch
+      emptyDir:
+        sizeLimit: ${SCRATCH_SIZE_LIMIT}
+    # medium: Memory makes this tmpfs, which is what /dev/shm must be. Note
+    # this is RAM and is charged to the pod's 16 GiB memory limit (K-13), and
+    # unlike page cache it is NOT reclaimable (K-15) -- so it is sized for the
+    # loader's actual in-flight batches, not padded "to be safe".
+    - name: dshm
+      emptyDir:
+        medium: Memory
+        sizeLimit: ${DSHM_SIZE_LIMIT}

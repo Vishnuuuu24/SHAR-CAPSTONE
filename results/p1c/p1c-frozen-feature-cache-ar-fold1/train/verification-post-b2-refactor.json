@@ -1,0 +1,15 @@
+{
+  "atol": 0.001,
+  "bit_identical_rows": 482,
+  "cache_dir": "results/p1c/p1c-frozen-feature-cache-ar-fold1/train",
+  "cache_sha256": "e851dbcbd3727d840221df3bd3667d52c2c87342ec91aee36ccfc906a1ab2b5e",
+  "dtype": "float16",
+  "feature_dim": 2048,
+  "max_abs_delta": 0.00390625,
+  "max_ulps": 2118,
+  "rows_sampled": 512,
+  "rows_total": 391014,
+  "rtol": 0.001,
+  "sample_seed": 0,
+  "verify_batch_size": 64
+}

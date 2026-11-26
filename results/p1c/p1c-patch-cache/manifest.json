@@ -1,0 +1,33 @@
+{
+  "backbone_family": "timm_dinov2_vitb14_reg4",
+  "cls_sha256": "08e0b038a9b00e6415e863507916719ce65193972d4923bb206b1237572a86f3",
+  "cls_shape": [
+    82679,
+    768
+  ],
+  "created_at": "2026-09-25T10:30:08.575800+00:00",
+  "dtype": "float16",
+  "feature": "patch_tokens_pre_pool_plus_cls",
+  "features_sha256": "344927d17df4ead5d0dc9201612dbf516a45a87d8f285806a8da51308929a938",
+  "finalized_separately": "K-30: the GPU extraction completed and finalisation was OOM-killed; this manifest was written by --finalize-only from the arrays that pass had already flushed.",
+  "frames_per_video": 8,
+  "patch_grid": [
+    16,
+    16
+  ],
+  "phase_plan_deviation": "P3A specifies ResNet50 C5 7x7x2048; this cache is DINOv2 patch tokens because DINOv2 is the project's selected backbone (D-44/D-45). Recorded 2026-09-25.",
+  "pooled_cache_consistency": {
+    "max_abs_delta": 0.043648719787597656,
+    "median_abs_delta": 0.0037841796875,
+    "rows_checked": 853
+  },
+  "registers_excluded": true,
+  "resolution": 224,
+  "row_count": 82679,
+  "sampling_seed": 0,
+  "shape": [
+    82679,
+    256,
+    768
+  ]
+}

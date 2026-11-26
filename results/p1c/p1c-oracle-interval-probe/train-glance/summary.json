@@ -1,0 +1,789 @@
+{
+  "all_video_macro_f1_mean_sd": {
+    "train_oracle": [
+      0.479470694649266,
+      0.04721694101830882
+    ],
+    "train_uniform_foldcache": [
+      0.4636002886002885,
+      0.04087491227502544
+    ]
+  },
+  "all_video_macro_f1_runs": [
+    {
+      "all_videos_macro_f1": 0.5257369614512472,
+      "fold": 1,
+      "seed": 0,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.5257369614512472
+    },
+    {
+      "all_videos_macro_f1": 0.5162131519274376,
+      "fold": 1,
+      "seed": 1,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.5162131519274376
+    },
+    {
+      "all_videos_macro_f1": 0.5268707482993198,
+      "fold": 1,
+      "seed": 2,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.5268707482993198
+    },
+    {
+      "all_videos_macro_f1": 0.5223562152133581,
+      "fold": 1,
+      "seed": 0,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.5223562152133581
+    },
+    {
+      "all_videos_macro_f1": 0.5281746031746032,
+      "fold": 1,
+      "seed": 1,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.5281746031746032
+    },
+    {
+      "all_videos_macro_f1": 0.5323593073593074,
+      "fold": 1,
+      "seed": 2,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.5323593073593074
+    },
+    {
+      "all_videos_macro_f1": 0.43554421768707485,
+      "fold": 2,
+      "seed": 0,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.43554421768707485
+    },
+    {
+      "all_videos_macro_f1": 0.43656462585034017,
+      "fold": 2,
+      "seed": 1,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.43656462585034017
+    },
+    {
+      "all_videos_macro_f1": 0.4371521335807049,
+      "fold": 2,
+      "seed": 2,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.4371521335807049
+    },
+    {
+      "all_videos_macro_f1": 0.4873582766439909,
+      "fold": 2,
+      "seed": 0,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.4873582766439909
+    },
+    {
+      "all_videos_macro_f1": 0.5124974232117089,
+      "fold": 2,
+      "seed": 1,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.5124974232117089
+    },
+    {
+      "all_videos_macro_f1": 0.5188878581735724,
+      "fold": 2,
+      "seed": 2,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.5188878581735724
+    },
+    {
+      "all_videos_macro_f1": 0.4525510204081633,
+      "fold": 3,
+      "seed": 0,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.4525510204081633
+    },
+    {
+      "all_videos_macro_f1": 0.4862966398680683,
+      "fold": 3,
+      "seed": 1,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.4862966398680683
+    },
+    {
+      "all_videos_macro_f1": 0.4720521541950113,
+      "fold": 3,
+      "seed": 2,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.4720521541950113
+    },
+    {
+      "all_videos_macro_f1": 0.48595650381364663,
+      "fold": 3,
+      "seed": 0,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.48595650381364663
+    },
+    {
+      "all_videos_macro_f1": 0.45177798392084106,
+      "fold": 3,
+      "seed": 1,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.45177798392084106
+    },
+    {
+      "all_videos_macro_f1": 0.4774273345701917,
+      "fold": 3,
+      "seed": 2,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.4774273345701917
+    },
+    {
+      "all_videos_macro_f1": 0.412358276643991,
+      "fold": 4,
+      "seed": 0,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.412358276643991
+    },
+    {
+      "all_videos_macro_f1": 0.4363945578231293,
+      "fold": 4,
+      "seed": 1,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.4363945578231293
+    },
+    {
+      "all_videos_macro_f1": 0.42546897546897544,
+      "fold": 4,
+      "seed": 2,
+      "train_arm": "train_uniform_foldcache",
+      "train_run_macro_f1": 0.42546897546897544
+    },
+    {
+      "all_videos_macro_f1": 0.3957637600494744,
+      "fold": 4,
+      "seed": 0,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.3957637600494744
+    },
+    {
+      "all_videos_macro_f1": 0.42524221809936097,
+      "fold": 4,
+      "seed": 1,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.42524221809936097
+    },
+    {
+      "all_videos_macro_f1": 0.4158468515611372,
+      "fold": 4,
+      "seed": 2,
+      "train_arm": "train_oracle",
+      "train_run_macro_f1": 0.4158468515611372
+    }
+  ],
+  "covered_train_details_per_fold": {
+    "1": {
+      "covered_train_videos": 442,
+      "covered_train_videos_per_class": {
+        "Abuse": 34,
+        "Arrest": 34,
+        "Arson": 34,
+        "Assault": 34,
+        "Burglary": 34,
+        "Explosion": 34,
+        "Fighting": 34,
+        "RoadAccidents": 34,
+        "Robbery": 34,
+        "Shooting": 34,
+        "Shoplifting": 34,
+        "Stealing": 34,
+        "Vandalism": 34
+      },
+      "covered_train_videos_with_fewer_than_8_event_frames": 0
+    },
+    "2": {
+      "covered_train_videos": 442,
+      "covered_train_videos_per_class": {
+        "Abuse": 34,
+        "Arrest": 34,
+        "Arson": 34,
+        "Assault": 34,
+        "Burglary": 34,
+        "Explosion": 34,
+        "Fighting": 34,
+        "RoadAccidents": 34,
+        "Robbery": 34,
+        "Shooting": 34,
+        "Shoplifting": 34,
+        "Stealing": 34,
+        "Vandalism": 34
+      },
+      "covered_train_videos_with_fewer_than_8_event_frames": 1
+    },
+    "3": {
+      "covered_train_videos": 442,
+      "covered_train_videos_per_class": {
+        "Abuse": 34,
+        "Arrest": 34,
+        "Arson": 34,
+        "Assault": 34,
+        "Burglary": 34,
+        "Explosion": 34,
+        "Fighting": 34,
+        "RoadAccidents": 34,
+        "Robbery": 34,
+        "Shooting": 34,
+        "Shoplifting": 34,
+        "Stealing": 34,
+        "Vandalism": 34
+      },
+      "covered_train_videos_with_fewer_than_8_event_frames": 1
+    },
+    "4": {
+      "covered_train_videos": 442,
+      "covered_train_videos_per_class": {
+        "Abuse": 34,
+        "Arrest": 34,
+        "Arson": 34,
+        "Assault": 34,
+        "Burglary": 34,
+        "Explosion": 34,
+        "Fighting": 34,
+        "RoadAccidents": 34,
+        "Robbery": 34,
+        "Shooting": 34,
+        "Shoplifting": 34,
+        "Stealing": 34,
+        "Vandalism": 34
+      },
+      "covered_train_videos_with_fewer_than_8_event_frames": 1
+    }
+  },
+  "metric_names": "interval-covered subset accuracy / macro-recall (inherited video label); all-video macro-F1 is the 14-class inherited-label score",
+  "mode": "train_oracle",
+  "paired_gate": {
+    "folds_meeting_gate": 1,
+    "mean_delta": 0.015870406048977465,
+    "passes_gate": false,
+    "per_fold_delta": {
+      "1": 0.004689754689754633,
+      "2": 0.06982752697038419,
+      "3": 0.0014206692778121477,
+      "4": -0.012456326742041113
+    },
+    "per_fold_mean": {
+      "train_oracle": {
+        "1": 0.5276300419157561,
+        "2": 0.5062478526764241,
+        "3": 0.47172060743489314,
+        "4": 0.41228427656999084
+      },
+      "train_uniform_foldcache": {
+        "1": 0.5229402872260015,
+        "2": 0.43642032570603995,
+        "3": 0.470299938157081,
+        "4": 0.42474060331203195
+      }
+    }
+  },
+  "per_train_arm": {
+    "train_oracle": {
+      "arms": {
+        "anti_event": {
+          "n_runs_x_videos": 123,
+          "n_videos": 41,
+          "run_pooled_accuracy": 0.3089430894308943,
+          "run_pooled_macro_recall": 0.36111111111111105,
+          "seed_mean_prob_accuracy": 0.34146341463414637,
+          "seed_mean_prob_macro_recall": 0.4095238095238095
+        },
+        "oracle_event": {
+          "n_runs_x_videos": 123,
+          "n_videos": 41,
+          "run_pooled_accuracy": 0.37398373983739835,
+          "run_pooled_macro_recall": 0.4312169312169313,
+          "seed_mean_prob_accuracy": 0.36585365853658536,
+          "seed_mean_prob_macro_recall": 0.42142857142857143
+        },
+        "uniform": {
+          "n_runs_x_videos": 123,
+          "n_videos": 41,
+          "run_pooled_accuracy": 0.3983739837398374,
+          "run_pooled_macro_recall": 0.4806878306878307,
+          "seed_mean_prob_accuracy": 0.4146341463414634,
+          "seed_mean_prob_macro_recall": 0.5261904761904762
+        },
+        "uniform8": {
+          "n_runs_x_videos": 123,
+          "n_videos": 41,
+          "run_pooled_accuracy": 0.35772357723577236,
+          "run_pooled_macro_recall": 0.43968253968253973,
+          "seed_mean_prob_accuracy": 0.43902439024390244,
+          "seed_mean_prob_macro_recall": 0.5428571428571429
+        }
+      },
+      "paired": {
+        "uniform8_vs_oracle_event": {
+          "both_correct": 13,
+          "both_wrong": 21,
+          "mcnemar_exact_p_two_sided": 0.453125,
+          "n_videos": 41,
+          "only_oracle_event_correct": 2,
+          "only_uniform8_correct": 5,
+          "unit": "seed-mean-probability prediction per (fold, video)"
+        },
+        "uniform_vs_anti_event": {
+          "both_correct": 11,
+          "both_wrong": 21,
+          "mcnemar_exact_p_two_sided": 0.5078125,
+          "n_videos": 41,
+          "only_anti_event_correct": 3,
+          "only_uniform_correct": 6,
+          "unit": "seed-mean-probability prediction per (fold, video)"
+        },
+        "uniform_vs_oracle_event": {
+          "both_correct": 13,
+          "both_wrong": 22,
+          "mcnemar_exact_p_two_sided": 0.6875,
+          "n_videos": 41,
+          "only_oracle_event_correct": 2,
+          "only_uniform_correct": 4,
+          "unit": "seed-mean-probability prediction per (fold, video)"
+        }
+      },
+      "per_class": {
+        "anti_event": {
+          "Arrest": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Arson": {
+            "n_videos": 2,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Assault": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Burglary": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.16666666666666666
+          },
+          "Explosion": {
+            "n_videos": 7,
+            "seed_mean_prob_accuracy": 0.42857142857142855
+          },
+          "Fighting": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "RoadAccidents": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Shooting": {
+            "n_videos": 9,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Shoplifting": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Vandalism": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          }
+        },
+        "oracle_event": {
+          "Arrest": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Arson": {
+            "n_videos": 2,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Assault": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Burglary": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Explosion": {
+            "n_videos": 7,
+            "seed_mean_prob_accuracy": 0.7142857142857143
+          },
+          "Fighting": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "RoadAccidents": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.6666666666666666
+          },
+          "Shooting": {
+            "n_videos": 9,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Shoplifting": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.3333333333333333
+          },
+          "Vandalism": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          }
+        },
+        "uniform": {
+          "Arrest": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Arson": {
+            "n_videos": 2,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Assault": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Burglary": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Explosion": {
+            "n_videos": 7,
+            "seed_mean_prob_accuracy": 0.42857142857142855
+          },
+          "Fighting": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "RoadAccidents": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Shooting": {
+            "n_videos": 9,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Shoplifting": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.3333333333333333
+          },
+          "Vandalism": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          }
+        },
+        "uniform8": {
+          "Arrest": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Arson": {
+            "n_videos": 2,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Assault": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Burglary": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Explosion": {
+            "n_videos": 7,
+            "seed_mean_prob_accuracy": 0.42857142857142855
+          },
+          "Fighting": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "RoadAccidents": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Shooting": {
+            "n_videos": 9,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Shoplifting": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Vandalism": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          }
+        }
+      }
+    },
+    "train_uniform_foldcache": {
+      "arms": {
+        "anti_event": {
+          "n_runs_x_videos": 123,
+          "n_videos": 41,
+          "run_pooled_accuracy": 0.3089430894308943,
+          "run_pooled_macro_recall": 0.326984126984127,
+          "seed_mean_prob_accuracy": 0.36585365853658536,
+          "seed_mean_prob_macro_recall": 0.4261904761904762
+        },
+        "oracle_event": {
+          "n_runs_x_videos": 123,
+          "n_videos": 41,
+          "run_pooled_accuracy": 0.34146341463414637,
+          "run_pooled_macro_recall": 0.39682539682539686,
+          "seed_mean_prob_accuracy": 0.34146341463414637,
+          "seed_mean_prob_macro_recall": 0.4095238095238095
+        },
+        "uniform": {
+          "n_runs_x_videos": 123,
+          "n_videos": 41,
+          "run_pooled_accuracy": 0.3983739837398374,
+          "run_pooled_macro_recall": 0.48809523809523814,
+          "seed_mean_prob_accuracy": 0.3902439024390244,
+          "seed_mean_prob_macro_recall": 0.4785714285714285
+        },
+        "uniform8": {
+          "n_runs_x_videos": 123,
+          "n_videos": 41,
+          "run_pooled_accuracy": 0.3821138211382114,
+          "run_pooled_macro_recall": 0.4714285714285714,
+          "seed_mean_prob_accuracy": 0.3902439024390244,
+          "seed_mean_prob_macro_recall": 0.4785714285714285
+        }
+      },
+      "paired": {
+        "uniform8_vs_oracle_event": {
+          "both_correct": 10,
+          "both_wrong": 21,
+          "mcnemar_exact_p_two_sided": 0.75390625,
+          "n_videos": 41,
+          "only_oracle_event_correct": 4,
+          "only_uniform8_correct": 6,
+          "unit": "seed-mean-probability prediction per (fold, video)"
+        },
+        "uniform_vs_anti_event": {
+          "both_correct": 14,
+          "both_wrong": 24,
+          "mcnemar_exact_p_two_sided": 1.0,
+          "n_videos": 41,
+          "only_anti_event_correct": 1,
+          "only_uniform_correct": 2,
+          "unit": "seed-mean-probability prediction per (fold, video)"
+        },
+        "uniform_vs_oracle_event": {
+          "both_correct": 10,
+          "both_wrong": 21,
+          "mcnemar_exact_p_two_sided": 0.75390625,
+          "n_videos": 41,
+          "only_oracle_event_correct": 4,
+          "only_uniform_correct": 6,
+          "unit": "seed-mean-probability prediction per (fold, video)"
+        }
+      },
+      "per_class": {
+        "anti_event": {
+          "Arrest": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Arson": {
+            "n_videos": 2,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Assault": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Burglary": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.16666666666666666
+          },
+          "Explosion": {
+            "n_videos": 7,
+            "seed_mean_prob_accuracy": 0.42857142857142855
+          },
+          "Fighting": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "RoadAccidents": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Shooting": {
+            "n_videos": 9,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Shoplifting": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.6666666666666666
+          },
+          "Vandalism": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          }
+        },
+        "oracle_event": {
+          "Arrest": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Arson": {
+            "n_videos": 2,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Assault": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Burglary": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Explosion": {
+            "n_videos": 7,
+            "seed_mean_prob_accuracy": 0.42857142857142855
+          },
+          "Fighting": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "RoadAccidents": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.6666666666666666
+          },
+          "Shooting": {
+            "n_videos": 9,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Shoplifting": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Vandalism": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          }
+        },
+        "uniform": {
+          "Arrest": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Arson": {
+            "n_videos": 2,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Assault": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Burglary": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.3333333333333333
+          },
+          "Explosion": {
+            "n_videos": 7,
+            "seed_mean_prob_accuracy": 0.2857142857142857
+          },
+          "Fighting": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "RoadAccidents": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Shooting": {
+            "n_videos": 9,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Shoplifting": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.6666666666666666
+          },
+          "Vandalism": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          }
+        },
+        "uniform8": {
+          "Arrest": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Arson": {
+            "n_videos": 2,
+            "seed_mean_prob_accuracy": 0.5
+          },
+          "Assault": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Burglary": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.3333333333333333
+          },
+          "Explosion": {
+            "n_videos": 7,
+            "seed_mean_prob_accuracy": 0.2857142857142857
+          },
+          "Fighting": {
+            "n_videos": 1,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "RoadAccidents": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          },
+          "Shooting": {
+            "n_videos": 9,
+            "seed_mean_prob_accuracy": 0.0
+          },
+          "Shoplifting": {
+            "n_videos": 6,
+            "seed_mean_prob_accuracy": 0.6666666666666666
+          },
+          "Vandalism": {
+            "n_videos": 3,
+            "seed_mean_prob_accuracy": 1.0
+          }
+        }
+      }
+    }
+  },
+  "train_uniform_vs_train_oracle": {
+    "anti_event": {
+      "eval_arm": "anti_event",
+      "mcnemar_exact_p_two_sided": 1.0,
+      "n_videos": 41,
+      "only_first_correct": 1,
+      "only_second_correct": 0
+    },
+    "oracle_event": {
+      "eval_arm": "oracle_event",
+      "mcnemar_exact_p_two_sided": 1.0,
+      "n_videos": 41,
+      "only_first_correct": 1,
+      "only_second_correct": 2
+    },
+    "uniform": {
+      "eval_arm": "uniform",
+      "mcnemar_exact_p_two_sided": 1.0,
+      "n_videos": 41,
+      "only_first_correct": 3,
+      "only_second_correct": 4
+    },
+    "uniform8": {
+      "eval_arm": "uniform8",
+      "mcnemar_exact_p_two_sided": 0.6875,
+      "n_videos": 41,
+      "only_first_correct": 2,
+      "only_second_correct": 4
+    }
+  }
+}

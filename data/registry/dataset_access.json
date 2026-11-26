@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_at": "2026-07-24",
+  "policy": {
+    "unknown_terms": "Unknown or unverified terms block affected data use and redistribution; they are never inferred.",
+    "raw_media_release": "prohibited_unless_explicitly_verified",
+    "roles": ["core", "conditional", "optional", "watch"]
+  },
+  "datasets": [
+    {
+      "dataset_id": "ucf_crime_kaggle_frames",
+      "native_task": "14-folder extracted-frame mirror with video-label inheritance",
+      "shar_use": "Core weak/noisy UCF training and separately named noisy-proxy evaluation",
+      "components": [
+        {
+          "component_id": "ucf_kaggle_frames_media",
+          "component_type": "media",
+          "role": "core",
+          "local_root": "Datasets/UCF Crime Dataset Kaggle",
+          "access_status": "present_local",
+          "source_url": "https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset",
+          "terms_url": "https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset",
+          "license_name": "Owner-confirmed Kaggle direct download; metadata CC0 marker qualified by unresolved third-party source-footage rights",
+          "license_version": null,
+          "license_evidence_digest": "e78972f2d3ff0ddbbbd752308021d3557786466160db12de51c3f4fcd7315f00",
+          "access_or_acceptance_date": "owner_reconfirmed_2026-07-20; original_download_date_not_recorded",
+          "accepted_by": "Vishnu (authenticated Kaggle account; email intentionally not stored)",
+          "redistribution_status": "raw_media_prohibited; internal_noncommercial_research_approved",
+          "derived_artifact_restrictions": "Do not publish raw frames; detailed filename inventory stays local.",
+          "citation_requirements": "Cite the official UCF-Crime source and the exact mirror once acquisition provenance is supplied.",
+          "gate_status": "eligible_internal_noncommercial_research_no_raw_redistribution",
+          "blocker_id": null,
+          "notes": "Owner confirmed this exact Kaggle source on 2026-07-20. Third-party footage rights remain qualified, so raw redistribution stays prohibited."
+        },
+        {
+          "component_id": "ucf_kaggle_folder_labels",
+          "component_type": "annotations",
+          "role": "core",
+          "local_root": "Datasets/UCF Crime Dataset Kaggle/{Train,Test}",
+          "access_status": "present_local_embedded_layout",
+          "source_url": "https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset",
+          "terms_url": "https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset",
+          "license_name": "Owner-confirmed Kaggle direct download; folder-label use is restricted to weak/noisy supervision",
+          "license_version": null,
+          "license_evidence_digest": "e78972f2d3ff0ddbbbd752308021d3557786466160db12de51c3f4fcd7315f00",
+          "access_or_acceptance_date": "owner_reconfirmed_2026-07-20; original_download_date_not_recorded",
+          "accepted_by": "Vishnu (authenticated Kaggle account; email intentionally not stored)",
+          "redistribution_status": "aggregate_and_reviewed_manifest_only",
+          "derived_artifact_restrictions": "Folder-derived summaries are allowed locally; do not represent labels as frame-event ground truth.",
+          "citation_requirements": "Record exact mirror provenance before a research run.",
+          "gate_status": "eligible_internal_noncommercial_research_no_raw_redistribution",
+          "blocker_id": null,
+          "notes": "Owner confirmed the exact Kaggle source on 2026-07-20. Folder labels remain weak/noisy video-label inheritance."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ucf_crime_official",
+      "native_task": "Untrimmed surveillance anomaly recognition with video-level train labels and temporal test intervals",
+      "shar_use": "Core temporal annotations for event-only evaluation; original-resolution media only if high-resolution ROI is activated",
+      "components": [
+        {
+          "component_id": "ucf_official_videos",
+          "component_type": "media",
+          "role": "conditional",
+          "local_root": "Datasets/UCF Crime Official/raw/UCF_Crimes",
+          "access_status": "present_local_eligible_internal_research",
+          "source_url": "https://www.crcv.ucf.edu/research/real-world-anomaly-detection-in-surveillance-videos/",
+          "terms_url": "https://www.crcv.ucf.edu/research/real-world-anomaly-detection-in-surveillance-videos/",
+          "license_name": "Owner-authorized internal non-commercial research use of official CRCV UCF-Crime distribution; raw redistribution prohibited and upstream footage rights qualified",
+          "license_version": "Official CRCV distribution",
+          "license_evidence_digest": "3288799ff71bf5f057501f9e9847e9b2821cf75fddc9d77273fe0fdb80406f6f",
+          "access_or_acceptance_date": "owner_confirmed_official_website_download_and_internal_use_2026-08-28",
+          "accepted_by": "Priyodip / Vishnu (SHAR project owners)",
+          "redistribution_status": "raw_media_prohibited; internal_noncommercial_research_approved",
+          "derived_artifact_restrictions": "No raw video media or derived video clips/crops may be released; evaluation metrics and aggregated summaries permitted for research paper.",
+          "citation_requirements": "Official UCF-Crime dataset and Sultani et al. CVPR 2018 paper.",
+          "gate_status": "eligible_internal_noncommercial_research_no_raw_redistribution",
+          "blocker_id": null,
+          "notes": "1950 MP4 files are locally present (320x240 @ 30 fps, 97.7 GiB total, zero read errors). Owner confirmed direct download from official CRCV project distribution on 2026-08-28. Authorized for internal non-commercial research; raw video media and crops remain non-redistributable. B-002 resolved."
+        },
+        {
+          "component_id": "ucf_official_temporal_annotations",
+          "component_type": "annotations",
+          "role": "core",
+          "local_root": "Datasets/UCF Crime Official/annotations/Temporal_Anomaly_Annotation_For_Testing_Videos",
+          "access_status": "present_local_eligible_internal_research",
+          "source_url": "https://www.kaggle.com/datasets/minmints/ufc-crime-full-dataset",
+          "terms_url": "https://www.kaggle.com/datasets/minmints/ufc-crime-full-dataset",
+          "license_name": "Owner-authorized internal non-commercial research use of verified Kaggle mirror; raw redistribution prohibited and upstream footage rights qualified",
+          "license_version": "Kaggle listing Version 1",
+          "license_evidence_digest": "0e26796388c8dd482a8c341ab120ee29de7bd492ea6833bad23476c7530d430c",
+          "access_or_acceptance_date": "owner_confirmed_authenticated_kaggle_acquisition_and_internal_use_2026-07-24",
+          "accepted_by": "Vishnu (authenticated Kaggle account; email intentionally not stored)",
+          "redistribution_status": "raw_annotations_prohibited; internal_noncommercial_research_approved",
+          "derived_artifact_restrictions": "No raw annotations, media, or crops may be released. Local mapped manifests and aggregates are permitted only with the source citation, exact snapshot digest, and provenance restrictions retained.",
+          "citation_requirements": "Cite the official UCF-Crime source, the Kaggle mirror, and the exact local annotation snapshot digest.",
+          "gate_status": "eligible_internal_noncommercial_research_no_raw_redistribution",
+          "blocker_id": null,
+          "notes": "The verified Kaggle listing is minmints/ufc-crime-full-dataset, Version 1 (104.89 GB). The local package contains 290 MATLAB interval files, the text-format annotation file, and its README. The text digest, parser output, filename/frame alignment, and boundary validation pass. Intervals must not be described as clean or exhaustive."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ucf_crime2local",
+      "native_task": "Six-class surveillance spatiotemporal localization",
+      "shar_use": "Conditional localization benchmark or prerequisite for revived custom detector work",
+      "components": [
+        {
+          "component_id": "ucf_crime2local_media",
+          "component_type": "media",
+          "role": "conditional",
+          "local_root": null,
+          "access_status": "not_present",
+          "source_url": "https://arxiv.org/abs/1901.10364",
+          "terms_url": null,
+          "license_name": "unverified",
+          "license_version": null,
+          "license_evidence_digest": null,
+          "access_or_acceptance_date": null,
+          "accepted_by": null,
+          "redistribution_status": "prohibited_pending_verification",
+          "derived_artifact_restrictions": "Keep localization artifacts task-native.",
+          "citation_requirements": "UCF-Crime2Local paper and published split.",
+          "gate_status": "required_only_for_localization_or_custom_detector",
+          "blocker_id": "B-003",
+          "notes": "Does not block the core stock-ROI downstream classification study."
+        },
+        {
+          "component_id": "ucf_crime2local_annotations",
+          "component_type": "annotations",
+          "role": "conditional",
+          "local_root": "Datasets/UCF-Crime2Local/annotations/extracted/UCFCrime2Local",
+          "access_status": "present_local_terms_unverified",
+          "source_url": "https://arxiv.org/abs/1901.10364",
+          "terms_url": null,
+          "license_name": "unverified",
+          "license_version": null,
+          "license_evidence_digest": null,
+          "access_or_acceptance_date": "local_observation_2026-07-24; acquisition source not yet recorded",
+          "accepted_by": null,
+          "redistribution_status": "pending_verification",
+          "derived_artifact_restrictions": "Boxes/tubes only; no masks may be invented.",
+          "citation_requirements": "UCF-Crime2Local annotation release and evaluator.",
+          "gate_status": "present_local_pending_terms_split_and_native_evaluator_validation",
+          "blocker_id": "B-003",
+          "notes": "The local package exposes 103 text annotations plus split/support files. Its six-class box/tube scope is separate from UCF 14-label classification; media and terms remain unverified."
+        }
+      ]
+    },
+    {
+      "dataset_id": "cuhk_avenue",
+      "native_task": "Binary anomaly detection with spatial anomaly masks",
+      "shar_use": "Optional secondary binary/native-region evaluation only",
+      "components": [
+        {
+          "component_id": "avenue_media",
+          "component_type": "media",
+          "role": "optional",
+          "local_root": "Datasets/CUHK Avenue/Avenue Dataset",
+          "access_status": "present_local",
+          "source_url": "https://www.cse.cuhk.edu.hk/~leojia/projects/detectabnormal/dataset.html",
+          "terms_url": "https://www.cse.cuhk.edu.hk/~leojia/projects/detectabnormal/dataset.html",
+          "license_name": "Official public download; internal non-commercial academic use approved, no standalone raw-redistribution grant found",
+          "license_version": null,
+          "license_evidence_digest": "e78972f2d3ff0ddbbbd752308021d3557786466160db12de51c3f4fcd7315f00",
+          "access_or_acceptance_date": "owner_reconfirmed_2026-07-20; original_download_date_not_recorded",
+          "accepted_by": "Vishnu (public download without login)",
+          "redistribution_status": "raw_media_prohibited; internal_noncommercial_research_approved",
+          "derived_artifact_restrictions": "Local inventory only until acquisition/terms evidence is supplied.",
+          "citation_requirements": "Original CUHK Avenue dataset paper and download source.",
+          "gate_status": "eligible_internal_noncommercial_research_no_raw_redistribution",
+          "blocker_id": null,
+          "notes": "Owner confirmed direct download from the official public page on 2026-07-20. The local package contains 16 training and 21 testing clips."
+        },
+        {
+          "component_id": "avenue_masks",
+          "component_type": "annotations",
+          "role": "optional",
+          "local_root": "Datasets/CUHK Avenue/ground_truth_demo",
+          "access_status": "present_local",
+          "source_url": "https://www.cse.cuhk.edu.hk/~leojia/projects/detectabnormal/dataset.html",
+          "terms_url": "https://www.cse.cuhk.edu.hk/~leojia/projects/detectabnormal/dataset.html",
+          "license_name": "Official public download plus local non-commercial-use notice; no standalone raw-redistribution grant found",
+          "license_version": null,
+          "license_evidence_digest": "e78972f2d3ff0ddbbbd752308021d3557786466160db12de51c3f4fcd7315f00",
+          "access_or_acceptance_date": "owner_reconfirmed_2026-07-20; original_download_date_not_recorded",
+          "accepted_by": "Vishnu (public download without login)",
+          "redistribution_status": "raw_annotations_prohibited; internal_noncommercial_research_approved",
+          "derived_artifact_restrictions": "Masks stay in the native Avenue task and are never SHAR instance masks.",
+          "citation_requirements": "Exact Avenue annotation package and paper.",
+          "gate_status": "eligible_internal_noncommercial_research_no_raw_redistribution",
+          "blocker_id": null,
+          "notes": "Owner confirmed direct download from the official public page on 2026-07-20. Masks remain native Avenue anomaly annotations, never SHAR instance masks."
+        }
+      ]
+    },
+    {
+      "dataset_id": "coco_2017",
+      "native_task": "Generic object detection and instance segmentation",
+      "shar_use": "Optional future detector/segmenter sanity check",
+      "components": [
+        {"component_id": "coco_media", "component_type": "media", "role": "optional", "local_root": "Datasets/COCO 2017 Dataset Kaggle/{train2017,val2017,test2017}", "access_status": "present_local_terms_unverified", "source_url": "https://cocodataset.org/", "terms_url": "https://cocodataset.org/#termsofuse", "license_name": "per-image licenses", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": "local_observation_2026-07-24; acquisition source not yet recorded", "accepted_by": null, "redistribution_status": "per_image_terms", "derived_artifact_restrictions": "Keep native COCO task scope.", "citation_requirements": "COCO dataset and individual image licenses.", "gate_status": "present_local_optional_not_activated_pending_provenance", "blocker_id": null, "notes": "163957 JPG files are locally present. Media licenses are distinct from annotation terms."},
+        {"component_id": "coco_annotations", "component_type": "annotations", "role": "optional", "local_root": "Datasets/COCO 2017 Dataset Kaggle/annotations", "access_status": "present_local_provenance_unverified", "source_url": "https://cocodataset.org/", "terms_url": "https://creativecommons.org/licenses/by/4.0/", "license_name": "CC BY", "license_version": "4.0", "license_evidence_digest": null, "access_or_acceptance_date": "local_observation_2026-07-24; acquisition source not yet recorded", "accepted_by": null, "redistribution_status": "attribution_required", "derived_artifact_restrictions": "Use official evaluator and preserve attribution.", "citation_requirements": "COCO and CC BY 4.0 attribution.", "gate_status": "present_local_optional_not_activated_pending_provenance", "blocker_id": null, "notes": "Six JSON annotation files are locally present. Annotations do not license source images."}
+      ]
+    },
+    {
+      "dataset_id": "ava_v2_2",
+      "native_task": "Movie-domain person action localization with Frame-mAP",
+      "shar_use": "Optional separate action-localization/pretraining study",
+      "components": [
+        {"component_id": "ava_media", "component_type": "media", "role": "optional", "local_root": "Datasets/AVA v2.2/raw/trainval", "access_status": "present_local_terms_unverified", "source_url": "https://research.google.com/ava/", "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": "local_observation_2026-07-24; acquisition source not yet recorded", "accepted_by": null, "redistribution_status": "prohibited_pending_verification", "derived_artifact_restrictions": "Movie-domain artifacts stay separate from UCF.", "citation_requirements": "AVA v2.2 dataset and source-film terms.", "gate_status": "present_local_optional_not_activated_pending_provenance", "blocker_id": null, "notes": "313 video files are locally present. Package completeness, provenance, and source-film terms are unverified; no UCF ontology merge."},
+        {"component_id": "ava_annotations", "component_type": "annotations", "role": "optional", "local_root": "Datasets/AVA v2.2/annotations/extracted", "access_status": "present_local_terms_unverified", "source_url": "https://research.google.com/ava/", "terms_url": null, "license_name": "unverified", "license_version": "2.2", "license_evidence_digest": null, "access_or_acceptance_date": "local_observation_2026-07-24; acquisition source not yet recorded", "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "Use official action list, split, and Frame-mAP.", "citation_requirements": "AVA v2.2 annotation release.", "gate_status": "present_local_optional_not_activated_pending_provenance", "blocker_id": null, "notes": "Nine annotation/support files are locally present. Native multi-label atomic-action scope only."}
+      ]
+    },
+    {
+      "dataset_id": "cuva",
+      "native_task": "Video instruction/understanding package with anomaly classification and temporal-description records",
+      "shar_use": "Unactivated local watch package; it has no approved role in the UCF headline or optional roadmap",
+      "components": [
+        {"component_id": "cuva_media", "component_type": "media", "role": "watch", "local_root": "Datasets/CUVA/raw", "access_status": "present_local_terms_unverified", "source_url": null, "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": "local_observation_2026-07-24; acquisition source not yet recorded", "accepted_by": null, "redistribution_status": "prohibited_pending_verification", "derived_artifact_restrictions": "Do not use, redistribute, or derive SHAR claims until source, terms, ontology, and a promoted work item are approved.", "citation_requirements": "Exact CUVA release, source paper, and terms if it is ever activated.", "gate_status": "present_local_watch_only_pending_source_terms_and_scope_decision", "blocker_id": null, "notes": "986 MP4 files are locally present. The observed JSON includes instruction-style classification, timestamp, description, cause, and result tasks with an 11-category ontology that is incompatible with the UCF 14-label headline."},
+        {"component_id": "cuva_annotations", "component_type": "annotations", "role": "watch", "local_root": "Datasets/CUVA/annotations", "access_status": "present_local_terms_unverified", "source_url": null, "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": "local_observation_2026-07-24; acquisition source not yet recorded", "accepted_by": null, "redistribution_status": "prohibited_pending_verification", "derived_artifact_restrictions": "Do not use, redistribute, or derive SHAR claims until source, terms, ontology, and a promoted work item are approved.", "citation_requirements": "Exact CUVA annotation release and terms if it is ever activated.", "gate_status": "present_local_watch_only_pending_source_terms_and_scope_decision", "blocker_id": null, "notes": "Three JSON files are locally present. The package is recorded for provenance only and is not part of the approved roadmap."}
+      ]
+    },
+    {
+      "dataset_id": "xd_violence",
+      "native_task": "Weakly supervised multisource video anomaly detection",
+      "shar_use": "Optional external generalization with native AP",
+      "components": [
+        {"component_id": "xd_violence_media", "component_type": "media", "role": "optional", "local_root": null, "access_status": "not_present", "source_url": null, "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "prohibited_pending_verification", "derived_artifact_restrictions": "Separate task table only.", "citation_requirements": "Official dataset and paper.", "gate_status": "optional_not_activated", "blocker_id": null, "notes": "No UCF label merge."},
+        {"component_id": "xd_violence_annotations", "component_type": "annotations", "role": "optional", "local_root": null, "access_status": "not_present", "source_url": null, "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "Native AP protocol only.", "citation_requirements": "Exact official annotation release.", "gate_status": "optional_not_activated", "blocker_id": null, "notes": "Separate ontology and metric."}
+      ]
+    },
+    {
+      "dataset_id": "msad",
+      "native_task": "Cross-scenario video anomaly detection",
+      "shar_use": "Optional modern generalization benchmark",
+      "components": [
+        {"component_id": "msad_media", "component_type": "media", "role": "optional", "local_root": null, "access_status": "not_present", "source_url": null, "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "prohibited_pending_verification", "derived_artifact_restrictions": "Honor access approval and non-redistribution.", "citation_requirements": "Official MSAD source and paper.", "gate_status": "optional_not_activated", "blocker_id": null, "notes": "Native task only."},
+        {"component_id": "msad_annotations", "component_type": "annotations", "role": "optional", "local_root": null, "access_status": "not_present", "source_url": null, "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "Use official evaluator.", "citation_requirements": "Exact official annotation release.", "gate_status": "optional_not_activated", "blocker_id": null, "notes": "Separate native evaluation."}
+      ]
+    },
+    {
+      "dataset_id": "rareanom",
+      "native_task": "Rare/open-set anomaly video study with temporal annotations",
+      "shar_use": "Optional rare/open-set generalization",
+      "components": [
+        {"component_id": "rareanom_media", "component_type": "media", "role": "optional", "local_root": null, "access_status": "not_present", "source_url": null, "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "prohibited_pending_verification", "derived_artifact_restrictions": "No redistribution without verified terms.", "citation_requirements": "RareAnom dataset and paper.", "gate_status": "optional_not_activated", "blocker_id": null, "notes": "Separate rare/open-set task."},
+        {"component_id": "rareanom_annotations", "component_type": "annotations", "role": "optional", "local_root": null, "access_status": "not_present", "source_url": null, "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "Native temporal protocol only.", "citation_requirements": "Exact annotation release.", "gate_status": "optional_not_activated", "blocker_id": null, "notes": "Not part of UCF headline."}
+      ]
+    },
+    {
+      "dataset_id": "valu",
+      "native_task": "Qualified/corrected UCF interval research",
+      "shar_use": "Watch-only annotation source",
+      "components": [
+        {"component_id": "valu_media", "component_type": "media", "role": "watch", "local_root": null, "access_status": "not_applicable", "source_url": "https://aclanthology.org/2026.acl-long.56/", "terms_url": null, "license_name": "not_applicable", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "not_applicable", "derived_artifact_restrictions": "None; no media package is registered.", "citation_requirements": "VALU paper.", "gate_status": "watch_only", "blocker_id": null, "notes": "Paper availability does not imply annotation-package availability."},
+        {"component_id": "valu_annotations", "component_type": "annotations", "role": "watch", "local_root": null, "access_status": "package_unverified", "source_url": "https://aclanthology.org/2026.acl-long.56/", "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "Do not depend on an unavailable package.", "citation_requirements": "Exact future release if used.", "gate_status": "watch_only", "blocker_id": null, "notes": "Useful evidence about omitted official intervals, not current data."}
+      ]
+    },
+    {
+      "dataset_id": "fs_ucf_crime",
+      "native_task": "Promised corrected UCF annotations",
+      "shar_use": "Watch-only",
+      "components": [
+        {"component_id": "fs_ucf_media", "component_type": "media", "role": "watch", "local_root": null, "access_status": "not_applicable", "source_url": "https://zenodo.org/records/21336651", "terms_url": null, "license_name": "not_applicable", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "not_applicable", "derived_artifact_restrictions": "None.", "citation_requirements": "Zenodo record if monitored.", "gate_status": "watch_only", "blocker_id": null, "notes": "No media dependency registered."},
+        {"component_id": "fs_ucf_annotations", "component_type": "annotations", "role": "watch", "local_root": null, "access_status": "incomplete_promised_release", "source_url": "https://zenodo.org/records/21336651", "terms_url": null, "license_name": "unverified", "license_version": "0.1.0 record", "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "Do not depend on incomplete package.", "citation_requirements": "Exact complete release if it becomes available.", "gate_status": "watch_only", "blocker_id": null, "notes": "Complete package was not available at the audited snapshot."}
+      ]
+    },
+    {
+      "dataset_id": "hivau_70k",
+      "native_task": "Candidate UCF annotation overlay",
+      "shar_use": "Watch-only",
+      "components": [
+        {"component_id": "hivau_media", "component_type": "media", "role": "watch", "local_root": null, "access_status": "not_verified", "source_url": "https://github.com/pipixin321/HolmesVAU", "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "No use until package scope is verified.", "citation_requirements": "Official release if used.", "gate_status": "watch_only", "blocker_id": null, "notes": "Ontology and files remain unverified."},
+        {"component_id": "hivau_annotations", "component_type": "annotations", "role": "watch", "local_root": null, "access_status": "not_verified", "source_url": "https://github.com/pipixin321/HolmesVAU", "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "No use until ontology/license are verified.", "citation_requirements": "Exact release and source.", "gate_status": "watch_only", "blocker_id": null, "notes": "Not part of core protocol."}
+      ]
+    },
+    {
+      "dataset_id": "pistachio",
+      "native_task": "Synthetic video anomaly robustness",
+      "shar_use": "Watch-only synthetic robustness candidate",
+      "components": [
+        {"component_id": "pistachio_media", "component_type": "media", "role": "watch", "local_root": null, "access_status": "not_present", "source_url": "https://pistachio-video.github.io/", "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "Synthetic results cannot replace real surveillance evaluation.", "citation_requirements": "Official dataset release.", "gate_status": "watch_only", "blocker_id": null, "notes": "Watch only."},
+        {"component_id": "pistachio_annotations", "component_type": "annotations", "role": "watch", "local_root": null, "access_status": "not_present", "source_url": "https://pistachio-video.github.io/", "terms_url": null, "license_name": "unverified", "license_version": null, "license_evidence_digest": null, "access_or_acceptance_date": null, "accepted_by": null, "redistribution_status": "pending_verification", "derived_artifact_restrictions": "Native synthetic protocol only.", "citation_requirements": "Exact release.", "gate_status": "watch_only", "blocker_id": null, "notes": "Not part of the UCF headline."}
+      ]
+    }
+  ]
+}

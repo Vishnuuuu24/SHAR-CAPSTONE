@@ -1,0 +1,43 @@
+# RESULT 1, P2B learned restoration: a generic convolutional denoising VAE and its
+# deterministic-autoencoder ablation (D-60). Not ESVDAE: no entropy term (B-004).
+#
+# SOURCED values cite where they come from; CHOICE values are project choices that no
+# source mandates, recorded so a reader can see which numbers were picked here.
+#
+# Kingma & Welling, "Auto-Encoding Variational Bayes", ICLR 2014 (arXiv 1312.6114).
+# Rybkin, Daniilidis & Levine, "Simple and Effective VAE Training with Calibrated
+#   Decoders", ICML 2021 (arXiv 2006.13202); reference code orybkin/sigma-vae-pytorch.
+
+model:
+  base_channels: 64         # CHOICE
+  latent_channels: 16       # CHOICE: latent is H/4 x W/4 x 16, one third of the input's size
+  downsamplings: 2          # CHOICE
+  norm_groups: 8            # CHOICE
+
+variants:
+  # SOURCED (Kingma & Welling 2014): ELBO = Gaussian decoder NLL + KL(q(z|x) || N(0, I)).
+  # SOURCED (Rybkin et al. 2021): the decoder variance is the analytic optimum, sigma^2 = batch MSE,
+  # so there is no hand-set KL weight (beta). log sigma is soft-clipped at -6 as in the reference code.
+  dvae:
+    variational: true
+    log_sigma_min: -6.0
+  # Ablation of the variational component: same network, no KL, z = mu, plain MSE.
+  dae:
+    variational: false
+
+training:
+  # Data: AR train-manifest videos of folds 1-4 minus all 108 validation videos (the
+  # evaluation set). Class labels are never read. Noise is drawn per crop, never cached.
+  frames_per_video: 16      # CHOICE: evenly spaced (sample_rows_per_video, seed=None)
+  crop: 128                 # CHOICE
+  batch_size: 32            # CHOICE
+  steps: 20000              # CHOICE (owner, 2026-10-30): ~1 h/model at 0.17 s/step on the 1g.18gb slice; 8000 was rejected as a time-only cut
+  learning_rate: 2.0e-4     # CHOICE
+  adam_betas: [0.9, 0.999]  # SOURCED: torch.optim.Adam defaults
+  degradations: registered_p2a_uniform   # all 10 frozen P2A specs, identity included, uniform per crop
+  noise_global_seed_offset: 1000          # training noise seed = 1000 + seed; evaluation uses 0
+  seeds: [0, 1, 2]
+
+inference:
+  latent: posterior_mean    # deterministic: z = mu, no sampling
+  output: sigmoid_0_1       # decoder output already in [0,1]; no clipping needed

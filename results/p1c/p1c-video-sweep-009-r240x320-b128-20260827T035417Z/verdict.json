@@ -1,0 +1,13 @@
+{
+  "checkpoint_disposition": "none; calibration checkpoints are prohibited",
+  "claim_state": "NOT_APPLICABLE",
+  "next_action": "Review ETA and resource headroom, then create the immutable full-run registration before training.",
+  "peak_memory_bytes": 4241780736,
+  "reason": "Real-loader calibration provides a measured device-specific ETA only; it has no scientific result.",
+  "runtime_seconds": 164.57190914452076,
+  "status": "COMPLETED",
+  "stop_reason": "registered calibration batch counts completed",
+  "storage_bytes": 8232,
+  "summary_artifact_digest": "7d1e562a5b022b9a18b732d8bc924cc1b52d2f91e0a4282a7b98b7556de549fb",
+  "verdict": "GOOD_ENOUGH"
+}

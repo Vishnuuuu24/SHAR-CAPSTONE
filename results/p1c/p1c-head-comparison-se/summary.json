@@ -1,0 +1,136 @@
+{
+  "control_head": "gap_linear",
+  "cross_fold_video_level_macro_f1": {
+    "multiscale_se": {
+      "mean": 0.3251842899164328,
+      "sample_sd": 0.04220222091247005
+    }
+  },
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "heads": [
+    "multiscale_se"
+  ],
+  "paired_diff_vs_control": {},
+  "per_fold_per_head": {
+    "1": {
+      "multiscale_se": {
+        "frame_macro_f1_mean": 0.3578485633531658,
+        "parameter_count": 31282,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.3611111111111111,
+          "Arrest": 0.29629629629629634,
+          "Arson": 0.4481481481481482,
+          "Assault": 0.335978835978836,
+          "Burglary": 0.2962962962962963,
+          "Explosion": 0.3597883597883598,
+          "Fighting": 0.06666666666666667,
+          "Normal_Videos_event": 0.8486772486772486,
+          "RoadAccidents": 0.7111111111111109,
+          "Robbery": 0.23148148148148148,
+          "Shooting": 0.0,
+          "Shoplifting": 0.5904761904761905,
+          "Stealing": 0.6031746031746033,
+          "Vandalism": 0.24444444444444446
+        },
+        "tail_classes_mean_f1": 0.1617724867724868,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.3852607709750567,
+        "wall_clock_seconds_mean": 1340.172184659789
+      }
+    },
+    "2": {
+      "multiscale_se": {
+        "frame_macro_f1_mean": 0.29269686099569253,
+        "parameter_count": 31282,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.32756132756132755,
+          "Arrest": 0.0,
+          "Arson": 0.5777777777777777,
+          "Assault": 0.1111111111111111,
+          "Burglary": 0.1851851851851852,
+          "Explosion": 0.5857142857142857,
+          "Fighting": 0.14393939393939395,
+          "Normal_Videos_event": 0.45634920634920634,
+          "RoadAccidents": 0.35555555555555557,
+          "Robbery": 0.22023809523809526,
+          "Shooting": 0.0,
+          "Shoplifting": 0.46296296296296297,
+          "Stealing": 0.5555555555555555,
+          "Vandalism": 0.1111111111111111
+        },
+        "tail_classes_mean_f1": 0.09154040404040403,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.29236154057582636,
+        "wall_clock_seconds_mean": 981.4214362079898
+      }
+    },
+    "3": {
+      "multiscale_se": {
+        "frame_macro_f1_mean": 0.29471660595040805,
+        "parameter_count": 31282,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.373015873015873,
+          "Arrest": 0.5079365079365079,
+          "Arson": 0.5833333333333334,
+          "Assault": 0.0,
+          "Burglary": 0.3656565656565656,
+          "Explosion": 0.6222943722943723,
+          "Fighting": 0.1828282828282828,
+          "Normal_Videos_event": 0.3968253968253969,
+          "RoadAccidents": 0.1785714285714286,
+          "Robbery": 0.07407407407407408,
+          "Shooting": 0.0,
+          "Shoplifting": 0.4740740740740741,
+          "Stealing": 0.6222222222222221,
+          "Vandalism": 0.14814814814814817
+        },
+        "tail_classes_mean_f1": 0.08274410774410774,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.3234985913557342,
+        "wall_clock_seconds_mean": 1067.984834568575
+      }
+    },
+    "4": {
+      "multiscale_se": {
+        "frame_macro_f1_mean": 0.23945033295998597,
+        "parameter_count": 31282,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.3952380952380952,
+          "Arrest": 0.20634920634920637,
+          "Arson": 0.3074074074074074,
+          "Assault": 0.0,
+          "Burglary": 0.40740740740740744,
+          "Explosion": 0.5370370370370371,
+          "Fighting": 0.2240740740740741,
+          "Normal_Videos_event": 0.5777777777777778,
+          "RoadAccidents": 0.19444444444444442,
+          "Robbery": 0.2526455026455027,
+          "Shooting": 0.08333333333333333,
+          "Shoplifting": 0.44338624338624344,
+          "Stealing": 0.46296296296296297,
+          "Vandalism": 0.10256410256410255
+        },
+        "tail_classes_mean_f1": 0.1024928774928775,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.2996162567591139,
+        "wall_clock_seconds_mean": 1516.4910326842219
+      }
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "tail_classes": [
+    "Shooting",
+    "Fighting",
+    "Assault",
+    "Vandalism"
+  ]
+}

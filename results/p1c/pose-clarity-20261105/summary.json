@@ -1,0 +1,187 @@
+{
+  "question": "Does denoising or a larger input size expose more usable body in UCF-Crime frames?",
+  "config": {
+    "seed": 20261105,
+    "per_bucket": 60,
+    "n_empty": 60,
+    "n_boot": 2000,
+    "conf": 0.25,
+    "iou": 0.7,
+    "jpeg_quality": 95,
+    "sheet_frames": 12,
+    "conditions": {
+      "orig_640": {
+        "restorer": null,
+        "imgsz": 640
+      },
+      "orig_960": {
+        "restorer": null,
+        "imgsz": 960
+      },
+      "orig_1280": {
+        "restorer": null,
+        "imgsz": 1280
+      },
+      "restormer_640": {
+        "restorer": "restormer_gauss_blind",
+        "imgsz": 640
+      },
+      "scunet_640": {
+        "restorer": "scunet_real_psnr",
+        "imgsz": 640
+      }
+    }
+  },
+  "seed": 20261105,
+  "code_revision": "759cfa557031964c760f9d09c4965401dad98889",
+  "working_tree_dirty": false,
+  "data": {
+    "detections_sha256": "4a41a37f70089a2f91d14fc18e1e6227600b9d4d76dcf92192ce78d8422cafe2",
+    "pose_weights_sha256": "29b17eaf3a3117cbea906090dbedf9159f7c6a49db58ec8b99ed2dfde1cf6eb2",
+    "restorer_config_sha256": "88f69a4f0f21bec066e81362d61e13e88129db9401af9df5fbe15c59a1ff0423",
+    "restorer_weights_sha256": {
+      "adaptive_median_s7": null,
+      "scunet_real_psnr": "fa78899ba2caec9d235a900e91d96c689da71c42029230c2028b00f09f809c2e",
+      "restormer_gauss_blind": "4e2314dae77bb907184da6e2ac625b921491d6b33de26a52512eff1c6bb37fbd"
+    }
+  },
+  "frames": 360,
+  "reference_people": 534,
+  "summary": [
+    {
+      "condition": "orig_640",
+      "people": 534,
+      "found": 0.998,
+      "usable": 0.644,
+      "mean_joints": 10.341,
+      "usable_diff": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "joints_diff": 0.0,
+      "verdict": "(baseline)"
+    },
+    {
+      "condition": "orig_960",
+      "people": 534,
+      "found": 0.852,
+      "usable": 0.569,
+      "mean_joints": 9.021,
+      "usable_diff": -0.075,
+      "ci_lo": -0.103,
+      "ci_hi": -0.05,
+      "joints_diff": -1.32,
+      "verdict": "hurts"
+    },
+    {
+      "condition": "orig_1280",
+      "people": 534,
+      "found": 0.831,
+      "usable": 0.581,
+      "mean_joints": 8.893,
+      "usable_diff": -0.064,
+      "ci_lo": -0.095,
+      "ci_hi": -0.034,
+      "joints_diff": -1.448,
+      "verdict": "hurts"
+    },
+    {
+      "condition": "restormer_640",
+      "people": 534,
+      "found": 0.858,
+      "usable": 0.53,
+      "mean_joints": 8.736,
+      "usable_diff": -0.114,
+      "ci_lo": -0.147,
+      "ci_hi": -0.083,
+      "joints_diff": -1.605,
+      "verdict": "hurts"
+    },
+    {
+      "condition": "scunet_640",
+      "people": 534,
+      "found": 0.865,
+      "usable": 0.571,
+      "mean_joints": 9.06,
+      "usable_diff": -0.073,
+      "ci_lo": -0.103,
+      "ci_hi": -0.046,
+      "joints_diff": -1.281,
+      "verdict": "hurts"
+    }
+  ],
+  "usable_by_height": [
+    {
+      "condition": "orig_640",
+      "under40": 0.471,
+      "40-60": 0.621,
+      "60-80": 0.692,
+      "80-120": 0.712,
+      "over120": 0.683
+    },
+    {
+      "condition": "orig_960",
+      "under40": 0.356,
+      "40-60": 0.569,
+      "60-80": 0.65,
+      "80-120": 0.614,
+      "over120": 0.61
+    },
+    {
+      "condition": "orig_1280",
+      "under40": 0.391,
+      "40-60": 0.586,
+      "60-80": 0.709,
+      "80-120": 0.606,
+      "over120": 0.549
+    },
+    {
+      "condition": "restormer_640",
+      "under40": 0.115,
+      "40-60": 0.431,
+      "60-80": 0.658,
+      "80-120": 0.689,
+      "over120": 0.671
+    },
+    {
+      "condition": "scunet_640",
+      "under40": 0.31,
+      "40-60": 0.569,
+      "60-80": 0.624,
+      "80-120": 0.652,
+      "over120": 0.646
+    }
+  ],
+  "extra_people_on_empty_frames": [
+    {
+      "condition": "orig_640",
+      "people_found": 0,
+      "with_usable_body": 0
+    },
+    {
+      "condition": "orig_960",
+      "people_found": 9,
+      "with_usable_body": 6
+    },
+    {
+      "condition": "orig_1280",
+      "people_found": 18,
+      "with_usable_body": 12
+    },
+    {
+      "condition": "restormer_640",
+      "people_found": 0,
+      "with_usable_body": 0
+    },
+    {
+      "condition": "scunet_640",
+      "people_found": 0,
+      "with_usable_body": 0
+    }
+  ],
+  "orig_640_cache_agreement": 0.99812734082397,
+  "human_check": {
+    "done": "partial",
+    "note": "Reviewer (the assistant) viewed sheet_1 only (3 frames, 5 conditions): skeletons look broadly similar across conditions; Restormer output shows speckle in the black letterbox bands. No per-condition failure counts were made; the empty-frame detections (orig_960: 9, orig_1280: 18) were not inspected. The owner has not reviewed any sheet."
+  },
+  "labels": "usable-body rate is detector confidence, not pose accuracy and not ground truth"
+}

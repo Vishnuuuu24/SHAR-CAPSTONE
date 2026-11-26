@@ -1,0 +1,28 @@
+# RESULT 1, P2B: the one pinned pretrained modern restoration comparator (D-60).
+# Used as published, never fine-tuned. It was trained on SIDD real camera noise, not on
+# the P2A synthetic degradations, so it measures an off-the-shelf blind denoiser.
+
+name: nafnet_sidd_w64
+paper: "Chen, Chu, Zhang & Sun, Simple Baselines for Image Restoration, ECCV 2022 (arXiv 2204.04676)"
+code:
+  repository: https://github.com/megvii-research/NAFNet
+  commit: 2b4af71ebe098a92a75910c233a3965a3e93ede4
+  licence: MIT
+  vendored_as: models/nafnet_arch.py
+architecture:             # SOURCED: options/test/SIDD/NAFNet-width64.yml at the commit above
+  width: 64
+  enc_blk_nums: [2, 2, 4, 8]
+  middle_blk_num: 12
+  dec_blk_nums: [2, 2, 2, 2]
+weights:
+  path: .cache/weights/NAFNet-SIDD-width64.pth
+  sha256: cd685efaae01f7c4e9951f2deab05780079c8eb1e49ed664b72f6db04dabb445
+  bytes: 464154961
+  state_dict_key: params  # BasicSR checkpoint layout
+  # The authors publish this file on Google Drive/Baidu. Fetched from the Hugging Face mirror
+  # mikestealth/nafnet-models; nyanko7/nafnet-models holds a byte-identical file (same LFS sha256).
+  source: https://huggingface.co/mikestealth/nafnet-models/resolve/main/NAFNet-SIDD-width64.pth
+io:                       # SOURCED: BasicSR pipeline -- RGB float [0,1] in, output clamped to [0,1]
+  input: rgb_float_0_1
+  output: clamp_0_1
+  frames_per_forward: 8   # CHOICE: memory on the 1g.18gb slice; per-image result is batch-independent

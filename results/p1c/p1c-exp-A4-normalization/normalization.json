@@ -1,0 +1,112 @@
+{
+  "seed": 0,
+  "clip_params": {
+    "label": "Shooting",
+    "clip_length": 16,
+    "frame_stride": 1,
+    "positive_overlap_threshold": 0.5,
+    "negative_margin": 16,
+    "seed": 0
+  },
+  "results": {
+    "single_frame": {
+      "raw": {
+        "within_roc_mean": 0.7347397098558723,
+        "within_roc_median": 0.6979723707664884,
+        "within_roc_sd": 0.2529817380148616,
+        "within_pr_mean": 0.5663779355144987,
+        "pooled_roc": 0.41884201859744286,
+        "pooled_pr": 0.14182362994070633,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20
+      },
+      "zscore": {
+        "within_roc_mean": 0.7347397098558723,
+        "within_roc_median": 0.6979723707664884,
+        "within_roc_sd": 0.2529817380148616,
+        "within_pr_mean": 0.5663779355144987,
+        "pooled_roc": 0.5867517435102674,
+        "pooled_pr": 0.2321646810698959,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20,
+        "video_recall_at_train_p90": 0.47619047619047616
+      },
+      "rank": {
+        "within_roc_mean": 0.7347397098558723,
+        "within_roc_median": 0.6979723707664884,
+        "within_roc_sd": 0.2529817380148616,
+        "within_pr_mean": 0.5663779355144987,
+        "pooled_roc": 0.6347769759783031,
+        "pooled_pr": 0.240803053128961,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20
+      }
+    },
+    "dense_mean": {
+      "raw": {
+        "within_roc_mean": 0.7426217127498266,
+        "within_roc_median": 0.7967836257309941,
+        "within_roc_sd": 0.24759329421157944,
+        "within_pr_mean": 0.5524397205686157,
+        "pooled_roc": 0.4128365943432778,
+        "pooled_pr": 0.13699803485897666,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20
+      },
+      "zscore": {
+        "within_roc_mean": 0.7426217127498266,
+        "within_roc_median": 0.7967836257309941,
+        "within_roc_sd": 0.24759329421157944,
+        "within_pr_mean": 0.5524397205686157,
+        "pooled_roc": 0.6159676481983727,
+        "pooled_pr": 0.2851467121687329,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20,
+        "video_recall_at_train_p90": 0.38095238095238093
+      },
+      "rank": {
+        "within_roc_mean": 0.7426217127498266,
+        "within_roc_median": 0.7967836257309941,
+        "within_roc_sd": 0.24759329421157944,
+        "within_pr_mean": 0.5524397205686157,
+        "pooled_roc": 0.6765485761332817,
+        "pooled_pr": 0.2655821105343032,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20
+      }
+    },
+    "patch_motion": {
+      "raw": {
+        "within_roc_mean": 0.806228834340328,
+        "within_roc_median": 0.8815173796791443,
+        "within_roc_sd": 0.2034785576532899,
+        "within_pr_mean": 0.625754056510603,
+        "pooled_roc": 0.4329838240991864,
+        "pooled_pr": 0.14723237388989685,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20
+      },
+      "zscore": {
+        "within_roc_mean": 0.80609406345084,
+        "within_roc_median": 0.8815173796791443,
+        "within_roc_sd": 0.20374445638126137,
+        "within_pr_mean": 0.625725320878419,
+        "pooled_roc": 0.6450987989151493,
+        "pooled_pr": 0.2799382227052778,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20,
+        "video_recall_at_train_p90": 0.3333333333333333
+      },
+      "rank": {
+        "within_roc_mean": 0.806228834340328,
+        "within_roc_median": 0.8815173796791443,
+        "within_roc_sd": 0.2034785576532899,
+        "within_pr_mean": 0.625754056510603,
+        "pooled_roc": 0.7261901879116621,
+        "pooled_pr": 0.30769720592014965,
+        "pooled_base_rate": 0.14009661835748793,
+        "n_videos_auc": 20
+      }
+    }
+  }
+}

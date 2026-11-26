@@ -1,0 +1,26 @@
+{"videos_done": 3, "of": 3, "elapsed_s": 66}
+{"clean_feature_check": {"max_abs_diff": 0.005859375, "median_max_abs_diff": 0.005859375, "min_mean_cosine": 0.9999986886978149, "videos": 3}, "classical_identity_check": {"max_abs_diff_vs_classical_identity_rows": 0.0}}
+{"fold": 1, "seed": 0, "clean_32frame_macro_f1": 0.0}
+{"fold": 2, "seed": 0, "clean_32frame_macro_f1": 0.0}
+{"fold": 3, "seed": 0, "clean_32frame_macro_f1": 0.0}
+{"fold": 4, "seed": 0, "clean_32frame_macro_f1": 0.0}
+identity__identity {"psnr_db": null, "ssim": 1.0, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+identity__nafnet_sidd_w64 {"psnr_db": 30.4013, "ssim": 0.8612, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_10.0__identity {"psnr_db": 28.7129, "ssim": 0.6174, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_10.0__nafnet_sidd_w64 {"psnr_db": 28.1313, "ssim": 0.7674, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_25.0__identity {"psnr_db": 20.8806, "ssim": 0.3293, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_25.0__nafnet_sidd_w64 {"psnr_db": 19.092, "ssim": 0.4386, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_50.0__identity {"psnr_db": 15.2133, "ssim": 0.176, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_50.0__nafnet_sidd_w64 {"psnr_db": 4.7314, "ssim": 0.0027, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.02__identity {"psnr_db": 21.6369, "ssim": 0.6384, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.02__nafnet_sidd_w64 {"psnr_db": 24.1855, "ssim": 0.637, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.05__identity {"psnr_db": 17.6779, "ssim": 0.3873, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.05__nafnet_sidd_w64 {"psnr_db": 20.1792, "ssim": 0.4999, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.1__identity {"psnr_db": 14.6768, "ssim": 0.2262, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.1__nafnet_sidd_w64 {"psnr_db": 14.7399, "ssim": 0.3294, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.02__identity {"psnr_db": 24.3739, "ssim": 0.628, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.02__nafnet_sidd_w64 {"psnr_db": 25.831, "ssim": 0.7111, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.05__identity {"psnr_db": 20.5404, "ssim": 0.5181, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.05__nafnet_sidd_w64 {"psnr_db": 21.2064, "ssim": 0.4509, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+low_light_g2.2_s15.0__identity {"psnr_db": 13.6, "ssim": 0.3272, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+low_light_g2.2_s15.0__nafnet_sidd_w64 {"psnr_db": 14.3119, "ssim": 0.5174, "macro_f1": 0.0, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}

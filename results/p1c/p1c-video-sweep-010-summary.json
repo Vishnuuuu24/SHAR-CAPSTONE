@@ -1,0 +1,66 @@
+{
+  "base_config": "P1C-VIDEO-SWEEP-009-R224-B64.yaml",
+  "points": [
+    {
+      "channels_last": false,
+      "compile": "none",
+      "config": "P1C-VIDEO-SWEEP-010-V0-CONTROL.yaml",
+      "exit_code": 0,
+      "fused_optimizer": false,
+      "seconds": 159.44939796626568,
+      "status": "COMPLETED",
+      "variant": "V0-CONTROL"
+    },
+    {
+      "channels_last": true,
+      "compile": "none",
+      "config": "P1C-VIDEO-SWEEP-010-V1-CHLAST.yaml",
+      "exit_code": 0,
+      "fused_optimizer": false,
+      "seconds": 163.93631155975163,
+      "status": "COMPLETED",
+      "variant": "V1-CHLAST"
+    },
+    {
+      "channels_last": false,
+      "compile": "none",
+      "config": "P1C-VIDEO-SWEEP-010-V2-FUSED.yaml",
+      "exit_code": 0,
+      "fused_optimizer": true,
+      "seconds": 170.28353837318718,
+      "status": "COMPLETED",
+      "variant": "V2-FUSED"
+    },
+    {
+      "channels_last": false,
+      "compile": "default",
+      "config": "P1C-VIDEO-SWEEP-010-V3-COMPILE.yaml",
+      "exit_code": 0,
+      "fused_optimizer": false,
+      "seconds": 191.31412806548178,
+      "status": "COMPLETED",
+      "variant": "V3-COMPILE"
+    },
+    {
+      "channels_last": true,
+      "compile": "none",
+      "config": "P1C-VIDEO-SWEEP-010-V4-CHLAST-FUSED.yaml",
+      "exit_code": 0,
+      "fused_optimizer": true,
+      "seconds": 161.9099757121876,
+      "status": "COMPLETED",
+      "variant": "V4-CHLAST-FUSED"
+    },
+    {
+      "channels_last": true,
+      "compile": "default",
+      "config": "P1C-VIDEO-SWEEP-010-V5-ALL.yaml",
+      "exit_code": 0,
+      "fused_optimizer": true,
+      "seconds": 192.81123741157353,
+      "status": "COMPLETED",
+      "variant": "V5-ALL"
+    }
+  ],
+  "sweep_id": "P1C-VIDEO-SWEEP-010"
+}

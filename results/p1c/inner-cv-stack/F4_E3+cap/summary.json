@@ -1,0 +1,23 @@
+{
+ "base": "results/p1c/inner-cv-stack/E3_L+BS+BVJ:E3_L+BS+BVJ",
+ "members": [
+  "<repo>/results/p1c/inner-cv-candidates:L_study",
+  "<repo>/results/p1c/inner-cv-candidates:B+S_study",
+  "<repo>/results/p1c/inner-cv-candidates:B+VJ",
+  "<repo>/results/p1c/inner-cv-captions:cap_proj"
+ ],
+ "weights": "equal, fixed in advance",
+ "contrast": {
+  "candidate": "F4_E3+cap",
+  "base": "base",
+  "difference": 0.009323176702147606,
+  "ci95": [
+   0.0033085484274544843,
+   0.015497556199870973
+  ],
+  "share_of_draws_above_zero": 0.999,
+  "one_sided_p": 0.0010000000000000009,
+  "passes": false
+ },
+ "rule": "paired 95% interval excludes 0 and gain >= 0.02"
+}

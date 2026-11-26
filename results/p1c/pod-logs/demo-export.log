@@ -1,0 +1,13 @@
+{"fold": 1, "seed": 0, "val_macro_f1": 0.5257369614512472, "recorded_val_macro_f1": 0.5257369614512472, "abs_diff": 0.0, "best_epoch": 7, "recorded_best_epoch": 7}
+{"fold": 1, "seed": 1, "val_macro_f1": 0.5162131519274377, "recorded_val_macro_f1": 0.5162131519274377, "abs_diff": 0.0, "best_epoch": 8, "recorded_best_epoch": 8}
+{"fold": 1, "seed": 2, "val_macro_f1": 0.5268707482993198, "recorded_val_macro_f1": 0.5268707482993198, "abs_diff": 0.0, "best_epoch": 10, "recorded_best_epoch": 10}
+{"fold": 2, "seed": 0, "val_macro_f1": 0.4355442176870748, "recorded_val_macro_f1": 0.4355442176870748, "abs_diff": 0.0, "best_epoch": 3, "recorded_best_epoch": 3}
+{"fold": 2, "seed": 1, "val_macro_f1": 0.4365646258503401, "recorded_val_macro_f1": 0.4365646258503401, "abs_diff": 0.0, "best_epoch": 8, "recorded_best_epoch": 8}
+{"fold": 2, "seed": 2, "val_macro_f1": 0.4371521335807049, "recorded_val_macro_f1": 0.4371521335807049, "abs_diff": 0.0, "best_epoch": 4, "recorded_best_epoch": 4}
+{"fold": 3, "seed": 0, "val_macro_f1": 0.4525510204081633, "recorded_val_macro_f1": 0.4525510204081633, "abs_diff": 0.0, "best_epoch": 6, "recorded_best_epoch": 6}
+{"fold": 3, "seed": 1, "val_macro_f1": 0.4862966398680683, "recorded_val_macro_f1": 0.4862966398680683, "abs_diff": 0.0, "best_epoch": 10, "recorded_best_epoch": 10}
+{"fold": 3, "seed": 2, "val_macro_f1": 0.47205215419501123, "recorded_val_macro_f1": 0.47205215419501123, "abs_diff": 0.0, "best_epoch": 4, "recorded_best_epoch": 4}
+{"fold": 4, "seed": 0, "val_macro_f1": 0.412358276643991, "recorded_val_macro_f1": 0.412358276643991, "abs_diff": 0.0, "best_epoch": 4, "recorded_best_epoch": 4}
+{"fold": 4, "seed": 1, "val_macro_f1": 0.43639455782312925, "recorded_val_macro_f1": 0.43639455782312925, "abs_diff": 0.0, "best_epoch": 7, "recorded_best_epoch": 7}
+{"fold": 4, "seed": 2, "val_macro_f1": 0.42546897546897544, "recorded_val_macro_f1": 0.42546897546897544, "abs_diff": 0.0, "best_epoch": 4, "recorded_best_epoch": 4}
+{"saved": "<repo>/.cache/demo/d53_heads.pt", "sha256": "3df3cbd8edeb6d0c9dd8da4097faf313027e00b68fecf7ef86daebd866dcb73b", "max_abs_diff": 0.0, "exact": 12}

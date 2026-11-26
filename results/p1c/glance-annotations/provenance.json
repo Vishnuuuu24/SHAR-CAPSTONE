@@ -1,0 +1,10 @@
+{
+  "file": "ucf_glance_annotations.csv",
+  "source": "https://raw.githubusercontent.com/pipixin321/GlanceVAD/HEAD/data/ucf-crime/ucf_glance_annotations.csv",
+  "paper": "GlanceVAD: Exploring Glance Supervision for Label-efficient Video Anomaly Detection (arXiv 2403.06154, ICME 2025)",
+  "license": "MIT (repository licence as indexed 2026-10-28; upstream commit not recorded: GitHub API rate-limited at retrieval)",
+  "retrieved": "2026-10-28",
+  "sha256": "c8c06b24468f6dc3fad9e699d10cf609711d3af612815eccb709e2fefb0fc6b7",
+  "content": "2,026 single-frame 'glance' clicks on 810 UCF-Crime anomaly videos (official anomaly-detection training split); column 'glance' is a source frame index (all < the video's decoded frame count, checked 2026-10-28)",
+  "use_in_shar": "training-frame selection only (P1C glance-frame experiment); never used for evaluation"
+}

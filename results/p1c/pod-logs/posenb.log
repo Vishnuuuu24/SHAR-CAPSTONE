@@ -1,0 +1,4 @@
+[NbConvertApp] Converting notebook notebooks/pose_clarity_check.ipynb to notebook
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[W1106 04:44:53.129622275 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2518679552 bytes (free: 2378170368, total: 17179869184).
+[NbConvertApp] Writing 9971547 bytes to results/p1c/pose-clarity-20261105/pose_clarity_check.executed.ipynb

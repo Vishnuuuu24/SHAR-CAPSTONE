@@ -1,0 +1,56 @@
+{
+ "git_revision": "e998dac54ed75e5805cc04f101e7674890bb4443",
+ "conventions_sha256": "21aae531aa8debc6e2342ddfcc0ead51a1355625dc973f12ac53b232cfa13d41",
+ "denoiser_config_sha256": null,
+ "denoisers": null,
+ "comparator": null,
+ "extra_restorers": {
+  "adaptive_median_s7": {
+   "config_sha256": "88f69a4f0f21bec066e81362d61e13e88129db9401af9df5fbe15c59a1ff0423",
+   "s_max": 7
+  },
+  "scunet_real_psnr": {
+   "config_sha256": "88f69a4f0f21bec066e81362d61e13e88129db9401af9df5fbe15c59a1ff0423",
+   "weights_sha256": "fa78899ba2caec9d235a900e91d96c689da71c42029230c2028b00f09f809c2e",
+   "code_commit": "52e440a80a655b01e0b41e9dd9bfe599bc11625e"
+  },
+  "restormer_gauss_blind": {
+   "config_sha256": "88f69a4f0f21bec066e81362d61e13e88129db9401af9df5fbe15c59a1ff0423",
+   "weights_sha256": "4e2314dae77bb907184da6e2ac625b921491d6b33de26a52512eff1c6bb37fbd",
+   "code_commit": "68dc6ac472db26f16361150cb7a96a1bc87da93f"
+  }
+ },
+ "conditions": 40,
+ "videos": 108,
+ "frames_per_video": 32,
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "frame_rule": "same as results/p2/p2-classical (sample_rows_per_video seed=None, native 320x240 JPEG from the D-34 blob)",
+ "noise_seed": "SampleKey(relative_path=<filepath>/frame<index>, file_digest, global_seed=0), as the classical run",
+ "quality_metrics": "eval.image_quality_torch (float64, equal to the skimage reference) on float [0,1] before quantization",
+ "classifier": "D-53 step_permuted head retrained per fold x seed on fold-cache train features (D-59)",
+ "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+ "clean_feature_check": {
+  "max_abs_diff": 0.06396484375,
+  "median_max_abs_diff": 0.0063018798828125,
+  "min_mean_cosine": 0.9999938011169434,
+  "videos": 108
+ },
+ "classical_identity_check": {
+  "max_abs_diff_vs_classical_identity_rows": 0.0
+ },
+ "limit_videos": null,
+ "epochs_override": null,
+ "test_split": "untouched",
+ "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+ "extract_seconds": 9804
+}

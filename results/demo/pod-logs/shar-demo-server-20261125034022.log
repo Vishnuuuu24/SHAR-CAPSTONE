@@ -1,0 +1,11 @@
+{"ready": true, "port": 8765, "device": "cuda:0", "model": "E3 (D-76)", "members": 36, "test": {"macro_f1": 0.4549, "accuracy": 0.462, "top3": 0.722, "source": "D-73 / D-76"}, "e3_config_sha256": "d555aaf66bf5e479fc3f12a13c263dc0d10704d53e7b19455f2b8adff1b3d9c1", "weights": {"B": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006", "S": "f5d84933ac67e11fcd249aba72bb2888028fc11507a4b81629c095c881031b77", "VJ": "5346856ec9df69487fe72a25bf2632aaa8112df33fb67708e3f7374edc1f7012", "L": "36e4deffbaef061a2576705b0c36f93621e2ae20bf6274694821b0b492551b51"}}
+127.0.0.1 "GET / HTTP/1.1" 200 -
+127.0.0.1 "GET /health HTTP/1.1" 200 -
+127.0.0.1 "GET /favicon.ico HTTP/1.1" 404 -
+{"file": "Explosion021_x264.mp4", "prediction": "Explosion", "confidence": 0.868, "expected": "Explosion", "seconds": 4.9}
+127.0.0.1 "POST /predict HTTP/1.1" 200 -
+{"file": "Explosion021_x264.mp4", "prediction": "Explosion", "confidence": 0.868, "expected": "Explosion", "seconds": 4.2}
+127.0.0.1 "POST /predict HTTP/1.1" 200 -
+{"file": "RoadAccidents086_x264.mp4", "prediction": "RoadAccidents", "confidence": 0.932, "expected": "RoadAccidents", "seconds": 5.0}
+127.0.0.1 "POST /predict HTTP/1.1" 200 -
+Terminated

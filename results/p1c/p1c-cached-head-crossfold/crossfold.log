@@ -1,0 +1,128 @@
+### fold1 frozen = validation run, skipping
+########## fold1 dinov2 (06:16:26Z) ##########
+train 391014 rows, validation 37600 rows, dim 1536, cache 56c0312b9122
+
+--- seed 0 ---
+best epoch 4 (early-stopped), validation macro-F1 0.3330 (clustered 95% CI 0.2233-0.3999), video-level macro-F1 0.3556 over 56 videos, train 620.7s
+wrote results/p1c/p1c-cached-head-crossfold/fold1-dinov2/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), validation macro-F1 0.3395 (clustered 95% CI 0.2196-0.3961), video-level macro-F1 0.3634 over 56 videos, train 206.7s
+wrote results/p1c/p1c-cached-head-crossfold/fold1-dinov2/seed-1.json
+
+--- seed 2 ---
+best epoch 0 (early-stopped), validation macro-F1 0.3333 (clustered 95% CI 0.2114-0.3931), video-level macro-F1 0.3634 over 56 videos, train 236.2s
+wrote results/p1c/p1c-cached-head-crossfold/fold1-dinov2/seed-2.json
+
+=== aggregate over seeds [0, 1, 2] ===
+frame macro-F1 0.3352 +/- 0.0037 (min 0.3330, max 0.3395)
+wrote results/p1c/p1c-cached-head-crossfold/fold1-dinov2/aggregate.json
+########## fold2 frozen (06:37:02Z) ##########
+train 384702 rows, validation 47726 rows, dim 2048, cache b546abe7f567
+
+--- seed 0 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2403 (clustered 95% CI 0.1546-0.3090), video-level macro-F1 0.3300 over 56 videos, train 275.1s
+wrote results/p1c/p1c-cached-head-crossfold/fold2-frozen/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2384 (clustered 95% CI 0.1574-0.3118), video-level macro-F1 0.2973 over 56 videos, train 312.6s
+wrote results/p1c/p1c-cached-head-crossfold/fold2-frozen/seed-1.json
+
+--- seed 2 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2349 (clustered 95% CI 0.1542-0.3116), video-level macro-F1 0.3617 over 56 videos, train 258.8s
+wrote results/p1c/p1c-cached-head-crossfold/fold2-frozen/seed-2.json
+
+=== aggregate over seeds [0, 1, 2] ===
+frame macro-F1 0.2379 +/- 0.0027 (min 0.2349, max 0.2403)
+wrote results/p1c/p1c-cached-head-crossfold/fold2-frozen/aggregate.json
+########## fold2 dinov2 (06:54:34Z) ##########
+train 384702 rows, validation 47726 rows, dim 1536, cache ea8c33fbecf3
+
+--- seed 0 ---
+best epoch 3 (early-stopped), validation macro-F1 0.2912 (clustered 95% CI 0.1943-0.3372), video-level macro-F1 0.4020 over 56 videos, train 422.9s
+wrote results/p1c/p1c-cached-head-crossfold/fold2-dinov2/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2880 (clustered 95% CI 0.1896-0.3441), video-level macro-F1 0.3722 over 56 videos, train 329.3s
+wrote results/p1c/p1c-cached-head-crossfold/fold2-dinov2/seed-1.json
+
+--- seed 2 ---
+best epoch 7 (early-stopped), validation macro-F1 0.2930 (clustered 95% CI 0.1905-0.3304), video-level macro-F1 0.3385 over 56 videos, train 676.4s
+wrote results/p1c/p1c-cached-head-crossfold/fold2-dinov2/seed-2.json
+
+=== aggregate over seeds [0, 1, 2] ===
+frame macro-F1 0.2907 +/- 0.0025 (min 0.2880, max 0.2930)
+wrote results/p1c/p1c-cached-head-crossfold/fold2-dinov2/aggregate.json
+########## fold3 frozen (07:21:27Z) ##########
+train 400419 rows, validation 49719 rows, dim 2048, cache 2fd183f7431a
+
+--- seed 0 ---
+best epoch 0 (early-stopped), validation macro-F1 0.1865 (clustered 95% CI 0.1003-0.2512), video-level macro-F1 0.2287 over 56 videos, train 374.3s
+wrote results/p1c/p1c-cached-head-crossfold/fold3-frozen/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), validation macro-F1 0.1998 (clustered 95% CI 0.1126-0.2653), video-level macro-F1 0.2443 over 56 videos, train 324.7s
+wrote results/p1c/p1c-cached-head-crossfold/fold3-frozen/seed-1.json
+
+--- seed 2 ---
+best epoch 0 (early-stopped), validation macro-F1 0.1935 (clustered 95% CI 0.1031-0.2580), video-level macro-F1 0.2253 over 56 videos, train 391.6s
+wrote results/p1c/p1c-cached-head-crossfold/fold3-frozen/seed-2.json
+
+=== aggregate over seeds [0, 1, 2] ===
+frame macro-F1 0.1933 +/- 0.0067 (min 0.1865, max 0.1998)
+wrote results/p1c/p1c-cached-head-crossfold/fold3-frozen/aggregate.json
+########## fold3 dinov2 (07:43:01Z) ##########
+train 400419 rows, validation 49719 rows, dim 1536, cache 681f53307dbd
+
+--- seed 0 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2321 (clustered 95% CI 0.1465-0.2908), video-level macro-F1 0.3023 over 56 videos, train 362.2s
+wrote results/p1c/p1c-cached-head-crossfold/fold3-dinov2/seed-0.json
+
+--- seed 1 ---
+best epoch 1 (early-stopped), validation macro-F1 0.2368 (clustered 95% CI 0.1571-0.2973), video-level macro-F1 0.3031 over 56 videos, train 439.1s
+wrote results/p1c/p1c-cached-head-crossfold/fold3-dinov2/seed-1.json
+
+--- seed 2 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2499 (clustered 95% CI 0.1578-0.3064), video-level macro-F1 0.3386 over 56 videos, train 217.9s
+wrote results/p1c/p1c-cached-head-crossfold/fold3-dinov2/seed-2.json
+
+=== aggregate over seeds [0, 1, 2] ===
+frame macro-F1 0.2396 +/- 0.0092 (min 0.2321, max 0.2499)
+wrote results/p1c/p1c-cached-head-crossfold/fold3-dinov2/aggregate.json
+########## fold4 frozen (08:03:11Z) ##########
+train 357643 rows, validation 41319 rows, dim 2048, cache 37500108e894
+
+--- seed 0 ---
+best epoch 2 (early-stopped), validation macro-F1 0.1820 (clustered 95% CI 0.1019-0.2630), video-level macro-F1 0.2912 over 56 videos, train 238.3s
+wrote results/p1c/p1c-cached-head-crossfold/fold4-frozen/seed-0.json
+
+--- seed 1 ---
+best epoch 1 (early-stopped), validation macro-F1 0.1781 (clustered 95% CI 0.0933-0.2461), video-level macro-F1 0.2552 over 56 videos, train 199.4s
+wrote results/p1c/p1c-cached-head-crossfold/fold4-frozen/seed-1.json
+
+--- seed 2 ---
+best epoch 1 (early-stopped), validation macro-F1 0.1794 (clustered 95% CI 0.0928-0.2452), video-level macro-F1 0.2440 over 56 videos, train 205.0s
+wrote results/p1c/p1c-cached-head-crossfold/fold4-frozen/seed-2.json
+
+=== aggregate over seeds [0, 1, 2] ===
+frame macro-F1 0.1798 +/- 0.0020 (min 0.1781, max 0.1820)
+wrote results/p1c/p1c-cached-head-crossfold/fold4-frozen/aggregate.json
+########## fold4 dinov2 (08:16:46Z) ##########
+train 357643 rows, validation 41319 rows, dim 1536, cache 3b4aaed3037e
+
+--- seed 0 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2530 (clustered 95% CI 0.1680-0.3338), video-level macro-F1 0.3069 over 56 videos, train 171.5s
+wrote results/p1c/p1c-cached-head-crossfold/fold4-dinov2/seed-0.json
+
+--- seed 1 ---
+best epoch 2 (early-stopped), validation macro-F1 0.2664 (clustered 95% CI 0.1700-0.3348), video-level macro-F1 0.3284 over 56 videos, train 232.7s
+wrote results/p1c/p1c-cached-head-crossfold/fold4-dinov2/seed-1.json
+
+--- seed 2 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2605 (clustered 95% CI 0.1770-0.3375), video-level macro-F1 0.3453 over 56 videos, train 196.4s
+wrote results/p1c/p1c-cached-head-crossfold/fold4-dinov2/seed-2.json
+
+=== aggregate over seeds [0, 1, 2] ===
+frame macro-F1 0.2600 +/- 0.0067 (min 0.2530, max 0.2664)
+wrote results/p1c/p1c-cached-head-crossfold/fold4-dinov2/aggregate.json
+########## ALL DONE 2026-09-10T08:29:29Z ##########

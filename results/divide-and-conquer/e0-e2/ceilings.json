@@ -1,0 +1,521 @@
+[
+  {
+    "folds_meeting_gate": 4,
+    "group": [
+      "Shooting",
+      "Assault",
+      "Fighting"
+    ],
+    "mean_delta": 0.16773517487803208,
+    "min_fold_delta": 0.15538376966948408,
+    "mode": "oracle_route",
+    "name": "violent_trio",
+    "per_class_f1_delta": {
+      "Abuse": 0.04801587301587301,
+      "Arrest": 0.011111111111111108,
+      "Arson": 0.07081529581529583,
+      "Assault": 0.5707431457431458,
+      "Burglary": 0.07668350168350169,
+      "Fighting": 0.4599326599326599,
+      "Normal_Videos_event": 0.059986772486772484,
+      "RoadAccidents": 0.07346079846079846,
+      "Robbery": 0.06263227513227512,
+      "Shooting": 0.7992544492544492,
+      "Shoplifting": 0.06783910533910534,
+      "Vandalism": 0.047817460317460314
+    },
+    "per_fold_delta": {
+      "1": 0.15538376966948408,
+      "2": 0.1560983989555419,
+      "3": 0.16678863464577748,
+      "4": 0.19266989624132486
+    },
+    "strategy": "manual"
+  },
+  {
+    "folds_meeting_gate": 0,
+    "group": [
+      "Shooting",
+      "Assault",
+      "Fighting"
+    ],
+    "mean_delta": 0.0263695629767058,
+    "min_fold_delta": 0.005687830687830631,
+    "mode": "hard_route",
+    "name": "violent_trio",
+    "per_class_f1_delta": {
+      "Assault": 0.03676647426647426,
+      "Fighting": 0.06097883597883597,
+      "Shooting": 0.2714285714285714
+    },
+    "per_fold_delta": {
+      "1": 0.005687830687830631,
+      "2": 0.030232598089740936,
+      "3": 0.03902116402116401,
+      "4": 0.030536659108087616
+    },
+    "strategy": "manual"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "group": [
+      "Shooting",
+      "Assault",
+      "Fighting",
+      "Abuse"
+    ],
+    "mean_delta": 0.21928768982340408,
+    "min_fold_delta": 0.20618772761629894,
+    "mode": "oracle_route",
+    "name": "violent_quad",
+    "per_class_f1_delta": {
+      "Abuse": 0.5588443963443964,
+      "Arrest": 0.05992063492063493,
+      "Arson": 0.07081529581529583,
+      "Assault": 0.5869047619047619,
+      "Burglary": 0.0803872053872054,
+      "Fighting": 0.5212121212121211,
+      "Normal_Videos_event": 0.08776455026455028,
+      "RoadAccidents": 0.1048100048100048,
+      "Robbery": 0.06263227513227512,
+      "Shooting": 0.7992544492544492,
+      "Shoplifting": 0.06783910533910534,
+      "Stealing": 0.02182539682539682,
+      "Vandalism": 0.047817460317460314
+    },
+    "per_fold_delta": {
+      "1": 0.21055452484023907,
+      "2": 0.2197347625919055,
+      "3": 0.20618772761629894,
+      "4": 0.24067374424517268
+    },
+    "strategy": "manual"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "group": [
+      "Shooting",
+      "Assault",
+      "Fighting",
+      "Abuse"
+    ],
+    "mean_delta": 0.06943929086786232,
+    "min_fold_delta": 0.05619803476946339,
+    "mode": "hard_route",
+    "name": "violent_quad",
+    "per_class_f1_delta": {
+      "Abuse": 0.2705687830687831,
+      "Assault": 0.23259980759980756,
+      "Fighting": 0.14305555555555552,
+      "Shooting": 0.3259259259259259
+    },
+    "per_fold_delta": {
+      "1": 0.05619803476946339,
+      "2": 0.06904590118875831,
+      "3": 0.07191987906273628,
+      "4": 0.08059334845049132
+    },
+    "strategy": "manual"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "group": [
+      "Fighting",
+      "Assault"
+    ],
+    "mean_delta": 0.08920163830878114,
+    "min_fold_delta": 0.07207831850688995,
+    "mode": "oracle_route",
+    "name": "fight_assault",
+    "per_class_f1_delta": {
+      "Abuse": 0.03736772486772487,
+      "Arrest": 0.011111111111111108,
+      "Arson": 0.07081529581529583,
+      "Assault": 0.5136076886076887,
+      "Burglary": 0.057239057239057235,
+      "Fighting": 0.44276094276094274,
+      "RoadAccidents": 0.015656565656565657,
+      "Robbery": 0.048743386243386234,
+      "Shoplifting": 0.0037037037037037,
+      "Vandalism": 0.047817460317460314
+    },
+    "per_fold_delta": {
+      "1": 0.07228921871779015,
+      "2": 0.07207831850688995,
+      "3": 0.0948120662406377,
+      "4": 0.11762694976980675
+    },
+    "strategy": "manual"
+  },
+  {
+    "folds_meeting_gate": 0,
+    "group": [
+      "Fighting",
+      "Assault"
+    ],
+    "mean_delta": 0.0050307496736067825,
+    "min_fold_delta": 0.0,
+    "mode": "hard_route",
+    "name": "fight_assault",
+    "per_class_f1_delta": {
+      "Assault": 0.017718855218855217,
+      "Fighting": 0.05271164021164021
+    },
+    "per_fold_delta": {
+      "1": 0.005687830687830631,
+      "2": 0.005062530062530046,
+      "3": 0.0,
+      "4": 0.009372637944066453
+    },
+    "strategy": "manual"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "group": [
+      "Burglary",
+      "Robbery",
+      "Shoplifting",
+      "Stealing"
+    ],
+    "mean_delta": 0.11812126365697795,
+    "min_fold_delta": 0.10610011681440257,
+    "mode": "oracle_route",
+    "name": "property",
+    "per_class_f1_delta": {
+      "Abuse": 0.024747474747474744,
+      "Arrest": 0.0246031746031746,
+      "Arson": 0.030092592592592598,
+      "Assault": 0.049464886964886955,
+      "Burglary": 0.42027417027417036,
+      "Explosion": 0.013888888888888886,
+      "Fighting": 0.03042328042328042,
+      "RoadAccidents": 0.004545454545454547,
+      "Robbery": 0.32685786435786435,
+      "Shoplifting": 0.2246993746993747,
+      "Stealing": 0.38796296296296284,
+      "Vandalism": 0.11613756613756615
+    },
+    "per_fold_delta": {
+      "1": 0.10610011681440257,
+      "2": 0.13304988662131523,
+      "3": 0.11973132687418403,
+      "4": 0.11360372431800997
+    },
+    "strategy": "manual"
+  },
+  {
+    "folds_meeting_gate": 1,
+    "group": [
+      "Burglary",
+      "Robbery",
+      "Shoplifting",
+      "Stealing"
+    ],
+    "mean_delta": 0.037250051535765785,
+    "min_fold_delta": 0.02359650931079499,
+    "mode": "hard_route",
+    "name": "property",
+    "per_class_f1_delta": {
+      "Burglary": 0.14517797017797018,
+      "Robbery": 0.16369047619047616,
+      "Shoplifting": 0.10231481481481482,
+      "Stealing": 0.11031746031746031
+    },
+    "per_fold_delta": {
+      "1": 0.028535353535353525,
+      "2": 0.02359650931079499,
+      "3": 0.03363052291623719,
+      "4": 0.06323782038067743
+    },
+    "strategy": "manual"
+  },
+  {
+    "folds_meeting_gate": 2,
+    "mean_delta": 0.10118102796674225,
+    "min_fold_delta": 0.09229024943310649,
+    "mode": "oracle_route",
+    "n_folds": 2,
+    "name": "size2",
+    "per_fold": {
+      "2": {
+        "delta": 0.09229024943310649,
+        "group": [
+          "Burglary",
+          "Robbery"
+        ]
+      },
+      "3": {
+        "delta": 0.11007180650037801,
+        "group": [
+          "RoadAccidents",
+          "Shooting"
+        ]
+      }
+    },
+    "strategy": "data_driven_lofo"
+  },
+  {
+    "folds_meeting_gate": 0,
+    "mean_delta": 0.013321995464852604,
+    "min_fold_delta": 0.003968253968253954,
+    "mode": "hard_route",
+    "n_folds": 2,
+    "name": "size2",
+    "per_fold": {
+      "2": {
+        "delta": 0.003968253968253954,
+        "group": [
+          "Burglary",
+          "Robbery"
+        ]
+      },
+      "3": {
+        "delta": 0.022675736961451254,
+        "group": [
+          "RoadAccidents",
+          "Shooting"
+        ]
+      }
+    },
+    "strategy": "data_driven_lofo"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "mean_delta": 0.1104566068851783,
+    "min_fold_delta": 0.07141139283996434,
+    "mode": "oracle_route",
+    "n_folds": 4,
+    "name": "size3",
+    "per_fold": {
+      "1": {
+        "delta": 0.07141139283996434,
+        "group": [
+          "Arson",
+          "Explosion",
+          "Vandalism"
+        ]
+      },
+      "2": {
+        "delta": 0.10396653610939321,
+        "group": [
+          "Abuse",
+          "Arson",
+          "RoadAccidents"
+        ]
+      },
+      "3": {
+        "delta": 0.11814058956916101,
+        "group": [
+          "Arson",
+          "RoadAccidents",
+          "Shooting"
+        ]
+      },
+      "4": {
+        "delta": 0.14830790902219465,
+        "group": [
+          "Assault",
+          "Fighting",
+          "Robbery"
+        ]
+      }
+    },
+    "strategy": "data_driven_lofo"
+  },
+  {
+    "folds_meeting_gate": 0,
+    "mean_delta": 0.014362588469731305,
+    "min_fold_delta": 0.0,
+    "mode": "hard_route",
+    "n_folds": 4,
+    "name": "size3",
+    "per_fold": {
+      "1": {
+        "delta": 0.006122448979591799,
+        "group": [
+          "Arson",
+          "Explosion",
+          "Vandalism"
+        ]
+      },
+      "2": {
+        "delta": 0.0,
+        "group": [
+          "Abuse",
+          "Arson",
+          "RoadAccidents"
+        ]
+      },
+      "3": {
+        "delta": 0.022675736961451254,
+        "group": [
+          "Arson",
+          "RoadAccidents",
+          "Shooting"
+        ]
+      },
+      "4": {
+        "delta": 0.028652167937882167,
+        "group": [
+          "Assault",
+          "Fighting",
+          "Robbery"
+        ]
+      }
+    },
+    "strategy": "data_driven_lofo"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "mean_delta": 0.17959527245241524,
+    "min_fold_delta": 0.1615508829794544,
+    "mode": "oracle_route",
+    "n_folds": 4,
+    "name": "size4",
+    "per_fold": {
+      "1": {
+        "delta": 0.1845908060193775,
+        "group": [
+          "Abuse",
+          "Assault",
+          "RoadAccidents",
+          "Shooting"
+        ]
+      },
+      "2": {
+        "delta": 0.1615508829794544,
+        "group": [
+          "Abuse",
+          "Fighting",
+          "RoadAccidents",
+          "Stealing"
+        ]
+      },
+      "3": {
+        "delta": 0.17885659314230734,
+        "group": [
+          "Explosion",
+          "Fighting",
+          "RoadAccidents",
+          "Shooting"
+        ]
+      },
+      "4": {
+        "delta": 0.19338280766852184,
+        "group": [
+          "Abuse",
+          "Assault",
+          "Fighting",
+          "Robbery"
+        ]
+      }
+    },
+    "strategy": "data_driven_lofo"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "mean_delta": 0.056270614306328556,
+    "min_fold_delta": 0.05378100735243596,
+    "mode": "hard_route",
+    "n_folds": 4,
+    "name": "size4",
+    "per_fold": {
+      "1": {
+        "delta": 0.05378100735243596,
+        "group": [
+          "Abuse",
+          "Assault",
+          "RoadAccidents",
+          "Shooting"
+        ]
+      },
+      "2": {
+        "delta": 0.057256235827664426,
+        "group": [
+          "Abuse",
+          "Fighting",
+          "RoadAccidents",
+          "Stealing"
+        ]
+      },
+      "3": {
+        "delta": 0.055650037792894846,
+        "group": [
+          "Explosion",
+          "Fighting",
+          "RoadAccidents",
+          "Shooting"
+        ]
+      },
+      "4": {
+        "delta": 0.05839517625231899,
+        "group": [
+          "Abuse",
+          "Assault",
+          "Fighting",
+          "Robbery"
+        ]
+      }
+    },
+    "strategy": "data_driven_lofo"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "group": [
+      "Assault",
+      "Burglary",
+      "Fighting",
+      "Robbery"
+    ],
+    "mean_delta": 0.16124510410224693,
+    "min_fold_delta": 0.10758262901120041,
+    "mode": "oracle_route",
+    "name": "size4",
+    "per_class_f1_delta": {
+      "Abuse": 0.047023809523809516,
+      "Arrest": 0.030555555555555558,
+      "Arson": 0.09693963443963445,
+      "Assault": 0.6114838864838864,
+      "Burglary": 0.5245069745069745,
+      "Explosion": 0.007936507936507936,
+      "Fighting": 0.4528619528619529,
+      "RoadAccidents": 0.015656565656565657,
+      "Robbery": 0.3551406926406926,
+      "Shoplifting": 0.03787878787878788,
+      "Vandalism": 0.07744708994708994
+    },
+    "per_fold_delta": {
+      "1": 0.10758262901120041,
+      "2": 0.18591183948326806,
+      "3": 0.17397615611901324,
+      "4": 0.17750979179550602
+    },
+    "strategy": "data_driven_global_BIASED"
+  },
+  {
+    "folds_meeting_gate": 4,
+    "group": [
+      "Assault",
+      "Burglary",
+      "Fighting",
+      "Robbery"
+    ],
+    "mean_delta": 0.08323155019583586,
+    "min_fold_delta": 0.057647907647907615,
+    "mode": "hard_route",
+    "name": "size4",
+    "per_class_f1_delta": {
+      "Assault": 0.3011844636844636,
+      "Burglary": 0.2264189514189514,
+      "Fighting": 0.3166245791245791,
+      "Robbery": 0.3210137085137084
+    },
+    "per_fold_delta": {
+      "1": 0.057647907647907615,
+      "2": 0.1052274445131588,
+      "3": 0.07631072631072627,
+      "4": 0.09374012231155077
+    },
+    "strategy": "data_driven_global_BIASED"
+  }
+]

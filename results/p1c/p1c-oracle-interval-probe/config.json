@@ -1,0 +1,24 @@
+{
+  "annotation_sha256": "3b9542413f2ed9e94f73bf0488c151b3d7d595a8d2ad30f524e9243a2ae2a17c",
+  "event_definition": "cached frame with start <= source_frame_index <= end for any official span",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "frames_per_video": 8,
+  "git_revision": "fe762bd29e6e035e7f1557b6b0fd6a9cf1dfc045",
+  "head": "step_permuted (train permute seed 1000+seed, val permute seed 2000+seed, sampling_seed 0)",
+  "head_init": "torch.manual_seed(seed) before head construction (deviation: headline script leaves init unseeded)",
+  "mode": "frozen_head",
+  "patch_cache_cls_sha256": "08e0b038a9b00e6415e863507916719ce65193972d4923bb206b1237572a86f3",
+  "patch_cache_features_sha256": "344927d17df4ead5d0dc9201612dbf516a45a87d8f285806a8da51308929a938",
+  "sampler": "event/anti/uniform8: k=8 midpoints of k equal segments over the candidate frames sorted by source_frame_index (repeats if fewer than 8), then permuted with default_rng(2000+seed); uniform: headline path (all cached frames, permuted, 8-frame chunks, mean logits)",
+  "seed_averaging": "mean softmax probability over seeds per (fold, video)",
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

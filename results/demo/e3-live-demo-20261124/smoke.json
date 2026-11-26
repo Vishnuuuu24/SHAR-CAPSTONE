@@ -1,0 +1,181 @@
+{
+ "git_revision": "fa50177bfb2f5b3125f2375b02c744a6396ba5d4",
+ "health": {
+  "model": "E3 (D-76)",
+  "members": 36,
+  "test": {
+   "macro_f1": 0.4549,
+   "accuracy": 0.462,
+   "top3": 0.722,
+   "source": "D-73 / D-76"
+  },
+  "e3_config_sha256": "d555aaf66bf5e479fc3f12a13c263dc0d10704d53e7b19455f2b8adff1b3d9c1",
+  "weights": {
+   "B": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+   "S": "f5d84933ac67e11fcd249aba72bb2888028fc11507a4b81629c095c881031b77",
+   "VJ": "5346856ec9df69487fe72a25bf2632aaa8112df33fb67708e3f7374edc1f7012",
+   "L": "36e4deffbaef061a2576705b0c36f93621e2ae20bf6274694821b0b492551b51"
+  }
+ },
+ "videos": [
+  {
+   "key": "Explosion021_x264",
+   "group": "ucf",
+   "saved": "Explosion",
+   "got": "Explosion",
+   "same_top1": true,
+   "max_abs_prob_diff": 0.00397140449947786,
+   "confidence": 0.8684507807095846,
+   "members": 9,
+   "mode": "held-out members only: folds [2] never trained on this video (the test condition)",
+   "frames": 157,
+   "duration_s": 26.033333333333335,
+   "timing_s": {
+    "decode": 0.3,
+    "features": 4.0,
+    "total": 4.5
+   },
+   "analysed_frames_per_s": 34.888888888888886
+  },
+  {
+   "key": "RoadAccidents086_x264",
+   "group": "ucf",
+   "saved": "RoadAccidents",
+   "got": "RoadAccidents",
+   "same_top1": true,
+   "max_abs_prob_diff": 0.0048447151978811,
+   "confidence": 0.9317884229951434,
+   "members": 36,
+   "mode": "held-out members only: folds [1, 2, 3, 4] never trained on this video (the test condition)",
+   "frames": 180,
+   "duration_s": 29.866666666666667,
+   "timing_s": {
+    "decode": 0.3,
+    "features": 4.3,
+    "total": 5.0
+   },
+   "analysed_frames_per_s": 36.0
+  },
+  {
+   "key": "Robbery044_x264",
+   "group": "ucf",
+   "saved": "Robbery",
+   "got": "Robbery",
+   "same_top1": true,
+   "max_abs_prob_diff": 0.003918813334571003,
+   "confidence": 0.9228746030065749,
+   "members": 9,
+   "mode": "held-out members only: folds [4] never trained on this video (the test condition)",
+   "frames": 94,
+   "duration_s": 15.533333333333333,
+   "timing_s": {
+    "decode": 0.2,
+    "features": 2.2,
+    "total": 2.6
+   },
+   "analysed_frames_per_s": 36.15384615384615
+  },
+  {
+   "key": "Abuse001_x264",
+   "group": "ucf",
+   "saved": "Arrest",
+   "got": "Arrest",
+   "same_top1": true,
+   "max_abs_prob_diff": 0.01199519545965208,
+   "confidence": 0.40480694340335,
+   "members": 9,
+   "mode": "held-out members only: folds [1] never trained on this video (the test condition)",
+   "frames": 546,
+   "duration_s": 90.86666666666666,
+   "timing_s": {
+    "decode": 1.0,
+    "features": 13.2,
+    "total": 14.5
+   },
+   "analysed_frames_per_s": 37.6551724137931
+  },
+  {
+   "key": "8d300bb7627bb7d70b5dd2e6",
+   "group": "external",
+   "saved": "Abuse",
+   "got": "Abuse",
+   "same_top1": true,
+   "max_abs_prob_diff": 0.0,
+   "confidence": 0.7218856737017632,
+   "members": 36,
+   "mode": "all 36 members (not a UCF-Crime video)",
+   "frames": 30,
+   "duration_s": 4.866666666666666,
+   "timing_s": {
+    "decode": 0.4,
+    "features": 0.8,
+    "total": 1.4
+   },
+   "analysed_frames_per_s": 21.42857142857143
+  },
+  {
+   "key": "75208095edc90a9898495902",
+   "group": "external",
+   "saved": "Stealing",
+   "got": "Stealing",
+   "same_top1": true,
+   "max_abs_prob_diff": 0.0,
+   "confidence": 0.15524978449361193,
+   "members": 36,
+   "mode": "all 36 members (not a UCF-Crime video)",
+   "frames": 106,
+   "duration_s": 21.916666666666668,
+   "timing_s": {
+    "decode": 0.2,
+    "features": 2.6,
+    "total": 3.0
+   },
+   "analysed_frames_per_s": 35.333333333333336
+  }
+ ],
+ "renamed": {
+  "expected": {
+   "label": "Robbery",
+   "conflicting_labels": null,
+   "seen_by_folds": [
+    1,
+    2,
+    3
+   ],
+   "held_out_folds": [
+    4
+   ],
+   "correct": true
+  },
+  "mode": "held-out members only: folds [4] never trained on this video (the test condition)",
+  "prediction": "Robbery"
+ },
+ "http": {
+  "health_model": "E3 (D-76)",
+  "health_members": 36,
+  "page_bytes": 16931,
+  "predict": "Explosion",
+  "confidence": 0.8684507807095846,
+  "windows": 5,
+  "thumbnails": 8,
+  "expected": {
+   "label": "Explosion",
+   "conflicting_labels": null,
+   "seen_by_folds": [
+    1,
+    3,
+    4
+   ],
+   "held_out_folds": [
+    2
+   ],
+   "correct": true
+  }
+ },
+ "summary": {
+  "all_same_top1": true,
+  "external_max_abs_prob_diff": 0.0,
+  "ucf_max_abs_prob_diff": 0.01199519545965208,
+  "analysed_frames_per_s_median": 35.66666666666667
+ }
+}

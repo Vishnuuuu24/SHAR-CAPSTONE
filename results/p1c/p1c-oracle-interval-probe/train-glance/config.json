@@ -1,0 +1,39 @@
+{
+  "annotation_sha256": "3b9542413f2ed9e94f73bf0488c151b3d7d595a8d2ad30f524e9243a2ae2a17c",
+  "evaluation_intervals": "official test-split intervals only (validation diagnostics unchanged)",
+  "fold_cache_manifest_sha256": {
+    "1": "11316b4662690bdeace5245674ffa1d2169093d801704f17360b0f4d8c2ceab6",
+    "2": "334f39c78fb01e519aa84842b540b94c415141d0d947eb386233da83f380dc62",
+    "3": "c623a797df2a2b21de4bab4f1d8f09e33d17b9470bec7ecb92491747f2e0c8f2",
+    "4": "529b3832e84624e215c1ca99b8afff1c28e1b5eee0c32f1d345b12cdbac760cb"
+  },
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "frames_per_video": 8,
+  "git_revision": "a151c34308c6189e49953826090b3c87347a2297",
+  "glance_clicks": 2026,
+  "glance_csv": "results/p1c/glance-annotations/ucf_glance_annotations.csv",
+  "glance_csv_sha256": "c8c06b24468f6dc3fad9e699d10cf609711d3af612815eccb709e2fefb0fc6b7",
+  "glance_videos": 810,
+  "glance_window_s": 2.0,
+  "head_init": "torch.manual_seed(seed) before head construction",
+  "mode": "train_oracle",
+  "official_interval_precedence": true,
+  "patch_cache_features_sha256": "344927d17df4ead5d0dc9201612dbf516a45a87d8f285806a8da51308929a938",
+  "sampler": "see mode-1 config",
+  "seed_averaging": "mean softmax probability over seeds per (fold, video)",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "train_features": "fold cache results/p1c/p1c-dinov2-feature-cache-ar-fold{N}/train/features.float16.npy (row_index memmap gather)",
+  "train_oracle": "covered train videos (official interval OR glance window, official wins): 8 midpoints of equal segments of in-span cached frames; others as headline",
+  "train_uniform_foldcache": "sample_rows_per_video(train_rows, 8, seed=0) as headline",
+  "validation_features": "patch cache (same as mode 1)",
+  "videos_with_both_glance_and_official_interval": 0
+}

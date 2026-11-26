@@ -1,0 +1,584 @@
+{
+  "1_centroid_geometry": {
+    "ucf_all_700": {
+      "n_videos": 700,
+      "ucf_shooting_vs_other_ucf_centroids": {
+        "Abuse": 0.8984411635328611,
+        "Arrest": 0.9561468375656716,
+        "Arson": 0.91607952194121,
+        "Assault": 0.9406072277712256,
+        "Burglary": 0.8790399837999827,
+        "Explosion": 0.916432979451528,
+        "Fighting": 0.91584196657184,
+        "Normal_Videos_event": 0.8471672175303722,
+        "RoadAccidents": 0.8474687912647323,
+        "Robbery": 0.7734221189273487,
+        "Shoplifting": 0.7169921567976261,
+        "Stealing": 0.8787145130149143,
+        "Vandalism": 0.9246149483054309
+      },
+      "ucf_within_class_mean_video_to_centroid_cos": {
+        "Abuse": 0.5877494186481291,
+        "Arrest": 0.6162664695016725,
+        "Arson": 0.6706384647922448,
+        "Assault": 0.6121727528876232,
+        "Burglary": 0.5848741023429025,
+        "Explosion": 0.613434424214003,
+        "Fighting": 0.5930538772481849,
+        "Normal_Videos_event": 0.5028972604015148,
+        "RoadAccidents": 0.6214751955731654,
+        "Robbery": 0.6574796046469724,
+        "Shooting": 0.6037923592783373,
+        "Shoplifting": 0.6516317503635878,
+        "Stealing": 0.6056823427218567,
+        "Vandalism": 0.6121229807611188
+      },
+      "xd_centroid_vs_ucf_centroids": {
+        "Abuse": {
+          "cosine": {
+            "Abuse": 0.523297910903912,
+            "Arrest": 0.45482209364210363,
+            "Arson": 0.5040805667169602,
+            "Assault": 0.5137237503625406,
+            "Burglary": 0.4944312774495781,
+            "Explosion": 0.4402220040039913,
+            "Fighting": 0.5015257074026929,
+            "Normal_Videos_event": 0.3370182775304833,
+            "RoadAccidents": 0.3154972500793497,
+            "Robbery": 0.3549433457390594,
+            "Shooting": 0.43932210398429133,
+            "Shoplifting": 0.34642655352061874,
+            "Stealing": 0.39166319080784706,
+            "Vandalism": 0.4393687801423689
+          },
+          "ranking": [
+            "Abuse",
+            "Assault",
+            "Arson",
+            "Fighting",
+            "Burglary",
+            "Arrest",
+            "Explosion",
+            "Vandalism",
+            "Shooting",
+            "Stealing",
+            "Robbery",
+            "Shoplifting",
+            "Normal_Videos_event",
+            "RoadAccidents"
+          ],
+          "same_name_rank": 1
+        },
+        "Fighting": {
+          "cosine": {
+            "Abuse": 0.6518706403155318,
+            "Arrest": 0.6315158838297112,
+            "Arson": 0.6238586098102138,
+            "Assault": 0.6763400200876559,
+            "Burglary": 0.6055828955120345,
+            "Explosion": 0.5983730353478856,
+            "Fighting": 0.6815826826774163,
+            "Normal_Videos_event": 0.5102812722543997,
+            "RoadAccidents": 0.47504770263300655,
+            "Robbery": 0.5109699426458155,
+            "Shooting": 0.6009942192277711,
+            "Shoplifting": 0.48284733611263814,
+            "Stealing": 0.5161910784089778,
+            "Vandalism": 0.5903965058979657
+          },
+          "ranking": [
+            "Fighting",
+            "Assault",
+            "Abuse",
+            "Arrest",
+            "Arson",
+            "Burglary",
+            "Shooting",
+            "Explosion",
+            "Vandalism",
+            "Stealing",
+            "Robbery",
+            "Normal_Videos_event",
+            "Shoplifting",
+            "RoadAccidents"
+          ],
+          "same_name_rank": 1
+        },
+        "Shooting": {
+          "cosine": {
+            "Abuse": 0.5878165300737972,
+            "Arrest": 0.5629776849773437,
+            "Arson": 0.6058559974795973,
+            "Assault": 0.607731983300709,
+            "Burglary": 0.5736285415884799,
+            "Explosion": 0.5742582854651435,
+            "Fighting": 0.5948998904371481,
+            "Normal_Videos_event": 0.44699672992141687,
+            "RoadAccidents": 0.4435631796217215,
+            "Robbery": 0.4448550581105781,
+            "Shooting": 0.542960754055939,
+            "Shoplifting": 0.4104593586055354,
+            "Stealing": 0.5049672586193265,
+            "Vandalism": 0.5540646547441033
+          },
+          "ranking": [
+            "Assault",
+            "Arson",
+            "Fighting",
+            "Abuse",
+            "Explosion",
+            "Burglary",
+            "Arrest",
+            "Vandalism",
+            "Shooting",
+            "Stealing",
+            "Normal_Videos_event",
+            "Robbery",
+            "RoadAccidents",
+            "Shoplifting"
+          ],
+          "same_name_rank": 9
+        }
+      },
+      "xd_centroid_vs_xd_other_centroids_cos": {
+        "Abuse": {
+          "Fighting": 0.811969314340636,
+          "Shooting": 0.9106590458527054
+        },
+        "Fighting": {
+          "Abuse": 0.811969314340636,
+          "Shooting": 0.8432165076983774
+        },
+        "Shooting": {
+          "Abuse": 0.9106590458527054,
+          "Fighting": 0.8432165076983774
+        }
+      }
+    },
+    "ucf_fold1_train": {
+      "n_videos": 476,
+      "ucf_shooting_vs_other_ucf_centroids": {
+        "Abuse": 0.8578903228620098,
+        "Arrest": 0.9459505559718814,
+        "Arson": 0.9048300628583033,
+        "Assault": 0.9248633365038876,
+        "Burglary": 0.8439829027897447,
+        "Explosion": 0.9160282920675527,
+        "Fighting": 0.9162396343598612,
+        "Normal_Videos_event": 0.8600496807194608,
+        "RoadAccidents": 0.8523063928795194,
+        "Robbery": 0.7940542364723653,
+        "Shoplifting": 0.7044682946353698,
+        "Stealing": 0.8817813339469245,
+        "Vandalism": 0.907997858173692
+      },
+      "ucf_within_class_mean_video_to_centroid_cos": {
+        "Abuse": 0.6071116509348364,
+        "Arrest": 0.6164249942436771,
+        "Arson": 0.6581646075057386,
+        "Assault": 0.6142821600518227,
+        "Burglary": 0.5616154688431514,
+        "Explosion": 0.6095602666196919,
+        "Fighting": 0.6041931457836763,
+        "Normal_Videos_event": 0.5160780986452226,
+        "RoadAccidents": 0.6164343908730464,
+        "Robbery": 0.6373361700382766,
+        "Shooting": 0.6116466170026685,
+        "Shoplifting": 0.6594061607781686,
+        "Stealing": 0.6107924963544555,
+        "Vandalism": 0.6013059170813173
+      },
+      "xd_centroid_vs_ucf_centroids": {
+        "Abuse": {
+          "cosine": {
+            "Abuse": 0.5203202616422666,
+            "Arrest": 0.4604056511340844,
+            "Arson": 0.5098232121486723,
+            "Assault": 0.48716817391644773,
+            "Burglary": 0.4940860567544235,
+            "Explosion": 0.44885011247551493,
+            "Fighting": 0.469000303900216,
+            "Normal_Videos_event": 0.34913030440075543,
+            "RoadAccidents": 0.31701345977890005,
+            "Robbery": 0.38369217614484913,
+            "Shooting": 0.4223328905974698,
+            "Shoplifting": 0.32988374679630805,
+            "Stealing": 0.40518506367381757,
+            "Vandalism": 0.43831088565612647
+          },
+          "ranking": [
+            "Abuse",
+            "Arson",
+            "Burglary",
+            "Assault",
+            "Fighting",
+            "Arrest",
+            "Explosion",
+            "Vandalism",
+            "Shooting",
+            "Stealing",
+            "Robbery",
+            "Normal_Videos_event",
+            "Shoplifting",
+            "RoadAccidents"
+          ],
+          "same_name_rank": 1
+        },
+        "Fighting": {
+          "cosine": {
+            "Abuse": 0.624867936741208,
+            "Arrest": 0.6333048324889574,
+            "Arson": 0.6321821965525203,
+            "Assault": 0.6543430062019306,
+            "Burglary": 0.5955107853353566,
+            "Explosion": 0.6006458526371798,
+            "Fighting": 0.6554181825880443,
+            "Normal_Videos_event": 0.5079684593751821,
+            "RoadAccidents": 0.4689559217198981,
+            "Robbery": 0.5470848317292917,
+            "Shooting": 0.5881383274053791,
+            "Shoplifting": 0.47030747124094824,
+            "Stealing": 0.523839842817494,
+            "Vandalism": 0.5877734347418464
+          },
+          "ranking": [
+            "Fighting",
+            "Assault",
+            "Arrest",
+            "Arson",
+            "Abuse",
+            "Explosion",
+            "Burglary",
+            "Shooting",
+            "Vandalism",
+            "Robbery",
+            "Stealing",
+            "Normal_Videos_event",
+            "Shoplifting",
+            "RoadAccidents"
+          ],
+          "same_name_rank": 1
+        },
+        "Shooting": {
+          "cosine": {
+            "Abuse": 0.572835952217297,
+            "Arrest": 0.5698510191182582,
+            "Arson": 0.6107447252290625,
+            "Assault": 0.5840768608746718,
+            "Burglary": 0.5676225473482011,
+            "Explosion": 0.5767947321789972,
+            "Fighting": 0.5661885350206268,
+            "Normal_Videos_event": 0.4574091166000504,
+            "RoadAccidents": 0.44108418479068834,
+            "Robbery": 0.47860314064756465,
+            "Shooting": 0.5305426184808989,
+            "Shoplifting": 0.39619037617752506,
+            "Stealing": 0.5148445829642525,
+            "Vandalism": 0.551841105100853
+          },
+          "ranking": [
+            "Arson",
+            "Assault",
+            "Explosion",
+            "Abuse",
+            "Arrest",
+            "Burglary",
+            "Fighting",
+            "Vandalism",
+            "Shooting",
+            "Stealing",
+            "Robbery",
+            "Normal_Videos_event",
+            "RoadAccidents",
+            "Shoplifting"
+          ],
+          "same_name_rank": 9
+        }
+      },
+      "xd_centroid_vs_xd_other_centroids_cos": {
+        "Abuse": {
+          "Fighting": 0.811969314340636,
+          "Shooting": 0.9106590458527054
+        },
+        "Fighting": {
+          "Abuse": 0.811969314340636,
+          "Shooting": 0.8432165076983774
+        },
+        "Shooting": {
+          "Abuse": 0.9106590458527054,
+          "Fighting": 0.8432165076983774
+        }
+      }
+    },
+    "xd_within_class_mean_video_to_centroid_cos": {
+      "Abuse": 0.675500897374792,
+      "Fighting": 0.5351256311203884,
+      "Shooting": 0.59995969959337
+    }
+  },
+  "2_domain_separability": {
+    "results": {
+      "Abuse": {
+        "accuracy": 1.0,
+        "chance_accuracy": 0.6172839506172839,
+        "n_a": 31,
+        "n_b": 50,
+        "roc_auc": 1.0
+      },
+      "Fighting": {
+        "accuracy": 0.936768149882904,
+        "chance_accuracy": 0.882903981264637,
+        "n_a": 377,
+        "n_b": 50,
+        "roc_auc": 0.9784615384615384
+      },
+      "Shooting": {
+        "accuracy": 0.9964539007092199,
+        "chance_accuracy": 0.8226950354609929,
+        "n_a": 232,
+        "n_b": 50,
+        "roc_auc": 1.0
+      },
+      "reference_UCF_Shooting_vs_UCF_Fighting": {
+        "accuracy": 0.72,
+        "chance_accuracy": 0.5,
+        "n_a": 50,
+        "n_b": 50,
+        "roc_auc": 0.8024
+      }
+    },
+    "setup": "LR C=0.01, standardised on train folds, 5-fold stratified CV seed 0, A=XD(label 0) vs B=UCF(label 1); reference: A=UCF Shooting vs B=UCF Fighting"
+  },
+  "3_transfer": {
+    "2way_Shooting_vs_Fighting": {
+      "a_XD_to_UCF": {
+        "accuracy": {
+          "mean": 0.51,
+          "std": 0.010000000000000009
+        },
+        "balanced_accuracy": {
+          "mean": 0.51,
+          "std": 0.010000000000000009
+        },
+        "recall": {
+          "Fighting": {
+            "mean": 0.986,
+            "std": 0.015620499351813323
+          },
+          "Shooting": {
+            "mean": 0.034,
+            "std": 0.022
+          }
+        },
+        "repeats": 10
+      },
+      "b_UCF_to_XD_all_xd_videos": {
+        "accuracy": 0.6124794745484401,
+        "balanced_accuracy": 0.5220490716180372,
+        "n": 609,
+        "recall": {
+          "Fighting": 0.9018567639257294,
+          "Shooting": 0.14224137931034483
+        }
+      },
+      "b_UCF_to_XD_balanced_subsamples": {
+        "accuracy": {
+          "mean": 0.5221982758620689,
+          "std": 0.004206728727573953
+        },
+        "balanced_accuracy": {
+          "mean": 0.5221982758620689,
+          "std": 0.004206728727573953
+        },
+        "recall": {
+          "Fighting": {
+            "mean": 0.9021551724137931,
+            "std": 0.008413457455147887
+          },
+          "Shooting": {
+            "mean": 0.1422413793103448,
+            "std": 2.7755575615628914e-17
+          }
+        },
+        "repeats": 10
+      },
+      "c_UCF_to_UCF_leave_one_fold_out": {
+        "accuracy": 0.6,
+        "balanced_accuracy": 0.6000000000000001,
+        "n": 100,
+        "recall": {
+          "Fighting": 0.64,
+          "Shooting": 0.56
+        }
+      },
+      "c_XD_to_XD_5fold_cv_balanced_subsamples": {
+        "accuracy": {
+          "mean": 0.841594827586207,
+          "std": 0.0134676722413517
+        },
+        "balanced_accuracy": {
+          "mean": 0.841594827586207,
+          "std": 0.013467672241351696
+        },
+        "recall": {
+          "Fighting": {
+            "mean": 0.814655172413793,
+            "std": 0.021637759306915732
+          },
+          "Shooting": {
+            "mean": 0.8685344827586207,
+            "std": 0.01176495177927258
+          }
+        },
+        "repeats": 10
+      },
+      "chance": 0.5,
+      "classes": [
+        "Shooting",
+        "Fighting"
+      ],
+      "xd_balanced_per_class": 232
+    },
+    "3way": {
+      "a_XD_to_UCF": {
+        "accuracy": {
+          "mean": 0.36666666666666664,
+          "std": 0.039214509786273985
+        },
+        "balanced_accuracy": {
+          "mean": 0.36666666666666664,
+          "std": 0.03921450978627397
+        },
+        "recall": {
+          "Abuse": {
+            "mean": 0.036,
+            "std": 0.035552777669262355
+          },
+          "Fighting": {
+            "mean": 0.892,
+            "std": 0.09431860898041276
+          },
+          "Shooting": {
+            "mean": 0.17200000000000001,
+            "std": 0.1417603611733548
+          }
+        },
+        "repeats": 10
+      },
+      "b_UCF_to_XD_all_xd_videos": {
+        "accuracy": 0.525,
+        "balanced_accuracy": 0.3618978352015059,
+        "n": 640,
+        "recall": {
+          "Abuse": 0.16129032258064516,
+          "Fighting": 0.8037135278514589,
+          "Shooting": 0.1206896551724138
+        }
+      },
+      "b_UCF_to_XD_balanced_subsamples": {
+        "accuracy": {
+          "mean": 0.3634408602150538,
+          "std": 0.022452272062173213
+        },
+        "balanced_accuracy": {
+          "mean": 0.3634408602150538,
+          "std": 0.02245227206217325
+        },
+        "recall": {
+          "Abuse": {
+            "mean": 0.16129032258064518,
+            "std": 2.7755575615628914e-17
+          },
+          "Fighting": {
+            "mean": 0.7870967741935484,
+            "std": 0.041310478951179674
+          },
+          "Shooting": {
+            "mean": 0.14193548387096772,
+            "std": 0.032896900087695385
+          }
+        },
+        "repeats": 10
+      },
+      "c_UCF_to_UCF_leave_one_fold_out": {
+        "accuracy": 0.4066666666666667,
+        "balanced_accuracy": 0.4066666666666667,
+        "n": 150,
+        "recall": {
+          "Abuse": 0.44,
+          "Fighting": 0.5,
+          "Shooting": 0.28
+        }
+      },
+      "c_XD_to_XD_5fold_cv_balanced_subsamples": {
+        "accuracy": {
+          "mean": 0.6881720430107527,
+          "std": 0.04711591892517559
+        },
+        "balanced_accuracy": {
+          "mean": 0.6881720430107527,
+          "std": 0.04711591892517554
+        },
+        "recall": {
+          "Abuse": {
+            "mean": 0.7451612903225807,
+            "std": 0.06985938008937971
+          },
+          "Fighting": {
+            "mean": 0.6612903225806452,
+            "std": 0.08318578682727502
+          },
+          "Shooting": {
+            "mean": 0.6580645161290324,
+            "std": 0.06321263852343682
+          }
+        },
+        "repeats": 10
+      },
+      "chance": 0.3333333333333333,
+      "classes": [
+        "Shooting",
+        "Fighting",
+        "Abuse"
+      ],
+      "xd_balanced_per_class": 31
+    }
+  },
+  "4_summary_inputs": {
+    "domain_auc_by_class": {
+      "Abuse": 1.0,
+      "Fighting": 0.9784615384615384,
+      "Shooting": 1.0
+    },
+    "domain_auc_reference_real_classes": 0.8024,
+    "ucf_in_domain_acc": 0.4066666666666667,
+    "ucf_to_xd_acc_all": 0.525,
+    "ucf_to_xd_acc_balanced": 0.3634408602150538,
+    "xd_in_domain_acc": 0.6881720430107527,
+    "xd_to_ucf_acc": 0.36666666666666664
+  },
+  "4_summary_text": "(i) XD->UCF transfer: 3-way accuracy 0.367 (chance 0.333); UCF recall Shooting 0.172, Fighting 0.892, Abuse 0.036; 2-way Shooting/Fighting 0.510 (Shooting recall 0.034). Same-named UCF centroid rank of 14 for XD classes (1=nearest): {'Shooting': 9, 'Fighting': 1, 'Abuse': 1}. (ii) Domain gap: XD-vs-UCF same-class ROC-AUC Shooting 1.000, Fighting 0.978, Abuse 1.000, versus 0.802 for UCF Shooting-vs-Fighting; UCF->XD balanced 3-way accuracy 0.363. (iii) In-domain 3-way accuracy: UCF leave-one-fold-out 0.407, XD 5-fold CV 0.688 (chance 0.333; UCF n=150 so one s.e. is about 0.04, XD CV used balanced 31/class subsamples). Interpretation is left to the reader: the numbers do not by themselves identify whether low cross-domain accuracy is caused by the domain gap or by weak class signal, since in-domain UCF separation is also low.",
+  "n_ucf_videos": 700,
+  "n_xd_videos": 640,
+  "ucf_per_class": {
+    "Abuse": 50,
+    "Arrest": 50,
+    "Arson": 50,
+    "Assault": 50,
+    "Burglary": 50,
+    "Explosion": 50,
+    "Fighting": 50,
+    "Normal_Videos_event": 50,
+    "RoadAccidents": 50,
+    "Robbery": 50,
+    "Shooting": 50,
+    "Shoplifting": 50,
+    "Stealing": 50,
+    "Vandalism": 50
+  },
+  "xd_per_class": {
+    "Abuse": 31,
+    "Fighting": 377,
+    "Shooting": 232
+  }
+}

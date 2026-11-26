@@ -1,0 +1,56 @@
+{
+  "annotation_source": "Datasets/UCF Crime Official/annotations/Temporal_Anomaly_Annotation_For_Testing_Videos/Txt_formate/Temporal_Anomaly_Annotation.txt",
+  "backbone_family": "timm_dinov2_vitb14_reg4",
+  "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+  "batch_size": 32,
+  "cache_sha256": "d67049b80fc0bae3696808d115e23e204018fee33559346f81fe42748964120e",
+  "created_at": "2026-09-11T09:32:20.361319+00:00",
+  "cudnn_allow_tf32": true,
+  "dtype": "float16",
+  "feature": "cls_plus_mean_patch_pre_head",
+  "interpolation": "bilinear",
+  "label": "Shooting",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "patch_grid": [
+    32,
+    32
+  ],
+  "resolution": 448,
+  "row_count": 14415,
+  "shape": [
+    14415,
+    1536
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "videos": [
+    "Shooting002_x264",
+    "Shooting004_x264",
+    "Shooting007_x264",
+    "Shooting008_x264",
+    "Shooting010_x264",
+    "Shooting011_x264",
+    "Shooting013_x264",
+    "Shooting015_x264",
+    "Shooting018_x264",
+    "Shooting019_x264",
+    "Shooting021_x264",
+    "Shooting022_x264",
+    "Shooting024_x264",
+    "Shooting026_x264",
+    "Shooting028_x264",
+    "Shooting032_x264",
+    "Shooting033_x264",
+    "Shooting037_x264",
+    "Shooting043_x264",
+    "Shooting046_x264",
+    "Shooting047_x264"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+ "git_revision": "d4e30a8a01c8c3b89ad33e710941754f39b4347a",
+ "threshold": 0.701159656047821,
+ "videos": [
+  {
+   "video": "Explosion/Explosion021_x264.mp4",
+   "jpeg": false,
+   "steps": [
+    53,
+    53
+   ],
+   "max_abs_score_diff": 0.012772306382656097,
+   "alarm_agreement": 1.0,
+   "alarm_segments": [
+    {
+     "start_s": 7.0,
+     "end_s": 14.5
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 25.0
+    }
+   ],
+   "exposure": "held_out",
+   "boxes_in_alarms": 32,
+   "alarm_steps": 32,
+   "e3_prediction": "Explosion",
+   "e3_saved": "Explosion",
+   "e3_max_abs_prob_diff": 0.00397140449947786,
+   "seconds": 4.6
+  },
+  {
+   "video": "Explosion/Explosion021_x264.mp4",
+   "jpeg": true,
+   "steps": [
+    53,
+    53
+   ],
+   "max_abs_score_diff": 0.0004276936173439015,
+   "alarm_agreement": 1.0,
+   "alarm_segments": [
+    {
+     "start_s": 7.0,
+     "end_s": 14.5
+    },
+    {
+     "start_s": 16.5,
+     "end_s": 25.0
+    }
+   ],
+   "exposure": "held_out",
+   "boxes_in_alarms": 32,
+   "alarm_steps": 32,
+   "e3_prediction": "Explosion",
+   "e3_saved": "Explosion",
+   "e3_max_abs_prob_diff": 0.0,
+   "seconds": 4.4
+  },
+  {
+   "video": "Shoplifting/Shoplifting033_x264.mp4",
+   "jpeg": false,
+   "steps": [
+    60,
+    60
+   ],
+   "max_abs_score_diff": 0.0005016319135203957,
+   "alarm_agreement": 1.0,
+   "alarm_segments": [],
+   "exposure": "held_out",
+   "boxes_in_alarms": 0,
+   "alarm_steps": 0,
+   "e3_prediction": "Shoplifting",
+   "e3_saved": "Shoplifting",
+   "e3_max_abs_prob_diff": 0.006021980196237564,
+   "seconds": 5.1
+  },
+  {
+   "video": "Shoplifting/Shoplifting033_x264.mp4",
+   "jpeg": true,
+   "steps": [
+    60,
+    60
+   ],
+   "max_abs_score_diff": 4.9753536283969905e-05,
+   "alarm_agreement": 1.0,
+   "alarm_segments": [],
+   "exposure": "held_out",
+   "boxes_in_alarms": 0,
+   "alarm_steps": 0,
+   "e3_prediction": "Shoplifting",
+   "e3_saved": "Shoplifting",
+   "e3_max_abs_prob_diff": 0.0,
+   "seconds": 5.2
+  },
+  {
+   "video": "Testing_Normal_Videos_Anomaly/Normal_Videos_003_x264.mp4",
+   "jpeg": false,
+   "steps": [
+    189,
+    189
+   ],
+   "max_abs_score_diff": 0.0012107125010341407,
+   "alarm_agreement": 1.0,
+   "alarm_segments": [],
+   "exposure": "held_out",
+   "boxes_in_alarms": 0,
+   "alarm_steps": 0,
+   "e3_prediction": "Normal_Videos_event",
+   "e3_saved": "Normal_Videos_event",
+   "e3_max_abs_prob_diff": 0.04132892936468127,
+   "seconds": 15.1
+  },
+  {
+   "video": "Testing_Normal_Videos_Anomaly/Normal_Videos_003_x264.mp4",
+   "jpeg": true,
+   "steps": [
+    189,
+    189
+   ],
+   "max_abs_score_diff": 5.6490900740027456e-05,
+   "alarm_agreement": 1.0,
+   "alarm_segments": [],
+   "exposure": "held_out",
+   "boxes_in_alarms": 0,
+   "alarm_steps": 0,
+   "e3_prediction": "Normal_Videos_event",
+   "e3_saved": "Normal_Videos_event",
+   "e3_max_abs_prob_diff": 0.0,
+   "seconds": 15.6
+  }
+ ],
+ "summary_jpeg_False": {
+  "max_abs_score_diff": 0.012772306382656097,
+  "min_alarm_agreement": 1.0,
+  "e3_max_abs_prob_diff": 0.04132892936468127,
+  "e3_same_top1": true
+ },
+ "summary_jpeg_True": {
+  "max_abs_score_diff": 0.0004276936173439015,
+  "min_alarm_agreement": 1.0,
+  "e3_max_abs_prob_diff": 0.0,
+  "e3_same_top1": true
+ }
+}

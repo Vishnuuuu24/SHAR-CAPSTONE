@@ -1,0 +1,154 @@
+schema_version: 1.0.0
+# First calibration against the D-34/D-35 video-derived pixel source.
+#
+# STATUS. Registered directly as REGISTERED_CALIBRATION_READY. Under D-36 the
+# D-27 owner-registration gate is retired: there was no second qualified
+# reviewer on this project, so hand-promoting a config validated nothing and
+# only delayed work. Launching still reports an ETA first when a run will
+# occupy the shared MIG slice for more than ~30 minutes; this calibration is
+# 10 measured batches and does not.
+#
+# WHAT THIS MEASURES. Whether the video-derived JPEG blob can keep the
+# accelerator fed at 64x64. `P1C-VIDEO-DECODE-MICROBENCH-001` measured 635
+# decode+resize frames/s/core, projecting 2.6-3.0x headroom over the 1,464
+# images/s the accelerator consumes -- but that was a decode microbenchmark in
+# one process, excluding collate, worker IPC and pinned-memory copy, and it
+# ran under CPU contention. This is the real confirmation, and it is the open
+# watch item recorded in D-37.
+#
+# PROTOCOL. Action Recognition, fold 1 (D-34 evidence row). 14 official
+# balanced classes over 700 videos, four disjoint folds. The class list below
+# is the official `ClassIDs.txt` vocabulary verbatim, so the Normal class is
+# named `Normal_Videos_event` rather than `Normal`: renaming it here would
+# create a mapping this project has not registered, and the manifests carry
+# the official name.
+#
+# The anomaly-detection protocol is deliberately NOT used. Its train and test
+# splits carry different label vocabularies (`Training_` vs
+# `Testing_Normal_Videos_Anomaly`), so a model would learn a class its test
+# split never contains; see K-12 and the evidence register. Resolving that
+# needs a registered label-mapping decision.
+#
+# CHANGES FROM THE PARENT BASELINE, bundled deliberately because this is a
+# calibration (D-30: "not training, model selection, or Test evaluation") and
+# not a single-factor scientific ablation:
+#   1. Pixel source: Kaggle 64x64 PNGs -> official-video JPEG blob at native
+#      320x240, downscaled to 64x64 in the loader (D-34/D-35/D-37).
+#   2. Split: self-authored grouped 10% -> official AR fold 1 with a
+#      video-grouped, class-stratified 10% validation carve.
+#   3. Loader: 0 -> 6 workers, pinned and persistent.
+#   4. device_policy: mps_strict -> cuda_strict.
+# A clean per-factor attribution is therefore not available from this artifact
+# alone, and none is claimed.
+experiment:
+  id: P1C-VIDEO-GAP-CALIBRATION-006
+  parent_id: P1C-FRAME-GAP-BASELINE-001
+  status: REGISTERED_CALIBRATION_READY
+  run_class: calibration
+  question: Can the D-34/D-35 video-derived JPEG blob sustain the throughput one MIG 1g.18gb slice consumes at 64x64, and what is the resulting three-seed wall-time range for the frozen frame baseline under the official Action-Recognition fold-1 split?
+  hypothesis: Non-research calibration. It establishes combined operational feasibility and ETA for the video pixel source; it bundles four changes and so cannot attribute its measured delta to any one of them, cannot select a model configuration, and is not comparable as a scientific result.
+  change_from_parent:
+    - data source - Kaggle 64x64 PNG mirror to the official-video JPEG blob (D-34/D-35), decoded and downscaled to 64x64 in the loader
+    - split - self-authored grouped 10% to official Action-Recognition fold 1 plus a video-grouped class-stratified 10% validation carve
+    - training.loader.num_workers - 0 -> 6, pin_memory and persistent_workers false -> true
+    - device_policy - mps_strict to cuda_strict on one nvidia.com/mig-1g.18gb slice
+    - no other factor changed - model, backbone, preprocessing geometry, loss, optimizer, batch size, and precision are identical to P1C-FRAME-GAP-BASELINE-001
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    # Official ClassIDs.txt order and spelling. Do not rename
+    # Normal_Videos_event: the manifests carry the official label.
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, Normal_Videos_event, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism]
+  backbone:
+    family: torchvision_resnet50
+    feature: layer4_C5_pre_GAP
+    weights:
+      enum: IMAGENET1K_V2
+      source_url: https://download.pytorch.org/models/resnet50-11ad3fa6.pth
+      path: .cache/weights/resnet50-11ad3fa6.pth
+      sha256: 11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca
+  data:
+    dataset_roots:
+      ucf_crime_official_videos: Datasets/UCF Crime Official/raw/UCF_Crimes/Videos
+    train:
+      path: results/p1b/p1b-video-ar-fold1/train_manifest.csv
+      sha256: 776b26326bf63ae391b9f60d9f2deeedc94959b5833f33896669ad92cbf6aa5c
+    validation:
+      path: results/p1b/p1b-video-ar-fold1/validation_manifest.csv
+      sha256: 0619217d3afcfcddea55b43aadb1939b17f68d120f4d8891ae28eed43947436f
+    # Bare absolute host path, like data.packed_frames before it: the blob is
+    # 84.3 GiB and lives outside the repository, and inside a job pod it is the
+    # node-local emptyDir copy that run_pod_job.sh stages via STAGE_FROM
+    # (SCRATCH_MOUNT defaults to /scratch-emptydir). Staging 84.3 GiB at the
+    # probed 562 MiB/s is about 2.6 minutes.
+    #
+    # The blob is NOT read directly from /home during a run: /home is NFS, and
+    # random record reads against it are the access pattern D-33 exists to
+    # avoid. The durable master copy lives there; the pod reads its own copy.
+    #
+    # Registered blob SHA-256, verified once at dataset construction:
+    #   fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665
+    video_frames:
+      extract_closure_path: /scratch-emptydir/p1c-video-frames/extract_closure.json
+  preprocessing:
+    # 64x64 per D-37. The blob holds full 320x240 pixels, so raising this later
+    # is a loader-configuration change and a rerun, not a re-extraction.
+    resize_height: 64
+    resize_width: 64
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    class_balance: none
+  training:
+    batch_size: 64
+    loader:
+      num_workers: 6
+      pin_memory: true
+      persistent_workers: true
+      drop_last: false
+      # Registered true, and enforced: under the video-blob path this no longer
+      # gates a per-row digest walk -- the blob's own SHA-256 is verified once
+      # at construction -- but the runner refuses a config that registers false
+      # here, so a config cannot claim a weaker verification posture than the
+      # run performs.
+      verify_digests: true
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    device_policy: cuda_strict
+    precision: float32
+  calibration:
+    seed: 0
+    warmup_train_batches: 3
+    measured_train_batches: 10
+    measured_validation_batches: 10
+    full_epochs_for_estimate: 20
+    overhead_factor_range: [1.15, 1.35]
+    scope:
+      research_training: false
+      checkpoint_saved: false
+      held_out_test_access: false
+      configuration_selection: false
+gates:
+  owner_registration_required: false
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  expected_preflight: >-
+    stage the blob directory into the pod's emptyDir with
+    STAGE_FROM=<repo>/results/p1c/p1c-video-frames,
+    which run_pod_job.sh copies to $SCRATCH_MOUNT and size-checks before the
+    runner starts
+  output: immutable_calibration_artifact_and_wall_clock_eta
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - torch_or_torchvision_version_differs_from_the_registered_environment
+    - video_blob_sha256_mismatch_or_missing_extract_closure
+    - loader_wait_exceeds_50_percent_of_train_wall

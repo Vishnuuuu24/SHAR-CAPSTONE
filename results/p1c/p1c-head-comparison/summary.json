@@ -1,0 +1,372 @@
+{
+  "control_head": "gap_linear",
+  "cross_fold_video_level_macro_f1": {
+    "gap_linear": {
+      "mean": 0.41156720263863117,
+      "sample_sd": 0.03665576958205969
+    },
+    "mlp": {
+      "mean": 0.40976097315383025,
+      "sample_sd": 0.058360186083116744
+    },
+    "step": {
+      "mean": 0.44025154739440453,
+      "sample_sd": 0.0335174302739723
+    }
+  },
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "gap_linear_self_check": {
+    "abs_delta": 0.004767202638631174,
+    "measured_mean": 0.41156720263863117,
+    "measured_sd": 0.03665576958205969,
+    "registered_mean": 0.4068,
+    "registered_sd": 0.0353,
+    "tolerance": 0.05,
+    "within_tolerance": true
+  },
+  "heads": [
+    "gap_linear",
+    "mlp",
+    "step"
+  ],
+  "paired_diff_vs_control": {
+    "mlp": {
+      "folds_positive": 2,
+      "folds_total": 4,
+      "mean": -0.0018062294848009142,
+      "per_fold": {
+        "1": 0.02490036418607844,
+        "2": 0.029411857983286605,
+        "3": -0.03785301999587709,
+        "4": -0.02368412011269161
+      },
+      "sample_sd": 0.03398933330297401
+    },
+    "step": {
+      "folds_positive": 4,
+      "folds_total": 4,
+      "mean": 0.028684344755773333,
+      "per_fold": {
+        "1": 0.001920434063291232,
+        "2": 0.03994021851164703,
+        "3": 0.06413282484711064,
+        "4": 0.008743901601044435
+      },
+      "sample_sd": 0.02885144492947875
+    }
+  },
+  "per_fold_per_head": {
+    "1": {
+      "gap_linear": {
+        "frame_macro_f1_mean": 0.4031736755766779,
+        "parameter_count": 21518,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.4444444444444444,
+          "Arrest": 0.5925925925925926,
+          "Arson": 0.3434343434343434,
+          "Assault": 0.3376623376623377,
+          "Burglary": 0.3888888888888889,
+          "Explosion": 0.3333333333333333,
+          "Fighting": 0.16666666666666666,
+          "Normal_Videos_event": 0.8962962962962964,
+          "RoadAccidents": 0.604040404040404,
+          "Robbery": 0.6222222222222221,
+          "Shooting": 0.0,
+          "Shoplifting": 0.762962962962963,
+          "Stealing": 0.6666666666666666,
+          "Vandalism": 0.35555555555555557
+        },
+        "tail_classes_mean_f1": 0.21497113997113998,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.4653404796261939,
+        "wall_clock_seconds_mean": 62.33347671789428
+      },
+      "mlp": {
+        "frame_macro_f1_mean": 0.42755925264074096,
+        "parameter_count": 49646,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.5238095238095238,
+          "Arrest": 0.4259259259259259,
+          "Arson": 0.4090909090909091,
+          "Assault": 0.4166666666666667,
+          "Burglary": 0.3434343434343434,
+          "Explosion": 0.4761904761904763,
+          "Fighting": 0.2333333333333333,
+          "Normal_Videos_event": 0.888888888888889,
+          "RoadAccidents": 0.6444444444444444,
+          "Robbery": 0.6126984126984126,
+          "Shooting": 0.0,
+          "Shoplifting": 0.7555555555555555,
+          "Stealing": 0.6666666666666666,
+          "Vandalism": 0.4666666666666666
+        },
+        "tail_classes_mean_f1": 0.2791666666666667,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.49024084381227234,
+        "wall_clock_seconds_mean": 62.46282390256723
+      },
+      "step": {
+        "frame_macro_f1_mean": 0.46726091368948514,
+        "parameter_count": 7117838,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.41269841269841273,
+          "Arrest": 0.5833333333333334,
+          "Arson": 0.398989898989899,
+          "Assault": 0.1904761904761905,
+          "Burglary": 0.46296296296296297,
+          "Explosion": 0.45714285714285713,
+          "Fighting": 0.17777777777777778,
+          "Normal_Videos_event": 0.8783068783068783,
+          "RoadAccidents": 0.7070707070707071,
+          "Robbery": 0.5793650793650794,
+          "Shooting": 0.0,
+          "Shoplifting": 0.4871794871794872,
+          "Stealing": 0.6825396825396824,
+          "Vandalism": 0.5238095238095238
+        },
+        "tail_classes_mean_f1": 0.22301587301587303,
+        "video_level_aggregation": "step_direct_cls_prediction",
+        "video_level_macro_f1_mean": 0.46726091368948514,
+        "wall_clock_seconds_mean": 126.3581015355885
+      }
+    },
+    "2": {
+      "gap_linear": {
+        "frame_macro_f1_mean": 0.2936572146959047,
+        "parameter_count": 21518,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.1904761904761905,
+          "Arrest": 0.20634920634920637,
+          "Arson": 0.65,
+          "Assault": 0.23412698412698416,
+          "Burglary": 0.0,
+          "Explosion": 0.5370370370370371,
+          "Fighting": 0.2433862433862434,
+          "Normal_Videos_event": 0.6944444444444443,
+          "RoadAccidents": 0.3968253968253969,
+          "Robbery": 0.42424242424242425,
+          "Shooting": 0.0,
+          "Shoplifting": 0.6242424242424242,
+          "Stealing": 0.5995670995670995,
+          "Vandalism": 0.6031746031746033
+        },
+        "tail_classes_mean_f1": 0.2701719576719577,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.38599086099086094,
+        "wall_clock_seconds_mean": 75.6785867785414
+      },
+      "mlp": {
+        "frame_macro_f1_mean": 0.3188086175530271,
+        "parameter_count": 49646,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.48148148148148145,
+          "Arrest": 0.1904761904761905,
+          "Arson": 0.7757575757575758,
+          "Assault": 0.0,
+          "Burglary": 0.08333333333333333,
+          "Explosion": 0.5515873015873016,
+          "Fighting": 0.32671957671957674,
+          "Normal_Videos_event": 0.7367724867724869,
+          "RoadAccidents": 0.34259259259259256,
+          "Robbery": 0.5555555555555555,
+          "Shooting": 0.0,
+          "Shoplifting": 0.6475524475524476,
+          "Stealing": 0.6349206349206349,
+          "Vandalism": 0.48888888888888893
+        },
+        "tail_classes_mean_f1": 0.20390211640211642,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.41540271897414754,
+        "wall_clock_seconds_mean": 78.22912659558158
+      },
+      "step": {
+        "frame_macro_f1_mean": 0.42593107950250797,
+        "parameter_count": 7117838,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.28571428571428575,
+          "Arrest": 0.3904761904761905,
+          "Arson": 0.6722222222222222,
+          "Assault": 0.16666666666666666,
+          "Burglary": 0.0,
+          "Explosion": 0.6666666666666666,
+          "Fighting": 0.2619047619047619,
+          "Normal_Videos_event": 0.8592592592592593,
+          "RoadAccidents": 0.5238095238095238,
+          "Robbery": 0.44973544973544977,
+          "Shooting": 0.0,
+          "Shoplifting": 0.5666666666666667,
+          "Stealing": 0.5714285714285715,
+          "Vandalism": 0.5484848484848485
+        },
+        "tail_classes_mean_f1": 0.24426406926406927,
+        "video_level_aggregation": "step_direct_cls_prediction",
+        "video_level_macro_f1_mean": 0.42593107950250797,
+        "wall_clock_seconds_mean": 140.213015018031
+      }
+    },
+    "3": {
+      "gap_linear": {
+        "frame_macro_f1_mean": 0.32069963245686184,
+        "parameter_count": 21518,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.42962962962962964,
+          "Arrest": 0.5666666666666667,
+          "Arson": 0.5818181818181818,
+          "Assault": 0.31746031746031744,
+          "Burglary": 0.2619047619047619,
+          "Explosion": 0.7857142857142857,
+          "Fighting": 0.21481481481481482,
+          "Normal_Videos_event": 0.5476190476190477,
+          "RoadAccidents": 0.32671957671957674,
+          "Robbery": 0.3878787878787879,
+          "Shooting": 0.09523809523809525,
+          "Shoplifting": 0.5386243386243387,
+          "Stealing": 0.6031746031746033,
+          "Vandalism": 0.0
+        },
+        "tail_classes_mean_f1": 0.15687830687830687,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.40409022194736477,
+        "wall_clock_seconds_mean": 83.4108516536653
+      },
+      "mlp": {
+        "frame_macro_f1_mean": 0.33933893216013694,
+        "parameter_count": 49646,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.3925925925925926,
+          "Arrest": 0.3833333333333333,
+          "Arson": 0.5555555555555555,
+          "Assault": 0.08333333333333333,
+          "Burglary": 0.3952380952380952,
+          "Explosion": 0.6666666666666666,
+          "Fighting": 0.28571428571428575,
+          "Normal_Videos_event": 0.4404761904761905,
+          "RoadAccidents": 0.15,
+          "Robbery": 0.2814814814814815,
+          "Shooting": 0.0,
+          "Shoplifting": 0.5151515151515151,
+          "Stealing": 0.5666666666666667,
+          "Vandalism": 0.41111111111111115
+        },
+        "tail_classes_mean_f1": 0.19503968253968257,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.3662372019514877,
+        "wall_clock_seconds_mean": 85.13498221275707
+      },
+      "step": {
+        "frame_macro_f1_mean": 0.4682230467944754,
+        "parameter_count": 7117838,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.3757575757575758,
+          "Arrest": 0.6722222222222222,
+          "Arson": 0.6904761904761906,
+          "Assault": 0.2619047619047619,
+          "Burglary": 0.36481481481481487,
+          "Explosion": 0.8571428571428571,
+          "Fighting": 0.31746031746031744,
+          "Normal_Videos_event": 0.5714285714285715,
+          "RoadAccidents": 0.5052910052910053,
+          "Robbery": 0.29074074074074074,
+          "Shooting": 0.0,
+          "Shoplifting": 0.5555555555555555,
+          "Stealing": 0.42962962962962964,
+          "Vandalism": 0.6626984126984127
+        },
+        "tail_classes_mean_f1": 0.310515873015873,
+        "video_level_aggregation": "step_direct_cls_prediction",
+        "video_level_macro_f1_mean": 0.4682230467944754,
+        "wall_clock_seconds_mean": 163.13907453790307
+      }
+    },
+    "4": {
+      "gap_linear": {
+        "frame_macro_f1_mean": 0.3200545419449439,
+        "parameter_count": 21518,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.255050505050505,
+          "Arrest": 0.5515873015873016,
+          "Arson": 0.45589225589225585,
+          "Assault": 0.0,
+          "Burglary": 0.4444444444444445,
+          "Explosion": 0.5714285714285715,
+          "Fighting": 0.07407407407407408,
+          "Normal_Videos_event": 0.8571428571428571,
+          "RoadAccidents": 0.2619047619047619,
+          "Robbery": 0.4481481481481482,
+          "Shooting": 0.0,
+          "Shoplifting": 0.4632996632996633,
+          "Stealing": 0.4666666666666666,
+          "Vandalism": 0.6222222222222221
+        },
+        "tail_classes_mean_f1": 0.17407407407407405,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.3908472479901051,
+        "wall_clock_seconds_mean": 74.87580828927457
+      },
+      "mlp": {
+        "frame_macro_f1_mean": 0.30834601904879855,
+        "parameter_count": 49646,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.1962962962962963,
+          "Arrest": 0.5079365079365079,
+          "Arson": 0.37542087542087543,
+          "Assault": 0.08333333333333333,
+          "Burglary": 0.43703703703703695,
+          "Explosion": 0.6388888888888888,
+          "Fighting": 0.08333333333333333,
+          "Normal_Videos_event": 0.7380952380952381,
+          "RoadAccidents": 0.27380952380952384,
+          "Robbery": 0.4026936026936027,
+          "Shooting": 0.0,
+          "Shoplifting": 0.3796296296296296,
+          "Stealing": 0.5,
+          "Vandalism": 0.5238095238095238
+        },
+        "tail_classes_mean_f1": 0.17261904761904762,
+        "video_level_aggregation": "majority_vote",
+        "video_level_macro_f1_mean": 0.3671631278774135,
+        "wall_clock_seconds_mean": 72.2449260999759
+      },
+      "step": {
+        "frame_macro_f1_mean": 0.39959114959114955,
+        "parameter_count": 7117838,
+        "per_class_video_level_f1_mean": {
+          "Abuse": 0.2240740740740741,
+          "Arrest": 0.4682539682539683,
+          "Arson": 0.4481481481481482,
+          "Assault": 0.0,
+          "Burglary": 0.3878787878787879,
+          "Explosion": 0.6349206349206349,
+          "Fighting": 0.1904761904761905,
+          "Normal_Videos_event": 0.8214285714285715,
+          "RoadAccidents": 0.48148148148148145,
+          "Robbery": 0.41750841750841755,
+          "Shooting": 0.0,
+          "Shoplifting": 0.40740740740740744,
+          "Stealing": 0.5238095238095238,
+          "Vandalism": 0.5888888888888889
+        },
+        "tail_classes_mean_f1": 0.19484126984126984,
+        "video_level_aggregation": "step_direct_cls_prediction",
+        "video_level_macro_f1_mean": 0.39959114959114955,
+        "wall_clock_seconds_mean": 124.51475863407056
+      }
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "tail_classes": [
+    "Shooting",
+    "Fighting",
+    "Assault",
+    "Vandalism"
+  ]
+}

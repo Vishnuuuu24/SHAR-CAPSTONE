@@ -1,0 +1,10 @@
+{
+  "kind": "P1C calibration infrastructure-abort recovery; not a calibration result",
+  "reason": "External host terminated the process while the calibration checksum helper materialized the 259 MB manifest; no batch or timing was emitted.",
+  "scope_assertions": {
+    "checkpoint_saved": false,
+    "configuration_selection": false,
+    "held_out_test_access": false,
+    "research_training": false
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "arms": {
+    "all_sources": [
+      "ucf_crime_official",
+      "xd_violence",
+      "cuva"
+    ],
+    "ucf_only": [
+      "ucf_crime_official"
+    ]
+  },
+  "cache_features_sha256": "e1746d0e14cc9eb627f2e5d4ddbc19533eaf69e2a426658504cad18766246445",
+  "cache_manifest_sha256": "dad99f774fe0cfe5248f30cbc5217692c732ece6e8ee18d9543957bf519c7663",
+  "checkpoint_selection": "best epoch by UCF-part validation macro-F1 (headline convention; optimistic, identical in both arms)",
+  "class_balancing": "inverse-frequency class weights n/(K*n_c) in the cross-entropy loss, computed from each arm's own training videos; same rule in both arms (the headline recipe is unweighted CE)",
+  "class_names": [
+    "Abuse",
+    "Arrest",
+    "Arson",
+    "Assault",
+    "Burglary",
+    "Explosion",
+    "Fighting",
+    "Normal",
+    "RoadAccidents",
+    "Robbery",
+    "Shooting",
+    "Shoplifting",
+    "Stealing",
+    "Vandalism"
+  ],
+  "combined_manifest_sha256": "5c0bf68153e58955c7d7fe2a11e4d4b54ed5603bbe828834436b3081e35d047f",
+  "device": "cpu",
+  "epochs_override": null,
+  "fold_counts": {
+    "1:all_sources": {
+      "train": 1862,
+      "train_missing_from_cache": 0,
+      "val": 634,
+      "val_missing_from_cache": 0
+    },
+    "1:ucf_only": {
+      "train": 1209,
+      "train_missing_from_cache": 0,
+      "val": 634,
+      "val_missing_from_cache": 0
+    },
+    "2:all_sources": {
+      "train": 1866,
+      "train_missing_from_cache": 0,
+      "val": 630,
+      "val_missing_from_cache": 0
+    },
+    "2:ucf_only": {
+      "train": 1209,
+      "train_missing_from_cache": 0,
+      "val": 630,
+      "val_missing_from_cache": 0
+    },
+    "3:all_sources": {
+      "train": 1879,
+      "train_missing_from_cache": 0,
+      "val": 617,
+      "val_missing_from_cache": 0
+    },
+    "3:ucf_only": {
+      "train": 1221,
+      "train_missing_from_cache": 0,
+      "val": 617,
+      "val_missing_from_cache": 0
+    },
+    "4:all_sources": {
+      "train": 1881,
+      "train_missing_from_cache": 0,
+      "val": 615,
+      "val_missing_from_cache": 0
+    },
+    "4:ucf_only": {
+      "train": 1221,
+      "train_missing_from_cache": 0,
+      "val": 615,
+      "val_missing_from_cache": 0
+    }
+  },
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "gate": "UCF-part macro-F1 gain >= 0.04 on 4/4 folds, seed-mean per fold",
+  "git_revision": "9653b3671c0e43cd8f73291aec9ecebc50a94949",
+  "head": "step_permuted (StepHead token_dim=1536 frames=8 depth=1); torch.manual_seed(seed) before construction; train frame order permuted with seed 1000+seed, validation 2000+seed",
+  "head_hparams": {
+    "batch_size": 64,
+    "epochs_ceiling": 30,
+    "learning_rate": 0.0003,
+    "min_delta": 0.001,
+    "optimizer": "AdamW",
+    "patience": 5,
+    "weight_decay": 0.0001
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "threads": 4,
+  "video_level": "8 cached frames = one chunk; softmax of the head's logits; macro-F1 over classes with support in the part"
+}

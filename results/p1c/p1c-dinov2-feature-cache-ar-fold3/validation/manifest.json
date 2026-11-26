@@ -1,0 +1,51 @@
+{
+  "augmentation_name": "none",
+  "augmentation_rationale": "internal default: no augmentation policy was registered for this dataset",
+  "backbone_family": "timm_dinov2_vitb14_reg4",
+  "backbone_feature": "cls_plus_mean_patch_pre_head",
+  "backbone_trainable": "frozen",
+  "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+  "cache_sha256": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599",
+  "class_names": [
+    "Abuse",
+    "Arrest",
+    "Arson",
+    "Assault",
+    "Burglary",
+    "Explosion",
+    "Fighting",
+    "Normal_Videos_event",
+    "RoadAccidents",
+    "Robbery",
+    "Shooting",
+    "Shoplifting",
+    "Stealing",
+    "Vandalism"
+  ],
+  "created_at": "2026-09-07T11:08:46.196769+00:00",
+  "dtype": "float16",
+  "feature_dim": 1536,
+  "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+  "model_control": "gap_linear",
+  "pooling": "cls_plus_mean_patch",
+  "preprocessing": {
+    "color_mode": "RGB",
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "resize_height": 224,
+    "resize_width": 224,
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "row_count": 49719,
+  "source_manifest_path": "results/p1b/p1b-video-ar-fold3/validation_manifest.csv",
+  "source_manifest_sha256": "3f103d65632a82a3d45c76b65704018192731a4bfb5012083c282e0c86b95e6f",
+  "split": "validation"
+}

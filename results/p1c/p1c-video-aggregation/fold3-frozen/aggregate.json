@@ -1,0 +1,323 @@
+{
+  "class_names": [
+    "Abuse",
+    "Arrest",
+    "Arson",
+    "Assault",
+    "Burglary",
+    "Explosion",
+    "Fighting",
+    "Normal_Videos_event",
+    "RoadAccidents",
+    "Robbery",
+    "Shooting",
+    "Shoplifting",
+    "Stealing",
+    "Vandalism"
+  ],
+  "frame": {
+    "accuracy": {
+      "maximum": 0.19403045113538084,
+      "mean": 0.18898878363067104,
+      "minimum": 0.18220398640358818,
+      "sample_std": 0.0061028839850393035
+    },
+    "macro_f1": {
+      "maximum": 0.19979585917164172,
+      "mean": 0.19325769213613744,
+      "minimum": 0.1864938947291091,
+      "sample_std": 0.006653851990089357
+    },
+    "per_class_f1": {
+      "Abuse": {
+        "maximum": 0.4152445961319682,
+        "mean": 0.4051715131971596,
+        "minimum": 0.3994293865905849,
+        "sample_std": 0.008752034063420167
+      },
+      "Arrest": {
+        "maximum": 0.11270773459952517,
+        "mean": 0.10362366674618488,
+        "minimum": 0.09598800149981253,
+        "sample_std": 0.008453447303633607
+      },
+      "Arson": {
+        "maximum": 0.22429646140986345,
+        "mean": 0.21716770420562212,
+        "minimum": 0.21087271291299198,
+        "sample_std": 0.006750602204495423
+      },
+      "Assault": {
+        "maximum": 0.05658294231300027,
+        "mean": 0.05161822771271918,
+        "minimum": 0.043230944254835035,
+        "sample_std": 0.007304412791257604
+      },
+      "Burglary": {
+        "maximum": 0.4400510204081633,
+        "mean": 0.41798575308579594,
+        "minimum": 0.39556171983356453,
+        "sample_std": 0.02224682002328809
+      },
+      "Explosion": {
+        "maximum": 0.5018960940462648,
+        "mean": 0.4768912111768466,
+        "minimum": 0.45026778882938023,
+        "sample_std": 0.025852180322430203
+      },
+      "Fighting": {
+        "maximum": 0.018317115054378934,
+        "mean": 0.016032365530515725,
+        "minimum": 0.014072673808023524,
+        "sample_std": 0.002140809964502894
+      },
+      "Normal_Videos_event": {
+        "maximum": 0.3331714424477902,
+        "mean": 0.3309861812275163,
+        "minimum": 0.3286104896843152,
+        "sample_std": 0.0022864317852453074
+      },
+      "RoadAccidents": {
+        "maximum": 0.05866228070175438,
+        "mean": 0.05539375874135785,
+        "minimum": 0.05075862068965518,
+        "sample_std": 0.0041252503017970505
+      },
+      "Robbery": {
+        "maximum": 0.01657886581964673,
+        "mean": 0.013850727694534222,
+        "minimum": 0.010442477876106195,
+        "sample_std": 0.0031242164113495386
+      },
+      "Shooting": {
+        "maximum": 0.2532968400099528,
+        "mean": 0.24315064437451975,
+        "minimum": 0.2333637192342753,
+        "sample_std": 0.00997141576863442
+      },
+      "Shoplifting": {
+        "maximum": 0.1593472522198224,
+        "mean": 0.13680934322700783,
+        "minimum": 0.09782030834662414,
+        "sample_std": 0.03390237252494886
+      },
+      "Stealing": {
+        "maximum": 0.20489824077268026,
+        "mean": 0.18282922910711966,
+        "minimum": 0.1698079339436367,
+        "sample_std": 0.019215313912751504
+      },
+      "Vandalism": {
+        "maximum": 0.07261009667024705,
+        "mean": 0.05409736387902462,
+        "minimum": 0.04255319148936171,
+        "sample_std": 0.016194907002382585
+      }
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "video_majority_vote": {
+    "accuracy": {
+      "maximum": 0.26785714285714285,
+      "mean": 0.25595238095238093,
+      "minimum": 0.25,
+      "sample_std": 0.010309826235529026
+    },
+    "macro_f1": {
+      "maximum": 0.2443310657596372,
+      "mean": 0.23276062561776847,
+      "minimum": 0.22528344671201816,
+      "sample_std": 0.010162137496911607
+    },
+    "per_class_f1": {
+      "Abuse": {
+        "maximum": 0.5714285714285715,
+        "mean": 0.5714285714285715,
+        "minimum": 0.5714285714285715,
+        "sample_std": 0.0
+      },
+      "Arrest": {
+        "maximum": 0.3333333333333333,
+        "mean": 0.30256410256410254,
+        "minimum": 0.26666666666666666,
+        "sample_std": 0.033627889868215376
+      },
+      "Arson": {
+        "maximum": 0.4,
+        "mean": 0.4000000000000001,
+        "minimum": 0.4,
+        "sample_std": 0.0
+      },
+      "Assault": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      },
+      "Burglary": {
+        "maximum": 0.4444444444444445,
+        "mean": 0.42962962962962964,
+        "minimum": 0.4,
+        "sample_std": 0.025660011963983372
+      },
+      "Explosion": {
+        "maximum": 0.4444444444444445,
+        "mean": 0.42962962962962964,
+        "minimum": 0.4,
+        "sample_std": 0.025660011963983372
+      },
+      "Fighting": {
+        "maximum": 0.2,
+        "mean": 0.13333333333333333,
+        "minimum": 0.0,
+        "sample_std": 0.11547005383792516
+      },
+      "Normal_Videos_event": {
+        "maximum": 0.5714285714285715,
+        "mean": 0.4920634920634921,
+        "minimum": 0.3333333333333333,
+        "sample_std": 0.1374643498070538
+      },
+      "RoadAccidents": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      },
+      "Robbery": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      },
+      "Shooting": {
+        "maximum": 0.25,
+        "mean": 0.25,
+        "minimum": 0.25,
+        "sample_std": 0.0
+      },
+      "Shoplifting": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      },
+      "Stealing": {
+        "maximum": 0.25,
+        "mean": 0.25,
+        "minimum": 0.25,
+        "sample_std": 0.0
+      },
+      "Vandalism": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      }
+    }
+  },
+  "video_mean_probability": {
+    "accuracy": {
+      "maximum": 0.26785714285714285,
+      "mean": 0.25595238095238093,
+      "minimum": 0.25,
+      "sample_std": 0.010309826235529026
+    },
+    "macro_f1": {
+      "maximum": 0.24404048332619763,
+      "mean": 0.23327188684331543,
+      "minimum": 0.2276077097505669,
+      "sample_std": 0.00933007689302539
+    },
+    "per_class_f1": {
+      "Abuse": {
+        "maximum": 0.5714285714285715,
+        "mean": 0.5714285714285715,
+        "minimum": 0.5714285714285715,
+        "sample_std": 0.0
+      },
+      "Arrest": {
+        "maximum": 0.30769230769230765,
+        "mean": 0.30036630036630035,
+        "minimum": 0.28571428571428575,
+        "sample_std": 0.012689016905266455
+      },
+      "Arson": {
+        "maximum": 0.36363636363636365,
+        "mean": 0.35353535353535354,
+        "minimum": 0.3333333333333333,
+        "sample_std": 0.017495462702715948
+      },
+      "Assault": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      },
+      "Burglary": {
+        "maximum": 0.4444444444444445,
+        "mean": 0.4444444444444445,
+        "minimum": 0.4444444444444445,
+        "sample_std": 0.0
+      },
+      "Explosion": {
+        "maximum": 0.4444444444444445,
+        "mean": 0.4148148148148148,
+        "minimum": 0.4,
+        "sample_std": 0.025660011963983372
+      },
+      "Fighting": {
+        "maximum": 0.22222222222222224,
+        "mean": 0.07407407407407408,
+        "minimum": 0.0,
+        "sample_std": 0.12830005981991685
+      },
+      "Normal_Videos_event": {
+        "maximum": 0.5714285714285715,
+        "mean": 0.5714285714285715,
+        "minimum": 0.5714285714285715,
+        "sample_std": 0.0
+      },
+      "RoadAccidents": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      },
+      "Robbery": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      },
+      "Shooting": {
+        "maximum": 0.25,
+        "mean": 0.25,
+        "minimum": 0.25,
+        "sample_std": 0.0
+      },
+      "Shoplifting": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      },
+      "Stealing": {
+        "maximum": 0.28571428571428575,
+        "mean": 0.28571428571428575,
+        "minimum": 0.28571428571428575,
+        "sample_std": 0.0
+      },
+      "Vandalism": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "sample_std": 0.0
+      }
+    }
+  }
+}

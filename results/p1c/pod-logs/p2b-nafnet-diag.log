@@ -1,0 +1,11 @@
+{"checkpoint_keys": ["params"]}
+{"weights": "params", "order": "rgb", "sigma": 0, "in_psnr": 99.0, "out_psnr": 32.04, "out_min": -0.05, "out_max": 1.048, "out_minus_in_absmean": 0.014}
+{"weights": "params", "order": "rgb", "sigma": 5, "in_psnr": 34.85, "out_psnr": 31.21, "out_min": -0.04, "out_max": 1.04, "out_minus_in_absmean": 0.0197}
+{"weights": "params", "order": "rgb", "sigma": 10, "in_psnr": 28.88, "out_psnr": 28.34, "out_min": -0.038, "out_max": 1.045, "out_minus_in_absmean": 0.0341}
+{"weights": "params", "order": "rgb", "sigma": 25, "in_psnr": 21.08, "out_psnr": 21.58, "out_min": -0.525, "out_max": 1.362, "out_minus_in_absmean": 0.0881}
+{"weights": "params", "order": "rgb", "sigma": 50, "in_psnr": 15.42, "out_psnr": 4.44, "out_min": -4845.897, "out_max": 4520.149, "out_minus_in_absmean": 377.5126}
+{"weights": "params", "order": "bgr", "sigma": 0, "in_psnr": 99.0, "out_psnr": 32.34, "out_min": -0.049, "out_max": 1.045, "out_minus_in_absmean": 0.0137}
+{"weights": "params", "order": "bgr", "sigma": 5, "in_psnr": 34.86, "out_psnr": 31.26, "out_min": -0.042, "out_max": 1.048, "out_minus_in_absmean": 0.0198}
+{"weights": "params", "order": "bgr", "sigma": 10, "in_psnr": 28.89, "out_psnr": 28.18, "out_min": -0.037, "out_max": 1.058, "out_minus_in_absmean": 0.0348}
+{"weights": "params", "order": "bgr", "sigma": 25, "in_psnr": 21.09, "out_psnr": 21.65, "out_min": -0.319, "out_max": 1.414, "out_minus_in_absmean": 0.0874}
+{"weights": "params", "order": "bgr", "sigma": 50, "in_psnr": 15.42, "out_psnr": 4.45, "out_min": -5167.579, "out_max": 4807.072, "out_minus_in_absmean": 411.7033}

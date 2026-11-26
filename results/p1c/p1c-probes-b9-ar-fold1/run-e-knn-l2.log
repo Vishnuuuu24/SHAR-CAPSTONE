@@ -1,0 +1,5 @@
+train 391014 rows (stride 1), validation 37600 rows, dim 2048, scaling ['l2'], cache e851dbcbd372
+
+--- knn-l2 ---
+frame macro-F1 0.2667 (clustered 95% CI 0.1664-0.3340), accuracy 0.2729, video-level macro-F1 0.2938 over 56 videos (0 tie-broken), fit 0.9s predict 948.8s, converged=None
+wrote results/p1c/p1c-probes-b9-ar-fold1/knn-l2.json

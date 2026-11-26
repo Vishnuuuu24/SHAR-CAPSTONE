@@ -1,0 +1,31 @@
+patch cache: 82679 rows, memmapped from results/p1c/p1c-patch-cache
+flow cache: 82679 rows, memmapped from results/p1c/p1c-flow-cache
+fold 1: train 3808 rows sampled (8/video, seed=0), validation 37600 rows (full, untouched), cache 56c0312b9122
+fold 1 head gap_linear_flow seed 0: best epoch 3 (early-stopped), validation macro-F1 0.3913, video-level macro-F1 0.4398 over 56 videos, params 23786, wall 67.8s
+fold 1 head gap_linear_flow seed 1: best epoch 5 (early-stopped), validation macro-F1 0.3534, video-level macro-F1 0.4164 over 56 videos, params 23786, wall 63.9s
+fold 1 head gap_linear_flow seed 2: best epoch 3 (early-stopped), validation macro-F1 0.4179, video-level macro-F1 0.4646 over 56 videos, params 23786, wall 64.1s
+fold 1 head step_permuted_flow seed 0: best epoch 1 (early-stopped), validation macro-F1 0.4538, video-level macro-F1 0.4538 over 56 videos, params 8693774, wall 164.5s
+fold 1 head step_permuted_flow seed 1: best epoch 2 (early-stopped), validation macro-F1 0.4990, video-level macro-F1 0.4990 over 56 videos, params 8693774, wall 187.7s
+fold 1 head step_permuted_flow seed 2: best epoch 6 (early-stopped), validation macro-F1 0.4836, video-level macro-F1 0.4836 over 56 videos, params 8693774, wall 237.9s
+fold 2: train 3808 rows sampled (8/video, seed=0), validation 47726 rows (full, untouched), cache ea8c33fbecf3
+fold 2 head gap_linear_flow seed 0: best epoch 5 (early-stopped), validation macro-F1 0.3023, video-level macro-F1 0.4033 over 56 videos, params 23786, wall 78.4s
+fold 2 head gap_linear_flow seed 1: best epoch 5 (early-stopped), validation macro-F1 0.2972, video-level macro-F1 0.3885 over 56 videos, params 23786, wall 78.8s
+fold 2 head gap_linear_flow seed 2: best epoch 2 (early-stopped), validation macro-F1 0.2984, video-level macro-F1 0.4155 over 56 videos, params 23786, wall 76.5s
+fold 2 head step_permuted_flow seed 0: best epoch 7 (early-stopped), validation macro-F1 0.4820, video-level macro-F1 0.4820 over 56 videos, params 8693774, wall 312.6s
+fold 2 head step_permuted_flow seed 1: best epoch 10 (early-stopped), validation macro-F1 0.5009, video-level macro-F1 0.5009 over 56 videos, params 8693774, wall 365.6s
+fold 2 head step_permuted_flow seed 2: best epoch 7 (early-stopped), validation macro-F1 0.4987, video-level macro-F1 0.4987 over 56 videos, params 8693774, wall 317.9s
+fold 3: train 3808 rows sampled (8/video, seed=0), validation 49719 rows (full, untouched), cache 681f53307dbd
+fold 3 head gap_linear_flow seed 0: best epoch 8 (early-stopped), validation macro-F1 0.3168, video-level macro-F1 0.3524 over 56 videos, params 23786, wall 81.9s
+fold 3 head gap_linear_flow seed 1: best epoch 8 (early-stopped), validation macro-F1 0.3313, video-level macro-F1 0.4522 over 56 videos, params 23786, wall 82.7s
+fold 3 head gap_linear_flow seed 2: best epoch 9 (early-stopped), validation macro-F1 0.3171, video-level macro-F1 0.3946 over 56 videos, params 23786, wall 82.7s
+fold 3 head step_permuted_flow seed 0: best epoch 13 (early-stopped), validation macro-F1 0.4630, video-level macro-F1 0.4630 over 56 videos, params 8693774, wall 460.3s
+fold 3 head step_permuted_flow seed 1: best epoch 2 (early-stopped), validation macro-F1 0.4886, video-level macro-F1 0.4886 over 56 videos, params 8693774, wall 212.6s
+fold 3 head step_permuted_flow seed 2: best epoch 5 (early-stopped), validation macro-F1 0.4544, video-level macro-F1 0.4544 over 56 videos, params 8693774, wall 284.0s
+fold 4: train 3807 rows sampled (8/video, seed=0), validation 41319 rows (full, untouched), cache 3b4aaed3037e
+fold 4 head gap_linear_flow seed 0: best epoch 3 (early-stopped), validation macro-F1 0.3219, video-level macro-F1 0.3482 over 56 videos, params 23786, wall 68.1s
+fold 4 head gap_linear_flow seed 1: best epoch 7 (early-stopped), validation macro-F1 0.3212, video-level macro-F1 0.3837 over 56 videos, params 23786, wall 70.9s
+fold 4 head gap_linear_flow seed 2: best epoch 7 (early-stopped), validation macro-F1 0.2922, video-level macro-F1 0.3247 over 56 videos, params 23786, wall 73.0s
+fold 4 head step_permuted_flow seed 0: best epoch 8 (early-stopped), validation macro-F1 0.4055, video-level macro-F1 0.4055 over 56 videos, params 8693774, wall 300.8s
+fold 4 head step_permuted_flow seed 1: best epoch 5 (early-stopped), validation macro-F1 0.4144, video-level macro-F1 0.4144 over 56 videos, params 8693774, wall 236.5s
+fold 4 head step_permuted_flow seed 2: best epoch 4 (early-stopped), validation macro-F1 0.4212, video-level macro-F1 0.4212 over 56 videos, params 8693774, wall 216.7s
+wrote results/p1c/p1c-flow-fusion/summary.json

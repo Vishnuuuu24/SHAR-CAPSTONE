@@ -1,0 +1,22 @@
+{
+ "base": "results/p1c/inner-cv-baselines:R2_attention_e8",
+ "members": [
+  "<repo>/results/p1c/inner-cv-candidates:L_study",
+  "<repo>/results/p1c/inner-cv-candidates:B+S_study",
+  "<repo>/results/p1c/inner-cv-candidates:B+VJ"
+ ],
+ "weights": "equal, fixed in advance",
+ "contrast": {
+  "candidate": "E3_L+BS+BVJ",
+  "base": "base",
+  "difference": 0.026491301078811147,
+  "ci95": [
+   0.01108428289452379,
+   0.0424049829393676
+  ],
+  "share_of_draws_above_zero": 0.9995,
+  "one_sided_p": 0.0004999999999999449,
+  "passes": true
+ },
+ "rule": "paired 95% interval excludes 0 and gain >= 0.02"
+}

@@ -1,0 +1,43 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 145s ---
+/dev/md1        1870026616 149002512 1721024104       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.01 GiB (recovered 15.99 GiB)
+[08:51:08 +     0.0s] loading config: <repo>/configs/experiments/p1c/P1C-VIDEO-SCREEN-013-LR3E5-AR-FOLD1.yaml
+[08:51:50 +    41.2s] config loaded: P1C-VIDEO-SCREEN-013-LR3E5-AR-FOLD1 [screening run], 1 registered seed(s): [0]
+[08:51:50 +    41.2s] seed 0: 1/1
+[08:51:50 +    41.2s] seed 0: starting run p1c-video-screen-013-lr3e5-ar-fold1-s0-20260828T085150Z
+[08:51:50 +    41.3s] seed 0: device selected: cuda
+[08:51:50 +    41.4s] seed 0: pixel source resolved: loader_mode=video_blob
+[08:51:50 +    41.4s] seed 0: building datasets (video JPEG blob; blob SHA-256 verified once, no per-file digesting)
+[08:53:40 +   151.3s] seed 0: datasets ready: 391014 train rows, 37600 validation rows
+[08:53:40 +   151.3s] seed 0: loading model + pretrained weights (IMAGENET1K_V2)
+[08:53:44 +   156.0s] seed 0: backbone.trainable=full, trainable_parameters=23536718, total_parameters=23536718
+[08:53:44 +   156.0s] seed 0: throughput policy: channels_last=True, compile=default, fused_optimizer=True
+[08:53:44 +   156.0s] seed 0: augmentation: train=none, validation=none
+[08:53:46 +   157.3s] seed 0: starting training (20 epoch ceiling, patience=5)
+[08:53:46 +   157.3s] seed 0: epoch 0 train starting
+W0828 08:54:11.529000 70 .venv/lib/python3.12/site-packages/torch/_inductor/utils.py:1953] [0/0] Not enough SMs to use max_autotune_gemm mode
+[09:04:14 +   786.0s] seed 0: epoch 0 train done (6110 batches); validation starting
+[09:04:55 +   826.7s] seed 0: epoch 0 done in 669.4s, validation_macro_f1=0.3275, best_so_far=0.3275, stagnant_epochs=0
+[09:04:56 +   827.3s] seed 0: epoch 1 train starting
+[09:14:59 +  1430.4s] seed 0: epoch 1 train done (6110 batches); validation starting
+[09:15:31 +  1462.4s] seed 0: epoch 1 done in 635.0s, validation_macro_f1=0.3364, best_so_far=0.3364, stagnant_epochs=0
+[09:15:31 +  1463.0s] seed 0: epoch 2 train starting
+[09:25:34 +  2065.9s] seed 0: epoch 2 train done (6110 batches); validation starting
+[09:26:06 +  2097.7s] seed 0: epoch 2 done in 634.7s, validation_macro_f1=0.3291, best_so_far=0.3364, stagnant_epochs=0
+[09:26:07 +  2098.3s] seed 0: epoch 3 train starting
+[09:36:09 +  2700.2s] seed 0: epoch 3 train done (6110 batches); validation starting
+[09:36:41 +  2733.0s] seed 0: epoch 3 done in 634.8s, validation_macro_f1=0.2846, best_so_far=0.3364, stagnant_epochs=1
+[09:36:42 +  2733.7s] seed 0: epoch 4 train starting
+[09:46:46 +  3337.4s] seed 0: epoch 4 train done (6110 batches); validation starting
+[09:47:17 +  3368.9s] seed 0: epoch 4 done in 635.3s, validation_macro_f1=0.3121, best_so_far=0.3364, stagnant_epochs=2
+[09:47:18 +  3369.5s] seed 0: epoch 5 train starting
+[09:57:21 +  3973.1s] seed 0: epoch 5 train done (6110 batches); validation starting
+[09:57:54 +  4005.3s] seed 0: epoch 5 done in 635.8s, validation_macro_f1=0.2950, best_so_far=0.3364, stagnant_epochs=3
+[09:57:54 +  4005.9s] seed 0: epoch 6 train starting
+[10:07:57 +  4608.6s] seed 0: epoch 6 train done (6110 batches); validation starting
+[10:08:29 +  4640.8s] seed 0: epoch 6 done in 634.9s, validation_macro_f1=0.3210, best_so_far=0.3364, stagnant_epochs=4
+[10:08:30 +  4641.4s] seed 0: training loop ended; reloading best checkpoint (checkpoint_epoch_001.pt) for final validation pass
+[10:09:10 +  4681.7s] seed 0: done (<repo>/results/p1c/p1c-video-screen-013-lr3e5-ar-fold1-s0-20260828T085150Z)
+<repo>/results/p1c/p1c-video-screen-013-lr3e5-ar-fold1-s0-20260828T085150Z
+[10:09:10 +  4681.8s] all registered seeds complete

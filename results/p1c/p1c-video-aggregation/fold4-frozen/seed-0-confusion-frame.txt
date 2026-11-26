@@ -1,0 +1,18 @@
+                         0     1     2     3     4     5     6     7     8     9    10    11    12    13
+                     (columns = predicted index)
+              Abuse 0   906   119     2     3    31     2     0    11   153     2    30     0    60     4
+             Arrest 1   345   228    21    38    28   230   407   183    29   160  1082   733     9   278
+              Arson 2    22   603   419   291   425   157   608     0     0    15   143    42   180   145
+            Assault 3   946   184   578    56     0   949    51     0    35     0   180   906    23   184
+           Burglary 4   248   287   193   109  1545    34   274     4     0    77    40     1   468   904
+          Explosion 5    10   350  2610    77     8   684     4     0    37    13   210   147     0   213
+           Fighting 6    26     3     0    61   381    36    72     0     1   925    17     0     1   103
+Normal_Videos_event 7     0  1000    12    80     0     0   543   399     1    59    70   147     0    14
+      RoadAccidents 8     0   203  1981    51    10   310   125   193   196    42   175     8    87     0
+            Robbery 9    13     5     2     4   634     0   176     0    23   485   131     0   190     0
+           Shooting 10     4   280     7    43     2   197     4     0    39    28   426   341     2    18
+        Shoplifting 11    76  1559    30   297     0     7    70    54     0  3218   477   392     3    27
+           Stealing 12   243     4   286   156   193    17   142     3     0     0   458     0  1326     4
+          Vandalism 13     8    51   464   192   191    47    12     0     0     0     9     0    55    79
+
+index -> label: 0=Abuse, 1=Arrest, 2=Arson, 3=Assault, 4=Burglary, 5=Explosion, 6=Fighting, 7=Normal_Videos_event, 8=RoadAccidents, 9=Robbery, 10=Shooting, 11=Shoplifting, 12=Stealing, 13=Vandalism

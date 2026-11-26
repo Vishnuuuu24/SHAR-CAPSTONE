@@ -1,0 +1,47 @@
+# RESULT 1 follow-up (D-62): three restorers chosen after D-61 by fit to this project's noise.
+# Each is used as published (no fine-tuning). Evaluated exactly as D-59/D-60/D-61: same frames,
+# same per-frame noise, same classifier. Selection rationale and sources: D-62.
+
+restorers:
+  - name: adaptive_median_s7
+    type: adaptive_median
+    # SOURCED: Hwang & Haddad, "Adaptive median filters: new algorithms and results", IEEE TIP 4(4):499-502, 1995;
+    # two-level form as in Gonzalez & Woods, Digital Image Processing (3rd ed.), sec. 5.3.3.
+    # Level A: zmin < zmed < zmax -> level B, else grow the window; past s_max output zmed.
+    # Level B: zmin < zxy < zmax -> keep zxy (not an impulse), else output zmed.
+    s_max: 7                      # CHOICE: the textbook example's maximum window
+    border: replicate             # matches the registered median filter's border policy
+    channels: independent         # applied per RGB channel
+    frames_per_forward: 8         # CHOICE: GPU memory only; per-image result is batch-independent
+
+  - name: scunet_real_psnr
+    type: scunet
+    paper: "Zhang et al., Practical Blind Image Denoising via Swin-Conv-UNet and Data Synthesis, MIR 2023 (arXiv 2203.13278)"
+    code: {repository: https://github.com/cszn/SCUNet, commit: 52e440a80a655b01e0b41e9dd9bfe599bc11625e, licence: Apache-2.0,
+           vendored_as: models/scunet_arch.py}
+    # Trained only on synthetic degradations: Gaussian, Poisson, speckle, JPEG, camera-sensor noise, resizing (paper sec. 3).
+    architecture: {in_nc: 3, config: [4, 4, 4, 4, 4, 4, 4], dim: 64}   # SOURCED: main_test_scunet_real_application.py
+    weights:
+      path: .cache/weights/scunet_color_real_psnr.pth
+      sha256: fa78899ba2caec9d235a900e91d96c689da71c42029230c2028b00f09f809c2e
+      bytes: 71982841
+      state_dict_key: null        # plain state_dict
+      source: https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_psnr.pth
+    io: {input: rgb_float_0_1, output: clamp_0_1, frames_per_forward: 4}   # SOURCED: uint2tensor4 / tensor2uint
+
+  - name: restormer_gauss_blind
+    type: restormer
+    paper: "Zamir et al., Restormer: Efficient Transformer for High-Resolution Image Restoration, CVPR 2022"
+    code: {repository: https://github.com/swz30/Restormer, commit: 68dc6ac472db26f16361150cb7a96a1bc87da93f, licence: MIT,
+           vendored_as: models/restormer_arch.py}
+    # Trained on Gaussian noise with sigma drawn from [0, 50] (Options/GaussianColorDenoising_Restormer.yml).
+    architecture: {inp_channels: 3, out_channels: 3, dim: 48, num_blocks: [4, 6, 6, 8], num_refinement_blocks: 4,
+                   heads: [1, 2, 4, 8], ffn_expansion_factor: 2.66, bias: false, LayerNorm_type: BiasFree,
+                   dual_pixel_task: false}   # SOURCED: the same yml, network_g
+    weights:
+      path: .cache/weights/restormer_gaussian_color_denoising_blind.pth
+      sha256: 4e2314dae77bb907184da6e2ac625b921491d6b33de26a52512eff1c6bb37fbd
+      bytes: 104611957
+      state_dict_key: params
+      source: https://github.com/swz30/Restormer/releases/download/v1.0/gaussian_color_denoising_blind.pth
+    io: {input: rgb_float_0_1, output: clamp_0_1, pad_multiple: 8, pad_mode: reflect, frames_per_forward: 4}  # SOURCED: test_gaussian_color_denoising.py

@@ -1,0 +1,181 @@
+{
+  "config_sha256": "62a9a2ca9216426d4b74f627f6864aaa85906a4c0dc80b86241a4deed0e5a8ee",
+  "device": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_name": "NVIDIA H200 MIG 1g.18gb",
+    "deterministic_warn_only": false,
+    "mps_available": false,
+    "mps_built": false,
+    "mps_fallback_environment": null,
+    "policy": "cuda_strict",
+    "selected": "cuda",
+    "supports_pin_memory": true,
+    "torch_threads": 112
+  },
+  "eta": {
+    "formula": "3 * (digest_initialization + full_epochs * (train_batches * train_median_wall + validation_batches * validation_median_wall)) * overhead_factor",
+    "full_digest_initialization_seconds_per_seed": 113.09171216282994,
+    "max_epochs_per_seed": 20,
+    "median_basis": "wall_seconds_per_batch_including_data_loading",
+    "median_epoch_seconds": 1001.5750486897305,
+    "overhead_factor_range": [
+      1.15,
+      1.35
+    ],
+    "reestimate_rule": "re-estimate after first full epoch if actual pace differs by more than 20 percent",
+    "sequential_seeds": 3,
+    "three_seed_wall_seconds_range": [
+      69498.84476655316,
+      81585.60037812764
+    ],
+    "train_batches_per_epoch": 6110,
+    "validation_batches_per_epoch": 588
+  },
+  "experiment_id": "P1C-VIDEO-SWEEP-010-V0-CONTROL",
+  "kind": "P1C real-loader CUDA calibration; not training, model selection, or Test evaluation",
+  "loader_initialization_seconds_with_full_digest_verification": 113.09171216282994,
+  "loader_mode": "video_blob",
+  "measurements": {
+    "device_memory_after": {
+      "current_allocated_memory": 453918208,
+      "driver_allocated_memory": 3659530240,
+      "peak_allocated_memory": 3288760832,
+      "recommended_max_memory": 17179869184
+    },
+    "device_memory_before": {
+      "current_allocated_memory": 0,
+      "driver_allocated_memory": 0,
+      "peak_allocated_memory": 0,
+      "recommended_max_memory": 17179869184
+    },
+    "loader_num_workers": 6,
+    "measured_train_batches": 10,
+    "measured_validation_batches": 10,
+    "process_rss_after_bytes": 3215917056,
+    "process_rss_before_bytes": 662458368,
+    "skipped_optimizer_steps": 0,
+    "train": {
+      "compute_step_seconds": [
+        0.15860401932150126,
+        0.15880492702126503,
+        0.15870534535497427,
+        0.15897248592227697,
+        0.15846167970448732,
+        0.16037749778479338,
+        0.15841013099998236,
+        0.15857580583542585,
+        0.15847662929445505,
+        0.1604325147345662
+      ],
+      "load_share_of_wall": 0.0006944667647338005,
+      "load_step_seconds": [
+        8.351169526576996e-05,
+        0.0001106560230255127,
+        9.670574218034744e-05,
+        0.00011296942830085754,
+        0.00011045671999454498,
+        0.00011157244443893433,
+        9.59392637014389e-05,
+        0.00011053401976823807,
+        9.73045825958252e-05,
+        0.00011002924293279648
+      ],
+      "median_compute_seconds": 0.15865468233823776,
+      "median_load_seconds": 0.00011024298146367073,
+      "median_wall_seconds": 0.15874479105696082,
+      "wall_step_seconds": [
+        0.15868753101676702,
+        0.15891558304429054,
+        0.15880205109715462,
+        0.15908545535057783,
+        0.15857213642448187,
+        0.1604890702292323,
+        0.1585060702636838,
+        0.1586863398551941,
+        0.15857393387705088,
+        0.160542543977499
+      ]
+    },
+    "train_compute_only_images_per_second": 403.39181331917865,
+    "train_median_images_per_second": 403.1628349747584,
+    "validation": {
+      "compute_step_seconds": [
+        0.09402405936270952,
+        0.06508999411016703,
+        0.0546554708853364,
+        0.07392221875488758,
+        0.05365119595080614,
+        0.053596487268805504,
+        0.05369652435183525,
+        0.05366722773760557,
+        0.05363653600215912,
+        0.0535746943205595
+      ],
+      "load_share_of_wall": 0.002264814548888938,
+      "load_step_seconds": [
+        0.17755914572626352,
+        0.11380879301577806,
+        0.0001135803759098053,
+        0.00011292099952697754,
+        0.0001158611848950386,
+        0.00012790970504283905,
+        0.0001385379582643509,
+        0.00013163965195417404,
+        0.00011126790195703506,
+        0.00011520273983478546
+      ],
+      "median_compute_seconds": 0.05368187604472041,
+      "median_load_seconds": 0.00012188544496893883,
+      "median_wall_seconds": 0.053816964849829674,
+      "wall_step_seconds": [
+        0.27158320508897305,
+        0.1788987871259451,
+        0.054769051261246204,
+        0.07403513975441456,
+        0.05376705713570118,
+        0.05372439697384834,
+        0.0538350623100996,
+        0.053798867389559746,
+        0.053747803904116154,
+        0.05368989706039429
+      ]
+    },
+    "validation_compute_only_images_per_second": 1192.2087064670382,
+    "validation_median_images_per_second": 1189.2160804420125,
+    "warmup_train_batches": 3
+  },
+  "packed_frames_blob_sha256": null,
+  "parent_id": "P1C-VIDEO-SWEEP-009-R224-B64",
+  "precision": {
+    "autocast": true,
+    "autocast_dtype": "torch.bfloat16",
+    "device_type": "cuda",
+    "grad_scaler": false,
+    "precision": "amp_bfloat16"
+  },
+  "scope_assertions": {
+    "checkpoint_saved": false,
+    "configuration_selection": false,
+    "held_out_test_access": false,
+    "research_training": false
+  },
+  "source_scope": {
+    "held_out_test_access": false,
+    "train_rows": 391014,
+    "validation_rows": 37600
+  },
+  "thread_configuration": {
+    "torch_threads_before": 112,
+    "torch_threads_used": 112
+  },
+  "throughput": {
+    "channels_last": false,
+    "compile_mode": "none",
+    "device_type": "cuda",
+    "fused_optimizer": false
+  },
+  "video_frames_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+  "weight_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+}

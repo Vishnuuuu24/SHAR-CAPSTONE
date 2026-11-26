@@ -1,0 +1,13 @@
+{
+  "checkpoint_disposition": "validation-selected checkpoint retained: checkpoint_epoch_001.pt",
+  "claim_state": "INCONCLUSIVE",
+  "next_action": "Compare validation macro_f1 against parent P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1 using the registered decision_threshold 0.04. Below it, the change is inside seed noise and must not be promoted; above it, re-run as a three-seed REGISTERED_FULL_RUN_READY experiment before any number is quoted.",
+  "peak_memory_bytes": 3179025408,
+  "reason": "One screening seed completed. A single seed carries no error bar: the registered decision_threshold exists precisely so this number is compared against it rather than read as a result. Test was inaccessible by registration.",
+  "runtime_seconds": 4640.3733492335305,
+  "status": "COMPLETED",
+  "stop_reason": "registered epoch ceiling or validation early stopping",
+  "storage_bytes": 1980651880,
+  "summary_artifact_digest": "07f755d96e9c4ebc7158dbd04d78b1823a6669b0e0f0f5f98e59d5d38b0b1f2f",
+  "verdict": "GOOD_ENOUGH"
+}

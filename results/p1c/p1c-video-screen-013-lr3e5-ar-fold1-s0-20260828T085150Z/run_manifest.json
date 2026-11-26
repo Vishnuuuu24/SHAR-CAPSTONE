@@ -1,0 +1,46 @@
+{
+  "annotation_version": "P1B frozen grouped Train/validation manifests",
+  "code_revision": "local working tree; commit is intentionally not assumed",
+  "config_digest": "6cf85c860206664e27974b43a3419588f00537b295a305dc8272e60112928b2f",
+  "dataset_manifest_digest": "776b26326bf63ae391b9f60d9f2deeedc94959b5833f33896669ad92cbf6aa5c",
+  "environment_digest": "ae29c4c0fa13f559146d6d58dcc9529bc06211b357dd6d504cec22bf96ab8a2e",
+  "event_only_test": {
+    "available": false,
+    "reason": "not applicable: screening run, Test is inaccessible by registration"
+  },
+  "hardware": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_name": "NVIDIA H200 MIG 1g.18gb",
+    "deterministic_warn_only": false,
+    "mps_available": false,
+    "mps_built": false,
+    "mps_fallback_environment": null,
+    "policy": "cuda_strict",
+    "selected": "cuda",
+    "supports_pin_memory": true,
+    "torch_threads": 112
+  },
+  "loader_mode": "video_blob",
+  "metric_artifact_paths": [
+    "epoch_metrics.json",
+    "aggregate.json",
+    "verdict.json"
+  ],
+  "package_versions": {
+    "python": "3.12.14",
+    "torch": "2.13.0+cu126"
+  },
+  "packed_frames_blob_sha256": null,
+  "run_class": "screening",
+  "run_id": "p1c-video-screen-013-lr3e5-ar-fold1-s0-20260828T085150Z",
+  "run_kind": "p1c_frame_baseline_screening_validation_only",
+  "screening": {
+    "decision_threshold": 0.04,
+    "parent_id": "P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1",
+    "threshold_rationale": "The three baseline seeds spanned 0.2732-0.3122 validation macro-F1 (SD 0.0196) with no factor changed between them, so a single-seed swing of 0.039 is attributable to seed alone. 0.04 is that observed spread rounded to two decimals and is registered BEFORE the run so the promotion decision cannot be fitted to the result afterwards. Below it: inside seed noise, do not promote. Above it: re-run as a three-seed REGISTERED_FULL_RUN_READY experiment."
+  },
+  "seed": 0,
+  "video_frames_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665"
+}

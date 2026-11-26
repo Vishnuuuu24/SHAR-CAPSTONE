@@ -1,0 +1,570 @@
+{
+ "git_revision": "229234644f5be880a8db5165cc28d30fe1ec0e20",
+ "working_tree_dirty": false,
+ "decision": "D-69",
+ "protocol": "D-65",
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "split": "validation only",
+ "label_view": "inherited video-level labels (D-40), not event-only",
+ "seconds": 236,
+ "caches": [
+  {
+   "fold": 1,
+   "resnet_cache_sha256": {
+    "train": "e851dbcbd3727d840221df3bd3667d52c2c87342ec91aee36ccfc906a1ab2b5e",
+    "validation": "7b9ee747f167173c2f9e3b0e37834fe17ac54ed938766d0d508395d7ee0eeefc"
+   },
+   "dinov2_cache_sha256": {
+    "train": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "validation": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de"
+   }
+  },
+  {
+   "fold": 2,
+   "resnet_cache_sha256": {
+    "train": "b546abe7f5673d66ddc3a236312ca00b6c2b0fd0893e2aef5c85ae2958cc326e",
+    "validation": "e1d2c105228226520f4d9d07955b8aaed157ce69c715b113957038006593340f"
+   },
+   "dinov2_cache_sha256": {
+    "train": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "validation": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43"
+   }
+  },
+  {
+   "fold": 3,
+   "resnet_cache_sha256": {
+    "train": "2fd183f7431a90a3eb648a299b76690b215ada2e0a144e3521f3162892e36055",
+    "validation": "bb8f6ccaaec5189fe2b2d58ce715b4124939f8bd93d450d9c93bb9302124f7be"
+   },
+   "dinov2_cache_sha256": {
+    "train": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "validation": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599"
+   }
+  },
+  {
+   "fold": 4,
+   "resnet_cache_sha256": {
+    "train": "37500108e8941d1b903960fc04187d724121bcf73818c0eba7fe24e6837eece6",
+    "validation": "f5573db61cd19d0f95e15492c05baa6ba06774ff797e0cf9a4659dd7f57ebf53"
+   },
+   "dinov2_cache_sha256": {
+    "train": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a",
+    "validation": "1e19490f6aac9e617587016e8415e38b233b75542fc5857fd731abc4bcb8a705"
+   }
+  }
+ ],
+ "arms": {
+  "D_lstm": {
+   "macro_f1": 0.3752825217110931,
+   "accuracy": 0.4017857142857143,
+   "per_fold_macro_f1": [
+    0.4573180787466502,
+    0.36567017638446214,
+    0.36245434459720177,
+    0.3156874871160585
+   ],
+   "per_fold_delta_vs_control": [
+    -0.01781683924541072,
+    -0.000728504299932875,
+    -0.043693872265300804,
+    0.029302377516663203
+   ],
+   "mean_delta": -0.0082342095734953,
+   "folds_positive": 1,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 4.0,
+   "train_videos": 420.0
+  },
+  "D_step": {
+   "macro_f1": 0.38351673128458846,
+   "accuracy": 0.40029761904761907,
+   "per_fold_macro_f1": [
+    0.4751349179920609,
+    0.366398680684395,
+    0.4061482168625026,
+    0.2863851095993953
+   ],
+   "per_fold_delta_vs_control": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "mean_delta": 0.0,
+   "folds_positive": 0,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 4.0,
+   "train_videos": 420.0
+  },
+  "R_lin": {
+   "macro_f1": 0.29286124895506804,
+   "accuracy": 0.32291666666666663,
+   "per_fold_macro_f1": [
+    0.28432571940975304,
+    0.29920712242693664,
+    0.33672524565381706,
+    0.2511869083297655
+   ],
+   "per_fold_delta_vs_control": [
+    -0.19080919858230788,
+    -0.06719155825745837,
+    -0.06942297120868551,
+    -0.0351982012696298
+   ],
+   "mean_delta": -0.09065548232952039,
+   "folds_positive": 0,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 8.0,
+   "train_videos": 420.0
+  },
+  "R_lstm": {
+   "macro_f1": 0.26320024513301826,
+   "accuracy": 0.2931547619047619,
+   "per_fold_macro_f1": [
+    0.29496706996706995,
+    0.25281617697584086,
+    0.26467051467051467,
+    0.24034721891864752
+   ],
+   "per_fold_delta_vs_control": [
+    -0.18016784802499097,
+    -0.11358250370855416,
+    -0.1414777021919879,
+    -0.04603789068074776
+   ],
+   "mean_delta": -0.1203164861515702,
+   "folds_positive": 0,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 5.5,
+   "train_videos": 420.0
+  },
+  "R_mlp": {
+   "macro_f1": 0.2791857282928712,
+   "accuracy": 0.30505952380952384,
+   "per_fold_macro_f1": [
+    0.3073899645328217,
+    0.28917061774204633,
+    0.2966534787963359,
+    0.22352885210028064
+   ],
+   "per_fold_delta_vs_control": [
+    -0.16774495345923923,
+    -0.07722806294234869,
+    -0.10949473806616666,
+    -0.06285625749911464
+   ],
+   "mean_delta": -0.1043310029917173,
+   "folds_positive": 0,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 8.5,
+   "train_videos": 420.0
+  }
+ },
+ "intervals": {
+  "R_lin": {
+   "observed": 0.2928612489550681,
+   "ci95": [
+    0.21948452534870327,
+    0.3337509521301262
+   ],
+   "sd": 0.029666017252874738
+  },
+  "R_mlp": {
+   "observed": 0.2791857282928712,
+   "ci95": [
+    0.20462383698137376,
+    0.32267107878342993
+   ],
+   "sd": 0.030216327334866174
+  },
+  "R_lstm": {
+   "observed": 0.26320024513301826,
+   "ci95": [
+    0.1944438298668582,
+    0.3018818638254701
+   ],
+   "sd": 0.027163843774031
+  },
+  "D_lstm": {
+   "observed": 0.3752825217110931,
+   "ci95": [
+    0.30125974508009556,
+    0.4122605323041145
+   ],
+   "sd": 0.02879315182323895
+  },
+  "D_step": {
+   "observed": 0.38351673128458835,
+   "ci95": [
+    0.3016093323792835,
+    0.4292658463801624
+   ],
+   "sd": 0.03284512995090792
+  }
+ },
+ "vs_reference": {
+  "R_lin": {
+   "difference": {
+    "observed": -0.09065548232952025,
+    "ci95": [
+     -0.14947055383822846,
+     -0.023153467712051266
+    ],
+    "sd": 0.03246932569559764,
+    "share_of_draws_above_zero": 0.004
+   },
+   "per_class_f1": {
+    "Abuse": {
+     "control": 0.3746031746031746,
+     "candidate": 0.21428571428571427,
+     "change": -0.16031746031746033
+    },
+    "Arrest": {
+     "control": 0.3061507936507936,
+     "candidate": 0.1849206349206349,
+     "change": -0.12123015873015872
+    },
+    "Arson": {
+     "control": 0.5478422040922041,
+     "candidate": 0.4638403263403263,
+     "change": -0.08400187775187778
+    },
+    "Assault": {
+     "control": 0.1164021164021164,
+     "candidate": 0.024725274725274724,
+     "change": -0.09167684167684167
+    },
+    "Burglary": {
+     "control": 0.30345117845117847,
+     "candidate": 0.362037037037037,
+     "change": 0.05858585858585852
+    },
+    "Explosion": {
+     "control": 0.6031084656084655,
+     "candidate": 0.46587301587301577,
+     "change": -0.13723544973544977
+    },
+    "Fighting": {
+     "control": 0.2138227513227513,
+     "candidate": 0.06428571428571428,
+     "change": -0.14953703703703702
+    },
+    "Normal_Videos_event": {
+     "control": 0.5958994708994708,
+     "candidate": 0.396031746031746,
+     "change": -0.1998677248677248
+    },
+    "RoadAccidents": {
+     "control": 0.4591089466089466,
+     "candidate": 0.3612512487512487,
+     "change": -0.09785769785769788
+    },
+    "Robbery": {
+     "control": 0.42515632515632523,
+     "candidate": 0.324074074074074,
+     "change": -0.10108225108225122
+    },
+    "Shooting": {
+     "control": 0.032407407407407406,
+     "candidate": 0.020833333333333332,
+     "change": -0.011574074074074073
+    },
+    "Shoplifting": {
+     "control": 0.5059639434639435,
+     "candidate": 0.38520937052283805,
+     "change": -0.12075457294110542
+    },
+    "Stealing": {
+     "control": 0.49484126984126986,
+     "candidate": 0.534078884078884,
+     "change": 0.03923761423761418
+    },
+    "Vandalism": {
+     "control": 0.3904761904761905,
+     "candidate": 0.2986111111111111,
+     "change": -0.09186507936507937
+    }
+   },
+   "violence_mean_f1": {
+    "control": 0.18430886243386244,
+    "candidate": 0.08103250915750915
+   }
+  },
+  "R_mlp": {
+   "difference": {
+    "observed": -0.10433100299171716,
+    "ci95": [
+     -0.16280461350542338,
+     -0.037130399357310315
+    ],
+    "sd": 0.031791416481273455,
+    "share_of_draws_above_zero": 0.001
+   },
+   "per_class_f1": {
+    "Abuse": {
+     "control": 0.3746031746031746,
+     "candidate": 0.3357924482924483,
+     "change": -0.038810726310726296
+    },
+    "Arrest": {
+     "control": 0.3061507936507936,
+     "candidate": 0.21408730158730158,
+     "change": -0.09206349206349204
+    },
+    "Arson": {
+     "control": 0.5478422040922041,
+     "candidate": 0.42362082362082365,
+     "change": -0.12422138047138043
+    },
+    "Assault": {
+     "control": 0.1164021164021164,
+     "candidate": 0.0,
+     "change": -0.1164021164021164
+    },
+    "Burglary": {
+     "control": 0.30345117845117847,
+     "candidate": 0.3080687830687831,
+     "change": 0.0046176046176046315
+    },
+    "Explosion": {
+     "control": 0.6031084656084655,
+     "candidate": 0.4518518518518519,
+     "change": -0.15125661375661364
+    },
+    "Fighting": {
+     "control": 0.2138227513227513,
+     "candidate": 0.015151515151515152,
+     "change": -0.19867123617123617
+    },
+    "Normal_Videos_event": {
+     "control": 0.5958994708994708,
+     "candidate": 0.5115079365079365,
+     "change": -0.08439153439153435
+    },
+    "RoadAccidents": {
+     "control": 0.4591089466089466,
+     "candidate": 0.2532342657342657,
+     "change": -0.20587468087468086
+    },
+    "Robbery": {
+     "control": 0.42515632515632523,
+     "candidate": 0.3674519924519924,
+     "change": -0.05770433270433284
+    },
+    "Shooting": {
+     "control": 0.032407407407407406,
+     "candidate": 0.0,
+     "change": -0.032407407407407406
+    },
+    "Shoplifting": {
+     "control": 0.5059639434639435,
+     "candidate": 0.24666444666444665,
+     "change": -0.2592994967994968
+    },
+    "Stealing": {
+     "control": 0.49484126984126986,
+     "candidate": 0.5192640692640693,
+     "change": 0.024422799422799457
+    },
+    "Vandalism": {
+     "control": 0.3904761904761905,
+     "candidate": 0.2619047619047619,
+     "change": -0.12857142857142856
+    }
+   },
+   "violence_mean_f1": {
+    "control": 0.18430886243386244,
+    "candidate": 0.08773599086099086
+   }
+  },
+  "R_lstm": {
+   "difference": {
+    "observed": -0.12031648615157009,
+    "ci95": [
+     -0.1709905719907171,
+     -0.05743038940773629
+    ],
+    "sd": 0.029455657609999887,
+    "share_of_draws_above_zero": 0.0
+   },
+   "per_class_f1": {
+    "Abuse": {
+     "control": 0.3746031746031746,
+     "candidate": 0.2562169312169312,
+     "change": -0.11838624338624343
+    },
+    "Arrest": {
+     "control": 0.3061507936507936,
+     "candidate": 0.14365079365079364,
+     "change": -0.16249999999999998
+    },
+    "Arson": {
+     "control": 0.5478422040922041,
+     "candidate": 0.4812070282658519,
+     "change": -0.0666351758263522
+    },
+    "Assault": {
+     "control": 0.1164021164021164,
+     "candidate": 0.02948717948717949,
+     "change": -0.0869149369149369
+    },
+    "Burglary": {
+     "control": 0.30345117845117847,
+     "candidate": 0.2953042328042328,
+     "change": -0.00814694564694568
+    },
+    "Explosion": {
+     "control": 0.6031084656084655,
+     "candidate": 0.5549062049062049,
+     "change": -0.048202260702260635
+    },
+    "Fighting": {
+     "control": 0.2138227513227513,
+     "candidate": 0.08585858585858586,
+     "change": -0.12796416546416545
+    },
+    "Normal_Videos_event": {
+     "control": 0.5958994708994708,
+     "candidate": 0.39222120472120475,
+     "change": -0.20367826617826607
+    },
+    "RoadAccidents": {
+     "control": 0.4591089466089466,
+     "candidate": 0.2906746031746032,
+     "change": -0.16843434343434338
+    },
+    "Robbery": {
+     "control": 0.42515632515632523,
+     "candidate": 0.22651283901283895,
+     "change": -0.1986434861434863
+    },
+    "Shooting": {
+     "control": 0.032407407407407406,
+     "candidate": 0.0,
+     "change": -0.032407407407407406
+    },
+    "Shoplifting": {
+     "control": 0.5059639434639435,
+     "candidate": 0.2559944684944685,
+     "change": -0.24996947496947497
+    },
+    "Stealing": {
+     "control": 0.49484126984126986,
+     "candidate": 0.44882756132756135,
+     "change": -0.04601370851370851
+    },
+    "Vandalism": {
+     "control": 0.3904761904761905,
+     "candidate": 0.22394179894179891,
+     "change": -0.16653439153439156
+    }
+   },
+   "violence_mean_f1": {
+    "control": 0.18430886243386244,
+    "candidate": 0.09289067414067413
+   }
+  },
+  "D_lstm": {
+   "difference": {
+    "observed": -0.008234209573495244,
+    "ci95": [
+     -0.03618967871725225,
+     0.023658230143261644
+    ],
+    "sd": 0.015177280894529625,
+    "share_of_draws_above_zero": 0.347
+   },
+   "per_class_f1": {
+    "Abuse": {
+     "control": 0.3746031746031746,
+     "candidate": 0.36661255411255406,
+     "change": -0.007990620490620548
+    },
+    "Arrest": {
+     "control": 0.3061507936507936,
+     "candidate": 0.38472222222222224,
+     "change": 0.07857142857142863
+    },
+    "Arson": {
+     "control": 0.5478422040922041,
+     "candidate": 0.564057239057239,
+     "change": 0.016215034965034958
+    },
+    "Assault": {
+     "control": 0.1164021164021164,
+     "candidate": 0.016666666666666666,
+     "change": -0.09973544973544973
+    },
+    "Burglary": {
+     "control": 0.30345117845117847,
+     "candidate": 0.29544252044252045,
+     "change": -0.00800865800865802
+    },
+    "Explosion": {
+     "control": 0.6031084656084655,
+     "candidate": 0.581084656084656,
+     "change": -0.022023809523809557
+    },
+    "Fighting": {
+     "control": 0.2138227513227513,
+     "candidate": 0.19034992784992785,
+     "change": -0.02347282347282345
+    },
+    "Normal_Videos_event": {
+     "control": 0.5958994708994708,
+     "candidate": 0.6453944203944204,
+     "change": 0.04949494949494959
+    },
+    "RoadAccidents": {
+     "control": 0.4591089466089466,
+     "candidate": 0.38576238576238575,
+     "change": -0.07334656084656083
+    },
+    "Robbery": {
+     "control": 0.42515632515632523,
+     "candidate": 0.42688792688792687,
+     "change": 0.0017316017316016397
+    },
+    "Shooting": {
+     "control": 0.032407407407407406,
+     "candidate": 0.020833333333333332,
+     "change": -0.011574074074074073
+    },
+    "Shoplifting": {
+     "control": 0.5059639434639435,
+     "candidate": 0.4967643467643467,
+     "change": -0.009199596699596746
+    },
+    "Stealing": {
+     "control": 0.49484126984126986,
+     "candidate": 0.49234006734006736,
+     "change": -0.002501202501202504
+    },
+    "Vandalism": {
+     "control": 0.3904761904761905,
+     "candidate": 0.387037037037037,
+     "change": -0.003439153439153464
+    }
+   },
+   "violence_mean_f1": {
+    "control": 0.18430886243386244,
+    "candidate": 0.1486156204906205
+   }
+  }
+ }
+}

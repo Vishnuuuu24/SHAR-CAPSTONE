@@ -1,0 +1,85 @@
+3526 videos x 8 frames
+  100/3526 videos (0 failed)
+  200/3526 videos (0 failed)
+  300/3526 videos (0 failed)
+  400/3526 videos (0 failed)
+  500/3526 videos (0 failed)
+  600/3526 videos (0 failed)
+  700/3526 videos (0 failed)
+  800/3526 videos (0 failed)
+  900/3526 videos (0 failed)
+  1000/3526 videos (0 failed)
+  1100/3526 videos (0 failed)
+  1200/3526 videos (0 failed)
+  1300/3526 videos (0 failed)
+  1400/3526 videos (0 failed)
+  1500/3526 videos (0 failed)
+  1600/3526 videos (0 failed)
+  1700/3526 videos (0 failed)
+  1800/3526 videos (0 failed)
+  1900/3526 videos (0 failed)
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdbe7f00] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdcbcec0] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xd3a5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xe2e8ac0] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcdd5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcdd5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xd3a5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xe2e8ac0] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcdd5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcdd5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xd3a5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xe2e8ac0] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcdd5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xd3a5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcdd5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xccff6c0] Referenced QT chapter track not found
+  2000/3526 videos (0 failed)
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdc06a80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xe774bc0] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdc06a80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcd9e9c0] Referenced QT chapter track not found
+  2100/3526 videos (0 failed)
+  2200/3526 videos (0 failed)
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdc06a80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcd8c400] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdc06a80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdc06a80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdc06a80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xe522940] Referenced QT chapter track not found
+  2300/3526 videos (0 failed)
+  2400/3526 videos (0 failed)
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xd3a5640] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xccff6c0] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdc06a80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcd3a500] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xdc06a80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcd4a0c0] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xe9bcc80] Referenced QT chapter track not found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcd13740] Referenced QT chapter track not found
+  2500/3526 videos (0 failed)
+[h264 @ 0xe8ae800] Invalid NAL unit size (11038 > 8056).
+[h264 @ 0xe8ae800] missing picture in access unit with size 8060
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcbf37c0] stream 0, offset 0x6c8b76: partial file
+[h264 @ 0xe9c0340] Invalid NAL unit size (11038 > 8056).
+[h264 @ 0xe9c0340] Error splitting the input into NAL units.
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcbf37c0] stream 0, offset 0x6c93d0: partial file
+[h264 @ 0xe7a4800] Invalid NAL unit size (11038 > 8056).
+[h264 @ 0xe7a4800] missing picture in access unit with size 8060
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcde2600] stream 0, offset 0x6c8b76: partial file
+[h264 @ 0xe9bff00] Invalid NAL unit size (11038 > 8056).
+[h264 @ 0xe9bff00] Error splitting the input into NAL units.
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0xcde2600] stream 0, offset 0x6c93d0: partial file
+  2600/3526 videos (0 failed)
+  2700/3526 videos (0 failed)
+  2800/3526 videos (0 failed)
+  2900/3526 videos (0 failed)
+  3000/3526 videos (0 failed)
+  3100/3526 videos (0 failed)
+  3200/3526 videos (0 failed)
+  3300/3526 videos (0 failed)
+  3400/3526 videos (0 failed)
+[ WARN:0@3974.930] global cap_ffmpeg_impl.hpp:1676 grabFrame packet read max attempts exceeded, if your video have multiple streams (video, audio) try to increase attempt limit by setting environment variable OPENCV_FFMPEG_READ_ATTEMPTS (current value is 4096)
+[ WARN:0@3978.499] global cap_ffmpeg_impl.hpp:1676 grabFrame packet read max attempts exceeded, if your video have multiple streams (video, audio) try to increase attempt limit by setting environment variable OPENCV_FFMPEG_READ_ATTEMPTS (current value is 4096)
+  3500/3526 videos (0 failed)
+wrote results/p1c/combined-patch-cache: 3526 ok, 0 failed, shape [3526, 8, 257, 768]

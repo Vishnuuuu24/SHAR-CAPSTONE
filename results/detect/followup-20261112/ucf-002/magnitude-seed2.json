@@ -1,0 +1,94 @@
+{
+ "variant": "magnitude",
+ "seed": 2,
+ "best_epoch": 3,
+ "history": [
+  {
+   "epoch": 0,
+   "loss": 0.5303806636644446,
+   "heldout_video_auc": 0.9496913580246913,
+   "epoch_seconds": 83.52456354199967
+  },
+  {
+   "epoch": 1,
+   "loss": 0.32184299113957776,
+   "heldout_video_auc": 0.9719135802469135,
+   "epoch_seconds": 85.35483435900824
+  },
+  {
+   "epoch": 2,
+   "loss": 0.24542843841988107,
+   "heldout_video_auc": 0.9737654320987654,
+   "epoch_seconds": 82.69163429099717
+  },
+  {
+   "epoch": 3,
+   "loss": 0.1986212749844012,
+   "heldout_video_auc": 0.9780864197530864,
+   "epoch_seconds": 82.0039270260022
+  },
+  {
+   "epoch": 4,
+   "loss": 0.16320747882127762,
+   "heldout_video_auc": 0.9753086419753085,
+   "epoch_seconds": 82.72181924100732
+  },
+  {
+   "epoch": 5,
+   "loss": 0.13775945811168008,
+   "heldout_video_auc": 0.975925925925926,
+   "epoch_seconds": 83.23238505200425
+  },
+  {
+   "epoch": 6,
+   "loss": 0.1231566239958224,
+   "heldout_video_auc": 0.9770061728395062,
+   "epoch_seconds": 84.64174167699821
+  },
+  {
+   "epoch": 7,
+   "loss": 0.11058332641487537,
+   "heldout_video_auc": 0.9770061728395061,
+   "epoch_seconds": 84.73414257999684
+  },
+  {
+   "epoch": 8,
+   "loss": 0.10109198449746422,
+   "heldout_video_auc": 0.9777777777777777,
+   "epoch_seconds": 88.27152929001022
+  },
+  {
+   "epoch": 9,
+   "loss": 0.09243250605852707,
+   "heldout_video_auc": 0.9774691358024691,
+   "epoch_seconds": 86.06633366701135
+  },
+  {
+   "epoch": 10,
+   "loss": 0.08820898085832596,
+   "heldout_video_auc": 0.9762345679012345,
+   "epoch_seconds": 85.77014907400007
+  },
+  {
+   "epoch": 11,
+   "loss": 0.08443178074515384,
+   "heldout_video_auc": 0.975462962962963,
+   "epoch_seconds": 81.68044752000424
+  },
+  {
+   "epoch": 12,
+   "loss": 0.07935010253087334,
+   "heldout_video_auc": 0.9760802469135803,
+   "epoch_seconds": 84.27213208600006
+  },
+  {
+   "epoch": 13,
+   "loss": 0.07648777767367985,
+   "heldout_video_auc": 0.9748456790123456,
+   "epoch_seconds": 81.46641922499111
+  }
+ ],
+ "seconds": 1178.452320098877,
+ "checkpoint_sha256": "ce11490b2c7a48cf0bc1b32ae624d6a855bf2e04ff136ac63e0e24deb5d6e5ff",
+ "test_read": false
+}

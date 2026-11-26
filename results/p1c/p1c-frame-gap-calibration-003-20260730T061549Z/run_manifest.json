@@ -1,0 +1,33 @@
+{
+  "annotation_version": "P1B frozen grouped Train/validation manifests; Test prohibited",
+  "code_revision": "local working tree; commit is intentionally not assumed",
+  "config_digest": "3112ed1afd996f021f0ecb438cefadc9b2895993cf02cd269e4586d1a31d303f",
+  "dataset_manifest_digest": "3930ca6b3155bee6d90308447cefade66332ab20f8a3685a6de341938d35608c",
+  "environment_digest": "ae29c4c0fa13f559146d6d58dcc9529bc06211b357dd6d504cec22bf96ab8a2e",
+  "hardware": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_device_name": null,
+    "deterministic_warn_only": false,
+    "mps_available": true,
+    "mps_built": true,
+    "mps_fallback_environment": null,
+    "policy": "mps_strict",
+    "selected": "mps",
+    "supports_pin_memory": false,
+    "torch_threads": 6
+  },
+  "metric_artifact_paths": [
+    "calibration.json",
+    "aggregate.json",
+    "verdict.json"
+  ],
+  "package_versions": {
+    "python": "3.12.13",
+    "torch": "2.13.0"
+  },
+  "run_id": "p1c-frame-gap-calibration-003-20260730T061549Z",
+  "run_kind": "p1c_real_loader_calibration",
+  "seed": 0
+}

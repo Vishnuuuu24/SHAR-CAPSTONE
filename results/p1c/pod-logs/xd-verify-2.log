@@ -1,0 +1,41 @@
+{
+ "mirror": "huggingface.co/datasets/jherng/xd-violence",
+ "mirror_revisions": [
+  "8eba22ca666b5061cf4f3e1b1907c05af520dc07"
+ ],
+ "files_expected": 4749,
+ "files_present": 4749,
+ "missing": [],
+ "unexpected": [],
+ "sha256_mismatches": [],
+ "total_bytes": 85496982200,
+ "split_counts": {
+  "train": 3950,
+  "test": 799
+ },
+ "official_split_counts": {
+  "train": 3954,
+  "test": 800
+ },
+ "label_counts": {
+  "test/Abuse": 11,
+  "test/Car accident": 106,
+  "test/Explosion": 103,
+  "test/Fighting": 126,
+  "test/Normal": 299,
+  "test/Riot": 101,
+  "test/Shooting": 104,
+  "train/Abuse": 50,
+  "train/Car accident": 444,
+  "train/Explosion": 381,
+  "train/Fighting": 481,
+  "train/Normal": 2046,
+  "train/Riot": 384,
+  "train/Shooting": 441
+ },
+ "multi_label_videos": 289,
+ "official_annotations_sha256": "27b583ba06fe2e096d7e3d281845365c3b24de7e30797ae5c1ec771667e04c2f",
+ "annotated_test_videos": 500,
+ "annotated_not_in_download": [],
+ "ok": true
+}

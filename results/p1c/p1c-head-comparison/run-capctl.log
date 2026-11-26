@@ -1,0 +1,18 @@
+patch cache: 82679 rows, memmapped from results/p1c/p1c-patch-cache
+fold 1: train 3808 rows sampled (8/video, seed=0), validation 37600 rows (full, untouched), cache 56c0312b9122
+fold 1 head video_mean_mlp seed 0: best epoch 1 (early-stopped), validation macro-F1 0.4225, video-level macro-F1 0.4225 over 56 videos, params 7104014, wall 86.7s
+fold 1 head video_mean_mlp seed 1: best epoch 1 (early-stopped), validation macro-F1 0.4234, video-level macro-F1 0.4234 over 56 videos, params 7104014, wall 96.1s
+fold 1 head video_mean_mlp seed 2: best epoch 11 (early-stopped), validation macro-F1 0.4309, video-level macro-F1 0.4309 over 56 videos, params 7104014, wall 134.7s
+fold 2: train 3808 rows sampled (8/video, seed=0), validation 47726 rows (full, untouched), cache ea8c33fbecf3
+fold 2 head video_mean_mlp seed 0: best epoch 1 (early-stopped), validation macro-F1 0.3606, video-level macro-F1 0.3606 over 56 videos, params 7104014, wall 106.2s
+fold 2 head video_mean_mlp seed 1: best epoch 8 (early-stopped), validation macro-F1 0.3914, video-level macro-F1 0.3914 over 56 videos, params 7104014, wall 134.2s
+fold 2 head video_mean_mlp seed 2: best epoch 4 (early-stopped), validation macro-F1 0.4216, video-level macro-F1 0.4216 over 56 videos, params 7104014, wall 127.0s
+fold 3: train 3808 rows sampled (8/video, seed=0), validation 49719 rows (full, untouched), cache 681f53307dbd
+fold 3 head video_mean_mlp seed 0: best epoch 15 (early-stopped), validation macro-F1 0.4532, video-level macro-F1 0.4532 over 56 videos, params 7104014, wall 202.9s
+fold 3 head video_mean_mlp seed 1: best epoch 8 (early-stopped), validation macro-F1 0.4348, video-level macro-F1 0.4348 over 56 videos, params 7104014, wall 137.6s
+fold 3 head video_mean_mlp seed 2: best epoch 2 (early-stopped), validation macro-F1 0.4107, video-level macro-F1 0.4107 over 56 videos, params 7104014, wall 108.5s
+fold 4: train 3807 rows sampled (8/video, seed=0), validation 41319 rows (full, untouched), cache 3b4aaed3037e
+fold 4 head video_mean_mlp seed 0: best epoch 3 (early-stopped), validation macro-F1 0.3974, video-level macro-F1 0.3974 over 56 videos, params 7104014, wall 110.7s
+fold 4 head video_mean_mlp seed 1: best epoch 3 (early-stopped), validation macro-F1 0.3487, video-level macro-F1 0.3487 over 56 videos, params 7104014, wall 109.9s
+fold 4 head video_mean_mlp seed 2: best epoch 4 (early-stopped), validation macro-F1 0.3393, video-level macro-F1 0.3393 over 56 videos, params 7104014, wall 107.7s
+wrote results/p1c/p1c-head-comparison-capctl/summary.json

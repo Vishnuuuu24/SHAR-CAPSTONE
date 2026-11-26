@@ -1,0 +1,205 @@
+{
+ "git_revision": "91fc27466d9e8f2b896ce5d3883cc01c7341f35c",
+ "decision": "D-65",
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "monitor_per_class": 4,
+ "split": "validation only",
+ "arms": {
+  "B_proj": {
+   "macro_f1": 0.3899849489135203,
+   "accuracy": 0.40922619047619047,
+   "per_fold_macro_f1": [
+    0.4807256235827664,
+    0.37446838875410293,
+    0.3977461691747406,
+    0.3069996141424713
+   ],
+   "per_fold_delta_vs_control": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "mean_delta": 0.0,
+   "folds_positive": 0,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 3.0,
+   "train_videos": 420.0
+  },
+  "B_ref": {
+   "macro_f1": 0.38351673128458846,
+   "accuracy": 0.40029761904761907,
+   "per_fold_macro_f1": [
+    0.4751349179920609,
+    0.366398680684395,
+    0.4061482168625026,
+    0.2863851095993953
+   ],
+   "per_fold_delta_vs_control": [
+    -0.005590705590705458,
+    -0.008069708069707915,
+    0.008402047687761982,
+    -0.020614504543076007
+   ],
+   "mean_delta": -0.006468217628931849,
+   "folds_positive": 1,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 4.0,
+   "train_videos": 420.0
+  },
+  "L_proj": {
+   "macro_f1": 0.41338955356812496,
+   "accuracy": 0.4449404761904762,
+   "per_fold_macro_f1": [
+    0.46578368721225866,
+    0.3969311112168255,
+    0.3845302845302845,
+    0.40631313131313124
+   ],
+   "per_fold_delta_vs_control": [
+    -0.014941936370507725,
+    0.022462722462722573,
+    -0.01321588464445611,
+    0.09931351717065995
+   ],
+   "mean_delta": 0.02340460465460467,
+   "folds_positive": 2,
+   "folds_passing_gate": 1,
+   "gate_passed": false,
+   "median_best_epoch": 3.5,
+   "train_videos": 420.0
+  }
+ },
+ "registered_contrast": {
+  "contrast": "L_proj vs B_proj",
+  "paired_bootstrap": {
+   "draws": 2000,
+   "unique_videos": 108,
+   "resampling": "global, within class, source video carries all fold/seed rows",
+   "base": {
+    "observed": 0.38998494891352026,
+    "ci95": [
+     0.30752804903578207,
+     0.43373077042588604
+    ],
+    "sd": 0.03250203214937903
+   },
+   "candidate": {
+    "observed": 0.41338955356812507,
+    "ci95": [
+     0.3360425035540784,
+     0.4576848518156292
+    ]
+   },
+   "difference": {
+    "observed": 0.02340460465460481,
+    "ci95": [
+     -0.021546364176319097,
+     0.07450306974330277
+    ],
+    "sd": 0.024091818039609938,
+    "share_of_draws_above_zero": 0.849
+   }
+  },
+  "claim_passed": false,
+  "rule": "paired 95% CI lower bound > 0 (Holm over 1 registered contrast) and point gain >= +0.02",
+  "per_class_f1": {
+   "Abuse": {
+    "control": 0.3490981240981241,
+    "candidate": 0.3986689236689236,
+    "change": 0.04957079957079952
+   },
+   "Arrest": {
+    "control": 0.3930555555555555,
+    "candidate": 0.40608465608465605,
+    "change": 0.013029100529100557
+   },
+   "Arson": {
+    "control": 0.5309537684537685,
+    "candidate": 0.612962962962963,
+    "change": 0.08200919450919453
+   },
+   "Assault": {
+    "control": 0.08226495726495726,
+    "candidate": 0.18353174603174605,
+    "change": 0.10126678876678878
+   },
+   "Burglary": {
+    "control": 0.274537037037037,
+    "candidate": 0.42171069671069666,
+    "change": 0.14717365967365964
+   },
+   "Explosion": {
+    "control": 0.6329365079365079,
+    "candidate": 0.5890873015873015,
+    "change": -0.043849206349206415
+   },
+   "Fighting": {
+    "control": 0.2130952380952381,
+    "candidate": 0.23835978835978835,
+    "change": 0.025264550264550267
+   },
+   "Normal_Videos_event": {
+    "control": 0.6360690235690236,
+    "candidate": 0.5422619047619048,
+    "change": -0.09380711880711878
+   },
+   "RoadAccidents": {
+    "control": 0.4958994708994709,
+    "candidate": 0.4351190476190476,
+    "change": -0.06078042328042327
+   },
+   "Robbery": {
+    "control": 0.41586469086469086,
+    "candidate": 0.4146978021978022,
+    "change": -0.0011668886668886325
+   },
+   "Shooting": {
+    "control": 0.05416666666666667,
+    "candidate": 0.018518518518518517,
+    "change": -0.03564814814814815
+   },
+   "Shoplifting": {
+    "control": 0.4921296296296296,
+    "candidate": 0.6368159618159618,
+    "change": 0.1446863321863322
+   },
+   "Stealing": {
+    "control": 0.4531746031746031,
+    "candidate": 0.5313011063011063,
+    "change": 0.07812650312650316
+   },
+   "Vandalism": {
+    "control": 0.43654401154401157,
+    "candidate": 0.35833333333333334,
+    "change": -0.07821067821067823
+   }
+  },
+  "violence_mean_f1": {
+   "control": 0.17465624653124653,
+   "candidate": 0.2097697441447441
+  },
+  "historical_gate_threshold": 0.04
+ },
+ "noise_calibration_B_ref_vs_B_proj": {
+  "observed": -0.006468217628931905,
+  "ci95": [
+   -0.03419022855175272,
+   0.019409793334736733
+  ],
+  "sd": 0.01347480983541064,
+  "share_of_draws_above_zero": 0.305
+ }
+}

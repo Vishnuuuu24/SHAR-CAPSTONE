@@ -1,0 +1,314 @@
+
+=== DIRECTORY TREE (max depth 3, source files only) ===
+.ai-assistant
+.ai-assistant/scheduled_tasks.lock
+.github
+.github/workflows
+.github/workflows/ci.yml
+.gitignore
+.pytest_cache
+.pytest_cache/.gitignore
+.pytest_cache/CACHEDIR.TAG
+.pytest_cache/README.md
+.pytest_cache/v
+.pytest_cache/v/cache
+.pytest_cache/v/cache/lastfailed
+.pytest_cache/v/cache/nodeids
+AGENTS.md
+docs/PROJECT_RULES.md
+SHAR_Research_Plan.docx
+configs
+configs/experiments
+configs/experiments/p1c
+configs/experiments/p1c/P1C-FRAME-GAP-BASELINE-001.yaml
+configs/experiments/p1c/P1C-FRAME-GAP-CALIBRATION-001.yaml
+configs/experiments/p1c/P1C-FRAME-GAP-CALIBRATION-003.yaml
+configs/experiments/p1c/P1C-FRAME-GAP-CPU-CALIBRATION-002.yaml
+configs/experiments/p1c/P1C-FRAME-GAP-FULL-001.yaml
+configs/experiments/p1c/P1C-FRAME-GAP-FULL-002-WORKERS.yaml
+configs/experiments/p1c/README.md
+configs/faculty_progress_visual_pack.yaml
+configs/frame_alignment_check.yaml
+configs/p0b_mapping.yaml
+configs/p1a_framework.yaml
+configs/p1b_views.yaml
+configs/p1c_architecture_freeze.yaml
+configs/p2a_scaffold.yaml
+core
+core/__init__.py
+core/device.py
+core/p1c_aggregation.py
+core/p1c_engine.py
+core/p1c_readiness.py
+core/p2a_conventions.py
+core/provenance.py
+core/reproducibility.py
+core/run_lifecycle.py
+data
+data/__init__.py
+data/contracts.py
+data/degradations.py
+data/faculty_visual_pack.py
+data/frame_alignment.py
+data/grouping.py
+data/inventory.py
+data/manifest.py
+data/p1c_loader.py
+data/p1c_temporal.py
+data/registry
+data/registry/dataset_access.json
+data/registry/local_inventory.json
+data/registry/task_contract.json
+data/schemas
+data/schemas/frame_manifest_row.schema.json
+data/train_validation.py
+data/ucf_intervals.py
+data/views.py
+docs
+docs/00_README.md
+docs/AGENTS.md
+docs/ARCHITECTURE.md
+docs/COMPUTE_POLICY.md
+docs/DATA_SPEC.md
+docs/DECISIONS.md
+docs/EVIDENCE_REGISTER.md
+docs/FACULTY_PROGRESS_VISUAL_PACK.md
+docs/P0A_DATA_INTAKE_ADDENDUM.md
+docs/P0A_WORK_ITEM.md
+docs/P0B_WORK_ITEM.md
+docs/P0C_WORK_ITEM.md
+docs/P1A_WORK_ITEM.md
+docs/P1B_CODE_WORK_ITEM.md
+docs/P1C_CODE_WORK_ITEM.md
+docs/P1C_EXECUTION_WORK_ITEM.md
+docs/P2A_CODE_WORK_ITEM.md
+docs/PHASE_PLAN.md
+docs/PRD.md
+docs/PROJECT_CONTROL.md
+docs/PROJECT_STATUS.md
+docs/REQUIREMENTS.md
+docs/RISKS.md
+docs/TECH_STACK.md
+docs/TRAINING_LOG.md
+docs/VALIDATION_PLAN.md
+docs/codebase
+docs/codebase/.codebase-scan.txt
+docs/data_access_evidence
+docs/data_access_evidence/2026-07-20-owner-confirmation.json
+eval
+eval/__init__.py
+eval/image_quality.py
+eval/metrics.py
+models
+models/__init__.py
+models/classifiers.py
+models/restoration.py
+papers
+papers/1-s2.0-S0031320323002674-main.pdf
+papers/1-s2.0-S0167865523001897-main.pdf
+papers/1-s2.0-S0923596525001547-main.pdf
+papers/2509.21696v1.pdf
+papers/AF-YOLO_Asymptotic_Feature_Extraction_and_Fusion_for_Aerial_Object_Detection.pdf
+papers/A_Comprehensive_Review_for_Video_Anomaly_Detection_on_Videos.pdf
+papers/Deep_Learning_for_Smart_Surveillance_Multi-Class_Detection_of_People_Weapons_and_Masks_using_YOLOv11.pdf
+papers/DilateFormer_Multi-Scale_Dilated_Transformer_for_Visual_Recognition.pdf
+papers/EBSCO-Metadata-07_13_2026.pdf
+papers/s10115-024-02122-6.pdf
+pyproject.toml
+requirements
+requirements/p0c-direct.txt
+requirements/p0c-lock.txt
+results
+results/p0a
+results/p0a/access-verification-20260720.json
+results/p0a/inventory-57f3a29b43a7d2e6
+results/p0a/inventory-57f3a29b43a7d2e6/artifact_hashes.json
+results/p0a/inventory-57f3a29b43a7d2e6/inventory_summary.json
+results/p0a/inventory-57f3a29b43a7d2e6/license_access_snapshot.json
+results/p0a/inventory-57f3a29b43a7d2e6/schema_approval.json
+results/p0a/inventory-57f3a29b43a7d2e6/verification.json
+results/p0a/inventory-8fc79248bbd69688
+results/p0a/inventory-8fc79248bbd69688/artifact_hashes.json
+results/p0a/inventory-8fc79248bbd69688/inventory_summary.json
+results/p0a/inventory-8fc79248bbd69688/license_access_snapshot.json
+results/p0a/inventory-8fc79248bbd69688/schema_approval.json
+results/p0a/inventory-8fc79248bbd69688/verification.json
+results/p0a/inventory-a8f1ed51716e4f69
+results/p0a/inventory-a8f1ed51716e4f69/artifact_hashes.json
+results/p0a/inventory-a8f1ed51716e4f69/inventory_summary.json
+results/p0a/inventory-a8f1ed51716e4f69/license_access_snapshot.json
+results/p0a/inventory-a8f1ed51716e4f69/schema_approval.json
+results/p0a/inventory-a8f1ed51716e4f69/verification.json
+results/p0a/inventory-ed66e4a2034c0585
+results/p0a/inventory-ed66e4a2034c0585/artifact_hashes.json
+results/p0a/inventory-ed66e4a2034c0585/inventory_summary.json
+results/p0a/inventory-ed66e4a2034c0585/license_access_snapshot.json
+results/p0a/inventory-ed66e4a2034c0585/schema_approval.json
+results/p0a/inventory-ed66e4a2034c0585/verification.json
+results/p0a/official-ucf-access-verification-20260724.json
+results/p0a/p0a-closure-20260720.json
+results/p0a/p0a-intake-supersession-20260724.json
+results/p0a/reproduction-57f3a29b43a7d2e6.json
+results/p0a/reproduction-ed66e4a2034c0585.json
+results/p0b
+results/p0b/p0b-mapping-20260724.json
+results/p0c
+results/p0c/calibration-8f89fbbe07fad434
+results/p0c/calibration-8f89fbbe07fad434/attempts.jsonl
+results/p0c/calibration-8f89fbbe07fad434/calibration.json
+results/p0c/calibration-attempt-supplement-20260720.json
+results/p0c/environment-20260720.json
+results/p0c/fresh-environment-20260720.json
+results/p0c/fresh-environment-project-20260720.json
+results/p0c/fresh-environment-project-verified-20260720.json
+results/p0c/p0c-closure-20260720.json
+results/p0c/p0c-closure-superseding-20260720.json
+results/p0c/packaging-verification-20260720.json
+results/p0c/verification-20260720.json
+results/p1a
+results/p1a/p1a-closure-20260720.json
+results/p1a/p1a-closure-superseding-20260720.json
+results/p1a/p1a-framework-smoke-e9969c66-a40be623
+results/p1a/p1a-framework-smoke-e9969c66-a40be623/.complete
+results/p1a/p1a-framework-smoke-e9969c66-a40be623/aggregate.json
+results/p1a/p1a-framework-smoke-e9969c66-a40be623/attempts.jsonl
+results/p1a/p1a-framework-smoke-e9969c66-a40be623/run_manifest.json
+results/p1a/p1a-framework-smoke-e9969c66-a40be623/verdict.json
+results/p1a/p1a-framework-smoke-e9969c66-f4ccaa43
+results/p1a/p1a-framework-smoke-e9969c66-f4ccaa43/.complete
+results/p1a/p1a-framework-smoke-e9969c66-f4ccaa43/aggregate.json
+results/p1a/p1a-framework-smoke-e9969c66-f4ccaa43/attempts.jsonl
+results/p1a/p1a-framework-smoke-e9969c66-f4ccaa43/run_manifest.json
+results/p1a/p1a-framework-smoke-e9969c66-f4ccaa43/verdict.json
+results/p1a/p1a-framework-smoke-e9969c667917
+results/p1a/p1a-framework-smoke-e9969c667917/.complete
+results/p1a/p1a-framework-smoke-e9969c667917/aggregate.json
+results/p1a/p1a-framework-smoke-e9969c667917/attempts.jsonl
+results/p1a/p1a-framework-smoke-e9969c667917/run_manifest.json
+results/p1a/p1a-framework-smoke-e9969c667917/verdict.json
+results/p1a/supersession-p1a-framework-smoke-e9969c66-f4ccaa43.json
+results/p1a/supersession-p1a-framework-smoke-e9969c667917.json
+results/p1b
+results/p1b/p1b-code-closure-20260720.json
+results/p1b/p1b-code-closure-final-20260720.json
+results/p1b/p1b-code-closure-superseding-20260720.json
+results/p1b/p1b-view-smoke-dd0f2476-149b7811
+results/p1b/p1b-view-smoke-dd0f2476-149b7811/.complete
+results/p1b/p1b-view-smoke-dd0f2476-149b7811/aggregate.json
+results/p1b/p1b-view-smoke-dd0f2476-149b7811/attempts.jsonl
+results/p1b/p1b-view-smoke-dd0f2476-149b7811/run_manifest.json
+results/p1b/p1b-view-smoke-dd0f2476-149b7811/verdict.json
+results/p1b/p1b-view-smoke-dd0f2476-71b0a9cb
+results/p1b/p1b-view-smoke-dd0f2476-71b0a9cb/.complete
+
+=== STACK DETECTION (manifest files) ===
+
+--- pyproject.toml ---
+[build-system]
+requires = ["setuptools==83.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shar-research"
+version = "0.1.0"
+description = "Reproducible suspicious human activity recognition research foundation"
+requires-python = "==3.12.*"
+dependencies = [
+  "numpy==2.5.1",
+  "opencv-python-headless==4.13.0.92",
+  "pillow==12.3.0",
+  "psutil==7.2.2",
+  "PyYAML==6.0.3",
+  "scikit-image==0.26.0",
+  "torch==2.13.0",
+  "torchvision==0.28.0",
+]
+
+[tool.setuptools]
+packages = ["core", "data", "eval", "models"]
+
+
+=== ENTRY POINTS ===
+No common entry points found. Check 'main' or 'scripts.start' in manifest files above.
+
+=== LINTING AND FORMATTING CONFIG ===
+No linting or formatting config files found in project root.
+
+=== ENVIRONMENT VARIABLE TEMPLATES ===
+No .env.example or .env.template found. Identify required environment variables by searching the code and config for environment variable reads.
+
+=== TODO / FIXME / HACK (production code only, test dirs excluded) ===
+None found.
+
+=== GIT RECENT COMMITS (last 20) ===
+c4fd3fe Harden mapping and alignment verification
+c1f0633 P1C ready, bottlenecks fixed, issues fixed
+a9765cb P1 complete, waiting to run baseline
+dd640b2 P1B complete
+dd04769 incorporated new datasets, adjusted existing phases to work with new datasets
+9ecb89b updated ignore
+6b066d1 Phase 2
+dc689c1 Phase 1 done
+da540da Phase 0 complete
+abab926 Roadmap docs added
+c2d95f2 Docs updated
+8e2f931 docs: establish evidence-backed SHAR research plan
+
+=== HIGH-CHURN FILES (last 90 days, top 20) ===
+   9 docs/PROJECT_STATUS.md
+   7 docs/00_README.md
+   7 docs/DECISIONS.md
+   7 docs/TRAINING_LOG.md
+   6 .gitignore
+   5 scripts/check_repository.py
+   4 docs/EVIDENCE_REGISTER.md
+   4 docs/REQUIREMENTS.md
+   4 scripts/smoke_p1c_models.py
+   4 docs/P1C_CODE_WORK_ITEM.md
+   4 data/registry/dataset_access.json
+   4 docs/DATA_SPEC.md
+   4 docs/PHASE_PLAN.md
+   3 core/device.py
+   3 tests/test_p0c_foundation.py
+   3 docs/COMPUTE_POLICY.md
+   3 docs/PROJECT_CONTROL.md
+   3 models/classifiers.py
+   3 tests/test_p1c_models.py
+   3 docs/P1B_CODE_WORK_ITEM.md
+
+=== MONOREPO SIGNALS ===
+No monorepo signals detected.
+
+=== CODE METRICS ===
+Total files scanned: 322
+Total lines of code: 26847
+
+Files by language:
+  Other: 251
+  Python: 71
+
+Top 10 largest files:
+papers/DilateFormer_Multi-Scale_Dilated_Transformer_for_Visual_Recognition.pdf: 11910.6KB
+papers/AF-YOLO_Asymptotic_Feature_Extraction_and_Fusion_for_Aerial_Object_Detection.pdf: 11374.5KB
+papers/1-s2.0-S0923596525001547-main.pdf: 8350.9KB
+papers/1-s2.0-S0031320323002674-main.pdf: 4127.7KB
+papers/A_Comprehensive_Review_for_Video_Anomaly_Detection_on_Videos.pdf: 2695.4KB
+papers/1-s2.0-S0167865523001897-main.pdf: 1705.9KB
+papers/s10115-024-02122-6.pdf: 1683.3KB
+papers/2509.21696v1.pdf: 744.5KB
+papers/Deep_Learning_for_Smart_Surveillance_Multi-Class_Detection_of_People_Weapons_and_Masks_using_YOLOv11.pdf: 463.9KB
+results/p2a/p2a-scaffold-smoke-7a155e42-ce6758b2/aggregate.json: 33.0KB
+
+=== CI/CD PIPELINES ===
+CI/CD: GitHub Actions
+
+=== CONTAINERS & ORCHESTRATION ===
+No containerization configs detected.
+
+=== SECURITY & COMPLIANCE ===
+No security configs detected.
+
+=== PERFORMANCE & TESTING ===
+No performance testing configs detected.
+
+=== SCAN COMPLETE ===

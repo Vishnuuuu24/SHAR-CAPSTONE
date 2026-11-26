@@ -1,0 +1,4 @@
+{"fold": 2, "seed": 0, "best_epoch": 3, "val_macro_f1": 0.4355442176870748, "val_accuracy": 0.44642857142857145, "val_videos": 56, "test_macro_f1": 0.3662401134564047, "test_accuracy": 0.375, "test_videos": 168}
+{"fold": 1, "seed": 0, "best_epoch": 7, "val_macro_f1": 0.5257369614512472, "val_accuracy": 0.5357142857142857, "val_videos": 56, "test_macro_f1": 0.3933051887016081, "test_accuracy": 0.39880952380952384, "test_videos": 168}
+{"fold": 4, "seed": 0, "best_epoch": 4, "val_macro_f1": 0.412358276643991, "val_accuracy": 0.42857142857142855, "val_videos": 56, "test_macro_f1": 0.3999922477951753, "test_accuracy": 0.4107142857142857, "test_videos": 168}
+{"fold": 3, "seed": 0, "best_epoch": 6, "val_macro_f1": 0.4525510204081633, "val_accuracy": 0.44642857142857145, "val_videos": 56, "test_macro_f1": 0.45604895944904505, "test_accuracy": 0.4583333333333333, "test_videos": 168}

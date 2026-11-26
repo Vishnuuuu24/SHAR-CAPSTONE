@@ -1,0 +1,28 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 168s ---
+/dev/md1        1870026616 148817652 1721208964       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.01 GiB (recovered 15.99 GiB)
+=== 1/3 owed debt: does the B-2 pooling refactor still reproduce the verified ResNet cache? ===
+{
+  "atol": 0.001,
+  "bit_identical_rows": 482,
+  "cache_dir": "results/p1c/p1c-frozen-feature-cache-ar-fold1/train",
+  "cache_sha256": "e851dbcbd3727d840221df3bd3667d52c2c87342ec91aee36ccfc906a1ab2b5e",
+  "dtype": "float16",
+  "feature_dim": 2048,
+  "max_abs_delta": 0.00390625,
+  "max_ulps": 2118,
+  "rows_sampled": 512,
+  "rows_total": 391014,
+  "rtol": 0.001,
+  "sample_seed": 0,
+  "verify_batch_size": 64
+}
+wrote results/p1c/p1c-frozen-feature-cache-ar-fold1/train/verification-post-b2-refactor.json
+=== 2/3 DINOv2 train cache ===
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold1/train/manifest.json
+verified 512/512 sampled rows bit-identical against the live backbone (worst |delta| 0.000e+00, 0 ULPs; atol 0.001 rtol 0.001) (391014 rows total, float16, dim 1536)
+=== 3/3 DINOv2 validation cache ===
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold1/validation/manifest.json
+verified 512/512 sampled rows bit-identical against the live backbone (worst |delta| 0.000e+00, 0 ULPs; atol 0.001 rtol 0.001) (37600 rows total, float16, dim 1536)
+=== done ===

@@ -1,0 +1,42 @@
+{
+  "annotation_version": "P1B frozen grouped Train/validation manifests",
+  "code_revision": "local working tree; commit is intentionally not assumed",
+  "config_digest": "1ac237eac5c7f331e869893e9a0b7ee927a4fa81254e7e509a78bf3b912e2ed0",
+  "dataset_manifest_digest": "776b26326bf63ae391b9f60d9f2deeedc94959b5833f33896669ad92cbf6aa5c",
+  "environment_digest": "ae29c4c0fa13f559146d6d58dcc9529bc06211b357dd6d504cec22bf96ab8a2e",
+  "event_only_test": {
+    "available": false,
+    "reason": "Measured 2026-08-27: only 48 of this fold's 168 official Action-Recognition test videos carry an official temporal interval, and Abuse, Robbery and Stealing have zero interval-covered test videos, so a 14-class macro-F1 event-only view cannot be computed for this fold at any sample size. See D-40."
+  },
+  "hardware": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_name": "NVIDIA H200 MIG 1g.18gb",
+    "deterministic_warn_only": false,
+    "mps_available": false,
+    "mps_built": false,
+    "mps_fallback_environment": null,
+    "policy": "cuda_strict",
+    "selected": "cuda",
+    "supports_pin_memory": true,
+    "torch_threads": 112
+  },
+  "loader_mode": "video_blob",
+  "metric_artifact_paths": [
+    "epoch_metrics.json",
+    "aggregate.json",
+    "verdict.json"
+  ],
+  "package_versions": {
+    "python": "3.12.14",
+    "torch": "2.13.0+cu126"
+  },
+  "packed_frames_blob_sha256": null,
+  "run_class": "full",
+  "run_id": "p1c-video-frozen-confirm-015-ar-fold1-s1-20260828T161932Z",
+  "run_kind": "p1c_frame_baseline_full_validation_only",
+  "screening": null,
+  "seed": 1,
+  "video_frames_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665"
+}

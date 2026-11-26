@@ -1,0 +1,54 @@
+{
+  "base_config": "P1C-VIDEO-PRECISION-CALIBRATION-007-BF16.yaml",
+  "points": [
+    {
+      "batch_size": 64,
+      "config": "P1C-VIDEO-SWEEP-009-R64-B64.yaml",
+      "exit_code": 0,
+      "resolution": 64,
+      "seconds": 152.78036401979625,
+      "status": "COMPLETED"
+    },
+    {
+      "batch_size": 64,
+      "config": "P1C-VIDEO-SWEEP-009-R112-B64.yaml",
+      "exit_code": 0,
+      "resolution": 112,
+      "seconds": 40.262624245136976,
+      "status": "COMPLETED"
+    },
+    {
+      "batch_size": 256,
+      "config": "P1C-VIDEO-SWEEP-009-R64-B256.yaml",
+      "error": "RuntimeError: Caught RuntimeError in DataLoader worker process 2.\nOriginal Traceback (most recent call last):\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py\", line 374, in _worker_loop\n    data = fetcher.fetch(index)  # type: ignore[po",
+      "resolution": 64,
+      "seconds": 38.049554268829525,
+      "status": "ERROR"
+    },
+    {
+      "batch_size": 256,
+      "config": "P1C-VIDEO-SWEEP-009-R112-B256.yaml",
+      "error": "RuntimeError: Caught RuntimeError in DataLoader worker process 0.\nOriginal Traceback (most recent call last):\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py\", line 374, in _worker_loop\n    data = fetcher.fetch(index)  # type: ignore[po",
+      "resolution": 112,
+      "seconds": 29.24922503437847,
+      "status": "ERROR"
+    },
+    {
+      "batch_size": 64,
+      "config": "P1C-VIDEO-SWEEP-009-R224-B64.yaml",
+      "error": "RuntimeError: Caught RuntimeError in DataLoader worker process 0.\nOriginal Traceback (most recent call last):\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py\", line 374, in _worker_loop\n    data = fetcher.fetch(index)  # type: ignore[po",
+      "resolution": 224,
+      "seconds": 52.983986099250615,
+      "status": "ERROR"
+    },
+    {
+      "batch_size": 256,
+      "config": "P1C-VIDEO-SWEEP-009-R224-B256.yaml",
+      "error": "RuntimeError: Caught RuntimeError in DataLoader worker process 0.\nOriginal Traceback (most recent call last):\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py\", line 374, in _worker_loop\n    data = fetcher.fetch(index)  # type: ignore[po",
+      "resolution": 224,
+      "seconds": 52.877371462062,
+      "status": "ERROR"
+    }
+  ],
+  "sweep_id": "P1C-VIDEO-SWEEP-009"
+}

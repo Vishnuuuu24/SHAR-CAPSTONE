@@ -1,0 +1,17 @@
+train 391014 rows, validation 37600 rows, dim 2048, cache e851dbcbd372
+
+--- seed 0 ---
+best epoch 14 (early-stopped), validation macro-F1 0.3490 (clustered 95% CI 0.2250-0.4177), video-level macro-F1 0.3943 over 56 videos, train 3998.8s
+wrote results/p1c/p1c-cached-head-crossfold/fold1-frozen-VALIDATION/seed-0.json
+
+--- seed 1 ---
+best epoch 13 (early-stopped), validation macro-F1 0.3481 (clustered 95% CI 0.2206-0.4194), video-level macro-F1 0.3503 over 56 videos, train 514.2s
+wrote results/p1c/p1c-cached-head-crossfold/fold1-frozen-VALIDATION/seed-1.json
+
+--- seed 2 ---
+best epoch 10 (early-stopped), validation macro-F1 0.3474 (clustered 95% CI 0.2224-0.4243), video-level macro-F1 0.3916 over 56 videos, train 734.9s
+wrote results/p1c/p1c-cached-head-crossfold/fold1-frozen-VALIDATION/seed-2.json
+
+=== aggregate over seeds [0, 1, 2] ===
+frame macro-F1 0.3482 +/- 0.0008 (min 0.3474, max 0.3490)
+wrote results/p1c/p1c-cached-head-crossfold/fold1-frozen-VALIDATION/aggregate.json

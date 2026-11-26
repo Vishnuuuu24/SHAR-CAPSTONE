@@ -1,0 +1,39 @@
+{"pool_frames": 9472, "pool_videos": 592, "load_s": 18}
+{"model": "dvae_seed0", "step": 200, "loss": -0.678397, "mse": 0.014202, "nll": -36475.819446, "kl": 3131.256812, "log_sigma": -2.139942, "elapsed_s": 36}
+{"model": "dae_seed0", "step": 200, "loss": 0.012397, "mse": 0.012397, "elapsed_s": 35}
+{"videos_done": 6, "of": 6, "elapsed_s": 198}
+{"clean_feature_check": {"max_abs_diff": 0.00982666015625, "median_max_abs_diff": 0.005859375, "min_mean_cosine": 0.9999979734420776, "videos": 6}, "classical_identity_check": {"max_abs_diff_vs_classical_identity_rows": 0.0}}
+{"fold": 1, "seed": 0, "clean_32frame_macro_f1": 0.0}
+{"fold": 2, "seed": 0, "clean_32frame_macro_f1": 0.0}
+{"fold": 3, "seed": 0, "clean_32frame_macro_f1": 0.03571428571428571}
+{"fold": 4, "seed": 0, "clean_32frame_macro_f1": 0.0}
+identity__identity {"psnr_db": null, "ssim": 1.0, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+identity__dae_seed0 {"psnr_db": 23.4304, "ssim": 0.6852, "macro_f1": 0.0, "macro_f1_delta_vs_clean": -0.0089, "macro_f1_delta_vs_unrestored": -0.0089}
+identity__dvae_seed0 {"psnr_db": 23.8692, "ssim": 0.6908, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_10.0__identity {"psnr_db": 28.7305, "ssim": 0.6051, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_10.0__dae_seed0 {"psnr_db": 23.3482, "ssim": 0.6766, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_10.0__dvae_seed0 {"psnr_db": 23.8584, "ssim": 0.685, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0071}
+gaussian_25.0__identity {"psnr_db": 20.9134, "ssim": 0.3202, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_25.0__dae_seed0 {"psnr_db": 23.1205, "ssim": 0.6448, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": -0.0071}
+gaussian_25.0__dvae_seed0 {"psnr_db": 23.6978, "ssim": 0.665, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": -0.0071}
+gaussian_50.0__identity {"psnr_db": 15.2651, "ssim": 0.1722, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_50.0__dae_seed0 {"psnr_db": 22.3415, "ssim": 0.5623, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": -0.0071}
+gaussian_50.0__dvae_seed0 {"psnr_db": 23.1782, "ssim": 0.6085, "macro_f1": 0.0, "macro_f1_delta_vs_clean": -0.0089, "macro_f1_delta_vs_unrestored": -0.0161}
+salt_and_pepper_0.02__identity {"psnr_db": 21.6067, "ssim": 0.6335, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.02__dae_seed0 {"psnr_db": 23.4958, "ssim": 0.6472, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.02__dvae_seed0 {"psnr_db": 23.8064, "ssim": 0.6691, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.05__identity {"psnr_db": 17.6315, "ssim": 0.3797, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.05__dae_seed0 {"psnr_db": 23.3849, "ssim": 0.5989, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.05__dvae_seed0 {"psnr_db": 23.6355, "ssim": 0.6371, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": -0.0071}
+salt_and_pepper_0.1__identity {"psnr_db": 14.6275, "ssim": 0.2202, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.1__dae_seed0 {"psnr_db": 22.8384, "ssim": 0.5293, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": -0.0071}
+salt_and_pepper_0.1__dvae_seed0 {"psnr_db": 23.1977, "ssim": 0.5842, "macro_f1": 0.0089, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": -0.0071}
+speckle_0.02__identity {"psnr_db": 24.0969, "ssim": 0.6118, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.02__dae_seed0 {"psnr_db": 23.4483, "ssim": 0.6662, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.02__dvae_seed0 {"psnr_db": 23.8092, "ssim": 0.6829, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.05__identity {"psnr_db": 20.2901, "ssim": 0.5057, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.05__dae_seed0 {"psnr_db": 23.3976, "ssim": 0.6419, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.05__dvae_seed0 {"psnr_db": 23.7208, "ssim": 0.6703, "macro_f1": 0.0161, "macro_f1_delta_vs_clean": 0.0071, "macro_f1_delta_vs_unrestored": 0.0}
+low_light_g2.2_s15.0__identity {"psnr_db": 13.7852, "ssim": 0.3328, "macro_f1": 0.0, "macro_f1_delta_vs_clean": -0.0089, "macro_f1_delta_vs_unrestored": 0.0}
+low_light_g2.2_s15.0__dae_seed0 {"psnr_db": 16.7965, "ssim": 0.6, "macro_f1": 0.0, "macro_f1_delta_vs_clean": -0.0089, "macro_f1_delta_vs_unrestored": 0.0}
+low_light_g2.2_s15.0__dvae_seed0 {"psnr_db": 16.034, "ssim": 0.5577, "macro_f1": 0.0, "macro_f1_delta_vs_clean": -0.0089, "macro_f1_delta_vs_unrestored": 0.0}

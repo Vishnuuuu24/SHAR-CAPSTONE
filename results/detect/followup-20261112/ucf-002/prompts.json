@@ -1,0 +1,28 @@
+{
+ "prompts": {
+  "activities": [
+   "normal activity",
+   "abuse",
+   "arson",
+   "assault",
+   "burglary",
+   "an explosion",
+   "fighting",
+   "a road accident",
+   "robbery",
+   "shooting",
+   "shoplifting",
+   "stealing",
+   "vandalism",
+   "an arrest"
+  ],
+  "templates": [
+   "a surveillance video of {}.",
+   "a security camera recording of {}."
+  ],
+  "pooling": "L2 normalize each template, mean templates, L2 normalize"
+ },
+ "weights_sha256": "2c63cb7d1f2e95ba501893cbb8faeb4ea9a3af295498d35097126228659c2af8",
+ "embeddings_sha256": "13f0896e5fe5f60bfaa9c4898fdf13787a5466e841938763ce02ba9bbe71b5db",
+ "similarities_sha256": "bd00e6dcfbd5e075d4c051bcfa5e4dee2d59431f198359d543db2f3896b4b572"
+}

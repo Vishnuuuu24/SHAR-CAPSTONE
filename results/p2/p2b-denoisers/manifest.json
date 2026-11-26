@@ -1,0 +1,110 @@
+{
+ "git_revision": "742ce47395816d8fc4b7eb088bc648acdcc37fc0",
+ "config": "configs/p2b_denoising_vae.yaml",
+ "config_sha256": "51c558fa948337a3e95fed24e7ffef9bf37e9a952b4476f1f22639dd32fc584e",
+ "conventions_sha256": "21aae531aa8debc6e2342ddfcc0ead51a1355625dc973f12ac53b232cfa13d41",
+ "steps": 20000,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "pool_frames": 9472,
+ "pool_videos": 592,
+ "pool_digest": "27dce46d084a193630062f437510830908bec6812074f8898f607422ab2b9ae2",
+ "models": {
+  "dvae_seed0": {
+   "variant": "dvae",
+   "seed": 0,
+   "checkpoint": "dvae_seed0.pt",
+   "sha256": "3f0ad6f76a797147505e47920b265e3325bb45552f66c1916926e9cd66f8f3bc",
+   "train_seconds": 3476,
+   "final": {
+    "step": 20000,
+    "loss": -1.878053880929947,
+    "mse": 0.0009893036528956145,
+    "nll": -101410.461125,
+    "kl": 9100.3589921875,
+    "log_sigma": -3.409384131908417
+   },
+   "parameters": 1956003
+  },
+  "dvae_seed1": {
+   "variant": "dvae",
+   "seed": 1,
+   "checkpoint": "dvae_seed1.pt",
+   "sha256": "cd06e3220d73ed84c2d72a5815aed04997ac959917f1fbd3be8b98f16c092c98",
+   "train_seconds": 3472,
+   "final": {
+    "step": 20000,
+    "loss": -1.8946780064105988,
+    "mse": 0.0009210474969586357,
+    "nll": -102179.28809375,
+    "kl": 9052.07704296875,
+    "log_sigma": -3.42434987783432
+   },
+   "parameters": 1956003
+  },
+  "dvae_seed2": {
+   "variant": "dvae",
+   "seed": 2,
+   "checkpoint": "dvae_seed2.pt",
+   "sha256": "5a48757ce8239ad492be26f55c12f32792bb9f7753a91ffaee236f724a5a2d41",
+   "train_seconds": 3473,
+   "final": {
+    "step": 20000,
+    "loss": -1.8876194655895233,
+    "mse": 0.0009517584084533155,
+    "nll": -101665.7901875,
+    "kl": 8885.5206328125,
+    "log_sigma": -3.4144723510742185
+   },
+   "parameters": 1956003
+  },
+  "dae_seed0": {
+   "variant": "dae",
+   "seed": 0,
+   "checkpoint": "dae_seed0.pt",
+   "sha256": "60c0602227c687a3ff0f32edb194c31fbf762e9bcb421d0504ce237dde02b921",
+   "train_seconds": 3456,
+   "final": {
+    "step": 20000,
+    "loss": 0.0014050166291417554,
+    "mse": 0.0014050166291417554
+   },
+   "parameters": 1953939
+  },
+  "dae_seed1": {
+   "variant": "dae",
+   "seed": 1,
+   "checkpoint": "dae_seed1.pt",
+   "sha256": "0a7fc542271b5821c6303f0150aaf27b7585dbc63cbaf32ced6ab97522b1ba72",
+   "train_seconds": 3455,
+   "final": {
+    "step": 20000,
+    "loss": 0.0007325300766387955,
+    "mse": 0.0007325300766387955
+   },
+   "parameters": 1953939
+  },
+  "dae_seed2": {
+   "variant": "dae",
+   "seed": 2,
+   "checkpoint": "dae_seed2.pt",
+   "sha256": "bcc2c1711dad9acb5367ef64abddc9d0c9cf822ca81fa51cf12744bfaba01430",
+   "train_seconds": 3455,
+   "final": {
+    "step": 20000,
+    "loss": 0.0008659086826955899,
+    "mse": 0.0008659086826955899
+   },
+   "parameters": 1953939
+  }
+ }
+}

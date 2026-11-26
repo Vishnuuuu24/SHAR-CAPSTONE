@@ -1,0 +1,22 @@
+{
+ "git_revision": "13e223e39c382ee46e419bc0a456a5bb2585caef",
+ "role": "extra training videos outside the 700-video AR protocol; video-level label = source directory (D-40)",
+ "videos": 300,
+ "per_class": {
+  "Burglary": 50,
+  "RoadAccidents": 100,
+  "Robbery": 100,
+  "Stealing": 50
+ },
+ "frames_per_video": 8,
+ "frame_rule": "sample_rows_per_video(seed=0) over the video's kept stride-5 frames",
+ "shape": [
+  2400,
+  1536
+ ],
+ "features_sha256": "aea0fa8653fcf21c757f47f9844d67fe68659abad217b49c2aded52fe14b2772",
+ "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+ "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+ "video_list_sha256": "72f8bfe3f4b4787a09d0d5b9b709fb4007a1f28f8ade2d8621c9fc93c3433841",
+ "limit_videos": null
+}

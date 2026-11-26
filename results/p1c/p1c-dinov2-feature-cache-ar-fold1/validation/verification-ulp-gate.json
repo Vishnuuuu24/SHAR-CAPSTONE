@@ -1,0 +1,16 @@
+{
+  "bit_identical_rows": 512,
+  "cache_dir": "results/p1c/p1c-dinov2-feature-cache-ar-fold1/validation",
+  "cache_sha256": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de",
+  "dtype": "float16",
+  "feature_dim": 1536,
+  "max_abs_delta": 0.0,
+  "max_significant_ulps": 0,
+  "max_ulps": 0,
+  "max_ulps_allowed": 8,
+  "rows_sampled": 512,
+  "rows_total": 37600,
+  "sample_seed": 0,
+  "ulp_floor_magnitude": 1.0,
+  "verify_batch_size": 64
+}

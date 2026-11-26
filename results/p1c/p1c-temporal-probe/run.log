@@ -1,0 +1,226 @@
+=== Priority 2 finished, starting Priority 4 (temporal probe) 2026-09-10T11:14:25Z ===
+########## P4 fold1 baseline (11:14:25Z) ##########
+train 7616 rows (variant=baseline, radius=2, sampled 16/video) -> dim 1536, validation 37600 rows (full, untouched), cache 56c0312b9122
+
+--- seed 0 ---
+best epoch 1 (early-stopped), frame macro-F1 0.3572 (clustered 95% CI 0.2432-0.4389), video-level macro-F1 0.4216 over 56 videos, train 6.0s
+wrote results/p1c/p1c-temporal-probe/fold1-baseline/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3771 (clustered 95% CI 0.2572-0.4476), video-level macro-F1 0.4208 over 56 videos, train 2.6s
+wrote results/p1c/p1c-temporal-probe/fold1-baseline/seed-1.json
+
+--- seed 2 ---
+best epoch 1 (early-stopped), frame macro-F1 0.4160 (clustered 95% CI 0.2927-0.4976), video-level macro-F1 0.4728 over 56 videos, train 5.4s
+wrote results/p1c/p1c-temporal-probe/fold1-baseline/seed-2.json
+########## P4 fold1 mean (11:17:12Z) ##########
+train 7616 rows (variant=mean, radius=2, sampled 16/video) -> dim 1536, validation 37600 rows (full, untouched), cache 56c0312b9122
+
+--- seed 0 ---
+best epoch 1 (early-stopped), frame macro-F1 0.3683 (clustered 95% CI 0.2477-0.4544), video-level macro-F1 0.4202 over 56 videos, train 5.8s
+wrote results/p1c/p1c-temporal-probe/fold1-mean/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3860 (clustered 95% CI 0.2623-0.4577), video-level macro-F1 0.4213 over 56 videos, train 5.0s
+wrote results/p1c/p1c-temporal-probe/fold1-mean/seed-1.json
+
+--- seed 2 ---
+best epoch 1 (early-stopped), frame macro-F1 0.4155 (clustered 95% CI 0.2862-0.5009), video-level macro-F1 0.4728 over 56 videos, train 7.1s
+wrote results/p1c/p1c-temporal-probe/fold1-mean/seed-2.json
+########## P4 fold1 mean_std (11:20:03Z) ##########
+train 7616 rows (variant=mean_std, radius=2, sampled 16/video) -> dim 3072, validation 37600 rows (full, untouched), cache 56c0312b9122
+
+--- seed 0 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3468 (clustered 95% CI 0.2254-0.4270), video-level macro-F1 0.4460 over 56 videos, train 4.9s
+wrote results/p1c/p1c-temporal-probe/fold1-mean_std/seed-0.json
+
+--- seed 1 ---
+best epoch 1 (early-stopped), frame macro-F1 0.3782 (clustered 95% CI 0.2641-0.4459), video-level macro-F1 0.4219 over 56 videos, train 6.9s
+wrote results/p1c/p1c-temporal-probe/fold1-mean_std/seed-1.json
+
+--- seed 2 ---
+best epoch 1 (early-stopped), frame macro-F1 0.4345 (clustered 95% CI 0.3009-0.5164), video-level macro-F1 0.4852 over 56 videos, train 4.1s
+wrote results/p1c/p1c-temporal-probe/fold1-mean_std/seed-2.json
+########## P4 fold1 concat (11:22:51Z) ##########
+train 7616 rows (variant=concat, radius=2, sampled 16/video) -> dim 7680, validation 37600 rows (full, untouched), cache 56c0312b9122
+
+--- seed 0 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3212 (clustered 95% CI 0.2225-0.4188), video-level macro-F1 0.4506 over 56 videos, train 6.8s
+wrote results/p1c/p1c-temporal-probe/fold1-concat/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3596 (clustered 95% CI 0.2407-0.4218), video-level macro-F1 0.3755 over 56 videos, train 6.6s
+wrote results/p1c/p1c-temporal-probe/fold1-concat/seed-1.json
+
+--- seed 2 ---
+best epoch 1 (early-stopped), frame macro-F1 0.3274 (clustered 95% CI 0.2223-0.4054), video-level macro-F1 0.3685 over 56 videos, train 9.5s
+wrote results/p1c/p1c-temporal-probe/fold1-concat/seed-2.json
+########## P4 fold2 baseline (11:25:45Z) ##########
+train 7616 rows (variant=baseline, radius=2, sampled 16/video) -> dim 1536, validation 47726 rows (full, untouched), cache ea8c33fbecf3
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.2600 (clustered 95% CI 0.1838-0.3309), video-level macro-F1 0.3021 over 56 videos, train 7.6s
+wrote results/p1c/p1c-temporal-probe/fold2-baseline/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), frame macro-F1 0.2908 (clustered 95% CI 0.2190-0.3695), video-level macro-F1 0.3852 over 56 videos, train 5.0s
+wrote results/p1c/p1c-temporal-probe/fold2-baseline/seed-1.json
+
+--- seed 2 ---
+best epoch 2 (early-stopped), frame macro-F1 0.2662 (clustered 95% CI 0.1911-0.3324), video-level macro-F1 0.3689 over 56 videos, train 3.0s
+wrote results/p1c/p1c-temporal-probe/fold2-baseline/seed-2.json
+########## P4 fold2 mean (11:28:46Z) ##########
+train 7616 rows (variant=mean, radius=2, sampled 16/video) -> dim 1536, validation 47726 rows (full, untouched), cache ea8c33fbecf3
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.2710 (clustered 95% CI 0.1886-0.3436), video-level macro-F1 0.3311 over 56 videos, train 4.2s
+wrote results/p1c/p1c-temporal-probe/fold2-mean/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3008 (clustered 95% CI 0.2274-0.3772), video-level macro-F1 0.3875 over 56 videos, train 3.2s
+wrote results/p1c/p1c-temporal-probe/fold2-mean/seed-1.json
+
+--- seed 2 ---
+best epoch 2 (early-stopped), frame macro-F1 0.2861 (clustered 95% CI 0.2062-0.3565), video-level macro-F1 0.3514 over 56 videos, train 6.7s
+wrote results/p1c/p1c-temporal-probe/fold2-mean/seed-2.json
+########## P4 fold2 mean_std (11:31:47Z) ##########
+train 7616 rows (variant=mean_std, radius=2, sampled 16/video) -> dim 3072, validation 47726 rows (full, untouched), cache ea8c33fbecf3
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.2768 (clustered 95% CI 0.1937-0.3521), video-level macro-F1 0.3146 over 56 videos, train 8.9s
+wrote results/p1c/p1c-temporal-probe/fold2-mean_std/seed-0.json
+
+--- seed 1 ---
+best epoch 2 (early-stopped), frame macro-F1 0.2870 (clustered 95% CI 0.2146-0.3750), video-level macro-F1 0.3529 over 56 videos, train 5.8s
+wrote results/p1c/p1c-temporal-probe/fold2-mean_std/seed-1.json
+
+--- seed 2 ---
+best epoch 3 (early-stopped), frame macro-F1 0.2918 (clustered 95% CI 0.2061-0.3639), video-level macro-F1 0.3560 over 56 videos, train 5.0s
+wrote results/p1c/p1c-temporal-probe/fold2-mean_std/seed-2.json
+########## P4 fold2 concat (11:34:54Z) ##########
+train 7616 rows (variant=concat, radius=2, sampled 16/video) -> dim 7680, validation 47726 rows (full, untouched), cache ea8c33fbecf3
+
+--- seed 0 ---
+best epoch 0 (early-stopped), frame macro-F1 0.2381 (clustered 95% CI 0.1614-0.3162), video-level macro-F1 0.3899 over 56 videos, train 8.6s
+wrote results/p1c/p1c-temporal-probe/fold2-concat/seed-0.json
+
+--- seed 1 ---
+best epoch 2 (early-stopped), frame macro-F1 0.2488 (clustered 95% CI 0.1725-0.3184), video-level macro-F1 0.3398 over 56 videos, train 11.5s
+wrote results/p1c/p1c-temporal-probe/fold2-concat/seed-1.json
+
+--- seed 2 ---
+best epoch 0 (early-stopped), frame macro-F1 0.2487 (clustered 95% CI 0.1754-0.3238), video-level macro-F1 0.3694 over 56 videos, train 8.3s
+wrote results/p1c/p1c-temporal-probe/fold2-concat/seed-2.json
+########## P4 fold3 baseline (11:38:10Z) ##########
+train 7616 rows (variant=baseline, radius=2, sampled 16/video) -> dim 1536, validation 49719 rows (full, untouched), cache 681f53307dbd
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.3218 (clustered 95% CI 0.2171-0.4090), video-level macro-F1 0.4044 over 56 videos, train 7.6s
+wrote results/p1c/p1c-temporal-probe/fold3-baseline/seed-0.json
+
+--- seed 1 ---
+best epoch 6 (early-stopped), frame macro-F1 0.3248 (clustered 95% CI 0.2217-0.4083), video-level macro-F1 0.4023 over 56 videos, train 7.8s
+wrote results/p1c/p1c-temporal-probe/fold3-baseline/seed-1.json
+
+--- seed 2 ---
+best epoch 7 (early-stopped), frame macro-F1 0.2933 (clustered 95% CI 0.1942-0.3681), video-level macro-F1 0.3617 over 56 videos, train 11.2s
+wrote results/p1c/p1c-temporal-probe/fold3-baseline/seed-2.json
+########## P4 fold3 mean (11:41:25Z) ##########
+train 7616 rows (variant=mean, radius=2, sampled 16/video) -> dim 1536, validation 49719 rows (full, untouched), cache 681f53307dbd
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.3306 (clustered 95% CI 0.2222-0.4196), video-level macro-F1 0.4206 over 56 videos, train 7.7s
+wrote results/p1c/p1c-temporal-probe/fold3-mean/seed-0.json
+
+--- seed 1 ---
+best epoch 6 (early-stopped), frame macro-F1 0.3257 (clustered 95% CI 0.2200-0.4167), video-level macro-F1 0.3820 over 56 videos, train 10.6s
+wrote results/p1c/p1c-temporal-probe/fold3-mean/seed-1.json
+
+--- seed 2 ---
+best epoch 4 (early-stopped), frame macro-F1 0.2923 (clustered 95% CI 0.1931-0.3660), video-level macro-F1 0.3243 over 56 videos, train 8.3s
+wrote results/p1c/p1c-temporal-probe/fold3-mean/seed-2.json
+########## P4 fold3 mean_std (11:44:40Z) ##########
+train 7616 rows (variant=mean_std, radius=2, sampled 16/video) -> dim 3072, validation 49719 rows (full, untouched), cache 681f53307dbd
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.3195 (clustered 95% CI 0.2000-0.4018), video-level macro-F1 0.3633 over 56 videos, train 7.0s
+wrote results/p1c/p1c-temporal-probe/fold3-mean_std/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3142 (clustered 95% CI 0.2035-0.3954), video-level macro-F1 0.3452 over 56 videos, train 6.2s
+wrote results/p1c/p1c-temporal-probe/fold3-mean_std/seed-1.json
+
+--- seed 2 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3323 (clustered 95% CI 0.2185-0.4000), video-level macro-F1 0.3606 over 56 videos, train 6.4s
+wrote results/p1c/p1c-temporal-probe/fold3-mean_std/seed-2.json
+########## P4 fold3 concat (11:47:53Z) ##########
+train 7616 rows (variant=concat, radius=2, sampled 16/video) -> dim 7680, validation 49719 rows (full, untouched), cache 681f53307dbd
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.2952 (clustered 95% CI 0.1924-0.3810), video-level macro-F1 0.4396 over 56 videos, train 13.1s
+wrote results/p1c/p1c-temporal-probe/fold3-concat/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), frame macro-F1 0.2982 (clustered 95% CI 0.1883-0.3950), video-level macro-F1 0.3862 over 56 videos, train 8.6s
+wrote results/p1c/p1c-temporal-probe/fold3-concat/seed-1.json
+
+--- seed 2 ---
+best epoch 1 (early-stopped), frame macro-F1 0.2961 (clustered 95% CI 0.1994-0.3825), video-level macro-F1 0.4128 over 56 videos, train 10.3s
+wrote results/p1c/p1c-temporal-probe/fold3-concat/seed-2.json
+########## P4 fold4 baseline (11:51:15Z) ##########
+train 7616 rows (variant=baseline, radius=2, sampled 16/video) -> dim 1536, validation 41319 rows (full, untouched), cache 3b4aaed3037e
+
+--- seed 0 ---
+best epoch 7 (early-stopped), frame macro-F1 0.3304 (clustered 95% CI 0.2207-0.4085), video-level macro-F1 0.4224 over 56 videos, train 12.5s
+wrote results/p1c/p1c-temporal-probe/fold4-baseline/seed-0.json
+
+--- seed 1 ---
+best epoch 3 (early-stopped), frame macro-F1 0.3595 (clustered 95% CI 0.2314-0.4394), video-level macro-F1 0.4357 over 56 videos, train 7.5s
+wrote results/p1c/p1c-temporal-probe/fold4-baseline/seed-1.json
+
+--- seed 2 ---
+best epoch 4 (early-stopped), frame macro-F1 0.3148 (clustered 95% CI 0.1947-0.3947), video-level macro-F1 0.3972 over 56 videos, train 8.4s
+wrote results/p1c/p1c-temporal-probe/fold4-baseline/seed-2.json
+########## P4 fold4 mean (11:54:19Z) ##########
+train 7616 rows (variant=mean, radius=2, sampled 16/video) -> dim 1536, validation 41319 rows (full, untouched), cache 3b4aaed3037e
+
+--- seed 0 ---
+best epoch 7 (early-stopped), frame macro-F1 0.3322 (clustered 95% CI 0.2198-0.4091), video-level macro-F1 0.4086 over 56 videos, train 9.7s
+wrote results/p1c/p1c-temporal-probe/fold4-mean/seed-0.json
+
+--- seed 1 ---
+best epoch 3 (early-stopped), frame macro-F1 0.3634 (clustered 95% CI 0.2322-0.4414), video-level macro-F1 0.4388 over 56 videos, train 5.8s
+wrote results/p1c/p1c-temporal-probe/fold4-mean/seed-1.json
+
+--- seed 2 ---
+best epoch 4 (early-stopped), frame macro-F1 0.3221 (clustered 95% CI 0.1967-0.4016), video-level macro-F1 0.4115 over 56 videos, train 8.1s
+wrote results/p1c/p1c-temporal-probe/fold4-mean/seed-2.json
+########## P4 fold4 mean_std (11:57:20Z) ##########
+train 7616 rows (variant=mean_std, radius=2, sampled 16/video) -> dim 3072, validation 41319 rows (full, untouched), cache 3b4aaed3037e
+
+--- seed 0 ---
+best epoch 7 (early-stopped), frame macro-F1 0.3364 (clustered 95% CI 0.2165-0.4129), video-level macro-F1 0.3890 over 56 videos, train 12.7s
+wrote results/p1c/p1c-temporal-probe/fold4-mean_std/seed-0.json
+
+--- seed 1 ---
+best epoch 8 (early-stopped), frame macro-F1 0.3431 (clustered 95% CI 0.2153-0.4197), video-level macro-F1 0.4210 over 56 videos, train 13.7s
+wrote results/p1c/p1c-temporal-probe/fold4-mean_std/seed-1.json
+
+--- seed 2 ---
+best epoch 5 (early-stopped), frame macro-F1 0.3517 (clustered 95% CI 0.2170-0.4229), video-level macro-F1 0.3803 over 56 videos, train 10.1s
+wrote results/p1c/p1c-temporal-probe/fold4-mean_std/seed-2.json
+########## P4 fold4 concat (12:00:36Z) ##########
+train 7616 rows (variant=concat, radius=2, sampled 16/video) -> dim 7680, validation 41319 rows (full, untouched), cache 3b4aaed3037e
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.3193 (clustered 95% CI 0.2060-0.3955), video-level macro-F1 0.3814 over 56 videos, train 8.0s
+wrote results/p1c/p1c-temporal-probe/fold4-concat/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), frame macro-F1 0.3483 (clustered 95% CI 0.2154-0.4285), video-level macro-F1 0.4314 over 56 videos, train 7.9s
+wrote results/p1c/p1c-temporal-probe/fold4-concat/seed-1.json
+
+--- seed 2 ---
+best epoch 1 (early-stopped), frame macro-F1 0.3153 (clustered 95% CI 0.2031-0.3928), video-level macro-F1 0.3812 over 56 videos, train 9.5s
+wrote results/p1c/p1c-temporal-probe/fold4-concat/seed-2.json
+=== PRIORITY 4 DONE 2026-09-10T12:03:39Z ===

@@ -1,0 +1,77 @@
+{
+ "protocol": "docs/DETECTOR_FOLLOWUP_2026-11-12.md",
+ "code_revision": "6372b09a155a3c454df6c27adcbb565e625550456f358a0f485fdf16042f4612",
+ "feature_manifest": {
+  "plan": "docs/FINAL_PUSH_PLAN_2026-11-11.md Step 4a",
+  "decision": "D-71",
+  "code_revision": "d3d050f",
+  "started_utc": "2026-11-11T07:43:15.595468+00:00",
+  "finished_utc": "2026-11-11T09:19:45.211879+00:00",
+  "task": "UCF-Crime official Anomaly-Detection split (separate task from the 14-class classifier, rule 3)",
+  "videos": {
+   "train": 1610,
+   "test": 290
+  },
+  "frames": 918727,
+  "every": 3,
+  "sampling": "every 3-th blob frame = one frame per 15 source frames",
+  "feature": "[CLS-or-pooler ++ mean(patch)], 1536-d float16, registered 224 bilinear preprocessing",
+  "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+  "backbones": {
+   "dinov2b": {
+    "family": "timm_dinov2_vitb14_reg4",
+    "weights_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+    "features_sha256": "cf4f756c9a38fcb4f951f39dad234d800e852afa5246642b55e914cf9da3a0fd"
+   },
+   "siglip": {
+    "family": "transformers_siglip_base_p16_224",
+    "weights_sha256": "f5d84933ac67e11fcd249aba72bb2888028fc11507a4b81629c095c881031b77",
+    "features_sha256": "66f883a7f23017e231c0658de991125992442e756db32d67e6bb0aa02b5b567f"
+   }
+  },
+  "path_checks": {
+   "dinov2b_vs_fold1_cache": {
+    "frames": 120,
+    "min_cosine": 0.9999997019767761
+   },
+   "siglip_vs_patch_cache": {
+    "frames": 120,
+    "min_cosine": 0.9999843239784241
+   }
+  },
+  "seconds": 5782.4,
+  "frames_per_s": 158.9,
+  "gpu_peak_gib": 3.14,
+  "projected_full_minutes": 96.4
+ },
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "epochs": 60,
+ "device": "cuda:0",
+ "variants": [
+  "control",
+  "magnitude",
+  "selftrain",
+  "uncertainty",
+  "language"
+ ],
+ "holdout_fraction": 0.1,
+ "holdout_seed": 0,
+ "torch": "2.13.0+cu126",
+ "python": "3.12.14",
+ "threshold_percentile": 99,
+ "causal_smoothing": 5,
+ "packages": {
+  "numpy": "2.5.1",
+  "scikit-learn": "1.9.0",
+  "transformers": "5.17.0",
+  "tokenizers": "0.23.2",
+  "safetensors": "0.8.0"
+ },
+ "cuda": "12.6",
+ "hardware": "NVIDIA H200 MIG 1g.18gb",
+ "deterministic_algorithms": true
+}

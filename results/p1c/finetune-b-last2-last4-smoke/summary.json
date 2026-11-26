@@ -1,0 +1,75 @@
+{
+ "git_revision": "622a18a280e347874a854cff715c7c5f3ca9d854",
+ "working_tree_dirty": false,
+ "decision": "D-67",
+ "protocol": "D-65",
+ "folds": [
+  1
+ ],
+ "seeds": [
+  0
+ ],
+ "smoke": true,
+ "lr_grid": [
+  3e-05
+ ],
+ "split": "validation only",
+ "label_view": "inherited video-level labels (D-40), not event-only",
+ "seconds": 144,
+ "arms": {
+  "B_frozen": {
+   "macro_f1": 0.047619047619047616,
+   "accuracy": 0.5,
+   "per_fold_macro_f1": [
+    0.047619047619047616
+   ],
+   "per_fold_delta_vs_control": [
+    0.0
+   ],
+   "mean_delta": 0.0,
+   "folds_positive": 0,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 1.0,
+   "train_videos": 420.0
+  },
+  "B_ft2": {
+   "macro_f1": 0.028571428571428574,
+   "accuracy": 0.25,
+   "per_fold_macro_f1": [
+    0.028571428571428574
+   ],
+   "per_fold_delta_vs_control": [
+    -0.019047619047619042
+   ],
+   "mean_delta": -0.019047619047619042,
+   "folds_positive": 0,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 1.0,
+   "train_videos": 420.0
+  },
+  "B_ft4": {
+   "macro_f1": 0.028571428571428574,
+   "accuracy": 0.25,
+   "per_fold_macro_f1": [
+    0.028571428571428574
+   ],
+   "per_fold_delta_vs_control": [
+    -0.019047619047619042
+   ],
+   "mean_delta": -0.019047619047619042,
+   "folds_positive": 0,
+   "folds_passing_gate": 0,
+   "gate_passed": false,
+   "median_best_epoch": 1.0,
+   "train_videos": 420.0
+  }
+ },
+ "pipeline_check_lr0": {
+  "lr0_macro_f1": 0.047619047619047616,
+  "control_macro_f1": 0.047619047619047616,
+  "lr0_best_epoch": 1,
+  "control_best_epoch": 1
+ }
+}

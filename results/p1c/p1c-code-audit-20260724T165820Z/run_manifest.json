@@ -1,0 +1,21 @@
+{
+  "annotation_version": "P1B frozen manifests; no dataset media read by this audit",
+  "code_revision": "P1C audited-source bundle SHA-256 e44e44f1e6fc9439f2307fa624afed489cfad3b8d27cb390bd0361f18e980725",
+  "config_digest": "e8301e40c56159ff1a544a8b44a081c469a5395db0f10b004c9cd1d69e979f1a",
+  "dataset_manifest_digest": "3930ca6b3155bee6d90308447cefade66332ab20f8a3685a6de341938d35608c",
+  "environment_digest": "ae29c4c0fa13f559146d6d58dcc9529bc06211b357dd6d504cec22bf96ab8a2e",
+  "hardware": {
+    "device": "CPU code audit; no model execution"
+  },
+  "metric_artifact_paths": [
+    "aggregate.json",
+    "verdict.json",
+    "audit_report.json"
+  ],
+  "package_versions": {
+    "python": "3.12.13"
+  },
+  "run_id": "p1c-code-audit-20260724T165820Z",
+  "run_kind": "code_audit",
+  "seed": 0
+}

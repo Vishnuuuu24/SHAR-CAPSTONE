@@ -1,0 +1,45 @@
+{
+  "backbone_family": "timm_dinov2_vitb14_reg4",
+  "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+  "batch_size": 32,
+  "created_at": "2026-09-22T07:05:46.449717+00:00",
+  "cudnn_allow_tf32": true,
+  "detector_licence": "AGPL-3.0",
+  "detector_sha256": "29b17eaf3a3117cbea906090dbedf9159f7c6a49db58ec8b99ed2dfde1cf6eb2",
+  "detector_weights": ".cache/weights/yolo11m-pose-29b17eaf.pt",
+  "dtype": "float16",
+  "fallback_fraction": 0.4029560105951935,
+  "fallback_rows": 33316,
+  "features_sha256": "637210e03f98611901b78c13063cba75c52164e3290643f187015f92d4f72fb8",
+  "policy": {
+    "classes": [
+      0
+    ],
+    "conf": 0.25,
+    "imgsz": 640,
+    "iou": 0.7,
+    "margin_fraction": 0.1
+  },
+  "preprocessing": {
+    "color_mode": "RGB",
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "resize_height": 224,
+    "resize_width": 224,
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "row_count": 82679,
+  "shape": [
+    82679,
+    1536
+  ],
+  "ultralytics_version": "8.4.158"
+}

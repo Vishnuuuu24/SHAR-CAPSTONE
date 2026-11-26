@@ -1,0 +1,13 @@
+{
+  "checkpoint_disposition": "validation-selected checkpoint retained: checkpoint_epoch_006.pt",
+  "claim_state": "INCONCLUSIVE",
+  "next_action": "Compare validation macro_f1 against parent P1C-VIDEO-SCREEN-012-FROZEN-BACKBONE-AR-FOLD1 using the registered decision_threshold 0.04. Below it, the change is inside seed noise and must not be promoted; above it, re-run as a three-seed REGISTERED_FULL_RUN_READY experiment before any number is quoted.",
+  "peak_memory_bytes": 452196864,
+  "reason": "One screening seed completed. A single seed carries no error bar: the registered decision_threshold exists precisely so this number is compared against it rather than read as a result. Test was inaccessible by registration.",
+  "runtime_seconds": 3894.657114190981,
+  "status": "COMPLETED",
+  "stop_reason": "registered epoch ceiling or validation early stopping",
+  "storage_bytes": 1136878417,
+  "summary_artifact_digest": "21745b7f2ec75f487a521c8e10201b585f9b46a5a4ac6674fcf2742d81abc7ac",
+  "verdict": "GOOD_ENOUGH"
+}

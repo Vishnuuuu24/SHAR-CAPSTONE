@@ -1,0 +1,218 @@
+{
+ "d53_stored_headline": {
+  "draws": 2000,
+  "unique_videos": 108,
+  "resampling": "global, within class, source video carries all fold/seed rows",
+  "base": {
+   "observed": 0.4626060777846492,
+   "ci95": [
+    0.36723211278489637,
+    0.5114882830803262
+   ],
+   "sd": 0.03708977481587578
+  }
+ },
+ "resample": {
+  "draws": 2000,
+  "unique_videos": 108,
+  "resampling": "global, within class, source video carries all fold/seed rows",
+  "base": {
+   "observed": 0.4636002886002885,
+   "ci95": [
+    0.36969342437829833,
+    0.511917466526387
+   ],
+   "sd": 0.03664176641859825
+  },
+  "candidate": {
+   "observed": 0.44772710754853606,
+   "ci95": [
+    0.3561924588211353,
+    0.4967254954137831
+   ]
+  },
+  "difference": {
+   "observed": -0.01587318105175245,
+   "ci95": [
+    -0.03488971228494671,
+    0.00295394247928383
+   ],
+   "sd": 0.009579120339957024,
+   "share_of_draws_above_zero": 0.0485
+  }
+ },
+ "resample_long": {
+  "draws": 2000,
+  "unique_videos": 108,
+  "resampling": "global, within class, source video carries all fold/seed rows",
+  "base": {
+   "observed": 0.4636002886002885,
+   "ci95": [
+    0.36969342437829833,
+    0.511917466526387
+   ],
+   "sd": 0.03664176641859825
+  },
+  "candidate": {
+   "observed": 0.448642032570604,
+   "ci95": [
+    0.35792013670755796,
+    0.4978334747603391
+   ]
+  },
+  "difference": {
+   "observed": -0.014958256029684536,
+   "ci95": [
+    -0.03665023053218958,
+    0.006789331991537876
+   ],
+   "sd": 0.01129519267947392,
+   "share_of_draws_above_zero": 0.0965
+  }
+ },
+ "label_smooth": {
+  "draws": 2000,
+  "unique_videos": 108,
+  "resampling": "global, within class, source video carries all fold/seed rows",
+  "base": {
+   "observed": 0.4636002886002885,
+   "ci95": [
+    0.36969342437829833,
+    0.511917466526387
+   ],
+   "sd": 0.03664176641859825
+  },
+  "candidate": {
+   "observed": 0.4586995015566444,
+   "ci95": [
+    0.36865237327985423,
+    0.5056478519195168
+   ]
+  },
+  "difference": {
+   "observed": -0.004900787043644106,
+   "ci95": [
+    -0.028899514885596826,
+    0.019435547788565027
+   ],
+   "sd": 0.01215506651511134,
+   "share_of_draws_above_zero": 0.346
+  }
+ },
+ "lc75": {
+  "draws": 2000,
+  "unique_videos": 108,
+  "resampling": "global, within class, source video carries all fold/seed rows",
+  "base": {
+   "observed": 0.4636002886002885,
+   "ci95": [
+    0.36969342437829833,
+    0.511917466526387
+   ],
+   "sd": 0.03664176641859825
+  },
+  "candidate": {
+   "observed": 0.4307689664832522,
+   "ci95": [
+    0.3463709433851241,
+    0.47420916597556495
+   ]
+  },
+  "difference": {
+   "observed": -0.03283132211703632,
+   "ci95": [
+    -0.06473982924598023,
+    -0.0019248281232400696
+   ],
+   "sd": 0.015816977151749203,
+   "share_of_draws_above_zero": 0.0205
+  }
+ },
+ "extra34": {
+  "draws": 2000,
+  "unique_videos": 108,
+  "resampling": "global, within class, source video carries all fold/seed rows",
+  "base": {
+   "observed": 0.4636002886002885,
+   "ci95": [
+    0.36969342437829833,
+    0.511917466526387
+   ],
+   "sd": 0.03664176641859825
+  },
+  "candidate": {
+   "observed": 0.46171934094866424,
+   "ci95": [
+    0.3713504000237188,
+    0.5062646873915394
+   ]
+  },
+  "difference": {
+   "observed": -0.0018809476516242762,
+   "ci95": [
+    -0.047244140373044925,
+    0.04527922322979817
+   ],
+   "sd": 0.023826601006573633,
+   "share_of_draws_above_zero": 0.475
+  }
+ },
+ "extra_all": {
+  "draws": 2000,
+  "unique_videos": 108,
+  "resampling": "global, within class, source video carries all fold/seed rows",
+  "base": {
+   "observed": 0.4636002886002885,
+   "ci95": [
+    0.36969342437829833,
+    0.511917466526387
+   ],
+   "sd": 0.03664176641859825
+  },
+  "candidate": {
+   "observed": 0.4484145457531008,
+   "ci95": [
+    0.3530655252040701,
+    0.49742151904788673
+   ]
+  },
+  "difference": {
+   "observed": -0.015185742847187711,
+   "ci95": [
+    -0.07779265261527692,
+    0.04465853265726734
+   ],
+   "sd": 0.03128989830309284,
+   "share_of_draws_above_zero": 0.313
+  }
+ },
+ "extra_all_w": {
+  "draws": 2000,
+  "unique_videos": 108,
+  "resampling": "global, within class, source video carries all fold/seed rows",
+  "base": {
+   "observed": 0.4636002886002885,
+   "ci95": [
+    0.36969342437829833,
+    0.511917466526387
+   ],
+   "sd": 0.03664176641859825
+  },
+  "candidate": {
+   "observed": 0.4927355382712526,
+   "ci95": [
+    0.3989624740241863,
+    0.5422797096937064
+   ]
+  },
+  "difference": {
+   "observed": 0.029135249670964092,
+   "ci95": [
+    -0.021871818098840187,
+    0.07955812975442708
+   ],
+   "sd": 0.025761860148149955,
+   "share_of_draws_above_zero": 0.88
+  }
+ }
+}

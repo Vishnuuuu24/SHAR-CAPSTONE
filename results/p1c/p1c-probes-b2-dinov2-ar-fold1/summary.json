@@ -1,0 +1,595 @@
+{
+  "best": {
+    "clustered_ci_lower_95": 0.24993698943116133,
+    "clustered_ci_upper_95": 0.43734167260472606,
+    "converged": true,
+    "fit_seconds": 177.84875152632594,
+    "frame_accuracy": 0.34425531914893615,
+    "frame_macro_f1": 0.3624599862159455,
+    "parameters": {
+      "C": 3e-05,
+      "max_iter": 200,
+      "tol": 0.0001
+    },
+    "predict_seconds": 0.1380522083491087,
+    "probe": "logistic_regression",
+    "report_file": "logistic_regression-standardize-C3e-05.json",
+    "scaling": "standardize",
+    "video_level_macro_f1": 0.34960317460317464
+  },
+  "best_probe_minus_reference": 0.014356320895337282,
+  "cache_sha256": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+  "config": "configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml",
+  "experiment_id": "P1C-PROBES-B2-DINOV2-AR-FOLD1",
+  "kind": "classical probe sweep on the B-1 frozen-feature cache; validation-only; inherited-label score",
+  "label_honesty": "INHERITED-LABEL. AR fold 1 has no constructible event-only view (D-40); these probes inherit the cache's scope exactly and never read Test.",
+  "metric_name": "validation frame macro_f1 (inherited video-level labels, AR fold 1)",
+  "per_class_frame_f1_best_probe_minus_reference": {
+    "Abuse": {
+      "delta": 0.03358112069187641,
+      "probe": 0.3460750853242321,
+      "reference_mean": 0.3124939646323557,
+      "reference_sd": 0.005780641845043719
+    },
+    "Arrest": {
+      "delta": -0.03551978017670976,
+      "probe": 0.12371134020618557,
+      "reference_mean": 0.15923112038289533,
+      "reference_sd": 0.003479112213591471
+    },
+    "Arson": {
+      "delta": -0.022987910429745295,
+      "probe": 0.2717728465759962,
+      "reference_mean": 0.2947607570057415,
+      "reference_sd": 0.0028859758701060044
+    },
+    "Assault": {
+      "delta": 0.11798193161301418,
+      "probe": 0.18139688844753393,
+      "reference_mean": 0.06341495683451975,
+      "reference_sd": 0.001116499289588605
+    },
+    "Burglary": {
+      "delta": -0.3700176537730453,
+      "probe": 0.2575107296137339,
+      "reference_mean": 0.6275283833867792,
+      "reference_sd": 0.006504254604045255
+    },
+    "Explosion": {
+      "delta": -0.05518939478247542,
+      "probe": 0.3436241610738255,
+      "reference_mean": 0.3988135558563009,
+      "reference_sd": 0.010617489854486158
+    },
+    "Fighting": {
+      "delta": -0.05547354332197157,
+      "probe": 0.05926053904630269,
+      "reference_mean": 0.11473408236827426,
+      "reference_sd": 0.006867562087737197
+    },
+    "Normal_Videos_event": {
+      "delta": 0.13591877395062357,
+      "probe": 0.9013084941228653,
+      "reference_mean": 0.7653897201722417,
+      "reference_sd": 0.014848228131900903
+    },
+    "RoadAccidents": {
+      "delta": 0.31816651824974795,
+      "probe": 0.5434071921540138,
+      "reference_mean": 0.22524067390426586,
+      "reference_sd": 0.0365398153984155
+    },
+    "Robbery": {
+      "delta": -0.14940519321184326,
+      "probe": 0.2857614800132144,
+      "reference_mean": 0.43516667322505764,
+      "reference_sd": 0.017547834871125424
+    },
+    "Shooting": {
+      "delta": -0.45798034268219856,
+      "probe": 0.02738336713995943,
+      "reference_mean": 0.485363709822158,
+      "reference_sd": 0.025897340896126702
+    },
+    "Shoplifting": {
+      "delta": 0.2769381348938238,
+      "probe": 0.707361802462667,
+      "reference_mean": 0.4304236675688432,
+      "reference_sd": 0.041524711048719
+    },
+    "Stealing": {
+      "delta": 0.2399793924951053,
+      "probe": 0.7358977844229985,
+      "reference_mean": 0.49591839192789317,
+      "reference_sd": 0.057058412308654965
+    },
+    "Vandalism": {
+      "delta": 0.22499643901852068,
+      "probe": 0.28996809641970933,
+      "reference_mean": 0.06497165740118867,
+      "reference_sd": 0.022419609415696796
+    }
+  },
+  "probe_count": 26,
+  "probes": [
+    {
+      "clustered_ci_lower_95": 0.24993698943116133,
+      "clustered_ci_upper_95": 0.43734167260472606,
+      "converged": true,
+      "fit_seconds": 177.84875152632594,
+      "frame_accuracy": 0.34425531914893615,
+      "frame_macro_f1": 0.3624599862159455,
+      "parameters": {
+        "C": 3e-05,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1380522083491087,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C3e-05.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.34960317460317464
+    },
+    {
+      "clustered_ci_lower_95": 0.24932916629394947,
+      "clustered_ci_upper_95": 0.4338582436564134,
+      "converged": true,
+      "fit_seconds": 231.77841845341027,
+      "frame_accuracy": 0.3346808510638298,
+      "frame_macro_f1": 0.3618771227442307,
+      "parameters": {
+        "C": 0.0001,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.14861334301531315,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.0001.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.3804421768707483
+    },
+    {
+      "clustered_ci_lower_95": 0.24874644232189544,
+      "clustered_ci_upper_95": 0.4243635634965549,
+      "converged": true,
+      "fit_seconds": 226.67486331239343,
+      "frame_accuracy": 0.3280851063829787,
+      "frame_macro_f1": 0.3553316995000969,
+      "parameters": {
+        "C": 0.0003,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.14820550195872784,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.0003.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.3937074829931973
+    },
+    {
+      "clustered_ci_lower_95": 0.23394712545239152,
+      "clustered_ci_upper_95": 0.42709705179332336,
+      "converged": true,
+      "fit_seconds": 162.44063728302717,
+      "frame_accuracy": 0.35377659574468084,
+      "frame_macro_f1": 0.35154516283897064,
+      "parameters": {
+        "C": 1e-05,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1444732416421175,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C1e-05.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.3786023500309215
+    },
+    {
+      "clustered_ci_lower_95": 0.240637200047294,
+      "clustered_ci_upper_95": 0.4117869861317822,
+      "converged": true,
+      "fit_seconds": 195.84080261178315,
+      "frame_accuracy": 0.3201063829787234,
+      "frame_macro_f1": 0.3461842348672068,
+      "parameters": {
+        "C": 0.001,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.15641097724437714,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.001.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.39017530088958663
+    },
+    {
+      "clustered_ci_lower_95": 0.23386854613892907,
+      "clustered_ci_upper_95": 0.42230377764779464,
+      "converged": true,
+      "fit_seconds": 235.8371957615018,
+      "frame_accuracy": 0.3261436170212766,
+      "frame_macro_f1": 0.3427562267116027,
+      "parameters": {
+        "C": 0.0001,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.13915017619729042,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C0.0001.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.41101834673263243
+    },
+    {
+      "clustered_ci_lower_95": 0.2242504192453468,
+      "clustered_ci_upper_95": 0.4050059760416197,
+      "converged": true,
+      "fit_seconds": 301.95101868361235,
+      "frame_accuracy": 0.3109574468085106,
+      "frame_macro_f1": 0.33430522432784293,
+      "parameters": {
+        "C": 0.0003,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.15882022306323051,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C0.0003.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.3735260770975057
+    },
+    {
+      "clustered_ci_lower_95": 0.22482528251468947,
+      "clustered_ci_upper_95": 0.39531169319165343,
+      "converged": true,
+      "fit_seconds": 222.95906968601048,
+      "frame_accuracy": 0.3108510638297872,
+      "frame_macro_f1": 0.33131403247046826,
+      "parameters": {
+        "C": 0.003,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.15795095637440681,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.003.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.37452904238618523
+    },
+    {
+      "clustered_ci_lower_95": 0.2051039493958345,
+      "clustered_ci_upper_95": 0.3991781247197591,
+      "converged": true,
+      "fit_seconds": 164.02798832394183,
+      "frame_accuracy": 0.36045212765957446,
+      "frame_macro_f1": 0.3281562037248475,
+      "parameters": {
+        "C": 3e-06,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.13944027200341225,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C3e-06.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.36334379905808484
+    },
+    {
+      "clustered_ci_lower_95": 0.21711568167182604,
+      "clustered_ci_upper_95": 0.3970348453559693,
+      "converged": true,
+      "fit_seconds": 196.71252596378326,
+      "frame_accuracy": 0.306436170212766,
+      "frame_macro_f1": 0.3280842545881459,
+      "parameters": {
+        "C": 0.003,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1389794908463955,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C0.003.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.35028344671201816
+    },
+    {
+      "clustered_ci_lower_95": 0.21734973538307337,
+      "clustered_ci_upper_95": 0.39822196018390127,
+      "converged": true,
+      "fit_seconds": 171.0696567762643,
+      "frame_accuracy": 0.30553191489361703,
+      "frame_macro_f1": 0.3272872547696755,
+      "parameters": {
+        "C": 0.001,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1382462065666914,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C0.001.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.3086734693877551
+    },
+    {
+      "clustered_ci_lower_95": 0.21466423539290946,
+      "clustered_ci_upper_95": 0.4006713800491349,
+      "converged": true,
+      "fit_seconds": 170.45828568190336,
+      "frame_accuracy": 0.3257978723404255,
+      "frame_macro_f1": 0.32342406487928527,
+      "parameters": {
+        "C": 3e-05,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1272747479379177,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C3e-05.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.3599206349206349
+    },
+    {
+      "clustered_ci_lower_95": 0.2155787433048424,
+      "clustered_ci_upper_95": 0.3886492313709866,
+      "converged": true,
+      "fit_seconds": 155.89628384634852,
+      "frame_accuracy": 0.30284574468085107,
+      "frame_macro_f1": 0.322577811735631,
+      "parameters": {
+        "C": 0.01,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.15429454296827316,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.01.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.41530612244897963
+    },
+    {
+      "clustered_ci_lower_95": 0.2117435214603916,
+      "clustered_ci_upper_95": 0.38659426074726533,
+      "converged": true,
+      "fit_seconds": 198.9209539052099,
+      "frame_accuracy": 0.29470744680851063,
+      "frame_macro_f1": 0.3195027681791657,
+      "parameters": {
+        "C": 0.01,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.14339469000697136,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C0.01.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.33639455782312927
+    },
+    {
+      "clustered_ci_lower_95": 0.1997635971788193,
+      "clustered_ci_upper_95": 0.3799480846255464,
+      "converged": true,
+      "fit_seconds": 217.6981009989977,
+      "frame_accuracy": 0.2996542553191489,
+      "frame_macro_f1": 0.3130689962825825,
+      "parameters": {
+        "C": 1,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.13816972635686398,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C1.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.32511337868480733
+    },
+    {
+      "clustered_ci_lower_95": 0.197177339978121,
+      "clustered_ci_upper_95": 0.3779726457667391,
+      "converged": true,
+      "fit_seconds": 154.59064138680696,
+      "frame_accuracy": 0.33029255319148937,
+      "frame_macro_f1": 0.31085629750426397,
+      "parameters": {
+        "C": 1e-05,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.161454726010561,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C1e-05.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.3361329147043433
+    },
+    {
+      "clustered_ci_lower_95": 0.19879640613936875,
+      "clustered_ci_upper_95": 0.36833443187849096,
+      "converged": true,
+      "fit_seconds": 180.52639443427324,
+      "frame_accuracy": 0.2914627659574468,
+      "frame_macro_f1": 0.30569566249939223,
+      "parameters": {
+        "C": 0.1,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.12622475251555443,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.1.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.3258503401360544
+    },
+    {
+      "clustered_ci_lower_95": 0.19462801068304345,
+      "clustered_ci_upper_95": 0.36892686332006475,
+      "converged": true,
+      "fit_seconds": 204.9118892196566,
+      "frame_accuracy": 0.2902925531914894,
+      "frame_macro_f1": 0.30350223959464334,
+      "parameters": {
+        "C": 10,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.12296317517757416,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C10.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.31954038025466597
+    },
+    {
+      "clustered_ci_lower_95": 0.19232963482155366,
+      "clustered_ci_upper_95": 0.3548422822328537,
+      "converged": true,
+      "fit_seconds": 162.29951733537018,
+      "frame_accuracy": 0.2886170212765957,
+      "frame_macro_f1": 0.2941176160731596,
+      "parameters": {
+        "C": 1,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1343273352831602,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C1.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.304143475572047
+    },
+    {
+      "clustered_ci_lower_95": 0.1936347117326138,
+      "clustered_ci_upper_95": 0.35302466378785125,
+      "converged": true,
+      "fit_seconds": 175.29717409051955,
+      "frame_accuracy": 0.29058510638297874,
+      "frame_macro_f1": 0.2933556696219388,
+      "parameters": {
+        "C": 10,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1541387178003788,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C10.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.30539064110492686
+    },
+    {
+      "clustered_ci_lower_95": 0.1897835797918161,
+      "clustered_ci_upper_95": 0.35185325451315974,
+      "converged": true,
+      "fit_seconds": 214.70565367490053,
+      "frame_accuracy": 0.2590425531914894,
+      "frame_macro_f1": 0.287416519308578,
+      "parameters": {
+        "C": 0.1,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1540593933314085,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C0.1.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.2777983920841064
+    },
+    {
+      "clustered_ci_lower_95": 0.1620519119433622,
+      "clustered_ci_upper_95": 0.34015491225811384,
+      "converged": true,
+      "fit_seconds": 124.59114718809724,
+      "frame_accuracy": 0.3249468085106383,
+      "frame_macro_f1": 0.2750645913158024,
+      "parameters": {
+        "C": 1e-06,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1406761072576046,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C1e-06.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.3183209647495362
+    },
+    {
+      "clustered_ci_lower_95": 0.15563564455753354,
+      "clustered_ci_upper_95": 0.3175209377631015,
+      "converged": true,
+      "fit_seconds": 124.32582740299404,
+      "frame_accuracy": 0.31236702127659577,
+      "frame_macro_f1": 0.25886491552739793,
+      "parameters": {
+        "C": 3e-06,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.14174519293010235,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C3e-06.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.28184196755625324
+    },
+    {
+      "clustered_ci_lower_95": 0.14712608896100327,
+      "clustered_ci_upper_95": 0.3100815720921836,
+      "converged": null,
+      "fit_seconds": 0.38705448247492313,
+      "frame_accuracy": 0.1924468085106383,
+      "frame_macro_f1": 0.24215694902391932,
+      "parameters": {
+        "algorithm": "brute",
+        "n_neighbors": 20,
+        "weights": "distance"
+      },
+      "predict_seconds": 530.5177991166711,
+      "probe": "knn",
+      "report_file": "knn-standardize.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.2552772624201196
+    },
+    {
+      "clustered_ci_lower_95": 0.14590746022910228,
+      "clustered_ci_upper_95": 0.2918626551813727,
+      "converged": null,
+      "fit_seconds": 0.3825679440051317,
+      "frame_accuracy": 0.17675531914893616,
+      "frame_macro_f1": 0.2345647161195053,
+      "parameters": {
+        "algorithm": "brute",
+        "n_neighbors": 20,
+        "weights": "distance"
+      },
+      "predict_seconds": 529.0313797444105,
+      "probe": "knn",
+      "report_file": "knn-l2.json",
+      "scaling": "l2",
+      "video_level_macro_f1": 0.293171114599686
+    },
+    {
+      "clustered_ci_lower_95": 0.11563752300229553,
+      "clustered_ci_upper_95": 0.2507474061979122,
+      "converged": true,
+      "fit_seconds": 144.2795877493918,
+      "frame_accuracy": 0.2654255319148936,
+      "frame_macro_f1": 0.19710995019793093,
+      "parameters": {
+        "C": 1e-06,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.14291957020759583,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C1e-06.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.2328181272509004
+    }
+  ],
+  "reference": {
+    "experiment_id": "P1C-VIDEO-FROZEN-CONFIRM-015-AR-FOLD1",
+    "frame_macro_f1_mean": 0.3481036653206082,
+    "frame_macro_f1_sd": 0.0048923951805815765,
+    "metric_name": "validation frame macro_f1 (inherited video-level labels, AR fold 1)"
+  },
+  "report_count": 26,
+  "train_rows": 391014,
+  "train_stride": 1,
+  "truncated_fit_count": 0,
+  "validation_rows": 37600
+}

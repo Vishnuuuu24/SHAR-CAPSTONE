@@ -1,0 +1,16 @@
+train 391014 rows (stride 1), validation 37600 rows, dim 2048, scaling ['standardize'], cache e851dbcbd372
+
+--- linear_svm-standardize-C0.01 ---
+frame macro-F1 0.2745 (clustered 95% CI 0.1611-0.3366), accuracy 0.2939, video-level macro-F1 0.3137 over 56 videos (0 tie-broken), fit 3332.9s predict 0.9s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/linear_svm-standardize-C0.01.json
+
+--- linear_svm-standardize-C1 ---
+note: the C=1 fit was stopped ~10 min in and replaced by the low-C sweep below; C=0.01 above is complete
+train 391014 rows (stride 1), validation 37600 rows, dim 2048, scaling ['standardize'], cache e851dbcbd372
+
+--- linear_svm-standardize-C0.0001 ---
+frame macro-F1 0.2880 (clustered 95% CI 0.1620-0.3538), accuracy 0.2997, video-level macro-F1 0.2980 over 56 videos (0 tie-broken), fit 4044.3s predict 0.6s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/linear_svm-standardize-C0.0001.json
+
+--- linear_svm-standardize-C0.001 ---
+note: C=0.001 and C=0.1 were deliberately not fitted -- ~1 h each (K-25) for corroboration the C=0.01 and C=0.0001 points already give. The linear_svm arm is under-swept relative to the logistic arm by design, not by accident.

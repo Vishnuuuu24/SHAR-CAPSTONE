@@ -1,0 +1,22 @@
+train 391014 rows, validation 37600 rows, dim 2048, cache e851dbcbd372, backbone torchvision_resnet50
+
+--- seed 0 ---
+  frame macro-F1 0.3490 | video majority-vote 0.3943 | video mean-prob 0.3503 (low-margin videos 5/56)
+
+--- seed 1 ---
+  frame macro-F1 0.3481 | video majority-vote 0.3503 | video mean-prob 0.3503 (low-margin videos 3/56)
+
+--- seed 2 ---
+  frame macro-F1 0.3474 | video majority-vote 0.3916 | video mean-prob 0.3920 (low-margin videos 5/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.3482 +/- 0.0008 (min 0.3474, max 0.3490)
+  video_majority_vote      macro-F1 0.3788 +/- 0.0247 (min 0.3503, max 0.3943)
+  video_mean_probability   macro-F1 0.3642 +/- 0.0241 (min 0.3503, max 0.3920)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.092 -> 0.000
+    Assault        0.073 -> 0.133
+    Shooting       0.502 -> 0.571
+    Vandalism      0.070 -> 0.000
+
+wrote results/p1c/p1c-video-aggregation-b6/fold1-frozen

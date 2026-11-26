@@ -1,0 +1,24 @@
+{
+  "git_revision": "7a281ab5397b0e10029e1230a511aa0e986d8870",
+  "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "weights_verified": "results/vlm/qwen25vl7b-sha256-verify.json",
+  "quant": "8bit",
+  "fusion_weight": 0.5,
+  "frames_per_video": 8,
+  "frame_rule": "sample_rows_per_video(seed=None) over the validation manifest rows, native 320x240 JPEG",
+  "orders": [
+    "forward",
+    "reverse"
+  ],
+  "prompt_example": "These are 8 frames, in time order, sampled from one surveillance video.\nWhich one category best describes what happens in the video?\nA. Abuse\nB. Arrest\nC. Arson\nD. Assault\nE. Burglary\nF. Explosion\nG. Fighting\nH. Normal activity (no crime)\nI. Road accident\nJ. Robbery\nK. Shooting\nL. Shoplifting\nM. Stealing\nN. Vandalism\nAnswer with the letter only.",
+  "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+  "blob_digest_reverified": false,
+  "baseline_probs_sha256": "00da0e81ed2fa53a9abb5cb3cd827e026e68453116efe3492f7f5f2e11ee5211",
+  "transformers": "5.17.0",
+  "bitsandbytes": "0.50.2",
+  "videos_scored": 108,
+  "limit": null,
+  "runtime_s": 246,
+  "test_split": "untouched"
+}

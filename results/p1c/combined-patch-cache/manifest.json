@@ -1,0 +1,30 @@
+{
+  "backbone": "timm_dinov2_vitb14_reg4",
+  "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+  "batch_videos": 4,
+  "combined_manifest_path": "Datasets/SHAR-Combined/manifest.csv",
+  "combined_manifest_sha256": "5c0bf68153e58955c7d7fe2a11e4d4b54ed5603bbe828834436b3081e35d047f",
+  "created_at": "2026-10-14T06:28:57.363774+00:00",
+  "cudnn_allow_tf32": true,
+  "device": "cuda:0",
+  "dtype": "float16",
+  "feature": "cls_plus_16x16_patch_tokens_registers_excluded",
+  "features_sha256": "e1746d0e14cc9eb627f2e5d4ddbc19533eaf69e2a426658504cad18766246445",
+  "frame_position_rule": "centres of 8 equal segments, floor((i+0.5)*n/8) over the DECODED frame count (K-06); videos shorter than 8 frames repeat frames",
+  "frames_per_video": 8,
+  "git_revision": "9653b3671c0e43cd8f73291aec9ecebc50a94949",
+  "limit": null,
+  "n_failed": 0,
+  "n_ok": 3526,
+  "n_videos": 3526,
+  "preprocessing_from": "configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml",
+  "resize_rule": "decoded BGR->RGB (K-05), cv2.resize to 320x240 INTER_AREA for every source, then the registered 224x224 bilinear preprocessing (core.p1c_roi.preprocess_crop); no JPEG round trip",
+  "seed": 0,
+  "shape": [
+    3526,
+    8,
+    257,
+    768
+  ],
+  "token_axis": "[video, frame, token, dim]; token 0 = CLS"
+}

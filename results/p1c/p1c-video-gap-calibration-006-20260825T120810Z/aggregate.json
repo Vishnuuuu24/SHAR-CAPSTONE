@@ -1,0 +1,10 @@
+{
+  "exception_type": "AttributeError",
+  "message": "'P1CVideoFrameDataset' object has no attribute 'source_video_groups'",
+  "scope_assertions": {
+    "checkpoint_saved": false,
+    "configuration_selection": false,
+    "held_out_test_access": false,
+    "research_training": false
+  }
+}

@@ -1,0 +1,231 @@
+{
+ "plan": "docs/FINAL_PUSH_PLAN_2026-11-11.md Step 3",
+ "code_revision": "0653344",
+ "host": "shar-steps32-20261111070736",
+ "started_utc": "2026-11-11T07:07:47.684109+00:00",
+ "finished_utc": "2026-11-11T07:17:00.847082+00:00",
+ "rule": "D-53 head trained 8 epochs on the fold's training videos, final-epoch weights, no selection",
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "source_runs": {
+  "p2-classical": {
+   "git_revision": "90f8a5ef17bbb33a9f0950bcc070cfa178e379a2",
+   "conventions": "configs/p2a_conventions.yaml",
+   "conventions_sha256": "21aae531aa8debc6e2342ddfcc0ead51a1355625dc973f12ac53b232cfa13d41",
+   "conditions": 50,
+   "videos": 108,
+   "frames_per_video": 32,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "frame_rule": "sample_rows_per_video(seed=None) over each video's validation manifest rows; native 320x240 JPEG from the D-34 blob",
+   "noise_seed": "data.degradations SampleKey(relative_path=<filepath>/frame<index>, file_digest, global_seed=0)",
+   "quality_metrics": "PSNR/SSIM on float32 [0,1] after restoration (clipped), before quantization; PSNR inf for identity/identity",
+   "classifier_input": "restored frames rounded to uint8, then the registered 224x224 bilinear preprocessing (preprocess_crop)",
+   "classifier": "D-53 step_permuted head retrained per fold x seed on fold-cache train features (D-59)",
+   "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+   "clean_feature_check": {
+    "max_abs_diff": 0.06396484375,
+    "median_max_abs_diff": 0.0063018798828125,
+    "min_mean_cosine": 0.9999938011169434,
+    "videos": 108
+   },
+   "limit_videos": null,
+   "epochs_override": null,
+   "test_split": "untouched",
+   "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+   "extract_seconds": 7505
+  },
+  "p2b-learned": {
+   "git_revision": "742ce47395816d8fc4b7eb088bc648acdcc37fc0",
+   "conventions_sha256": "21aae531aa8debc6e2342ddfcc0ead51a1355625dc973f12ac53b232cfa13d41",
+   "denoiser_config_sha256": "51c558fa948337a3e95fed24e7ffef9bf37e9a952b4476f1f22639dd32fc584e",
+   "denoisers": {
+    "dvae_seed0": "3f0ad6f76a797147505e47920b265e3325bb45552f66c1916926e9cd66f8f3bc",
+    "dvae_seed1": "cd06e3220d73ed84c2d72a5815aed04997ac959917f1fbd3be8b98f16c092c98",
+    "dvae_seed2": "5a48757ce8239ad492be26f55c12f32792bb9f7753a91ffaee236f724a5a2d41",
+    "dae_seed0": "60c0602227c687a3ff0f32edb194c31fbf762e9bcb421d0504ce237dde02b921",
+    "dae_seed1": "0a7fc542271b5821c6303f0150aaf27b7585dbc63cbaf32ced6ab97522b1ba72",
+    "dae_seed2": "bcc2c1711dad9acb5367ef64abddc9d0c9cf822ca81fa51cf12744bfaba01430"
+   },
+   "conditions": 70,
+   "videos": 108,
+   "frames_per_video": 32,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "frame_rule": "same as results/p2/p2-classical (sample_rows_per_video seed=None, native 320x240 JPEG from the D-34 blob)",
+   "noise_seed": "SampleKey(relative_path=<filepath>/frame<index>, file_digest, global_seed=0), as the classical run",
+   "quality_metrics": "eval.image_quality_torch (float64, equal to the skimage reference) on float [0,1] before quantization",
+   "classifier": "D-53 step_permuted head retrained per fold x seed on fold-cache train features (D-59)",
+   "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+   "clean_feature_check": {
+    "max_abs_diff": 0.06396484375,
+    "median_max_abs_diff": 0.0063018798828125,
+    "min_mean_cosine": 0.9999938011169434,
+    "videos": 108
+   },
+   "classical_identity_check": {
+    "max_abs_diff_vs_classical_identity_rows": 0.0
+   },
+   "limit_videos": null,
+   "epochs_override": null,
+   "test_split": "untouched",
+   "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+   "extract_seconds": 4601
+  },
+  "p2b-nafnet": {
+   "git_revision": "3fac48869d6be3cb48fab1e36f6e3c72ef1520fa",
+   "conventions_sha256": "21aae531aa8debc6e2342ddfcc0ead51a1355625dc973f12ac53b232cfa13d41",
+   "denoiser_config_sha256": null,
+   "denoisers": null,
+   "comparator": {
+    "weights_sha256": "cd685efaae01f7c4e9951f2deab05780079c8eb1e49ed664b72f6db04dabb445",
+    "code_commit": "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+    "config_sha256": "12a6b43fd5079df7cf083e5555becd8e292d6c9ff20a9e8f0a29ad8671da1e01"
+   },
+   "conditions": 20,
+   "videos": 108,
+   "frames_per_video": 32,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "frame_rule": "same as results/p2/p2-classical (sample_rows_per_video seed=None, native 320x240 JPEG from the D-34 blob)",
+   "noise_seed": "SampleKey(relative_path=<filepath>/frame<index>, file_digest, global_seed=0), as the classical run",
+   "quality_metrics": "eval.image_quality_torch (float64, equal to the skimage reference) on float [0,1] before quantization",
+   "classifier": "D-53 step_permuted head retrained per fold x seed on fold-cache train features (D-59)",
+   "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+   "clean_feature_check": {
+    "max_abs_diff": 0.06396484375,
+    "median_max_abs_diff": 0.0063018798828125,
+    "min_mean_cosine": 0.9999938011169434,
+    "videos": 108
+   },
+   "classical_identity_check": {
+    "max_abs_diff_vs_classical_identity_rows": 0.0
+   },
+   "limit_videos": null,
+   "epochs_override": null,
+   "test_split": "untouched",
+   "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+   "extract_seconds": 2353
+  },
+  "p2b-extra": {
+   "git_revision": "e998dac54ed75e5805cc04f101e7674890bb4443",
+   "conventions_sha256": "21aae531aa8debc6e2342ddfcc0ead51a1355625dc973f12ac53b232cfa13d41",
+   "denoiser_config_sha256": null,
+   "denoisers": null,
+   "comparator": null,
+   "extra_restorers": {
+    "adaptive_median_s7": {
+     "config_sha256": "88f69a4f0f21bec066e81362d61e13e88129db9401af9df5fbe15c59a1ff0423",
+     "s_max": 7
+    },
+    "scunet_real_psnr": {
+     "config_sha256": "88f69a4f0f21bec066e81362d61e13e88129db9401af9df5fbe15c59a1ff0423",
+     "weights_sha256": "fa78899ba2caec9d235a900e91d96c689da71c42029230c2028b00f09f809c2e",
+     "code_commit": "52e440a80a655b01e0b41e9dd9bfe599bc11625e"
+    },
+    "restormer_gauss_blind": {
+     "config_sha256": "88f69a4f0f21bec066e81362d61e13e88129db9401af9df5fbe15c59a1ff0423",
+     "weights_sha256": "4e2314dae77bb907184da6e2ac625b921491d6b33de26a52512eff1c6bb37fbd",
+     "code_commit": "68dc6ac472db26f16361150cb7a96a1bc87da93f"
+    }
+   },
+   "conditions": 40,
+   "videos": 108,
+   "frames_per_video": 32,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "frame_rule": "same as results/p2/p2-classical (sample_rows_per_video seed=None, native 320x240 JPEG from the D-34 blob)",
+   "noise_seed": "SampleKey(relative_path=<filepath>/frame<index>, file_digest, global_seed=0), as the classical run",
+   "quality_metrics": "eval.image_quality_torch (float64, equal to the skimage reference) on float [0,1] before quantization",
+   "classifier": "D-53 step_permuted head retrained per fold x seed on fold-cache train features (D-59)",
+   "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+   "clean_feature_check": {
+    "max_abs_diff": 0.06396484375,
+    "median_max_abs_diff": 0.0063018798828125,
+    "min_mean_cosine": 0.9999938011169434,
+    "videos": 108
+   },
+   "classical_identity_check": {
+    "max_abs_diff_vs_classical_identity_rows": 0.0
+   },
+   "limit_videos": null,
+   "epochs_override": null,
+   "test_split": "untouched",
+   "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+   "extract_seconds": 9804
+  }
+ },
+ "reproduction_of_registered_macro_f1": {
+  "p2-classical": {
+   "max_cell": 0.0,
+   "max_condition_mean": 0.0,
+   "cells_differing": 0,
+   "cells": 600
+  },
+  "p2b-learned": {
+   "max_cell": 0.0,
+   "max_condition_mean": 0.0,
+   "cells_differing": 0,
+   "cells": 840
+  },
+  "p2b-nafnet": {
+   "max_cell": 0.0,
+   "max_condition_mean": 0.0,
+   "cells_differing": 0,
+   "cells": 240
+  },
+  "p2b-extra": {
+   "max_cell": 0.0,
+   "max_condition_mean": 0.0,
+   "cells_differing": 0,
+   "cells": 480
+  }
+ },
+ "test_split": "untouched",
+ "label_view": "inherited video-level labels (D-40), not event-only"
+}

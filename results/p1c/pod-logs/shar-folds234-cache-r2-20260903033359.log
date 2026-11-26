@@ -1,0 +1,30 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 152s ---
+/dev/md1        1870026616 148907468 1721119148       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.01 GiB (recovered 15.98 GiB)
+===== fold2 frozen train =====
+already built, skipping
+===== fold2 frozen validation =====
+already built, skipping
+===== fold2 dinov2 train =====
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold2/train/manifest.json
+verified 512/512 sampled rows bit-identical against the live backbone (worst |delta| 0.000e+00, 0 ULPs; atol 0.001 rtol 0.001) (384702 rows total, float16, dim 1536)
+===== fold2 dinov2 validation =====
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold2/validation/manifest.json
+verified 512/512 sampled rows bit-identical against the live backbone (worst |delta| 0.000e+00, 0 ULPs; atol 0.001 rtol 0.001) (47726 rows total, float16, dim 1536)
+===== fold3 frozen train =====
+Traceback (most recent call last):
+  File "<repo>/scripts/build_p1c_feature_cache.py", line 230, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "<repo>/scripts/build_p1c_feature_cache.py", line 208, in main
+    manifest_path, report = build_cache_for_config(
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/scripts/build_p1c_feature_cache.py", line 180, in build_cache_for_config
+    report = verify_feature_cache(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/core/feature_cache_verify.py", line 216, in verify_feature_cache
+    raise FeatureCacheMismatch(
+core.feature_cache.FeatureCacheMismatch: feature cache at results/p1c/p1c-frozen-feature-cache-ar-fold3/train does not reproduce the live backbone (480/512 rows bit-identical; worst 1808 ULPs):
+- row 215637: |delta| = 2.930e-03 at element 1426 exceeds atol 0.001 + rtol 0.001 * |1.310e+00| = 2.310e-03
+- row 400397: |delta| = 1.465e-03 at element 1079 exceeds atol 0.001 + rtol 0.001 * |4.375e-01| = 1.438e-03

@@ -1,0 +1,27 @@
+fold1: train 24213 clips -> 3648 sampled (8/video); validation 2326 clips over 56 videos | |dinov2| 0.506 |videomae| 0.345
+  dinov2_raw  D=1536  video macro-F1 0.4407 +/- 0.0104  epochs [3, 4, 5]
+  dinov2      D=1536  video macro-F1 0.4100 +/- 0.0603  epochs [1, 0, 5]
+  videomae    D=768   video macro-F1 0.4437 +/- 0.0348  epochs [14, 11, 12]
+  fusion      D=2304  video macro-F1 0.4424 +/- 0.0104  epochs [0, 1, 3]
+fold2: train 23824 clips -> 3658 sampled (8/video); validation 2959 clips over 56 videos | |dinov2| 0.507 |videomae| 0.346
+  dinov2_raw  D=1536  video macro-F1 0.3796 +/- 0.0238  epochs [11, 3, 5]
+  dinov2      D=1536  video macro-F1 0.3423 +/- 0.0517  epochs [7, 5, 2]
+  videomae    D=768   video macro-F1 0.3209 +/- 0.0267  epochs [4, 6, 3]
+  fusion      D=2304  video macro-F1 0.3903 +/- 0.0585  epochs [0, 6, 2]
+fold3: train 24798 clips -> 3655 sampled (8/video); validation 3082 clips over 56 videos | |dinov2| 0.506 |videomae| 0.344
+  dinov2_raw  D=1536  video macro-F1 0.3366 +/- 0.0449  epochs [1, 0, 4]
+  dinov2      D=1536  video macro-F1 0.3625 +/- 0.0212  epochs [6, 3, 4]
+  videomae    D=768   video macro-F1 0.3290 +/- 0.0274  epochs [5, 5, 4]
+  fusion      D=2304  video macro-F1 0.4034 +/- 0.0522  epochs [24, 1, 4]
+fold4: train 22134 clips -> 3689 sampled (8/video); validation 2555 clips over 56 videos | |dinov2| 0.507 |videomae| 0.348
+  dinov2_raw  D=1536  video macro-F1 0.4168 +/- 0.0223  epochs [13, 10, 11]
+  dinov2      D=1536  video macro-F1 0.4026 +/- 0.0412  epochs [9, 10, 8]
+  videomae    D=768   video macro-F1 0.2898 +/- 0.0430  epochs [22, 2, 3]
+  fusion      D=2304  video macro-F1 0.3651 +/- 0.0412  epochs [7, 0, 9]
+
+=== CROSS-FOLD video-level macro-F1 (mean of fold means; sd across folds) ===
+  dinov2_raw  0.3934 +/- 0.0454   folds ['0.4407', '0.3796', '0.3366', '0.4168']
+  dinov2      0.3794 +/- 0.0323   folds ['0.4100', '0.3423', '0.3625', '0.4026']
+  videomae    0.3459 +/- 0.0674   folds ['0.4437', '0.3209', '0.3290', '0.2898']
+  fusion      0.4003 +/- 0.0322   folds ['0.4424', '0.3903', '0.4034', '0.3651']
+wrote results/p1c/p1c-exp-P2-fusion/fusion-results.json

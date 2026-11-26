@@ -1,0 +1,16 @@
+{
+  "bit_identical_rows": 478,
+  "cache_dir": "results/p1c/p1c-frozen-feature-cache-ar-fold1/validation",
+  "cache_sha256": "7b9ee747f167173c2f9e3b0e37834fe17ac54ed938766d0d508395d7ee0eeefc",
+  "dtype": "float16",
+  "feature_dim": 2048,
+  "max_abs_delta": 0.00390625,
+  "max_significant_ulps": 2,
+  "max_ulps": 1884,
+  "max_ulps_allowed": 8,
+  "rows_sampled": 512,
+  "rows_total": 37600,
+  "sample_seed": 0,
+  "ulp_floor_magnitude": 1.0,
+  "verify_batch_size": 64
+}

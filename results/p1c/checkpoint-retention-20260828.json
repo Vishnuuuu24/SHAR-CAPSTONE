@@ -1,0 +1,117 @@
+{
+  "date": "2026-08-28",
+  "kind": "checkpoint retention action; not a research result",
+  "policy": "docs/TRAINING_LOG.md checkpoint retention policy: at valid closure retain the validation-selected best checkpoint for every required seed and any checkpoint supporting a reported number",
+  "pruned": [
+    {
+      "bytes": 282938195,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s0-20260827T193810Z/checkpoint_epoch_001.pt",
+      "sha256": "a30630d44458f8c6fd463b15c6519179bc807e72dd337f713db82168d10c8b65"
+    },
+    {
+      "bytes": 282938195,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s0-20260827T193810Z/checkpoint_epoch_002.pt",
+      "sha256": "6377bd9639d6127b0b50e1247ec20f979e5aefe81152bce8df13234ab0a34db0"
+    },
+    {
+      "bytes": 282938195,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s0-20260827T193810Z/checkpoint_epoch_003.pt",
+      "sha256": "f9ddea2061d2b58ca793cfc9deac492861c21890eac9407d65e94775ee8a8c40"
+    },
+    {
+      "bytes": 282938195,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s0-20260827T193810Z/checkpoint_epoch_004.pt",
+      "sha256": "379f47645f55e4df3a64b4feacb87f61a14b9c0917edc24f57629a52b110a089"
+    },
+    {
+      "bytes": 282938195,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s0-20260827T193810Z/checkpoint_epoch_005.pt",
+      "sha256": "078270c758e4488d7b6b1a879430748464bd0dd33bd4d0d3d2ba76d23ee7be49"
+    },
+    {
+      "bytes": 282938195,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z/checkpoint_epoch_000.pt",
+      "sha256": "3b1e5fce375663aff55be4618ab57c62bcf2f9d5fae07192cc057390c76f10e0"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z/checkpoint_epoch_002.pt",
+      "sha256": "8fde7737267b8424f15f9b09f7c0b0f1016a2925fd77240af7cd6b76eb903d51"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z/checkpoint_epoch_003.pt",
+      "sha256": "e7a562c68f34ad4ca4b773c532b5aae5a2edc535fc668b9fd60cd8e807854334"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z/checkpoint_epoch_004.pt",
+      "sha256": "93db86bec42678dd4d005abca10b3e02824353add008b458eeeb44685f344313"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z/checkpoint_epoch_005.pt",
+      "sha256": "8785052bba586240349f3a4d7d24ebf9cf8f2939166e33f34b4c6ce7ae3f7f11"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z/checkpoint_epoch_006.pt",
+      "sha256": "0d04921b904d6707cd068b2d36570abdcdbbdb9baad77d6cb8b70f173c427b64"
+    },
+    {
+      "bytes": 282938195,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z/checkpoint_epoch_000.pt",
+      "sha256": "d6de83f47d724ef53cab812fa1a659ced3aee9483f16bd89e2a2c5b1ac45dfb9"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z/checkpoint_epoch_002.pt",
+      "sha256": "12fcc8f9131e0a6c2b7b7ea6788734da1613dd5dd3ccecf0c6dabd83bb5d229e"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z/checkpoint_epoch_003.pt",
+      "sha256": "de0fc74dcbae19ff6c62c0c0ca43199c456ff17e8dab0e769f50f91d47b679e7"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z/checkpoint_epoch_004.pt",
+      "sha256": "4db16c2f84160ab72e0b11db1e68cb358ca23073ff7526affe383e5c15e1458f"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z/checkpoint_epoch_005.pt",
+      "sha256": "1ea252a54d0224c382cf1e85bbe1d0c98777a44813f42668b8a5ce33d09ea662"
+    },
+    {
+      "bytes": 282938259,
+      "disposition": "pruned",
+      "path": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z/checkpoint_epoch_006.pt",
+      "sha256": "9c33b49f391e99afabe05b8557291c2c6fa1283ab83be41b6b0f411216762d07"
+    }
+  ],
+  "pruned_bytes": 4809949955,
+  "pruned_count": 17,
+  "reason": "Non-selected epoch checkpoints from three CLOSED validation-only seeds of P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1. No reported number rests on them: the run's aggregate, verdict and cross-seed summary all cite only the validation-selected checkpoint per seed, which is retained. Runs still in flight were excluded.",
+  "retained": [
+    "p1c-video-frame-baseline-011-ar-fold1-s0-20260827T193810Z/checkpoint_epoch_000.pt",
+    "p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z/checkpoint_epoch_001.pt",
+    "p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z/checkpoint_epoch_001.pt"
+  ]
+}

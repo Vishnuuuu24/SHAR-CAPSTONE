@@ -1,0 +1,4 @@
+{"frames_needed": 82679, "videos": 700, "load_s": 229}
+{"b_path_check": {"frames": 128, "min_cosine": 0.9999997019767761, "max_abs_diff": 0.002197265625}}
+{"frames_done": 64, "of": 2048, "fps": 101.2}
+{"calibration": {"frames": 2048, "seconds": 18.5, "frames_per_s": 110.7, "gpu_peak_gib": 1.97, "host_peak_rss_gib": 5.0, "projected_full_minutes": 12.5, "projected_cache_gib": 0.32}}

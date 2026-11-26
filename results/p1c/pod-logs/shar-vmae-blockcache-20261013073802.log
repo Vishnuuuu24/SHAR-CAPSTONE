@@ -1,0 +1,27 @@
+plan: 5395 clips over 700 videos; 1568x768 fp16 -> 12,993,576,960 bytes (12.10 GiB)
+Traceback (most recent call last):
+  File "<repo>/scripts/build_p1c_videomae_block_cache.py", line 181, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "<repo>/scripts/build_p1c_videomae_block_cache.py", line 95, in main
+    datasets = dict(zip(SPLITS, _make_datasets(proto, seed=0)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/scripts/run_p1c_frame_baseline.py", line 170, in _make_datasets
+    train = P1CVideoFrameDataset(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/data/video_dataset.py", line 80, in __init__
+    self._reader = VideoBlobReader(closure_path, verify_digest=verify_digest)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/data/video_blob.py", line 172, in __init__
+    self.closure = VideoBlobClosure.load(closure_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/data/video_blob.py", line 123, in load
+    closure: dict[str, Any] = json.loads(closure_path.read_text(encoding="utf-8"))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<home>/py312/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<home>/py312/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch-emptydir/p1c-video-frames/extract_closure.json'

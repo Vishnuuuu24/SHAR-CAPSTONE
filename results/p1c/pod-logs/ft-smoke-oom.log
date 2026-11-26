@@ -1,0 +1,30 @@
+{"fold": 1, "stage": "control", "seconds": 60}
+{"fold": 1, "stage": "trunk_cache", "pixel_path_min_cosine": 0.9999998211860657, "split_vs_whole_max_abs": 0.0, "split_vs_whole_min_cosine": 0.9999999403953552, "trunk_cache_frames": 3808, "trunk_cache_seconds": 11.4, "trunk_frames_per_s": 335.4}
+[W1103 03:55:40.633923775 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1642070016 bytes (free: 970981376, total: 17179869184).
+[W1103 03:55:40.745104610 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1642070016 bytes (free: 1218445312, total: 17179869184).
+Traceback (most recent call last):
+  File "<repo>/scripts/run_finetune_experiment.py", line 91, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "<repo>/scripts/run_finetune_experiment.py", line 55, in main
+    r, p, c = run_fold(fold, args.seeds, args.arms, device=args.device, threads=args.threads, log=_log, **opts)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/core/finetune_experiment.py", line 192, in run_fold
+    result = train_sequence_head(model, tr, mo, classes, frames=FRAMES, seed=seed, optimizer_param_groups=groups, **kw)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/core/p1c_head_variants.py", line 585, in train_sequence_head
+    outcome = _fit_head(run_train_epoch=run_train_epoch, run_validation=run_validation, epochs=epochs, patience=patience, min_delta=min_delta)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/core/p1c_head_variants.py", line 248, in _fit_head
+    train_stats = run_train_epoch(epoch)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/core/p1c_head_variants.py", line 558, in run_train_epoch
+    loss_value.backward()
+  File "<repo>/.venv/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+    torch.autograd.backward(
+  File "<repo>/.venv/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+    _engine_run_backward(
+  File "<repo>/.venv/lib/python3.12/site-packages/torch/autograd/graph.py", line 979, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: NVML_SUCCESS == r INTERNAL ASSERT FAILED at "/__w/pytorch/pytorch/c10/cuda/CUDACachingAllocator.cpp":1407, please report a bug to PyTorch. 

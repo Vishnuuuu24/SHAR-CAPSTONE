@@ -1,0 +1,93 @@
+schema_version: 1.0.0
+experiment:
+  id: P1C-FRAME-GAP-FULL-001
+  parent_id: P1C-FRAME-GAP-BASELINE-001
+  status: REGISTERED_FULL_RUN_READY
+  run_class: full
+  question: What is the reproducible full-frame ResNet50 C5-to-GAP-to-linear baseline under the frozen UCF protocol?
+  hypothesis: A conventional pretrained full-frame baseline establishes the reference for later one-change controls; no improvement claim is made.
+  change_from_parent:
+    - operational registration only: verified local ResNet50 V2 checkpoint and successful strict-MPS real-loader calibration; no scientific factor changed
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism, Normal]
+  backbone:
+    family: torchvision_resnet50
+    feature: layer4_C5_pre_GAP
+    weights:
+      enum: IMAGENET1K_V2
+      source_url: https://download.pytorch.org/models/resnet50-11ad3fa6.pth
+      path: .cache/weights/resnet50-11ad3fa6.pth
+      sha256: 11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca
+  data:
+    dataset_roots:
+      ucf_crime_kaggle_frames: Datasets/UCF Crime Dataset Kaggle
+    train:
+      path: results/p1b/p1b-grouped-train-validation-57f3a29b-10pct-s0/train_manifest.csv
+      sha256: 3930ca6b3155bee6d90308447cefade66332ab20f8a3685a6de341938d35608c
+    validation:
+      path: results/p1b/p1b-grouped-train-validation-57f3a29b-10pct-s0/validation_manifest.csv
+      sha256: 3af30a56704b0753937fbca38e4e2bc2d26bce70008d361c50db2ca41ac9f8f5
+    event_only_test:
+      path: results/p1b/p1b-real-views-57f3a29b-3b954241/event_only_test_manifest.csv
+      sha256: 9faed256d5cd2572c72a02046a878ee2c68fa917021ab3b7c488fcb51597ff27
+    noisy_proxy_test:
+      path: results/p1b/p1b-real-views-57f3a29b-3b954241/noisy_proxy_test_manifest.csv
+      sha256: 844db91c54d948b9edca204bc2e9e3bc0839a31a9fc35c8b63a6d89346416068
+  preprocessing:
+    resize_height: 64
+    resize_width: 64
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    class_balance: none
+  augmentation:
+    name: none
+    rationale: Preserve a conventional, auditable first control; augmentation is a future one-change experiment.
+  training:
+    seeds: [0, 1, 2]
+    batch_size: 64
+    loader:
+      num_workers: 0
+      pin_memory: false
+      persistent_workers: false
+      drop_last: false
+      verify_digests: true
+    epochs: 20
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    scheduler:
+      name: none
+    early_stopping:
+      monitor: macro_f1
+      mode: max
+      patience: 5
+      min_delta: 0.001
+    selection_rule: best_validation_macro_f1
+    device_policy: mps_strict
+    precision: float32
+  evaluation:
+    primary_metric: macro_f1
+    clustered_ci_iterations: 1000
+    clustered_ci_seed: 0
+    headline_view: event_only_test
+    sensitivity_view: noisy_proxy_test
+gates:
+  test_access: false_until_validation_selected_checkpoint
+  three_seeds_required: true
+  code_formula_audit: P1C-CODE-AUDIT-001
+  calibration: results/p1c/p1c-frame-gap-calibration-001-20260725T171815Z/calibration.json
+  expected_preflight: verified_local_weight_and_strict_mps_real_loader_calibration
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - preflight_code_formula_audit_not_passed

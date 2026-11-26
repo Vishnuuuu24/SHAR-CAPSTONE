@@ -1,0 +1,138 @@
+{
+  "global_biased": {
+    "4": {
+      "classes": [
+        "Assault",
+        "Burglary",
+        "Fighting",
+        "Robbery"
+      ],
+      "closure": 0.512396694214876,
+      "coverage": 0.17563739376770537,
+      "internal": 62,
+      "leak": 59
+    }
+  },
+  "lofo": {
+    "1": {
+      "3": {
+        "classes": [
+          "Arson",
+          "Explosion",
+          "Vandalism"
+        ],
+        "closure": 0.5,
+        "coverage": 0.056818181818181816,
+        "internal": 10,
+        "leak": 10
+      },
+      "4": {
+        "classes": [
+          "Abuse",
+          "Assault",
+          "RoadAccidents",
+          "Shooting"
+        ],
+        "closure": 0.5416666666666666,
+        "coverage": 0.2215909090909091,
+        "internal": 39,
+        "leak": 33
+      }
+    },
+    "2": {
+      "2": {
+        "classes": [
+          "Burglary",
+          "Robbery"
+        ],
+        "closure": 0.6,
+        "coverage": 0.05357142857142857,
+        "internal": 6,
+        "leak": 4
+      },
+      "3": {
+        "classes": [
+          "Abuse",
+          "Arson",
+          "RoadAccidents"
+        ],
+        "closure": 0.5652173913043478,
+        "coverage": 0.11607142857142858,
+        "internal": 13,
+        "leak": 10
+      },
+      "4": {
+        "classes": [
+          "Abuse",
+          "Fighting",
+          "RoadAccidents",
+          "Stealing"
+        ],
+        "closure": 0.6,
+        "coverage": 0.1875,
+        "internal": 21,
+        "leak": 14
+      }
+    },
+    "3": {
+      "2": {
+        "classes": [
+          "RoadAccidents",
+          "Shooting"
+        ],
+        "closure": 0.7333333333333333,
+        "coverage": 0.10576923076923077,
+        "internal": 11,
+        "leak": 4
+      },
+      "3": {
+        "classes": [
+          "Arson",
+          "RoadAccidents",
+          "Shooting"
+        ],
+        "closure": 0.625,
+        "coverage": 0.14423076923076922,
+        "internal": 15,
+        "leak": 9
+      },
+      "4": {
+        "classes": [
+          "Explosion",
+          "Fighting",
+          "RoadAccidents",
+          "Shooting"
+        ],
+        "closure": 0.6388888888888888,
+        "coverage": 0.22115384615384615,
+        "internal": 23,
+        "leak": 13
+      }
+    },
+    "4": {
+      "3": {
+        "classes": [
+          "Assault",
+          "Fighting",
+          "Robbery"
+        ],
+        "closure": 0.5714285714285714,
+        "coverage": 0.13513513513513514,
+        "internal": 20,
+        "leak": 15
+      },
+      "4": {
+        "classes": [
+          "Abuse",
+          "Assault",
+          "Fighting",
+          "Robbery"
+        ],
+        "closure": 0.6346153846153846,
+        "coverage": 0.22297297297297297,
+        "internal": 33,
+        "leak": 19
+      }
+    }
+  }
+}

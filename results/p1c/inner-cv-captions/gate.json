@@ -1,0 +1,293 @@
+{
+ "provenance": {
+  "plan": "docs/FINAL_PUSH_PLAN_2026-11-11.md Step 6",
+  "code_revision": "d3d050f",
+  "host": "shar-step4chain-20261111074146",
+  "started_utc": "2026-11-11T12:25:59.305502+00:00",
+  "label_view": "inherited video-level labels (D-40), not event-only",
+  "test_videos_scored": false,
+  "features": {
+   "dir": "results/detect/features",
+   "backbones": [
+    "dinov2b",
+    "siglip"
+   ],
+   "manifest": {
+    "plan": "docs/FINAL_PUSH_PLAN_2026-11-11.md Step 4a",
+    "decision": "D-71",
+    "code_revision": "d3d050f",
+    "started_utc": "2026-11-11T07:43:15.595468+00:00",
+    "finished_utc": "2026-11-11T09:19:45.211879+00:00",
+    "task": "UCF-Crime official Anomaly-Detection split (separate task from the 14-class classifier, rule 3)",
+    "videos": {
+     "train": 1610,
+     "test": 290
+    },
+    "frames": 918727,
+    "every": 3,
+    "sampling": "every 3-th blob frame = one frame per 15 source frames",
+    "feature": "[CLS-or-pooler ++ mean(patch)], 1536-d float16, registered 224 bilinear preprocessing",
+    "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+    "backbones": {
+     "dinov2b": {
+      "family": "timm_dinov2_vitb14_reg4",
+      "weights_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+      "features_sha256": "cf4f756c9a38fcb4f951f39dad234d800e852afa5246642b55e914cf9da3a0fd"
+     },
+     "siglip": {
+      "family": "transformers_siglip_base_p16_224",
+      "weights_sha256": "f5d84933ac67e11fcd249aba72bb2888028fc11507a4b81629c095c881031b77",
+      "features_sha256": "66f883a7f23017e231c0658de991125992442e756db32d67e6bb0aa02b5b567f"
+     }
+    },
+    "path_checks": {
+     "dinov2b_vs_fold1_cache": {
+      "frames": 120,
+      "min_cosine": 0.9999997019767761
+     },
+     "siglip_vs_patch_cache": {
+      "frames": 120,
+      "min_cosine": 0.9999843239784241
+     }
+    },
+    "seconds": 5782.4,
+    "frames_per_s": 158.9,
+    "gpu_peak_gib": 3.14,
+    "projected_full_minutes": 96.4
+   }
+  },
+  "captions": "UCA (UCF-Crime Annotation), time-stamped sentences; training videos only",
+  "text_model": "TF-IDF 1-2 grams, min_df 2 -> TruncatedSVD(128) -> L2 normalise, fitted on training sentences of each split",
+  "projection": "StandardScaler + RidgeCV(alphas 1e2..1e5), fitted on training spans of each split",
+  "config": {
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "parts": 5,
+   "repeats": 3,
+   "split_seed": 0,
+   "bootstrap_draws": 2000,
+   "gate_rule": "mean over folds of the median percentile rank <= 0.35 (chance 0.5)",
+   "pass_rule": "paired 95% interval excludes 0 and gain >= 0.02"
+  },
+  "extra_captioned_videos": 1158
+ },
+ "gate": {
+  "median_percentile_rank_per_fold": {
+   "1": 0.20488888203449948,
+   "2": 0.21035244098278844,
+   "3": 0.20639118265079262,
+   "4": 0.21959908510621648
+  },
+  "mean": 0.21030789769357425,
+  "recall_at_10": 0.06939408870815987,
+  "chance_recall_at_10": 0.010275663044775651,
+  "threshold": 0.35,
+  "passed": true
+ },
+ "rows": [
+  {
+   "fold": 1,
+   "part": 0,
+   "alpha": 1000.0,
+   "training_sentences": 20853,
+   "sentences": 890,
+   "median_percentile_rank": 0.19347581552305962,
+   "recall_at_10": 0.08651685393258426,
+   "chance_recall_at_10": 0.011235955056179775
+  },
+  {
+   "fold": 1,
+   "part": 1,
+   "alpha": 1000.0,
+   "training_sentences": 20843,
+   "sentences": 900,
+   "median_percentile_rank": 0.22691879866518352,
+   "recall_at_10": 0.06444444444444444,
+   "chance_recall_at_10": 0.011111111111111112
+  },
+  {
+   "fold": 1,
+   "part": 2,
+   "alpha": 1000.0,
+   "training_sentences": 20811,
+   "sentences": 932,
+   "median_percentile_rank": 0.20354457572502685,
+   "recall_at_10": 0.06974248927038626,
+   "chance_recall_at_10": 0.01072961373390558
+  },
+  {
+   "fold": 1,
+   "part": 3,
+   "alpha": 1000.0,
+   "training_sentences": 20837,
+   "sentences": 906,
+   "median_percentile_rank": 0.19613259668508287,
+   "recall_at_10": 0.08719646799116998,
+   "chance_recall_at_10": 0.011037527593818985
+  },
+  {
+   "fold": 1,
+   "part": 4,
+   "alpha": 1000.0,
+   "training_sentences": 20690,
+   "sentences": 1053,
+   "median_percentile_rank": 0.20437262357414449,
+   "recall_at_10": 0.07027540360873694,
+   "chance_recall_at_10": 0.00949667616334283
+  },
+  {
+   "fold": 2,
+   "part": 0,
+   "alpha": 1000.0,
+   "training_sentences": 21192,
+   "sentences": 922,
+   "median_percentile_rank": 0.20901194353963085,
+   "recall_at_10": 0.0824295010845987,
+   "chance_recall_at_10": 0.010845986984815618
+  },
+  {
+   "fold": 2,
+   "part": 1,
+   "alpha": 1000.0,
+   "training_sentences": 21070,
+   "sentences": 1044,
+   "median_percentile_rank": 0.22003835091083412,
+   "recall_at_10": 0.06513409961685823,
+   "chance_recall_at_10": 0.009578544061302681
+  },
+  {
+   "fold": 2,
+   "part": 2,
+   "alpha": 1000.0,
+   "training_sentences": 21080,
+   "sentences": 1034,
+   "median_percentile_rank": 0.21393998063891578,
+   "recall_at_10": 0.06479690522243714,
+   "chance_recall_at_10": 0.009671179883945842
+  },
+  {
+   "fold": 2,
+   "part": 3,
+   "alpha": 1000.0,
+   "training_sentences": 21203,
+   "sentences": 911,
+   "median_percentile_rank": 0.2,
+   "recall_at_10": 0.08122941822173436,
+   "chance_recall_at_10": 0.010976948408342482
+  },
+  {
+   "fold": 2,
+   "part": 4,
+   "alpha": 1000.0,
+   "training_sentences": 20973,
+   "sentences": 1141,
+   "median_percentile_rank": 0.20877192982456141,
+   "recall_at_10": 0.05959684487291849,
+   "chance_recall_at_10": 0.008764241893076249
+  },
+  {
+   "fold": 3,
+   "part": 0,
+   "alpha": 1000.0,
+   "training_sentences": 21291,
+   "sentences": 829,
+   "median_percentile_rank": 0.19444444444444445,
+   "recall_at_10": 0.06513872135102533,
+   "chance_recall_at_10": 0.012062726176115802
+  },
+  {
+   "fold": 3,
+   "part": 1,
+   "alpha": 1000.0,
+   "training_sentences": 21106,
+   "sentences": 1014,
+   "median_percentile_rank": 0.18904244817374136,
+   "recall_at_10": 0.09467455621301775,
+   "chance_recall_at_10": 0.009861932938856016
+  },
+  {
+   "fold": 3,
+   "part": 2,
+   "alpha": 1000.0,
+   "training_sentences": 21167,
+   "sentences": 953,
+   "median_percentile_rank": 0.22584033613445378,
+   "recall_at_10": 0.05456453305351522,
+   "chance_recall_at_10": 0.01049317943336831
+  },
+  {
+   "fold": 3,
+   "part": 3,
+   "alpha": 1000.0,
+   "training_sentences": 21167,
+   "sentences": 953,
+   "median_percentile_rank": 0.20168067226890757,
+   "recall_at_10": 0.08394543546694648,
+   "chance_recall_at_10": 0.01049317943336831
+  },
+  {
+   "fold": 3,
+   "part": 4,
+   "alpha": 1000.0,
+   "training_sentences": 20811,
+   "sentences": 1309,
+   "median_percentile_rank": 0.2209480122324159,
+   "recall_at_10": 0.05194805194805195,
+   "chance_recall_at_10": 0.007639419404125287
+  },
+  {
+   "fold": 4,
+   "part": 0,
+   "alpha": 1000.0,
+   "training_sentences": 21166,
+   "sentences": 806,
+   "median_percentile_rank": 0.2236024844720497,
+   "recall_at_10": 0.052109181141439205,
+   "chance_recall_at_10": 0.01240694789081886
+  },
+  {
+   "fold": 4,
+   "part": 1,
+   "alpha": 1000.0,
+   "training_sentences": 20962,
+   "sentences": 1010,
+   "median_percentile_rank": 0.17938553022794845,
+   "recall_at_10": 0.07326732673267326,
+   "chance_recall_at_10": 0.009900990099009901
+  },
+  {
+   "fold": 4,
+   "part": 2,
+   "alpha": 1000.0,
+   "training_sentences": 21020,
+   "sentences": 952,
+   "median_percentile_rank": 0.2644584647739222,
+   "recall_at_10": 0.04831932773109244,
+   "chance_recall_at_10": 0.01050420168067227
+  },
+  {
+   "fold": 4,
+   "part": 3,
+   "alpha": 1000.0,
+   "training_sentences": 20943,
+   "sentences": 1029,
+   "median_percentile_rank": 0.1877431906614786,
+   "recall_at_10": 0.07774538386783285,
+   "chance_recall_at_10": 0.009718172983479106
+  },
+  {
+   "fold": 4,
+   "part": 4,
+   "alpha": 1000.0,
+   "training_sentences": 20859,
+   "sentences": 1113,
+   "median_percentile_rank": 0.24280575539568344,
+   "recall_at_10": 0.05480682839173405,
+   "chance_recall_at_10": 0.008984725965858042
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+  "accepted_by": "Priyodip / Vishnu (SHAR project owners)",
+  "component_id": "ucf_official_videos",
+  "corrections": [
+    {
+      "date": "2026-08-28",
+      "field": "package_metrics.framerate",
+      "now": "the measured split 1,939 at 30.0 / 10 at 25.0 / 1 at 29.97",
+      "was": "a flat 30.0",
+      "why": "Contradicted a verified EVIDENCE_REGISTER row; the claim K-04 exists to prevent. A frame index converts to a timestamp per video only."
+    },
+    {
+      "date": "2026-08-28",
+      "field": "package_match_basis video counts",
+      "now": "950 normal and 950 anomaly, totalling 1,900 distinct in 1,950 files",
+      "was": "950 normal and 1,000 anomaly, totalling 1,950 distinct",
+      "why": "The anomaly count was wrong and the total counted the 50 z_Normal_Videos_event duplicates as distinct videos. EVIDENCE_REGISTER.md already records '1,900 distinct videos, not 1,950' as verified; see K-11."
+    }
+  ],
+  "dataset_id": "ucf_crime_official",
+  "eligibility": "eligible_internal_noncommercial_research_no_raw_redistribution",
+  "kind": "owner-authorized UCF-Crime video media access verification; not a research result",
+  "local_inventory_artifact": "results/p0a/inventory-ed66e4a2034c0585",
+  "local_package_root": "Datasets/UCF Crime Official/raw/UCF_Crimes",
+  "owner_approval_statement": "Owner authorizes use of the official UCF-Crime video dataset for internal non-commercial SHAR research and academic publication; raw video media, clips, and derived crops may not be redistributed; upstream footage rights remain qualified.",
+  "owner_approval_statement_sha256": "3288799ff71bf5f057501f9e9847e9b2821cf75fddc9d77273fe0fdb80406f6f",
+  "package_match_basis": [
+    "The corpus holds 1,900 distinct videos in the official CRCV UCF-Crime taxonomy: 950 normal (800 Training_Normal_Videos_Anomaly + 150 Testing_Normal_Videos_Anomaly) and 950 anomaly across the 13 classes. Counted directly on 2026-08-28.",
+    "1,950 files resolve to those 1,900 distinct videos; the 50-file surplus is the z_Normal_Videos_event duplicate set described in package_metrics.video_count_note.",
+    "Direct video extraction under D-34 defines exact frame-index-to-timestamp mappings.",
+    "Measured inventory in results/p0a/inventory-ed66e4a2034c0585 verified 1,950 source-video files with zero content errors."
+  ],
+  "package_metrics": {
+    "composition": {
+      "anomaly_13_classes": 950,
+      "distinct_total": 1900,
+      "duplicate_files": 50,
+      "file_total": 1950,
+      "normal_test": 150,
+      "normal_train": 800
+    },
+    "distinct_videos": 1900,
+    "framerate_hz": {
+      "25.0": 10,
+      "29.97": 1,
+      "30.0": 1939
+    },
+    "framerate_note": "NOT uniform. Measured 2026-08-25 across all 1,950 MP4s (cv2.VideoCapture CAP_PROP_FPS, no decode) and registered in docs/EVIDENCE_REGISTER.md. D-34's phrase 'all 320x240 at 30 fps' is correct on geometry and imprecise on fps; see K-04. A frame index converts to a timestamp per video only, as source_frame_index / that video's own reported fps -- never treat stride 5 as a global 6 fps.",
+    "resolution": "320x240",
+    "resolution_note": "Uniform. 320x240 for 1,950 of 1,950, zero unopenable files.",
+    "total_bytes": 104868019448,
+    "total_gib": 97.66579937189817,
+    "total_video_files": 1950,
+    "video_count_note": "1,950 FILES hold 1,900 DISTINCT videos. All 50 files in Videos/z_Normal_Videos_event/ are byte-identical duplicates of files in Videos/Testing_Normal_Videos_Anomaly/ and ship that way in the official download. Measured 2026-08-25 and registered verified in docs/EVIDENCE_REGISTER.md; see K-11 -- a video stem is not a unique key, so every corpus lookup keys on (source_directory, stem). The 50 duplicate pairs were hardlinked on 2026-08-28 to reclaim 1.02 GB; both paths still resolve and the file count is unchanged.",
+    "zero_decode_errors": true
+  },
+  "schema_version": "1.0.0",
+  "scope_assertions": {
+    "claim_made": false,
+    "headline_evaluation_performed": false,
+    "raw_redistribution_authorized": false,
+    "research_run_performed": false
+  },
+  "source_description": "Official CRCV UCF-Crime project distribution",
+  "source_url": "https://www.crcv.ucf.edu/research/real-world-anomaly-detection-in-surveillance-videos/",
+  "verified_at": "2026-08-28"
+}

@@ -1,0 +1,32 @@
+{
+  "annotation_version": "not-applicable-fixture",
+  "code_revision": "HEAD=a9765cb3c609785d3d99933955ae08754646e5cc;source_bundle_sha256=674e593380e6803629a389cb3fdb9c97c9c0e07a86af08209d8714ed66376070;worktree_dirty=true",
+  "config_digest": "8219dd1bea0a079689315fe865774e5df22c8fd87ef594068c37ba17b920a4d2",
+  "dataset_manifest_digest": "4b15b908479f8eb62b1d7f04feea3966d38704487f7fcbf6759992959d681c66",
+  "environment_digest": "ae29c4c0fa13f559146d6d58dcc9529bc06211b357dd6d504cec22bf96ab8a2e",
+  "hardware": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": false,
+    "cuda_device_count": 0,
+    "cuda_device_name": null,
+    "deterministic_warn_only": false,
+    "mps_available": true,
+    "mps_built": true,
+    "mps_fallback_environment": null,
+    "policy": null,
+    "selected": "mps",
+    "supports_pin_memory": false,
+    "torch_threads": 6
+  },
+  "metric_artifact_paths": [
+    "aggregate.json",
+    "verdict.json"
+  ],
+  "package_versions": {
+    "torch": "2.13.0",
+    "torchvision": "0.28.0"
+  },
+  "run_id": "p1c-code-smoke-4b15b908-674e5933",
+  "run_kind": "code_smoke",
+  "seed": 0
+}

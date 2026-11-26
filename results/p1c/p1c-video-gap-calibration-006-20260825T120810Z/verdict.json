@@ -1,0 +1,13 @@
+{
+  "checkpoint_disposition": "none; calibration checkpoints are prohibited",
+  "claim_state": "NOT_APPLICABLE",
+  "next_action": "Inspect the immutable failure artifact before any full-run registration.",
+  "peak_memory_bytes": 0,
+  "reason": "Calibration did not produce a valid ETA.",
+  "runtime_seconds": 108.79686582461,
+  "status": "FAILED",
+  "stop_reason": "AttributeError",
+  "storage_bytes": 3641,
+  "summary_artifact_digest": "9e659783c61e725efd849a7e2631460356d14141bd46555a50c2fffe85135672",
+  "verdict": "INCONCLUSIVE"
+}

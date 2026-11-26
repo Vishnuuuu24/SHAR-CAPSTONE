@@ -1,0 +1,6 @@
+{"sigma": 25, "mode": "tf32_on", "out_psnr": 21.55, "out_min": -0.21, "out_max": 1.492}
+{"sigma": 25, "mode": "tf32_off", "out_psnr": 21.54, "out_min": -0.21, "out_max": 1.494}
+{"sigma": 25, "mode": "float64", "out_psnr": 21.54, "out_min": -0.21, "out_max": 1.494}
+{"sigma": 50, "mode": "tf32_on", "out_psnr": 4.36, "out_min": -4162.024, "out_max": 3871.098}
+{"sigma": 50, "mode": "tf32_off", "out_psnr": 4.36, "out_min": -4138.15, "out_max": 3848.716}
+{"sigma": 50, "mode": "float64", "out_psnr": 4.36, "out_min": -4138.151, "out_max": 3848.722}

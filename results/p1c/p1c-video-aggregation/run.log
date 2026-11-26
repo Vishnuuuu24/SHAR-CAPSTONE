@@ -1,0 +1,185 @@
+########## fold1 frozen (08:41:19Z) ##########
+train 391014 rows, validation 37600 rows, dim 2048, cache e851dbcbd372, backbone torchvision_resnet50
+
+--- seed 0 ---
+  frame macro-F1 0.3490 | video majority-vote 0.3943 | video mean-prob 0.3503 (low-margin videos 5/56)
+
+--- seed 1 ---
+  frame macro-F1 0.3481 | video majority-vote 0.3503 | video mean-prob 0.3503 (low-margin videos 3/56)
+
+--- seed 2 ---
+  frame macro-F1 0.3474 | video majority-vote 0.3916 | video mean-prob 0.3920 (low-margin videos 5/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.3482 +/- 0.0008 (min 0.3474, max 0.3490)
+  video_majority_vote      macro-F1 0.3788 +/- 0.0247 (min 0.3503, max 0.3943)
+  video_mean_probability   macro-F1 0.3642 +/- 0.0241 (min 0.3503, max 0.3920)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.092 -> 0.000
+    Assault        0.073 -> 0.133
+    Shooting       0.502 -> 0.571
+    Vandalism      0.070 -> 0.000
+
+wrote results/p1c/p1c-video-aggregation/fold1-frozen
+########## fold1 dinov2 (09:27:36Z) ##########
+train 391014 rows, validation 37600 rows, dim 1536, cache 56c0312b9122, backbone timm_dinov2_vitb14_reg4
+
+--- seed 0 ---
+  frame macro-F1 0.3330 | video majority-vote 0.3556 | video mean-prob 0.3602 (low-margin videos 8/56)
+
+--- seed 1 ---
+  frame macro-F1 0.3395 | video majority-vote 0.3634 | video mean-prob 0.3622 (low-margin videos 7/56)
+
+--- seed 2 ---
+  frame macro-F1 0.3333 | video majority-vote 0.3634 | video mean-prob 0.3647 (low-margin videos 3/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.3352 +/- 0.0037 (min 0.3330, max 0.3395)
+  video_majority_vote      macro-F1 0.3608 +/- 0.0045 (min 0.3556, max 0.3634)
+  video_mean_probability   macro-F1 0.3624 +/- 0.0023 (min 0.3602, max 0.3647)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.034 -> 0.056
+    Assault        0.288 -> 0.392
+    Shooting       0.137 -> 0.290
+    Vandalism      0.256 -> 0.274
+
+wrote results/p1c/p1c-video-aggregation/fold1-dinov2
+########## fold2 frozen (09:43:43Z) ##########
+train 384702 rows, validation 47726 rows, dim 2048, cache b546abe7f567, backbone torchvision_resnet50
+
+--- seed 0 ---
+  frame macro-F1 0.2403 | video majority-vote 0.3300 | video mean-prob 0.3232 (low-margin videos 18/56)
+
+--- seed 1 ---
+  frame macro-F1 0.2384 | video majority-vote 0.2973 | video mean-prob 0.3207 (low-margin videos 14/56)
+
+--- seed 2 ---
+  frame macro-F1 0.2349 | video majority-vote 0.3617 | video mean-prob 0.3479 (low-margin videos 19/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.2379 +/- 0.0027 (min 0.2349, max 0.2403)
+  video_majority_vote      macro-F1 0.3297 +/- 0.0322 (min 0.2973, max 0.3617)
+  video_mean_probability   macro-F1 0.3306 +/- 0.0150 (min 0.3207, max 0.3479)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.010 -> 0.074
+    Assault        0.053 -> 0.000
+    Shooting       0.121 -> 0.083
+    Vandalism      0.117 -> 0.217
+
+wrote results/p1c/p1c-video-aggregation/fold2-frozen
+########## fold2 dinov2 (09:57:38Z) ##########
+train 384702 rows, validation 47726 rows, dim 1536, cache ea8c33fbecf3, backbone timm_dinov2_vitb14_reg4
+
+--- seed 0 ---
+  frame macro-F1 0.2912 | video majority-vote 0.4020 | video mean-prob 0.3971 (low-margin videos 10/56)
+
+--- seed 1 ---
+  frame macro-F1 0.2880 | video majority-vote 0.3722 | video mean-prob 0.3819 (low-margin videos 15/56)
+
+--- seed 2 ---
+  frame macro-F1 0.2930 | video majority-vote 0.3385 | video mean-prob 0.3598 (low-margin videos 9/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.2907 +/- 0.0025 (min 0.2880, max 0.2930)
+  video_majority_vote      macro-F1 0.3709 +/- 0.0318 (min 0.3385, max 0.4020)
+  video_mean_probability   macro-F1 0.3796 +/- 0.0188 (min 0.3598, max 0.3971)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.011 -> 0.000
+    Assault        0.091 -> 0.000
+    Shooting       0.054 -> 0.167
+    Vandalism      0.063 -> 0.227
+
+wrote results/p1c/p1c-video-aggregation/fold2-dinov2
+########## fold3 frozen (10:16:15Z) ##########
+train 400419 rows, validation 49719 rows, dim 2048, cache 2fd183f7431a, backbone torchvision_resnet50
+
+--- seed 0 ---
+  frame macro-F1 0.1865 | video majority-vote 0.2287 | video mean-prob 0.2282 (low-margin videos 14/56)
+
+--- seed 1 ---
+  frame macro-F1 0.1998 | video majority-vote 0.2443 | video mean-prob 0.2440 (low-margin videos 13/56)
+
+--- seed 2 ---
+  frame macro-F1 0.1935 | video majority-vote 0.2253 | video mean-prob 0.2276 (low-margin videos 12/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.1933 +/- 0.0067 (min 0.1865, max 0.1998)
+  video_majority_vote      macro-F1 0.2328 +/- 0.0102 (min 0.2253, max 0.2443)
+  video_mean_probability   macro-F1 0.2333 +/- 0.0093 (min 0.2276, max 0.2440)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.016 -> 0.074
+    Assault        0.052 -> 0.000
+    Shooting       0.243 -> 0.250
+    Vandalism      0.054 -> 0.000
+
+wrote results/p1c/p1c-video-aggregation/fold3-frozen
+########## fold3 dinov2 (10:30:46Z) ##########
+train 400419 rows, validation 49719 rows, dim 1536, cache 681f53307dbd, backbone timm_dinov2_vitb14_reg4
+
+--- seed 0 ---
+  frame macro-F1 0.2321 | video majority-vote 0.3023 | video mean-prob 0.3415 (low-margin videos 7/56)
+
+--- seed 1 ---
+  frame macro-F1 0.2368 | video majority-vote 0.3031 | video mean-prob 0.2878 (low-margin videos 8/56)
+
+--- seed 2 ---
+  frame macro-F1 0.2499 | video majority-vote 0.3386 | video mean-prob 0.3114 (low-margin videos 10/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.2396 +/- 0.0092 (min 0.2321, max 0.2499)
+  video_majority_vote      macro-F1 0.3147 +/- 0.0207 (min 0.3023, max 0.3386)
+  video_mean_probability   macro-F1 0.3136 +/- 0.0269 (min 0.2878, max 0.3415)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.029 -> 0.231
+    Assault        0.101 -> 0.250
+    Shooting       0.060 -> 0.274
+    Vandalism      0.121 -> 0.083
+
+wrote results/p1c/p1c-video-aggregation/fold3-dinov2
+########## fold4 frozen (10:44:54Z) ##########
+train 357643 rows, validation 41319 rows, dim 2048, cache 37500108e894, backbone torchvision_resnet50
+
+--- seed 0 ---
+  frame macro-F1 0.1820 | video majority-vote 0.2912 | video mean-prob 0.2711 (low-margin videos 12/56)
+
+--- seed 1 ---
+  frame macro-F1 0.1781 | video majority-vote 0.2552 | video mean-prob 0.2533 (low-margin videos 12/56)
+
+--- seed 2 ---
+  frame macro-F1 0.1794 | video majority-vote 0.2440 | video mean-prob 0.2274 (low-margin videos 11/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.1798 +/- 0.0020 (min 0.1781, max 0.1820)
+  video_majority_vote      macro-F1 0.2635 +/- 0.0247 (min 0.2440, max 0.2912)
+  video_mean_probability   macro-F1 0.2506 +/- 0.0219 (min 0.2274, max 0.2711)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.034 -> 0.000
+    Assault        0.022 -> 0.000
+    Shooting       0.178 -> 0.148
+    Vandalism      0.047 -> 0.000
+
+wrote results/p1c/p1c-video-aggregation/fold4-frozen
+########## fold4 dinov2 (11:00:00Z) ##########
+train 357643 rows, validation 41319 rows, dim 1536, cache 3b4aaed3037e, backbone timm_dinov2_vitb14_reg4
+
+--- seed 0 ---
+  frame macro-F1 0.2530 | video majority-vote 0.3069 | video mean-prob 0.2878 (low-margin videos 12/56)
+
+--- seed 1 ---
+  frame macro-F1 0.2664 | video majority-vote 0.3284 | video mean-prob 0.3284 (low-margin videos 2/56)
+
+--- seed 2 ---
+  frame macro-F1 0.2605 | video majority-vote 0.3453 | video mean-prob 0.3304 (low-margin videos 8/56)
+
+=== aggregate over seeds [0, 1, 2] ===
+  frame                    macro-F1 0.2600 +/- 0.0067 (min 0.2530, max 0.2664)
+  video_majority_vote      macro-F1 0.3269 +/- 0.0192 (min 0.3069, max 0.3453)
+  video_mean_probability   macro-F1 0.3155 +/- 0.0240 (min 0.2878, max 0.3304)
+  motion classes (frame -> video mean-prob), per-class F1 mean:
+    Fighting       0.006 -> 0.000
+    Assault        0.005 -> 0.000
+    Shooting       0.323 -> 0.388
+    Vandalism      0.290 -> 0.448
+
+wrote results/p1c/p1c-video-aggregation/fold4-dinov2
+########## AGGREGATION DONE 2026-09-10T11:13:26Z ##########

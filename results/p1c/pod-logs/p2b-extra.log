@@ -1,0 +1,66 @@
+<repo>/.venv/lib/python3.12/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+{"videos_done": 10, "of": 108, "elapsed_s": 910}
+{"videos_done": 20, "of": 108, "elapsed_s": 1819}
+{"videos_done": 30, "of": 108, "elapsed_s": 2728}
+{"videos_done": 40, "of": 108, "elapsed_s": 3636}
+{"videos_done": 50, "of": 108, "elapsed_s": 4544}
+{"videos_done": 60, "of": 108, "elapsed_s": 5452}
+{"videos_done": 70, "of": 108, "elapsed_s": 6358}
+{"videos_done": 80, "of": 108, "elapsed_s": 7264}
+{"videos_done": 90, "of": 108, "elapsed_s": 8170}
+{"videos_done": 100, "of": 108, "elapsed_s": 9077}
+{"videos_done": 108, "of": 108, "elapsed_s": 9804}
+{"clean_feature_check": {"max_abs_diff": 0.06396484375, "median_max_abs_diff": 0.0063018798828125, "min_mean_cosine": 0.9999938011169434, "videos": 108}, "classical_identity_check": {"max_abs_diff_vs_classical_identity_rows": 0.0}}
+{"fold": 1, "seed": 0, "clean_32frame_macro_f1": 0.5056792413935272}
+{"fold": 1, "seed": 1, "clean_32frame_macro_f1": 0.49767573696145123}
+{"fold": 1, "seed": 2, "clean_32frame_macro_f1": 0.5404761904761906}
+{"fold": 2, "seed": 0, "clean_32frame_macro_f1": 0.4149092970521542}
+{"fold": 2, "seed": 1, "clean_32frame_macro_f1": 0.4174036281179138}
+{"fold": 2, "seed": 2, "clean_32frame_macro_f1": 0.48515769944341375}
+{"fold": 3, "seed": 0, "clean_32frame_macro_f1": 0.43055555555555564}
+{"fold": 3, "seed": 1, "clean_32frame_macro_f1": 0.4886775922490208}
+{"fold": 3, "seed": 2, "clean_32frame_macro_f1": 0.4182190825047968}
+{"fold": 4, "seed": 0, "clean_32frame_macro_f1": 0.3878220985363842}
+{"fold": 4, "seed": 1, "clean_32frame_macro_f1": 0.40233457019171304}
+{"fold": 4, "seed": 2, "clean_32frame_macro_f1": 0.4266594516594516}
+identity__identity {"psnr_db": null, "ssim": 1.0, "macro_f1": 0.4513, "macro_f1_delta_vs_clean": 0.0, "macro_f1_delta_vs_unrestored": 0.0}
+identity__adaptive_median_s7 {"psnr_db": 35.0877, "ssim": 0.976, "macro_f1": 0.4369, "macro_f1_delta_vs_clean": -0.0144, "macro_f1_delta_vs_unrestored": -0.0144}
+identity__scunet_real_psnr {"psnr_db": 37.4957, "ssim": 0.9708, "macro_f1": 0.3724, "macro_f1_delta_vs_clean": -0.0789, "macro_f1_delta_vs_unrestored": -0.0789}
+identity__restormer_gauss_blind {"psnr_db": 51.4224, "ssim": 0.9342, "macro_f1": 0.4142, "macro_f1_delta_vs_clean": -0.0371, "macro_f1_delta_vs_unrestored": -0.0371}
+gaussian_10.0__identity {"psnr_db": 28.6664, "ssim": 0.6337, "macro_f1": 0.3799, "macro_f1_delta_vs_clean": -0.0714, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_10.0__adaptive_median_s7 {"psnr_db": 29.1512, "ssim": 0.7205, "macro_f1": 0.3686, "macro_f1_delta_vs_clean": -0.0827, "macro_f1_delta_vs_unrestored": -0.0113}
+gaussian_10.0__scunet_real_psnr {"psnr_db": 36.2475, "ssim": 0.9624, "macro_f1": 0.329, "macro_f1_delta_vs_clean": -0.1223, "macro_f1_delta_vs_unrestored": -0.0508}
+gaussian_10.0__restormer_gauss_blind {"psnr_db": 37.4914, "ssim": 0.8829, "macro_f1": 0.4146, "macro_f1_delta_vs_clean": -0.0367, "macro_f1_delta_vs_unrestored": 0.0347}
+gaussian_25.0__identity {"psnr_db": 20.8823, "ssim": 0.3468, "macro_f1": 0.3174, "macro_f1_delta_vs_clean": -0.1339, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_25.0__adaptive_median_s7 {"psnr_db": 23.1054, "ssim": 0.4292, "macro_f1": 0.3112, "macro_f1_delta_vs_clean": -0.1401, "macro_f1_delta_vs_unrestored": -0.0062}
+gaussian_25.0__scunet_real_psnr {"psnr_db": 33.188, "ssim": 0.924, "macro_f1": 0.2801, "macro_f1_delta_vs_clean": -0.1712, "macro_f1_delta_vs_unrestored": -0.0373}
+gaussian_25.0__restormer_gauss_blind {"psnr_db": 31.3437, "ssim": 0.8085, "macro_f1": 0.3387, "macro_f1_delta_vs_clean": -0.1126, "macro_f1_delta_vs_unrestored": 0.0213}
+gaussian_50.0__identity {"psnr_db": 15.2926, "ssim": 0.1871, "macro_f1": 0.235, "macro_f1_delta_vs_clean": -0.2163, "macro_f1_delta_vs_unrestored": 0.0}
+gaussian_50.0__adaptive_median_s7 {"psnr_db": 17.9983, "ssim": 0.2408, "macro_f1": 0.2196, "macro_f1_delta_vs_clean": -0.2317, "macro_f1_delta_vs_unrestored": -0.0153}
+gaussian_50.0__scunet_real_psnr {"psnr_db": 29.6424, "ssim": 0.8405, "macro_f1": 0.2444, "macro_f1_delta_vs_clean": -0.2069, "macro_f1_delta_vs_unrestored": 0.0094}
+gaussian_50.0__restormer_gauss_blind {"psnr_db": 26.1057, "ssim": 0.7199, "macro_f1": 0.251, "macro_f1_delta_vs_clean": -0.2003, "macro_f1_delta_vs_unrestored": 0.016}
+salt_and_pepper_0.02__identity {"psnr_db": 21.6023, "ssim": 0.6515, "macro_f1": 0.3456, "macro_f1_delta_vs_clean": -0.1057, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.02__adaptive_median_s7 {"psnr_db": 34.8149, "ssim": 0.9758, "macro_f1": 0.442, "macro_f1_delta_vs_clean": -0.0092, "macro_f1_delta_vs_unrestored": 0.0965}
+salt_and_pepper_0.02__scunet_real_psnr {"psnr_db": 24.3642, "ssim": 0.7032, "macro_f1": 0.3086, "macro_f1_delta_vs_clean": -0.1427, "macro_f1_delta_vs_unrestored": -0.037}
+salt_and_pepper_0.02__restormer_gauss_blind {"psnr_db": 21.5941, "ssim": 0.6333, "macro_f1": 0.3231, "macro_f1_delta_vs_clean": -0.1282, "macro_f1_delta_vs_unrestored": -0.0225}
+salt_and_pepper_0.05__identity {"psnr_db": 17.6198, "ssim": 0.4008, "macro_f1": 0.298, "macro_f1_delta_vs_clean": -0.1533, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.05__adaptive_median_s7 {"psnr_db": 34.1983, "ssim": 0.9745, "macro_f1": 0.4312, "macro_f1_delta_vs_clean": -0.0201, "macro_f1_delta_vs_unrestored": 0.1332}
+salt_and_pepper_0.05__scunet_real_psnr {"psnr_db": 20.4025, "ssim": 0.4822, "macro_f1": 0.2621, "macro_f1_delta_vs_clean": -0.1892, "macro_f1_delta_vs_unrestored": -0.0359}
+salt_and_pepper_0.05__restormer_gauss_blind {"psnr_db": 17.628, "ssim": 0.3975, "macro_f1": 0.287, "macro_f1_delta_vs_clean": -0.1643, "macro_f1_delta_vs_unrestored": -0.0111}
+salt_and_pepper_0.1__identity {"psnr_db": 14.609, "ssim": 0.2369, "macro_f1": 0.2464, "macro_f1_delta_vs_clean": -0.2049, "macro_f1_delta_vs_unrestored": 0.0}
+salt_and_pepper_0.1__adaptive_median_s7 {"psnr_db": 32.9644, "ssim": 0.9706, "macro_f1": 0.4191, "macro_f1_delta_vs_clean": -0.0321, "macro_f1_delta_vs_unrestored": 0.1727}
+salt_and_pepper_0.1__scunet_real_psnr {"psnr_db": 17.6186, "ssim": 0.3218, "macro_f1": 0.2318, "macro_f1_delta_vs_clean": -0.2195, "macro_f1_delta_vs_unrestored": -0.0146}
+salt_and_pepper_0.1__restormer_gauss_blind {"psnr_db": 14.6196, "ssim": 0.2367, "macro_f1": 0.2464, "macro_f1_delta_vs_clean": -0.2049, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.02__identity {"psnr_db": 25.2589, "ssim": 0.6704, "macro_f1": 0.3671, "macro_f1_delta_vs_clean": -0.0842, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.02__adaptive_median_s7 {"psnr_db": 26.6516, "ssim": 0.7299, "macro_f1": 0.3634, "macro_f1_delta_vs_clean": -0.0879, "macro_f1_delta_vs_unrestored": -0.0037}
+speckle_0.02__scunet_real_psnr {"psnr_db": 34.8703, "ssim": 0.9539, "macro_f1": 0.3612, "macro_f1_delta_vs_clean": -0.0901, "macro_f1_delta_vs_unrestored": -0.0059}
+speckle_0.02__restormer_gauss_blind {"psnr_db": 29.2188, "ssim": 0.8053, "macro_f1": 0.3242, "macro_f1_delta_vs_clean": -0.1271, "macro_f1_delta_vs_unrestored": -0.0429}
+speckle_0.05__identity {"psnr_db": 21.4407, "ssim": 0.5505, "macro_f1": 0.3271, "macro_f1_delta_vs_clean": -0.1242, "macro_f1_delta_vs_unrestored": 0.0}
+speckle_0.05__adaptive_median_s7 {"psnr_db": 23.537, "ssim": 0.6164, "macro_f1": 0.3334, "macro_f1_delta_vs_clean": -0.1179, "macro_f1_delta_vs_unrestored": 0.0062}
+speckle_0.05__scunet_real_psnr {"psnr_db": 33.0683, "ssim": 0.9378, "macro_f1": 0.339, "macro_f1_delta_vs_clean": -0.1123, "macro_f1_delta_vs_unrestored": 0.0118}
+speckle_0.05__restormer_gauss_blind {"psnr_db": 26.4156, "ssim": 0.7525, "macro_f1": 0.2762, "macro_f1_delta_vs_clean": -0.1751, "macro_f1_delta_vs_unrestored": -0.051}
+low_light_g2.2_s15.0__identity {"psnr_db": 14.1619, "ssim": 0.3315, "macro_f1": 0.2753, "macro_f1_delta_vs_clean": -0.176, "macro_f1_delta_vs_unrestored": 0.0}
+low_light_g2.2_s15.0__adaptive_median_s7 {"psnr_db": 14.2333, "ssim": 0.3943, "macro_f1": 0.262, "macro_f1_delta_vs_clean": -0.1893, "macro_f1_delta_vs_unrestored": -0.0133}
+low_light_g2.2_s15.0__scunet_real_psnr {"psnr_db": 14.4143, "ssim": 0.5931, "macro_f1": 0.2589, "macro_f1_delta_vs_clean": -0.1924, "macro_f1_delta_vs_unrestored": -0.0164}
+low_light_g2.2_s15.0__restormer_gauss_blind {"psnr_db": 14.4388, "ssim": 0.5289, "macro_f1": 0.3027, "macro_f1_delta_vs_clean": -0.1486, "macro_f1_delta_vs_unrestored": 0.0274}

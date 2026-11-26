@@ -1,0 +1,94 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 181s ---
+/dev/md1        1870026616 146880380 1723146236       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.01 GiB (recovered 15.99 GiB)
+plan: 82679 frames
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+  2048/82679 frames
+  4096/82679 frames
+  6144/82679 frames
+  8192/82679 frames
+  10240/82679 frames
+  12288/82679 frames
+  14336/82679 frames
+  16384/82679 frames
+  18432/82679 frames
+  20480/82679 frames
+  22528/82679 frames
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+  24599/82679 frames
+  26647/82679 frames
+  28695/82679 frames
+  30743/82679 frames
+  32791/82679 frames
+  34839/82679 frames
+  36887/82679 frames
+  38935/82679 frames
+  40983/82679 frames
+  43031/82679 frames
+  45079/82679 frames
+  47127/82679 frames
+  49175/82679 frames
+  51223/82679 frames
+  53271/82679 frames
+  55319/82679 frames
+  57367/82679 frames
+  59415/82679 frames
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+  61463/82679 frames
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:288: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return collate([torch.as_tensor(b) for b in batch], collate_fn_map=collate_fn_map)
+  63503/82679 frames
+  65551/82679 frames
+  67599/82679 frames
+  69647/82679 frames
+  71695/82679 frames
+  73743/82679 frames
+  75791/82679 frames
+  77839/82679 frames
+  79887/82679 frames
+  81935/82679 frames
+wrote results/p1c/p1c-siglip-patch-cache: 82679 rows, consistency {'skipped': "no registered pooled cache exists for backbone 'siglip'"}

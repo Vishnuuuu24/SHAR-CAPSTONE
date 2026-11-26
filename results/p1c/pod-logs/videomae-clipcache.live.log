@@ -1,0 +1,126 @@
+=== started 2026-09-15T11:30:51Z ===
+########## fold1 train 11:30:51Z ##########
+train: 24213 clips of 16 rows over 476 videos -> dim 768
+  1024 clips
+  2048 clips
+  3072 clips
+  4096 clips
+  5120 clips
+  6144 clips
+  7168 clips
+  8192 clips
+  9216 clips
+  10240 clips
+  11264 clips
+  12288 clips
+  13312 clips
+  14336 clips
+  15360 clips
+  16384 clips
+  17408 clips
+  18432 clips
+  19456 clips
+  20480 clips
+  21504 clips
+  22528 clips
+  23552 clips
+wrote results/p1c/p1c-videomae-clip-cache-ar-fold1/train: 24213 x 768, sha256 80d7dcdb5357089a, verify max|delta| 0.000e+00 over 256 clips
+########## fold1 validation 11:49:46Z ##########
+validation: 2326 clips of 16 rows over 56 videos -> dim 768
+  1024 clips
+  2048 clips
+wrote results/p1c/p1c-videomae-clip-cache-ar-fold1/validation: 2326 x 768, sha256 d6dc3ec346ea43a7, verify max|delta| 0.000e+00 over 256 clips
+########## fold2 train 11:56:39Z ##########
+train: 23824 clips of 16 rows over 476 videos -> dim 768
+  1024 clips
+  2048 clips
+  3072 clips
+  4096 clips
+  5120 clips
+  6144 clips
+  7168 clips
+  8192 clips
+  9216 clips
+  10240 clips
+  11264 clips
+  12288 clips
+  13312 clips
+  14336 clips
+  15360 clips
+  16384 clips
+  17408 clips
+  18432 clips
+  19456 clips
+  20480 clips
+  21504 clips
+  22528 clips
+  23552 clips
+wrote results/p1c/p1c-videomae-clip-cache-ar-fold2/train: 23824 x 768, sha256 e3bb36af027db21e, verify max|delta| 0.000e+00 over 256 clips
+########## fold2 validation 12:15:17Z ##########
+validation: 2959 clips of 16 rows over 56 videos -> dim 768
+  1024 clips
+  2048 clips
+wrote results/p1c/p1c-videomae-clip-cache-ar-fold2/validation: 2959 x 768, sha256 1b1be2c0644e1dd2, verify max|delta| 0.000e+00 over 256 clips
+########## fold3 train 12:22:39Z ##########
+train: 24798 clips of 16 rows over 476 videos -> dim 768
+  1024 clips
+  2048 clips
+  3072 clips
+  4096 clips
+  5120 clips
+  6144 clips
+  7168 clips
+  8192 clips
+  9216 clips
+  10240 clips
+  11264 clips
+  12288 clips
+  13312 clips
+  14336 clips
+  15360 clips
+  16384 clips
+  17408 clips
+  18432 clips
+  19456 clips
+  20480 clips
+  21504 clips
+  22528 clips
+  23552 clips
+  24576 clips
+wrote results/p1c/p1c-videomae-clip-cache-ar-fold3/train: 24798 x 768, sha256 efe189d41b5b8b75, verify max|delta| 0.000e+00 over 256 clips
+########## fold3 validation 12:41:51Z ##########
+validation: 3082 clips of 16 rows over 56 videos -> dim 768
+  1024 clips
+  2048 clips
+  3072 clips
+wrote results/p1c/p1c-videomae-clip-cache-ar-fold3/validation: 3082 x 768, sha256 525a36dd060ad65e, verify max|delta| 0.000e+00 over 256 clips
+########## fold4 train 12:49:19Z ##########
+train: 22134 clips of 16 rows over 476 videos -> dim 768
+  1024 clips
+  2048 clips
+  3072 clips
+  4096 clips
+  5120 clips
+  6144 clips
+  7168 clips
+  8192 clips
+  9216 clips
+  10240 clips
+  11264 clips
+  12288 clips
+  13312 clips
+  14336 clips
+  15360 clips
+  16384 clips
+  17408 clips
+  18432 clips
+  19456 clips
+  20480 clips
+  21504 clips
+wrote results/p1c/p1c-videomae-clip-cache-ar-fold4/train: 22134 x 768, sha256 e641f89a452bdb52, verify max|delta| 0.000e+00 over 256 clips
+########## fold4 validation 13:07:09Z ##########
+validation: 2555 clips of 16 rows over 56 videos -> dim 768
+  1024 clips
+  2048 clips
+wrote results/p1c/p1c-videomae-clip-cache-ar-fold4/validation: 2555 x 768, sha256 6abb7b8745344c7a, verify max|delta| 0.000e+00 over 256 clips
+=== ALL DONE 2026-09-15T13:14:07Z ===

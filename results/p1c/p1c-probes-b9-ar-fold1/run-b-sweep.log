@@ -1,0 +1,33 @@
+train 391014 rows (stride 1), validation 37600 rows, dim 2048, scaling ['standardize', 'none'], cache e851dbcbd372
+
+--- logistic_regression-standardize-C0.01 ---
+frame macro-F1 0.3336 (clustered 95% CI 0.2119-0.4034), accuracy 0.3381, video-level macro-F1 0.3680 over 56 videos (0 tie-broken), fit 173.9s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-standardize-C0.01.json
+
+--- logistic_regression-standardize-C0.1 ---
+frame macro-F1 0.3178 (clustered 95% CI 0.1982-0.3892), accuracy 0.3217, video-level macro-F1 0.3770 over 56 videos (0 tie-broken), fit 195.6s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-standardize-C0.1.json
+
+--- logistic_regression-standardize-C1 ---
+frame macro-F1 0.3092 (clustered 95% CI 0.1927-0.3794), accuracy 0.3194, video-level macro-F1 0.3380 over 56 videos (0 tie-broken), fit 181.8s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-standardize-C1.json
+
+--- logistic_regression-standardize-C10 ---
+frame macro-F1 0.3025 (clustered 95% CI 0.1894-0.3731), accuracy 0.3096, video-level macro-F1 0.3340 over 56 videos (0 tie-broken), fit 216.3s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-standardize-C10.json
+
+--- logistic_regression-none-C0.01 ---
+frame macro-F1 0.3005 (clustered 95% CI 0.1909-0.3918), accuracy 0.3151, video-level macro-F1 0.3319 over 56 videos (0 tie-broken), fit 376.4s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-none-C0.01.json
+
+--- logistic_regression-none-C0.1 ---
+frame macro-F1 0.2942 (clustered 95% CI 0.1853-0.3728), accuracy 0.3034, video-level macro-F1 0.3264 over 56 videos (0 tie-broken), fit 384.5s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-none-C0.1.json
+
+--- logistic_regression-none-C1 ---
+frame macro-F1 0.3042 (clustered 95% CI 0.1960-0.3748), accuracy 0.3081, video-level macro-F1 0.3536 over 56 videos (0 tie-broken), fit 319.4s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-none-C1.json
+
+--- logistic_regression-none-C10 ---
+frame macro-F1 0.2922 (clustered 95% CI 0.1875-0.3629), accuracy 0.2944, video-level macro-F1 0.3572 over 56 videos (0 tie-broken), fit 294.5s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-none-C10.json

@@ -1,0 +1,51 @@
+{
+  "augmentation_name": "none",
+  "augmentation_rationale": "internal default: no augmentation policy was registered for this dataset",
+  "backbone_family": "torchvision_resnet50",
+  "backbone_feature": "layer4_C5_pre_GAP",
+  "backbone_trainable": "frozen",
+  "backbone_weight_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+  "cache_sha256": "7b9ee747f167173c2f9e3b0e37834fe17ac54ed938766d0d508395d7ee0eeefc",
+  "class_names": [
+    "Abuse",
+    "Arrest",
+    "Arson",
+    "Assault",
+    "Burglary",
+    "Explosion",
+    "Fighting",
+    "Normal_Videos_event",
+    "RoadAccidents",
+    "Robbery",
+    "Shooting",
+    "Shoplifting",
+    "Stealing",
+    "Vandalism"
+  ],
+  "created_at": "2026-08-28T22:42:42.758918+00:00",
+  "dtype": "float16",
+  "feature_dim": 2048,
+  "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+  "model_control": "gap_linear",
+  "pooling": "global_average",
+  "preprocessing": {
+    "color_mode": "RGB",
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "resize_height": 224,
+    "resize_width": 224,
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "row_count": 37600,
+  "source_manifest_path": "results/p1b/p1b-video-ar-fold1/validation_manifest.csv",
+  "source_manifest_sha256": "0619217d3afcfcddea55b43aadb1939b17f68d120f4d8891ae28eed43947436f",
+  "split": "validation"
+}

@@ -1,0 +1,128 @@
+schema_version: 1.0.0
+# OWNER DECISION REQUIRED - THIS CONFIGURATION CANNOT LAUNCH AS WRITTEN.
+#
+# status is PLANNED, so `validate_p1c_full_run_config` refuses it. Promoting it
+# to REGISTERED_FULL_RUN_READY is an owner action under D-27; AI may recommend a
+# child but never registers or launches one.
+#
+# Proposed one change: training.loader.num_workers 0 -> 8.
+#
+# Why it is proposed. P1C-FRAME-GAP-CALIBRATION-003 measured the parent's exact
+# settings at num_workers=0: 38.3 ms of serial loader wait added to every 63.2 ms
+# compute step, so 38% of Train wall time is the accelerator waiting on the host,
+# and throughput is 632.7 images/s wall against a 1,012.3 images/s ceiling. A
+# separate diagnostic measured eight workers sustaining 28,337 images/s, roughly
+# 27x what the accelerator consumes, which hides loading entirely.
+#
+# Projection if loading is fully hidden, using the calibration-003 compute
+# medians: epoch = 17,759 x 0.0632 + 2,029 x 0.0208 = 1,164.6 s; per seed =
+# 224.6 + 20 x 1,164.6 = 23,516.6 s; three seeds x [1.15, 1.35] = 22.5-26.5
+# hours, against 35.9-42.2 hours measured for the parent. This is a projection,
+# not a measurement, which is why a calibration child is required before launch.
+#
+# Batch size is deliberately NOT changed: a synthetic sweep from 64 to 1024 moved
+# throughput only 1,098 -> 1,251 images/s, so it is not a throughput lever here,
+# and it is a scientific factor besides.
+#
+# Why it is argued to be scientifically neutral. Shuffle order is drawn from the
+# explicit (seed, epoch)-derived generator in data/p1c_loader.py, not from
+# worker count; __getitem__ consumes no randomness because augmentation is none;
+# and seed_dataloader_worker seeds only worker processes. Worker count therefore
+# cannot change which images are seen, in what order, or with what values.
+# The owner should confirm this reasoning before registering.
+#
+# Required before promotion: run a calibration child of this file so the ETA is
+# measured rather than extrapolated from the num_workers=0 calibration.
+experiment:
+  id: P1C-FRAME-GAP-FULL-002-WORKERS
+  parent_id: P1C-FRAME-GAP-FULL-001
+  status: PLANNED
+  run_class: full
+  question: Does prefetching the registered frame baseline with eight loader workers reduce wall-clock time without altering the data, order, or result?
+  hypothesis: Loader workers are an execution-plumbing change only; throughput should approach the measured accelerator ceiling with no change to the trained model.
+  change_from_parent:
+    - training.loader.num_workers - 0 -> 8
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism, Normal]
+  backbone:
+    family: torchvision_resnet50
+    feature: layer4_C5_pre_GAP
+    weights:
+      enum: IMAGENET1K_V2
+      source_url: https://download.pytorch.org/models/resnet50-11ad3fa6.pth
+      path: .cache/weights/resnet50-11ad3fa6.pth
+      sha256: 11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca
+  data:
+    dataset_roots:
+      ucf_crime_kaggle_frames: Datasets/UCF Crime Dataset Kaggle
+    train:
+      path: results/p1b/p1b-grouped-train-validation-57f3a29b-10pct-s0/train_manifest.csv
+      sha256: 3930ca6b3155bee6d90308447cefade66332ab20f8a3685a6de341938d35608c
+    validation:
+      path: results/p1b/p1b-grouped-train-validation-57f3a29b-10pct-s0/validation_manifest.csv
+      sha256: 3af30a56704b0753937fbca38e4e2bc2d26bce70008d361c50db2ca41ac9f8f5
+    event_only_test:
+      path: results/p1b/p1b-real-views-57f3a29b-3b954241/event_only_test_manifest.csv
+      sha256: 9faed256d5cd2572c72a02046a878ee2c68fa917021ab3b7c488fcb51597ff27
+    noisy_proxy_test:
+      path: results/p1b/p1b-real-views-57f3a29b-3b954241/noisy_proxy_test_manifest.csv
+      sha256: 844db91c54d948b9edca204bc2e9e3bc0839a31a9fc35c8b63a6d89346416068
+  preprocessing:
+    resize_height: 64
+    resize_width: 64
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    class_balance: none
+  augmentation:
+    name: none
+    rationale: Preserve a conventional, auditable first control; augmentation is a future one-change experiment.
+  training:
+    seeds: [0, 1, 2]
+    batch_size: 64
+    loader:
+      num_workers: 8
+      pin_memory: false
+      persistent_workers: false
+      drop_last: false
+      verify_digests: true
+    epochs: 20
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    scheduler:
+      name: none
+    early_stopping:
+      monitor: macro_f1
+      mode: max
+      patience: 5
+      min_delta: 0.001
+    selection_rule: best_validation_macro_f1
+    device_policy: mps_strict
+    precision: float32
+  evaluation:
+    primary_metric: macro_f1
+    clustered_ci_iterations: 1000
+    clustered_ci_seed: 0
+    headline_view: event_only_test
+    sensitivity_view: noisy_proxy_test
+gates:
+  owner_registration_required: true
+  test_access: false_until_validation_selected_checkpoint
+  three_seeds_required: true
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  expected_preflight: calibration_child_of_this_file_measuring_wall_clock_with_eight_workers
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - preflight_code_formula_audit_not_passed

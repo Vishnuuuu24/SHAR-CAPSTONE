@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHAR Code Map</title>
+<style>
+:root{--bg:#fbfaf7;--panel:#fff;--ink:#1d1d1b;--muted:#6b6a65;--line:#e4e1d8;--accent:#2f5d8a;--accent-soft:#e6eef6;--warn:#9a3b1f;--chip:#f1efe8;
+--l-library:#2f5d8a;--l-model:#7a4fa0;--l-metrics:#2d7d6a;--l-entry:#b06a1b;--l-test:#7d7b74;--l-ui:#a0456a;--l-paper:#5a6b2a;--l-decision:#9a3b1f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17181a;--panel:#1f2124;--ink:#e9e7e1;--muted:#9c9a93;--line:#33363a;--accent:#8fb6dc;--accent-soft:#25313d;--warn:#e08a6a;--chip:#2a2d31;
+--l-library:#8fb6dc;--l-model:#c3a2e0;--l-metrics:#7fcab5;--l-entry:#e5ad6c;--l-test:#a9a7a0;--l-ui:#e294b5;--l-paper:#b8c784;--l-decision:#e08a6a}}
+:root[data-theme="dark"]{--bg:#17181a;--panel:#1f2124;--ink:#e9e7e1;--muted:#9c9a93;--line:#33363a;--accent:#8fb6dc;--accent-soft:#25313d;--warn:#e08a6a;--chip:#2a2d31;
+--l-library:#8fb6dc;--l-model:#c3a2e0;--l-metrics:#7fcab5;--l-entry:#e5ad6c;--l-test:#a9a7a0;--l-ui:#e294b5;--l-paper:#b8c784;--l-decision:#e08a6a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:2}
+header h1{font-size:16px;margin:0 8px 0 0}
+#search{flex:1;min-width:180px;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit}
+.stats{color:var(--muted);font-size:12px}
+main{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 58px)}
+nav{border-right:1px solid var(--line);overflow:auto;max-height:calc(100vh - 58px);position:sticky;top:58px;padding:8px 0}
+nav h2{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:14px 16px 4px;cursor:pointer}
+nav ol{margin:0;padding:0 0 0 34px}
+nav li{cursor:pointer;padding:1px 0;color:var(--ink);word-break:break-all;font-size:13px}
+nav li:hover,nav li.on{color:var(--accent)}
+#view{padding:20px 24px;overflow:auto;min-width:0}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.chip{display:inline-block;background:var(--chip);border-radius:4px;padding:1px 7px;margin:2px 4px 2px 0;font-size:12px}
+a.ref{color:var(--accent);cursor:pointer;text-decoration:none;word-break:break-all}a.ref:hover{text-decoration:underline}
+h3{margin:22px 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.title{font-size:20px;margin:0 0 6px;word-break:break-all}
+.summary{max-width:75ch}
+.missing{color:var(--warn)}
+table{border-collapse:collapse;font-size:13px}td,th{border-bottom:1px solid var(--line);padding:4px 10px 4px 0;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600}
+ul.plain{list-style:none;padding:0;margin:0}ul.plain li{padding:2px 0}
+code{font:12px ui-monospace,Menlo,Consolas,monospace}
+svg text{fill:var(--ink);font:11px system-ui,sans-serif}
+svg .edge{stroke:var(--line);stroke-width:1.2;fill:none}
+.legend span{margin-right:12px;font-size:12px;color:var(--muted)}
+button.theme{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;padding:5px 9px;cursor:pointer}
+@media (max-width:760px){main{grid-template-columns:1fr}nav{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line)}#view{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>SHAR code map</h1>
+  <input id="search" placeholder="Search files, functions, docstrings, D-xx…" autocomplete="off">
+  <span class="stats" id="stats"></span>
+  <button class="theme" id="theme" title="Toggle light/dark">◐</button>
+</header>
+<main>
+  <nav id="nav"></nav>
+  <section id="view"></section>
+</main>
+<script id="graph" type="application/json">__GRAPH_JSON__</script>
+<script>
+const G = JSON.parse(document.getElementById('graph').textContent);
+const byId = Object.fromEntries(G.nodes.map(n => [n.id, n]));
+const out = {}, inc = {};
+for (const e of G.edges) { (out[e.source] = out[e.source] || []).push(e); (inc[e.target] = inc[e.target] || []).push(e); }
+const LAYER_VAR = {library:'--l-library', model:'--l-model', metrics:'--l-metrics', 'entry point':'--l-entry', test:'--l-test', ui:'--l-ui', paper:'--l-paper'};
+const color = n => `var(${n.kind === 'module' ? LAYER_VAR[n.layer] : '--l-decision'})`;
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ref = id => `<a class="ref" data-id="${esc(id)}">${esc(id)}</a>`;
+const modules = G.nodes.filter(n => n.kind === 'module');
+document.getElementById('stats').textContent =
+  `${modules.length} files · ${modules.reduce((a, n) => a + n.lines, 0).toLocaleString()} lines · ` +
+  `${G.nodes.filter(n => n.kind === 'decision').length} decisions cited · ${G.edges.filter(e => e.kind === 'imports').length} import edges`;
+
+function nav(filter) {
+  const q = (filter || '').toLowerCase();
+  let html = `<h2 data-home="1">Overview</h2>`;
+  for (const [topic, ids] of Object.entries(G.tours)) {
+    const shown = ids.filter(id => !q || match(byId[id], q));
+    if (!shown.length) continue;
+    html += `<h2>${esc(topic)} · ${shown.length}</h2><ol>` +
+      shown.map(id => `<li data-id="${esc(id)}"><span class="dot" style="background:${color(byId[id])}"></span>${esc(id)}</li>`).join('') + `</ol>`;
+  }
+  if (q) {
+    const extra = G.nodes.filter(n => (n.kind !== 'module' || n.layer === 'test') && match(n, q)).slice(0, 60);
+    if (extra.length) html += `<h2>Tests, decisions, results</h2><ol>` + extra.map(n => `<li data-id="${esc(n.id)}">${esc(n.id)}</li>`).join('') + `</ol>`;
+  }
+  document.getElementById('nav').innerHTML = html;
+}
+function match(n, q) {
+  const hay = [n.id, n.summary, ...(n.functions || []).map(f => f.name + ' ' + f.doc), ...(n.classes || []).map(c => c.name + ' ' + c.doc)].join(' ').toLowerCase();
+  return hay.includes(q);
+}
+function list(edges, key, empty) {
+  if (!edges.length) return `<p class="stats">${empty}</p>`;
+  return `<ul class="plain">` + edges.map(e => {
+    const n = byId[e[key]];
+    const note = n && n.kind !== 'module' && n.summary ? ` — <span class="stats">${esc(n.summary)}</span>` : '';
+    const missing = n && n.kind === 'result folder' && !n.exists ? ' <span class="missing">(not on this branch)</span>' : '';
+    return `<li>${ref(e[key])}${note}${missing}</li>`;
+  }).join('') + `</ul>`;
+}
+function neighbourhood(n) {
+  const left = (inc[n.id] || []).filter(e => e.kind === 'imports').map(e => e.source).filter(id => !id.startsWith('tests/')).slice(0, 14);
+  const right = (out[n.id] || []).filter(e => e.kind === 'imports').map(e => e.target).slice(0, 14);
+  const rows = Math.max(left.length, right.length, 1), H = Math.max(rows * 24 + 20, 70), W = 760, cy = H / 2;
+  const label = id => id.split('/').pop();
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px" role="img" aria-label="Importers on the left, imports on the right">`;
+  const y = (i, k) => 10 + (i + .5) * (H - 20) / k;
+  left.forEach((id, i) => s += `<path class="edge" d="M210 ${y(i, left.length)} C300 ${y(i, left.length)} 290 ${cy} 330 ${cy}"/>`);
+  right.forEach((id, i) => s += `<path class="edge" d="M430 ${cy} C470 ${cy} 460 ${y(i, right.length)} 550 ${y(i, right.length)}"/>`);
+  left.forEach((id, i) => s += `<a class="ref" data-id="${esc(id)}"><text x="204" y="${y(i, left.length) + 4}" text-anchor="end">${esc(label(id))}</text></a>`);
+  right.forEach((id, i) => s += `<a class="ref" data-id="${esc(id)}"><text x="556" y="${y(i, right.length) + 4}">${esc(label(id))}</text></a>`);
+  s += `<rect x="330" y="${cy - 14}" width="100" height="28" rx="6" fill="${color(n)}" opacity=".18"/><text x="380" y="${cy + 4}" text-anchor="middle">${esc(label(n.id).slice(0, 16))}</text>`;
+  s += `<text x="10" y="12" style="fill:var(--muted)">used by →</text><text x="${W - 10}" y="12" text-anchor="end" style="fill:var(--muted)">→ uses</text></svg>`;
+  return s;
+}
+function show(id) {
+  const n = byId[id]; if (!n) return home();
+  document.querySelectorAll('nav li').forEach(li => li.classList.toggle('on', li.dataset.id === id));
+  let h;
+  if (n.kind === 'module') {
+    const importers = (inc[id] || []).filter(e => e.kind === 'imports');
+    h = `<p class="title"><span class="dot" style="background:${color(n)}"></span>${esc(n.id)}</p>
+      <span class="chip">${esc(n.layer)}</span><span class="chip">${esc(n.topic)}</span><span class="chip">${n.lines} lines</span><span class="chip">sha ${esc(n.sha256)}</span>
+      ${n.problem ? `<span class="chip missing">${esc(n.problem)}</span>` : ''}
+      <p class="summary">${n.has_docstring ? esc(n.summary) : '<span class="missing">No module docstring — this file explains nothing about itself.</span>'}</p>
+      ${neighbourhood(n)}
+      <h3>Functions and classes</h3>${(n.classes.length + n.functions.length) ? `<table>${n.classes.map(c => `<tr><td><code>class ${esc(c.name)}</code></td><td>${esc(c.doc) || '<span class="stats">—</span>'}${c.methods.length ? `<br><span class="stats">methods: ${c.methods.map(esc).join(', ')}</span>` : ''}</td><td class="stats">L${c.line}</td></tr>`).join('')}${n.functions.map(f => `<tr><td><code>${esc(f.name)}()</code></td><td>${esc(f.doc) || '<span class="stats">—</span>'}</td><td class="stats">L${f.line}</td></tr>`).join('')}</table>` : '<p class="stats">No public top-level definitions.</p>'}
+      <h3>Uses (imports)</h3>${list((out[id] || []).filter(e => e.kind === 'imports'), 'target', 'Imports nothing from this repository.')}
+      <h3>Used by</h3>${list(importers.filter(e => !e.source.startsWith('tests/')), 'source', 'Nothing in the repository imports this file.')}
+      <h3>Tested by</h3>${list(importers.filter(e => e.source.startsWith('tests/')), 'source', '<span class="missing">No test imports this file directly.</span>')}
+      <h3>Decisions and known problems cited</h3>${list((out[id] || []).filter(e => e.kind === 'cites'), 'target', 'Cites no D-xx / K-xx.')}
+      <h3>Results folders named</h3>${list((out[id] || []).filter(e => e.kind === 'names result'), 'target', 'Names no results/ folder.')}`;
+  } else {
+    h = `<p class="title">${esc(n.id)}</p><span class="chip">${esc(n.kind)}</span>
+      ${n.summary ? `<p class="summary">${esc(n.summary)}</p>` : ''}
+      ${n.kind === 'result folder' && !n.exists ? '<p class="missing">This folder is not present on this branch (it may live in the main checkout).</p>' : ''}
+      <h3>${n.kind === 'result folder' ? 'Named by' : 'Cited by'}</h3>${list(inc[id] || [], 'source', 'Nothing.')}`;
+  }
+  document.getElementById('view').innerHTML = h; window.scrollTo(0, 0);
+  if (location.hash.slice(1) !== encodeURIComponent(id)) history.replaceState(null, '', '#' + encodeURIComponent(id));
+}
+function home() {
+  const topics = Object.keys(G.tours), layers = Object.keys(LAYER_VAR).filter(l => modules.some(m => m.layer === l));
+  const count = (t, l) => modules.filter(m => m.topic === t && m.layer === l).length;
+  const undocumented = modules.filter(m => !m.has_docstring && m.layer !== 'test');
+  const untested = modules.filter(m => m.layer === 'library' && !(inc[m.id] || []).some(e => e.source.startsWith('tests/')));
+  const decisions = G.nodes.filter(n => n.kind === 'decision').map(n => [n, (inc[n.id] || []).length]).sort((a, b) => b[1] - a[1]).slice(0, 12);
+  document.getElementById('view').innerHTML = `
+    <p class="title">How the repository fits together</p>
+    <p class="summary">Each file is placed in a <b>topic</b> (what research question it serves) and a <b>layer</b> (what kind of code it is). The left panel lists every topic as a guided tour, ordered so that a file appears after the files it depends on: read top to bottom. Click any name to see what it does, what uses it, its tests, and which decisions it implements.</p>
+    <div class="legend">${layers.map(l => `<span><span class="dot" style="background:var(${LAYER_VAR[l]})"></span>${l}</span>`).join('')}</div>
+    <h3>Files per topic and layer</h3>
+    <table><tr><th>Topic</th>${layers.map(l => `<th>${l}</th>`).join('')}</tr>${topics.map(t => `<tr><td>${esc(t)}</td>${layers.map(l => `<td>${count(t, l) || ''}</td>`).join('')}</tr>`).join('')}</table>
+    <h3>Most-cited decisions in code</h3><ul class="plain">${decisions.map(([n, k]) => `<li>${ref(n.id)} <span class="stats">· ${k} files · ${esc(n.summary)}</span></li>`).join('')}</ul>
+    <h3>Library files with no direct test (${untested.length})</h3><p>${untested.map(m => ref(m.id)).join(', ') || 'None.'}</p>
+    <h3>Files without a module docstring (${undocumented.length})</h3><p>${undocumented.map(m => ref(m.id)).join(', ') || 'None.'}</p>
+    <p class="stats">Generated from the repository by <code>scripts/build_code_graph.py</code> (deterministic; no LLM). Idea from Egonex-AI/Understand-Anything.</p>`;
+  document.querySelectorAll('nav li').forEach(li => li.classList.remove('on'));
+}
+document.addEventListener('click', ev => {
+  const t = ev.target.closest('[data-id]'); if (t) { ev.preventDefault(); show(t.dataset.id); return; }
+  if (ev.target.closest('[data-home]')) { history.replaceState(null, '', '#'); home(); }
+});
+document.getElementById('search').addEventListener('input', ev => nav(ev.target.value));
+document.getElementById('theme').addEventListener('click', () => {
+  const root = document.documentElement, dark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#17181a';
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('shar-code-map-theme', root.dataset.theme); } catch (e) {}
+});
+try { const saved = localStorage.getItem('shar-code-map-theme'); if (saved) document.documentElement.dataset.theme = saved; } catch (e) {}
+nav('');
+const start = decodeURIComponent(location.hash.slice(1)); start ? show(start) : home();
+</script>
+</body>
+</html>

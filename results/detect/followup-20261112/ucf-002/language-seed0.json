@@ -1,0 +1,106 @@
+{
+ "variant": "language",
+ "seed": 0,
+ "best_epoch": 5,
+ "history": [
+  {
+   "epoch": 0,
+   "loss": 0.5357632572236268,
+   "heldout_video_auc": 0.9506172839506173,
+   "epoch_seconds": 53.3053586850001
+  },
+  {
+   "epoch": 1,
+   "loss": 0.29834463674089184,
+   "heldout_video_auc": 0.9612654320987655,
+   "epoch_seconds": 53.072160112991696
+  },
+  {
+   "epoch": 2,
+   "loss": 0.20630061140526895,
+   "heldout_video_auc": 0.9774691358024692,
+   "epoch_seconds": 52.90391324200027
+  },
+  {
+   "epoch": 3,
+   "loss": 0.14274876856285593,
+   "heldout_video_auc": 0.9800925925925926,
+   "epoch_seconds": 53.233582461994956
+  },
+  {
+   "epoch": 4,
+   "loss": 0.10259735082154689,
+   "heldout_video_auc": 0.9817901234567902,
+   "epoch_seconds": 54.4613759979984
+  },
+  {
+   "epoch": 5,
+   "loss": 0.07310540990337082,
+   "heldout_video_auc": 0.9825617283950616,
+   "epoch_seconds": 53.40744756501226
+  },
+  {
+   "epoch": 6,
+   "loss": 0.04973129798536715,
+   "heldout_video_auc": 0.9799382716049383,
+   "epoch_seconds": 53.217790041991975
+  },
+  {
+   "epoch": 7,
+   "loss": 0.034664740623987236,
+   "heldout_video_auc": 0.980246913580247,
+   "epoch_seconds": 55.19092820399965
+  },
+  {
+   "epoch": 8,
+   "loss": 0.02386707411674054,
+   "heldout_video_auc": 0.9808641975308641,
+   "epoch_seconds": 54.25356933398871
+  },
+  {
+   "epoch": 9,
+   "loss": 0.01618774134017851,
+   "heldout_video_auc": 0.9811728395061728,
+   "epoch_seconds": 54.231430054001976
+  },
+  {
+   "epoch": 10,
+   "loss": 0.011875109706559906,
+   "heldout_video_auc": 0.9804012345679012,
+   "epoch_seconds": 52.777273569998215
+  },
+  {
+   "epoch": 11,
+   "loss": 0.008405975268586822,
+   "heldout_video_auc": 0.9820987654320988,
+   "epoch_seconds": 53.2226273050037
+  },
+  {
+   "epoch": 12,
+   "loss": 0.006177998532581589,
+   "heldout_video_auc": 0.9820987654320987,
+   "epoch_seconds": 53.39164941199124
+  },
+  {
+   "epoch": 13,
+   "loss": 0.005098087206968795,
+   "heldout_video_auc": 0.9819444444444445,
+   "epoch_seconds": 53.19509638099407
+  },
+  {
+   "epoch": 14,
+   "loss": 0.00447923069536362,
+   "heldout_video_auc": 0.9819444444444445,
+   "epoch_seconds": 53.459795545000816
+  },
+  {
+   "epoch": 15,
+   "loss": 0.0037017602716451106,
+   "heldout_video_auc": 0.9820987654320987,
+   "epoch_seconds": 52.63956612099719
+  }
+ ],
+ "seconds": 858.2833988666534,
+ "checkpoint_sha256": "6a77ff9cfb9f369e4f73731560270b451828b215db2d2aa6664ed907c3c870e3",
+ "test_read": false
+}

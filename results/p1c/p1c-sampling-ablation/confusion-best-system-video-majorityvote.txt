@@ -1,0 +1,18 @@
+Best system: DINOv2 + 8 frames/video + majority vote
+Summed over 4 folds x 3 seeds. Rows=true, cols=predicted.
+
+true\pred   Abus Arre Arso Assa Burg Expl Figh Norm Road Robb Shoo Shop Stea Vand
+Abuse         16    9    0    4    1    0    7    3    5    0    0    0    3    0
+Arrest         0   20    0    2    2    0    2    3    2   11    5    1    0    0
+Arson          6    0   30    0    0    1    0    0    4    0    0    3    4    0
+Assault        9    1   12   10   11    0    1    0    0    0    0    0    0    4
+Burglary       4    4    6    3   15    0    0    0    0    5    0    9    0    2
+Explosion      0    2    1    3    0   23    6    1    0    1    2    8    0    1
+Fighting       1    5    5    2    8    0   10    0    1   11    1    1    0    3
+Normal_Vi      0    0    2    0    0    2    0   36    4    4    0    0    0    0
+RoadAccid      1    0    0    0    0   10    0    0   20    0    6    0   11    0
+Robbery        0    0    1    7    7    0    3    0    0   27    0    0    3    0
+Shooting       7    0    1    4    2    0    4    6    9    3    1   11    0    0
+Shoplifti      2    0    0    0    0    0    3    0    0    4    0   38    0    1
+Stealing       0    3    0    2    6    0    6    0    0    0    0    0   27    4
+Vandalism      0    0   13    0    1    0   10    0    2    0    1    0    3   18

@@ -1,0 +1,77 @@
+########## A: logistic regression, both scalings, full C grid (matches B-9) ##########
+train 391014 rows (stride 1), validation 37600 rows, dim 1536, scaling ['standardize', 'none'], cache 56c0312b9122
+
+--- logistic_regression-standardize-C0.0001 ---
+frame macro-F1 0.3619 (clustered 95% CI 0.2493-0.4339), accuracy 0.3347, video-level macro-F1 0.3804 over 56 videos (0 tie-broken), fit 231.8s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-standardize-C0.0001.json
+
+--- logistic_regression-standardize-C0.0003 ---
+frame macro-F1 0.3553 (clustered 95% CI 0.2487-0.4244), accuracy 0.3281, video-level macro-F1 0.3937 over 56 videos (0 tie-broken), fit 226.7s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-standardize-C0.0003.json
+
+--- logistic_regression-standardize-C0.001 ---
+frame macro-F1 0.3462 (clustered 95% CI 0.2406-0.4118), accuracy 0.3201, video-level macro-F1 0.3902 over 56 videos (0 tie-broken), fit 195.8s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-standardize-C0.001.json
+
+--- logistic_regression-standardize-C0.003 ---
+frame macro-F1 0.3313 (clustered 95% CI 0.2248-0.3953), accuracy 0.3109, video-level macro-F1 0.3745 over 56 videos (0 tie-broken), fit 223.0s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-standardize-C0.003.json
+
+--- logistic_regression-standardize-C0.01 ---
+frame macro-F1 0.3226 (clustered 95% CI 0.2156-0.3886), accuracy 0.3028, video-level macro-F1 0.4153 over 56 videos (0 tie-broken), fit 155.9s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-standardize-C0.01.json
+
+--- logistic_regression-standardize-C0.1 ---
+frame macro-F1 0.3057 (clustered 95% CI 0.1988-0.3683), accuracy 0.2915, video-level macro-F1 0.3259 over 56 videos (0 tie-broken), fit 180.5s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-standardize-C0.1.json
+
+--- logistic_regression-standardize-C1 ---
+frame macro-F1 0.2941 (clustered 95% CI 0.1923-0.3548), accuracy 0.2886, video-level macro-F1 0.3041 over 56 videos (0 tie-broken), fit 162.3s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-standardize-C1.json
+
+--- logistic_regression-standardize-C10 ---
+frame macro-F1 0.2934 (clustered 95% CI 0.1936-0.3530), accuracy 0.2906, video-level macro-F1 0.3054 over 56 videos (0 tie-broken), fit 175.3s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-standardize-C10.json
+
+--- logistic_regression-none-C0.0001 ---
+frame macro-F1 0.3428 (clustered 95% CI 0.2339-0.4223), accuracy 0.3261, video-level macro-F1 0.4110 over 56 videos (0 tie-broken), fit 235.8s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-none-C0.0001.json
+
+--- logistic_regression-none-C0.0003 ---
+frame macro-F1 0.3343 (clustered 95% CI 0.2243-0.4050), accuracy 0.3110, video-level macro-F1 0.3735 over 56 videos (0 tie-broken), fit 302.0s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-none-C0.0003.json
+
+--- logistic_regression-none-C0.001 ---
+frame macro-F1 0.3273 (clustered 95% CI 0.2173-0.3982), accuracy 0.3055, video-level macro-F1 0.3087 over 56 videos (0 tie-broken), fit 171.1s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-none-C0.001.json
+
+--- logistic_regression-none-C0.003 ---
+frame macro-F1 0.3281 (clustered 95% CI 0.2171-0.3970), accuracy 0.3064, video-level macro-F1 0.3503 over 56 videos (0 tie-broken), fit 196.7s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-none-C0.003.json
+
+--- logistic_regression-none-C0.01 ---
+frame macro-F1 0.3195 (clustered 95% CI 0.2117-0.3866), accuracy 0.2947, video-level macro-F1 0.3364 over 56 videos (0 tie-broken), fit 198.9s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-none-C0.01.json
+
+--- logistic_regression-none-C0.1 ---
+frame macro-F1 0.2874 (clustered 95% CI 0.1898-0.3519), accuracy 0.2590, video-level macro-F1 0.2778 over 56 videos (0 tie-broken), fit 214.7s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-none-C0.1.json
+
+--- logistic_regression-none-C1 ---
+frame macro-F1 0.3131 (clustered 95% CI 0.1998-0.3799), accuracy 0.2997, video-level macro-F1 0.3251 over 56 videos (0 tie-broken), fit 217.7s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-none-C1.json
+
+--- logistic_regression-none-C10 ---
+frame macro-F1 0.3035 (clustered 95% CI 0.1946-0.3689), accuracy 0.2903, video-level macro-F1 0.3195 over 56 videos (0 tie-broken), fit 204.9s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/logistic_regression-none-C10.json
+########## B: k-NN, both scalings ##########
+train 391014 rows (stride 1), validation 37600 rows, dim 1536, scaling ['standardize', 'l2'], cache 56c0312b9122
+
+--- knn-standardize ---
+frame macro-F1 0.2422 (clustered 95% CI 0.1471-0.3101), accuracy 0.1924, video-level macro-F1 0.2553 over 56 videos (0 tie-broken), fit 0.4s predict 530.5s, converged=None
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/knn-standardize.json
+
+--- knn-l2 ---
+frame macro-F1 0.2346 (clustered 95% CI 0.1459-0.2919), accuracy 0.1768, video-level macro-F1 0.2932 over 56 videos (0 tie-broken), fit 0.4s predict 529.0s, converged=None
+wrote results/p1c/p1c-probes-b2-dinov2-ar-fold1/knn-l2.json
+########## ALL DONE ##########

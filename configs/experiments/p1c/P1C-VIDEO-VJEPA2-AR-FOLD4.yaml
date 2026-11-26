@@ -1,0 +1,179 @@
+# P1C-VIDEO-VJEPA2-AR-FOLD4
+#
+# Frozen V-JEPA 2 ViT-L as a clip-level backbone, SINGLE-FACTOR SWAP from P1C-VIDEO-VIDEOMAE-AR-FOLD4: only
+# `fixed_protocol.backbone` changes. Data manifests, 16-row clip tiling, 224x224 preprocessing, folds and Test
+# registrations are byte-identical, so a difference between the two caches is a difference between encoders.
+#
+# WHY. VideoMAE-B (Kinetics-400) did not help UCF-Crime (N9, N10, D-50). It is a reconstruction-pretrained, supervised-
+# fine-tuned model; V-JEPA 2 is trained to predict latent features of masked video regions, with no pixel
+# reconstruction and no labels. docs/CLASSIFIER_REMEDY_RESEARCH.md ranked it as the remaining untried video representation.
+#
+# DECLARED CHOICES (none sourced from a paper; each is a one-line change if the owner disagrees):
+#   * 224x224 and 16 frames, not the checkpoint's native 256x256 and 64 frames. This keeps the pixel pipeline identical to
+#     the VideoMAE run. The rotary position coordinates are set for the actual input (models/vjepa2_backbone.py). A weak
+#     result may partly reflect the resolution/length mismatch.
+#   * Feature = mean over all encoder tokens (1024-D), no trained attentive probe.
+#   * Checkpoint branch = `encoder` (not `target_encoder`). Believed to be the one Meta's release evaluates; not confirmed.
+#
+# Checkpoint: https://dl.fbaipublicfiles.com/vjepa2/vitl.pt (Meta, MIT licence), 5,127,726,842 bytes, sha256 below.
+# Fetched 2026-11-05. NOT YET compared numerically against Meta's own implementation (see models/vjepa2_backbone.py).
+#
+# LABEL HONESTY (rule 1, D-40). Inherited-label validation scores only; never event-only. Test is not touched.
+schema_version: 1.0.0
+experiment:
+  id: P1C-VIDEO-VJEPA2-AR-FOLD4
+  parent_id: P1C-VIDEO-VIDEOMAE-AR-FOLD4
+  status: REGISTERED_FULL_RUN_READY
+  run_class: full
+  question: >-
+    Do frozen V-JEPA 2 ViT-L clip features separate the 14 UCF-Crime classes better than the frozen VideoMAE-B
+    clip features did, on official Action-Recognition fold 4, everything else held identical?
+  hypothesis: >-
+    A latent-prediction objective may keep appearance and motion cues that VideoMAE's supervised Kinetics fine-tune
+    discarded. Predeclared reading (scripts/run_p1c_vjepa2_probe.py): it only counts as better if the paired
+    video macro-F1 difference is at least +0.04 on all four folds; otherwise it is recorded as neutral or negative.
+  change_from_parent:
+    - fixed_protocol.backbone - transformers_videomae_base_k400 -> transformers_vjepa2_vitl, 1024-D mean-pooled
+      token feature, weights vjepa2_vitl-5346856e.pt
+    - nothing else moves - data, clip tiling, preprocessing, augmentation, loss, schedule and Test registrations are
+      byte-identical to the VideoMAE config
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    # Official ClassIDs.txt order and spelling. Do not rename
+    # Normal_Videos_event: the manifests carry the official label.
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, Normal_Videos_event, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism]
+  backbone:
+    family: transformers_vjepa2_vitl
+    feature: vjepa2_mean_token_pre_head
+    trainable: frozen
+    weights:
+      enum: VJEPA2_VITL_FPC64_256_ENCODER
+      source_url: https://dl.fbaipublicfiles.com/vjepa2/vitl.pt
+      path: .cache/weights/vjepa2_vitl-5346856e.pt
+      sha256: 5346856ec9df69487fe72a25bf2632aaa8112df33fb67708e3f7374edc1f7012
+  data:
+    dataset_roots:
+      # Keyed by the manifest's actual source_dataset value
+      # (data.video_manifests.SOURCE_DATASET), not the raw video directory
+      # name -- readiness's own manifest walk resolves rows through this key.
+      ucf_crime_official_video_frames: Datasets/UCF Crime Official/raw/UCF_Crimes/Videos
+    # Settled, unchanged from CONFIRM-015. 476 train / 56 validation videos,
+    # carved by whole source video, leakage checked before write; 357,643 and
+    # 41,319 frames at stride 5.
+    train:
+      path: results/p1b/p1b-video-ar-fold4/train_manifest.csv
+      sha256: c90afcce91c74d4d2eacaac55e87f4db97c0d2589d9698772e40ad81bd57f143
+    validation:
+      path: results/p1b/p1b-video-ar-fold4/validation_manifest.csv
+      sha256: d93526c7789595478284decf853e560c5bdd9cd061fcf45c30dcdc4436e67e3f
+    # THE PIXEL SOURCE, unchanged from CONFIRM-015. Omitting this block does
+    # not fail -- it silently selects the per-file loader, which with
+    # verify_digests:true re-hashes the source MP4 for every one of 357,643
+    # manifest rows (K-21; the runner refuses this combination rather than
+    # degrading into it).
+    #
+    # Bare absolute host path: the blob is 84.3 GiB, lives outside the
+    # repository, and inside a pod this is the node-local emptyDir copy that
+    # start_pod_job.sh stages via STAGE_FROM. It is never read from /home during
+    # a run -- /home is NFS and random record reads against it are exactly what
+    # D-33 exists to avoid.
+    #
+    # Registered blob SHA-256, verified once at dataset construction:
+    #   fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665
+    video_frames:
+      extract_closure_path: /scratch-emptydir/p1c-video-frames/extract_closure.json
+    # Both Test registrations are present because a full run must register
+    # them -- NOT because this run reads them. The pipeline this config
+    # describes is validation-only (B-1 cache + probe), so registering these
+    # declares which Test views exist and under what honest name, and spends
+    # nothing. Test is spent once, on a final configuration, not a backbone
+    # comparison on fold 4. The noisy_proxy_test split is this fold's own; the
+    # event_only_test reason below was RE-MEASURED for fold 4, not copied --
+    # interval coverage differs per fold and inheriting fold 1's counts would
+    # have stated a number this fold was never measured at.
+    event_only_test:
+      unavailable: true
+      reason: >-
+        Measured 2026-09-02 for THIS fold: of fold 4's 168 official Action-Recognition test videos, only
+        26 appear in the official temporal annotation file at all and only 14 carry a real (non -1)
+        interval; Abuse, Assault, RoadAccidents, Stealing and Vandalism have zero interval-covered test
+        videos. A 14-class macro-F1 event-only view therefore cannot be computed for this fold at any
+        sample size. Counts are fold-specific and were re-measured rather than inherited from fold 1.
+        See D-40.
+    # 168 videos, 133,423 frames. This is the inherited-label test directory,
+    # reported under its honest noisy_proxy_test name per D-40 -- never called
+    # event-only.
+    noisy_proxy_test:
+      path: results/p1b/p1b-video-ar-fold4/test_manifest.csv
+      sha256: 40da581a7d12a2013eded92509eef5fed1e09216bafdc5d330aab74f51d92a67
+  preprocessing:
+    # Unchanged from CONFIRM-015. Also identical to DINOv2's own normalisation
+    # mean/std, so preprocessing genuinely does not change across the swap --
+    # only the declared deviation is `interpolation: bilinear` staying put
+    # rather than switching to timm's registered bicubic default for this
+    # model (see this file's header comment); that keeps the comparison a
+    # single-factor backbone swap instead of two changes at once.
+    resize_height: 224
+    resize_width: 224
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    class_balance: none
+  augmentation:
+    name: none
+    rationale: Preserve a conventional auditable control, matching CONFIRM-015; augmentation is a future one-change experiment.
+  training:
+    seeds: [0, 1, 2]
+    batch_size: 64
+    loader:
+      num_workers: 6
+      pin_memory: true
+      persistent_workers: true
+      drop_last: false
+      verify_digests: true
+    epochs: 30
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    scheduler:
+      name: none
+    early_stopping:
+      monitor: macro_f1
+      mode: max
+      patience: 5
+      min_delta: 0.001
+    selection_rule: best_validation_macro_f1
+    device_policy: cuda_strict
+    precision: amp_bfloat16
+    throughput:
+      channels_last: true
+      compile: default
+      fused_optimizer: true
+  evaluation:
+    primary_metric: macro_f1
+    clustered_ci_iterations: 1000
+    clustered_ci_seed: 0
+    video_level_aggregation: majority_vote
+gates:
+  owner_registration_required: false
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  expected_preflight: >-
+    stage the blob directory into the pod's emptyDir with
+    STAGE_FROM=<repo>/results/p1c/p1c-video-frames,
+    which start_pod_job.sh copies to $SCRATCH_MOUNT and size-checks before the runner starts
+  output: three_seed_aggregate_with_clustered_ci_and_retained_best_checkpoints
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - torch_or_torchvision_version_differs_from_the_registered_environment
+    - video_blob_sha256_mismatch_or_missing_extract_closure
+    - loader_wait_exceeds_50_percent_of_train_wall

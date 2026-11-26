@@ -1,0 +1,27 @@
+{
+  "device": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_name": "NVIDIA H200 MIG 1g.18gb",
+    "deterministic_warn_only": false,
+    "mps_available": false,
+    "mps_built": false,
+    "mps_fallback_environment": null,
+    "policy": "cuda_strict",
+    "selected": "cuda",
+    "supports_pin_memory": true,
+    "torch_threads": 112
+  },
+  "failure": {
+    "exception_type": "RuntimeError",
+    "message": "NVML_SUCCESS == r INTERNAL ASSERT FAILED at \"/__w/pytorch/pytorch/c10/cuda/CUDACachingAllocator.cpp\":1407, please report a bug to PyTorch. ",
+    "scope_assertions": {
+      "checkpoint_saved": false,
+      "configuration_selection": false,
+      "held_out_test_access": false,
+      "research_training": false
+    }
+  },
+  "kind": "P1C calibration preflight failure; not training"
+}

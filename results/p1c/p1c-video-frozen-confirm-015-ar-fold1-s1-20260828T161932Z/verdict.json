@@ -1,0 +1,13 @@
+{
+  "checkpoint_disposition": "validation-selected checkpoint retained: checkpoint_epoch_008.pt",
+  "claim_state": "INCONCLUSIVE",
+  "next_action": "Run the remaining registered seeds, aggregate validation, then freeze one checkpoint-selection decision.",
+  "peak_memory_bytes": 433802752,
+  "reason": "One registered seed completed; aggregate all three validation seeds before any Test evaluation.",
+  "runtime_seconds": 3086.4160066302866,
+  "status": "COMPLETED",
+  "stop_reason": "registered epoch ceiling or validation early stopping",
+  "storage_bytes": 1326351618,
+  "summary_artifact_digest": "3fdb0a18af89adcb79d5f10561d590046f1567c7aaaa1212c2661e65e05c9cdc",
+  "verdict": "GOOD_ENOUGH"
+}

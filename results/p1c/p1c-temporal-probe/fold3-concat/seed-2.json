@@ -1,0 +1,778 @@
+{
+  "best_epoch": 1,
+  "best_validation_macro_f1": 0.29614991741153146,
+  "cache_sha256": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+  "config": "configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml",
+  "epochs": [
+    {
+      "epoch": 0,
+      "train_batches": 119,
+      "train_examples": 7616,
+      "train_mean_loss": 1.1418970362478946,
+      "validation_macro_f1": 0.2569464338490887
+    },
+    {
+      "epoch": 1,
+      "train_batches": 119,
+      "train_examples": 7616,
+      "train_mean_loss": 0.38287837640578004,
+      "validation_macro_f1": 0.29614991741153146
+    },
+    {
+      "epoch": 2,
+      "train_batches": 119,
+      "train_examples": 7616,
+      "train_mean_loss": 0.19948885884104656,
+      "validation_macro_f1": 0.2886453356060361
+    },
+    {
+      "epoch": 3,
+      "train_batches": 119,
+      "train_examples": 7616,
+      "train_mean_loss": 0.12649275349969624,
+      "validation_macro_f1": 0.27022944034648294
+    },
+    {
+      "epoch": 4,
+      "train_batches": 119,
+      "train_examples": 7616,
+      "train_mean_loss": 0.08778468297184014,
+      "validation_macro_f1": 0.26074625193290796
+    },
+    {
+      "epoch": 5,
+      "train_batches": 119,
+      "train_examples": 7616,
+      "train_mean_loss": 0.06634456561017438,
+      "validation_macro_f1": 0.26097968327741267
+    },
+    {
+      "epoch": 6,
+      "train_batches": 119,
+      "train_examples": 7616,
+      "train_mean_loss": 0.051536496744311155,
+      "validation_macro_f1": 0.24964712569099473
+    }
+  ],
+  "frames_per_video": 16,
+  "probe_result": {
+    "converged": true,
+    "fit_seconds": 10.298168770968914,
+    "frame_metrics": {
+      "accuracy": 0.28164283271988577,
+      "confusion_matrix": [
+        [
+          474,
+          546,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          518,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          680,
+          0,
+          3,
+          203,
+          136,
+          0,
+          26,
+          49,
+          795,
+          15,
+          21,
+          0,
+          4
+        ],
+        [
+          304,
+          14,
+          1543,
+          18,
+          0,
+          80,
+          0,
+          0,
+          22,
+          0,
+          406,
+          0,
+          111,
+          48
+        ],
+        [
+          3112,
+          3,
+          417,
+          618,
+          583,
+          0,
+          132,
+          0,
+          0,
+          11,
+          0,
+          24,
+          69,
+          6
+        ],
+        [
+          1235,
+          268,
+          609,
+          14,
+          1235,
+          0,
+          168,
+          0,
+          0,
+          161,
+          60,
+          275,
+          18,
+          343
+        ],
+        [
+          14,
+          187,
+          295,
+          1967,
+          39,
+          2162,
+          2,
+          119,
+          13,
+          5,
+          3,
+          209,
+          26,
+          152
+        ],
+        [
+          22,
+          128,
+          0,
+          1,
+          623,
+          3,
+          167,
+          0,
+          0,
+          6096,
+          0,
+          0,
+          16,
+          24
+        ],
+        [
+          0,
+          11,
+          105,
+          0,
+          0,
+          5,
+          0,
+          1032,
+          551,
+          217,
+          1,
+          0,
+          25,
+          378
+        ],
+        [
+          1466,
+          0,
+          0,
+          125,
+          0,
+          108,
+          0,
+          0,
+          1273,
+          0,
+          57,
+          0,
+          168,
+          184
+        ],
+        [
+          6,
+          276,
+          10,
+          656,
+          732,
+          0,
+          8,
+          0,
+          0,
+          195,
+          9,
+          0,
+          234,
+          0
+        ],
+        [
+          5,
+          390,
+          0,
+          42,
+          39,
+          0,
+          205,
+          506,
+          0,
+          0,
+          147,
+          0,
+          324,
+          0
+        ],
+        [
+          417,
+          0,
+          0,
+          45,
+          1487,
+          0,
+          34,
+          0,
+          0,
+          1482,
+          12,
+          2733,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          493,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1389,
+          2612
+        ],
+        [
+          31,
+          1,
+          317,
+          172,
+          224,
+          0,
+          565,
+          0,
+          76,
+          0,
+          14,
+          0,
+          112,
+          355
+        ]
+      ],
+      "labels": [
+        "Abuse",
+        "Arrest",
+        "Arson",
+        "Assault",
+        "Burglary",
+        "Explosion",
+        "Fighting",
+        "Normal_Videos_event",
+        "RoadAccidents",
+        "Robbery",
+        "Shooting",
+        "Shoplifting",
+        "Stealing",
+        "Vandalism"
+      ],
+      "macro_f1": 0.29614991741153146,
+      "macro_precision": 0.35741707943823153,
+      "macro_recall": 0.28932311296137136,
+      "per_class": {
+        "Abuse": {
+          "f1": 0.1098239110287303,
+          "precision": 0.06683587140439932,
+          "recall": 0.3077922077922078,
+          "support": 1540
+        },
+        "Arrest": {
+          "f1": 0.30616839261593876,
+          "precision": 0.2715654952076677,
+          "recall": 0.3508771929824561,
+          "support": 1938
+        },
+        "Arson": {
+          "f1": 0.5282437521396782,
+          "precision": 0.4681432038834951,
+          "recall": 0.6060487038491752,
+          "support": 2546
+        },
+        "Assault": {
+          "f1": 0.1430886779347071,
+          "precision": 0.16871416871416872,
+          "recall": 0.1242211055276382,
+          "support": 4975
+        },
+        "Burglary": {
+          "f1": 0.25861166370013616,
+          "precision": 0.23910939012584706,
+          "recall": 0.281577747378021,
+          "support": 4386
+        },
+        "Explosion": {
+          "f1": 0.5625081306101211,
+          "precision": 0.8668805132317562,
+          "recall": 0.4163296745619103,
+          "support": 5193
+        },
+        "Fighting": {
+          "f1": 0.03772306302236277,
+          "precision": 0.09413754227733935,
+          "recall": 0.023587570621468927,
+          "support": 7080
+        },
+        "Normal_Videos_event": {
+          "f1": 0.5149700598802395,
+          "precision": 0.6131907308377896,
+          "recall": 0.44387096774193546,
+          "support": 2325
+        },
+        "RoadAccidents": {
+          "f1": 0.43277239503654596,
+          "precision": 0.508792965627498,
+          "recall": 0.3765158237207927,
+          "support": 3381
+        },
+        "Robbery": {
+          "f1": 0.035173160173160176,
+          "precision": 0.021758536041062263,
+          "recall": 0.09172154280338664,
+          "support": 2126
+        },
+        "Shooting": {
+          "f1": 0.12342569269521411,
+          "precision": 0.20303867403314918,
+          "recall": 0.08866103739445115,
+          "support": 1658
+        },
+        "Shoplifting": {
+          "f1": 0.5770692567567568,
+          "precision": 0.8378295524218271,
+          "recall": 0.4400966183574879,
+          "support": 6210
+        },
+        "Stealing": {
+          "f1": 0.39765244775264813,
+          "precision": 0.5573836276083467,
+          "recall": 0.3090787716955941,
+          "support": 4494
+        },
+        "Vandalism": {
+          "f1": 0.11886824041520176,
+          "precision": 0.08645884072089625,
+          "recall": 0.19014461703267274,
+          "support": 1867
+        }
+      }
+    },
+    "parameters": {
+      "batch_size": 64,
+      "early_stopping_min_delta": 0.001,
+      "early_stopping_patience": 5,
+      "epochs_ceiling": 30,
+      "learning_rate": 0.0003,
+      "optimizer": "AdamW",
+      "precision": "float32_cpu",
+      "weight_decay": 0.0001
+    },
+    "predict_seconds": 0.0,
+    "probe": "cached_linear_head",
+    "scaling": "none",
+    "seed": 2,
+    "tie_broken_video_count": 0,
+    "train_rows": 7616,
+    "validation_rows": 49719,
+    "video_clustered_macro_f1_ci": {
+      "cluster_count": 56,
+      "estimate": 0.29614991741153146,
+      "iterations": 1000,
+      "lower_95": 0.19943746438634385,
+      "resampling_unit": "source_video_id",
+      "seed": 2,
+      "upper_95": 0.3825201090172941
+    },
+    "video_count": 56,
+    "video_level_metrics": {
+      "accuracy": 0.4107142857142857,
+      "confusion_matrix": [
+        [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "labels": [
+        "Abuse",
+        "Arrest",
+        "Arson",
+        "Assault",
+        "Burglary",
+        "Explosion",
+        "Fighting",
+        "Normal_Videos_event",
+        "RoadAccidents",
+        "Robbery",
+        "Shooting",
+        "Shoplifting",
+        "Stealing",
+        "Vandalism"
+      ],
+      "macro_f1": 0.4128220985363843,
+      "macro_precision": 0.49481292517006803,
+      "macro_recall": 0.4107142857142857,
+      "per_class": {
+        "Abuse": {
+          "f1": 0.36363636363636365,
+          "precision": 0.2857142857142857,
+          "recall": 0.5,
+          "support": 4
+        },
+        "Arrest": {
+          "f1": 0.5,
+          "precision": 0.375,
+          "recall": 0.75,
+          "support": 4
+        },
+        "Arson": {
+          "f1": 0.6666666666666665,
+          "precision": 0.6,
+          "recall": 0.75,
+          "support": 4
+        },
+        "Assault": {
+          "f1": 0.22222222222222224,
+          "precision": 0.2,
+          "recall": 0.25,
+          "support": 4
+        },
+        "Burglary": {
+          "f1": 0.22222222222222224,
+          "precision": 0.2,
+          "recall": 0.25,
+          "support": 4
+        },
+        "Explosion": {
+          "f1": 0.6666666666666666,
+          "precision": 1.0,
+          "recall": 0.5,
+          "support": 4
+        },
+        "Fighting": {
+          "f1": 0.28571428571428575,
+          "precision": 0.3333333333333333,
+          "recall": 0.25,
+          "support": 4
+        },
+        "Normal_Videos_event": {
+          "f1": 0.3333333333333333,
+          "precision": 0.5,
+          "recall": 0.25,
+          "support": 4
+        },
+        "RoadAccidents": {
+          "f1": 0.28571428571428575,
+          "precision": 0.3333333333333333,
+          "recall": 0.25,
+          "support": 4
+        },
+        "Robbery": {
+          "f1": 0.25,
+          "precision": 0.25,
+          "recall": 0.25,
+          "support": 4
+        },
+        "Shooting": {
+          "f1": 0.4,
+          "precision": 1.0,
+          "recall": 0.25,
+          "support": 4
+        },
+        "Shoplifting": {
+          "f1": 0.6666666666666665,
+          "precision": 0.6,
+          "recall": 0.75,
+          "support": 4
+        },
+        "Stealing": {
+          "f1": 0.6666666666666666,
+          "precision": 1.0,
+          "recall": 0.5,
+          "support": 4
+        },
+        "Vandalism": {
+          "f1": 0.25,
+          "precision": 0.25,
+          "recall": 0.25,
+          "support": 4
+        }
+      }
+    }
+  },
+  "recipe": {
+    "batch_size": 64,
+    "early_stopping_min_delta": 0.001,
+    "early_stopping_mode": "max",
+    "early_stopping_monitor": "macro_f1",
+    "early_stopping_patience": 5,
+    "epochs_ceiling": 30,
+    "learning_rate": 0.0003,
+    "loss": "cross_entropy_mean_unweighted",
+    "optimizer": "AdamW",
+    "precision": "float32_cpu",
+    "scheduler": "none",
+    "selection_rule": "best_validation_macro_f1",
+    "weight_decay": 0.0001
+  },
+  "sampling_seed": null,
+  "seed": 2,
+  "stopped_early": true,
+  "temporal_radius": 2,
+  "temporal_variant": "concat",
+  "train_seconds": 10.298168770968914
+}

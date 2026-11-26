@@ -1,0 +1,49 @@
+{"utc": "2026-11-12T07:35:45.476805+00:00", "stage": "train", "status": "started"}
+{"utc": "2026-11-12T07:35:55.544090+00:00", "stage": "train", "variant": "control", "seed": 0, "status": "started"}
+{"utc": "2026-11-12T07:58:27.898599+00:00", "stage": "train", "variant": "control", "seed": 0, "status": "completed", "seconds": 1352.310390472412}
+{"utc": "2026-11-12T07:58:27.900011+00:00", "stage": "train", "variant": "control", "seed": 1, "status": "started"}
+{"utc": "2026-11-12T08:19:32.391884+00:00", "stage": "train", "variant": "control", "seed": 1, "status": "completed", "seconds": 1264.4462895393372}
+{"utc": "2026-11-12T08:19:32.393498+00:00", "stage": "train", "variant": "control", "seed": 2, "status": "started"}
+{"utc": "2026-11-12T08:39:09.507298+00:00", "stage": "train", "variant": "control", "seed": 2, "status": "completed", "seconds": 1177.0569195747375}
+{"utc": "2026-11-12T08:39:19.136727+00:00", "stage": "train", "variant": "magnitude", "seed": 0, "status": "started"}
+{"utc": "2026-11-12T09:01:39.024864+00:00", "stage": "train", "variant": "magnitude", "seed": 0, "status": "completed", "seconds": 1339.8435714244843}
+{"utc": "2026-11-12T09:01:39.026039+00:00", "stage": "train", "variant": "magnitude", "seed": 1, "status": "started"}
+{"utc": "2026-11-12T09:26:58.474689+00:00", "stage": "train", "variant": "magnitude", "seed": 1, "status": "completed", "seconds": 1519.4039704799652}
+{"utc": "2026-11-12T09:26:58.476289+00:00", "stage": "train", "variant": "magnitude", "seed": 2, "status": "started"}
+{"utc": "2026-11-12T09:46:36.972624+00:00", "stage": "train", "variant": "magnitude", "seed": 2, "status": "completed", "seconds": 1178.452320098877}
+{"utc": "2026-11-12T09:46:46.350027+00:00", "stage": "train", "variant": "selftrain", "seed": 0, "status": "started"}
+{"utc": "2026-11-12T10:09:07.819015+00:00", "stage": "train", "variant": "selftrain", "seed": 0, "status": "completed", "seconds": 1341.4304866790771}
+{"utc": "2026-11-12T10:09:07.819976+00:00", "stage": "train", "variant": "selftrain", "seed": 1, "status": "started"}
+{"utc": "2026-11-12T10:30:19.179442+00:00", "stage": "train", "variant": "selftrain", "seed": 1, "status": "completed", "seconds": 1271.3162631988525}
+{"utc": "2026-11-12T10:30:19.181406+00:00", "stage": "train", "variant": "selftrain", "seed": 2, "status": "started"}
+{"utc": "2026-11-12T10:49:59.285804+00:00", "stage": "train", "variant": "selftrain", "seed": 2, "status": "completed", "seconds": 1180.0591905117035}
+{"utc": "2026-11-12T10:50:08.813894+00:00", "stage": "train", "variant": "uncertainty", "seed": 0, "status": "started"}
+{"utc": "2026-11-12T11:12:32.413926+00:00", "stage": "train", "variant": "uncertainty", "seed": 0, "status": "completed", "seconds": 1343.5554020404816}
+{"utc": "2026-11-12T11:12:32.415545+00:00", "stage": "train", "variant": "uncertainty", "seed": 1, "status": "started"}
+{"utc": "2026-11-12T11:33:49.419942+00:00", "stage": "train", "variant": "uncertainty", "seed": 1, "status": "completed", "seconds": 1276.9610755443573}
+{"utc": "2026-11-12T11:33:49.421663+00:00", "stage": "train", "variant": "uncertainty", "seed": 2, "status": "started"}
+{"utc": "2026-11-12T11:53:19.473107+00:00", "stage": "train", "variant": "uncertainty", "seed": 2, "status": "completed", "seconds": 1170.0053191184998}
+{"utc": "2026-11-12T11:53:30.640834+00:00", "stage": "train", "variant": "language", "seed": 0, "status": "started"}
+{"utc": "2026-11-12T12:07:48.969239+00:00", "stage": "train", "variant": "language", "seed": 0, "status": "completed", "seconds": 858.2833988666534}
+{"utc": "2026-11-12T12:07:48.970605+00:00", "stage": "train", "variant": "language", "seed": 1, "status": "started"}
+{"utc": "2026-11-12T12:21:18.552521+00:00", "stage": "train", "variant": "language", "seed": 1, "status": "completed", "seconds": 809.5353252887726}
+{"utc": "2026-11-12T12:21:18.554374+00:00", "stage": "train", "variant": "language", "seed": 2, "status": "started"}
+{"utc": "2026-11-12T12:33:51.081025+00:00", "stage": "train", "variant": "language", "seed": 2, "status": "completed", "seconds": 752.4831788539886}
+{"utc": "2026-11-12T12:33:51.082890+00:00", "stage": "train", "status": "completed", "seconds": 17885.604529857635}
+{"utc": "2026-11-12T12:33:55.888671+00:00", "stage": "evaluate", "status": "started"}
+{"utc": "2026-11-12T12:34:16.544161+00:00", "stage": "test", "variant": "control", "seed": 0, "status": "completed"}
+{"utc": "2026-11-12T12:34:26.286793+00:00", "stage": "test", "variant": "control", "seed": 1, "status": "completed"}
+{"utc": "2026-11-12T12:34:36.079453+00:00", "stage": "test", "variant": "control", "seed": 2, "status": "completed"}
+{"utc": "2026-11-12T12:34:55.575607+00:00", "stage": "test", "variant": "magnitude", "seed": 0, "status": "completed"}
+{"utc": "2026-11-12T12:35:05.025570+00:00", "stage": "test", "variant": "magnitude", "seed": 1, "status": "completed"}
+{"utc": "2026-11-12T12:35:14.523911+00:00", "stage": "test", "variant": "magnitude", "seed": 2, "status": "completed"}
+{"utc": "2026-11-12T12:35:33.410213+00:00", "stage": "test", "variant": "selftrain", "seed": 0, "status": "completed"}
+{"utc": "2026-11-12T12:35:42.748557+00:00", "stage": "test", "variant": "selftrain", "seed": 1, "status": "completed"}
+{"utc": "2026-11-12T12:35:52.142550+00:00", "stage": "test", "variant": "selftrain", "seed": 2, "status": "completed"}
+{"utc": "2026-11-12T12:36:11.804789+00:00", "stage": "test", "variant": "uncertainty", "seed": 0, "status": "completed"}
+{"utc": "2026-11-12T12:36:21.080495+00:00", "stage": "test", "variant": "uncertainty", "seed": 1, "status": "completed"}
+{"utc": "2026-11-12T12:36:30.240720+00:00", "stage": "test", "variant": "uncertainty", "seed": 2, "status": "completed"}
+{"utc": "2026-11-12T12:36:47.504665+00:00", "stage": "test", "variant": "language", "seed": 0, "status": "completed"}
+{"utc": "2026-11-12T12:36:53.762835+00:00", "stage": "test", "variant": "language", "seed": 1, "status": "completed"}
+{"utc": "2026-11-12T12:37:00.157000+00:00", "stage": "test", "variant": "language", "seed": 2, "status": "completed"}
+{"utc": "2026-11-12T12:37:33.432707+00:00", "stage": "evaluate", "status": "completed", "seconds": 217.54315042495728}

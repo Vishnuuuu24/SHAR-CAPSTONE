@@ -1,0 +1,84 @@
+schema_version: 1.0.0
+experiment:
+  id: P1C-FRAME-GAP-CALIBRATION-004-CUDA
+  parent_id: P1C-FRAME-GAP-CALIBRATION-003
+  status: REGISTERED_CALIBRATION_READY
+  run_class: calibration
+  question: What is the real-loader wall-clock throughput and three-seed wall-time range for the frozen frame baseline on one NVIDIA MIG 1g.18gb slice, measured identically to the strict-MPS parent?
+  hypothesis: This non-research calibration establishes the CUDA feasibility and ETA under the D-30 wall-clock method; it cannot choose a model configuration and cannot be compared as a scientific result.
+  change_from_parent:
+    - device_policy - mps_strict to cuda_strict, resolved through core.device.resolve_device_policy
+    - execution host - M5 Pro local MPS to Presidency DGX worker node, one nvidia.com/mig-1g.18gb slice under the <namespace> quota
+    - no other factor changed - model, data, preprocessing, loss, optimizer, batch size, precision, and every loader setting including num_workers=0 are identical to P1C-FRAME-GAP-CALIBRATION-003 so the measured delta is attributable to the backend alone
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism, Normal]
+  backbone:
+    family: torchvision_resnet50
+    feature: layer4_C5_pre_GAP
+    weights:
+      enum: IMAGENET1K_V2
+      source_url: https://download.pytorch.org/models/resnet50-11ad3fa6.pth
+      path: .cache/weights/resnet50-11ad3fa6.pth
+      sha256: 11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca
+  data:
+    dataset_roots:
+      ucf_crime_kaggle_frames: Datasets/UCF Crime Dataset Kaggle
+    train:
+      path: results/p1b/p1b-grouped-train-validation-57f3a29b-10pct-s0/train_manifest.csv
+      sha256: 3930ca6b3155bee6d90308447cefade66332ab20f8a3685a6de341938d35608c
+    validation:
+      path: results/p1b/p1b-grouped-train-validation-57f3a29b-10pct-s0/validation_manifest.csv
+      sha256: 3af30a56704b0753937fbca38e4e2bc2d26bce70008d361c50db2ca41ac9f8f5
+  preprocessing:
+    resize_height: 64
+    resize_width: 64
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    class_balance: none
+  training:
+    batch_size: 64
+    loader:
+      # num_workers stays 0 and pin_memory stays false so this calibration
+      # changes exactly one material factor against its parent. The loader-worker
+      # change is registered separately; bundling it here would make the MPS to
+      # CUDA delta unattributable.
+      num_workers: 0
+      pin_memory: false
+      persistent_workers: false
+      drop_last: false
+      verify_digests: true
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    device_policy: cuda_strict
+    precision: float32
+  calibration:
+    seed: 0
+    warmup_train_batches: 3
+    measured_train_batches: 10
+    measured_validation_batches: 10
+    full_epochs_for_estimate: 20
+    overhead_factor_range: [1.15, 1.35]
+    scope:
+      research_training: false
+      checkpoint_saved: false
+      held_out_test_access: false
+      configuration_selection: false
+gates:
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  output: immutable_calibration_artifact_and_wall_clock_eta
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - torch_or_torchvision_version_differs_from_the_registered_environment

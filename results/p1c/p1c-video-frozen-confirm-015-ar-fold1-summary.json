@@ -1,0 +1,213 @@
+{
+  "chance_macro_f1": 0.07142857142857142,
+  "delta_vs_parent_mean": 0.05420366532060822,
+  "experiment_id": "P1C-VIDEO-FROZEN-CONFIRM-015-AR-FOLD1",
+  "frame_macro_f1": {
+    "mean": 0.3481036653206082,
+    "per_seed": [
+      0.3537413698497737,
+      0.34559745715775725,
+      0.3449721689542936
+    ],
+    "sd": 0.0048923951805815765
+  },
+  "kind": "three-seed confirmation aggregate; validation-only; inherited-label score",
+  "label_honesty": "INHERITED-LABEL. AR fold 1 has no constructible event-only view (D-40): 48 of 168 test videos carry an official interval; Abuse, Robbery and Stealing have none. This is NOT an event-only score.",
+  "metric_name": "validation frame macro_f1 (inherited video-level labels, AR fold 1)",
+  "parent": {
+    "experiment_id": "P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1",
+    "frame_macro_f1_mean": 0.2939,
+    "frame_macro_f1_sd": 0.0196
+  },
+  "per_class_frame_f1": {
+    "Abuse": {
+      "mean": 0.3124939646323557,
+      "per_seed": [
+        0.31824651295189293,
+        0.3125497479437517,
+        0.30668563300142243
+      ],
+      "sd": 0.005780641845043719
+    },
+    "Arrest": {
+      "mean": 0.15923112038289533,
+      "per_seed": [
+        0.15903197925669837,
+        0.15585585585585585,
+        0.16280552603613177
+      ],
+      "sd": 0.003479112213591471
+    },
+    "Arson": {
+      "mean": 0.2947607570057415,
+      "per_seed": [
+        0.29808429118773944,
+        0.29288816503800214,
+        0.29330981479148294
+      ],
+      "sd": 0.0028859758701060044
+    },
+    "Assault": {
+      "mean": 0.06341495683451975,
+      "per_seed": [
+        0.06451612903225806,
+        0.06228373702422144,
+        0.06344500444707975
+      ],
+      "sd": 0.001116499289588605
+    },
+    "Burglary": {
+      "mean": 0.6275283833867792,
+      "per_seed": [
+        0.6272425249169435,
+        0.6341708542713568,
+        0.6211717709720374
+      ],
+      "sd": 0.006504254604045255
+    },
+    "Explosion": {
+      "mean": 0.3988135558563009,
+      "per_seed": [
+        0.40847784200385356,
+        0.40051457975986277,
+        0.38744824580518633
+      ],
+      "sd": 0.010617489854486158
+    },
+    "Fighting": {
+      "mean": 0.11473408236827426,
+      "per_seed": [
+        0.11749161500152454,
+        0.10691633947447902,
+        0.11979429262881922
+      ],
+      "sd": 0.006867562087737197
+    },
+    "Normal_Videos_event": {
+      "mean": 0.7653897201722417,
+      "per_seed": [
+        0.7495291902071564,
+        0.7789593619445498,
+        0.7676806083650191
+      ],
+      "sd": 0.014848228131900903
+    },
+    "RoadAccidents": {
+      "mean": 0.22524067390426586,
+      "per_seed": [
+        0.25357873210633947,
+        0.184,
+        0.23814328960645811
+      ],
+      "sd": 0.0365398153984155
+    },
+    "Robbery": {
+      "mean": 0.43516667322505764,
+      "per_seed": [
+        0.45523754456972154,
+        0.4227236243645769,
+        0.42753885074087455
+      ],
+      "sd": 0.017547834871125424
+    },
+    "Shooting": {
+      "mean": 0.485363709822158,
+      "per_seed": [
+        0.4969491525423728,
+        0.4556962025316456,
+        0.5034457743924555
+      ],
+      "sd": 0.025897340896126702
+    },
+    "Shoplifting": {
+      "mean": 0.4304236675688432,
+      "per_seed": [
+        0.3855473820856772,
+        0.46748681898066785,
+        0.4382368016401845
+      ],
+      "sd": 0.041524711048719
+    },
+    "Stealing": {
+      "mean": 0.49591839192789317,
+      "per_seed": [
+        0.5606428138265616,
+        0.47422034163924154,
+        0.4528920203178764
+      ],
+      "sd": 0.057058412308654965
+    },
+    "Vandalism": {
+      "mean": 0.06497165740118867,
+      "per_seed": [
+        0.057803468208092484,
+        0.09009877138039027,
+        0.04701273261508325
+      ],
+      "sd": 0.022419609415696796
+    }
+  },
+  "seeds": [
+    {
+      "best_validation_macro_f1": 0.3537413698497737,
+      "clustered_ci": {
+        "cluster_count": 56,
+        "estimate": 0.3537413698497737,
+        "iterations": 1000,
+        "lower_95": 0.22795797634094314,
+        "resampling_unit": "source_video_id",
+        "seed": 0,
+        "upper_95": 0.42128440794919136
+      },
+      "epochs_run": 21,
+      "run_dir": "results/p1c/p1c-video-frozen-confirm-015-ar-fold1-s0-20260828T150040Z",
+      "seed": 0,
+      "selected_checkpoint": "checkpoint_epoch_015.pt",
+      "video_level_macro_f1": 0.39094001236858383
+    },
+    {
+      "best_validation_macro_f1": 0.34559745715775725,
+      "clustered_ci": {
+        "cluster_count": 56,
+        "estimate": 0.34559745715775725,
+        "iterations": 1000,
+        "lower_95": 0.22407823800886637,
+        "resampling_unit": "source_video_id",
+        "seed": 0,
+        "upper_95": 0.41228364973191833
+      },
+      "epochs_run": 14,
+      "run_dir": "results/p1c/p1c-video-frozen-confirm-015-ar-fold1-s1-20260828T161932Z",
+      "seed": 1,
+      "selected_checkpoint": "checkpoint_epoch_008.pt",
+      "video_level_macro_f1": 0.3795454545454545
+    },
+    {
+      "best_validation_macro_f1": 0.3449721689542936,
+      "clustered_ci": {
+        "cluster_count": 56,
+        "estimate": 0.3449721689542936,
+        "iterations": 1000,
+        "lower_95": 0.22042186773993613,
+        "resampling_unit": "source_video_id",
+        "seed": 0,
+        "upper_95": 0.4098199526028076
+      },
+      "epochs_run": 17,
+      "run_dir": "results/p1c/p1c-video-frozen-confirm-015-ar-fold1-s2-20260828T171058Z",
+      "seed": 2,
+      "selected_checkpoint": "checkpoint_epoch_011.pt",
+      "video_level_macro_f1": 0.37070191713048867
+    }
+  ],
+  "test_evaluation_performed": false,
+  "video_level_macro_f1": {
+    "mean": 0.380395794681509,
+    "per_seed": [
+      0.39094001236858383,
+      0.3795454545454545,
+      0.37070191713048867
+    ],
+    "sd": 0.01014580866549293
+  }
+}

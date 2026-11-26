@@ -1,0 +1,352 @@
+{
+  "arms": {
+    "anti_event": {
+      "n_runs_x_videos": 123,
+      "n_videos": 41,
+      "run_pooled_accuracy": 0.3170731707317073,
+      "run_pooled_macro_recall": 0.36031746031746026,
+      "seed_mean_prob_accuracy": 0.36585365853658536,
+      "seed_mean_prob_macro_recall": 0.4261904761904762
+    },
+    "oracle_event": {
+      "n_runs_x_videos": 123,
+      "n_videos": 41,
+      "run_pooled_accuracy": 0.34146341463414637,
+      "run_pooled_macro_recall": 0.39682539682539686,
+      "seed_mean_prob_accuracy": 0.34146341463414637,
+      "seed_mean_prob_macro_recall": 0.4095238095238095
+    },
+    "uniform": {
+      "n_runs_x_videos": 123,
+      "n_videos": 41,
+      "run_pooled_accuracy": 0.3983739837398374,
+      "run_pooled_macro_recall": 0.48809523809523814,
+      "seed_mean_prob_accuracy": 0.3902439024390244,
+      "seed_mean_prob_macro_recall": 0.4785714285714285
+    },
+    "uniform8": {
+      "n_runs_x_videos": 123,
+      "n_videos": 41,
+      "run_pooled_accuracy": 0.3902439024390244,
+      "run_pooled_macro_recall": 0.47619047619047616,
+      "seed_mean_prob_accuracy": 0.3902439024390244,
+      "seed_mean_prob_macro_recall": 0.4785714285714285
+    }
+  },
+  "metric_names": "interval-covered subset accuracy / macro-recall (inherited video label); NOT comparable to the 14-class macro-F1 headline",
+  "mode": "frozen_head",
+  "paired": {
+    "uniform8_vs_oracle_event": {
+      "both_correct": 10,
+      "both_wrong": 21,
+      "mcnemar_exact_p_two_sided": 0.75390625,
+      "n_videos": 41,
+      "only_oracle_event_correct": 4,
+      "only_uniform8_correct": 6,
+      "unit": "seed-mean-probability prediction per (fold, video)"
+    },
+    "uniform_vs_anti_event": {
+      "both_correct": 14,
+      "both_wrong": 24,
+      "mcnemar_exact_p_two_sided": 1.0,
+      "n_videos": 41,
+      "only_anti_event_correct": 1,
+      "only_uniform_correct": 2,
+      "unit": "seed-mean-probability prediction per (fold, video)"
+    },
+    "uniform_vs_oracle_event": {
+      "both_correct": 10,
+      "both_wrong": 21,
+      "mcnemar_exact_p_two_sided": 0.75390625,
+      "n_videos": 41,
+      "only_oracle_event_correct": 4,
+      "only_uniform_correct": 6,
+      "unit": "seed-mean-probability prediction per (fold, video)"
+    }
+  },
+  "per_class": {
+    "anti_event": {
+      "Arrest": {
+        "n_videos": 1,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Arson": {
+        "n_videos": 2,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Assault": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Burglary": {
+        "n_videos": 6,
+        "seed_mean_prob_accuracy": 0.16666666666666666
+      },
+      "Explosion": {
+        "n_videos": 7,
+        "seed_mean_prob_accuracy": 0.42857142857142855
+      },
+      "Fighting": {
+        "n_videos": 1,
+        "seed_mean_prob_accuracy": 1.0
+      },
+      "RoadAccidents": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 1.0
+      },
+      "Shooting": {
+        "n_videos": 9,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Shoplifting": {
+        "n_videos": 6,
+        "seed_mean_prob_accuracy": 0.6666666666666666
+      },
+      "Vandalism": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 1.0
+      }
+    },
+    "oracle_event": {
+      "Arrest": {
+        "n_videos": 1,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Arson": {
+        "n_videos": 2,
+        "seed_mean_prob_accuracy": 1.0
+      },
+      "Assault": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Burglary": {
+        "n_videos": 6,
+        "seed_mean_prob_accuracy": 0.5
+      },
+      "Explosion": {
+        "n_videos": 7,
+        "seed_mean_prob_accuracy": 0.42857142857142855
+      },
+      "Fighting": {
+        "n_videos": 1,
+        "seed_mean_prob_accuracy": 1.0
+      },
+      "RoadAccidents": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 0.6666666666666666
+      },
+      "Shooting": {
+        "n_videos": 9,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Shoplifting": {
+        "n_videos": 6,
+        "seed_mean_prob_accuracy": 0.5
+      },
+      "Vandalism": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 0.0
+      }
+    },
+    "uniform": {
+      "Arrest": {
+        "n_videos": 1,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Arson": {
+        "n_videos": 2,
+        "seed_mean_prob_accuracy": 0.5
+      },
+      "Assault": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Burglary": {
+        "n_videos": 6,
+        "seed_mean_prob_accuracy": 0.3333333333333333
+      },
+      "Explosion": {
+        "n_videos": 7,
+        "seed_mean_prob_accuracy": 0.2857142857142857
+      },
+      "Fighting": {
+        "n_videos": 1,
+        "seed_mean_prob_accuracy": 1.0
+      },
+      "RoadAccidents": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 1.0
+      },
+      "Shooting": {
+        "n_videos": 9,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Shoplifting": {
+        "n_videos": 6,
+        "seed_mean_prob_accuracy": 0.6666666666666666
+      },
+      "Vandalism": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 1.0
+      }
+    },
+    "uniform8": {
+      "Arrest": {
+        "n_videos": 1,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Arson": {
+        "n_videos": 2,
+        "seed_mean_prob_accuracy": 0.5
+      },
+      "Assault": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Burglary": {
+        "n_videos": 6,
+        "seed_mean_prob_accuracy": 0.3333333333333333
+      },
+      "Explosion": {
+        "n_videos": 7,
+        "seed_mean_prob_accuracy": 0.2857142857142857
+      },
+      "Fighting": {
+        "n_videos": 1,
+        "seed_mean_prob_accuracy": 1.0
+      },
+      "RoadAccidents": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 1.0
+      },
+      "Shooting": {
+        "n_videos": 9,
+        "seed_mean_prob_accuracy": 0.0
+      },
+      "Shoplifting": {
+        "n_videos": 6,
+        "seed_mean_prob_accuracy": 0.6666666666666666
+      },
+      "Vandalism": {
+        "n_videos": 3,
+        "seed_mean_prob_accuracy": 1.0
+      }
+    }
+  },
+  "runs_x_videos_with_fewer_than_8_candidates_sampled_with_repeats": {
+    "anti_event": 0,
+    "oracle_event": 0
+  },
+  "sanity_uniform_vs_saved_headline": [
+    {
+      "abs_diff_vs_saved": 0.00909090909090915,
+      "fold": 1,
+      "saved_headline_macro_f1": 0.5348278705421563,
+      "seed": 0,
+      "train_run_macro_f1": 0.5257369614512472,
+      "uniform_all_videos_macro_f1": 0.5257369614512472,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.002685013399299052,
+      "fold": 1,
+      "saved_headline_macro_f1": 0.5135281385281385,
+      "seed": 1,
+      "train_run_macro_f1": 0.5162131519274376,
+      "uniform_all_videos_macro_f1": 0.5162131519274376,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.01109049680478269,
+      "fold": 1,
+      "saved_headline_macro_f1": 0.5254638218923934,
+      "seed": 2,
+      "train_run_macro_f1": 0.5143733250876107,
+      "uniform_all_videos_macro_f1": 0.5143733250876107,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.0156823335394764,
+      "fold": 2,
+      "saved_headline_macro_f1": 0.41986188414759845,
+      "seed": 0,
+      "train_run_macro_f1": 0.43554421768707485,
+      "uniform_all_videos_macro_f1": 0.43554421768707485,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.0041383219954647665,
+      "fold": 2,
+      "saved_headline_macro_f1": 0.44070294784580494,
+      "seed": 1,
+      "train_run_macro_f1": 0.43656462585034017,
+      "uniform_all_videos_macro_f1": 0.43656462585034017,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.023025783740069528,
+      "fold": 2,
+      "saved_headline_macro_f1": 0.46017791732077445,
+      "seed": 2,
+      "train_run_macro_f1": 0.4371521335807049,
+      "uniform_all_videos_macro_f1": 0.4371521335807049,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.019727891156462563,
+      "fold": 3,
+      "saved_headline_macro_f1": 0.43282312925170074,
+      "seed": 0,
+      "train_run_macro_f1": 0.4525510204081633,
+      "uniform_all_videos_macro_f1": 0.4525510204081633,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.007271696557410723,
+      "fold": 3,
+      "saved_headline_macro_f1": 0.4795918367346939,
+      "seed": 1,
+      "train_run_macro_f1": 0.48686353329210463,
+      "uniform_all_videos_macro_f1": 0.48686353329210463,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.005823541537827215,
+      "fold": 3,
+      "saved_headline_macro_f1": 0.46622861265718407,
+      "seed": 2,
+      "train_run_macro_f1": 0.4720521541950113,
+      "uniform_all_videos_macro_f1": 0.4720521541950113,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.03383323026180174,
+      "fold": 4,
+      "saved_headline_macro_f1": 0.37852504638218926,
+      "seed": 0,
+      "train_run_macro_f1": 0.412358276643991,
+      "uniform_all_videos_macro_f1": 0.412358276643991,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.0443088657374372,
+      "fold": 4,
+      "saved_headline_macro_f1": 0.3920856920856921,
+      "seed": 1,
+      "train_run_macro_f1": 0.4363945578231293,
+      "uniform_all_videos_macro_f1": 0.4363945578231293,
+      "uniform_matches_own_training_run_1e-6": true
+    },
+    {
+      "abs_diff_vs_saved": 0.049644403215831856,
+      "fold": 4,
+      "saved_headline_macro_f1": 0.4751133786848073,
+      "seed": 2,
+      "train_run_macro_f1": 0.42546897546897544,
+      "uniform_all_videos_macro_f1": 0.42546897546897544,
+      "uniform_matches_own_training_run_1e-6": true
+    }
+  ],
+  "train_oracle_details": {}
+}

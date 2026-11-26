@@ -1,0 +1,144 @@
+# P2A FROZEN SCIENTIFIC CONVENTIONS — resolves blocker B-007.
+#
+# Every value below is one of three kinds, and the kind is stated per field:
+#   FORCED   — the scaffold lists exactly one `implemented_capabilities` entry, so
+#              registering it records what the code does; there was no choice.
+#   OWNER    — a genuine scientific choice, decided 2026-09-11 (see approval block).
+#   SOURCED  — a documented library default or a published constant, cited inline.
+#              Never invented here (docs/PROJECT_RULES.md: never invent equations or thresholds).
+#
+# Degradation levels (sigma/density/variance/gamma) were already frozen in the
+# scaffold and are unchanged.
+schema_version: 1.0.0
+status: OWNER_APPROVED
+decision: D-23
+work_item: P2A-CODE-W1
+
+approval:
+  state: OWNER_APPROVED
+  owner: Abijith
+  approved_at: '2026-09-11T00:00:00+00:00'
+  decision_record: D-47
+
+fixture_contract_not_experiment_freeze:
+  color: RGB
+  layout: HWC
+  dtype: float32
+  range: [0.0, 1.0]
+
+# OWNER: float throughout, clipped once after restoration, never quantized to
+# 8-bit mid-pipeline. Chosen so PSNR/SSIM measure the algorithms rather than
+# rounding error; the alternative (quantize after degradation) adds a second
+# noise source to every measurement and would confound the denoiser comparison.
+experiment_image_contract:
+  color: RGB
+  layout: HWC
+  dtype: float32
+  range: [0.0, 1.0]
+  clipping_point: after_restoration
+  quantization_point: none
+  border_mode: BORDER_REPLICATE
+
+degradations:
+  identity:
+    levels: [none]
+  gaussian:
+    sigma_8bit_levels: [10, 25, 50]
+    mean_8bit: 0            # SOURCED: additive white Gaussian noise is zero-mean by definition
+    sampling_unit: element
+    clipping: clip_0_1
+  salt_and_pepper:
+    density_levels: [0.02, 0.05, 0.10]
+    salt_probability_given_corruption: 0.5   # SOURCED: equal salt/pepper is the standard symmetric form
+    salt_value: 1.0         # the max of the registered [0,1] range
+    pepper_value: 0.0       # the min of the registered [0,1] range
+    density_mode:
+      owner_selection: bernoulli            # FORCED: only implemented capability
+      implemented_capabilities: [bernoulli]
+    sampling_unit: pixel_shared_channels                # corrupts a pixel across all channels, the usual impulse model
+    clipping: clip_0_1
+  speckle:
+    variance_levels: [0.02, 0.05]
+    gaussian_mean: 0.0      # SOURCED: multiplicative speckle uses zero-mean Gaussian in x*(1+n)
+    model:
+      owner_selection: x_times_one_plus_gaussian   # FORCED: only implemented capability
+      implemented_capabilities: [x_times_one_plus_gaussian]
+    sampling_unit: element
+    clipping: clip_0_1
+  low_light:
+    gamma: 2.2
+    gaussian_sigma_8bit: 15
+    gaussian_mean_8bit: 0   # SOURCED: zero-mean, as for gaussian above
+    operation_order: gamma_then_gaussian       # darken first, then sensor noise — the physical order
+    clipping_sequence:
+      owner_selection: clip_after_each_stage        # FORCED: only implemented capability
+      implemented_capabilities: [clip_after_each_stage]
+    noise_sampling_unit: element
+    clipping: clip_0_1
+
+classical_restoration:
+  identity:
+    parameters: {}
+  median:
+    kernel_size: 3          # SOURCED: smallest odd kernel; the standard impulse-noise baseline
+    border_policy:
+      owner_selection: opencv_median_fixed_replicate   # FORCED: only implemented capability
+      implemented_capabilities: [opencv_median_fixed_replicate]
+  gaussian_blur:
+    kernel_size: [5, 5]     # SOURCED: OpenCV GaussianBlur tutorial standard for sigma ~1
+    sigma_x: 1.0
+    sigma_y: 1.0
+    border_type: BORDER_REPLICATE  # matches experiment_image_contract.border_mode
+  bilateral:
+    diameter: 9             # SOURCED: OpenCV bilateralFilter documentation example (d=9, 75, 75)
+    sigma_color: 75.0
+    sigma_space: 75.0
+    border_type: BORDER_REPLICATE
+  nlm:
+    h_luminance: 10.0       # SOURCED: OpenCV fastNlMeansDenoisingColored defaults
+    h_color: 10.0
+    template_window_size: 7
+    search_window_size: 21
+    quantization:
+      owner_selection: round_to_nearest_uint8        # FORCED: only implemented capability
+      implemented_capabilities: [round_to_nearest_uint8]
+    color_boundary:
+      owner_selection: rgb_to_bgr_for_opencv_nlm     # FORCED: only implemented capability
+      implemented_capabilities: [rgb_to_bgr_for_opencv_nlm]
+    border_policy:
+      owner_selection: opencv_nlm_library_fixed      # FORCED: only implemented capability
+      implemented_capabilities: [opencv_nlm_library_fixed]
+  # OWNER: clip rather than reject. Bilateral and NLM can legitimately overshoot
+  # slightly; rejecting would abort a whole run on one pixel.
+  output_policy:
+    owner_selection: clip_0_1
+    implemented_capabilities: [clip_0_1, reject_out_of_range]
+
+# OWNER: Wang et al. 2004 published SSIM settings rather than skimage's defaults,
+# so the configuration is citable to the originating paper.
+# Wang, Bovik, Sheikh & Simoncelli, "Image Quality Assessment: From Error
+# Visibility to Structural Similarity", IEEE TIP 13(4):600-612, 2004.
+image_quality:
+  psnr:
+    data_range: 1.0         # matches the registered float32 [0,1] contract
+  ssim:
+    data_range: 1.0
+    channel_axis: 2         # HWC, so channels are the last axis
+    win_size: 11
+    gaussian_weights: true
+    sigma: 1.5
+    use_sample_covariance: false
+    k1: 0.01
+    k2: 0.03
+
+gates:
+  code_closure_requires: B-007
+  real_or_full_execution_requires:
+    - P1C_run_complete
+    - frozen_phase_1_classifier
+    - B-001_resolved
+  prohibited:
+    - real_dataset_execution
+    - P2B_or_P2C_execution
+    - benefit_or_native_noise_claim
+    - entropy_specific_ESVDAE

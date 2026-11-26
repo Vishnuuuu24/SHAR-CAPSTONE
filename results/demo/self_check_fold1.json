@@ -1,0 +1,41 @@
+{
+ "git_revision": "22a05e8d709ac40090abc64def4056d0a064e276",
+ "heads_sha256": "3df3cbd8edeb6d0c9dd8da4097faf313027e00b68fecf7ef86daebd866dcb73b",
+ "device": "cuda:0",
+ "passed": true,
+ "videos": 56,
+ "frames": 37600,
+ "min_frame_cosine": 0.9999738335609436,
+ "median_frame_cosine": 1.0,
+ "thresholds": {
+  "min_cosine": 0.999,
+  "f1_tolerance": 0.02
+ },
+ "cells": [
+  {
+   "fold": 1,
+   "seed": 0,
+   "recorded_macro_f1": 0.5257369614512472,
+   "cache_macro_f1": 0.5257369614512472,
+   "decoded_macro_f1": 0.5257369614512472,
+   "same_prediction_fraction": 1.0
+  },
+  {
+   "fold": 1,
+   "seed": 1,
+   "recorded_macro_f1": 0.5162131519274377,
+   "cache_macro_f1": 0.5162131519274377,
+   "decoded_macro_f1": 0.5162131519274377,
+   "same_prediction_fraction": 1.0
+  },
+  {
+   "fold": 1,
+   "seed": 2,
+   "recorded_macro_f1": 0.5268707482993198,
+   "cache_macro_f1": 0.5268707482993198,
+   "decoded_macro_f1": 0.5268707482993198,
+   "same_prediction_fraction": 1.0
+  }
+ ],
+ "test_view_read": false
+}

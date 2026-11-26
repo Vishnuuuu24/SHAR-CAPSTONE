@@ -1,0 +1,9 @@
+train 391014 rows (stride 1), validation 37600 rows, dim 2048, scaling standardize, cache e851dbcbd372
+
+--- logistic_regression ---
+frame macro-F1 0.3092 (clustered 95% CI 0.1927-0.3794), accuracy 0.3194, video-level macro-F1 0.3380 over 56 videos (0 tie-broken), fit 391.7s predict 0.3s, converged=True
+wrote results/p1c/p1c-probes-b9-ar-fold1/logistic_regression-standardize.json
+
+--- knn ---
+frame macro-F1 0.2713 (clustered 95% CI 0.1671-0.3312), accuracy 0.3052, video-level macro-F1 0.2791 over 56 videos (1 tie-broken), fit 0.6s predict 996.5s, converged=None
+wrote results/p1c/p1c-probes-b9-ar-fold1/knn-standardize.json

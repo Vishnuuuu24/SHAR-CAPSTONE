@@ -1,0 +1,355 @@
+{
+ "source": "results/p1c/p1c-late-fusion/dinov2_probs.csv",
+ "source_sha256": "00da0e81ed2fa53a9abb5cb3cd827e026e68453116efe3492f7f5f2e11ee5211",
+ "evaluations": 672,
+ "unique_validation_videos": 108,
+ "headline": {
+  "macro_f1": 0.4626060777846492,
+  "accuracy": 0.4747023809523811,
+  "per_fold_macro_f1": {
+   "1": 0.5187744794887652,
+   "2": 0.43642032570603995,
+   "3": 0.47048890263175974,
+   "4": 0.42474060331203195
+  },
+  "seed_sd_within_fold": 0.009039335004580071,
+  "cells": 12
+ },
+ "bootstrap": {
+  "ci95": [
+   0.3984924739612239,
+   0.5015500925991997
+  ],
+  "sd": 0.026471805635997835,
+  "draws": 2000,
+  "resampling": "within class, within fold"
+ },
+ "per_class": [
+  {
+   "class": "Abuse",
+   "family": "violence",
+   "unique_val_videos": 8,
+   "precision": 0.33888888888888885,
+   "recall": 0.2916666666666667,
+   "f1": 0.29755291005291007
+  },
+  {
+   "class": "Arrest",
+   "family": "police",
+   "unique_val_videos": 8,
+   "precision": 0.638888888888889,
+   "recall": 0.4791666666666667,
+   "f1": 0.5126984126984127
+  },
+  {
+   "class": "Arson",
+   "family": "fire",
+   "unique_val_videos": 8,
+   "precision": 0.594047619047619,
+   "recall": 0.7083333333333334,
+   "f1": 0.6318302068302067
+  },
+  {
+   "class": "Assault",
+   "family": "violence",
+   "unique_val_videos": 7,
+   "precision": 0.20912698412698416,
+   "recall": 0.22916666666666666,
+   "f1": 0.21343193843193842
+  },
+  {
+   "class": "Burglary",
+   "family": "theft",
+   "unique_val_videos": 7,
+   "precision": 0.2755952380952381,
+   "recall": 0.4166666666666667,
+   "f1": 0.32768157768157763
+  },
+  {
+   "class": "Explosion",
+   "family": "fire",
+   "unique_val_videos": 8,
+   "precision": 0.8263888888888888,
+   "recall": 0.5416666666666666,
+   "f1": 0.6438492063492064
+  },
+  {
+   "class": "Fighting",
+   "family": "violence",
+   "unique_val_videos": 8,
+   "precision": 0.28055555555555556,
+   "recall": 0.3125,
+   "f1": 0.2888888888888889
+  },
+  {
+   "class": "Normal_Videos_event",
+   "family": "normal",
+   "unique_val_videos": 8,
+   "precision": 0.8125,
+   "recall": 0.8333333333333334,
+   "f1": 0.8090608465608465
+  },
+  {
+   "class": "RoadAccidents",
+   "family": "traffic",
+   "unique_val_videos": 8,
+   "precision": 0.5134920634920634,
+   "recall": 0.5416666666666666,
+   "f1": 0.5138407888407889
+  },
+  {
+   "class": "Robbery",
+   "family": "theft",
+   "unique_val_videos": 8,
+   "precision": 0.5152777777777777,
+   "recall": 0.5208333333333334,
+   "f1": 0.5031084656084657
+  },
+  {
+   "class": "Shooting",
+   "family": "violence",
+   "unique_val_videos": 6,
+   "precision": 0.027777777777777776,
+   "recall": 0.020833333333333332,
+   "f1": 0.023809523809523808
+  },
+  {
+   "class": "Shoplifting",
+   "family": "theft",
+   "unique_val_videos": 8,
+   "precision": 0.544047619047619,
+   "recall": 0.6666666666666666,
+   "f1": 0.5909571909571909
+  },
+  {
+   "class": "Stealing",
+   "family": "theft",
+   "unique_val_videos": 8,
+   "precision": 0.7638888888888888,
+   "recall": 0.4375,
+   "f1": 0.5305555555555554
+  },
+  {
+   "class": "Vandalism",
+   "family": "damage",
+   "unique_val_videos": 8,
+   "precision": 0.5569444444444445,
+   "recall": 0.6458333333333334,
+   "f1": 0.5892195767195767
+  }
+ ],
+ "error_structure": {
+  "errors": 117.66666666666667,
+  "crime_to_crime_share": 0.9490084985835693,
+  "crime_to_normal_share": 0.028328611898016998,
+  "normal_to_crime_share": 0.022662889518413595,
+  "within_family_share_of_crime_errors": 0.22388059701492544,
+  "within_family_share_if_errors_were_spread_evenly": 0.16666666666666666,
+  "top_pairs": [
+   {
+    "pair": "RoadAccidents <-> Shooting",
+    "count": 6.666666666666666,
+    "a_to_b": 3.6666666666666665,
+    "b_to_a": 3.0
+   },
+   {
+    "pair": "Assault <-> Burglary",
+    "count": 6.0,
+    "a_to_b": 4.333333333333333,
+    "b_to_a": 1.6666666666666667
+   },
+   {
+    "pair": "Abuse <-> Assault",
+    "count": 4.0,
+    "a_to_b": 1.0,
+    "b_to_a": 3.0
+   },
+   {
+    "pair": "Abuse <-> Fighting",
+    "count": 4.0,
+    "a_to_b": 3.3333333333333335,
+    "b_to_a": 0.6666666666666666
+   },
+   {
+    "pair": "Assault <-> Robbery",
+    "count": 3.6666666666666665,
+    "a_to_b": 0.0,
+    "b_to_a": 3.6666666666666665
+   },
+   {
+    "pair": "Fighting <-> Robbery",
+    "count": 3.6666666666666665,
+    "a_to_b": 3.0,
+    "b_to_a": 0.6666666666666666
+   },
+   {
+    "pair": "Shooting <-> Shoplifting",
+    "count": 3.6666666666666665,
+    "a_to_b": 3.6666666666666665,
+    "b_to_a": 0.0
+   },
+   {
+    "pair": "Stealing <-> Vandalism",
+    "count": 3.3333333333333335,
+    "a_to_b": 3.0,
+    "b_to_a": 0.3333333333333333
+   },
+   {
+    "pair": "Abuse <-> Arrest",
+    "count": 3.0,
+    "a_to_b": 2.6666666666666665,
+    "b_to_a": 0.3333333333333333
+   },
+   {
+    "pair": "Arrest <-> Robbery",
+    "count": 3.0,
+    "a_to_b": 2.6666666666666665,
+    "b_to_a": 0.3333333333333333
+   },
+   {
+    "pair": "Assault <-> Shooting",
+    "count": 3.0,
+    "a_to_b": 0.0,
+    "b_to_a": 3.0
+   },
+   {
+    "pair": "Assault <-> Vandalism",
+    "count": 3.0,
+    "a_to_b": 2.0,
+    "b_to_a": 1.0
+   }
+  ]
+ },
+ "video_reliability": {
+  "videos": 108,
+  "always_right": 35,
+  "always_wrong": 41,
+  "sometimes_right": 32,
+  "share_of_errors_from_always_wrong_videos": 0.7303315190499753,
+  "per_class_always_wrong": {
+   "Abuse": 4,
+   "Arrest": 3,
+   "Arson": 3,
+   "Assault": 4,
+   "Burglary": 1,
+   "Explosion": 3,
+   "Fighting": 3,
+   "Normal_Videos_event": 1,
+   "RoadAccidents": 2,
+   "Robbery": 3,
+   "Shooting": 5,
+   "Shoplifting": 2,
+   "Stealing": 5,
+   "Vandalism": 2
+  },
+  "per_class_videos": {
+   "Abuse": 8,
+   "Arrest": 8,
+   "Arson": 8,
+   "Assault": 7,
+   "Burglary": 7,
+   "Explosion": 8,
+   "Fighting": 8,
+   "Normal_Videos_event": 8,
+   "RoadAccidents": 8,
+   "Robbery": 8,
+   "Shooting": 6,
+   "Shoplifting": 8,
+   "Stealing": 8,
+   "Vandalism": 8
+  }
+ },
+ "topk": {
+  "top1": 0.47470238095238093,
+  "top2": 0.6130952380952381,
+  "top3": 0.6860119047619048,
+  "top5": 0.8169642857142857,
+  "median_rank_of_true_class": 2.0
+ },
+ "calibration": {
+  "ece": 0.08557504464285712,
+  "mean_confidence_right": 0.5900418557993731,
+  "mean_confidence_wrong": 0.4590553597733711,
+  "share_of_errors_with_confidence_above_0.9": 0.0084985835694051,
+  "reliability": [
+   {
+    "confidence": "0.1-0.2",
+    "n": 16,
+    "mean_confidence": 0.17409924999999998,
+    "accuracy": 0.125
+   },
+   {
+    "confidence": "0.2-0.3",
+    "n": 95,
+    "mean_confidence": 0.25600847368421054,
+    "accuracy": 0.3473684210526316
+   },
+   {
+    "confidence": "0.3-0.4",
+    "n": 133,
+    "mean_confidence": 0.3465641428571429,
+    "accuracy": 0.3533834586466165
+   },
+   {
+    "confidence": "0.4-0.5",
+    "n": 124,
+    "mean_confidence": 0.44732174193548396,
+    "accuracy": 0.47580645161290325
+   },
+   {
+    "confidence": "0.5-0.6",
+    "n": 72,
+    "mean_confidence": 0.5497734722222222,
+    "accuracy": 0.4305555555555556
+   },
+   {
+    "confidence": "0.6-0.7",
+    "n": 71,
+    "mean_confidence": 0.653648676056338,
+    "accuracy": 0.4507042253521127
+   },
+   {
+    "confidence": "0.7-0.8",
+    "n": 68,
+    "mean_confidence": 0.7497848676470588,
+    "accuracy": 0.5735294117647058
+   },
+   {
+    "confidence": "0.8-0.9",
+    "n": 42,
+    "mean_confidence": 0.8570887380952382,
+    "accuracy": 0.6666666666666666
+   },
+   {
+    "confidence": "0.9-1.0",
+    "n": 51,
+    "mean_confidence": 0.9534652941176471,
+    "accuracy": 0.9411764705882353
+   }
+  ],
+  "accuracy_when_keeping_most_confident": {
+   "20%": 0.7313432835820896,
+   "40%": 0.6156716417910447,
+   "60%": 0.5533498759305211,
+   "80%": 0.5027932960893855,
+   "100%": 0.47470238095238093
+  }
+ },
+ "normal_vs_crime_auc": 0.9379340277777778,
+ "length_effect": {
+  "spearman_frames_vs_error": 0.06254178699393201,
+  "p": 0.10526749445631642,
+  "error_rate_by_length_quartile": [
+   0.47023809523809523,
+   0.5,
+   0.5212121212121212,
+   0.6081871345029239
+  ],
+  "quartile_edges_frames": [
+   275.75,
+   486.0,
+   840.0
+  ]
+ },
+ "test_data_used": false
+}

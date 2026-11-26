@@ -1,0 +1,52 @@
+{
+  "device": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_name": "NVIDIA H200 MIG 1g.18gb",
+    "deterministic_warn_only": false,
+    "mps_available": false,
+    "mps_built": false,
+    "mps_fallback_environment": null,
+    "policy": "cuda_strict",
+    "selected": "cuda",
+    "supports_pin_memory": true,
+    "torch_threads": 112
+  },
+  "exception_type": "AttributeError",
+  "io": {
+    "cache_hit_fraction": 0.0,
+    "nfs_bytes_by_mount": {
+      "<home>": {
+        "direct_read": 0,
+        "direct_write": 0,
+        "normal_read": 3336872387,
+        "normal_write": 565876326,
+        "readpages": 131653,
+        "server_read": 532088303,
+        "server_write": 565876326,
+        "writepages": 138154
+      }
+    },
+    "nfs_read_bytes_total": 3336872387,
+    "proc_io": {
+      "rchar": 96202294730,
+      "read_bytes": 109959200768,
+      "wchar": 990111730,
+      "write_bytes": 629100544
+    }
+  },
+  "memory": {
+    "device_memory_report": {
+      "current_allocated_memory": 457883648,
+      "driver_allocated_memory": 3674210304,
+      "peak_allocated_memory": 3179025408,
+      "recommended_max_memory": 17179869184
+    },
+    "peak_device_allocated_bytes": 3179025408,
+    "peak_process_rss_bytes": 2846715904,
+    "process_rss_growth_bytes": 2178732032
+  },
+  "message": "Caught AttributeError in DataLoader worker process 0.\nOriginal Traceback (most recent call last):\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py\", line 374, in _worker_loop\n    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py\", line 54, in fetch\n    data = [self.dataset[idx] for idx in possibly_batched_index]\n            ~~~~~~~~~~~~^^^^^\n  File \"<repo>/data/video_dataset.py\", line 218, in __getitem__\n    self._augmentation_run_seed,\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'P1CVideoFrameDataset' object has no attribute '_augmentation_run_seed'\n",
+  "test_evaluation_performed": false
+}

@@ -1,0 +1,87 @@
+[
+ {
+  "arm": "B_frozen",
+  "fold": 1,
+  "seed": 0,
+  "macro_f1": 0.047619047619047616,
+  "accuracy": 0.5,
+  "best_epoch": 1,
+  "monitor_macro_f1": 0.41598639455782316,
+  "epochs_run": 2,
+  "train_loss_at_best": 1.758740714618138,
+  "train_videos": 420,
+  "monitor_videos": 56
+ },
+ {
+  "arm": "B_ft4",
+  "fold": 1,
+  "seed": 0,
+  "macro_f1": 0.028571428571428574,
+  "accuracy": 0.25,
+  "backbone_lr": 3e-05,
+  "trainable_blocks": 4,
+  "best_epoch": 1,
+  "monitor_macro_f1": 0.28408575551432697,
+  "epochs_run": 2,
+  "train_loss_at_best": 1.5768397615069434,
+  "train_videos": 420,
+  "monitor_videos": 56,
+  "seconds": 26.5,
+  "trainable_parameters": 35477006,
+  "trainable_tensors": [
+   "blocks.0.attn.proj.bias",
+   "blocks.0.attn.proj.weight",
+   "..."
+  ],
+  "selected": true,
+  "scored": true
+ },
+ {
+  "arm": "B_ft2",
+  "fold": 1,
+  "seed": 0,
+  "macro_f1": 0.028571428571428574,
+  "accuracy": 0.25,
+  "backbone_lr": 3e-05,
+  "trainable_blocks": 2,
+  "best_epoch": 1,
+  "monitor_macro_f1": 0.46740362811791375,
+  "epochs_run": 2,
+  "train_loss_at_best": 1.6597918419610886,
+  "train_videos": 420,
+  "monitor_videos": 56,
+  "seconds": 14.0,
+  "trainable_parameters": 21298190,
+  "trainable_tensors": [
+   "blocks.0.attn.proj.bias",
+   "blocks.0.attn.proj.weight",
+   "..."
+  ],
+  "selected": true,
+  "scored": true
+ },
+ {
+  "arm": "B_ft2_lr0",
+  "fold": 1,
+  "seed": 0,
+  "macro_f1": 0.047619047619047616,
+  "accuracy": 0.5,
+  "backbone_lr": 0.0,
+  "trainable_blocks": 2,
+  "best_epoch": 1,
+  "monitor_macro_f1": 0.41598639455782316,
+  "epochs_run": 2,
+  "train_loss_at_best": 1.758736651284354,
+  "train_videos": 420,
+  "monitor_videos": 56,
+  "seconds": 13.8,
+  "trainable_parameters": 21298190,
+  "trainable_tensors": [
+   "blocks.0.attn.proj.bias",
+   "blocks.0.attn.proj.weight",
+   "..."
+  ],
+  "selected": true,
+  "scored": true
+ }
+]

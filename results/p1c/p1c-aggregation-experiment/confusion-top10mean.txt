@@ -1,0 +1,15 @@
+true\pred   Abus Arre Arso Assa Burg Expl Figh Norm Road Robb Shoo Shop Stea Vand
+Abuse         19   10    0    5    0    0    5    2    5    0    0    0    2    0
+Arrest         0   20    0    1    2    3    2    1    4   10    3    2    0    0
+Arson          5    0   31    0    0    9    0    0    3    0    0    0    0    0
+Assault        9    1   16   11    6    0    2    0    0    0    0    0    0    3
+Burglary       5    4    7    3   13    0    1    0    0    5    0    9    0    1
+Explosion      0    0    6    0    0   31    0    0    0    0    3    8    0    0
+Fighting       2    4    6    2    8    0   11    0    2    9    0    1    0    3
+Normal_Vi      0    0    0    0    0    2    0   36    6    4    0    0    0    0
+RoadAccid      1    0    0    0    0    8    0    0   21    0    6    0   10    2
+Robbery        0    0    0    5    7    0    4    0    0   28    0    1    3    0
+Shooting       6    1    1    4    2    0    4    6    9    3    1   11    0    0
+Shoplifti      1    0    0    0    0    0    4    0    0    1    0   41    0    1
+Stealing       0    0    0    0    6    0    6    0    0    0    0    0   32    4
+Vandalism      0    0   14    1    0    0   10    0    3    0    0    0   11    9

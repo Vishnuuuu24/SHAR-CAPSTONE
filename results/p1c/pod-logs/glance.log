@@ -1,0 +1,61 @@
+{"train_arm": "train_uniform_foldcache", "fold": 1, "seed": 0, "all_videos_macro_f1": 0.5257369614512472, "train_run_macro_f1": 0.5257369614512472}
+{"train_arm": "train_uniform_foldcache", "fold": 1, "seed": 1, "all_videos_macro_f1": 0.5162131519274376, "train_run_macro_f1": 0.5162131519274376}
+{"train_arm": "train_uniform_foldcache", "fold": 1, "seed": 2, "all_videos_macro_f1": 0.5268707482993198, "train_run_macro_f1": 0.5268707482993198}
+{"train_arm": "train_oracle", "fold": 1, "seed": 0, "all_videos_macro_f1": 0.5223562152133581, "train_run_macro_f1": 0.5223562152133581}
+{"train_arm": "train_oracle", "fold": 1, "seed": 1, "all_videos_macro_f1": 0.5281746031746032, "train_run_macro_f1": 0.5281746031746032}
+{"train_arm": "train_oracle", "fold": 1, "seed": 2, "all_videos_macro_f1": 0.5323593073593074, "train_run_macro_f1": 0.5323593073593074}
+{"train_arm": "train_uniform_foldcache", "fold": 2, "seed": 0, "all_videos_macro_f1": 0.43554421768707485, "train_run_macro_f1": 0.43554421768707485}
+{"train_arm": "train_uniform_foldcache", "fold": 2, "seed": 1, "all_videos_macro_f1": 0.43656462585034017, "train_run_macro_f1": 0.43656462585034017}
+{"train_arm": "train_uniform_foldcache", "fold": 2, "seed": 2, "all_videos_macro_f1": 0.4371521335807049, "train_run_macro_f1": 0.4371521335807049}
+{"train_arm": "train_oracle", "fold": 2, "seed": 0, "all_videos_macro_f1": 0.4873582766439909, "train_run_macro_f1": 0.4873582766439909}
+{"train_arm": "train_oracle", "fold": 2, "seed": 1, "all_videos_macro_f1": 0.5124974232117089, "train_run_macro_f1": 0.5124974232117089}
+{"train_arm": "train_oracle", "fold": 2, "seed": 2, "all_videos_macro_f1": 0.5188878581735724, "train_run_macro_f1": 0.5188878581735724}
+{"train_arm": "train_uniform_foldcache", "fold": 3, "seed": 0, "all_videos_macro_f1": 0.4525510204081633, "train_run_macro_f1": 0.4525510204081633}
+{"train_arm": "train_uniform_foldcache", "fold": 3, "seed": 1, "all_videos_macro_f1": 0.4862966398680683, "train_run_macro_f1": 0.4862966398680683}
+{"train_arm": "train_uniform_foldcache", "fold": 3, "seed": 2, "all_videos_macro_f1": 0.4720521541950113, "train_run_macro_f1": 0.4720521541950113}
+{"train_arm": "train_oracle", "fold": 3, "seed": 0, "all_videos_macro_f1": 0.48595650381364663, "train_run_macro_f1": 0.48595650381364663}
+{"train_arm": "train_oracle", "fold": 3, "seed": 1, "all_videos_macro_f1": 0.45177798392084106, "train_run_macro_f1": 0.45177798392084106}
+{"train_arm": "train_oracle", "fold": 3, "seed": 2, "all_videos_macro_f1": 0.4774273345701917, "train_run_macro_f1": 0.4774273345701917}
+{"train_arm": "train_uniform_foldcache", "fold": 4, "seed": 0, "all_videos_macro_f1": 0.412358276643991, "train_run_macro_f1": 0.412358276643991}
+{"train_arm": "train_uniform_foldcache", "fold": 4, "seed": 1, "all_videos_macro_f1": 0.4363945578231293, "train_run_macro_f1": 0.4363945578231293}
+{"train_arm": "train_uniform_foldcache", "fold": 4, "seed": 2, "all_videos_macro_f1": 0.42546897546897544, "train_run_macro_f1": 0.42546897546897544}
+{"train_arm": "train_oracle", "fold": 4, "seed": 0, "all_videos_macro_f1": 0.3957637600494744, "train_run_macro_f1": 0.3957637600494744}
+{"train_arm": "train_oracle", "fold": 4, "seed": 1, "all_videos_macro_f1": 0.42524221809936097, "train_run_macro_f1": 0.42524221809936097}
+{"train_arm": "train_oracle", "fold": 4, "seed": 2, "all_videos_macro_f1": 0.4158468515611372, "train_run_macro_f1": 0.4158468515611372}
+{
+  "all_video_macro_f1_mean_sd": {
+    "train_uniform_foldcache": [
+      0.4636002886002885,
+      0.04087491227502544
+    ],
+    "train_oracle": [
+      0.479470694649266,
+      0.04721694101830882
+    ]
+  },
+  "paired_gate": {
+    "per_fold_mean": {
+      "train_uniform_foldcache": {
+        "1": 0.5229402872260015,
+        "2": 0.43642032570603995,
+        "3": 0.470299938157081,
+        "4": 0.42474060331203195
+      },
+      "train_oracle": {
+        "1": 0.5276300419157561,
+        "2": 0.5062478526764241,
+        "3": 0.47172060743489314,
+        "4": 0.41228427656999084
+      }
+    },
+    "per_fold_delta": {
+      "1": 0.004689754689754633,
+      "2": 0.06982752697038419,
+      "3": 0.0014206692778121477,
+      "4": -0.012456326742041113
+    },
+    "mean_delta": 0.015870406048977465,
+    "folds_meeting_gate": 1,
+    "passes_gate": false
+  }
+}

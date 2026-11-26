@@ -1,0 +1,113 @@
+########## CONTROL fold1 (8/video, all classes) 01:10:48Z ##########
+train 3808 rows sampled (8/video, per-label overrides none, sampling_seed=None), validation 37600 rows (full, untouched), dim 1536, cache 56c0312b9122
+
+--- seed 0 ---
+best epoch 3 (early-stopped), validation macro-F1 0.3619 (clustered 95% CI 0.2489-0.4426), video-level macro-F1 0.3998 over 56 videos, train 2.3s
+wrote results/p1c/p1c-shooting-intervention/fold1-control/seed-0.json
+
+--- seed 1 ---
+best epoch 3 (early-stopped), validation macro-F1 0.4097 (clustered 95% CI 0.2817-0.4881), video-level macro-F1 0.5126 over 56 videos, train 4.3s
+wrote results/p1c/p1c-shooting-intervention/fold1-control/seed-1.json
+
+--- seed 2 ---
+best epoch 3 (early-stopped), validation macro-F1 0.3890 (clustered 95% CI 0.2708-0.4641), video-level macro-F1 0.4237 over 56 videos, train 3.7s
+wrote results/p1c/p1c-shooting-intervention/fold1-control/seed-2.json
+########## INTERVENTION fold1 (Shooting=32, others 8) 01:13:30Z ##########
+train 4624 rows sampled (8/video, per-label overrides {'Shooting': 32}, sampling_seed=None), validation 37600 rows (full, untouched), dim 1536, cache 56c0312b9122
+
+--- seed 0 ---
+best epoch 3 (early-stopped), validation macro-F1 0.3677 (clustered 95% CI 0.2529-0.4479), video-level macro-F1 0.4302 over 56 videos, train 3.6s
+wrote results/p1c/p1c-shooting-intervention/fold1-shooting32/seed-0.json
+
+--- seed 1 ---
+best epoch 3 (early-stopped), validation macro-F1 0.3964 (clustered 95% CI 0.2735-0.4751), video-level macro-F1 0.4914 over 56 videos, train 4.8s
+wrote results/p1c/p1c-shooting-intervention/fold1-shooting32/seed-1.json
+
+--- seed 2 ---
+best epoch 3 (early-stopped), validation macro-F1 0.3650 (clustered 95% CI 0.2500-0.4427), video-level macro-F1 0.4398 over 56 videos, train 4.8s
+wrote results/p1c/p1c-shooting-intervention/fold1-shooting32/seed-2.json
+########## CONTROL fold2 (8/video, all classes) 01:16:15Z ##########
+train 3808 rows sampled (8/video, per-label overrides none, sampling_seed=None), validation 47726 rows (full, untouched), dim 1536, cache ea8c33fbecf3
+
+--- seed 0 ---
+best epoch 7 (early-stopped), validation macro-F1 0.2603 (clustered 95% CI 0.1828-0.3326), video-level macro-F1 0.3564 over 56 videos, train 6.1s
+wrote results/p1c/p1c-shooting-intervention/fold2-control/seed-0.json
+
+--- seed 1 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2811 (clustered 95% CI 0.1960-0.3709), video-level macro-F1 0.3797 over 56 videos, train 1.6s
+wrote results/p1c/p1c-shooting-intervention/fold2-control/seed-1.json
+
+--- seed 2 ---
+best epoch 3 (early-stopped), validation macro-F1 0.2925 (clustered 95% CI 0.2162-0.3453), video-level macro-F1 0.3668 over 56 videos, train 3.5s
+wrote results/p1c/p1c-shooting-intervention/fold2-control/seed-2.json
+########## INTERVENTION fold2 (Shooting=32, others 8) 01:19:12Z ##########
+train 4624 rows sampled (8/video, per-label overrides {'Shooting': 32}, sampling_seed=None), validation 47726 rows (full, untouched), dim 1536, cache ea8c33fbecf3
+
+--- seed 0 ---
+best epoch 4 (early-stopped), validation macro-F1 0.2453 (clustered 95% CI 0.1727-0.3186), video-level macro-F1 0.3098 over 56 videos, train 5.4s
+wrote results/p1c/p1c-shooting-intervention/fold2-shooting32/seed-0.json
+
+--- seed 1 ---
+best epoch 3 (early-stopped), validation macro-F1 0.2696 (clustered 95% CI 0.1889-0.3565), video-level macro-F1 0.3537 over 56 videos, train 4.9s
+wrote results/p1c/p1c-shooting-intervention/fold2-shooting32/seed-1.json
+
+--- seed 2 ---
+best epoch 2 (early-stopped), validation macro-F1 0.2723 (clustered 95% CI 0.1939-0.3329), video-level macro-F1 0.3454 over 56 videos, train 4.3s
+wrote results/p1c/p1c-shooting-intervention/fold2-shooting32/seed-2.json
+########## CONTROL fold3 (8/video, all classes) 01:22:12Z ##########
+train 3808 rows sampled (8/video, per-label overrides none, sampling_seed=None), validation 49719 rows (full, untouched), dim 1536, cache 681f53307dbd
+
+--- seed 0 ---
+best epoch 9 (early-stopped), validation macro-F1 0.3261 (clustered 95% CI 0.2194-0.4104), video-level macro-F1 0.4421 over 56 videos, train 5.7s
+wrote results/p1c/p1c-shooting-intervention/fold3-control/seed-0.json
+
+--- seed 1 ---
+best epoch 8 (early-stopped), validation macro-F1 0.3280 (clustered 95% CI 0.2214-0.4091), video-level macro-F1 0.3766 over 56 videos, train 3.8s
+wrote results/p1c/p1c-shooting-intervention/fold3-control/seed-1.json
+
+--- seed 2 ---
+best epoch 4 (early-stopped), validation macro-F1 0.3248 (clustered 95% CI 0.2191-0.3920), video-level macro-F1 0.3656 over 56 videos, train 4.6s
+wrote results/p1c/p1c-shooting-intervention/fold3-control/seed-2.json
+########## INTERVENTION fold3 (Shooting=32, others 8) 01:25:15Z ##########
+train 4624 rows sampled (8/video, per-label overrides {'Shooting': 32}, sampling_seed=None), validation 49719 rows (full, untouched), dim 1536, cache 681f53307dbd
+
+--- seed 0 ---
+best epoch 10 (early-stopped), validation macro-F1 0.3062 (clustered 95% CI 0.1997-0.3869), video-level macro-F1 0.4353 over 56 videos, train 8.6s
+wrote results/p1c/p1c-shooting-intervention/fold3-shooting32/seed-0.json
+
+--- seed 1 ---
+best epoch 9 (early-stopped), validation macro-F1 0.3181 (clustered 95% CI 0.2124-0.3999), video-level macro-F1 0.4142 over 56 videos, train 8.3s
+wrote results/p1c/p1c-shooting-intervention/fold3-shooting32/seed-1.json
+
+--- seed 2 ---
+best epoch 5 (early-stopped), validation macro-F1 0.2997 (clustered 95% CI 0.2004-0.3682), video-level macro-F1 0.4352 over 56 videos, train 4.6s
+wrote results/p1c/p1c-shooting-intervention/fold3-shooting32/seed-2.json
+########## CONTROL fold4 (8/video, all classes) 01:28:26Z ##########
+train 3808 rows sampled (8/video, per-label overrides none, sampling_seed=None), validation 41319 rows (full, untouched), dim 1536, cache 3b4aaed3037e
+
+--- seed 0 ---
+best epoch 20 (early-stopped), validation macro-F1 0.3379 (clustered 95% CI 0.2222-0.4121), video-level macro-F1 0.3870 over 56 videos, train 9.5s
+wrote results/p1c/p1c-shooting-intervention/fold4-control/seed-0.json
+
+--- seed 1 ---
+best epoch 12 (early-stopped), validation macro-F1 0.3698 (clustered 95% CI 0.2342-0.4397), video-level macro-F1 0.4096 over 56 videos, train 7.8s
+wrote results/p1c/p1c-shooting-intervention/fold4-control/seed-1.json
+
+--- seed 2 ---
+best epoch 6 (early-stopped), validation macro-F1 0.3230 (clustered 95% CI 0.2075-0.3922), video-level macro-F1 0.3806 over 56 videos, train 5.4s
+wrote results/p1c/p1c-shooting-intervention/fold4-control/seed-2.json
+########## INTERVENTION fold4 (Shooting=32, others 8) 01:31:26Z ##########
+train 4624 rows sampled (8/video, per-label overrides {'Shooting': 32}, sampling_seed=None), validation 41319 rows (full, untouched), dim 1536, cache 3b4aaed3037e
+
+--- seed 0 ---
+best epoch 10 (early-stopped), validation macro-F1 0.3065 (clustered 95% CI 0.2041-0.3849), video-level macro-F1 0.3824 over 56 videos, train 9.0s
+wrote results/p1c/p1c-shooting-intervention/fold4-shooting32/seed-0.json
+
+--- seed 1 ---
+best epoch 8 (early-stopped), validation macro-F1 0.3209 (clustered 95% CI 0.2101-0.3975), video-level macro-F1 0.3871 over 56 videos, train 6.5s
+wrote results/p1c/p1c-shooting-intervention/fold4-shooting32/seed-1.json
+
+--- seed 2 ---
+best epoch 9 (early-stopped), validation macro-F1 0.2959 (clustered 95% CI 0.1902-0.3726), video-level macro-F1 0.3812 over 56 videos, train 7.6s
+wrote results/p1c/p1c-shooting-intervention/fold4-shooting32/seed-2.json
+########## DONE 2026-09-11T01:34:28Z ##########

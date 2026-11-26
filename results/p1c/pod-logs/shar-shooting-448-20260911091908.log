@@ -1,0 +1,26 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 185s ---
+/dev/md1        1870026616 145271420 1724755196       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.01 GiB (recovered 15.98 GiB)
+=== started 2026-09-11T09:22:21Z ===
+configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml: 11658 frames from 14 new videos
+configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml: 2542 frames from 6 new videos
+configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml: 215 frames from 1 new videos
+plan: 14415 frames, 21 videos
+  1024 frames
+  2048 frames
+  3072 frames
+  4096 frames
+  5120 frames
+  6144 frames
+  7168 frames
+  8192 frames
+  9216 frames
+  10240 frames
+  11264 frames
+  12298 frames
+  13322 frames
+  14360 frames
+wrote results/p1c/p1c-shooting-tokens/pooled448: shape [14415, 1536], sha256 d67049b80fc0bae3
+done: 14415 frames, 21 videos
+=== DONE 2026-09-11T09:32:21Z ===

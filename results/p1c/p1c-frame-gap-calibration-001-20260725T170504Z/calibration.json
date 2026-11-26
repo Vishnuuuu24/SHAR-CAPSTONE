@@ -1,0 +1,20 @@
+{
+  "device": {
+    "cpu_fallback_allowed": false,
+    "mps_available": false,
+    "mps_built": true,
+    "mps_fallback_environment": null,
+    "selected": "unavailable"
+  },
+  "failure": {
+    "exception_type": "RuntimeError",
+    "message": "MPS requested but unavailable (built=True, available=False); refusing silent CPU fallback",
+    "scope_assertions": {
+      "checkpoint_saved": false,
+      "configuration_selection": false,
+      "held_out_test_access": false,
+      "research_training": false
+    }
+  },
+  "kind": "P1C calibration preflight failure; not training"
+}

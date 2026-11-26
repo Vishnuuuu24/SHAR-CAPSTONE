@@ -1,0 +1,23 @@
+=== started 2026-09-11T07:27:36Z ===
+configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml: 11658 frames from 14 new videos
+  1024 frames
+  2048 frames
+=== started 2026-09-11T08:13:40Z ===
+configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml: 11658 frames from 14 new videos
+  1024 frames
+  2048 frames
+  3072 frames
+  4096 frames
+  5120 frames
+  6144 frames
+  7168 frames
+  8192 frames
+  9216 frames
+  10240 frames
+  11264 frames
+configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD2.yaml: 2542 frames from 6 new videos
+  12298 frames
+  13322 frames
+configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD3.yaml: 215 frames from 1 new videos
+  14360 frames
+cache consistency: max |mean(patch) - cached mean-patch| = 9.530e-02 over 14415 rows (tf32 conv on both sides)

@@ -1,0 +1,40 @@
+{
+ "videos": {
+  "train": 3503,
+  "validation": 447,
+  "test": 799
+ },
+ "validation_groups": 144,
+ "official_groups_shared_by_train_and_test": 184,
+ "per_class": {
+  "train": {
+   "Normal": 1822,
+   "Fighting": 420,
+   "Shooting": 377,
+   "Riot": 344,
+   "Abuse": 42,
+   "Car accident": 398,
+   "Explosion": 332
+  },
+  "validation": {
+   "Normal": 224,
+   "Fighting": 61,
+   "Shooting": 64,
+   "Riot": 40,
+   "Abuse": 8,
+   "Car accident": 46,
+   "Explosion": 49
+  },
+  "test": {
+   "Normal": 299,
+   "Fighting": 126,
+   "Shooting": 104,
+   "Riot": 101,
+   "Abuse": 11,
+   "Car accident": 106,
+   "Explosion": 103
+  }
+ },
+ "fraction": 0.1,
+ "seed": 0
+}

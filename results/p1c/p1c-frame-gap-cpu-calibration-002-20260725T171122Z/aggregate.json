@@ -1,0 +1,10 @@
+{
+  "kind": "P1C calibration infrastructure-abort recovery; not a calibration result",
+  "reason": "The process was interrupted during the pre-fix MPS telemetry probe before any calibration batch or timing was recorded; the guarded rerun 20260725T171226Z completed successfully.",
+  "scope_assertions": {
+    "checkpoint_saved": false,
+    "configuration_selection": false,
+    "held_out_test_access": false,
+    "research_training": false
+  }
+}

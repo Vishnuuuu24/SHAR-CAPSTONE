@@ -1,0 +1,239 @@
+# P1C-VIDEO-FROZEN-RESNET-AR-FOLD2
+#
+# THREE-SEED CONFIRMATION RUN. This is the first run whose number may be
+# quoted, and only as an inherited-label validation figure on one fold.
+#
+# WHY THIS RUN EXISTS
+# Three single-seed screens were read against P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1
+# (validation macro-F1 0.2939 +/- 0.0196 over seeds [0,1,2]; seed 0 = 0.2962):
+#   SCREEN-012  backbone frozen            0.3537   +0.0575 vs seed 0   216 s/epoch
+#   SCREEN-013  lr 3e-4 -> 3e-5            0.3364   +0.0402 vs seed 0   635 s/epoch
+#   SCREEN-014  frozen + augmentation      0.3421   -0.0116 vs SCREEN-012, 308 s/epoch
+# SCREEN-013 cleared its 0.04 gate by 0.0002 -- inside the seed noise the
+# threshold was derived from -- and lost the head-to-head at 3x the cost.
+# SCREEN-014 was a NEGATIVE result and is retained as one under rule 4:
+# augmentation scored below the un-augmented frozen run and cost 43% more wall
+# clock. Freezing is the only change that survived screening, so it alone is
+# confirmed here.
+#
+# WHAT THIS RUN IS FOR
+# A screening result is one seed and carries no error bar. This run re-measures
+# the frozen configuration over seeds [0, 1, 2] so the improvement over
+# BASELINE-011 can be stated with a spread rather than asserted from a single
+# draw. If the three-seed mean does not hold up above the baseline by more than
+# the seed noise, that is the finding and it is recorded as such.
+#
+# CHANGES FROM SCREEN-012, both declared:
+#   training.seeds   [0] -> [0, 1, 2]   -- the point of the run
+#   training.epochs  20  -> 30          -- SCREEN-012 hit its ceiling with its
+#     best at epoch 15, so 20 was truncating rather than early-stopping. Its
+#     last ten epochs spanned 0.3421-0.3537, a flat plateau, so the extra
+#     budget is expected to be largely inert; patience 5 / min_delta 0.001 is
+#     unchanged and still governs the stop. This does not confound the
+#     comparison against BASELINE-011, whose seeds all early-stopped by epoch 5
+#     with the ceiling never binding.
+# Nothing else moves. Backbone stays frozen, augmentation stays `none`, and
+# resolution, batch size, precision, throughput policy, optimizer, lr, loader,
+# device policy and both manifest digests are byte-identical to SCREEN-012.
+#
+# TEST IS STILL NOT TOUCHED. The runner evaluates validation only for every run
+# class (`run_kind: ..._validation_only`, `test_evaluation_performed: false`),
+# and both Test registrations are OMITTED below exactly as they were for the
+# screens. Test is spent once, on a final configuration, not on a fold-1
+# confirmation.
+#
+# LABEL HONESTY (rule 1, D-40). Fold 2 has no constructible event-only view --
+# only 48 of its 168 test videos carry an official temporal interval, and Abuse,
+# Robbery and Stealing have none. Every number this run produces is an
+# INHERITED-LABEL validation score and must be named as one. It is never to be
+# reported as event-only.
+#
+# COST: 3 seeds x 30 epochs x 216 s = 5.4 h ceiling; early stopping will likely
+# bring it in nearer 4 h. One MIG slice, serial.
+schema_version: 1.0.0
+experiment:
+  id: P1C-VIDEO-FROZEN-RESNET-AR-FOLD2
+  parent_id: P1C-VIDEO-FROZEN-CONFIRM-015-AR-FOLD1
+  status: REGISTERED_FULL_RUN_READY
+  run_class: full
+  question: >-
+    What is the reproducible 14-class UCF-Crime frame-classification baseline on official
+    Action-Recognition fold 2, using the D-34/D-35 video blob at native-derived 224x224
+    under bfloat16 and the sweep-010 throughput policy?
+  hypothesis: >-
+    Freezing the ImageNet-pretrained ResNet50 backbone and training only the 28,686-parameter
+    linear head raises validation macro-F1 over the fully fine-tuned BASELINE-011 by more than
+    the seed spread, because the baseline's failure is memorisation of per-video appearance
+    across 384,702 frames drawn from only 476 source videos rather than a shortage of capacity.
+    Measured over three seeds so the claim carries a spread.
+  change_from_parent:
+    - training.seeds - [0] -> [0, 1, 2] - the purpose of this run
+    - training.epochs - 20 -> 30 - declared - SCREEN-012 was truncated by its ceiling with its
+      best at epoch 15; patience 5 / min_delta 0.001 unchanged and still governs the stop
+    - experiment.status - screening -> REGISTERED_FULL_RUN_READY, run_class full
+    - nothing else moves - backbone.trainable stays frozen, augmentation stays none, and
+      resolution, batch size, precision, throughput policy, optimizer, lr, loader, device
+      policy and both manifest digests are byte-identical to SCREEN-012
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    # Official ClassIDs.txt order and spelling. Do not rename
+    # Normal_Videos_event: the manifests carry the official label.
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, Normal_Videos_event, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism]
+  backbone:
+    family: torchvision_resnet50
+    feature: layer4_C5_pre_GAP
+    # THE ONE CHANGE from the parent. Absent resolves to `full`, so every
+    # other registered config keeps its exact behaviour untouched.
+    trainable: frozen
+    weights:
+      enum: IMAGENET1K_V2
+      source_url: https://download.pytorch.org/models/resnet50-11ad3fa6.pth
+      path: .cache/weights/resnet50-11ad3fa6.pth
+      sha256: 11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca
+  data:
+    dataset_roots:
+      # Keyed by the manifest's actual source_dataset value
+      # (data.video_manifests.SOURCE_DATASET), not the raw video directory
+      # name -- readiness's own manifest walk resolves rows through this key.
+      ucf_crime_official_video_frames: Datasets/UCF Crime Official/raw/UCF_Crimes/Videos
+    # Settled. 476 train / 56 validation videos, carved by whole source video,
+    # leakage checked before write; 384,702 and 47,726 frames at stride 5.
+    train:
+      path: results/p1b/p1b-video-ar-fold2/train_manifest.csv
+      sha256: 35ce84cf70dfbba3e6f6f9134636767d815ac085b688c42a96c869ac399dd71a
+    validation:
+      path: results/p1b/p1b-video-ar-fold2/validation_manifest.csv
+      sha256: 8b92be8e7b319be5f3c57f14565681a368e60c6cf612fdbf8c5a31b64b63f4d9
+    # THE PIXEL SOURCE. Omitting this block does not fail -- it silently selects
+    # the per-file loader, which with verify_digests:true re-hashes the source
+    # MP4 for every one of 384,702 manifest rows. That cost 7h25m of slice time
+    # on 2026-08-27 (39 TB of reads against a 97.7 GiB corpus) before it was
+    # caught. See K-21; the runner now refuses this combination rather than
+    # degrading into it.
+    #
+    # Bare absolute host path: the blob is 84.3 GiB, lives outside the
+    # repository, and inside a pod this is the node-local emptyDir copy that
+    # start_pod_job.sh stages via STAGE_FROM. It is never read from /home during
+    # a run -- /home is NFS and random record reads against it are exactly what
+    # D-33 exists to avoid.
+    #
+    # Registered blob SHA-256, verified once at dataset construction:
+    #   fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665
+    video_frames:
+      extract_closure_path: /scratch-emptydir/p1c-video-frames/extract_closure.json
+    # Both Test registrations are present because a full run must register
+    # them -- NOT because this run reads them. The runner is validation-only for
+    # every run class (`run_kind: ..._validation_only`,
+    # `test_evaluation_performed: false`), so registering these declares which
+    # Test views exist and under what honest name, and spends nothing. Test is
+    # spent once, on a final configuration, not on a fold-1 confirmation.
+    event_only_test:
+      unavailable: true
+      reason: >-
+        Measured 2026-09-02 for THIS fold: of fold 2's 168 official Action-Recognition test videos, only
+        50 appear in the official temporal annotation file at all and only 38 carry a real (non -1)
+        interval; Abuse, Assault and Robbery have zero interval-covered test videos. A 14-class macro-F1
+        event-only view therefore cannot be computed for this fold at any sample size. Counts are fold-
+        specific and were re-measured rather than inherited from fold 1. See D-40.
+    # 168 videos, 133,423 frames. This is the inherited-label test directory,
+    # reported under its honest noisy_proxy_test name per D-40 -- never called
+    # event-only.
+    noisy_proxy_test:
+      path: results/p1b/p1b-video-ar-fold2/test_manifest.csv
+      sha256: 242ea197b9fb38167f692991511cf3e971d43fca3947bc0d3018fc7d398b8a6b
+  preprocessing:
+    # 224x224 (owner, 2026-08-27). The blob holds full 320x240 pixels, so this is
+    # a loader-configuration choice and a rerun, never a re-extraction. Native
+    # 240x320 was measured at 268.1 img/s against 400.5 here and was declined as
+    # not worth 1.49x the wall clock; 224 also matches the ImageNet pretraining
+    # geometry the backbone was trained at, giving a 7x7 pre-GAP map.
+    resize_height: 224
+    resize_width: 224
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    # Owner decision: `none`, so this first research run is the plain control
+    # every later one-change arm is compared against. Train frames are
+    # imbalanced 4.48x (RoadAccidents 10,656 -> Arrest 47,704) even though
+    # videos are exactly 34 per class, because videos differ in length; a
+    # class-balanced variant is a later, separately labelled comparison.
+    class_balance: none
+  augmentation:
+    # `none` keeps this a conventional auditable control. Worth knowing when the
+    # next experiment is chosen: the loader is 0.07% of wall time at this point,
+    # so augmentation is very close to free in wall-clock terms.
+    name: none
+    rationale: Preserve a conventional auditable first control; augmentation is a future one-change experiment.
+  training:
+    seeds: [0, 1, 2]
+    batch_size: 64
+    loader:
+      # 6 workers is inherited from the measured point. The loader is 0.07% of
+      # wall here, so 2 would also do; left as measured rather than re-tuned,
+      # because this config must match the point sweep-010 actually measured.
+      num_workers: 6
+      pin_memory: true
+      persistent_workers: true
+      drop_last: false
+      verify_digests: true
+    epochs: 30
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    scheduler:
+      name: none
+    early_stopping:
+      monitor: macro_f1
+      mode: max
+      patience: 5
+      min_delta: 0.001
+    selection_rule: best_validation_macro_f1
+    device_policy: cuda_strict
+    precision: amp_bfloat16
+    # P1C-VIDEO-SWEEP-010 V5: 1.745x over the all-off control (403.2 -> 703.7
+    # img/s) with zero skipped optimizer steps and no change to the arithmetic.
+    # These change which CUDA kernels run, so a run is deterministic within this
+    # policy but is NOT bitwise comparable to one under a different policy --
+    # every arm of a RESULT 1 / RESULT 2 comparison must hold this block fixed.
+    throughput:
+      channels_last: true
+      compile: default
+      fused_optimizer: true
+  evaluation:
+    primary_metric: macro_f1
+    clustered_ci_iterations: 1000
+    clustered_ci_seed: 0
+    # Owner decision 2026-08-27: report an additional, evaluation-only,
+    # per-video majority-vote score alongside the frame-level metrics above.
+    # Train frames are imbalanced 4.48x (RoadAccidents 10,656 -> Arrest
+    # 47,704) purely because videos differ in length, even though videos
+    # themselves are exactly balanced (34/class train, 4/class validation,
+    # 12/class test). A per-video score is immune to that imbalance because
+    # it counts each video once. This does not change training or checkpoint
+    # selection (`selection_rule: best_validation_macro_f1` still selects on
+    # the frame-level metric); see eval/video_level.py for the method and its
+    # majority-vote-discards-confidence limitation.
+    video_level_aggregation: majority_vote
+gates:
+  owner_registration_required: false
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  expected_preflight: >-
+    stage the blob directory into the pod's emptyDir with
+    STAGE_FROM=<repo>/results/p1c/p1c-video-frames,
+    which start_pod_job.sh copies to $SCRATCH_MOUNT and size-checks before the runner starts
+  output: three_seed_aggregate_with_clustered_ci_and_retained_best_checkpoints
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - torch_or_torchvision_version_differs_from_the_registered_environment
+    - video_blob_sha256_mismatch_or_missing_extract_closure
+    - loader_wait_exceeds_50_percent_of_train_wall

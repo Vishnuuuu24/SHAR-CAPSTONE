@@ -1,0 +1,34 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 148s ---
+/dev/md1        1870026616 146866564 1723160052       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.01 GiB (recovered 15.98 GiB)
+plan: 5395 clips over 700 videos; 1568x768 fp16 -> 12,993,576,960 bytes (12.10 GiB)
+fold 1 train: 3648 new clips
+  256/5395 clips, 178s
+  512/5395 clips, 185s
+  768/5395 clips, 192s
+  1024/5395 clips, 199s
+  1280/5395 clips, 206s
+  1536/5395 clips, 214s
+  1792/5395 clips, 221s
+  2048/5395 clips, 228s
+  2304/5395 clips, 235s
+  2560/5395 clips, 242s
+  2816/5395 clips, 250s
+  3072/5395 clips, 257s
+  3328/5395 clips, 264s
+  3584/5395 clips, 271s
+fold 1 validation: 438 new clips
+  3904/5395 clips, 281s
+fold 2 train: 1146 new clips
+  4342/5395 clips, 353s
+  4598/5395 clips, 360s
+  4854/5395 clips, 367s
+  5110/5395 clips, 374s
+fold 2 validation: 163 new clips
+fold 3 train: 0 new clips
+fold 3 validation: 0 new clips
+fold 4 train: 0 new clips
+fold 4 validation: 0 new clips
+built /scratch-emptydir/p1c-videomae-block8-cache: 5395 clips, sha256 21a9a855a74f7945, verify {'rows_sampled': 64, 'bit_identical_rows': 64, 'max_abs_delta': 0.0, 'max_ulps': 0, 'ulp_gate': {'max_ulps': 8, 'floor_magnitude': 1.0}, 'batch_size': 8, 'pooled_readout_split_vs_full_max_abs_delta': 0.00048120319843292236}
+published to results/p1c/p1c-videomae-block8-cache, digest 21a9a855a74f7945

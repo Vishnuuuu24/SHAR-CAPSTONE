@@ -1,0 +1,13 @@
+fold1 seed0: 37600 frames, majority-vote macro-F1 0.4178
+fold1 seed1: 37600 frames, majority-vote macro-F1 0.4923
+fold1 seed2: 37600 frames, majority-vote macro-F1 0.4650
+fold2 seed0: 47726 frames, majority-vote macro-F1 0.3958
+fold2 seed1: 47726 frames, majority-vote macro-F1 0.4132
+fold2 seed2: 47726 frames, majority-vote macro-F1 0.3884
+fold3 seed0: 49719 frames, majority-vote macro-F1 0.4382
+fold3 seed1: 49719 frames, majority-vote macro-F1 0.3750
+fold3 seed2: 49719 frames, majority-vote macro-F1 0.3570
+fold4 seed0: 41319 frames, majority-vote macro-F1 0.3710
+fold4 seed1: 41319 frames, majority-vote macro-F1 0.4075
+fold4 seed2: 41319 frames, majority-vote macro-F1 0.3600
+done

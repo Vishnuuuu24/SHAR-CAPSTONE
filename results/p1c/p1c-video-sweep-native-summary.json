@@ -1,0 +1,34 @@
+{
+  "base_config": "P1C-VIDEO-PRECISION-CALIBRATION-007-BF16.yaml",
+  "points": [
+    {
+      "batch_size": 64,
+      "config": "P1C-VIDEO-SWEEP-009-R240x320-B64.yaml",
+      "exit_code": 0,
+      "resize_height": 240,
+      "resize_width": 320,
+      "seconds": 154.68594841472805,
+      "status": "COMPLETED"
+    },
+    {
+      "batch_size": 128,
+      "config": "P1C-VIDEO-SWEEP-009-R240x320-B128.yaml",
+      "exit_code": 0,
+      "resize_height": 240,
+      "resize_width": 320,
+      "seconds": 169.09967471752316,
+      "status": "COMPLETED"
+    },
+    {
+      "batch_size": 256,
+      "config": "P1C-VIDEO-SWEEP-009-R240x320-B256.yaml",
+      "error": "    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1789, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/nn/modules/conv.py\", line 565, in forward\n    return self._conv_forward(input, self.weight, self.bias)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repo>/.venv/lib/python3.12/site-packages/torch/nn/modules/conv.py\", line 560, in _conv_forward\n    return F.conv2d(\n           ^^^^^^^^^\nRuntimeError: NVML_SUCCESS == r INTERNAL ASSERT FAILED at \"/__w/pytorch/pytorch/c10/cuda/CUDACachingAllocator.cpp\":1407, please report a bug to PyTorch.",
+      "exit_code": 1,
+      "resize_height": 240,
+      "resize_width": 320,
+      "seconds": 146.11412818077952,
+      "status": "FAILED"
+    }
+  ],
+  "sweep_id": "P1C-VIDEO-SWEEP-009"
+}

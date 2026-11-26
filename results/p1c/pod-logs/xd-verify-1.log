@@ -1,0 +1,56 @@
+{
+ "mirror": "huggingface.co/datasets/jherng/xd-violence",
+ "mirror_revisions": [
+  "8eba22ca666b5061cf4f3e1b1907c05af520dc07"
+ ],
+ "files_expected": 4749,
+ "files_present": 4749,
+ "missing": [],
+ "unexpected": [],
+ "sha256_mismatches": [],
+ "total_bytes": 85496982200,
+ "split_counts": {
+  "train": 3950,
+  "test": 799
+ },
+ "official_split_counts": {
+  "train": 3954,
+  "test": 800
+ },
+ "label_counts": {
+  "test/Abuse": 11,
+  "test/Car accident": 106,
+  "test/Explosion": 103,
+  "test/Fighting": 126,
+  "test/Normal": 299,
+  "test/Riot": 101,
+  "test/Shooting": 104,
+  "train/Abuse": 50,
+  "train/Car accident": 444,
+  "train/Explosion": 381,
+  "train/Fighting": 481,
+  "train/Normal": 2046,
+  "train/Riot": 384,
+  "train/Shooting": 441
+ },
+ "multi_label_videos": 289,
+ "official_annotations_sha256": "27b583ba06fe2e096d7e3d281845365c3b24de7e30797ae5c1ec771667e04c2f",
+ "annotated_test_videos": 500,
+ "annotated_not_in_download": [
+  "The.Fast.and.the.Furious.2001__#00-29-00_00-29-52_label_B2-G-0.mp4",
+  "The.Fast.and.the.Furious.2001__#01-24-18_01-25-05_label_B6-0-0.mp4",
+  "The.Fast.and.the.Furious.2001__#01-37-40_01-38-30_label_B6-0-0.mp4",
+  "v=BpargJW29Wo__#00-00-50_00-01-30_label_B1-0-0.mp4",
+  "v=FW_qbiPH7UA__#1_label_B1-0-0.mp4",
+  "v=LJ0Pu5_Mefs__#1_label_G-0-0.mp4",
+  "v=PRH5rYUHoVU__#00-00-25_00-02-50_label_B6-0-0.mp4",
+  "v=Q9Re4CnFJRg__#00-01-21_00-01-47_label_G-0-0.mp4",
+  "v=U6MC8JJJZSY__#1_label_G-0-0.mp4",
+  "v=UYFR-XbyZQc__#00-01-19_00-02-42_label_G-0-0.mp4",
+  "v=Y1hxr1MWLjM__#1_label_B1-0-0.mp4",
+  "v=aWPWHU8x6kE__#1_label_B4-0-0.mp4",
+  "v=f6j3YWgVBto__#00-06-16_00-06-51_label_B6-0-0.mp4",
+  "v=qmsQ-obL1Z4__#00-03-26_00-04-04_label_B6-0-0.mp4"
+ ],
+ "ok": false
+}

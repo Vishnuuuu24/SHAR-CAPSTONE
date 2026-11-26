@@ -1,0 +1,91 @@
+{
+  "config_sha256": "c9545a5ef70e2fcca646659a6137ca08b7af79031a309b0fffbc1f13ea5a3aca",
+  "device": {
+    "cpu_fallback_allowed": false,
+    "mps_available": false,
+    "mps_built": true,
+    "mps_fallback_environment": null,
+    "selected": "cpu"
+  },
+  "eta": {
+    "formula": "3 * (digest_initialization + full_epochs * (train_batches * train_median + validation_batches * validation_median)) * overhead_factor",
+    "full_digest_initialization_seconds_per_seed": 245.65305204200013,
+    "max_epochs_per_seed": 20,
+    "median_epoch_seconds": 26352.576180063865,
+    "overhead_factor_range": [
+      1.15,
+      1.35
+    ],
+    "reestimate_rule": "re-estimate after first full epoch if actual pace differs by more than 20 percent",
+    "sequential_seeds": 3,
+    "three_seed_wall_seconds_range": [
+      1819175.2594539514,
+      2135553.5654459433
+    ],
+    "train_batches_per_epoch": 17759,
+    "validation_batches_per_epoch": 2029
+  },
+  "experiment_id": "P1C-FRAME-GAP-CPU-CALIBRATION-002",
+  "kind": "P1C real-loader CPU calibration; not training, model selection, or Test evaluation",
+  "loader_initialization_seconds_with_full_digest_verification": 245.65305204200013,
+  "measurements": {
+    "measured_train_batches": 10,
+    "measured_validation_batches": 10,
+    "mps_memory_after": {
+      "current_allocated_memory": null,
+      "driver_allocated_memory": null,
+      "recommended_max_memory": null
+    },
+    "mps_memory_before": {
+      "current_allocated_memory": null,
+      "driver_allocated_memory": null,
+      "recommended_max_memory": null
+    },
+    "process_rss_after_bytes": 1569554432,
+    "process_rss_before_bytes": 293502976,
+    "train_median_images_per_second": 45.97229565153497,
+    "train_step_seconds": [
+      1.3736695410007087,
+      1.356119124999168,
+      1.387721999999485,
+      1.3900590409994038,
+      1.3613477920007426,
+      1.3955241250005201,
+      1.394226542000979,
+      1.4115719170004013,
+      1.4095723339996766,
+      1.4408632080012467
+    ],
+    "validation_median_images_per_second": 79.69009890213144,
+    "validation_step_seconds": [
+      0.7984632919997239,
+      0.7967532080001547,
+      0.8193227920000936,
+      0.8106169589991623,
+      0.8124856670001463,
+      0.8058660000006057,
+      0.794880417000968,
+      0.8401098329995875,
+      0.8003561249988707,
+      0.7942180419995566
+    ],
+    "warmup_train_batches": 3
+  },
+  "parent_id": "P1C-FRAME-GAP-CALIBRATION-001",
+  "scope_assertions": {
+    "checkpoint_saved": false,
+    "configuration_selection": false,
+    "held_out_test_access": false,
+    "research_training": false
+  },
+  "source_scope": {
+    "held_out_test_access": false,
+    "train_rows": 1136536,
+    "validation_rows": 129809
+  },
+  "thread_configuration": {
+    "torch_threads_before": 6,
+    "torch_threads_used": 18
+  },
+  "weight_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+}

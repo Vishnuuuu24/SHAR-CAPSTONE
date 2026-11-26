@@ -1,0 +1,37 @@
+{"frames_needed": 82679, "videos": 700, "load_s": 226}
+{"b_path_check": {"frames": 128, "min_cosine": 0.9999997019767761, "max_abs_diff": 0.002197265625}}
+{"frames_done": 64, "of": 82679, "fps": 115.6}
+{"frames_done": 3264, "of": 82679, "fps": 113.9}
+{"frames_done": 6464, "of": 82679, "fps": 112.2}
+{"frames_done": 9664, "of": 82679, "fps": 112.3}
+{"frames_done": 12864, "of": 82679, "fps": 112.4}
+{"frames_done": 16064, "of": 82679, "fps": 112.3}
+{"frames_done": 19264, "of": 82679, "fps": 112.9}
+{"frames_done": 22464, "of": 82679, "fps": 112.5}
+{"frames_done": 25664, "of": 82679, "fps": 112.7}
+{"frames_done": 28864, "of": 82679, "fps": 112.6}
+{"frames_done": 32064, "of": 82679, "fps": 113.0}
+{"frames_done": 35264, "of": 82679, "fps": 113.2}
+{"frames_done": 38464, "of": 82679, "fps": 112.7}
+{"frames_done": 41664, "of": 82679, "fps": 112.4}
+{"frames_done": 44864, "of": 82679, "fps": 112.5}
+{"frames_done": 48064, "of": 82679, "fps": 112.3}
+{"frames_done": 51264, "of": 82679, "fps": 112.2}
+{"frames_done": 54464, "of": 82679, "fps": 112.4}
+{"frames_done": 57664, "of": 82679, "fps": 112.2}
+{"frames_done": 60864, "of": 82679, "fps": 112.1}
+{"frames_done": 64064, "of": 82679, "fps": 112.1}
+{"frames_done": 67264, "of": 82679, "fps": 112.4}
+{"frames_done": 70464, "of": 82679, "fps": 112.5}
+{"frames_done": 73664, "of": 82679, "fps": 112.1}
+{"frames_done": 76864, "of": 82679, "fps": 112.0}
+{"frames_done": 80064, "of": 82679, "fps": 111.9}
+{"extraction": {"frames": 82679, "seconds": 739.2, "frames_per_s": 111.9, "gpu_peak_gib": 1.97, "host_peak_rss_gib": 5.71, "projected_full_minutes": 12.3, "projected_cache_gib": 0.32}}
+{"fold": 1, "runs": 9, "seconds": 124}
+{"fold": 2, "runs": 9, "seconds": 133}
+{"fold": 3, "runs": 9, "seconds": 119}
+{"fold": 4, "runs": 9, "seconds": 125}
+B_proj {"macro_f1": 0.39, "accuracy": 0.4092, "mean_delta": 0.0, "folds_positive": 0}
+B_ref {"macro_f1": 0.3835, "accuracy": 0.4003, "mean_delta": -0.0065, "folds_positive": 1}
+L_proj {"macro_f1": 0.4134, "accuracy": 0.4449, "mean_delta": 0.0234, "folds_positive": 2}
+CONTRAST {"diff": 0.0234, "ci95": [-0.0215, 0.0745], "claim_passed": false, "violence": {"control": 0.175, "candidate": 0.21}}

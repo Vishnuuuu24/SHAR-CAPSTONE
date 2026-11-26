@@ -1,0 +1,24 @@
+{
+  "device": "cpu",
+  "fold_mean_macro_f1": {
+    "1": 0.5187744794887652,
+    "2": 0.43642032570603995,
+    "3": 0.47048890263175974,
+    "4": 0.42474060331203195
+  },
+  "gate_delta": 0.04,
+  "git_revision": "0e5cac1d8e719d41172f65129d40ee7c55434d48",
+  "mean_over_runs": 0.4626060777846492,
+  "n_runs": 12,
+  "probs": "results/p1c/p1c-late-fusion/dinov2_probs.csv",
+  "probs_sha256": "00da0e81ed2fa53a9abb5cb3cd827e026e68453116efe3492f7f5f2e11ee5211",
+  "reference_mean": 0.4626060777846491,
+  "reproduces_reference": true,
+  "selection_rule": "best coverage per size in {2,3,4}, anomaly classes only, closure>=0.5, internal>=6; LOFO excludes videos shared with the scored fold",
+  "videos_per_fold": {
+    "1": 56,
+    "2": 56,
+    "3": 56,
+    "4": 56
+  }
+}

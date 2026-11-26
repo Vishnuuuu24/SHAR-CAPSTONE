@@ -1,0 +1,131 @@
+# Ephemeral storage-probe pod for the Presidency DGX cluster.
+#
+# Rendered by scripts/dgx/probe_storage.sh via envsubst; every ${VAR} below is
+# substituted from that script's environment. Unlike scripts/dgx/pod-job.template.yaml
+# (one hostPath volume, used for real training/calibration commands), this
+# template mounts three storage targets side by side so a single pod can
+# compare them: the existing /home NFS export, the untested
+# /workspace/fast-dgx-storage/<account> path from the Kyverno hostPath
+# allowlist, and an emptyDir. It answers storage questions only and has no
+# compute workload, so it would ideally request no GPU at all.
+#
+# It requests one MIG slice anyway, because it must. Measured on 2026-08-25:
+# a GPU-less version of this pod was denied at admission by the Kyverno
+# ClusterPolicy `require-gpu`, which fails any pod whose
+# resources.limits does not set one of nvidia.com/gpu,
+# nvidia.com/mig-1g.18gb, nvidia.com/mig-2g.35gb, or nvidia.com/mig-3g.71gb
+# above zero:
+#   admission webhook "validate.kyverno.svc-fail" denied the request:
+#   require-gpu: 'validation failure: GPU or MIG resources must be > 0'
+# Since the account's ResourceQuota allows exactly one 1g.18gb slice, this
+# probe therefore occupies the account's only slice for its (short) duration,
+# and cannot run concurrently with a calibration or training job.
+#
+# restartPolicy: Never, for the same reason as pod-job.template.yaml: the
+# default (Always) would restart the container after a successful probe and
+# the pod would never reach Succeeded.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ${JOB_NAME}
+  labels:
+    app: shar-job
+    shar/run-class: probe
+spec:
+  restartPolicy: Never
+  containers:
+    - name: shar
+      image: ${IMAGE}
+      workingDir: ${REPO_DIR}
+      env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        - name: HOME
+          value: ${USER_HOME}
+        - name: REPO_DIR
+          value: ${REPO_DIR}
+        - name: USER_HOME
+          value: ${USER_HOME}
+        # The untested Kyverno-allowlisted path. FAST_STORAGE_PATH is used as
+        # both the hostPath source and the container mountPath (mounted to
+        # itself), matching the constraint documented in run_pod_job.sh for
+        # the /home mount.
+        - name: FAST_STORAGE_PATH
+          value: ${FAST_STORAGE_PATH}
+        - name: SCRATCH_MOUNT
+          value: ${SCRATCH_MOUNT}
+        # Where the probe's own JSON result artifact is written. It lives
+        # under REPO_DIR (on the /home NFS mount), so it survives after this
+        # pod and its emptyDir are deleted -- no kubectl cp is needed to
+        # retrieve it.
+        - name: OUT_PATH
+          value: ${OUT_PATH}
+        # Downward API: which physical worker this pod landed on, and this
+        # pod's own name, so a marker file written to a candidate-shared path
+        # can be compared against a marker from a previous invocation to
+        # determine whether the storage is node-local or shared. One probe
+        # run alone cannot answer the node-locality question by itself;
+        # run this twice (ideally scheduled onto each of the two workers,
+        # e.g. by cordoning the other node between runs) and diff the
+        # recorded node_name / previous_marker_found fields in the two
+        # resulting JSON artifacts.
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        # The probe command is passed base64-encoded and decoded at container
+        # start, exactly as in pod-job.template.yaml: it contains a Python
+        # heredoc with quotes, colons, and multiple lines, any of which would
+        # corrupt this file's YAML block scalar if interpolated directly.
+        - name: JOB_CMD_B64
+          value: ${JOB_CMD_B64}
+      resources:
+        requests:
+          cpu: "${CPU}"
+          memory: "${MEM}"
+          nvidia.com/mig-1g.18gb: 1
+        limits:
+          cpu: "${CPU}"
+          memory: "${MEM}"
+          nvidia.com/mig-1g.18gb: 1
+      command: ["/bin/bash", "-lc"]
+      args:
+        - |
+          set -euo pipefail
+          echo "$JOB_CMD_B64" | base64 -d | bash -s
+      volumeMounts:
+        - name: home
+          mountPath: ${HOME_MOUNT}
+        - name: fast-storage
+          mountPath: ${FAST_STORAGE_PATH}
+        - name: scratch
+          mountPath: ${SCRATCH_MOUNT}
+  volumes:
+    - name: home
+      hostPath:
+        path: ${HOST_PATH}
+        type: Directory
+    - name: fast-storage
+      hostPath:
+        path: ${FAST_STORAGE_PATH}
+        # DirectoryOrCreate, deliberately unlike home's `type: Directory`.
+        # This path is on the Kyverno allowlist but, per the work item, has
+        # never actually been used, so it may not exist on a given worker yet.
+        # `type: Directory` would make that ordinary "never used" case look
+        # identical to a real mount failure (both refuse to start the pod).
+        # DirectoryOrCreate lets the pod start either way and records the
+        # true state -- pre-existing vs. freshly created vs. absent-and-
+        # uncreatable -- in the probe's own JSON output instead.
+        type: DirectoryOrCreate
+    - name: scratch
+      emptyDir:
+        # A sizeLimit is set because some Kyverno/quota configurations
+        # require one on every emptyDir volume. If admission rejects this
+        # pod specifically because of sizeLimit (visible in `kubectl
+        # describe pod` from run_pod_job.sh's failure path), that is itself
+        # probe evidence about the emptyDir policy on this account.
+        sizeLimit: ${SCRATCH_SIZE_LIMIT}

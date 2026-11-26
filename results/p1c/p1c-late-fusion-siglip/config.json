@@ -1,0 +1,25 @@
+{
+  "device": "cpu",
+  "dinov2_probs_sha256": "00da0e81ed2fa53a9abb5cb3cd827e026e68453116efe3492f7f5f2e11ee5211",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fusion_weight": 0.5,
+  "gate": "+0.04 fold-mean macro-F1 on 4/4 folds vs A (and vs S)",
+  "git_revision": "7740d9dc15d83af71ab1ab0131ec64d8b810b646",
+  "num_threads": 4,
+  "reference_summary_sha256": "d2252733fdb17f8388814a81645a18a75c3a15a1cd0c049f65c90f78ecf0ae36",
+  "reused_siglip_csv": false,
+  "runtime_s": 1131,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "siglip_cache_manifest_sha256": "97cb73d359b0a8a0ffca8eb65be7850dbf89cc8f0a4675bfc202848a5dbbd0a9",
+  "siglip_cache_root": "results/p1c/p1c-siglip-patch-cache",
+  "siglip_probs_sha256": "1cc9e00411f4d6060169fad974fca8974fab89a984a3a3a60746f70df7710c41"
+}

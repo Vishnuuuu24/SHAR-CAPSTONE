@@ -1,0 +1,18 @@
+patch cache: 82679 rows, memmapped from results/p1c/p1c-patch-cache
+fold 1: train 3808 rows sampled (8/video, seed=0), validation 37600 rows (full, untouched), cache 56c0312b9122
+fold 1 head step_permuted seed 0: best epoch 7 (early-stopped), validation macro-F1 0.5348, video-level macro-F1 0.5348 over 56 videos, params 7117838, wall 172.7s
+fold 1 head step_permuted seed 1: best epoch 6 (early-stopped), validation macro-F1 0.5135, video-level macro-F1 0.5135 over 56 videos, params 7117838, wall 160.0s
+fold 1 head step_permuted seed 2: best epoch 6 (early-stopped), validation macro-F1 0.5255, video-level macro-F1 0.5255 over 56 videos, params 7117838, wall 164.9s
+fold 2: train 3808 rows sampled (8/video, seed=0), validation 47726 rows (full, untouched), cache ea8c33fbecf3
+fold 2 head step_permuted seed 0: best epoch 6 (early-stopped), validation macro-F1 0.4199, video-level macro-F1 0.4199 over 56 videos, params 7117838, wall 187.6s
+fold 2 head step_permuted seed 1: best epoch 5 (early-stopped), validation macro-F1 0.4407, video-level macro-F1 0.4407 over 56 videos, params 7117838, wall 175.1s
+fold 2 head step_permuted seed 2: best epoch 7 (early-stopped), validation macro-F1 0.4602, video-level macro-F1 0.4602 over 56 videos, params 7117838, wall 193.3s
+fold 3: train 3808 rows sampled (8/video, seed=0), validation 49719 rows (full, untouched), cache 681f53307dbd
+fold 3 head step_permuted seed 0: best epoch 6 (early-stopped), validation macro-F1 0.4328, video-level macro-F1 0.4328 over 56 videos, params 7117838, wall 187.7s
+fold 3 head step_permuted seed 1: best epoch 10 (early-stopped), validation macro-F1 0.4796, video-level macro-F1 0.4796 over 56 videos, params 7117838, wall 257.7s
+fold 3 head step_permuted seed 2: best epoch 4 (early-stopped), validation macro-F1 0.4662, video-level macro-F1 0.4662 over 56 videos, params 7117838, wall 179.3s
+fold 4: train 3807 rows sampled (8/video, seed=0), validation 41319 rows (full, untouched), cache 3b4aaed3037e
+fold 4 head step_permuted seed 0: best epoch 4 (early-stopped), validation macro-F1 0.3785, video-level macro-F1 0.3785 over 56 videos, params 7117838, wall 157.0s
+fold 4 head step_permuted seed 1: best epoch 8 (early-stopped), validation macro-F1 0.3921, video-level macro-F1 0.3921 over 56 videos, params 7117838, wall 188.8s
+fold 4 head step_permuted seed 2: best epoch 4 (early-stopped), validation macro-F1 0.4751, video-level macro-F1 0.4751 over 56 videos, params 7117838, wall 156.2s
+wrote results/p1c/p1c-head-comparison-stepctl/summary.json

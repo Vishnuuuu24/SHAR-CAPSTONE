@@ -1,0 +1,97 @@
+[NbConvertApp] Converting notebook notebooks/pose_clarity_check.ipynb to notebook
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<repo>/.cache/nbtools/nbconvert/__main__.py", line 5, in <module>
+    main()
+  File "<repo>/.venv/lib/python3.12/site-packages/jupyter_core/application.py", line 284, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "<repo>/.venv/lib/python3.12/site-packages/traitlets/config/application.py", line 1080, in launch_instance
+    app.start()
+  File "<repo>/.cache/nbtools/nbconvert/nbconvertapp.py", line 420, in start
+    self.convert_notebooks()
+  File "<repo>/.cache/nbtools/nbconvert/nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "<repo>/.cache/nbtools/nbconvert/nbconvertapp.py", line 563, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbconvert/exporters/exporter.py", line 154, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbconvert/exporters/exporter.py", line 353, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbconvert/preprocessors/execute.py", line 103, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "<repo>/.cache/nbtools/nbconvert/preprocessors/execute.py", line 124, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/.venv/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<home>/py312/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "<repo>/.cache/nbtools/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "<repo>/.cache/nbtools/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import json, subprocess, sys, time
+from pathlib import Path
+import numpy as np, pandas as pd, cv2, torch
+
+REPO = Path.cwd()
+while not (REPO / "core").exists() and REPO != REPO.parent:
+    REPO = REPO.parent
+sys.path[:0] = [str(REPO), str(REPO / "scripts")]
+from core import pose_clarity as pc
+from core.provenance import sha256_path
+from extract_p1c_video_frames import encode_jpeg_rgb, decode_jpeg_bytes   # JPEG q95 step every cached frame went through (K-32)
+
+CONFIG = dict(
+    seed=20261105, per_bucket=60, n_empty=60, n_boot=2000,
+    conf=0.25, iou=0.7, jpeg_quality=95, sheet_frames=12,
+    conditions={"orig_640": dict(restorer=None, imgsz=640), "orig_960": dict(restorer=None, imgsz=960),
+                "orig_1280": dict(restorer=None, imgsz=1280), "restormer_640": dict(restorer="restormer_gauss_blind", imgsz=640),
+                "scunet_640": dict(restorer="scunet_real_psnr", imgsz=640)},
+)
+OUT = REPO / "results/p1c/pose-clarity-20261105"; OUT.mkdir(parents=True, exist_ok=True)
+DETECTIONS = REPO / "results/p1c/p1c-roi-cache/detections.jsonl"
+VIDEO_ROOT = REPO / "Datasets/UCF Crime Official/raw/UCF_Crimes/Videos"
+YOLO_W = REPO / ".cache/weights/yolo11m-pose-29b17eaf.pt"
+RESTORER_CFG = REPO / "configs/p2b_extra_restorers.yaml"
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+print("device:", device, "| repo:", REPO)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 3[39m
+[32m      1[39m [38;5;28;01mimport[39;00m json, subprocess, sys, time
+[32m      2[39m [38;5;28;01mfrom[39;00m pathlib [38;5;28;01mimport[39;00m Path
+[32m----> [39m[32m3[39m [38;5;28;01mimport[39;00m numpy [38;5;28;01mas[39;00m np, pandas [38;5;28;01mas[39;00m pd, cv2, torch
+[32m      4[39m 
+[32m      5[39m REPO = Path.cwd()
+[32m      6[39m [38;5;28;01mwhile[39;00m [38;5;28;01mnot[39;00m (REPO / [33m"core"[39m).exists() [38;5;28;01mand[39;00m REPO != REPO.parent:
+
+[31mModuleNotFoundError[39m: No module named 'pandas'
+

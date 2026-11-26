@@ -1,0 +1,30 @@
+{
+ "git_revision": "91fc27466d9e8f2b896ce5d3883cc01c7341f35c",
+ "backbone": "DINOv2 ViT-L/14-reg4 (timm vit_large_patch14_reg4_dinov2, official weights)",
+ "weights_sha256": "36e4deffbaef061a2576705b0c36f93621e2ae20bf6274694821b0b492551b51",
+ "feature": "CLS ++ mean(patch), registers excluded, 2048-d float16",
+ "frames": 82679,
+ "shape": [
+  82679,
+  2048
+ ],
+ "features_sha256": "f079075c4f6efc43c94211f5672c7c61eb7ec01875e6df5b84760457cffa0c35",
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+ "b_path_check": {
+  "frames": 128,
+  "min_cosine": 0.9999997019767761,
+  "max_abs_diff": 0.002197265625
+ },
+ "seconds": 739.2,
+ "frames_per_s": 111.9,
+ "gpu_peak_gib": 1.97,
+ "host_peak_rss_gib": 5.71,
+ "projected_full_minutes": 12.3,
+ "projected_cache_gib": 0.32
+}

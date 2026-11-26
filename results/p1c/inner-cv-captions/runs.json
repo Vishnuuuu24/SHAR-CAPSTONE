@@ -1,0 +1,331 @@
+{
+ "provenance": {
+  "plan": "docs/FINAL_PUSH_PLAN_2026-11-11.md Step 6",
+  "code_revision": "d3d050f",
+  "host": "shar-step4chain-20261111074146",
+  "started_utc": "2026-11-11T12:25:59.305502+00:00",
+  "label_view": "inherited video-level labels (D-40), not event-only",
+  "test_videos_scored": false,
+  "features": {
+   "dir": "results/detect/features",
+   "backbones": [
+    "dinov2b",
+    "siglip"
+   ],
+   "manifest": {
+    "plan": "docs/FINAL_PUSH_PLAN_2026-11-11.md Step 4a",
+    "decision": "D-71",
+    "code_revision": "d3d050f",
+    "started_utc": "2026-11-11T07:43:15.595468+00:00",
+    "finished_utc": "2026-11-11T09:19:45.211879+00:00",
+    "task": "UCF-Crime official Anomaly-Detection split (separate task from the 14-class classifier, rule 3)",
+    "videos": {
+     "train": 1610,
+     "test": 290
+    },
+    "frames": 918727,
+    "every": 3,
+    "sampling": "every 3-th blob frame = one frame per 15 source frames",
+    "feature": "[CLS-or-pooler ++ mean(patch)], 1536-d float16, registered 224 bilinear preprocessing",
+    "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+    "backbones": {
+     "dinov2b": {
+      "family": "timm_dinov2_vitb14_reg4",
+      "weights_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+      "features_sha256": "cf4f756c9a38fcb4f951f39dad234d800e852afa5246642b55e914cf9da3a0fd"
+     },
+     "siglip": {
+      "family": "transformers_siglip_base_p16_224",
+      "weights_sha256": "f5d84933ac67e11fcd249aba72bb2888028fc11507a4b81629c095c881031b77",
+      "features_sha256": "66f883a7f23017e231c0658de991125992442e756db32d67e6bb0aa02b5b567f"
+     }
+    },
+    "path_checks": {
+     "dinov2b_vs_fold1_cache": {
+      "frames": 120,
+      "min_cosine": 0.9999997019767761
+     },
+     "siglip_vs_patch_cache": {
+      "frames": 120,
+      "min_cosine": 0.9999843239784241
+     }
+    },
+    "seconds": 5782.4,
+    "frames_per_s": 158.9,
+    "gpu_peak_gib": 3.14,
+    "projected_full_minutes": 96.4
+   }
+  },
+  "captions": "UCA (UCF-Crime Annotation), time-stamped sentences; training videos only",
+  "text_model": "TF-IDF 1-2 grams, min_df 2 -> TruncatedSVD(128) -> L2 normalise, fitted on training sentences of each split",
+  "projection": "StandardScaler + RidgeCV(alphas 1e2..1e5), fitted on training spans of each split",
+  "config": {
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "parts": 5,
+   "repeats": 3,
+   "split_seed": 0,
+   "bootstrap_draws": 2000,
+   "gate_rule": "mean over folds of the median percentile rank <= 0.35 (chance 0.5)",
+   "pass_rule": "paired 95% interval excludes 0 and gain >= 0.02"
+  },
+  "extra_captioned_videos": 1158,
+  "finished_utc": "2026-11-11T12:59:13.137136+00:00",
+  "cache_sha256": {
+   "1": {
+    "train": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "validation": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de"
+   },
+   "2": {
+    "train": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "validation": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43"
+   },
+   "3": {
+    "train": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "validation": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599"
+   },
+   "4": {
+    "train": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a",
+    "validation": "1e19490f6aac9e617587016e8415e38b233b75542fc5857fd731abc4bcb8a705"
+   }
+  }
+ },
+ "runs": [
+  {
+   "fold": 1,
+   "videos": 532,
+   "arms": {
+    "D_mean": {
+     "macro_f1": [
+      0.4560825313242586,
+      0.4398788746574775,
+      0.4186914600513206
+     ],
+     "accuracy": [
+      0.4605263157894737,
+      0.44360902255639095,
+      0.424812030075188
+     ],
+     "seconds": 118.3
+    },
+    "cap_proj": {
+     "macro_f1": [
+      0.4819290521114145,
+      0.45757404395574114,
+      0.44925664888070405
+     ],
+     "accuracy": [
+      0.4868421052631579,
+      0.4605263157894737,
+      0.45300751879699247
+     ],
+     "seconds": 317.8
+    },
+    "cap_only": {
+     "macro_f1": [
+      0.3645714986599211,
+      0.3482764374409491,
+      0.3612695313455365
+     ],
+     "accuracy": [
+      0.37218045112781956,
+      0.35150375939849626,
+      0.36654135338345867
+     ],
+     "seconds": 203.7
+    },
+    "cap_proj_noextra": {
+     "macro_f1": [
+      0.4617747757895113,
+      0.4398285920867111,
+      0.43993275168419993
+     ],
+     "accuracy": [
+      0.4642857142857143,
+      0.44360902255639095,
+      0.44548872180451127
+     ],
+     "seconds": 198.7
+    }
+   }
+  },
+  {
+   "fold": 2,
+   "videos": 532,
+   "arms": {
+    "D_mean": {
+     "macro_f1": [
+      0.44062878886752965,
+      0.45388143569592604,
+      0.4331402110736547
+     ],
+     "accuracy": [
+      0.44360902255639095,
+      0.4567669172932331,
+      0.4398496240601504
+     ],
+     "seconds": 114.9
+    },
+    "cap_proj": {
+     "macro_f1": [
+      0.48688193074623604,
+      0.46994230767403383,
+      0.4634152851717249
+     ],
+     "accuracy": [
+      0.4924812030075188,
+      0.4755639097744361,
+      0.4718045112781955
+     ],
+     "seconds": 312.0
+    },
+    "cap_only": {
+     "macro_f1": [
+      0.38083759822135355,
+      0.3848863237609849,
+      0.37413583458787764
+     ],
+     "accuracy": [
+      0.37969924812030076,
+      0.39473684210526316,
+      0.37969924812030076
+     ],
+     "seconds": 209.0
+    },
+    "cap_proj_noextra": {
+     "macro_f1": [
+      0.4641864315817161,
+      0.46480307777387847,
+      0.449992890753391
+     ],
+     "accuracy": [
+      0.4680451127819549,
+      0.4699248120300752,
+      0.4567669172932331
+     ],
+     "seconds": 197.1
+    }
+   }
+  },
+  {
+   "fold": 3,
+   "videos": 532,
+   "arms": {
+    "D_mean": {
+     "macro_f1": [
+      0.4193643190534443,
+      0.41309357249525575,
+      0.41843700343753815
+     ],
+     "accuracy": [
+      0.42293233082706766,
+      0.42293233082706766,
+      0.4266917293233083
+     ],
+     "seconds": 125.6
+    },
+    "cap_proj": {
+     "macro_f1": [
+      0.4488273302124686,
+      0.429894842722951,
+      0.4453171354514403
+     ],
+     "accuracy": [
+      0.4548872180451128,
+      0.43609022556390975,
+      0.45300751879699247
+     ],
+     "seconds": 322.6
+    },
+    "cap_only": {
+     "macro_f1": [
+      0.3701839594793685,
+      0.3456767547170078,
+      0.3668763049092022
+     ],
+     "accuracy": [
+      0.37218045112781956,
+      0.35150375939849626,
+      0.37218045112781956
+     ],
+     "seconds": 208.6
+    },
+    "cap_proj_noextra": {
+     "macro_f1": [
+      0.43884208494774474,
+      0.42657114860194756,
+      0.43859488801499114
+     ],
+     "accuracy": [
+      0.44360902255639095,
+      0.4342105263157895,
+      0.4473684210526316
+     ],
+     "seconds": 202.3
+    }
+   }
+  },
+  {
+   "fold": 4,
+   "videos": 532,
+   "arms": {
+    "D_mean": {
+     "macro_f1": [
+      0.42690127851998355,
+      0.432446040693722,
+      0.42361371760783495
+     ],
+     "accuracy": [
+      0.4323308270676692,
+      0.4398496240601504,
+      0.4323308270676692
+     ],
+     "seconds": 117.4
+    },
+    "cap_proj": {
+     "macro_f1": [
+      0.4413246485857544,
+      0.4437801424278408,
+      0.4397416004777548
+     ],
+     "accuracy": [
+      0.4473684210526316,
+      0.45300751879699247,
+      0.4473684210526316
+     ],
+     "seconds": 310.2
+    },
+    "cap_only": {
+     "macro_f1": [
+      0.3375545332616285,
+      0.34598110761100187,
+      0.32857621771563184
+     ],
+     "accuracy": [
+      0.3458646616541353,
+      0.3533834586466165,
+      0.33458646616541354
+     ],
+     "seconds": 200.1
+    },
+    "cap_proj_noextra": {
+     "macro_f1": [
+      0.4418843705662217,
+      0.44653608333399136,
+      0.4290887315589769
+     ],
+     "accuracy": [
+      0.44548872180451127,
+      0.45300751879699247,
+      0.4398496240601504
+     ],
+     "seconds": 194.3
+    }
+   }
+  }
+ ]
+}

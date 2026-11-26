@@ -1,0 +1,444 @@
+{
+  "non_shooting_control": {
+    "false_positive_rate_conf_0.25": 0.0,
+    "frames": 500
+  },
+  "per_video": {
+    "Shooting002_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 1
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 7
+      }
+    },
+    "Shooting004_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": null,
+        "detection_rate_conf_0.25": null,
+        "frames": 0
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 8
+      }
+    },
+    "Shooting007_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 1
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 7
+      }
+    },
+    "Shooting008_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": null,
+        "detection_rate_conf_0.25": null,
+        "frames": 0
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 8
+      }
+    },
+    "Shooting010_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 1
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 7
+      }
+    },
+    "Shooting011_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 1
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 7
+      }
+    },
+    "Shooting013_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 18
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 150
+      }
+    },
+    "Shooting015_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 8
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 8
+      }
+    },
+    "Shooting018_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 2
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 13
+      }
+    },
+    "Shooting019_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 2
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 14
+      }
+    },
+    "Shooting021_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 2
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 13
+      }
+    },
+    "Shooting022_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 91
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 150
+      }
+    },
+    "Shooting024_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 4
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 11
+      }
+    },
+    "Shooting026_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 2
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 14
+      }
+    },
+    "Shooting028_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 3
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 12
+      }
+    },
+    "Shooting032_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": null,
+        "detection_rate_conf_0.25": null,
+        "frames": 0
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 15
+      }
+    },
+    "Shooting033_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 3
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 12
+      }
+    },
+    "Shooting034_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 19
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 150
+      }
+    },
+    "Shooting037_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 4
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 10
+      }
+    },
+    "Shooting043_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 1
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 7
+      }
+    },
+    "Shooting046_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 2
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 6
+      }
+    },
+    "Shooting047_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 3
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 5
+      }
+    },
+    "Shooting048_x264": {
+      "inside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 65
+      },
+      "outside": {
+        "detection_rate_conf_0.10": 0.0,
+        "detection_rate_conf_0.25": 0.0,
+        "frames": 150
+      }
+    }
+  },
+  "pooled": {
+    "inside": {
+      "detection_rate_conf_0.10": 0.0,
+      "detection_rate_conf_0.25": 0.0,
+      "frames": 233
+    },
+    "outside": {
+      "detection_rate_conf_0.10": 0.0,
+      "detection_rate_conf_0.25": 0.0,
+      "frames": 784
+    }
+  },
+  "selection": {
+    "non_shooting_control_cap": 500,
+    "non_shooting_control_selected": 500,
+    "per_video": {
+      "Shooting002_x264": {
+        "inside_available": 1,
+        "inside_selected": 1,
+        "outside_available": 7,
+        "outside_selected": 7
+      },
+      "Shooting004_x264": {
+        "inside_available": 0,
+        "inside_selected": 0,
+        "outside_available": 8,
+        "outside_selected": 8
+      },
+      "Shooting007_x264": {
+        "inside_available": 1,
+        "inside_selected": 1,
+        "outside_available": 7,
+        "outside_selected": 7
+      },
+      "Shooting008_x264": {
+        "inside_available": 0,
+        "inside_selected": 0,
+        "outside_available": 8,
+        "outside_selected": 8
+      },
+      "Shooting010_x264": {
+        "inside_available": 1,
+        "inside_selected": 1,
+        "outside_available": 7,
+        "outside_selected": 7
+      },
+      "Shooting011_x264": {
+        "inside_available": 1,
+        "inside_selected": 1,
+        "outside_available": 7,
+        "outside_selected": 7
+      },
+      "Shooting013_x264": {
+        "inside_available": 18,
+        "inside_selected": 18,
+        "outside_available": 197,
+        "outside_selected": 150
+      },
+      "Shooting015_x264": {
+        "inside_available": 8,
+        "inside_selected": 8,
+        "outside_available": 8,
+        "outside_selected": 8
+      },
+      "Shooting018_x264": {
+        "inside_available": 2,
+        "inside_selected": 2,
+        "outside_available": 13,
+        "outside_selected": 13
+      },
+      "Shooting019_x264": {
+        "inside_available": 2,
+        "inside_selected": 2,
+        "outside_available": 14,
+        "outside_selected": 14
+      },
+      "Shooting021_x264": {
+        "inside_available": 2,
+        "inside_selected": 2,
+        "outside_available": 13,
+        "outside_selected": 13
+      },
+      "Shooting022_x264": {
+        "inside_available": 91,
+        "inside_selected": 91,
+        "outside_available": 820,
+        "outside_selected": 150
+      },
+      "Shooting024_x264": {
+        "inside_available": 4,
+        "inside_selected": 4,
+        "outside_available": 11,
+        "outside_selected": 11
+      },
+      "Shooting026_x264": {
+        "inside_available": 2,
+        "inside_selected": 2,
+        "outside_available": 14,
+        "outside_selected": 14
+      },
+      "Shooting028_x264": {
+        "inside_available": 3,
+        "inside_selected": 3,
+        "outside_available": 12,
+        "outside_selected": 12
+      },
+      "Shooting032_x264": {
+        "inside_available": 0,
+        "inside_selected": 0,
+        "outside_available": 15,
+        "outside_selected": 15
+      },
+      "Shooting033_x264": {
+        "inside_available": 3,
+        "inside_selected": 3,
+        "outside_available": 12,
+        "outside_selected": 12
+      },
+      "Shooting034_x264": {
+        "inside_available": 19,
+        "inside_selected": 19,
+        "outside_available": 263,
+        "outside_selected": 150
+      },
+      "Shooting037_x264": {
+        "inside_available": 4,
+        "inside_selected": 4,
+        "outside_available": 10,
+        "outside_selected": 10
+      },
+      "Shooting043_x264": {
+        "inside_available": 1,
+        "inside_selected": 1,
+        "outside_available": 7,
+        "outside_selected": 7
+      },
+      "Shooting046_x264": {
+        "inside_available": 2,
+        "inside_selected": 2,
+        "outside_available": 6,
+        "outside_selected": 6
+      },
+      "Shooting047_x264": {
+        "inside_available": 3,
+        "inside_selected": 3,
+        "outside_available": 5,
+        "outside_selected": 5
+      },
+      "Shooting048_x264": {
+        "inside_available": 65,
+        "inside_selected": 65,
+        "outside_available": 484,
+        "outside_selected": 150
+      }
+    },
+    "per_video_inside_cap": 150,
+    "per_video_outside_cap": 150,
+    "shooting_frames_selected": 1017,
+    "videos_checked": 23
+  }
+}

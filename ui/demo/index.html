@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHAR Crime-Type Classifier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #f3f4f1; --surface: #ffffff; --surface-2: #eceee9; --ink: #1b1f1c; --ink-2: #4b524d; --ink-3: #7b827d;
+  --line: #d6dad3; --accent: #1f5f4a; --accent-ink: #ffffff; --ok: #1e7a46; --bad: #b3322b; --warn: #9a6a00;
+  --violence: #c0392b; --violence-2: #e06650; --property: #b7791f; --property-2: #d9a441;
+  --fire: #2b6cb0; --fire-2: #5a95d6; --police: #6b46c1; --accident: #2c7a7b; --normal: #8a918c;
+  --shadow: 0 1px 2px rgba(20, 30, 25, .06), 0 4px 16px rgba(20, 30, 25, .06);
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121514; --surface: #1a1e1c; --surface-2: #232825; --ink: #e8ebe7; --ink-2: #b4bbb5; --ink-3: #848c86;
+    --line: #2f3631; --accent: #5fb894; --accent-ink: #0d1411; --ok: #5cc48a; --bad: #f07a6e; --warn: #e0b04a;
+    --normal: #6f7772; --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121514; --surface: #1a1e1c; --surface-2: #232825; --ink: #e8ebe7; --ink-2: #b4bbb5; --ink-3: #848c86;
+  --line: #2f3631; --accent: #5fb894; --accent-ink: #0d1411; --ok: #5cc48a; --bad: #f07a6e; --warn: #e0b04a;
+  --normal: #6f7772; --shadow: none;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); padding-inline: 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 56px; display: grid; gap: 20px; }
+header { display: grid; gap: 6px; }
+h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.sub { color: var(--ink-2); margin: 0; max-width: 72ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.chip { font: 12px/1 var(--mono); padding: 6px 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-2); background: var(--surface); }
+.chip b { color: var(--ink); font-weight: 500; }
+.grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; box-shadow: var(--shadow); display: grid; gap: 14px; min-width: 0; }
+.label { font: 600 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.drop { border: 1.5px dashed var(--line); border-radius: 8px; padding: 22px 16px; text-align: center; background: var(--surface-2); cursor: pointer; transition: border-color .15s, background .15s; }
+.drop:hover, .drop.over { border-color: var(--accent); }
+.drop:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.drop strong { display: block; font-size: 15px; }
+.drop span { color: var(--ink-3); font-size: 13px; }
+.drop.invite { border-color: var(--accent); border-style: solid; }
+.ex-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ex-head p { margin: 0; }
+.hint { font-size: 13px; color: var(--ink-3); }
+.sgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.sample { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); display: grid; grid-template-rows: auto 1fr auto; cursor: grab; transition: border-color .15s; }
+.sample:hover { border-color: var(--accent); }
+.sample:active { cursor: grabbing; }
+.sample.active { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.sample video { width: 100%; max-height: none; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0; pointer-events: none; }
+.sample .meta { padding: 9px 11px 0; display: grid; gap: 3px; min-width: 0; }
+.sample .meta b { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sample .meta span { font: 12px var(--mono); color: var(--ink-3); display: flex; gap: 6px; align-items: center; }
+.sample .meta i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; flex: none; }
+.sample .try { margin: 10px 11px 11px; padding: 8px 12px; font-size: 13px; }
+details.more summary { cursor: pointer; color: var(--ink-2); font-size: 14px; padding: 2px 0; }
+details.more[open] summary { margin-bottom: 12px; }
+video { width: 100%; max-height: 300px; background: #000; border-radius: 6px; display: block; }
+.stage { position: relative; }
+.stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.proto { font-size: 12px; color: var(--ink-3); margin: 0; line-height: 1.5; }
+.proto b { color: var(--ink-2); font-weight: 600; }
+.flags { display: grid; gap: 8px; }
+.flags .row button { padding: 7px 11px; font-size: 13px; background: transparent; color: var(--ink); border-color: var(--line); font-family: var(--mono); font-weight: 500; }
+.flags .row button:hover { border-color: var(--bad); }
+.alarms { position: relative; height: 12px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); overflow: hidden; }
+.alarms span { position: absolute; top: 0; bottom: 0; background: var(--bad); }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+button { font: 600 14px/1 var(--sans); padding: 11px 18px; border-radius: 7px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.status { font: 13px/1.4 var(--mono); color: var(--ink-2); min-height: 1.4em; }
+.status.err { color: var(--bad); }
+.bar { height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.bar > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.verdict { display: grid; gap: 4px; }
+.verdict .cls { font-size: 34px; font-weight: 700; line-height: 1.1; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.verdict .conf { font: 14px var(--mono); color: var(--ink-2); }
+.expect { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 10px 12px; border-radius: 8px; background: var(--surface-2); font-size: 14px; }
+.pill { font: 600 12px/1 var(--sans); padding: 5px 8px; border-radius: 999px; color: #fff; }
+.pill.ok { background: var(--ok); } .pill.bad { background: var(--bad); }
+.mode { font-size: 13px; color: var(--ink-2); }
+.mode.warn { color: var(--warn); font-weight: 600; }
+.top5 { display: grid; gap: 8px; }
+.t5 { display: grid; grid-template-columns: 150px minmax(0, 1fr) 54px; gap: 10px; align-items: center; font-size: 14px; }
+.t5 .n { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t5 .track { height: 12px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.t5 .track i { display: block; height: 100%; border-radius: 3px; }
+.t5 .p { font: 13px var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
+.timeline { display: flex; height: 30px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: var(--surface-2); }
+.timeline div { height: 100%; min-width: 1px; cursor: pointer; }
+.timeline div:hover { filter: brightness(1.15); }
+.axis { display: flex; justify-content: space-between; font: 12px var(--mono); color: var(--ink-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--ink-2); }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.frames figure { margin: 0; display: grid; gap: 4px; }
+.frames img { width: 100%; border-radius: 5px; display: block; background: #000; }
+.frames figcaption { font: 12px var(--mono); color: var(--ink-2); display: flex; justify-content: space-between; gap: 6px; }
+.frames figcaption b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 16px; margin: 0; font-size: 13px; }
+dt { color: var(--ink-3); } dd { margin: 0; font-family: var(--mono); overflow-wrap: anywhere; }
+.note { font-size: 13px; color: var(--ink-2); line-height: 1.6; margin: 0; }
+.note li { margin-bottom: 4px; }
+.empty { color: var(--ink-3); font-size: 14px; }
+.hidden { display: none !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>SHAR crime-type classifier</h1>
+    <p class="sub">Upload a surveillance video and the final SHAR model, E3, assigns one of the 13 UCF-Crime anomaly classes or Normal. E3 averages 36 logistic members over frozen DINOv2-L, DINOv2-B + SigLIP and DINOv2-B + V-JEPA 2 features.</p>
+    <div class="chips">
+      <span class="chip" id="c-model">model <b>…</b></span>
+      <span class="chip" id="c-f1">test macro-F1 <b>…</b></span>
+      <span class="chip" id="c-acc">test accuracy <b>…</b></span>
+      <span class="chip">chance <b>7%</b> (14 classes)</span>
+      <span class="chip" id="srv">server <b>checking…</b></span>
+    </div>
+  </header>
+
+  <section class="card hidden" id="examples" aria-labelledby="ex-h">
+    <div class="ex-head">
+      <p class="label" id="ex-h">No video handy? Try an example</p>
+      <span class="hint">Drag a clip onto the upload box, or press “Try this clip”.</span>
+    </div>
+    <div class="sgrid" id="sgrid"></div>
+    <details class="more hidden" id="more"><summary>More examples</summary><div class="sgrid" id="sgrid-more"></div></details>
+  </section>
+
+  <div class="grid">
+    <section class="card" aria-labelledby="in-h">
+      <p class="label" id="in-h">Input video</p>
+      <label class="drop" id="drop">
+        <input type="file" id="file" accept="video/*,.mp4,.avi,.mkv,.mov">
+        <strong>Choose a video, drop one here, or drag an example in</strong>
+        <span>MP4, AVI, MKV or MOV, up to 2 GB. UCF-Crime videos are recognised by their content, so the page can check the answer even if the file was renamed.</span>
+      </label>
+      <div class="stage"><video id="preview" controls muted playsinline class="hidden"></video><canvas id="overlay"></canvas></div>
+      <p class="proto hidden" id="proto"><b>Prototype boxes.</b> Our anomaly detector decides <i>when</i> to flag a moment; for the first 2 seconds of each flagged stretch, a box marks the area of strongest movement as the stretch began, labelled with the whole-video class. The model does not pinpoint the crime itself, and the 2-second rule was chosen after viewing our example clips.</p>
+      <div class="row">
+        <button id="run" disabled>Classify video</button>
+        <span class="status" id="status"></span>
+      </div>
+      <div class="bar hidden" id="upbar"><i></i></div>
+      <ul class="note">
+        <li>Every 5th frame is analysed (the project's sampling stride), with no cap: about 36 analysed frames per second on the GPU slice, so a 1-minute 30 fps clip takes roughly 10 s.</li>
+        <li>For a UCF-Crime video, only members that never trained on it are used, which is the same condition as the test score.</li>
+        <li>Strong on fire, explosions, road accidents and shoplifting; weak on Shooting, Assault, Fighting and Abuse, which look alike at 320×240.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="out-h" aria-live="polite">
+      <p class="label" id="out-h">Result</p>
+      <p class="empty" id="empty">No video classified yet.</p>
+      <div id="result" class="hidden" style="display:grid; gap:14px">
+        <div class="verdict">
+          <span class="label">Predicted class</span>
+          <span class="cls" id="pred"></span>
+          <span class="conf" id="conf"></span>
+        </div>
+        <div class="expect hidden" id="expect"></div>
+        <p class="mode" id="mode"></p>
+        <div class="flags hidden" id="flags">
+          <span class="label">Flagged moments (anomaly detector)</span>
+          <div class="row" id="flag-list"></div>
+          <p class="mode" id="flag-note"></p>
+        </div>
+        <div>
+          <p class="label" style="margin-bottom:10px">Top 5 classes</p>
+          <div class="top5" id="top5"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card hidden" id="tl-card" aria-labelledby="tl-h">
+    <p class="label" id="tl-h">What each stretch of the video looks like (~5-second windows)</p>
+    <div class="timeline" id="timeline" role="img" aria-label="Per-window predicted class along the video"></div>
+    <div class="axis"><span>0:00</span><span id="tl-end"></span></div>
+    <div class="legend" id="legend"></div>
+    <div id="alarm-wrap" class="hidden" style="display:grid; gap:6px">
+      <span class="label">Anomaly-detector alarms</span>
+      <div class="alarms" id="alarms"></div>
+    </div>
+    <p class="note">A diagnostic, not a detection of when the crime happens: the model was trained with whole-video labels only and often recognises the setting before the event. Click a segment to jump the preview there.</p>
+  </section>
+
+  <section class="card hidden" id="fr-card" aria-labelledby="fr-h">
+    <p class="label" id="fr-h">Frames across the video, with the class of their window</p>
+    <div class="frames" id="frames"></div>
+  </section>
+
+  <section class="card hidden" id="dt-card" aria-labelledby="dt-h">
+    <p class="label" id="dt-h">Run details</p>
+    <dl id="details"></dl>
+  </section>
+</div>
+
+<script>
+const GROUP = {
+  Abuse: "violence", Assault: "violence-2", Fighting: "violence", Shooting: "violence-2",
+  Arrest: "police", Arson: "fire", Explosion: "fire-2", RoadAccidents: "accident",
+  Burglary: "property", Robbery: "property-2", Shoplifting: "property", Stealing: "property-2", Vandalism: "property",
+  Normal_Videos_event: "normal"
+};
+const color = c => `var(--${GROUP[c] || "normal"})`;
+const nice = c => c === "Normal_Videos_event" ? "Normal" : c === "RoadAccidents" ? "Road accident" : c;
+const pct = p => (100 * p).toFixed(1) + "%";
+const mmss = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+const $ = id => document.getElementById(id);
+const esc = v => String(v).replace(/[&<>"']/g, ch => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[ch]));
+let file = null;
+const TOKEN = new URLSearchParams(location.search).get("token") || "";
+
+fetch("/health", { headers: { "X-Token": TOKEN } }).then(r => r.json()).then(h => {
+  if (h.error) { $("srv").innerHTML = `server <b>${esc(h.error)}</b>`; return; }
+  $("srv").innerHTML = `server <b>${esc(h.members)} members · ${esc(h.device)}</b>`;
+  $("c-model").innerHTML = `model <b>${esc(h.model)}</b>`;
+  if (h.test) {
+    $("c-f1").innerHTML = `test macro-F1 <b>${h.test.macro_f1.toFixed(3)}</b>`;
+    $("c-acc").innerHTML = `test accuracy <b>${(100 * h.test.accuracy).toFixed(1)}%</b>`;
+  }
+}).catch(() => { $("srv").innerHTML = "server <b>unreachable</b>"; });
+
+function pick(f) {
+  if (!f) return;
+  if (typeof showDetector === "function") showDetector({ detector: null });  // clear the previous video's boxes
+  file = f;
+  const v = $("preview");
+  v.src = URL.createObjectURL(f);
+  v.classList.remove("hidden");
+  $("run").disabled = false;
+  setStatus(`${f.name} · ${(f.size / 1048576).toFixed(1)} MB`);
+}
+function setStatus(t, err) { const s = $("status"); s.textContent = t; s.classList.toggle("err", !!err); }
+
+$("file").addEventListener("change", e => pick(e.target.files[0]));
+const drop = $("drop");
+["dragenter", "dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", e => {
+  const sample = e.dataTransfer.getData("application/x-shar-sample");
+  if (sample) useSample(sample); else pick(e.dataTransfer.files[0]);
+});
+
+// Built-in examples: served by the demo server to token holders only (licensed UCF-Crime clips).
+const sampleUrl = f => `/samples/${encodeURIComponent(f)}?token=${encodeURIComponent(TOKEN)}`;
+function sampleCard(s) {
+  const el = document.createElement("div");
+  el.className = "sample"; el.draggable = true; el.dataset.file = s.file;
+  el.innerHTML = `<video src="${sampleUrl(s.file)}#t=5" muted playsinline preload="metadata" loop></video>
+    <div class="meta"><b title="${esc(s.title)}">${esc(s.title)}</b>
+    <span><i style="background:${color(s.label)}"></i>${esc(nice(s.label))} · ${Math.round(s.duration_s)} s</span></div>
+    <button class="try" type="button">Try this clip</button>`;
+  const v = el.querySelector("video");
+  el.addEventListener("mouseenter", () => { v.play().catch(() => {}); });
+  el.addEventListener("mouseleave", () => { v.pause(); });
+  el.addEventListener("dragstart", e => {
+    e.dataTransfer.setData("application/x-shar-sample", s.file);
+    e.dataTransfer.effectAllowed = "copy";
+    drop.classList.add("invite");
+  });
+  el.addEventListener("dragend", () => drop.classList.remove("invite"));
+  el.querySelector(".try").addEventListener("click", () => useSample(s.file));
+  return el;
+}
+async function useSample(f) {
+  document.querySelectorAll(".sample").forEach(c => c.classList.toggle("active", c.dataset.file === f));
+  setStatus(`Loading example ${f}…`);
+  try {
+    const r = await fetch(sampleUrl(f), { headers: { "X-Token": TOKEN } });
+    if (!r.ok) throw new Error(`server returned ${r.status}`);
+    pick(new File([await r.blob()], f, { type: "video/mp4" }));
+    $("in-h").scrollIntoView({ behavior: "smooth", block: "start" });
+    $("run").click();
+  } catch (err) { setStatus(`Could not load the example: ${err.message}`, true); }
+}
+fetch("/samples", { headers: { "X-Token": TOKEN } }).then(r => r.ok ? r.json() : null).then(d => {
+  if (!d || !d.samples.length) return;  // older server or no token: keep the page as it was
+  d.samples.filter(s => s.featured).forEach(s => $("sgrid").appendChild(sampleCard(s)));
+  const more = d.samples.filter(s => !s.featured);
+  more.forEach(s => $("sgrid-more").appendChild(sampleCard(s)));
+  $("more").classList.toggle("hidden", !more.length);
+  $("examples").classList.remove("hidden");
+}).catch(() => {});
+
+$("run").addEventListener("click", () => {
+  if (!file) return;
+  $("run").disabled = true;
+  const bar = $("upbar"), fill = bar.firstElementChild;
+  bar.classList.remove("hidden"); fill.style.width = "0";
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "/predict");
+  xhr.setRequestHeader("X-Filename", encodeURIComponent(file.name));
+  xhr.setRequestHeader("X-Token", TOKEN);
+  xhr.upload.onprogress = e => {
+    if (e.lengthComputable) { fill.style.width = pct(e.loaded / e.total); setStatus(`Uploading ${pct(e.loaded / e.total)}`); }
+  };
+  xhr.upload.onload = () => { fill.style.width = "100%"; setStatus("Analysing frames… (decode, encoders, model members)"); };
+  xhr.onload = () => {
+    $("run").disabled = false; bar.classList.add("hidden");
+    let data; try { data = JSON.parse(xhr.responseText); } catch { data = { error: `server returned ${xhr.status}` }; }
+    if (xhr.status !== 200 || data.error) { setStatus(data.error || `Request failed (${xhr.status})`, true); return; }
+    setStatus(`Done in ${data.timing_s.total}s`);
+    render(data);
+  };
+  xhr.onerror = () => { $("run").disabled = false; bar.classList.add("hidden"); setStatus("Could not reach the server. Is the tunnel open?", true); };
+  xhr.send(file);
+});
+
+// ---- Prototype "when + where" overlay (detector + motion box); absent on older servers ----
+let shown = null;
+const ONSET_S = 2;
+const overlay = $("overlay"), preview = $("preview");
+function boxLabel(d) { return d.prediction === "Normal_Videos_event" ? "Unusual activity" : `Possible ${nice(d.prediction)}`; }
+function drawOverlay() {
+  const ctx = overlay.getContext("2d"), dpr = window.devicePixelRatio || 1;
+  const w = overlay.clientWidth, h = overlay.clientHeight;
+  if (overlay.width !== Math.round(w * dpr) || overlay.height !== Math.round(h * dpr)) {
+    overlay.width = Math.round(w * dpr); overlay.height = Math.round(h * dpr);
+  }
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, w, h);
+  if (!shown || !shown.detector || preview.classList.contains("hidden") || !preview.videoWidth) return;
+  // Option B (owner, 2026-11-25): show the box only for the first ONSET_S seconds of each flagged stretch,
+  // frozen at the stretch's first box; later boxes drift onto unrelated motion. Rule chosen after viewing the
+  // three example clips, so it is stated on the page.
+  const t = preview.currentTime, det = shown.detector;
+  const seg = det.segments.find(g => g.start_s <= t + 1e-6 && t < Math.min(g.end_s, g.start_s + ONSET_S));
+  if (!seg) return;                                  // outside the onset window the video is left untouched
+  const st = det.steps.find(x => x.t_s >= seg.start_s - 1e-6 && x.alarm);
+  if (!st || !st.box) return;
+  const sc = Math.min(w / preview.videoWidth, h / preview.videoHeight);
+  const dw = preview.videoWidth * sc, dh = preview.videoHeight * sc, ox = (w - dw) / 2, oy = (h - dh) / 2;
+  const [x0, y0, x1, y1] = st.box;
+  const X = ox + x0 * dw, Y = oy + y0 * dh, W = Math.max(8, (x1 - x0) * dw), H = Math.max(8, (y1 - y0) * dh);
+  const col = getComputedStyle(document.documentElement).getPropertyValue(`--${GROUP[shown.prediction] || "bad"}`).trim() || "#c0392b";
+  ctx.lineWidth = 3; ctx.strokeStyle = col; ctx.strokeRect(X, Y, W, H);
+  const text = boxLabel(shown);
+  ctx.font = "600 13px Public Sans, system-ui, sans-serif";
+  const tw = ctx.measureText(text).width + 12, ty = Y >= 22 ? Y - 22 : Y + H;
+  ctx.fillStyle = col; ctx.fillRect(Math.min(X, w - tw), ty, tw, 22);
+  ctx.fillStyle = "#fff"; ctx.fillText(text, Math.min(X, w - tw) + 6, ty + 15);
+}
+(function loop() { drawOverlay(); requestAnimationFrame(loop); })();
+function showDetector(d) {
+  shown = d;
+  const det = d.detector;
+  $("proto").classList.toggle("hidden", !det);
+  $("flags").classList.toggle("hidden", !det);
+  $("alarm-wrap").classList.toggle("hidden", !det);
+  if (!det) return;
+  const dur = Math.max(d.duration_s, 1e-6);
+  $("alarms").innerHTML = det.segments.map(g =>
+    `<span style="left:${(g.start_s / dur * 100).toFixed(2)}%;width:${Math.max(0.4, (g.end_s - g.start_s) / dur * 100).toFixed(2)}%" title="${mmss(g.start_s)}–${mmss(g.end_s)}"></span>`).join("");
+  $("flag-list").innerHTML = det.segments.length
+    ? det.segments.map((g, i) => `<button type="button" data-t="${g.start_s}">▶ ${mmss(g.start_s)}–${mmss(g.end_s)}</button>`).join(" ")
+    : `<span class="mode">No moment crossed the detector's alarm threshold.</span>`;
+  $("flag-list").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    preview.currentTime = Math.max(0, +b.dataset.t - 1); preview.play().catch(() => {});
+  }));
+  $("flag-note").textContent = {
+    in_sample: "Note: the detector was trained on this video, so these alarms are not a fair test.",
+    held_out: "The detector never trained on this video.",
+    not_ucf: "Not a UCF-Crime video: the detector has never seen it.",
+  }[det.exposure] || "";
+}
+
+function render(d) {
+  $("empty").classList.add("hidden");
+  $("result").classList.remove("hidden");
+  $("pred").textContent = nice(d.prediction);
+  $("pred").style.color = color(d.prediction);
+  $("conf").textContent = `${pct(d.confidence)} mean probability across ${d.heads_used.length} members`;
+  const ex = $("expect");
+  if (d.expected && !d.expected.label) {
+    ex.classList.remove("hidden");
+    ex.innerHTML = `<span>This video appears in UCF-Crime under conflicting labels (${esc(d.expected.conflicting_labels.join(", "))}); no answer check.</span>`;
+  } else if (d.expected) {
+    ex.classList.remove("hidden");
+    ex.innerHTML = `<span>Dataset label: <b>${nice(d.expected.label)}</b></span>` +
+      `<span class="pill ${d.expected.correct ? "ok" : "bad"}">${d.expected.correct ? "Correct" : "Wrong"}</span>`;
+  } else {
+    ex.classList.add("hidden");
+  }
+  const m = $("mode");
+  m.textContent = "Members used: " + d.mode;
+  m.classList.toggle("warn", d.mode.startsWith("WARNING"));
+
+  $("top5").innerHTML = d.top5.map(t =>
+    `<div class="t5"><span class="n" title="${t.label}">${nice(t.label)}</span>` +
+    `<span class="track"><i style="width:${pct(t.prob)};background:${color(t.label)}"></i></span>` +
+    `<span class="p">${pct(t.prob)}</span></div>`).join("");
+
+  const dur = Math.max(d.duration_s, 1e-6), tl = $("timeline");
+  tl.innerHTML = "";
+  d.windows.forEach(w => {
+    const seg = document.createElement("div");
+    const span = Math.max(w.end_s - w.start_s, d.frame_stride / d.fps);
+    seg.style.flex = `${span} 0 0`;
+    seg.style.background = color(w.label);
+    seg.title = `${mmss(w.start_s)}–${mmss(w.end_s)}  ${nice(w.label)} ${pct(w.prob)}`;
+    seg.addEventListener("click", () => { const v = $("preview"); v.currentTime = w.start_s; v.play(); });
+    tl.appendChild(seg);
+  });
+  $("tl-end").textContent = mmss(dur);
+  const seen = [...new Set(d.windows.map(w => w.label))];
+  $("legend").innerHTML = seen.map(c => `<span><i style="background:${color(c)}"></i>${nice(c)}</span>`).join("");
+  $("tl-card").classList.remove("hidden");
+  showDetector(d);
+
+  $("frames").innerHTML = d.thumbnails.map(t =>
+    `<figure><img src="${t.image}" alt="frame at ${mmss(t.t_s)}"><figcaption><span>${mmss(t.t_s)}</span>` +
+    `<b style="color:${color(t.window_label)}">${nice(t.window_label)}</b></figcaption></figure>`).join("");
+  $("fr-card").classList.remove("hidden");
+
+  const rows = [
+    ["File", d.filename], ["Video key", d.video_key], ["Duration", `${d.duration_s.toFixed(1)} s at ${d.fps.toFixed(2)} fps`],
+    ["Frames analysed", `${d.frames_used} (every ${d.frame_stride}th)`], ["Members", d.heads_used.join(", ")],
+    ["Device", d.device], ["Time", `decode ${d.timing_s.decode}s · features ${d.timing_s.features}s · total ${d.timing_s.total}s`]
+  ];
+  if (d.expected) rows.push(["Folds that saw it", d.expected.seen_by_folds.join(", ") || "none"]);
+  $("details").innerHTML = rows.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("");
+  $("dt-card").classList.remove("hidden");
+}
+</script>
+</body>
+</html>

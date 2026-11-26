@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHAR Live Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #f3f4f1; --surface: #ffffff; --surface-2: #eceee9; --ink: #1b1f1c; --ink-2: #4b524d; --ink-3: #7b827d;
+  --line: #d6dad3; --accent: #1f5f4a; --accent-ink: #ffffff; --ok: #1e7a46; --bad: #b3322b; --warn: #9a6a00;
+  --alert: #c0392b;
+  --violence: #c0392b; --violence-2: #e06650; --property: #b7791f; --property-2: #d9a441;
+  --fire: #2b6cb0; --fire-2: #5a95d6; --police: #6b46c1; --accident: #2c7a7b; --normal: #8a918c;
+  --shadow: 0 1px 2px rgba(20, 30, 25, .06), 0 4px 16px rgba(20, 30, 25, .06);
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121514; --surface: #1a1e1c; --surface-2: #232825; --ink: #e8ebe7; --ink-2: #b4bbb5; --ink-3: #848c86;
+    --line: #2f3631; --accent: #5fb894; --accent-ink: #0d1411; --ok: #5cc48a; --bad: #f07a6e; --warn: #e0b04a;
+    --normal: #6f7772; --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121514; --surface: #1a1e1c; --surface-2: #232825; --ink: #e8ebe7; --ink-2: #b4bbb5; --ink-3: #848c86;
+  --line: #2f3631; --accent: #5fb894; --accent-ink: #0d1411; --ok: #5cc48a; --bad: #f07a6e; --warn: #e0b04a;
+  --normal: #6f7772; --shadow: none;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); padding-inline: 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 56px; display: grid; gap: 20px; }
+header { display: grid; gap: 6px; }
+h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.sub { color: var(--ink-2); margin: 0; max-width: 76ch; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.chip { font: 12px/1 var(--mono); padding: 6px 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-2); background: var(--surface); }
+.chip b { color: var(--ink); font-weight: 500; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tab { font: 600 14px/1 var(--sans); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.tab i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.tab[aria-selected="true"] { border-color: var(--accent); color: var(--ink); box-shadow: inset 0 0 0 1px var(--accent); }
+.tab:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 20px; align-items: start; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; box-shadow: var(--shadow); display: grid; gap: 14px; min-width: 0; }
+.label { font: 600 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+.stage { position: relative; background: #000; border-radius: 8px; overflow: hidden; }
+.stage video { width: 100%; display: block; aspect-ratio: 4 / 3; background: #000; }
+.hud { position: absolute; inset: 0; pointer-events: none; font-family: var(--mono); color: #fff; }
+.live { position: absolute; top: 12px; left: 12px; display: inline-flex; gap: 8px; align-items: center; font: 600 12px/1 var(--mono); letter-spacing: .06em; background: rgba(0,0,0,.55); padding: 7px 10px; border-radius: 6px; }
+.live i { width: 9px; height: 9px; border-radius: 50%; background: #8a918c; }
+.live.on i { background: #ff4d3d; animation: pulse 1.2s infinite; }
+@keyframes pulse { 50% { opacity: .25; } }
+.now { position: absolute; top: 12px; right: 12px; text-align: right; background: rgba(0,0,0,.55); padding: 7px 10px; border-radius: 6px; font-size: 13px; line-height: 1.35; max-width: 60%; }
+.now b { font-size: 15px; font-weight: 500; }
+.alert { position: absolute; left: 12px; right: 12px; bottom: 14px; display: flex; gap: 10px; align-items: center; justify-content: center; background: var(--alert); color: #fff; font: 700 clamp(15px, 2.4vw, 22px)/1.2 var(--sans); padding: 12px 14px; border-radius: 8px; opacity: 0; transform: translateY(8px); transition: opacity .25s, transform .25s; text-align: center; }
+.alert.show { opacity: .94; transform: none; }
+.alert svg { flex: none; }
+@media (prefers-reduced-motion: reduce) { .alert, .live.on i { transition: none; animation: none; } }
+.controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+button { font: 600 14px/1 var(--sans); padding: 10px 16px; border-radius: 7px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+button.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.clock { font: 13px var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tl { display: grid; gap: 4px; }
+.strip { position: relative; display: flex; height: 26px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: var(--surface-2); cursor: pointer; }
+.strip div { height: 100%; }
+.head { position: absolute; top: -2px; bottom: -2px; width: 2px; background: var(--ink); left: 0; pointer-events: none; }
+.event { position: relative; height: 14px; }
+.event span { position: absolute; top: 4px; height: 6px; background: var(--ink); border-radius: 3px; }
+.axis { display: flex; justify-content: space-between; font: 12px var(--mono); color: var(--ink-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--ink-2); }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.bars { display: grid; gap: 9px; }
+.b { display: grid; grid-template-columns: 120px minmax(0, 1fr) 46px; gap: 10px; align-items: center; font-size: 14px; }
+.b .n { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.b .track { height: 12px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+.b .track i { display: block; height: 100%; border-radius: 3px; width: 0; transition: width .25s; }
+.b .p { font: 13px var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
+.muted { color: var(--ink-3); font-size: 14px; margin: 0; }
+.verdict .cls { font-size: 32px; font-weight: 700; line-height: 1.1; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.verdict .conf { font: 14px var(--mono); color: var(--ink-2); }
+.match { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 10px 12px; border-radius: 8px; background: var(--surface-2); font-size: 14px; }
+.pill { font: 600 12px/1 var(--sans); padding: 5px 8px; border-radius: 999px; color: #fff; background: var(--ok); }
+.hidden { display: none !important; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.frames figure { margin: 0; display: grid; gap: 6px; cursor: pointer; }
+.frames img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; display: block; border: 3px solid transparent; }
+.frames figcaption { font: 12px var(--mono); color: var(--ink-2); display: flex; justify-content: space-between; gap: 6px; }
+.frames figcaption b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.notes { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; display: grid; gap: 6px; }
+dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; margin: 0; font-size: 13px; }
+dt { color: var(--ink-3); } dd { margin: 0; font-family: var(--mono); overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="label">SHAR · Suspicious Human Activity Recognition</p>
+    <h1>Live crime-type analysis</h1>
+    <p class="sub">The final SHAR model watches a surveillance clip and, every second, says which of the 14 UCF-Crime
+      categories the last few seconds look like. Press play.</p>
+    <div class="chips" id="chips"></div>
+  </header>
+
+  <div class="tabs" role="tablist" id="tabs"></div>
+
+  <div class="grid">
+    <section class="card">
+      <div class="stage">
+        <video id="vid" playsinline preload="auto" muted></video>
+        <div class="hud">
+          <div class="live" id="live"><i></i><span>ANALYSING</span></div>
+          <div class="now" id="now"></div>
+          <div class="alert" id="alert" role="status" aria-live="polite">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 1 21h22L12 2Zm0 6 1 7h-2l1-7Zm0 9.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+            <span id="alertText"></span>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="play">Play</button>
+        <button class="ghost" id="restart">Restart</button>
+        <span class="clock" id="clock">0.0 s</span>
+      </div>
+      <div class="tl">
+        <p class="label">What each second looked like to the model</p>
+        <div class="strip" id="strip"><div class="head" id="head"></div></div>
+        <div class="event" id="event" title="Officially annotated event time"></div>
+        <div class="axis"><span>0 s</span><span id="axisEnd"></span></div>
+        <div class="legend" id="legend"></div>
+      </div>
+    </section>
+
+    <aside style="display:grid; gap:20px; min-width:0">
+      <section class="card">
+        <p class="label">Last 5 seconds</p>
+        <div class="bars" id="bars"><p class="muted">Starts after the first 5 seconds of video.</p></div>
+      </section>
+      <section class="card verdict">
+        <p class="label">Whole-video verdict</p>
+        <div id="verdictWait"><p class="muted">Shown when the clip finishes.</p>
+          <button class="ghost" id="reveal" style="margin-top:10px">Show now</button></div>
+        <div id="verdictBody" class="hidden" style="display:grid; gap:10px">
+          <div class="cls" id="vCls"></div>
+          <div class="conf" id="vConf"></div>
+          <div class="match" id="vMatch"></div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <section class="card">
+    <p class="label">Tagged frames</p>
+    <div class="frames" id="frames"></div>
+  </section>
+
+  <section class="card">
+    <p class="label">How to read this</p>
+    <ul class="notes" id="notes"></ul>
+    <dl id="prov"></dl>
+  </section>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const GROUP = {
+  Abuse: "violence", Assault: "violence-2", Fighting: "violence", Shooting: "violence-2",
+  Arrest: "police", Arson: "fire", Explosion: "fire-2", RoadAccidents: "accident",
+  Burglary: "property", Robbery: "property-2", Shoplifting: "property", Stealing: "property-2", Vandalism: "property",
+};
+const NORMAL = "Normal_Videos_event";
+const color = c => `var(--${GROUP[c] || "normal"})`;
+const nice = c => c === NORMAL ? "Normal" : c === "RoadAccidents" ? "Road accident" : c;
+const $ = id => document.getElementById(id);
+const pct = p => `${Math.round(p * 100)}%`;
+const vid = $("vid");
+let cur = null, revealed = false;
+
+$("chips").innerHTML = DATA.chips.map(c => `<span class="chip">${c}</span>`).join("");
+$("notes").innerHTML = DATA.notes.map(n => `<li>${n}</li>`).join("");
+
+$("tabs").innerHTML = DATA.videos.map((v, i) =>
+  `<button class="tab" role="tab" data-i="${i}" aria-selected="false"><i style="background:${color(v.label)}"></i>Clip ${i + 1} · ${nice(v.label)}</button>`).join("");
+$("tabs").addEventListener("click", e => { const b = e.target.closest(".tab"); if (b) load(+b.dataset.i); });
+
+function windowAt(t) {
+  let w = null;
+  for (const x of cur.windows) { if (x.end_s <= t + 1e-6) w = x; else break; }
+  return w;
+}
+
+function render() {
+  const t = vid.currentTime, d = cur.duration_s;
+  $("clock").textContent = `${t.toFixed(1)} s / ${d.toFixed(1)} s`;
+  $("head").style.left = `${Math.min(100, (t / d) * 100)}%`;
+  const w = windowAt(t);
+  if (!w) {
+    $("now").innerHTML = `warming up…`;
+    $("alert").classList.remove("show");
+    $("bars").innerHTML = `<p class="muted">Starts after the first ${cur.window_s.toFixed(0)} seconds of video.</p>`;
+    return;
+  }
+  const top = w.top3[0];
+  $("now").innerHTML = `${w.start_s.toFixed(0)}–${w.end_s.toFixed(0)} s<br><b>${nice(top.label)}</b> ${pct(top.prob)}`;
+  const flag = !!cur.alert && t + 1e-6 >= cur.alert.at_s;  // latched, like an alarm
+  $("alertText").textContent = flag ? `Possible ${nice(cur.alert.label)} detected` : "";
+  $("alert").classList.toggle("show", flag);
+  $("bars").innerHTML = w.top3.map(x => `<div class="b"><span class="n">${nice(x.label)}</span>
+    <span class="track"><i style="width:${(x.prob * 100).toFixed(1)}%;background:${color(x.label)}"></i></span>
+    <span class="p">${pct(x.prob)}</span></div>`).join("");
+}
+
+function reveal() {
+  revealed = true;
+  $("verdictWait").classList.add("hidden");
+  $("verdictBody").classList.remove("hidden");
+  const v = cur.video;
+  $("vCls").textContent = nice(v.prediction);
+  $("vConf").textContent = `${pct(v.confidence)} · runner-up ${nice(v.top3[1].label)} ${pct(v.top3[1].prob)}`;
+  const ok = v.prediction === cur.label;
+  $("vMatch").innerHTML = `<span>Dataset label: <b>${nice(cur.label)}</b></span>` +
+    (ok ? `<span class="pill">Correct</span>` : `<span class="pill" style="background:var(--bad)">Wrong</span>`);
+}
+
+function load(i) {
+  cur = DATA.videos[i];
+  document.querySelectorAll(".tab").forEach((b, j) => b.setAttribute("aria-selected", String(j === i)));
+  vid.src = cur.src;
+  revealed = false;
+  $("verdictWait").classList.remove("hidden");
+  $("verdictBody").classList.add("hidden");
+  $("play").textContent = "Play";
+  const d = cur.duration_s;
+  $("axisEnd").textContent = `${d.toFixed(0)} s`;
+  // Colour each stretch by the window that is current during it (causal, like the live overlay).
+  const segs = [];
+  cur.windows.forEach((w, k) => {
+    const s = w.end_s, e = k + 1 < cur.windows.length ? cur.windows[k + 1].end_s : d;
+    if (e > s) segs.push(`<div title="${w.start_s.toFixed(0)}–${w.end_s.toFixed(0)} s: ${nice(w.top3[0].label)} ${pct(w.top3[0].prob)}" style="width:${((e - s) / d * 100).toFixed(3)}%;background:${color(w.top3[0].label)}"></div>`);
+  });
+  const lead = `<div style="width:${(cur.windows[0].end_s / d * 100).toFixed(3)}%"></div>`;
+  $("strip").innerHTML = lead + segs.join("") + `<div class="head" id="head"></div>`;
+  $("event").innerHTML = (cur.events || []).map(([a, b]) =>
+    `<span style="left:${(a / d * 100).toFixed(2)}%;width:${((b - a) / d * 100).toFixed(2)}%"></span>`).join("");
+  $("event").style.display = (cur.events || []).length ? "" : "none";
+  const seen = [...new Set(cur.windows.map(w => w.top3[0].label))];
+  $("legend").innerHTML = seen.map(c => `<span><i style="background:${color(c)}"></i>${nice(c)}</span>`).join("") +
+    ((cur.events || []).length ? `<span><i style="background:var(--ink);height:4px"></i>official event time</span>` : "");
+  $("frames").innerHTML = cur.frames.map(f => `<figure data-t="${f.t_s}"><img src="${f.src}" alt="frame at ${f.t_s.toFixed(1)} s" style="border-color:${f.label ? color(f.label) : "transparent"}">
+    <figcaption><span>${f.t_s.toFixed(1)} s</span><b>${f.label ? nice(f.label) + " " + pct(f.prob) : "warming up"}</b></figcaption></figure>`).join("");
+  $("prov").innerHTML = Object.entries(cur.provenance).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+  vid.currentTime = 0;
+  render();
+}
+
+$("play").onclick = () => vid.paused ? vid.play() : vid.pause();
+$("restart").onclick = () => { vid.currentTime = 0; vid.play(); };
+$("reveal").onclick = reveal;
+$("strip").addEventListener("click", e => { const r = e.currentTarget.getBoundingClientRect(); vid.currentTime = (e.clientX - r.left) / r.width * cur.duration_s; });
+$("frames").addEventListener("click", e => { const f = e.target.closest("figure"); if (f) { vid.currentTime = +f.dataset.t; } });
+vid.addEventListener("play", () => { $("play").textContent = "Pause"; $("live").classList.add("on"); });
+vid.addEventListener("pause", () => { $("play").textContent = "Play"; $("live").classList.remove("on"); });
+vid.addEventListener("ended", () => { if (!revealed) reveal(); });
+vid.addEventListener("timeupdate", render);
+vid.addEventListener("seeked", render);
+(function tick() { if (!vid.paused) render(); requestAnimationFrame(tick); })();
+load(0);
+</script>
+</body>
+</html>

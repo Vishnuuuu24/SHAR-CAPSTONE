@@ -1,0 +1,37 @@
+########## fold2 frozen C=0.01 (fold-1 selection, carried forward unchanged) ##########
+train 384702 rows (stride 1), validation 47726 rows, dim 2048, scaling ['standardize'], cache b546abe7f567
+
+--- logistic_regression-standardize-C0.01 ---
+frame macro-F1 0.2001 (clustered 95% CI 0.1243-0.2742), accuracy 0.2286, video-level macro-F1 0.2796 over 56 videos (1 tie-broken), fit 177.4s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-frozen/logistic_regression-standardize-C0.01.json
+########## fold2 dinov2 C=0.00003 (fold-1 selection, carried forward unchanged) ##########
+train 384702 rows (stride 1), validation 47726 rows, dim 1536, scaling ['standardize'], cache ea8c33fbecf3
+
+--- logistic_regression-standardize-C3e-05 ---
+frame macro-F1 0.2810 (clustered 95% CI 0.1960-0.3540), accuracy 0.3257, video-level macro-F1 0.3999 over 56 videos (0 tie-broken), fit 215.7s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-dinov2/logistic_regression-standardize-C3e-05.json
+########## fold3 frozen C=0.01 (fold-1 selection, carried forward unchanged) ##########
+train 400419 rows (stride 1), validation 49719 rows, dim 2048, scaling ['standardize'], cache 2fd183f7431a
+
+--- logistic_regression-standardize-C0.01 ---
+frame macro-F1 0.1881 (clustered 95% CI 0.1037-0.2394), accuracy 0.1933, video-level macro-F1 0.2553 over 56 videos (0 tie-broken), fit 193.9s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold3-frozen/logistic_regression-standardize-C0.01.json
+########## fold3 dinov2 C=0.00003 (fold-1 selection, carried forward unchanged) ##########
+train 400419 rows (stride 1), validation 49719 rows, dim 1536, scaling ['standardize'], cache 681f53307dbd
+
+--- logistic_regression-standardize-C3e-05 ---
+frame macro-F1 0.2774 (clustered 95% CI 0.1816-0.3345), accuracy 0.2969, video-level macro-F1 0.3442 over 56 videos (0 tie-broken), fit 204.5s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold3-dinov2/logistic_regression-standardize-C3e-05.json
+########## fold4 frozen C=0.01 (fold-1 selection, carried forward unchanged) ##########
+train 357643 rows (stride 1), validation 41319 rows, dim 2048, scaling ['standardize'], cache 37500108e894
+
+--- logistic_regression-standardize-C0.01 ---
+frame macro-F1 0.1579 (clustered 95% CI 0.0844-0.2262), accuracy 0.1597, video-level macro-F1 0.2043 over 56 videos (0 tie-broken), fit 199.0s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold4-frozen/logistic_regression-standardize-C0.01.json
+########## fold4 dinov2 C=0.00003 (fold-1 selection, carried forward unchanged) ##########
+train 357643 rows (stride 1), validation 41319 rows, dim 1536, scaling ['standardize'], cache 3b4aaed3037e
+
+--- logistic_regression-standardize-C3e-05 ---
+frame macro-F1 0.2683 (clustered 95% CI 0.1686-0.3554), accuracy 0.2658, video-level macro-F1 0.3897 over 56 videos (0 tie-broken), fit 214.1s predict 0.1s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold4-dinov2/logistic_regression-standardize-C3e-05.json
+########## ALL FOLDS PROBED ##########

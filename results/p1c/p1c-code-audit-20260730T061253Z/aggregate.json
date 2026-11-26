@@ -1,0 +1,50 @@
+{
+  "audited_source_bundle_sha256": "7439e3d61a2a82c26467c66d78e63f600399402ac3d015a8514a91a8d4d96645",
+  "audited_sources": [
+    "core/device.py",
+    "core/p1c_readiness.py",
+    "core/p1c_engine.py",
+    "data/p1c_loader.py",
+    "data/p1c_temporal.py",
+    "data/manifest.py",
+    "data/grouping.py",
+    "eval/metrics.py",
+    "models/classifiers.py",
+    "scripts/smoke_p1c_models.py",
+    "scripts/run_p1c_frame_baseline.py"
+  ],
+  "checks": {
+    "checkpoint_rng_covers_selected_accelerator": true,
+    "cluster_key_includes_dataset_and_video": true,
+    "device_policy_refuses_silent_fallback": true,
+    "loader_order_is_seeded_by_run_and_epoch": true,
+    "loss_telemetry_requires_mean_reduction": true,
+    "mps_smoke_lengths_follow_clip_device": true,
+    "readiness_binds_real_registered_files": true,
+    "runner_binds_registered_device_policy": true,
+    "runner_is_validation_only_and_fails_closed": true,
+    "targeted_formula_and_invariant_tests_pass": true,
+    "temporal_planner_rejects_boundary_violations": true
+  },
+  "kind": "P1C pre-training code/formula audit; not a model run or research result",
+  "scope_assertions": {
+    "dataset_media_read": false,
+    "model_training": false,
+    "test_evaluation": false
+  },
+  "targeted_test_modules": [
+    "tests.test_p0c_foundation",
+    "tests.test_p1c_readiness",
+    "tests.test_p1c_engine",
+    "tests.test_p1c_loader",
+    "tests.test_p1c_temporal",
+    "tests.test_p1c_models"
+  ],
+  "targeted_test_output_tail": [
+    "................................................",
+    "----------------------------------------------------------------------",
+    "Ran 48 tests in 4.440s",
+    "",
+    "OK"
+  ]
+}

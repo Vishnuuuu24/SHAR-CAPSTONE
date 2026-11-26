@@ -1,0 +1,473 @@
+{
+ "unweighted": {
+  "runs": [
+   {
+    "seed": 0,
+    "best_epoch": 5,
+    "map": 0.8087058289321651,
+    "ap": {
+     "Normal": 0.9790536566355993,
+     "Fighting": 0.8399474664531292,
+     "Shooting": 0.6971181055920085,
+     "Riot": 0.9692791312801837,
+     "Abuse": 0.3064112821215954,
+     "Car accident": 0.9774047813505102,
+     "Explosion": 0.8917263790921285
+    },
+    "single_label_accuracy": 0.8550531914893617,
+    "single_label_macro_f1": 0.7368841087388478,
+    "single_label_per_class_f1": {
+     "Normal": 0.9082278481012658,
+     "Fighting": 0.7596153846153846,
+     "Shooting": 0.5528455284552846,
+     "Riot": 0.9375,
+     "Abuse": 0.2222222222222222,
+     "Car accident": 0.9411764705882353,
+     "Explosion": 0.8366013071895425
+    },
+    "top1_in_any_label": 0.8523153942428036,
+    "violence_auc": 0.9869966555183947
+   },
+   {
+    "seed": 1,
+    "best_epoch": 4,
+    "map": 0.8221240016392478,
+    "ap": {
+     "Normal": 0.9764068011255019,
+     "Fighting": 0.8569833030079019,
+     "Shooting": 0.7272791490107818,
+     "Riot": 0.9738810726505533,
+     "Abuse": 0.34268608408360196,
+     "Car accident": 0.971625789593793,
+     "Explosion": 0.9060058120026018
+    },
+    "single_label_accuracy": 0.8603723404255319,
+    "single_label_macro_f1": 0.7712054638485574,
+    "single_label_per_class_f1": {
+     "Normal": 0.9116719242902208,
+     "Fighting": 0.7578947368421053,
+     "Shooting": 0.60431654676259,
+     "Riot": 0.9484536082474226,
+     "Abuse": 0.4,
+     "Car accident": 0.9171270718232044,
+     "Explosion": 0.8589743589743589
+    },
+    "top1_in_any_label": 0.8610763454317898,
+    "violence_auc": 0.9861739130434782
+   },
+   {
+    "seed": 2,
+    "best_epoch": 5,
+    "map": 0.8080045475884345,
+    "ap": {
+     "Normal": 0.9760302381363362,
+     "Fighting": 0.8492122766818905,
+     "Shooting": 0.693651318122649,
+     "Riot": 0.9724226007892545,
+     "Abuse": 0.29718976850133677,
+     "Car accident": 0.9740897796604637,
+     "Explosion": 0.8934358512271109
+    },
+    "single_label_accuracy": 0.8617021276595744,
+    "single_label_macro_f1": 0.751774926278289,
+    "single_label_per_class_f1": {
+     "Normal": 0.9230769230769231,
+     "Fighting": 0.74,
+     "Shooting": 0.5739130434782609,
+     "Riot": 0.934010152284264,
+     "Abuse": 0.3076923076923077,
+     "Car accident": 0.9473684210526315,
+     "Explosion": 0.8363636363636363
+    },
+    "top1_in_any_label": 0.8598247809762203,
+    "violence_auc": 0.986113712374582
+   }
+  ],
+  "info": {
+   "train_counts": {
+    "Normal": 1822,
+    "Fighting": 391,
+    "Shooting": 290,
+    "Riot": 341,
+    "Abuse": 31,
+    "Car accident": 349,
+    "Explosion": 279
+   },
+   "test_videos": 799,
+   "single_label_test_videos": 752,
+   "class_weights": null
+  },
+  "map": 0.8129447927199491,
+  "single_label_accuracy": 0.8590425531914893,
+  "single_label_macro_f1": 0.7532881662885647,
+  "top1_in_any_label": 0.8577388402169378,
+  "violence_auc": 0.9864280936454849,
+  "ap_mean": {
+   "Normal": 0.9771635652991458,
+   "Fighting": 0.8487143487143073,
+   "Shooting": 0.7060161909084798,
+   "Riot": 0.9718609349066639,
+   "Abuse": 0.315429044902178,
+   "Car accident": 0.9743734502015889,
+   "Explosion": 0.8970560141072803
+  }
+ },
+ "class_weighted": {
+  "runs": [
+   {
+    "seed": 0,
+    "best_epoch": 5,
+    "map": 0.8027076134246361,
+    "ap": {
+     "Normal": 0.9704451850869782,
+     "Fighting": 0.8150252182394844,
+     "Shooting": 0.6778523833820691,
+     "Riot": 0.9669223028092151,
+     "Abuse": 0.33064504839858366,
+     "Car accident": 0.9695422225763454,
+     "Explosion": 0.8885209334797772
+    },
+    "single_label_accuracy": 0.8457446808510638,
+    "single_label_macro_f1": 0.7471121911523004,
+    "single_label_per_class_f1": {
+     "Normal": 0.9109243697478991,
+     "Fighting": 0.7354260089686099,
+     "Shooting": 0.5666666666666667,
+     "Riot": 0.9270833333333334,
+     "Abuse": 0.3333333333333333,
+     "Car accident": 0.9270833333333334,
+     "Explosion": 0.8292682926829268
+    },
+    "top1_in_any_label": 0.8460575719649562,
+    "violence_auc": 0.9821939799331104
+   },
+   {
+    "seed": 1,
+    "best_epoch": 3,
+    "map": 0.8179436251822051,
+    "ap": {
+     "Normal": 0.9711455946001012,
+     "Fighting": 0.8384243253997307,
+     "Shooting": 0.7113375367312034,
+     "Riot": 0.9725914153880805,
+     "Abuse": 0.36177280520079697,
+     "Car accident": 0.9634572927331791,
+     "Explosion": 0.9068764062223434
+    },
+    "single_label_accuracy": 0.8590425531914894,
+    "single_label_macro_f1": 0.7704644396883619,
+    "single_label_per_class_f1": {
+     "Normal": 0.9217687074829932,
+     "Fighting": 0.7596153846153846,
+     "Shooting": 0.6382978723404256,
+     "Riot": 0.9393939393939394,
+     "Abuse": 0.36363636363636365,
+     "Car accident": 0.9239130434782609,
+     "Explosion": 0.8466257668711656
+    },
+    "top1_in_any_label": 0.8598247809762203,
+    "violence_auc": 0.983819397993311
+   },
+   {
+    "seed": 2,
+    "best_epoch": 6,
+    "map": 0.7999125638896935,
+    "ap": {
+     "Normal": 0.9693556008773573,
+     "Fighting": 0.8129489912774351,
+     "Shooting": 0.6615410659342411,
+     "Riot": 0.9694812264016918,
+     "Abuse": 0.3393865115092736,
+     "Car accident": 0.9590811541880082,
+     "Explosion": 0.8875933970398471
+    },
+    "single_label_accuracy": 0.8444148936170213,
+    "single_label_macro_f1": 0.755099335457494,
+    "single_label_per_class_f1": {
+     "Normal": 0.9119170984455959,
+     "Fighting": 0.7476635514018691,
+     "Shooting": 0.5793103448275863,
+     "Riot": 0.93,
+     "Abuse": 0.375,
+     "Car accident": 0.9247311827956989,
+     "Explosion": 0.8170731707317073
+    },
+    "top1_in_any_label": 0.8473091364205256,
+    "violence_auc": 0.9818929765886288
+   }
+  ],
+  "info": {
+   "train_counts": {
+    "Normal": 1822,
+    "Fighting": 391,
+    "Shooting": 290,
+    "Riot": 341,
+    "Abuse": 31,
+    "Car accident": 349,
+    "Explosion": 279
+   },
+   "test_videos": 799,
+   "single_label_test_videos": 752,
+   "class_weights": [
+    0.27465893053159796,
+    1.2798684691267812,
+    1.7256157635467981,
+    1.4675324675324675,
+    16.142857142857142,
+    1.4338927548096603,
+    1.7936507936507937
+   ]
+  },
+  "map": 0.8068546008321782,
+  "single_label_accuracy": 0.8497340425531915,
+  "single_label_macro_f1": 0.7575586554327188,
+  "top1_in_any_label": 0.851063829787234,
+  "violence_auc": 0.9826354515050167,
+  "ap_mean": {
+   "Normal": 0.9703154601881456,
+   "Fighting": 0.8221328449722168,
+   "Shooting": 0.6835769953491712,
+   "Riot": 0.9696649815329957,
+   "Abuse": 0.3439347883695514,
+   "Car accident": 0.964026889832511,
+   "Explosion": 0.8943302455806559
+  }
+ },
+ "ucf_to_xd_transfer": {
+  "runs": [
+   {
+    "fold": 1,
+    "seed": 0,
+    "accuracy_single": 0.38131699846860645,
+    "macro_f1_single": 0.31728261450465417,
+    "per_class_f1_single": {
+     "Normal": 0.2784090909090909,
+     "Fighting": 0.3310810810810811,
+     "Shooting": 0.0,
+     "Abuse": 0.08450704225352113,
+     "Car accident": 0.7127659574468085,
+     "Explosion": 0.49693251533742333
+    },
+    "top1_in_any_label": 0.39255014326647564
+   },
+   {
+    "fold": 1,
+    "seed": 1,
+    "accuracy_single": 0.3874425727411945,
+    "macro_f1_single": 0.3162286109338509,
+    "per_class_f1_single": {
+     "Normal": 0.32967032967032966,
+     "Fighting": 0.3146067415730337,
+     "Shooting": 0.0,
+     "Abuse": 0.06557377049180328,
+     "Car accident": 0.7311827956989247,
+     "Explosion": 0.4563380281690141
+    },
+    "top1_in_any_label": 0.3954154727793696
+   },
+   {
+    "fold": 1,
+    "seed": 2,
+    "accuracy_single": 0.3889739663093415,
+    "macro_f1_single": 0.32200224678945083,
+    "per_class_f1_single": {
+     "Normal": 0.32132963988919666,
+     "Fighting": 0.3308270676691729,
+     "Shooting": 0.028169014084507043,
+     "Abuse": 0.09375,
+     "Car accident": 0.7070707070707071,
+     "Explosion": 0.4508670520231214
+    },
+    "top1_in_any_label": 0.3968481375358166
+   },
+   {
+    "fold": 2,
+    "seed": 0,
+    "accuracy_single": 0.33537519142419603,
+    "macro_f1_single": 0.23791229834153269,
+    "per_class_f1_single": {
+     "Normal": 0.1921921921921922,
+     "Fighting": 0.44547563805104406,
+     "Shooting": 0.0,
+     "Abuse": 0.08,
+     "Car accident": 0.21621621621621623,
+     "Explosion": 0.4935897435897436
+    },
+    "top1_in_any_label": 0.35673352435530087
+   },
+   {
+    "fold": 2,
+    "seed": 1,
+    "accuracy_single": 0.3537519142419602,
+    "macro_f1_single": 0.25949194446015517,
+    "per_class_f1_single": {
+     "Normal": 0.2678062678062678,
+     "Fighting": 0.45776566757493187,
+     "Shooting": 0.0,
+     "Abuse": 0.05555555555555555,
+     "Car accident": 0.26153846153846155,
+     "Explosion": 0.5142857142857142
+    },
+    "top1_in_any_label": 0.37249283667621774
+   },
+   {
+    "fold": 2,
+    "seed": 2,
+    "accuracy_single": 0.3460949464012251,
+    "macro_f1_single": 0.25732308886382854,
+    "per_class_f1_single": {
+     "Normal": 0.2287390029325513,
+     "Fighting": 0.4587628865979381,
+     "Shooting": 0.0,
+     "Abuse": 0.09302325581395349,
+     "Car accident": 0.24561403508771928,
+     "Explosion": 0.517799352750809
+    },
+    "top1_in_any_label": 0.37106017191977075
+   },
+   {
+    "fold": 3,
+    "seed": 0,
+    "accuracy_single": 0.332312404287902,
+    "macro_f1_single": 0.2531563870433122,
+    "per_class_f1_single": {
+     "Normal": 0.33787465940054495,
+     "Fighting": 0.37662337662337664,
+     "Shooting": 0.04395604395604396,
+     "Abuse": 0.06,
+     "Car accident": 0.20512820512820512,
+     "Explosion": 0.4953560371517028
+    },
+    "top1_in_any_label": 0.34813753581661894
+   },
+   {
+    "fold": 3,
+    "seed": 1,
+    "accuracy_single": 0.3460949464012251,
+    "macro_f1_single": 0.2661915855772617,
+    "per_class_f1_single": {
+     "Normal": 0.3862433862433862,
+     "Fighting": 0.3745819397993311,
+     "Shooting": 0.06521739130434782,
+     "Abuse": 0.05825242718446602,
+     "Car accident": 0.208,
+     "Explosion": 0.5048543689320388
+    },
+    "top1_in_any_label": 0.35816618911174786
+   },
+   {
+    "fold": 3,
+    "seed": 2,
+    "accuracy_single": 0.333843797856049,
+    "macro_f1_single": 0.22512014681604423,
+    "per_class_f1_single": {
+     "Normal": 0.29859154929577464,
+     "Fighting": 0.4482758620689655,
+     "Shooting": 0.0,
+     "Abuse": 0.06,
+     "Car accident": 0.058823529411764705,
+     "Explosion": 0.48502994011976047
+    },
+    "top1_in_any_label": 0.3538681948424069
+   },
+   {
+    "fold": 4,
+    "seed": 0,
+    "accuracy_single": 0.34915773353751917,
+    "macro_f1_single": 0.27269439536248125,
+    "per_class_f1_single": {
+     "Normal": 0.29213483146067415,
+     "Fighting": 0.41543026706231456,
+     "Shooting": 0.0273972602739726,
+     "Abuse": 0.06,
+     "Car accident": 0.33043478260869563,
+     "Explosion": 0.5107692307692308
+    },
+    "top1_in_any_label": 0.35816618911174786
+   },
+   {
+    "fold": 4,
+    "seed": 1,
+    "accuracy_single": 0.327718223583461,
+    "macro_f1_single": 0.24988719960958747,
+    "per_class_f1_single": {
+     "Normal": 0.3016759776536313,
+     "Fighting": 0.3710691823899371,
+     "Shooting": 0.02564102564102564,
+     "Abuse": 0.0,
+     "Car accident": 0.3185840707964602,
+     "Explosion": 0.4823529411764706
+    },
+    "top1_in_any_label": 0.33954154727793695
+   },
+   {
+    "fold": 4,
+    "seed": 2,
+    "accuracy_single": 0.3537519142419602,
+    "macro_f1_single": 0.2606121302878079,
+    "per_class_f1_single": {
+     "Normal": 0.2776203966005666,
+     "Fighting": 0.4676056338028169,
+     "Shooting": 0.0273972602739726,
+     "Abuse": 0.023809523809523808,
+     "Car accident": 0.2702702702702703,
+     "Explosion": 0.49696969696969695
+    },
+    "top1_in_any_label": 0.36962750716332377
+   }
+  ],
+  "info": {
+   "test_videos": 698,
+   "single_label": 653,
+   "shared_classes": [
+    "Normal",
+    "Fighting",
+    "Shooting",
+    "Abuse",
+    "Car accident",
+    "Explosion"
+   ],
+   "mapping": {
+    "Normal": "Normal_Videos_event",
+    "Fighting": "Fighting",
+    "Shooting": "Shooting",
+    "Abuse": "Abuse",
+    "Car accident": "RoadAccidents",
+    "Explosion": "Explosion"
+   },
+   "excluded": "test videos carrying Riot (no UCF counterpart)"
+  },
+  "accuracy_single": 0.35298621745788666,
+  "macro_f1_single": 0.26982522071583054,
+  "top1_in_any_label": 0.3677172874880612
+ },
+ "provenance": {
+  "git_revision": "9023056fb9f0d6ad45d839cb322656ec343162b4",
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "folds": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "features_sha256": "84eeadc028edde26afc990238da4aeb78a6ed98c89ef0931abb431d74707cc76",
+  "xd_manifest_sha256": "aeb41462b9d79a01b788151c7ae28527f448a2cddb6ae33f93eefafb57064bf5",
+  "train_positions": [
+   2,
+   6,
+   10,
+   14,
+   18,
+   22,
+   26,
+   30
+  ],
+  "eval_positions": "all 32 (4 chunks of 8, mean logits)",
+  "split_note": "official XD split; 184 source groups appear in both official train and test",
+  "dry_run": false
+ }
+}

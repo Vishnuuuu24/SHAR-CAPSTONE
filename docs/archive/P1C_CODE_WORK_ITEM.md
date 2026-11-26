@@ -1,0 +1,25 @@
+# P1C code-only work item — baseline/control architectures
+
+> Started: 2026-07-20 · Closed: 2026-07-20 · Code work item: `DONE`; P1C full run: `BLOCKED`
+
+## Control packet
+
+- **Sprint/work item:** `P1C` / `P1C-CODE-W1`
+- **Governs:** FR-10, P1C in `PHASE_PLAN.md`, ResNet-head checks in `VALIDATION_PLAN.md`.
+- **Objective:** implement and shape/gradient-test the three mandatory control architectures without starting real-data training.
+- **In scope:** ResNet50 C5 extractor with GAP+linear; same-C5 MLP control; source-grouped CNN-LSTM temporal baseline; 14-logit and gradient tests; parameter reports; fixture-only MPS smoke.
+- **Non-goals:** pretrained checkpoint download/freeze, training recipe invention, real manifest runs, three-seed headline execution, checkpoint selection, or benefit claims.
+- **Dependencies/blockers:** P1A/P0B/P1B are complete and B-001 is resolved for manifest construction. Full P1C remains blocked by the explicit architecture/run preregistration inputs and B-006, not by architecture code.
+- **Artifacts:** `models/`, tests, and fixture-only `results/p1c/` verification. The later execution-framework work is separately governed by [`P1C_EXECUTION_WORK_ITEM.md`](../P1C_EXECUTION_WORK_ITEM.md).
+- **Verification:** identical C5 spatial input reaches both frame heads; outputs are 14 logits; no GAP-vector spatial reshape; temporal batches retain source-group semantics; finite gradients on tested device.
+- **DoD:** code/tests pass and status states code-complete separately from run/research completion.
+- **Next action:** freeze the required P1C architecture/run inputs and resolve B-006 by approving either logged MPS `warn_only` repeatability evidence or ETA-calibrated strict CPU execution.
+
+## Verification
+
+- Architecture source: `../models/classifiers.py`
+- Config gate: `../configs/p1c_architecture_freeze.yaml`
+- Valid smoke: `../results/p1c/p1c-code-smoke-4b15b908-bfa53af0`
+- Failed strict-MPS attempt: `../results/p1c/failed-smoke-20260720-strict-mps.json`
+- Superseding closure: `../results/p1c/p1c-code-closure-superseding-20260720.json`
+- Result: the current 119-test full suite passes; all three controls produce 14 logits with finite gradients. Strict deterministic CNN-LSTM backward is unavailable on MPS, so B-006 blocks the temporal full-run policy. No CPU fallback occurred.

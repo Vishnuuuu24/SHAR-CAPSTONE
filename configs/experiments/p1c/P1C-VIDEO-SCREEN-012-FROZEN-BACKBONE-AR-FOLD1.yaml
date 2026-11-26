@@ -1,0 +1,198 @@
+# P1C-VIDEO-SCREEN-012-FROZEN-BACKBONE-AR-FOLD1
+#
+# SCREENING RUN. One seed, no Test access, not a citable result.
+#
+# WHY THIS RUN EXISTS
+# P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1 closed at validation macro-F1
+# 0.2939 +/- 0.0196 (3 seeds) and every seed peaked at epoch 0 or 1, then
+# declined while training mean loss fell 0.036 -> 0.005. 391,014 training
+# frames come from only 476 source videos and frames within a video are
+# near-duplicates, so a full 25,557,000-parameter fine-tune has ample
+# capacity to memorise per-video appearance instead of per-class activity.
+#
+# THE ONE CHANGE: backbone.trainable  full -> frozen.
+# Trainable parameters 25,557,000 -> 28,686 (2048*14+14), a 891x reduction.
+# Freezing sets requires_grad=False on every backbone parameter AND holds the
+# backbone in eval mode through model.train(), so BatchNorm running statistics
+# do not keep drifting -- a backbone whose BN stats still move is not frozen,
+# and the run logs trainable-vs-total counts so the artifact proves it took
+# effect rather than us assuming it.
+#
+# Nothing else moves: resolution, batch size, precision, throughput policy,
+# optimizer, lr, loader, device policy and both manifests are byte-identical
+# to the parent, so any delta is attributable to the freeze alone.
+schema_version: 1.0.0
+experiment:
+  id: P1C-VIDEO-SCREEN-012-FROZEN-BACKBONE-AR-FOLD1
+  parent_id: P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1
+  status: REGISTERED_SCREENING_RUN_READY
+  run_class: screening
+  question: >-
+    What is the reproducible 14-class UCF-Crime frame-classification baseline on official
+    Action-Recognition fold 1, using the D-34/D-35 video blob at native-derived 224x224
+    under bfloat16 and the sweep-010 throughput policy?
+  hypothesis: >-
+    A conventional ImageNet-pretrained ResNet50 C5-to-GAP-to-linear control establishes the
+    reference every later one-change experiment is measured against. No improvement claim is
+    made and none may be read into it.
+  change_from_parent:
+    - run_class - calibration -> full - this is the first run permitted to save checkpoints
+    - training.seeds - single seed 0 -> [0, 1, 2] as the protocol requires
+    - evaluation - none -> validation-selected checkpoint plus the registered test views
+    - no training factor changed - resolution, batch size, precision, throughput policy,
+      optimizer, loader and device policy are exactly the measured sweep-010 V5 point
+  screening:
+    parent_id: P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1
+    decision_threshold: 0.04
+    threshold_rationale: >-
+      The three baseline seeds spanned 0.2732-0.3122 validation macro-F1 (SD 0.0196) with no factor changed between them, so a single-seed swing of 0.039 is attributable to seed alone.
+      0.04 is that observed spread rounded to two decimals and is registered BEFORE the run so the promotion decision cannot be fitted to the result afterwards.
+      Below it: inside seed noise, do not promote.
+      Above it: re-run as a three-seed REGISTERED_FULL_RUN_READY experiment.
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    # Official ClassIDs.txt order and spelling. Do not rename
+    # Normal_Videos_event: the manifests carry the official label.
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, Normal_Videos_event, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism]
+  backbone:
+    family: torchvision_resnet50
+    feature: layer4_C5_pre_GAP
+    # THE ONE CHANGE from the parent. Absent resolves to `full`, so every
+    # other registered config keeps its exact behaviour untouched.
+    trainable: frozen
+    weights:
+      enum: IMAGENET1K_V2
+      source_url: https://download.pytorch.org/models/resnet50-11ad3fa6.pth
+      path: .cache/weights/resnet50-11ad3fa6.pth
+      sha256: 11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca
+  data:
+    dataset_roots:
+      # Keyed by the manifest's actual source_dataset value
+      # (data.video_manifests.SOURCE_DATASET), not the raw video directory
+      # name -- readiness's own manifest walk resolves rows through this key.
+      ucf_crime_official_video_frames: Datasets/UCF Crime Official/raw/UCF_Crimes/Videos
+    # Settled. 476 train / 56 validation videos, carved by whole source video,
+    # leakage checked before write; 391,014 and 37,600 frames at stride 5.
+    train:
+      path: results/p1b/p1b-video-ar-fold1/train_manifest.csv
+      sha256: 776b26326bf63ae391b9f60d9f2deeedc94959b5833f33896669ad92cbf6aa5c
+    validation:
+      path: results/p1b/p1b-video-ar-fold1/validation_manifest.csv
+      sha256: 0619217d3afcfcddea55b43aadb1939b17f68d120f4d8891ae28eed43947436f
+    # THE PIXEL SOURCE. Omitting this block does not fail -- it silently selects
+    # the per-file loader, which with verify_digests:true re-hashes the source
+    # MP4 for every one of 391,014 manifest rows. That cost 7h25m of slice time
+    # on 2026-08-27 (39 TB of reads against a 97.7 GiB corpus) before it was
+    # caught. See K-21; the runner now refuses this combination rather than
+    # degrading into it.
+    #
+    # Bare absolute host path: the blob is 84.3 GiB, lives outside the
+    # repository, and inside a pod this is the node-local emptyDir copy that
+    # start_pod_job.sh stages via STAGE_FROM. It is never read from /home during
+    # a run -- /home is NFS and random record reads against it are exactly what
+    # D-33 exists to avoid.
+    #
+    # Registered blob SHA-256, verified once at dataset construction:
+    #   fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665
+    video_frames:
+      extract_closure_path: /scratch-emptydir/p1c-video-frames/extract_closure.json
+    # Both Test registrations are OMITTED, not merely unused. A screening run is
+    # barred from evaluating Test by core/p1c_screening.forbid_screening_test_access,
+    # and this config could not name a Test path even if someone wanted it to.
+    # Test stays untouched until a three-seed full run earns it.
+  preprocessing:
+    # 224x224 (owner, 2026-08-27). The blob holds full 320x240 pixels, so this is
+    # a loader-configuration choice and a rerun, never a re-extraction. Native
+    # 240x320 was measured at 268.1 img/s against 400.5 here and was declined as
+    # not worth 1.49x the wall clock; 224 also matches the ImageNet pretraining
+    # geometry the backbone was trained at, giving a 7x7 pre-GAP map.
+    resize_height: 224
+    resize_width: 224
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    # Owner decision: `none`, so this first research run is the plain control
+    # every later one-change arm is compared against. Train frames are
+    # imbalanced 4.48x (RoadAccidents 10,656 -> Arrest 47,704) even though
+    # videos are exactly 34 per class, because videos differ in length; a
+    # class-balanced variant is a later, separately labelled comparison.
+    class_balance: none
+  augmentation:
+    # `none` keeps this a conventional auditable control. Worth knowing when the
+    # next experiment is chosen: the loader is 0.07% of wall time at this point,
+    # so augmentation is very close to free in wall-clock terms.
+    name: none
+    rationale: Preserve a conventional auditable first control; augmentation is a future one-change experiment.
+  training:
+    seeds: [0]
+    batch_size: 64
+    loader:
+      # 6 workers is inherited from the measured point. The loader is 0.07% of
+      # wall here, so 2 would also do; left as measured rather than re-tuned,
+      # because this config must match the point sweep-010 actually measured.
+      num_workers: 6
+      pin_memory: true
+      persistent_workers: true
+      drop_last: false
+      verify_digests: true
+    epochs: 20
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    scheduler:
+      name: none
+    early_stopping:
+      monitor: macro_f1
+      mode: max
+      patience: 5
+      min_delta: 0.001
+    selection_rule: best_validation_macro_f1
+    device_policy: cuda_strict
+    precision: amp_bfloat16
+    # P1C-VIDEO-SWEEP-010 V5: 1.745x over the all-off control (403.2 -> 703.7
+    # img/s) with zero skipped optimizer steps and no change to the arithmetic.
+    # These change which CUDA kernels run, so a run is deterministic within this
+    # policy but is NOT bitwise comparable to one under a different policy --
+    # every arm of a RESULT 1 / RESULT 2 comparison must hold this block fixed.
+    throughput:
+      channels_last: true
+      compile: default
+      fused_optimizer: true
+  evaluation:
+    primary_metric: macro_f1
+    clustered_ci_iterations: 1000
+    clustered_ci_seed: 0
+    # Owner decision 2026-08-27: report an additional, evaluation-only,
+    # per-video majority-vote score alongside the frame-level metrics above.
+    # Train frames are imbalanced 4.48x (RoadAccidents 10,656 -> Arrest
+    # 47,704) purely because videos differ in length, even though videos
+    # themselves are exactly balanced (34/class train, 4/class validation,
+    # 12/class test). A per-video score is immune to that imbalance because
+    # it counts each video once. This does not change training or checkpoint
+    # selection (`selection_rule: best_validation_macro_f1` still selects on
+    # the frame-level metric); see eval/video_level.py for the method and its
+    # majority-vote-discards-confidence limitation.
+    video_level_aggregation: majority_vote
+gates:
+  owner_registration_required: false
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  expected_preflight: >-
+    stage the blob directory into the pod's emptyDir with
+    STAGE_FROM=<repo>/results/p1c/p1c-video-frames,
+    which start_pod_job.sh copies to $SCRATCH_MOUNT and size-checks before the runner starts
+  output: three_seed_aggregate_with_clustered_ci_and_retained_best_checkpoints
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - torch_or_torchvision_version_differs_from_the_registered_environment
+    - video_blob_sha256_mismatch_or_missing_extract_closure
+    - loader_wait_exceeds_50_percent_of_train_wall

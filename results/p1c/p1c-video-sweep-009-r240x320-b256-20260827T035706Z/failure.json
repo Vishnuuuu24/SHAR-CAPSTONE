@@ -1,0 +1,10 @@
+{
+  "exception_type": "RuntimeError",
+  "message": "NVML_SUCCESS == r INTERNAL ASSERT FAILED at \"/__w/pytorch/pytorch/c10/cuda/CUDACachingAllocator.cpp\":1407, please report a bug to PyTorch. ",
+  "scope_assertions": {
+    "checkpoint_saved": false,
+    "configuration_selection": false,
+    "held_out_test_access": false,
+    "research_training": false
+  }
+}

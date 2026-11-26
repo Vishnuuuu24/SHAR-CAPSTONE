@@ -1,0 +1,230 @@
+# P1C-VIDEO-DINOV2-B2-AR-FOLD4
+#
+# B-2: SECOND FROZEN BACKBONE, SINGLE-FACTOR SWAP. Copied from
+# P1C-VIDEO-FROZEN-CONFIRM-015-AR-FOLD1 with exactly one change:
+# `fixed_protocol.backbone` now names DINOv2 ViT-B/14-with-registers instead
+# of the ImageNet ResNet50. Everything else -- data manifests, preprocessing,
+# augmentation, loss, training schedule, evaluation -- is byte-identical to
+# CONFIRM-015, so any difference in the result is attributable to the
+# backbone alone.
+#
+# WHY THIS RUN EXISTS
+# CONFIRM-015 measured the frozen-ResNet50-plus-linear-head configuration at
+# 0.3450-0.3537 across three seeds (mean 0.3481 +/- 0.0049, D-42). DINOv2 is a
+# self-supervised ViT pretrained at a much larger scale, so it is a natural
+# second frozen feature extractor to compare against under the exact same
+# GAP-linear probe protocol B-1's feature cache already serves.
+#
+# BACKBONE DETAIL. `vit_base_patch14_reg4_dinov2.lvd142m` (timm 1.0.22),
+# 86,582,016 parameters, loaded from a local safetensors file -- never
+# downloaded during a run. The cached feature is NOT the CLS token alone: it
+# is the 1536-D concatenation of the CLS token and the mean of the 256 patch
+# tokens (register tokens excluded from the mean -- they are scratch space,
+# not content). See `models/dinov2_backbone.py` for the exact layout and the
+# declared construction deviation (native 518-resolution position grid,
+# interpolated per forward pass via `dynamic_img_size`, rather than a
+# truncated 224-sized grid) that keeps the checkpoint loading exact.
+#
+# PREPROCESSING IS UNCHANGED, INCLUDING A DECLARED DEVIATION FROM DINOv2'S OWN
+# DEFAULT. timm's registered `pretrained_cfg` for this model uses bicubic
+# resize; this config keeps `interpolation: bilinear`, the project's existing
+# registered preprocessing, so the backbone is the only thing that changes.
+# The normalisation mean/std below is already identical to DINOv2's own
+# ((0.485,0.456,0.406)/(0.229,0.224,0.225)), so that half needed no decision.
+#
+# THIS RUN'S SCOPE IS THE B-1 CACHE + PROBE PIPELINE, NOT
+# scripts/run_p1c_frame_baseline.py. `model.control: gap_linear` is registered
+# here (as every full-run config must) to describe the pipeline this protocol
+# feeds, but the actual head fit happens via
+# `scripts/build_p1c_feature_cache.py` (which now dispatches on
+# `backbone.family` to load this backbone) and `scripts/run_p1c_linear_probes.py`
+# against the resulting cache -- mirroring exactly how CONFIRM-015's ResNet50
+# cache is consumed.
+#
+# TEST IS STILL NOT TOUCHED. Both Test registrations are present, copied
+# verbatim from CONFIRM-015, because a full run must register them -- not
+# because this run reads them.
+#
+# LABEL HONESTY (rule 1, D-40). Fold 4 has no constructible event-only view --
+# only 48 of its 168 test videos carry an official temporal interval, and
+# Abuse, Robbery and Stealing have none. Every number this run produces is an
+# INHERITED-LABEL validation score and must be named as one. It is never to be
+# reported as event-only.
+schema_version: 1.0.0
+experiment:
+  id: P1C-VIDEO-DINOV2-B2-AR-FOLD4
+  parent_id: P1C-VIDEO-DINOV2-B2-AR-FOLD1
+  status: REGISTERED_FULL_RUN_READY
+  run_class: full
+  question: >-
+    Does swapping the frozen ImageNet ResNet50 backbone for a frozen DINOv2
+    ViT-B/14-with-registers backbone -- everything else held byte-identical
+    to CONFIRM-015 -- change the 14-class UCF-Crime inherited-label validation
+    macro-F1 on official Action-Recognition fold 4, using the same GAP-linear
+    probe protocol served by the B-1 feature cache?
+  hypothesis: >-
+    DINOv2's self-supervised pretraining at larger scale produces pooled
+    features that are more linearly separable for this task than the
+    ImageNet-supervised ResNet50's, raising validation macro-F1 over
+    CONFIRM-015's 0.3450-0.3537 three-seed range (mean 0.3481 +/- 0.0049,
+    D-42) by more than the seed spread. This is a single-factor backbone swap: preprocessing, data,
+    augmentation, loss and training schedule are unchanged from CONFIRM-015.
+  change_from_parent:
+    - fixed_protocol.backbone.family - torchvision_resnet50 -> timm_dinov2_vitb14_reg4 - the
+      purpose of this run
+    - fixed_protocol.backbone.feature - layer4_C5_pre_GAP -> cls_plus_mean_patch_pre_head -
+      DINOv2 has no spatial C5 map; the cached vector is a 1536-D CLS+mean-patch
+      concatenation instead of a pooled 2048-D conv map (see models/dinov2_backbone.py)
+    - fixed_protocol.backbone.weights - resnet50-11ad3fa6.pth (IMAGENET1K_V2) ->
+      dinov2_vitb14_reg4-c24ecfb4.safetensors (LVD142M_REG4)
+    - nothing else moves - backbone.trainable stays frozen, augmentation stays none, and
+      resolution, batch size, precision, throughput policy, optimizer, lr, loader, device
+      policy, both manifest digests, and both Test registrations are byte-identical to
+      CONFIRM-015
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    # Official ClassIDs.txt order and spelling. Do not rename
+    # Normal_Videos_event: the manifests carry the official label.
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, Normal_Videos_event, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism]
+  backbone:
+    # THE ONE CHANGE from the parent (plus feature/weights below, which follow
+    # directly from it). B-2: registered as a second family alongside
+    # torchvision_resnet50 in core/p1c_readiness.py's BACKBONE_FAMILIES, each
+    # with its own weight-enum namespace so this config cannot claim a
+    # ResNet50 enum or vice versa.
+    family: timm_dinov2_vitb14_reg4
+    feature: cls_plus_mean_patch_pre_head
+    trainable: frozen
+    weights:
+      enum: LVD142M_REG4
+      # Upstream Meta checkpoint, obtained via the timm/HF mirror
+      # timm/vit_base_patch14_reg4_dinov2.lvd142m (license apache-2.0).
+      source_url: https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_reg4_pretrain.pth
+      path: .cache/weights/dinov2_vitb14_reg4-c24ecfb4.safetensors
+      sha256: c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006
+  data:
+    dataset_roots:
+      # Keyed by the manifest's actual source_dataset value
+      # (data.video_manifests.SOURCE_DATASET), not the raw video directory
+      # name -- readiness's own manifest walk resolves rows through this key.
+      ucf_crime_official_video_frames: Datasets/UCF Crime Official/raw/UCF_Crimes/Videos
+    # Settled, unchanged from CONFIRM-015. 476 train / 56 validation videos,
+    # carved by whole source video, leakage checked before write; 357,643 and
+    # 41,319 frames at stride 5.
+    train:
+      path: results/p1b/p1b-video-ar-fold4/train_manifest.csv
+      sha256: c90afcce91c74d4d2eacaac55e87f4db97c0d2589d9698772e40ad81bd57f143
+    validation:
+      path: results/p1b/p1b-video-ar-fold4/validation_manifest.csv
+      sha256: d93526c7789595478284decf853e560c5bdd9cd061fcf45c30dcdc4436e67e3f
+    # THE PIXEL SOURCE, unchanged from CONFIRM-015. Omitting this block does
+    # not fail -- it silently selects the per-file loader, which with
+    # verify_digests:true re-hashes the source MP4 for every one of 357,643
+    # manifest rows (K-21; the runner refuses this combination rather than
+    # degrading into it).
+    #
+    # Bare absolute host path: the blob is 84.3 GiB, lives outside the
+    # repository, and inside a pod this is the node-local emptyDir copy that
+    # start_pod_job.sh stages via STAGE_FROM. It is never read from /home during
+    # a run -- /home is NFS and random record reads against it are exactly what
+    # D-33 exists to avoid.
+    #
+    # Registered blob SHA-256, verified once at dataset construction:
+    #   fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665
+    video_frames:
+      extract_closure_path: /scratch-emptydir/p1c-video-frames/extract_closure.json
+    # Both Test registrations are present because a full run must register
+    # them -- NOT because this run reads them. The pipeline this config
+    # describes is validation-only (B-1 cache + probe), so registering these
+    # declares which Test views exist and under what honest name, and spends
+    # nothing. Test is spent once, on a final configuration, not a backbone
+    # comparison on fold 4. The noisy_proxy_test split is this fold's own; the
+    # event_only_test reason below was RE-MEASURED for fold 4, not copied --
+    # interval coverage differs per fold and inheriting fold 1's counts would
+    # have stated a number this fold was never measured at.
+    event_only_test:
+      unavailable: true
+      reason: >-
+        Measured 2026-09-02 for THIS fold: of fold 4's 168 official Action-Recognition test videos, only
+        26 appear in the official temporal annotation file at all and only 14 carry a real (non -1)
+        interval; Abuse, Assault, RoadAccidents, Stealing and Vandalism have zero interval-covered test
+        videos. A 14-class macro-F1 event-only view therefore cannot be computed for this fold at any
+        sample size. Counts are fold-specific and were re-measured rather than inherited from fold 1.
+        See D-40.
+    # 168 videos, 133,423 frames. This is the inherited-label test directory,
+    # reported under its honest noisy_proxy_test name per D-40 -- never called
+    # event-only.
+    noisy_proxy_test:
+      path: results/p1b/p1b-video-ar-fold4/test_manifest.csv
+      sha256: 40da581a7d12a2013eded92509eef5fed1e09216bafdc5d330aab74f51d92a67
+  preprocessing:
+    # Unchanged from CONFIRM-015. Also identical to DINOv2's own normalisation
+    # mean/std, so preprocessing genuinely does not change across the swap --
+    # only the declared deviation is `interpolation: bilinear` staying put
+    # rather than switching to timm's registered bicubic default for this
+    # model (see this file's header comment); that keeps the comparison a
+    # single-factor backbone swap instead of two changes at once.
+    resize_height: 224
+    resize_width: 224
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    class_balance: none
+  augmentation:
+    name: none
+    rationale: Preserve a conventional auditable control, matching CONFIRM-015; augmentation is a future one-change experiment.
+  training:
+    seeds: [0, 1, 2]
+    batch_size: 64
+    loader:
+      num_workers: 6
+      pin_memory: true
+      persistent_workers: true
+      drop_last: false
+      verify_digests: true
+    epochs: 30
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    scheduler:
+      name: none
+    early_stopping:
+      monitor: macro_f1
+      mode: max
+      patience: 5
+      min_delta: 0.001
+    selection_rule: best_validation_macro_f1
+    device_policy: cuda_strict
+    precision: amp_bfloat16
+    throughput:
+      channels_last: true
+      compile: default
+      fused_optimizer: true
+  evaluation:
+    primary_metric: macro_f1
+    clustered_ci_iterations: 1000
+    clustered_ci_seed: 0
+    video_level_aggregation: majority_vote
+gates:
+  owner_registration_required: false
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  expected_preflight: >-
+    stage the blob directory into the pod's emptyDir with
+    STAGE_FROM=<repo>/results/p1c/p1c-video-frames,
+    which start_pod_job.sh copies to $SCRATCH_MOUNT and size-checks before the runner starts
+  output: three_seed_aggregate_with_clustered_ci_and_retained_best_checkpoints
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - torch_or_torchvision_version_differs_from_the_registered_environment
+    - video_blob_sha256_mismatch_or_missing_extract_closure
+    - loader_wait_exceeds_50_percent_of_train_wall

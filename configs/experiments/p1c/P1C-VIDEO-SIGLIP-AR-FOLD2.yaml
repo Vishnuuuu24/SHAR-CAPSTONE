@@ -1,0 +1,188 @@
+# P1C-VIDEO-SIGLIP-AR-FOLD2
+#
+# THIRD FROZEN BACKBONE, SINGLE-FACTOR SWAP against P1C-VIDEO-DINOV2-B2-AR-FOLD2:
+# frozen SigLIP ViT-B/16-224 (google/siglip-base-patch16-224, vision tower only)
+# in place of DINOv2 ViT-B/14-reg4. Data manifests, frame set, 8 frames/video,
+# float16 storage, head, loss, schedule and evaluation are byte-identical to the
+# DINOv2 config. Per-frame vector = [attention-pooling-head output ++ mean of the
+# 196 patch tokens] = 1536-D, same width/order as DINOv2's CLS ++ mean-patch.
+# See models/siglip_backbone.py.
+#
+# SCOPE. The headline head consumes the PATCH cache (cls + patch grid), built by
+# scripts/build_p1c_patch_cache.py --backbone siglip; this config supplies that
+# builder's backbone block, preprocessing and data, and also drives
+# scripts/build_p1c_feature_cache.py (frame-level pooled cache + verifier).
+#
+# TEST IS NOT TOUCHED. Test registrations are copied verbatim from the DINOv2
+# config because a full run must register them, not because this run reads them.
+# LABEL HONESTY (rule 1, D-40): every number is an INHERITED-LABEL validation
+# score, never event-only.
+schema_version: 1.0.0
+experiment:
+  id: P1C-VIDEO-SIGLIP-AR-FOLD2
+  parent_id: P1C-VIDEO-DINOV2-B2-AR-FOLD2
+  status: REGISTERED_FULL_RUN_READY
+  run_class: full
+  question: >-
+    Does swapping the frozen DINOv2 ViT-B/14-reg backbone for a frozen SigLIP
+    ViT-B/16-224 backbone -- everything else held identical to
+    P1C-VIDEO-DINOV2-B2-AR-FOLD2 -- change the 14-class UCF-Crime
+    inherited-label validation macro-F1 on official Action-Recognition fold 2
+    under the same cache -> step_permuted head -> video-level pipeline?
+  hypothesis: >-
+    None registered beyond the comparison itself: SigLIP (sigmoid image-text
+    pretraining) may encode more semantic, less geometric content than
+    self-supervised DINOv2, which could help or hurt on UCF-Crime. A result
+    inside the DINOv2 seed/fold spread is a neutral result and is kept.
+  change_from_parent:
+    - fixed_protocol.backbone.family - timm_dinov2_vitb14_reg4 -> transformers_siglip_base_p16_224 -
+      the purpose of this run
+    - fixed_protocol.backbone.feature - cls_plus_mean_patch_pre_head -> pooler_plus_mean_patch_pre_head -
+      SigLIP has no CLS token; the global half is the attention-pooling-head output (see
+      models/siglip_backbone.py). Still 1536-D, global first then mean-patch.
+    - fixed_protocol.backbone.weights - dinov2_vitb14_reg4 (LVD142M_REG4) ->
+      siglip_base_patch16_224_vision-f5d84933.safetensors
+    - fixed_protocol.preprocessing.mean/std - DINOv2/ImageNet stats -> (0.5,0.5,0.5), required
+      by the SigLIP checkpoint. Resolution 224, bilinear and everything else is unchanged.
+    - consequence, not a choice - 14x14 = 196 patch tokens (patch 16) instead of 16x16 = 256
+      (patch 14). Only the multiscale_se head assumes a grid shape; step_permuted does not.
+fixed_protocol:
+  model:
+    control: gap_linear
+    num_classes: 14
+    # Official ClassIDs.txt order and spelling. Do not rename
+    # Normal_Videos_event: the manifests carry the official label.
+    class_names: [Abuse, Arrest, Arson, Assault, Burglary, Explosion, Fighting, Normal_Videos_event, RoadAccidents, Robbery, Shooting, Shoplifting, Stealing, Vandalism]
+  backbone:
+    family: transformers_siglip_base_p16_224
+    feature: pooler_plus_mean_patch_pre_head
+    trainable: frozen
+    weights:
+      enum: WEBLI_SIGLIP_BASE_P16_224_VISION
+      # Vision-tower tensors of google/siglip-base-patch16-224 @ 7fd15f0689c79d79e38b1c2e2e2370a7bf2761ed
+      # (apache-2.0), prefix-stripped for the flat transformers 5.x SiglipVisionModel; upstream
+      # model.safetensors sha256 2c63cb7d1f2e95ba501893cbb8faeb4ea9a3af295498d35097126228659c2af8.
+      source_url: https://huggingface.co/google/siglip-base-patch16-224
+      path: .cache/weights/siglip_base_patch16_224_vision-f5d84933.safetensors
+      sha256: f5d84933ac67e11fcd249aba72bb2888028fc11507a4b81629c095c881031b77
+  data:
+    dataset_roots:
+      # Keyed by the manifest's actual source_dataset value
+      # (data.video_manifests.SOURCE_DATASET), not the raw video directory
+      # name -- readiness's own manifest walk resolves rows through this key.
+      ucf_crime_official_video_frames: Datasets/UCF Crime Official/raw/UCF_Crimes/Videos
+    # Settled, unchanged from CONFIRM-015. 476 train / 56 validation videos,
+    # carved by whole source video, leakage checked before write; 384,702 and
+    # 47,726 frames at stride 5.
+    train:
+      path: results/p1b/p1b-video-ar-fold2/train_manifest.csv
+      sha256: 35ce84cf70dfbba3e6f6f9134636767d815ac085b688c42a96c869ac399dd71a
+    validation:
+      path: results/p1b/p1b-video-ar-fold2/validation_manifest.csv
+      sha256: 8b92be8e7b319be5f3c57f14565681a368e60c6cf612fdbf8c5a31b64b63f4d9
+    # THE PIXEL SOURCE, unchanged from CONFIRM-015. Omitting this block does
+    # not fail -- it silently selects the per-file loader, which with
+    # verify_digests:true re-hashes the source MP4 for every one of 384,702
+    # manifest rows (K-21; the runner refuses this combination rather than
+    # degrading into it).
+    #
+    # Bare absolute host path: the blob is 84.3 GiB, lives outside the
+    # repository, and inside a pod this is the node-local emptyDir copy that
+    # start_pod_job.sh stages via STAGE_FROM. It is never read from /home during
+    # a run -- /home is NFS and random record reads against it are exactly what
+    # D-33 exists to avoid.
+    #
+    # Registered blob SHA-256, verified once at dataset construction:
+    #   fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665
+    video_frames:
+      extract_closure_path: /scratch-emptydir/p1c-video-frames/extract_closure.json
+    # Both Test registrations are present because a full run must register
+    # them -- NOT because this run reads them. The pipeline this config
+    # describes is validation-only (B-1 cache + probe), so registering these
+    # declares which Test views exist and under what honest name, and spends
+    # nothing. Test is spent once, on a final configuration, not a backbone
+    # comparison on fold 2. The noisy_proxy_test split is this fold's own; the
+    # event_only_test reason below was RE-MEASURED for fold 2, not copied --
+    # interval coverage differs per fold and inheriting fold 1's counts would
+    # have stated a number this fold was never measured at.
+    event_only_test:
+      unavailable: true
+      reason: >-
+        Measured 2026-09-02 for THIS fold: of fold 2's 168 official Action-Recognition test videos, only
+        50 appear in the official temporal annotation file at all and only 38 carry a real (non -1)
+        interval; Abuse, Assault and Robbery have zero interval-covered test videos. A 14-class macro-F1
+        event-only view therefore cannot be computed for this fold at any sample size. Counts are fold-
+        specific and were re-measured rather than inherited from fold 1. See D-40.
+    # 168 videos, 133,423 frames. This is the inherited-label test directory,
+    # reported under its honest noisy_proxy_test name per D-40 -- never called
+    # event-only.
+    noisy_proxy_test:
+      path: results/p1b/p1b-video-ar-fold2/test_manifest.csv
+      sha256: 242ea197b9fb38167f692991511cf3e971d43fca3947bc0d3018fc7d398b8a6b
+  preprocessing:
+    # 224x224 bilinear as in the DINOv2 pipeline; only mean/std change, to the
+    # (0.5,0.5,0.5) SigLIP was trained with (its preprocessor_config.json).
+    # SigLIP's own processor resizes bicubic; bilinear is kept so the backbone is
+    # the only difference. The patch grid is 14x14 (196 tokens), not 16x16.
+    resize_height: 224
+    resize_width: 224
+    interpolation: bilinear
+    color_mode: RGB
+    mean: [0.5, 0.5, 0.5]
+    std: [0.5, 0.5, 0.5]
+  loss:
+    name: cross_entropy
+    reduction: mean
+    class_balance: none
+  augmentation:
+    name: none
+    rationale: Preserve a conventional auditable control, matching CONFIRM-015; augmentation is a future one-change experiment.
+  training:
+    seeds: [0, 1, 2]
+    batch_size: 64
+    loader:
+      num_workers: 6
+      pin_memory: true
+      persistent_workers: true
+      drop_last: false
+      verify_digests: true
+    epochs: 30
+    optimizer:
+      name: AdamW
+      lr: 0.0003
+      weight_decay: 0.0001
+    scheduler:
+      name: none
+    early_stopping:
+      monitor: macro_f1
+      mode: max
+      patience: 5
+      min_delta: 0.001
+    selection_rule: best_validation_macro_f1
+    device_policy: cuda_strict
+    precision: amp_bfloat16
+    throughput:
+      channels_last: true
+      compile: default
+      fused_optimizer: true
+  evaluation:
+    primary_metric: macro_f1
+    clustered_ci_iterations: 1000
+    clustered_ci_seed: 0
+    video_level_aggregation: majority_vote
+gates:
+  owner_registration_required: false
+  code_formula_audit: P1C-CODE-AUDIT-002
+  measurement_decision: D-30
+  expected_preflight: >-
+    stage the blob directory into the pod's emptyDir with
+    STAGE_FROM=<repo>/results/p1c/p1c-video-frames,
+    which start_pod_job.sh copies to $SCRATCH_MOUNT and size-checks before the runner starts
+  output: three_seed_aggregate_with_clustered_ci_and_retained_best_checkpoints
+  stop_conditions:
+    - manifest_or_weight_digest_mismatch
+    - source_video_leakage
+    - device_fallback_or_nonfinite_loss
+    - torch_or_torchvision_version_differs_from_the_registered_environment
+    - video_blob_sha256_mismatch_or_missing_extract_closure
+    - loader_wait_exceeds_50_percent_of_train_wall

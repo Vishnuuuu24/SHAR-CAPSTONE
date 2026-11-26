@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "confirmed_at": "2026-08-28",
+  "confirmed_by": "Priyodip / Vishnu (SHAR project owners)",
+  "ucf_crime_official_videos": {
+    "source_url": "https://www.crcv.ucf.edu/research/real-world-anomaly-detection-in-surveillance-videos/",
+    "access_method": "Direct download from official CRCV UCF project distribution",
+    "terms_basis": "Owner-confirmed official CRCV download; non-commercial research use only; third-party surveillance footage rights remain qualified.",
+    "approved_project_use": "Internal non-commercial academic research and research paper preparation",
+    "redistribution": "Raw video media, video clips, and frame crops are not redistributed."
+  },
+  "decision": "The project is authorized to use the 1,950 official UCF-Crime MP4 video corpus internally for non-commercial academic research and paper evaluation under D-34. Raw media and derived crops remain non-redistributable."
+}

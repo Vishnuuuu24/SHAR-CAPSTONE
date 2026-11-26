@@ -1,0 +1,53 @@
+{
+  "backbone_family": "transformers_videomae_base_k400",
+  "backbone_weight_sha256": "065cfde56f97671da4d196e1a3a6d3cf9304dcad92eb671e3632a6c6cdd04f73",
+  "cache_sha256": "efe189d41b5b8b754fcdbe590be658ec988cc2e05b51692fd28695e02ef1109f",
+  "class_names": [
+    "Abuse",
+    "Arrest",
+    "Arson",
+    "Assault",
+    "Burglary",
+    "Explosion",
+    "Fighting",
+    "Normal_Videos_event",
+    "RoadAccidents",
+    "Robbery",
+    "Shooting",
+    "Shoplifting",
+    "Stealing",
+    "Vandalism"
+  ],
+  "clip_length": 16,
+  "created_at": "2026-09-15T12:41:49.781459+00:00",
+  "cudnn_allow_tf32": true,
+  "dtype": "float16",
+  "feature_dim": 768,
+  "frame_stride": 1,
+  "hop": 16,
+  "kind": "clip_feature_cache",
+  "preprocessing": {
+    "color_mode": "RGB",
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "resize_height": 224,
+    "resize_width": 224,
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "row_count": 24798,
+  "source_manifest_sha256": "d9af01685edde45a3055b062a1eac4bf2717931e71a291e71fc6b63a6e344c8f",
+  "split": "train",
+  "verification": {
+    "batch_size": 8,
+    "max_abs_delta": 0.0,
+    "rows_sampled": 256
+  }
+}

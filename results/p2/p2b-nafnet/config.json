@@ -1,0 +1,44 @@
+{
+ "git_revision": "3fac48869d6be3cb48fab1e36f6e3c72ef1520fa",
+ "conventions_sha256": "21aae531aa8debc6e2342ddfcc0ead51a1355625dc973f12ac53b232cfa13d41",
+ "denoiser_config_sha256": null,
+ "denoisers": null,
+ "comparator": {
+  "weights_sha256": "cd685efaae01f7c4e9951f2deab05780079c8eb1e49ed664b72f6db04dabb445",
+  "code_commit": "2b4af71ebe098a92a75910c233a3965a3e93ede4",
+  "config_sha256": "12a6b43fd5079df7cf083e5555becd8e292d6c9ff20a9e8f0a29ad8671da1e01"
+ },
+ "conditions": 20,
+ "videos": 108,
+ "frames_per_video": 32,
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "frame_rule": "same as results/p2/p2-classical (sample_rows_per_video seed=None, native 320x240 JPEG from the D-34 blob)",
+ "noise_seed": "SampleKey(relative_path=<filepath>/frame<index>, file_digest, global_seed=0), as the classical run",
+ "quality_metrics": "eval.image_quality_torch (float64, equal to the skimage reference) on float [0,1] before quantization",
+ "classifier": "D-53 step_permuted head retrained per fold x seed on fold-cache train features (D-59)",
+ "frame_blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+ "clean_feature_check": {
+  "max_abs_diff": 0.06396484375,
+  "median_max_abs_diff": 0.0063018798828125,
+  "min_mean_cosine": 0.9999938011169434,
+  "videos": 108
+ },
+ "classical_identity_check": {
+  "max_abs_diff_vs_classical_identity_rows": 0.0
+ },
+ "limit_videos": null,
+ "epochs_override": null,
+ "test_split": "untouched",
+ "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+ "extract_seconds": 2353
+}

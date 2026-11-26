@@ -1,0 +1,26 @@
+ROI store: 82679 rows from results/p1c/p1c-roi-cache
+fold 1 arm full_frame seed 0: video-level macro-F1 0.4178, frame macro-F1 0.3685
+fold 1 arm full_frame seed 1: video-level macro-F1 0.4923, frame macro-F1 0.4104
+fold 1 arm full_frame seed 2: video-level macro-F1 0.4650, frame macro-F1 0.3920
+fold 1 arm roi seed 0: video-level macro-F1 0.4087, frame macro-F1 0.3471
+fold 1 arm roi seed 1: video-level macro-F1 0.4294, frame macro-F1 0.3661
+fold 1 arm roi seed 2: video-level macro-F1 0.3592, frame macro-F1 0.3627
+fold 2 arm full_frame seed 0: video-level macro-F1 0.3958, frame macro-F1 0.2726
+fold 2 arm full_frame seed 1: video-level macro-F1 0.4132, frame macro-F1 0.3002
+fold 2 arm full_frame seed 2: video-level macro-F1 0.3884, frame macro-F1 0.2996
+fold 2 arm roi seed 0: video-level macro-F1 0.4412, frame macro-F1 0.2655
+fold 2 arm roi seed 1: video-level macro-F1 0.4244, frame macro-F1 0.2769
+fold 2 arm roi seed 2: video-level macro-F1 0.4851, frame macro-F1 0.2990
+fold 3 arm full_frame seed 0: video-level macro-F1 0.4382, frame macro-F1 0.3240
+fold 3 arm full_frame seed 1: video-level macro-F1 0.3750, frame macro-F1 0.3305
+fold 3 arm full_frame seed 2: video-level macro-F1 0.3570, frame macro-F1 0.3207
+fold 3 arm roi seed 0: video-level macro-F1 0.4012, frame macro-F1 0.2986
+fold 3 arm roi seed 1: video-level macro-F1 0.3766, frame macro-F1 0.3078
+fold 3 arm roi seed 2: video-level macro-F1 0.3796, frame macro-F1 0.2852
+fold 4 arm full_frame seed 0: video-level macro-F1 0.3710, frame macro-F1 0.2985
+fold 4 arm full_frame seed 1: video-level macro-F1 0.4075, frame macro-F1 0.3330
+fold 4 arm full_frame seed 2: video-level macro-F1 0.3600, frame macro-F1 0.3226
+fold 4 arm roi seed 0: video-level macro-F1 0.3529, frame macro-F1 0.2890
+fold 4 arm roi seed 1: video-level macro-F1 0.3960, frame macro-F1 0.3024
+fold 4 arm roi seed 2: video-level macro-F1 0.3162, frame macro-F1 0.2889
+summary: full_frame 0.4068, roi 0.3975, paired diff -0.0092 (sd 0.0462)

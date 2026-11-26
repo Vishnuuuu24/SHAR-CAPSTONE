@@ -1,0 +1,20 @@
+{
+ "base": "results/p1c/inner-cv-stack/E3_L+BS+BVJ:E3_L+BS+BVJ",
+ "members": [
+  "<repo>/results/p1c/inner-cv-captions:cap_proj"
+ ],
+ "weights": "equal, fixed in advance",
+ "contrast": {
+  "candidate": "C1_cap",
+  "base": "base",
+  "difference": 0.010276487997453343,
+  "ci95": [
+   -0.002893049741685312,
+   0.0235043096941854
+  ],
+  "share_of_draws_above_zero": 0.933,
+  "one_sided_p": 0.06699999999999995,
+  "passes": false
+ },
+ "rule": "paired 95% interval excludes 0 and gain >= 0.02"
+}

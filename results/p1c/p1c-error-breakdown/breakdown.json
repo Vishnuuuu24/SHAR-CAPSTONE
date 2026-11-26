@@ -1,0 +1,304 @@
+{
+ "run_dir": "results/p1c/p1c-head-comparison-stepctl",
+ "head": "step_permuted",
+ "runs": 12,
+ "counts": "videos, summed over folds, mean over seeds",
+ "classes": [
+  {
+   "class": "Abuse",
+   "support": 16.0,
+   "recall": 0.3125,
+   "to_normal": 1.0,
+   "top_confusions": [
+    [
+     "Arrest",
+     3.3333333333333335
+    ],
+    [
+     "Fighting",
+     3.0
+    ],
+    [
+     "RoadAccidents",
+     1.6666666666666667
+    ]
+   ]
+  },
+  {
+   "class": "Arrest",
+   "support": 16.0,
+   "recall": 0.375,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Robbery",
+     3.0
+    ],
+    [
+     "Shooting",
+     2.0
+    ],
+    [
+     "Burglary",
+     2.0
+    ]
+   ]
+  },
+  {
+   "class": "Arson",
+   "support": 16.0,
+   "recall": 0.6875,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Abuse",
+     1.6666666666666667
+    ],
+    [
+     "RoadAccidents",
+     1.3333333333333333
+    ],
+    [
+     "Shoplifting",
+     1.0
+    ]
+   ]
+  },
+  {
+   "class": "Assault",
+   "support": 16.0,
+   "recall": 0.25,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Burglary",
+     4.666666666666667
+    ],
+    [
+     "Abuse",
+     3.0
+    ],
+    [
+     "Arson",
+     2.3333333333333335
+    ]
+   ]
+  },
+  {
+   "class": "Burglary",
+   "support": 16.0,
+   "recall": 0.4791666666666667,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Assault",
+     1.6666666666666667
+    ],
+    [
+     "Shoplifting",
+     1.6666666666666667
+    ],
+    [
+     "Abuse",
+     1.0
+    ]
+   ]
+  },
+  {
+   "class": "Explosion",
+   "support": 16.0,
+   "recall": 0.6041666666666666,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Fighting",
+     2.0
+    ],
+    [
+     "Shoplifting",
+     1.6666666666666667
+    ],
+    [
+     "Arson",
+     1.3333333333333333
+    ]
+   ]
+  },
+  {
+   "class": "Fighting",
+   "support": 16.0,
+   "recall": 0.2708333333333333,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Burglary",
+     3.0
+    ],
+    [
+     "Robbery",
+     3.0
+    ],
+    [
+     "Abuse",
+     1.0
+    ]
+   ]
+  },
+  {
+   "class": "Normal_Videos_event",
+   "support": 16.0,
+   "recall": 0.8125,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Arson",
+     1.0
+    ],
+    [
+     "Robbery",
+     1.0
+    ],
+    [
+     "RoadAccidents",
+     1.0
+    ]
+   ]
+  },
+  {
+   "class": "RoadAccidents",
+   "support": 16.0,
+   "recall": 0.5833333333333334,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Shooting",
+     4.0
+    ],
+    [
+     "Stealing",
+     1.3333333333333333
+    ],
+    [
+     "Abuse",
+     1.0
+    ]
+   ]
+  },
+  {
+   "class": "Robbery",
+   "support": 16.0,
+   "recall": 0.4791666666666667,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Assault",
+     3.0
+    ],
+    [
+     "Burglary",
+     2.3333333333333335
+    ],
+    [
+     "Shoplifting",
+     1.3333333333333333
+    ]
+   ]
+  },
+  {
+   "class": "Shooting",
+   "support": 16.0,
+   "recall": 0.0,
+   "to_normal": 2.0,
+   "top_confusions": [
+    [
+     "Shoplifting",
+     4.0
+    ],
+    [
+     "RoadAccidents",
+     3.0
+    ],
+    [
+     "Assault",
+     2.3333333333333335
+    ]
+   ]
+  },
+  {
+   "class": "Shoplifting",
+   "support": 16.0,
+   "recall": 0.6666666666666666,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Robbery",
+     1.3333333333333333
+    ],
+    [
+     "Vandalism",
+     1.3333333333333333
+    ],
+    [
+     "Abuse",
+     1.0
+    ]
+   ]
+  },
+  {
+   "class": "Stealing",
+   "support": 16.0,
+   "recall": 0.4583333333333333,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Vandalism",
+     3.0
+    ],
+    [
+     "Fighting",
+     2.0
+    ],
+    [
+     "Burglary",
+     2.0
+    ]
+   ]
+  },
+  {
+   "class": "Vandalism",
+   "support": 16.0,
+   "recall": 0.6666666666666666,
+   "to_normal": 0.0,
+   "top_confusions": [
+    [
+     "Fighting",
+     2.6666666666666665
+    ],
+    [
+     "Arson",
+     1.6666666666666667
+    ],
+    [
+     "Assault",
+     0.6666666666666666
+    ]
+   ]
+  }
+ ],
+ "summary": {
+  "anomaly_errors": 114.66666666666666,
+  "anomaly_errors_into_normal": 3.0,
+  "aggression": {
+   "errors": 34.66666666666667,
+   "within_group": 9.333333333333332,
+   "within_share": 0.26923076923076916,
+   "chance_share": 0.15384615384615385
+  },
+  "theft": {
+   "errors": 30.666666666666668,
+   "within_group": 9.666666666666666,
+   "within_share": 0.3152173913043478,
+   "chance_share": 0.23076923076923078
+  }
+ }
+}

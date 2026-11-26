@@ -1,0 +1,13 @@
+{
+ "rows": [
+  "dinov2b",
+  "siglip",
+  "fusion"
+ ],
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "native_val_as_terminal_test": true
+}

@@ -1,0 +1,34 @@
+{
+  "blob_closure_path": "<repo>/results/p1c/p1c-video-frames/extract_closure.json",
+  "blob_sha256": "fba97c7b68612c9370bb84ddc41232a1a004b7d7a27d3cbb9f177c18d8323665",
+  "builder_code_version": "p1c-video-manifests-v1",
+  "created_at": "2026-09-02T09:39:25.618281+00:00",
+  "fold": 3,
+  "grouping": "train/validation carved by whole source video; leakage checked before write",
+  "kind": "P1B manifests derived from the D-34/D-35 video blob",
+  "label_scope": "video_inherited",
+  "protocol": "action_recognition",
+  "seed": 0,
+  "splits": {
+    "test": {
+      "path": "test_manifest.csv",
+      "row_count": 111899,
+      "sha256": "f5bd58f5a94af9e99f8b82a7ce3513db801b542aad4e5b4bf382669014af2804",
+      "video_count": 168
+    },
+    "train": {
+      "path": "train_manifest.csv",
+      "row_count": 400419,
+      "sha256": "d9af01685edde45a3055b062a1eac4bf2717931e71a291e71fc6b63a6e344c8f",
+      "video_count": 476
+    },
+    "validation": {
+      "path": "validation_manifest.csv",
+      "row_count": 49719,
+      "sha256": "3f103d65632a82a3d45c76b65704018192731a4bfb5012083c282e0c86b95e6f",
+      "video_count": 56
+    }
+  },
+  "stride": 5,
+  "validation_fraction": 0.1
+}

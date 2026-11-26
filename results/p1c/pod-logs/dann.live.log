@@ -1,0 +1,62 @@
+=== started 2026-09-11T10:52:58Z ===
+########## ARM frozen 10:52:58Z ##########
+[frozen] train clips 2599 (95 event, 2504 negative) over 68 videos / 68 domains | held-out clips 591 over 18 videos
+[frozen] smoke: grads_reach_unfrozen_blocks=False, frozen_blocks_have_no_grad=True, grl_reverses=True, event_head_sees_labels=True, domain_head_sees_labels=True, losses_finite=True
+[frozen] first-batch grad norms: event 0.0000e+00  domain 0.0000e+00  -> lambda_max 0.0000 (domain loss off)
+<repo>/scripts/run_p1c_domain_adversarial.py:247: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  el += float(le) * len(ey); dl += float(ld) * len(ey); n += len(ey); step += 1
+[frozen] epoch 0 event_loss 0.1370 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (1.8 min)
+[frozen] epoch 1 event_loss 0.0924 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (3.6 min)
+[frozen] epoch 2 event_loss 0.0789 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (5.3 min)
+[frozen] epoch 3 event_loss 0.0690 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (7.1 min)
+[frozen] epoch 4 event_loss 0.0634 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (8.9 min)
+[frozen] epoch 5 event_loss 0.0583 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (10.7 min)
+[frozen] epoch 6 event_loss 0.0545 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (12.4 min)
+[frozen] epoch 7 event_loss 0.0508 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (14.2 min)
+[frozen] epoch 8 event_loss 0.0480 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (16.0 min)
+[frozen] epoch 9 event_loss 0.0446 domain_loss 0.0000 lambda 0.0000 grads e/d/t 0.000e+00/0.000e+00/0.000e+00 (17.8 min)
+[frozen] LOCALISATION pooled ROC 0.451 PR 0.251 per-video ROC mean 0.757
+[frozen] CLASSIFICATION pooled ROC 0.600 PR 0.405 F1 0.333 prec 0.286 rec 0.400 acc 0.556 (thr -2.236 from train)
+[frozen] runtime 20.1 min; wrote results/p1c/p1c-exp-A5-dann/frozen/result.json
+########## ARM finetune 11:19:54Z ##########
+[finetune] train clips 2599 (95 event, 2504 negative) over 68 videos / 68 domains | held-out clips 591 over 18 videos
+[finetune] smoke: grads_reach_unfrozen_blocks=True, frozen_blocks_have_no_grad=True, grl_reverses=True, event_head_sees_labels=True, domain_head_sees_labels=True, losses_finite=True
+[finetune] first-batch grad norms: event 9.8953e+00  domain 1.4369e+01  -> lambda_max 0.0000 (domain loss off)
+<repo>/scripts/run_p1c_domain_adversarial.py:247: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  el += float(le) * len(ey); dl += float(ld) * len(ey); n += len(ey); step += 1
+[finetune] epoch 0 event_loss 0.1086 domain_loss 0.0000 lambda 0.0000 grads e/d/t 3.983e-02/0.000e+00/3.983e-02 (2.5 min)
+[finetune] epoch 1 event_loss 0.0581 domain_loss 0.0000 lambda 0.0000 grads e/d/t 2.389e-02/0.000e+00/2.389e-02 (5.1 min)
+[finetune] epoch 2 event_loss 0.0364 domain_loss 0.0000 lambda 0.0000 grads e/d/t 7.873e-03/0.000e+00/7.873e-03 (7.6 min)
+[finetune] epoch 3 event_loss 0.0311 domain_loss 0.0000 lambda 0.0000 grads e/d/t 5.527e-02/0.000e+00/5.527e-02 (10.1 min)
+[finetune] epoch 4 event_loss 0.0187 domain_loss 0.0000 lambda 0.0000 grads e/d/t 1.411e-02/0.000e+00/1.411e-02 (12.7 min)
+[finetune] epoch 5 event_loss 0.0147 domain_loss 0.0000 lambda 0.0000 grads e/d/t 1.999e-02/0.000e+00/1.999e-02 (15.2 min)
+[finetune] epoch 6 event_loss 0.0041 domain_loss 0.0000 lambda 0.0000 grads e/d/t 2.004e-03/0.000e+00/2.004e-03 (17.7 min)
+[finetune] epoch 7 event_loss 0.0003 domain_loss 0.0000 lambda 0.0000 grads e/d/t 1.248e-03/0.000e+00/1.248e-03 (20.3 min)
+[finetune] epoch 8 event_loss 0.0001 domain_loss 0.0000 lambda 0.0000 grads e/d/t 8.175e-04/0.000e+00/8.175e-04 (22.8 min)
+[finetune] epoch 9 event_loss 0.0000 domain_loss 0.0000 lambda 0.0000 grads e/d/t 5.630e-04/0.000e+00/5.630e-04 (25.3 min)
+[finetune] LOCALISATION pooled ROC 0.610 PR 0.231 per-video ROC mean 0.806
+[finetune] CLASSIFICATION pooled ROC 0.800 PR 0.548 F1 0.286 prec 0.500 rec 0.200 acc 0.722 (thr 5.509 from train)
+[finetune] runtime 27.6 min; wrote results/p1c/p1c-exp-A5-dann/finetune/result.json
+########## ARM dann 11:54:28Z ##########
+[dann] train clips 2599 (95 event, 2504 negative) over 68 videos / 68 domains | held-out clips 591 over 18 videos
+[dann] smoke: grads_reach_unfrozen_blocks=True, frozen_blocks_have_no_grad=True, grl_reverses=True, event_head_sees_labels=True, domain_head_sees_labels=True, losses_finite=True
+[dann] first-batch grad norms: event 9.8953e+00  domain 1.4369e+01  -> lambda_max 0.6887 (measured ratio)
+<repo>/scripts/run_p1c_domain_adversarial.py:247: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  el += float(le) * len(ey); dl += float(ld) * len(ey); n += len(ey); step += 1
+[dann] epoch 0 event_loss 0.1430 domain_loss 5.3047 lambda 0.3179 grads e/d/t 5.140e-01/7.879e+00/7.776e+00 (2.5 min)
+[dann] epoch 1 event_loss 0.1198 domain_loss 6.3771 lambda 0.5243 grads e/d/t 8.498e-01/1.548e+01/1.555e+01 (5.1 min)
+[dann] epoch 2 event_loss 0.1144 domain_loss 5.9327 lambda 0.6233 grads e/d/t 8.635e-01/1.499e+01/1.483e+01 (7.6 min)
+[dann] epoch 3 event_loss 0.1100 domain_loss 5.7233 lambda 0.6639 grads e/d/t 7.646e+00/1.763e+01/1.882e+01 (10.1 min)
+[dann] epoch 4 event_loss 0.1042 domain_loss 5.5871 lambda 0.6794 grads e/d/t 2.435e+00/1.652e+01/1.632e+01 (12.7 min)
+[dann] epoch 5 event_loss 0.1025 domain_loss 5.5747 lambda 0.6852 grads e/d/t 7.035e-01/1.664e+01/1.660e+01 (15.2 min)
+[dann] epoch 6 event_loss 0.0949 domain_loss 5.6047 lambda 0.6874 grads e/d/t 2.140e+00/1.651e+01/1.638e+01 (17.7 min)
+[dann] epoch 7 event_loss 0.0932 domain_loss 5.5684 lambda 0.6882 grads e/d/t 1.814e+00/1.690e+01/1.677e+01 (20.3 min)
+[dann] epoch 8 event_loss 0.0922 domain_loss 5.5863 lambda 0.6885 grads e/d/t 1.471e+01/1.656e+01/2.017e+01 (22.8 min)
+[dann] epoch 9 event_loss 0.0856 domain_loss 5.6047 lambda 0.6886 grads e/d/t 7.257e-01/1.607e+01/1.613e+01 (25.3 min)
+[dann] LOCALISATION pooled ROC 0.668 PR 0.300 per-video ROC mean 0.857
+[dann] CLASSIFICATION pooled ROC 0.385 PR 0.257 F1 0.000 prec 0.000 rec 0.000 acc 0.500 (thr -2.914 from train)
+[dann] runtime 27.6 min; wrote results/p1c/p1c-exp-A5-dann/dann/result.json
+=== ALL ARMS DONE 2026-09-11T12:29:01Z ===

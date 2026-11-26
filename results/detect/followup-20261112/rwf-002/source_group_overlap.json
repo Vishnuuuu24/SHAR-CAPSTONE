@@ -1,0 +1,19 @@
+{
+ "overlap": [
+  894,
+  918,
+  983,
+  1044,
+  1541,
+  1593
+ ],
+ "excluded_terminal_paths": [
+  "val/NonFight/2b33bd0224dea16102f2cad7684636744b30cf44612f8ba11195817f9e099e77.avi",
+  "val/NonFight/66701d65575927e836eee6d852b21100eb59fdd76fad2f8b4336c839db0270ea.avi",
+  "val/NonFight/880cd0cd4e7e8928e0b3adeb970dfd01f47e26df5cff83c0333b5facfd4bbf46.avi",
+  "val/NonFight/a67efb0b1af818e8901eaa1b0517c5943b81a923d9925463c5aa6c9be74fb378.avi",
+  "val/NonFight/ea73c7df5579fab1b1e5b5067e030957e4b9f355a7bff0cf36b9de0ab1046a4b.avi",
+  "val/NonFight/ef4fa0a38d19478cc73725fb1ab1196b2429366cf625ef2534217a71bab62289.avi"
+ ],
+ "group_definition": "connected components of original name without final _integer and SHA256 identity"
+}

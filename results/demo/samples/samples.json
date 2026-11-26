@@ -1,0 +1,105 @@
+{
+ "note": "Licensed UCF-Crime clips: local only, served to token holders only.",
+ "samples": [
+  {
+   "file": "Explosion021_x264.mp4",
+   "key": "Explosion021_x264",
+   "title": "Petrol-station explosion",
+   "label": "Explosion",
+   "featured": true,
+   "e3_prediction": "Explosion",
+   "e3_confidence": 0.864,
+   "duration_s": 26.2,
+   "held_out_folds": [
+    2
+   ]
+  },
+  {
+   "file": "RoadAccidents086_x264.mp4",
+   "key": "RoadAccidents086_x264",
+   "title": "Motorbike falls at a junction",
+   "label": "RoadAccidents",
+   "featured": true,
+   "e3_prediction": "RoadAccidents",
+   "e3_confidence": 0.937,
+   "duration_s": 30.0,
+   "held_out_folds": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "file": "Robbery044_x264.mp4",
+   "key": "Robbery044_x264",
+   "title": "Shop counter robbery",
+   "label": "Robbery",
+   "featured": true,
+   "e3_prediction": "Robbery",
+   "e3_confidence": 0.927,
+   "duration_s": 15.7,
+   "held_out_folds": [
+    4
+   ]
+  },
+  {
+   "file": "Explosion014_x264.mp4",
+   "key": "Explosion014_x264",
+   "title": "Explosion",
+   "label": "Explosion",
+   "featured": false,
+   "e3_prediction": "Explosion",
+   "e3_confidence": 0.884,
+   "duration_s": 43.2,
+   "held_out_folds": [
+    2
+   ]
+  },
+  {
+   "file": "Shoplifting033_x264.mp4",
+   "key": "Shoplifting033_x264",
+   "title": "Shoplifting",
+   "label": "Shoplifting",
+   "featured": false,
+   "e3_prediction": "Shoplifting",
+   "e3_confidence": 0.833,
+   "duration_s": 30.0,
+   "held_out_folds": [
+    3
+   ]
+  },
+  {
+   "file": "RoadAccidents089_x264.mp4",
+   "key": "RoadAccidents089_x264",
+   "title": "Road accident",
+   "label": "RoadAccidents",
+   "featured": false,
+   "e3_prediction": "RoadAccidents",
+   "e3_confidence": 0.806,
+   "duration_s": 37.0,
+   "held_out_folds": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "file": "Stealing081_x264.mp4",
+   "key": "Stealing081_x264",
+   "title": "Stealing",
+   "label": "Stealing",
+   "featured": false,
+   "e3_prediction": "Stealing",
+   "e3_confidence": 0.789,
+   "duration_s": 42.0,
+   "held_out_folds": [
+    1,
+    2,
+    3,
+    4
+   ]
+  }
+ ]
+}

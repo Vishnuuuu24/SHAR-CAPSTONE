@@ -1,0 +1,42 @@
+{
+  "backbone_weight_sha256": "c24ecfb4a1d8ca79193f6b9efcffc461872a09ddac43a0931357e4802931a006",
+  "config": "configs/experiments/p1c/P1C-VIDEO-DINOV2-B2-AR-FOLD1.yaml",
+  "device": "cpu",
+  "failed_videos": [],
+  "features_sha256": "4478985e4173ea58627594dbcf9e70b3ce4cc4a46a027b25ca6f4d1088810b4d",
+  "git_revision": "0ef103aef8c98c37b364fa2445a3426e20ef883b",
+  "limit": null,
+  "platform": "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+  "pooling": "models.dinov2_backbone.pool_cls_plus_mean_patch (CLS ++ mean patch, registers excluded), fp32 compute, fp16 stored",
+  "preprocessing": {
+    "color_mode": "RGB",
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "resize_height": 224,
+    "resize_width": 224,
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "purpose": "XD-Violence extra TRAINING videos only; never evaluation; labels mapped by name to UCF classes",
+  "rows": 5120,
+  "rows_sha256": "c41ff01585208ef545719c337f064542193bc504d718c6c467ea9a9fbb373dc4",
+  "sampling_rule": "candidates = every 5th decoded frame; 8 distinct seeded picks, ascending; repeat-cycle if fewer; frames JPEG round-tripped at q95 like the UCF extraction",
+  "seed": 0,
+  "seed_rule": "per-video default_rng(first 4 bytes of sha256('<seed>:<file name>'))",
+  "source_file_list_sha256": "783ee79ca6371f203f7bfaecddf1a04b1b731107a251079136ade98e0c7d4348",
+  "source_files": 640,
+  "torch_num_threads": 4,
+  "torch_version": "2.13.0+cu126",
+  "videos_per_class": {
+    "Abuse": 31,
+    "Fighting": 377,
+    "Shooting": 232
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "label": "Shooting",
+  "seed": 0,
+  "usable_videos": 21,
+  "per_video": [
+    {
+      "video": "Shooting002_x264",
+      "frames": 242,
+      "event_frames": 17,
+      "positive_rate": 0.07024793388429752,
+      "roc_auc": 0.9061437908496731,
+      "pr_auc": 0.5587592849644626,
+      "train_videos": 20,
+      "train_frames": 14173
+    },
+    {
+      "video": "Shooting004_x264",
+      "frames": 359,
+      "event_frames": 33,
+      "positive_rate": 0.09192200557103064,
+      "roc_auc": 0.930005577244841,
+      "pr_auc": 0.5917774404074162,
+      "train_videos": 20,
+      "train_frames": 14056
+    },
+    {
+      "video": "Shooting007_x264",
+      "frames": 286,
+      "event_frames": 25,
+      "positive_rate": 0.08741258741258741,
+      "roc_auc": 0.604367816091954,
+      "pr_auc": 0.1258749144007727,
+      "train_videos": 20,
+      "train_frames": 14129
+    },
+    {
+      "video": "Shooting008_x264",
+      "frames": 325,
+      "event_frames": 49,
+      "positive_rate": 0.15076923076923077,
+      "roc_auc": 0.9563738538893818,
+      "pr_auc": 0.6259686137240366,
+      "train_videos": 20,
+      "train_frames": 14090
+    },
+    {
+      "video": "Shooting010_x264",
+      "frames": 529,
+      "event_frames": 34,
+      "positive_rate": 0.06427221172022685,
+      "roc_auc": 0.2538918597742127,
+      "pr_auc": 0.041203649444368794,
+      "train_videos": 20,
+      "train_frames": 13886
+    },
+    {
+      "video": "Shooting011_x264",
+      "frames": 801,
+      "event_frames": 55,
+      "positive_rate": 0.0686641697877653,
+      "roc_auc": 0.7170728735071898,
+      "pr_auc": 0.13887738019006834,
+      "train_videos": 20,
+      "train_frames": 13614
+    },
+    {
+      "video": "Shooting013_x264",
+      "frames": 215,
+      "event_frames": 18,
+      "positive_rate": 0.08372093023255814,
+      "roc_auc": 0.45360970107163,
+      "pr_auc": 0.15004768202082755,
+      "train_videos": 20,
+      "train_frames": 14200
+    },
+    {
+      "video": "Shooting015_x264",
+      "frames": 343,
+      "event_frames": 172,
+      "positive_rate": 0.5014577259475219,
+      "roc_auc": 0.5489936080511355,
+      "pr_auc": 0.5062408738867898,
+      "train_videos": 20,
+      "train_frames": 14072
+    },
+    {
+      "video": "Shooting018_x264",
+      "frames": 360,
+      "event_frames": 34,
+      "positive_rate": 0.09444444444444444,
+      "roc_auc": 0.5199386503067485,
+      "pr_auc": 0.09798270893371758,
+      "train_videos": 20,
+      "train_frames": 14055
+    },
+    {
+      "video": "Shooting019_x264",
+      "frames": 552,
+      "event_frames": 88,
+      "positive_rate": 0.15942028985507245,
+      "roc_auc": 0.6484375,
+      "pr_auc": 0.3027437583041135,
+      "train_videos": 20,
+      "train_frames": 13863
+    },
+    {
+      "video": "Shooting021_x264",
+      "frames": 255,
+      "event_frames": 31,
+      "positive_rate": 0.12156862745098039,
+      "roc_auc": 0.6926123271889402,
+      "pr_auc": 0.2397302830811998,
+      "train_videos": 20,
+      "train_frames": 14160
+    },
+    {
+      "video": "Shooting022_x264",
+      "frames": 911,
+      "event_frames": 91,
+      "positive_rate": 0.09989023051591657,
+      "roc_auc": 0.48914500134012334,
+      "pr_auc": 0.16099078855010984,
+      "train_videos": 20,
+      "train_frames": 13504
+    },
+    {
+      "video": "Shooting024_x264",
+      "frames": 401,
+      "event_frames": 118,
+      "positive_rate": 0.2942643391521197,
+      "roc_auc": 0.3904893094567886,
+      "pr_auc": 0.2373499465983115,
+      "train_videos": 20,
+      "train_frames": 14014
+    },
+    {
+      "video": "Shooting026_x264",
+      "frames": 281,
+      "event_frames": 82,
+      "positive_rate": 0.2918149466192171,
+      "roc_auc": 0.6521632553008947,
+      "pr_auc": 0.4624976508088082,
+      "train_videos": 20,
+      "train_frames": 14134
+    },
+    {
+      "video": "Shooting028_x264",
+      "frames": 380,
+      "event_frames": 55,
+      "positive_rate": 0.14473684210526316,
+      "roc_auc": 0.5375104895104895,
+      "pr_auc": 0.2567455388718157,
+      "train_videos": 20,
+      "train_frames": 14035
+    },
+    {
+      "video": "Shooting032_x264",
+      "frames": 4337,
+      "event_frames": 43,
+      "positive_rate": 0.009914687572054416,
+      "roc_auc": 0.3934126580084705,
+      "pr_auc": 0.007840568685441772,
+      "train_videos": 20,
+      "train_frames": 10078
+    },
+    {
+      "video": "Shooting033_x264",
+      "frames": 726,
+      "event_frames": 65,
+      "positive_rate": 0.08953168044077135,
+      "roc_auc": 0.6111253345746538,
+      "pr_auc": 0.12826432087012168,
+      "train_videos": 20,
+      "train_frames": 13689
+    },
+    {
+      "video": "Shooting037_x264",
+      "frames": 61,
+      "event_frames": 25,
+      "positive_rate": 0.4098360655737705,
+      "roc_auc": 0.14444444444444446,
+      "pr_auc": 0.2713502939443433,
+      "train_videos": 20,
+      "train_frames": 14354
+    },
+    {
+      "video": "Shooting043_x264",
+      "frames": 375,
+      "event_frames": 58,
+      "positive_rate": 0.15466666666666667,
+      "roc_auc": 0.47476340694006314,
+      "pr_auc": 0.15786809132747712,
+      "train_videos": 20,
+      "train_frames": 14040
+    },
+    {
+      "video": "Shooting046_x264",
+      "frames": 1018,
+      "event_frames": 112,
+      "positive_rate": 0.1100196463654224,
+      "roc_auc": 0.4654091769157995,
+      "pr_auc": 0.12912729067774054,
+      "train_videos": 20,
+      "train_frames": 13397
+    },
+    {
+      "video": "Shooting047_x264",
+      "frames": 1658,
+      "event_frames": 698,
+      "positive_rate": 0.4209891435464415,
+      "roc_auc": 0.6758282593123208,
+      "pr_auc": 0.621598722248901,
+      "train_videos": 20,
+      "train_frames": 12757
+    }
+  ],
+  "pooled": {
+    "pooled_roc_auc": 0.3807553156746717,
+    "pooled_pr_auc": 0.10162917691027124,
+    "pooled_positive_rate": 0.13201526187998613,
+    "total_frames": 14415,
+    "total_event_frames": 1903
+  },
+  "shuffled_control_per_video": [
+    {
+      "video": "Shooting002_x264",
+      "frames": 242,
+      "event_frames": 17,
+      "positive_rate": 0.07024793388429752,
+      "roc_auc": 0.5756862745098039,
+      "pr_auc": 0.10428297382161586,
+      "train_videos": 20,
+      "train_frames": 14173
+    },
+    {
+      "video": "Shooting004_x264",
+      "frames": 359,
+      "event_frames": 33,
+      "positive_rate": 0.09192200557103064,
+      "roc_auc": 0.41680609778769284,
+      "pr_auc": 0.0746821879212354,
+      "train_videos": 20,
+      "train_frames": 14056
+    },
+    {
+      "video": "Shooting007_x264",
+      "frames": 286,
+      "event_frames": 25,
+      "positive_rate": 0.08741258741258741,
+      "roc_auc": 0.255632183908046,
+      "pr_auc": 0.05697623817266034,
+      "train_videos": 20,
+      "train_frames": 14129
+    },
+    {
+      "video": "Shooting008_x264",
+      "frames": 325,
+      "event_frames": 49,
+      "positive_rate": 0.15076923076923077,
+      "roc_auc": 0.7122892635314996,
+      "pr_auc": 0.43618414131036565,
+      "train_videos": 20,
+      "train_frames": 14090
+    },
+    {
+      "video": "Shooting010_x264",
+      "frames": 529,
+      "event_frames": 34,
+      "positive_rate": 0.06427221172022685,
+      "roc_auc": 0.17058823529411765,
+      "pr_auc": 0.03785445397396826,
+      "train_videos": 20,
+      "train_frames": 13886
+    },
+    {
+      "video": "Shooting011_x264",
+      "frames": 801,
+      "event_frames": 55,
+      "positive_rate": 0.0686641697877653,
+      "roc_auc": 0.3169388252498172,
+      "pr_auc": 0.04669470129281177,
+      "train_videos": 20,
+      "train_frames": 13614
+    },
+    {
+      "video": "Shooting013_x264",
+      "frames": 215,
+      "event_frames": 18,
+      "positive_rate": 0.08372093023255814,
+      "roc_auc": 0.38522278623801465,
+      "pr_auc": 0.0781415591585109,
+      "train_videos": 20,
+      "train_frames": 14200
+    },
+    {
+      "video": "Shooting015_x264",
+      "frames": 343,
+      "event_frames": 172,
+      "positive_rate": 0.5014577259475219,
+      "roc_auc": 0.5385216918264654,
+      "pr_auc": 0.4785603614638992,
+      "train_videos": 20,
+      "train_frames": 14072
+    },
+    {
+      "video": "Shooting018_x264",
+      "frames": 360,
+      "event_frames": 34,
+      "positive_rate": 0.09444444444444444,
+      "roc_auc": 0.3061169252977264,
+      "pr_auc": 0.06585762897846029,
+      "train_videos": 20,
+      "train_frames": 14055
+    },
+    {
+      "video": "Shooting019_x264",
+      "frames": 552,
+      "event_frames": 88,
+      "positive_rate": 0.15942028985507245,
+      "roc_auc": 0.6688381661442006,
+      "pr_auc": 0.2866030721843793,
+      "train_videos": 20,
+      "train_frames": 13863
+    },
+    {
+      "video": "Shooting021_x264",
+      "frames": 255,
+      "event_frames": 31,
+      "positive_rate": 0.12156862745098039,
+      "roc_auc": 0.4651497695852534,
+      "pr_auc": 0.10718818671189645,
+      "train_videos": 20,
+      "train_frames": 14160
+    },
+    {
+      "video": "Shooting022_x264",
+      "frames": 911,
+      "event_frames": 91,
+      "positive_rate": 0.09989023051591657,
+      "roc_auc": 0.6300455641919057,
+      "pr_auc": 0.14345756610472904,
+      "train_videos": 20,
+      "train_frames": 13504
+    },
+    {
+      "video": "Shooting024_x264",
+      "frames": 401,
+      "event_frames": 118,
+      "positive_rate": 0.2942643391521197,
+      "roc_auc": 0.22566928190692936,
+      "pr_auc": 0.19065914966308586,
+      "train_videos": 20,
+      "train_frames": 14014
+    },
+    {
+      "video": "Shooting026_x264",
+      "frames": 281,
+      "event_frames": 82,
+      "positive_rate": 0.2918149466192171,
+      "roc_auc": 0.7060301507537688,
+      "pr_auc": 0.48172619537934286,
+      "train_videos": 20,
+      "train_frames": 14134
+    },
+    {
+      "video": "Shooting028_x264",
+      "frames": 380,
+      "event_frames": 55,
+      "positive_rate": 0.14473684210526316,
+      "roc_auc": 0.7347972027972028,
+      "pr_auc": 0.5301363129484884,
+      "train_videos": 20,
+      "train_frames": 14035
+    },
+    {
+      "video": "Shooting032_x264",
+      "frames": 4337,
+      "event_frames": 43,
+      "positive_rate": 0.009914687572054416,
+      "roc_auc": 0.3879019941291798,
+      "pr_auc": 0.007554743390457993,
+      "train_videos": 20,
+      "train_frames": 10078
+    },
+    {
+      "video": "Shooting033_x264",
+      "frames": 726,
+      "event_frames": 65,
+      "positive_rate": 0.08953168044077135,
+      "roc_auc": 0.5029209821948097,
+      "pr_auc": 0.14879843123549222,
+      "train_videos": 20,
+      "train_frames": 13689
+    },
+    {
+      "video": "Shooting037_x264",
+      "frames": 61,
+      "event_frames": 25,
+      "positive_rate": 0.4098360655737705,
+      "roc_auc": 0.2588888888888889,
+      "pr_auc": 0.29802235818396194,
+      "train_videos": 20,
+      "train_frames": 14354
+    },
+    {
+      "video": "Shooting043_x264",
+      "frames": 375,
+      "event_frames": 58,
+      "positive_rate": 0.15466666666666667,
+      "roc_auc": 0.4906994452300663,
+      "pr_auc": 0.14912467929332757,
+      "train_videos": 20,
+      "train_frames": 14040
+    },
+    {
+      "video": "Shooting046_x264",
+      "frames": 1018,
+      "event_frames": 112,
+      "positive_rate": 0.1100196463654224,
+      "roc_auc": 0.25914538000630716,
+      "pr_auc": 0.07082000285382774,
+      "train_videos": 20,
+      "train_frames": 13397
+    },
+    {
+      "video": "Shooting047_x264",
+      "frames": 1658,
+      "event_frames": 698,
+      "positive_rate": 0.4209891435464415,
+      "roc_auc": 0.3847271967526265,
+      "pr_auc": 0.35208237010179944,
+      "train_videos": 20,
+      "train_frames": 12757
+    }
+  ],
+  "shuffled_control_pooled": {
+    "pooled_roc_auc": 0.45338625208816874,
+    "pooled_pr_auc": 0.1258609488646028,
+    "pooled_positive_rate": 0.13201526187998613,
+    "total_frames": 14415,
+    "total_event_frames": 1903
+  },
+  "annotation_source": "Datasets/UCF Crime Official/annotations/Temporal_Anomaly_Annotation_For_Testing_Videos/Txt_formate/Temporal_Anomaly_Annotation.txt",
+  "cache_roots": [
+    "results/p1c/p1c-dinov2-feature-cache-ar-fold1/train",
+    "results/p1c/p1c-dinov2-feature-cache-ar-fold2/train",
+    "results/p1c/p1c-dinov2-feature-cache-ar-fold3/train",
+    "results/p1c/p1c-dinov2-feature-cache-ar-fold4/train"
+  ]
+}

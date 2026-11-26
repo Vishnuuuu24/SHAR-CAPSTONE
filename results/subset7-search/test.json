@@ -1,0 +1,663 @@
+{
+ "test_view": "noisy_proxy_test (inherited video-level labels; not event-only, D-40)",
+ "winners": {
+  "overall": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+  "novelty_7": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism"
+ },
+ "summary": {
+  "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism": {
+   "novelty": 6,
+   "per_fold": {
+    "1": {
+     "val_macro_f1": 0.8339861197004054,
+     "test_macro_f1": 0.5374907935255216
+    },
+    "2": {
+     "val_macro_f1": 0.8017281660138803,
+     "test_macro_f1": 0.6262803850305213
+    },
+    "3": {
+     "val_macro_f1": 0.7190373118944547,
+     "test_macro_f1": 0.6221165040068183
+    },
+    "4": {
+     "val_macro_f1": 0.7508348794063081,
+     "test_macro_f1": 0.5732014824096935
+    }
+   },
+   "test_mean": 0.5897722912431387,
+   "val_mean_retrained": 0.7763966192537621,
+   "search_val_mean": 0.7763966192537621,
+   "test_per_class_f1": {
+    "Arrest": 0.5701775076775076,
+    "Explosion": 0.5845432971977594,
+    "Normal_Videos_event": 0.6319057664938671,
+    "RoadAccidents": 0.4962322607031775,
+    "Robbery": 0.5364838213914992,
+    "Shoplifting": 0.6572587051878657,
+    "Vandalism": 0.651804680050294
+   }
+  },
+  "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism": {
+   "novelty": 7,
+   "per_fold": {
+    "1": {
+     "val_macro_f1": 0.8232323232323231,
+     "test_macro_f1": 0.5967061309896083
+    },
+    "2": {
+     "val_macro_f1": 0.7634542705971277,
+     "test_macro_f1": 0.5003512148572736
+    },
+    "3": {
+     "val_macro_f1": 0.7147014361300075,
+     "test_macro_f1": 0.6232855845073889
+    },
+    "4": {
+     "val_macro_f1": 0.5830069401497973,
+     "test_macro_f1": 0.5662389182122173
+    }
+   },
+   "test_mean": 0.571645462141622,
+   "val_mean_retrained": 0.7210987425273139,
+   "search_val_mean": 0.7210987425273139,
+   "test_per_class_f1": {
+    "Abuse": 0.5399431995020231,
+    "Arrest": 0.49936190881203674,
+    "Arson": 0.5945943911161302,
+    "Normal_Videos_event": 0.6167874759399528,
+    "RoadAccidents": 0.5574891904192979,
+    "Robbery": 0.6728863090932055,
+    "Vandalism": 0.5204557601087083
+   }
+  }
+ },
+ "runs": [
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 1,
+   "seed": 0,
+   "val_macro_f1": 0.8276643990929705,
+   "test_macro_f1": 0.6061353276942961,
+   "test_per_class_f1": {
+    "Abuse": 0.47058823529411764,
+    "Arrest": 0.4444444444444444,
+    "Arson": 0.7619047619047619,
+    "Normal_Videos_event": 0.5714285714285714,
+    "RoadAccidents": 0.6428571428571429,
+    "Robbery": 0.8,
+    "Vandalism": 0.5517241379310345
+   },
+   "best_epoch": 2,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "validation": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de",
+    "test": "6136932917b960803ee26a4854a172e36a16f64781667900b2220df2ba7d2d47"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 1,
+   "seed": 0,
+   "val_macro_f1": 0.8560090702947845,
+   "test_macro_f1": 0.5776235258993879,
+   "test_per_class_f1": {
+    "Arrest": 0.6363636363636364,
+    "Explosion": 0.5454545454545454,
+    "Normal_Videos_event": 0.6666666666666666,
+    "RoadAccidents": 0.5,
+    "Robbery": 0.4827586206896552,
+    "Shoplifting": 0.5454545454545454,
+    "Vandalism": 0.6666666666666666
+   },
+   "best_epoch": 4,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "validation": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de",
+    "test": "6136932917b960803ee26a4854a172e36a16f64781667900b2220df2ba7d2d47"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 1,
+   "seed": 1,
+   "val_macro_f1": 0.8210162853019994,
+   "test_macro_f1": 0.5808088041170747,
+   "test_per_class_f1": {
+    "Abuse": 0.4,
+    "Arrest": 0.48484848484848486,
+    "Arson": 0.7619047619047619,
+    "Normal_Videos_event": 0.5263157894736842,
+    "RoadAccidents": 0.5925925925925926,
+    "Robbery": 0.8,
+    "Vandalism": 0.5
+   },
+   "best_epoch": 2,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "validation": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de",
+    "test": "6136932917b960803ee26a4854a172e36a16f64781667900b2220df2ba7d2d47"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 1,
+   "seed": 1,
+   "val_macro_f1": 0.850907029478458,
+   "test_macro_f1": 0.5161414264062187,
+   "test_per_class_f1": {
+    "Arrest": 0.45454545454545453,
+    "Explosion": 0.5263157894736842,
+    "Normal_Videos_event": 0.6363636363636364,
+    "RoadAccidents": 0.42857142857142855,
+    "Robbery": 0.5,
+    "Shoplifting": 0.5217391304347826,
+    "Vandalism": 0.5454545454545454
+   },
+   "best_epoch": 11,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "validation": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de",
+    "test": "6136932917b960803ee26a4854a172e36a16f64781667900b2220df2ba7d2d47"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 1,
+   "seed": 2,
+   "val_macro_f1": 0.8210162853019994,
+   "test_macro_f1": 0.6031742611574545,
+   "test_per_class_f1": {
+    "Abuse": 0.4,
+    "Arrest": 0.5,
+    "Arson": 0.7619047619047619,
+    "Normal_Videos_event": 0.5882352941176471,
+    "RoadAccidents": 0.5925925925925926,
+    "Robbery": 0.8461538461538461,
+    "Vandalism": 0.5333333333333333
+   },
+   "best_epoch": 2,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "validation": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de",
+    "test": "6136932917b960803ee26a4854a172e36a16f64781667900b2220df2ba7d2d47"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 1,
+   "seed": 2,
+   "val_macro_f1": 0.7950422593279737,
+   "test_macro_f1": 0.5187074282709584,
+   "test_per_class_f1": {
+    "Arrest": 0.5384615384615384,
+    "Explosion": 0.5555555555555556,
+    "Normal_Videos_event": 0.6086956521739131,
+    "RoadAccidents": 0.45161290322580644,
+    "Robbery": 0.42857142857142855,
+    "Shoplifting": 0.5217391304347826,
+    "Vandalism": 0.5263157894736842
+   },
+   "best_epoch": 4,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+    "validation": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de",
+    "test": "6136932917b960803ee26a4854a172e36a16f64781667900b2220df2ba7d2d47"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 2,
+   "seed": 0,
+   "val_macro_f1": 0.7621315192743764,
+   "test_macro_f1": 0.4981327297944267,
+   "test_per_class_f1": {
+    "Abuse": 0.5185185185185185,
+    "Arrest": 0.26666666666666666,
+    "Arson": 0.14285714285714285,
+    "Normal_Videos_event": 0.6,
+    "RoadAccidents": 0.6451612903225806,
+    "Robbery": 0.6666666666666666,
+    "Vandalism": 0.6470588235294118
+   },
+   "best_epoch": 2,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "validation": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43",
+    "test": "5d5fbfd56b732110fa785a4c0397debb89732009f262be44fdfadc4a2a998928"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 2,
+   "seed": 0,
+   "val_macro_f1": 0.7948979591836735,
+   "test_macro_f1": 0.6069874431986234,
+   "test_per_class_f1": {
+    "Arrest": 0.42857142857142855,
+    "Explosion": 0.5454545454545454,
+    "Normal_Videos_event": 0.47619047619047616,
+    "RoadAccidents": 0.64,
+    "Robbery": 0.6086956521739131,
+    "Shoplifting": 0.75,
+    "Vandalism": 0.8
+   },
+   "best_epoch": 1,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "validation": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43",
+    "test": "5d5fbfd56b732110fa785a4c0397debb89732009f262be44fdfadc4a2a998928"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 2,
+   "seed": 1,
+   "val_macro_f1": 0.7329931972789115,
+   "test_macro_f1": 0.4607823129251701,
+   "test_per_class_f1": {
+    "Abuse": 0.38095238095238093,
+    "Arrest": 0.4,
+    "Arson": 0.3333333333333333,
+    "Normal_Videos_event": 0.375,
+    "RoadAccidents": 0.6428571428571429,
+    "Robbery": 0.56,
+    "Vandalism": 0.5333333333333333
+   },
+   "best_epoch": 2,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "validation": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43",
+    "test": "5d5fbfd56b732110fa785a4c0397debb89732009f262be44fdfadc4a2a998928"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 2,
+   "seed": 1,
+   "val_macro_f1": 0.8210162853019997,
+   "test_macro_f1": 0.6422849859691965,
+   "test_per_class_f1": {
+    "Arrest": 0.4444444444444444,
+    "Explosion": 0.6,
+    "Normal_Videos_event": 0.631578947368421,
+    "RoadAccidents": 0.75,
+    "Robbery": 0.56,
+    "Shoplifting": 0.7692307692307693,
+    "Vandalism": 0.7407407407407407
+   },
+   "best_epoch": 5,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "validation": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43",
+    "test": "5d5fbfd56b732110fa785a4c0397debb89732009f262be44fdfadc4a2a998928"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 2,
+   "seed": 2,
+   "val_macro_f1": 0.7952380952380952,
+   "test_macro_f1": 0.5421386018522241,
+   "test_per_class_f1": {
+    "Abuse": 0.6,
+    "Arrest": 0.47058823529411764,
+    "Arson": 0.36363636363636365,
+    "Normal_Videos_event": 0.631578947368421,
+    "RoadAccidents": 0.5625,
+    "Robbery": 0.6666666666666666,
+    "Vandalism": 0.5
+   },
+   "best_epoch": 1,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "validation": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43",
+    "test": "5d5fbfd56b732110fa785a4c0397debb89732009f262be44fdfadc4a2a998928"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 2,
+   "seed": 2,
+   "val_macro_f1": 0.7892702535559678,
+   "test_macro_f1": 0.6295687259237439,
+   "test_per_class_f1": {
+    "Arrest": 0.38461538461538464,
+    "Explosion": 0.6666666666666666,
+    "Normal_Videos_event": 0.631578947368421,
+    "RoadAccidents": 0.6666666666666666,
+    "Robbery": 0.5217391304347826,
+    "Shoplifting": 0.75,
+    "Vandalism": 0.7857142857142857
+   },
+   "best_epoch": 8,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+    "validation": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43",
+    "test": "5d5fbfd56b732110fa785a4c0397debb89732009f262be44fdfadc4a2a998928"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 3,
+   "seed": 0,
+   "val_macro_f1": 0.6785714285714286,
+   "test_macro_f1": 0.6328734986817693,
+   "test_per_class_f1": {
+    "Abuse": 0.6666666666666666,
+    "Arrest": 0.6363636363636364,
+    "Arson": 0.64,
+    "Normal_Videos_event": 0.7619047619047619,
+    "RoadAccidents": 0.5625,
+    "Robbery": 0.6363636363636364,
+    "Vandalism": 0.5263157894736842
+   },
+   "best_epoch": 9,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "validation": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599",
+    "test": "c80cea005ceba27898396c53c24165830ce97542fd69e30f0578fa893f9a1403"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 3,
+   "seed": 0,
+   "val_macro_f1": 0.7200680272108843,
+   "test_macro_f1": 0.6184920634920635,
+   "test_per_class_f1": {
+    "Arrest": 0.8333333333333334,
+    "Explosion": 0.56,
+    "Normal_Videos_event": 0.6666666666666666,
+    "RoadAccidents": 0.5,
+    "Robbery": 0.4444444444444444,
+    "Shoplifting": 0.625,
+    "Vandalism": 0.7
+   },
+   "best_epoch": 6,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "validation": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599",
+    "test": "c80cea005ceba27898396c53c24165830ce97542fd69e30f0578fa893f9a1403"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 3,
+   "seed": 1,
+   "val_macro_f1": 0.7470521541950114,
+   "test_macro_f1": 0.638935112506541,
+   "test_per_class_f1": {
+    "Abuse": 0.56,
+    "Arrest": 0.6923076923076923,
+    "Arson": 0.6666666666666666,
+    "Normal_Videos_event": 0.7619047619047619,
+    "RoadAccidents": 0.625,
+    "Robbery": 0.6666666666666666,
+    "Vandalism": 0.5
+   },
+   "best_epoch": 8,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "validation": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599",
+    "test": "c80cea005ceba27898396c53c24165830ce97542fd69e30f0578fa893f9a1403"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 3,
+   "seed": 1,
+   "val_macro_f1": 0.7185219542362399,
+   "test_macro_f1": 0.6159886460875065,
+   "test_per_class_f1": {
+    "Arrest": 0.8,
+    "Explosion": 0.5217391304347826,
+    "Normal_Videos_event": 0.8333333333333334,
+    "RoadAccidents": 0.5517241379310345,
+    "Robbery": 0.38095238095238093,
+    "Shoplifting": 0.5925925925925926,
+    "Vandalism": 0.631578947368421
+   },
+   "best_epoch": 6,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "validation": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599",
+    "test": "c80cea005ceba27898396c53c24165830ce97542fd69e30f0578fa893f9a1403"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 3,
+   "seed": 2,
+   "val_macro_f1": 0.7184807256235828,
+   "test_macro_f1": 0.5980481423338567,
+   "test_per_class_f1": {
+    "Abuse": 0.5833333333333334,
+    "Arrest": 0.6153846153846154,
+    "Arson": 0.64,
+    "Normal_Videos_event": 0.7619047619047619,
+    "RoadAccidents": 0.5142857142857142,
+    "Robbery": 0.5714285714285714,
+    "Vandalism": 0.5
+   },
+   "best_epoch": 8,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "validation": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599",
+    "test": "c80cea005ceba27898396c53c24165830ce97542fd69e30f0578fa893f9a1403"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 3,
+   "seed": 2,
+   "val_macro_f1": 0.7185219542362399,
+   "test_macro_f1": 0.6318688024408848,
+   "test_per_class_f1": {
+    "Arrest": 0.7333333333333333,
+    "Explosion": 0.56,
+    "Normal_Videos_event": 0.8333333333333334,
+    "RoadAccidents": 0.6086956521739131,
+    "Robbery": 0.42105263157894735,
+    "Shoplifting": 0.6666666666666666,
+    "Vandalism": 0.6
+   },
+   "best_epoch": 5,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "681f53307dbd22c5072939753561bf7b39285f25ba4445b14b2e761bf59f4745",
+    "validation": "ef7ff24598453bea39097181a980ce6cd11f98d75b55f4e185e1eb9133bda599",
+    "test": "c80cea005ceba27898396c53c24165830ce97542fd69e30f0578fa893f9a1403"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 4,
+   "seed": 0,
+   "val_macro_f1": 0.5726757369614511,
+   "test_macro_f1": 0.5673753723014807,
+   "test_per_class_f1": {
+    "Abuse": 0.5925925925925926,
+    "Arrest": 0.4,
+    "Arson": 0.7272727272727273,
+    "Normal_Videos_event": 0.6363636363636364,
+    "RoadAccidents": 0.47619047619047616,
+    "Robbery": 0.6206896551724138,
+    "Vandalism": 0.5185185185185185
+   },
+   "best_epoch": 6,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a",
+    "validation": "1e19490f6aac9e617587016e8415e38b233b75542fc5857fd731abc4bcb8a705",
+    "test": "9e7e91bf2f8458ec07b6933f18867b6711b297b0e31df38234b24e854557f98f"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 4,
+   "seed": 0,
+   "val_macro_f1": 0.789270253555968,
+   "test_macro_f1": 0.6027886417541589,
+   "test_per_class_f1": {
+    "Arrest": 0.5833333333333334,
+    "Explosion": 0.6666666666666666,
+    "Normal_Videos_event": 0.56,
+    "RoadAccidents": 0.4,
+    "Robbery": 0.7272727272727273,
+    "Shoplifting": 0.6896551724137931,
+    "Vandalism": 0.5925925925925926
+   },
+   "best_epoch": 6,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a",
+    "validation": "1e19490f6aac9e617587016e8415e38b233b75542fc5857fd731abc4bcb8a705",
+    "test": "9e7e91bf2f8458ec07b6933f18867b6711b297b0e31df38234b24e854557f98f"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 4,
+   "seed": 1,
+   "val_macro_f1": 0.5758503401360544,
+   "test_macro_f1": 0.5756507582594539,
+   "test_per_class_f1": {
+    "Abuse": 0.6666666666666666,
+    "Arrest": 0.56,
+    "Arson": 0.6956521739130435,
+    "Normal_Videos_event": 0.6153846153846154,
+    "RoadAccidents": 0.3333333333333333,
+    "Robbery": 0.64,
+    "Vandalism": 0.5185185185185185
+   },
+   "best_epoch": 5,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a",
+    "validation": "1e19490f6aac9e617587016e8415e38b233b75542fc5857fd731abc4bcb8a705",
+    "test": "9e7e91bf2f8458ec07b6933f18867b6711b297b0e31df38234b24e854557f98f"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 4,
+   "seed": 1,
+   "val_macro_f1": 0.7161410018552876,
+   "test_macro_f1": 0.5461304521808724,
+   "test_per_class_f1": {
+    "Arrest": 0.4666666666666667,
+    "Explosion": 0.6,
+    "Normal_Videos_event": 0.5,
+    "RoadAccidents": 0.23529411764705882,
+    "Robbery": 0.6666666666666666,
+    "Shoplifting": 0.7142857142857143,
+    "Vandalism": 0.64
+   },
+   "best_epoch": 5,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a",
+    "validation": "1e19490f6aac9e617587016e8415e38b233b75542fc5857fd731abc4bcb8a705",
+    "test": "9e7e91bf2f8458ec07b6933f18867b6711b297b0e31df38234b24e854557f98f"
+   }
+  },
+  {
+   "subset": "Abuse+Arrest+Arson+Normal_Videos_event+RoadAccidents+Robbery+Vandalism",
+   "fold": 4,
+   "seed": 2,
+   "val_macro_f1": 0.6004947433518861,
+   "test_macro_f1": 0.5556906240757172,
+   "test_per_class_f1": {
+    "Abuse": 0.64,
+    "Arrest": 0.5217391304347826,
+    "Arson": 0.64,
+    "Normal_Videos_event": 0.5714285714285714,
+    "RoadAccidents": 0.5,
+    "Robbery": 0.6,
+    "Vandalism": 0.4166666666666667
+   },
+   "best_epoch": 12,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a",
+    "validation": "1e19490f6aac9e617587016e8415e38b233b75542fc5857fd731abc4bcb8a705",
+    "test": "9e7e91bf2f8458ec07b6933f18867b6711b297b0e31df38234b24e854557f98f"
+   }
+  },
+  {
+   "subset": "Arrest+Explosion+Normal_Videos_event+RoadAccidents+Robbery+Shoplifting+Vandalism",
+   "fold": 4,
+   "seed": 2,
+   "val_macro_f1": 0.7470933828076686,
+   "test_macro_f1": 0.570685353294049,
+   "test_per_class_f1": {
+    "Arrest": 0.5384615384615384,
+    "Explosion": 0.6666666666666666,
+    "Normal_Videos_event": 0.5384615384615384,
+    "RoadAccidents": 0.2222222222222222,
+    "Robbery": 0.6956521739130435,
+    "Shoplifting": 0.7407407407407407,
+    "Vandalism": 0.5925925925925926
+   },
+   "best_epoch": 5,
+   "test_videos": 84,
+   "cache_sha256": {
+    "train": "3b4aaed3037efe2917ac95df3a8da195164587d0dffa25986cac35d5ba9b901a",
+    "validation": "1e19490f6aac9e617587016e8415e38b233b75542fc5857fd731abc4bcb8a705",
+    "test": "9e7e91bf2f8458ec07b6933f18867b6711b297b0e31df38234b24e854557f98f"
+   }
+  }
+ ],
+ "provenance": {
+  "git_revision": "16d9c55965e8f445742966ac7ec1187d97714ee0",
+  "folds": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "min_novelty": 6,
+  "epochs_override": null,
+  "family_map": {
+   "Abuse": "violence",
+   "Assault": "violence",
+   "Fighting": "violence",
+   "Shooting": "violence",
+   "Burglary": "theft",
+   "Robbery": "theft",
+   "Shoplifting": "theft",
+   "Stealing": "theft",
+   "Arson": "fire",
+   "Explosion": "fire",
+   "Vandalism": "damage",
+   "RoadAccidents": "traffic",
+   "Arrest": "police",
+   "Normal_Videos_event": "normal"
+  },
+  "device": "cpu",
+  "subset7_sha256": "ec7b39f3df93c7e2a32426954cef7afbafb1a008f64b9e5fb69053e50c661169"
+ }
+}

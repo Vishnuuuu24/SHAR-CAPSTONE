@@ -1,0 +1,13 @@
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 3.177s
+
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 99.118s
+
+OK
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+{"variant": "control", "seed": 0, "epoch": 0, "loss": 0.5432676193506821, "heldout_video_auc": 0.95}

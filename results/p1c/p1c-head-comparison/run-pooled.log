@@ -1,0 +1,43 @@
+patch cache: 82679 rows, memmapped from results/p1c/p1c-patch-cache
+fold 1: train 3808 rows sampled (8/video, seed=0), validation 37600 rows (full, untouched), cache 56c0312b9122
+fold 1 head gap_linear seed 0: best epoch 3 (early-stopped), validation macro-F1 0.4194, video-level macro-F1 0.4709 over 56 videos, params 21518, wall 65.3s
+fold 1 head gap_linear seed 1: best epoch 3 (early-stopped), validation macro-F1 0.3775, video-level macro-F1 0.4492 over 56 videos, params 21518, wall 61.3s
+fold 1 head gap_linear seed 2: best epoch 2 (early-stopped), validation macro-F1 0.4126, video-level macro-F1 0.4760 over 56 videos, params 21518, wall 60.4s
+fold 1 head mlp seed 0: best epoch 3 (early-stopped), validation macro-F1 0.4523, video-level macro-F1 0.4955 over 56 videos, params 49646, wall 62.5s
+fold 1 head mlp seed 1: best epoch 6 (early-stopped), validation macro-F1 0.3950, video-level macro-F1 0.4757 over 56 videos, params 49646, wall 63.2s
+fold 1 head mlp seed 2: best epoch 3 (early-stopped), validation macro-F1 0.4354, video-level macro-F1 0.4995 over 56 videos, params 49646, wall 61.7s
+fold 1 head step seed 0: best epoch 2 (early-stopped), validation macro-F1 0.4565, video-level macro-F1 0.4565 over 56 videos, params 7117838, wall 102.6s
+fold 1 head step seed 1: best epoch 4 (early-stopped), validation macro-F1 0.4822, video-level macro-F1 0.4822 over 56 videos, params 7117838, wall 110.5s
+fold 1 head step seed 2: best epoch 13 (early-stopped), validation macro-F1 0.4632, video-level macro-F1 0.4632 over 56 videos, params 7117838, wall 165.9s
+fold 2: train 3808 rows sampled (8/video, seed=0), validation 47726 rows (full, untouched), cache ea8c33fbecf3
+fold 2 head gap_linear seed 0: best epoch 3 (early-stopped), validation macro-F1 0.3049, video-level macro-F1 0.3927 over 56 videos, params 21518, wall 75.9s
+fold 2 head gap_linear seed 1: best epoch 5 (early-stopped), validation macro-F1 0.2649, video-level macro-F1 0.3583 over 56 videos, params 21518, wall 73.9s
+fold 2 head gap_linear seed 2: best epoch 5 (early-stopped), validation macro-F1 0.3112, video-level macro-F1 0.4070 over 56 videos, params 21518, wall 77.2s
+fold 2 head mlp seed 0: best epoch 5 (early-stopped), validation macro-F1 0.3442, video-level macro-F1 0.4381 over 56 videos, params 49646, wall 80.2s
+fold 2 head mlp seed 1: best epoch 4 (early-stopped), validation macro-F1 0.3247, video-level macro-F1 0.4075 over 56 videos, params 49646, wall 76.3s
+fold 2 head mlp seed 2: best epoch 4 (early-stopped), validation macro-F1 0.2875, video-level macro-F1 0.4006 over 56 videos, params 49646, wall 78.3s
+fold 2 head step seed 0: best epoch 10 (early-stopped), validation macro-F1 0.4352, video-level macro-F1 0.4352 over 56 videos, params 7117838, wall 166.7s
+fold 2 head step seed 1: best epoch 5 (early-stopped), validation macro-F1 0.4103, video-level macro-F1 0.4103 over 56 videos, params 7117838, wall 129.9s
+fold 2 head step seed 2: best epoch 4 (early-stopped), validation macro-F1 0.4323, video-level macro-F1 0.4323 over 56 videos, params 7117838, wall 124.0s
+fold 3: train 3808 rows sampled (8/video, seed=0), validation 49719 rows (full, untouched), cache 681f53307dbd
+fold 3 head gap_linear seed 0: best epoch 8 (early-stopped), validation macro-F1 0.3068, video-level macro-F1 0.3843 over 56 videos, params 21518, wall 80.0s
+fold 3 head gap_linear seed 1: best epoch 8 (early-stopped), validation macro-F1 0.3268, video-level macro-F1 0.4404 over 56 videos, params 21518, wall 84.9s
+fold 3 head gap_linear seed 2: best epoch 9 (early-stopped), validation macro-F1 0.3285, video-level macro-F1 0.3875 over 56 videos, params 21518, wall 85.4s
+fold 3 head mlp seed 0: best epoch 1 (early-stopped), validation macro-F1 0.3331, video-level macro-F1 0.3479 over 56 videos, params 49646, wall 80.2s
+fold 3 head mlp seed 1: best epoch 4 (early-stopped), validation macro-F1 0.3447, video-level macro-F1 0.3791 over 56 videos, params 49646, wall 93.5s
+fold 3 head mlp seed 2: best epoch 4 (early-stopped), validation macro-F1 0.3402, video-level macro-F1 0.3718 over 56 videos, params 49646, wall 81.6s
+fold 3 head step seed 0: best epoch 7 (early-stopped), validation macro-F1 0.4651, video-level macro-F1 0.4651 over 56 videos, params 7117838, wall 147.4s
+fold 3 head step seed 1: best epoch 9 (early-stopped), validation macro-F1 0.4780, video-level macro-F1 0.4780 over 56 videos, params 7117838, wall 173.4s
+fold 3 head step seed 2: best epoch 9 (early-stopped), validation macro-F1 0.4616, video-level macro-F1 0.4616 over 56 videos, params 7117838, wall 168.7s
+fold 4: train 3807 rows sampled (8/video, seed=0), validation 41319 rows (full, untouched), cache 3b4aaed3037e
+fold 4 head gap_linear seed 0: best epoch 3 (early-stopped), validation macro-F1 0.3219, video-level macro-F1 0.3712 over 56 videos, params 21518, wall 76.8s
+fold 4 head gap_linear seed 1: best epoch 7 (early-stopped), validation macro-F1 0.3019, video-level macro-F1 0.3961 over 56 videos, params 21518, wall 68.6s
+fold 4 head gap_linear seed 2: best epoch 7 (early-stopped), validation macro-F1 0.3364, video-level macro-F1 0.4053 over 56 videos, params 21518, wall 79.3s
+fold 4 head mlp seed 0: best epoch 1 (early-stopped), validation macro-F1 0.3138, video-level macro-F1 0.3842 over 56 videos, params 49646, wall 70.5s
+fold 4 head mlp seed 1: best epoch 7 (early-stopped), validation macro-F1 0.3001, video-level macro-F1 0.3394 over 56 videos, params 49646, wall 72.4s
+fold 4 head mlp seed 2: best epoch 9 (early-stopped), validation macro-F1 0.3111, video-level macro-F1 0.3778 over 56 videos, params 49646, wall 73.8s
+fold 4 head step seed 0: best epoch 5 (early-stopped), validation macro-F1 0.3807, video-level macro-F1 0.3807 over 56 videos, params 7117838, wall 120.2s
+fold 4 head step seed 1: best epoch 7 (early-stopped), validation macro-F1 0.4028, video-level macro-F1 0.4028 over 56 videos, params 7117838, wall 137.6s
+fold 4 head step seed 2: best epoch 4 (early-stopped), validation macro-F1 0.4152, video-level macro-F1 0.4152 over 56 videos, params 7117838, wall 115.7s
+SELF-CHECK OK: gap_linear on the patch cache 0.4116 +/- 0.0367 vs registered 0.4068 +/- 0.0353 (delta 0.0048 <= 0.05)
+wrote results/p1c/p1c-head-comparison/summary.json

@@ -1,0 +1,16 @@
+{
+  "baseline_probs": "results/p1c/p1c-late-fusion/dinov2_probs.csv",
+  "group_sets": {
+    "manual_violent_quad": {"selection": "manual (confusion-informed on pooled labels: model-selection bias, see report)",
+                            "per_fold": {"1": ["Shooting", "Assault", "Fighting", "Abuse"], "2": ["Shooting", "Assault", "Fighting", "Abuse"],
+                                         "3": ["Shooting", "Assault", "Fighting", "Abuse"], "4": ["Shooting", "Assault", "Fighting", "Abuse"]}},
+    "lofo_size4": {"selection": "data-driven, from other folds' confusion minus videos shared with the scored fold (results/divide-and-conquer/e0-e2/selected_groups.json)",
+                   "per_fold": {"1": ["Abuse", "Assault", "RoadAccidents", "Shooting"], "2": ["Abuse", "Fighting", "RoadAccidents", "Stealing"],
+                                "3": ["Explosion", "Fighting", "RoadAccidents", "Shooting"], "4": ["Abuse", "Assault", "Fighting", "Robbery"]}}
+  },
+  "fusion_weight": 0.5,
+  "holdout_fraction": 0.25,
+  "min_train_videos_per_class": 20,
+  "rejected_before_training": {"violent_trio": "hard-route ceiling with a perfect specialist < 0.04 gate on 4/4 folds",
+                               "fight_assault": "ceiling +0.005", "property": "ceiling meets gate on 1/4 folds", "lofo_size2_size3": "ceiling below gate"}
+}

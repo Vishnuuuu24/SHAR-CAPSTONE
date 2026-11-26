@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SHAR Results</title>
+<style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#667085;--card:#f5f7fa;--bd:#e1e5ec;--a:#2f6fed;--b:#e5762b;--g:#2a9d6f;--r:#c8453b}
+@media(prefers-color-scheme:dark){:root{--bg:#12151c;--fg:#e6e9f0;--mut:#98a2b3;--card:#1b2029;--bd:#2b3240;--a:#6b9bff;--b:#f0955a;--g:#4cc795;--r:#ef7b72}}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px 16px}
+h1{margin:0 0 4px}h2{margin:32px 0 6px}p.s{color:var(--mut);margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:10px 0}
+.row{display:grid;grid-template-columns:minmax(120px,300px) 1fr 90px;gap:10px;align-items:center;margin:6px 0}
+.bar{height:16px;background:var(--bd);border-radius:4px;position:relative}.bar i{display:block;height:100%;border-radius:4px;background:var(--a)}
+.bar b{position:absolute;top:-2px;width:3px;height:20px;background:var(--b)}
+.n{text-align:right;font-variant-numeric:tabular-nums}.m{color:var(--mut);font-size:13px}
+.tag{font-size:12px;border:1px solid var(--bd);border-radius:99px;padding:1px 8px;color:var(--mut)}
+.neg{color:var(--r)}.pos{color:var(--g)}
+.tabs button{border:1px solid var(--bd);background:var(--card);color:var(--fg);padding:6px 12px;border-radius:8px;cursor:pointer;margin-right:6px}
+.tabs button.on{background:var(--a);color:#fff;border-color:var(--a)}
+img{max-width:100%;border-radius:8px}
+table{border-collapse:collapse;width:100%}td,th{padding:4px 8px;border-bottom:1px solid var(--bd);text-align:left;font-size:14px}
+@media(max-width:600px){.row{grid-template-columns:1fr 70px}.row .bar{grid-column:1/3;order:3}}
+</style></head><body><main>
+<h1>SHAR: final result of each model</h1>
+<p class="s">Recorded runs read from <code>results/</code>. Each section is a separate task: do not rank numbers across sections (rule 3).</p>
+
+<h2>1. UCF-Crime 14-class (13 crimes + Normal)</h2>
+<p class="s">Video-level macro-F1, 4 Action-Recognition folds × 3 seeds. Inherited video-level labels, not event-only (D-40). Bars = validation; orange tick = the one-time test (headline model only).</p>
+<div class="card" id="ucf"></div>
+<div class="card"><b>Headline test, per class F1</b> <span class="m">(D-57, spent once)</span><div id="cls"></div></div>
+
+<h2>2. Detection: YOLO11m-pose person-crop ROI vs full frame</h2>
+<p class="s">Same DINOv2 pipeline; input is the union box of detected people (full frame when none found). Negative result, kept visible (D-51).</p>
+<div class="card" id="roi"></div>
+<div class="card"><b>Detection video</b> <span class="m">(YOLO11m-pose on UCF RoadAccidents033, first 240 frames; green = people, orange = union ROI box)</span><video src="videos/RoadAccidents033_detection.mp4" controls loop style="width:100%;max-width:640px;display:block;margin-top:8px;border-radius:8px"></video></div>
+<div class="card"><b>Detector check on real frames</b> <span class="m">(pick a class: boxes drawn by the detector on sampled frames)</span>
+<div class="tabs" id="tabs" style="margin:8px 0"></div><div id="sheetinfo" class="m"></div><img id="sheet" alt="detector contact sheet"></div>
+
+<h2>3. Separate tasks</h2>
+<div class="card" id="sub7"></div>
+<div class="card" id="xd"></div>
+<p class="m">Source of every number: results/p1c/headline-14class-test, p1c-roi-study, p1c-late-fusion-siglip, p1c-exp-P2-fusion, subset7-search, xd/xd-probe. This page was generated from them; nothing was re-run.</p>
+</main>
+<script>
+const D=__DATA__;const f=x=>x.toFixed(3);
+const bar=(l,v,t,note)=>`<div class="row"><div>${l}${note?`<div class="m">${note}</div>`:''}</div><div class="bar"><i style="width:${v*100}%"></i>${t!=null?`<b style="left:${t*100}%"></b>`:''}</div><div class="n">${f(v)}${t!=null?`<div class="m">test ${f(t)}</div>`:''}</div></div>`;
+ucf.innerHTML=D.ucf.map(m=>bar(m.name,m.f1,m.test,(m.derived?'derived · ':'')+(m.note||''))).join('');
+cls.innerHTML=Object.entries(D.headline_classes).sort((a,b)=>b[1]-a[1]).map(([k,v])=>bar(k,v)).join('');
+const r=D.roi,pf=Object.entries(r.per_fold);
+roi.innerHTML=bar('Full frame',r.full)+bar('Person-crop ROI',r.roi)+
+`<p>Paired ROI − full = <b class="neg">${r.paired.toFixed(4)}</b> ± ${r.sd.toFixed(4)}; positive on ${pf.filter(x=>x[1]>0).length} of 4 folds → <b>no gain</b>.</p>
+<table><tr><th>Fold</th><th>ROI − full</th><th>No-detection fallback</th></tr>${pf.map(([k,v])=>`<tr><td>${k}</td><td class="${v<0?'neg':'pos'}">${v.toFixed(4)}</td><td>${(r.fallback[k]*100).toFixed(0)}%</td></tr>`).join('')}</table>
+<p class="m">Per-class F1, full → ROI: Assault ${f(r.cls_full.Assault)} → ${f(r.cls_roi.Assault)}, Fighting ${f(r.cls_full.Fighting)} → ${f(r.cls_roi.Fighting)}, Shooting ${f(r.cls_full.Shooting)} → ${f(r.cls_roi.Shooting)}. No weapon is detectable at 320×240.</p>`;
+const T=Object.keys(r.det);tabs.innerHTML=T.map(c=>`<button data-c="${c}">${c}</button>`).join('');
+function show(c){document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.c==c));const d=r.det[c];
+sheet.src='../results/p1c/p1c-roi-detector-check/sheets/'+c+'.jpg';
+sheetinfo.textContent=`person detected in ${(d.detection_rate*100).toFixed(0)}% of ${d.frames_checked} frames · median box height ${d.median_box_height_px.toFixed(0)}px · union box ${(d.median_union_box_area_fraction*100).toFixed(0)}% of frame`}
+tabs.onclick=e=>e.target.dataset.c&&show(e.target.dataset.c);show(T[0]);
+sub7.innerHTML=`<b>7-class subset</b> <span class="tag">test, inherited labels</span>
+`+bar('Arrest, Explosion, Normal, RoadAccidents, Robbery, Shoplifting, Vandalism',D.sub7[6])+bar('Abuse, Arrest, Arson, Normal, RoadAccidents, Robbery, Vandalism',D.sub7[7])+'<p class="m">D-56. Different label set from section 1; not comparable.</p>';
+xd.innerHTML=`<b>XD-Violence (external dataset)</b> <span class="tag">official test, 3 seeds</span>
+`+bar('mAP',D.xd.map)+bar('Single-label accuracy',D.xd.acc)+bar('Single-label macro-F1',D.xd.f1)+
+Object.entries(D.xd.ap).map(([k,v])=>bar('AP · '+k,v)).join('')+'<p class="m">D-58. Own ontology and metric. UCF→XD transfer accuracy on 6 shared classes: 35.3%.</p>';
+</script></body></html>

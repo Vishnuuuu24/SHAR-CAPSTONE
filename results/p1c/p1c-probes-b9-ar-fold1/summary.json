@@ -1,0 +1,420 @@
+{
+  "best": {
+    "clustered_ci_lower_95": 0.21186041888762577,
+    "clustered_ci_upper_95": 0.4033508952083436,
+    "converged": true,
+    "fit_seconds": 173.9334634579718,
+    "frame_accuracy": 0.33808510638297873,
+    "frame_macro_f1": 0.3335645003190783,
+    "parameters": {
+      "C": 0.01,
+      "max_iter": 200,
+      "tol": 0.0001
+    },
+    "predict_seconds": 0.14959514141082764,
+    "probe": "logistic_regression",
+    "report_file": "logistic_regression-standardize-C0.01.json",
+    "scaling": "standardize",
+    "video_level_macro_f1": 0.3680272108843537
+  },
+  "best_probe_minus_reference": -0.014539165001529908,
+  "cache_sha256": "e851dbcbd3727d840221df3bd3667d52c2c87342ec91aee36ccfc906a1ab2b5e",
+  "config": "configs/experiments/p1c/P1C-VIDEO-FROZEN-CONFIRM-015-AR-FOLD1.yaml",
+  "experiment_id": "P1C-PROBES-B9-AR-FOLD1",
+  "kind": "classical probe sweep on the B-1 frozen-feature cache; validation-only; inherited-label score",
+  "label_honesty": "INHERITED-LABEL. AR fold 1 has no constructible event-only view (D-40); these probes inherit the cache's scope exactly and never read Test.",
+  "metric_name": "validation frame macro_f1 (inherited video-level labels, AR fold 1)",
+  "per_class_frame_f1_best_probe_minus_reference": {
+    "Abuse": {
+      "delta": -0.001341199871343457,
+      "probe": 0.3111527647610122,
+      "reference_mean": 0.3124939646323557,
+      "reference_sd": 0.005780641845043719
+    },
+    "Arrest": {
+      "delta": -0.04042946749033334,
+      "probe": 0.11880165289256199,
+      "reference_mean": 0.15923112038289533,
+      "reference_sd": 0.003479112213591471
+    },
+    "Arson": {
+      "delta": -0.0024161317723458975,
+      "probe": 0.2923446252333956,
+      "reference_mean": 0.2947607570057415,
+      "reference_sd": 0.0028859758701060044
+    },
+    "Assault": {
+      "delta": -0.012538197140768204,
+      "probe": 0.05087675969375155,
+      "reference_mean": 0.06341495683451975,
+      "reference_sd": 0.001116499289588605
+    },
+    "Burglary": {
+      "delta": -0.045122528835780606,
+      "probe": 0.5824058545509986,
+      "reference_mean": 0.6275283833867792,
+      "reference_sd": 0.006504254604045255
+    },
+    "Explosion": {
+      "delta": -0.07906717904470673,
+      "probe": 0.3197463768115942,
+      "reference_mean": 0.3988135558563009,
+      "reference_sd": 0.010617489854486158
+    },
+    "Fighting": {
+      "delta": -0.08850113378485348,
+      "probe": 0.026232948583420776,
+      "reference_mean": 0.11473408236827426,
+      "reference_sd": 0.006867562087737197
+    },
+    "Normal_Videos_event": {
+      "delta": -0.05922285197393451,
+      "probe": 0.7061668681983072,
+      "reference_mean": 0.7653897201722417,
+      "reference_sd": 0.014848228131900903
+    },
+    "RoadAccidents": {
+      "delta": 0.04048036628485949,
+      "probe": 0.26572104018912535,
+      "reference_mean": 0.22524067390426586,
+      "reference_sd": 0.0365398153984155
+    },
+    "Robbery": {
+      "delta": -0.028247680246807905,
+      "probe": 0.40691899297824974,
+      "reference_mean": 0.43516667322505764,
+      "reference_sd": 0.017547834871125424
+    },
+    "Shooting": {
+      "delta": -0.08983556795631376,
+      "probe": 0.39552814186584423,
+      "reference_mean": 0.485363709822158,
+      "reference_sd": 0.025897340896126702
+    },
+    "Shoplifting": {
+      "delta": 0.09784938388301623,
+      "probe": 0.5282730514518594,
+      "reference_mean": 0.4304236675688432,
+      "reference_sd": 0.041524711048719
+    },
+    "Stealing": {
+      "delta": 0.034419997803728786,
+      "probe": 0.530338389731622,
+      "reference_mean": 0.49591839192789317,
+      "reference_sd": 0.057058412308654965
+    },
+    "Vandalism": {
+      "delta": 0.07042388012416632,
+      "probe": 0.135395537525355,
+      "reference_mean": 0.06497165740118867,
+      "reference_sd": 0.022419609415696796
+    }
+  },
+  "probe_count": 16,
+  "probes": [
+    {
+      "clustered_ci_lower_95": 0.21186041888762577,
+      "clustered_ci_upper_95": 0.4033508952083436,
+      "converged": true,
+      "fit_seconds": 173.9334634579718,
+      "frame_accuracy": 0.33808510638297873,
+      "frame_macro_f1": 0.3335645003190783,
+      "parameters": {
+        "C": 0.01,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.14959514141082764,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.01.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.3680272108843537
+    },
+    {
+      "clustered_ci_lower_95": 0.20767904819293875,
+      "clustered_ci_upper_95": 0.40391323358645925,
+      "converged": true,
+      "fit_seconds": 131.60755677334964,
+      "frame_accuracy": 0.33704787234042555,
+      "frame_macro_f1": 0.3317255774279096,
+      "parameters": {
+        "C": 0.003,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.16317357681691647,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.003.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.35328798185941046
+    },
+    {
+      "clustered_ci_lower_95": 0.20611960632447238,
+      "clustered_ci_upper_95": 0.40542370283134305,
+      "converged": true,
+      "fit_seconds": 185.1523523889482,
+      "frame_accuracy": 0.3356648936170213,
+      "frame_macro_f1": 0.32933016410717775,
+      "parameters": {
+        "C": 0.001,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.19639008305966854,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.001.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.32517006802721093
+    },
+    {
+      "clustered_ci_lower_95": 0.19824151045430782,
+      "clustered_ci_upper_95": 0.3891716448179891,
+      "converged": true,
+      "fit_seconds": 195.61980775371194,
+      "frame_accuracy": 0.32172872340425535,
+      "frame_macro_f1": 0.3177780741616142,
+      "parameters": {
+        "C": 0.1,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.16824633814394474,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.1.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.3769841269841271
+    },
+    {
+      "clustered_ci_lower_95": 0.2009881095407131,
+      "clustered_ci_upper_95": 0.39246527715280716,
+      "converged": true,
+      "fit_seconds": 142.3526000995189,
+      "frame_accuracy": 0.3215425531914894,
+      "frame_macro_f1": 0.31284262429374504,
+      "parameters": {
+        "C": 0.0003,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.14363519102334976,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.0003.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.3230210265924552
+    },
+    {
+      "clustered_ci_lower_95": 0.19266493495998882,
+      "clustered_ci_upper_95": 0.3794094050598061,
+      "converged": true,
+      "duplicate_report_files": [
+        "logistic_regression-standardize.json"
+      ],
+      "fit_seconds": 181.7800338063389,
+      "frame_accuracy": 0.31944148936170214,
+      "frame_macro_f1": 0.30918648353126876,
+      "parameters": {
+        "C": 1,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.17092281952500343,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C1.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.33796441653584514
+    },
+    {
+      "clustered_ci_lower_95": 0.19595028811678433,
+      "clustered_ci_upper_95": 0.3747961312777936,
+      "converged": true,
+      "fit_seconds": 319.35978167690337,
+      "frame_accuracy": 0.3080851063829787,
+      "frame_macro_f1": 0.3041740149597361,
+      "parameters": {
+        "C": 1,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.15726452134549618,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C1.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.35361067503924654
+    },
+    {
+      "clustered_ci_lower_95": 0.1893564121246305,
+      "clustered_ci_upper_95": 0.373131872623676,
+      "converged": true,
+      "fit_seconds": 216.3335564173758,
+      "frame_accuracy": 0.30957446808510636,
+      "frame_macro_f1": 0.3025328227658653,
+      "parameters": {
+        "C": 10,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1541389636695385,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C10.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.33395691609977324
+    },
+    {
+      "clustered_ci_lower_95": 0.19085913447882655,
+      "clustered_ci_upper_95": 0.39175700592126933,
+      "converged": true,
+      "fit_seconds": 376.36030078306794,
+      "frame_accuracy": 0.31505319148936173,
+      "frame_macro_f1": 0.300524514371331,
+      "parameters": {
+        "C": 0.01,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.16653703525662422,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C0.01.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.33193671407957126
+    },
+    {
+      "clustered_ci_lower_95": 0.18533576530594836,
+      "clustered_ci_upper_95": 0.372786982813276,
+      "converged": true,
+      "fit_seconds": 384.5443502999842,
+      "frame_accuracy": 0.3033510638297872,
+      "frame_macro_f1": 0.2942160041588367,
+      "parameters": {
+        "C": 0.1,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.1521228775382042,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C0.1.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.3263760049474335
+    },
+    {
+      "clustered_ci_lower_95": 0.18526710275167108,
+      "clustered_ci_upper_95": 0.38020099610854646,
+      "converged": true,
+      "fit_seconds": 154.5511787943542,
+      "frame_accuracy": 0.30601063829787234,
+      "frame_macro_f1": 0.2928091327128935,
+      "parameters": {
+        "C": 0.0001,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.15904591977596283,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-standardize-C0.0001.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.2870181405895692
+    },
+    {
+      "clustered_ci_lower_95": 0.18754434464510228,
+      "clustered_ci_upper_95": 0.36291401173743426,
+      "converged": true,
+      "fit_seconds": 294.4850421436131,
+      "frame_accuracy": 0.29438829787234044,
+      "frame_macro_f1": 0.29215935615668986,
+      "parameters": {
+        "C": 10,
+        "max_iter": 200,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.16665000095963478,
+      "probe": "logistic_regression",
+      "report_file": "logistic_regression-none-C10.json",
+      "scaling": "none",
+      "video_level_macro_f1": 0.35723879295307875
+    },
+    {
+      "clustered_ci_lower_95": 0.16200486130625472,
+      "clustered_ci_upper_95": 0.35382201757864246,
+      "converged": true,
+      "fit_seconds": 4044.293648077175,
+      "frame_accuracy": 0.2996808510638298,
+      "frame_macro_f1": 0.28801684282508366,
+      "parameters": {
+        "C": 0.0001,
+        "dual": false,
+        "max_iter": 2000,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.5864470805972815,
+      "probe": "linear_svm",
+      "report_file": "linear_svm-standardize-C0.0001.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.2979694908266337
+    },
+    {
+      "clustered_ci_lower_95": 0.16112009391971333,
+      "clustered_ci_upper_95": 0.33656139998859663,
+      "converged": true,
+      "fit_seconds": 3332.8529258668423,
+      "frame_accuracy": 0.29388297872340424,
+      "frame_macro_f1": 0.27453010662871163,
+      "parameters": {
+        "C": 0.01,
+        "dual": false,
+        "max_iter": 2000,
+        "tol": 0.0001
+      },
+      "predict_seconds": 0.945495693013072,
+      "probe": "linear_svm",
+      "report_file": "linear_svm-standardize-C0.01.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.31365341008198155
+    },
+    {
+      "clustered_ci_lower_95": 0.16712450345549368,
+      "clustered_ci_upper_95": 0.33124268319868644,
+      "converged": null,
+      "fit_seconds": 0.6394764315336943,
+      "frame_accuracy": 0.30518617021276595,
+      "frame_macro_f1": 0.27126307286158896,
+      "parameters": {
+        "algorithm": "brute",
+        "n_neighbors": 20,
+        "weights": "distance"
+      },
+      "predict_seconds": 996.4719274248928,
+      "probe": "knn",
+      "report_file": "knn-standardize.json",
+      "scaling": "standardize",
+      "video_level_macro_f1": 0.27906418977847547
+    },
+    {
+      "clustered_ci_lower_95": 0.16640976704678,
+      "clustered_ci_upper_95": 0.333974879362918,
+      "converged": null,
+      "fit_seconds": 0.854664757847786,
+      "frame_accuracy": 0.2729255319148936,
+      "frame_macro_f1": 0.2667003484455538,
+      "parameters": {
+        "algorithm": "brute",
+        "n_neighbors": 20,
+        "weights": "distance"
+      },
+      "predict_seconds": 948.807623501867,
+      "probe": "knn",
+      "report_file": "knn-l2.json",
+      "scaling": "l2",
+      "video_level_macro_f1": 0.29376417233560087
+    }
+  ],
+  "reference": {
+    "experiment_id": "P1C-VIDEO-FROZEN-CONFIRM-015-AR-FOLD1",
+    "frame_macro_f1_mean": 0.3481036653206082,
+    "frame_macro_f1_sd": 0.0048923951805815765,
+    "metric_name": "validation frame macro_f1 (inherited video-level labels, AR fold 1)"
+  },
+  "report_count": 17,
+  "train_rows": 391014,
+  "train_stride": 1,
+  "truncated_fit_count": 0,
+  "validation_rows": 37600
+}

@@ -1,0 +1,4 @@
+{"subset": "Abuse+Arrest+Arson+Assault+Burglary+Normal_Videos_event+RoadAccidents", "fold": 1, "seed": 0, "macro_f1": 0.7386621315192744, "best_epoch": 12, "train_videos": 238, "val_videos": 28, "seconds": 23.74}
+{"subset": "Abuse+Arrest+Arson+Assault+Burglary+Normal_Videos_event+Vandalism", "fold": 1, "seed": 0, "macro_f1": 0.6809523809523809, "best_epoch": 5, "train_videos": 238, "val_videos": 28, "seconds": 15.44}
+{"subset": "Abuse+Arrest+Arson+Assault+Burglary+RoadAccidents+Vandalism", "fold": 1, "seed": 0, "macro_f1": 0.651814058956916, "best_epoch": 6, "train_videos": 238, "val_videos": 28, "seconds": 15.73}
+{"subset": "Abuse+Arrest+Arson+Assault+Normal_Videos_event+RoadAccidents+Robbery", "fold": 1, "seed": 0, "macro_f1": 0.715986394557823, "best_epoch": 5, "train_videos": 238, "val_videos": 28, "seconds": 14.26}

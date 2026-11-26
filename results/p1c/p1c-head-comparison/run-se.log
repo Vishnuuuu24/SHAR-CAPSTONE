@@ -1,0 +1,18 @@
+patch cache: 82679 rows, memmapped from results/p1c/p1c-patch-cache
+fold 1: train 3808 rows sampled (8/video, seed=0), validation 37600 rows (full, untouched), cache 56c0312b9122
+fold 1 head multiscale_se seed 0: best epoch 10 (early-stopped), validation macro-F1 0.3822, video-level macro-F1 0.4518 over 56 videos, params 31282, wall 1485.8s
+fold 1 head multiscale_se seed 1: best epoch 10 (early-stopped), validation macro-F1 0.3451, video-level macro-F1 0.3293 over 56 videos, params 31282, wall 1433.8s
+fold 1 head multiscale_se seed 2: best epoch 12 (early-stopped), validation macro-F1 0.3462, video-level macro-F1 0.3748 over 56 videos, params 31282, wall 1101.0s
+fold 2: train 3808 rows sampled (8/video, seed=0), validation 47726 rows (full, untouched), cache ea8c33fbecf3
+fold 2 head multiscale_se seed 0: best epoch 4 (early-stopped), validation macro-F1 0.3100, video-level macro-F1 0.2879 over 56 videos, params 31282, wall 781.8s
+fold 2 head multiscale_se seed 1: best epoch 8 (early-stopped), validation macro-F1 0.2790, video-level macro-F1 0.3038 over 56 videos, params 31282, wall 1103.7s
+fold 2 head multiscale_se seed 2: best epoch 8 (early-stopped), validation macro-F1 0.2891, video-level macro-F1 0.2854 over 56 videos, params 31282, wall 1058.8s
+fold 3: train 3808 rows sampled (8/video, seed=0), validation 49719 rows (full, untouched), cache 681f53307dbd
+fold 3 head multiscale_se seed 0: best epoch 9 (early-stopped), validation macro-F1 0.3244, video-level macro-F1 0.3589 over 56 videos, params 31282, wall 1172.0s
+fold 3 head multiscale_se seed 1: best epoch 3 (early-stopped), validation macro-F1 0.2471, video-level macro-F1 0.2695 over 56 videos, params 31282, wall 683.4s
+fold 3 head multiscale_se seed 2: best epoch 11 (early-stopped), validation macro-F1 0.3126, video-level macro-F1 0.3421 over 56 videos, params 31282, wall 1348.6s
+fold 4: train 3807 rows sampled (8/video, seed=0), validation 41319 rows (full, untouched), cache 3b4aaed3037e
+fold 4 head multiscale_se seed 0: best epoch 9 (early-stopped), validation macro-F1 0.2536, video-level macro-F1 0.3146 over 56 videos, params 31282, wall 1473.5s
+fold 4 head multiscale_se seed 1: best epoch 9 (early-stopped), validation macro-F1 0.2372, video-level macro-F1 0.3049 over 56 videos, params 31282, wall 1448.2s
+fold 4 head multiscale_se seed 2: best epoch 15 (early-stopped), validation macro-F1 0.2275, video-level macro-F1 0.2793 over 56 videos, params 31282, wall 1627.8s
+wrote results/p1c/p1c-head-comparison-se/summary.json

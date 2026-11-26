@@ -1,0 +1,15 @@
+{"videos_done": 50, "of": 300, "elapsed_s": 13}
+{"videos_done": 100, "of": 300, "elapsed_s": 26}
+{"videos_done": 150, "of": 300, "elapsed_s": 38}
+{"videos_done": 200, "of": 300, "elapsed_s": 50}
+{"videos_done": 250, "of": 300, "elapsed_s": 62}
+{"videos_done": 300, "of": 300, "elapsed_s": 73}
+{"videos": 300, "features": [2400, 1536]}
+{"fold": 1, "runs": 12, "seconds": 311}
+{"fold": 2, "runs": 12, "seconds": 367}
+{"fold": 3, "runs": 12, "seconds": 325}
+{"fold": 4, "runs": 12, "seconds": 300}
+control {"macro_f1": 0.4636, "per_fold_delta_vs_control": [0.0, 0.0, 0.0, 0.0], "mean_delta": 0.0, "folds_positive": 0, "gate_passed": false, "median_best_epoch": 6.5}
+extra34 {"macro_f1": 0.4617, "per_fold_delta_vs_control": [-0.0, 0.028, -0.03, -0.006], "mean_delta": -0.0019, "folds_positive": 1, "gate_passed": false, "median_best_epoch": 6.5}
+extra_all {"macro_f1": 0.4484, "per_fold_delta_vs_control": [-0.001, 0.05, -0.075, -0.034], "mean_delta": -0.0152, "folds_positive": 1, "gate_passed": false, "median_best_epoch": 6.5}
+extra_all_w {"macro_f1": 0.4927, "per_fold_delta_vs_control": [-0.003, 0.08, -0.006, 0.046], "mean_delta": 0.0291, "folds_positive": 2, "gate_passed": false, "median_best_epoch": 5.0}

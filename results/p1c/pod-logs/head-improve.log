@@ -1,0 +1,11 @@
+{"fold": 1, "runs": 21, "seconds": 465}
+{"fold": 2, "runs": 21, "seconds": 549}
+{"fold": 3, "runs": 21, "seconds": 557}
+{"fold": 4, "runs": 21, "seconds": 493}
+control {"macro_f1": 0.4636, "per_fold_delta_vs_control": [0.0, 0.0, 0.0, 0.0], "mean_delta": 0.0, "folds_positive": 0, "gate_passed": false, "median_best_epoch": 6.5}
+label_smooth {"macro_f1": 0.4587, "per_fold_delta_vs_control": [-0.017, 0.004, -0.012, 0.006], "mean_delta": -0.0049, "folds_positive": 2, "gate_passed": false, "median_best_epoch": 5.0}
+lc25 {"macro_f1": 0.2957, "per_fold_delta_vs_control": [-0.203, -0.115, -0.174, -0.18], "mean_delta": -0.1679, "folds_positive": 0, "gate_passed": false, "median_best_epoch": 5.0}
+lc50 {"macro_f1": 0.3565, "per_fold_delta_vs_control": [-0.1, -0.096, -0.108, -0.124], "mean_delta": -0.1071, "folds_positive": 0, "gate_passed": false, "median_best_epoch": 6.0}
+lc75 {"macro_f1": 0.4308, "per_fold_delta_vs_control": [-0.05, -0.004, -0.015, -0.062], "mean_delta": -0.0328, "folds_positive": 0, "gate_passed": false, "median_best_epoch": 6.0}
+resample {"macro_f1": 0.4477, "per_fold_delta_vs_control": [-0.041, 0.002, -0.025, 0.0], "mean_delta": -0.0159, "folds_positive": 2, "gate_passed": false, "median_best_epoch": 6.5}
+resample_long {"macro_f1": 0.4486, "per_fold_delta_vs_control": [-0.038, 0.002, -0.024, 0.0], "mean_delta": -0.015, "folds_positive": 2, "gate_passed": false, "median_best_epoch": 8.5}

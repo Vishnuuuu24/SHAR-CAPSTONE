@@ -1,0 +1,25 @@
+{
+  "control": "A+k0",
+  "device": "cpu",
+  "dinov2_probs_sha256": "00da0e81ed2fa53a9abb5cb3cd827e026e68453116efe3492f7f5f2e11ee5211",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "fusion_weight": 0.5,
+  "gate": "+0.04 fold-mean macro-F1 on 4/4 folds vs A",
+  "git_revision": "86b5be92eed79392fda47ad03b8e8910c0799f0f",
+  "num_threads": 4,
+  "primary": "A+k4",
+  "reference_summary_sha256": "4da83b07c4a6fa31bc3f95fade3c30752ad76fd51d269e3f8022c2979ac2058f",
+  "reused_dinov2_csv": false,
+  "runtime_s": 982,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "videomae_per_video_sha256": "813248511cc93b1092a091d2d755f94fcff46d56603c02f39466febd5edc27f1"
+}

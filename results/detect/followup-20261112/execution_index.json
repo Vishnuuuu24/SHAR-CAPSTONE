@@ -1,0 +1,14 @@
+{
+ "source_snapshot": "<repo>/results/detect/followup-20261112/code-002",
+ "source_id": "6372b09a155a3c454df6c27adcbb565e625550456f358a0f485fdf16042f4612",
+ "pod": "shar-followup-full-20261112073030",
+ "closure_watcher_sha256": "9a44888a304e1ed9240a5ea654429ab354a753cac1fb99c6f6037aa10754f68a",
+ "rwf_summary_sha256": "c8ca3911d2759d14569fee3b959699fc02692b90b29f830660c911eaf3a35381",
+ "first_full_epoch_seconds": 84.44756205999875,
+ "calibration_epoch_seconds": 84.22385001182556,
+ "estimate_hours": [
+  4,
+  30
+ ],
+ "recorded_utc": "2026-11-12T07:38:22.088950+00:00"
+}

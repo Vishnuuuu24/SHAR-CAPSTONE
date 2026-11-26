@@ -1,0 +1,10 @@
+{
+  "exception_type": "RuntimeError",
+  "message": "MPS requested but unavailable (built=True, available=False); refusing silent CPU fallback",
+  "scope_assertions": {
+    "checkpoint_saved": false,
+    "configuration_selection": false,
+    "held_out_test_access": false,
+    "research_training": false
+  }
+}

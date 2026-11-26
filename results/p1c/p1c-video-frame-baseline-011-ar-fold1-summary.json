@@ -1,0 +1,229 @@
+{
+  "chance_macro_f1": 0.07142857142857142,
+  "estimate_vs_actual": {
+    "actual_hours": 3.6195833333333334,
+    "pre_run_estimate_hours": [
+      11.07,
+      12.99
+    ],
+    "reason": "the estimate priced the 20-epoch ceiling; validation early stopping fired at 6-7 epochs per seed"
+  },
+  "experiment_id": "P1C-VIDEO-FRAME-BASELINE-011-AR-FOLD1",
+  "frame_macro_f1": {
+    "max": 0.3122002394287177,
+    "mean": 0.29385540125592174,
+    "min": 0.273166553204957,
+    "n": 3,
+    "sd": 0.019622129134868802
+  },
+  "label_view": "inherited_label",
+  "label_view_note": "UCF frames inherit a video-level label. This is the honestly named inherited-label score, NOT event-only: per D-40 only 48 of this fold's 168 official Action-Recognition test videos carry an official temporal interval and Abuse, Robbery and Stealing have zero, so a 14-class event-only macro-F1 is not computable for this fold at any sample size.",
+  "per_class_frame_f1": {
+    "Abuse": {
+      "max": 0.45417633410672853,
+      "mean": 0.33144847163188823,
+      "min": 0.1903628792385485,
+      "sd": 0.13286135415609665
+    },
+    "Arrest": {
+      "max": 0.3036053130929791,
+      "mean": 0.26592560380487157,
+      "min": 0.24129793510324482,
+      "sd": 0.03314089860870194
+    },
+    "Arson": {
+      "max": 0.32031249999999994,
+      "mean": 0.2958109527528074,
+      "min": 0.27413086860623886,
+      "sd": 0.023219738587426906
+    },
+    "Assault": {
+      "max": 0.12887828162291168,
+      "mean": 0.0708039784896885,
+      "min": 0.0,
+      "sd": 0.0653753496704177
+    },
+    "Burglary": {
+      "max": 0.5446670276123444,
+      "mean": 0.473945036408652,
+      "min": 0.3977673325499412,
+      "sd": 0.0736016555709677
+    },
+    "Explosion": {
+      "max": 0.21081830790568654,
+      "mean": 0.1523074626474438,
+      "min": 0.06778019849915275,
+      "sd": 0.07498410314557166
+    },
+    "Fighting": {
+      "max": 0.006663602941176471,
+      "mean": 0.0029940525650754657,
+      "min": 0.00045423574835339536,
+      "sd": 0.003255193338377481
+    },
+    "Normal_Videos_event": {
+      "max": 0.860284928767808,
+      "mean": 0.7936351772714066,
+      "min": 0.7279920870425322,
+      "sd": 0.0661521656343757
+    },
+    "RoadAccidents": {
+      "max": 0.4507683551508253,
+      "mean": 0.3129283478783145,
+      "min": 0.2087132725430598,
+      "sd": 0.12448149577307414
+    },
+    "Robbery": {
+      "max": 0.2589245368278355,
+      "mean": 0.13800288870964467,
+      "min": 0.058101819207446066,
+      "sd": 0.10651036043785961
+    },
+    "Shooting": {
+      "max": 0.4559873116574148,
+      "mean": 0.18480816225516045,
+      "min": 0.0012383900928792568,
+      "sd": 0.23969918158247636
+    },
+    "Shoplifting": {
+      "max": 0.6029353431178104,
+      "mean": 0.3184195520016711,
+      "min": 0.15303318537307123,
+      "sd": 0.24748101486759
+    },
+    "Stealing": {
+      "max": 0.8003201280512205,
+      "mean": 0.5251661058448227,
+      "min": 0.14770853939993406,
+      "sd": 0.3381197757944759
+    },
+    "Vandalism": {
+      "max": 0.29922827981080413,
+      "mean": 0.24777982532145765,
+      "min": 0.16299349928650705,
+      "sd": 0.07398337053364931
+    }
+  },
+  "seeds": [
+    {
+      "cluster_count": 56,
+      "clustered_ci_unit": "source_video_id",
+      "epochs_run": 6,
+      "frame_accuracy": 0.3146276595744681,
+      "frame_macro_f1": 0.2961994111340906,
+      "frame_macro_f1_clustered_ci_95": [
+        0.20370667018423533,
+        0.3576632442389448
+      ],
+      "peak_device_bytes": 3179025408,
+      "per_class_frame_f1": {
+        "Abuse": 0.3498062015503876,
+        "Arrest": 0.3036053130929791,
+        "Arson": 0.32031249999999994,
+        "Assault": 0.12887828162291168,
+        "Burglary": 0.3977673325499412,
+        "Explosion": 0.1783238815374921,
+        "Fighting": 0.006663602941176471,
+        "Normal_Videos_event": 0.7279920870425322,
+        "RoadAccidents": 0.27930341594105834,
+        "Robbery": 0.058101819207446066,
+        "Shooting": 0.09719878501518729,
+        "Shoplifting": 0.1992901275141317,
+        "Stealing": 0.8003201280512205,
+        "Vandalism": 0.29922827981080413
+      },
+      "run_dir": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s0-20260827T193810Z",
+      "run_id": "p1c-video-frame-baseline-011-ar-fold1-s0-20260827T193810Z",
+      "runtime_seconds": 3992.1578405722976,
+      "seed": 0,
+      "selected_checkpoint": "checkpoint_epoch_000.pt",
+      "storage_bytes": 1697704932,
+      "video_accuracy": 0.375,
+      "video_macro_f1": 0.36679550608122036
+    },
+    {
+      "cluster_count": 56,
+      "clustered_ci_unit": "source_video_id",
+      "epochs_run": 7,
+      "frame_accuracy": 0.27832446808510636,
+      "frame_macro_f1": 0.3122002394287177,
+      "frame_macro_f1_clustered_ci_95": [
+        0.20684006384278403,
+        0.37788324901294607
+      ],
+      "peak_device_bytes": 3173520384,
+      "per_class_frame_f1": {
+        "Abuse": 0.1903628792385485,
+        "Arrest": 0.24129793510324482,
+        "Arson": 0.29298948965218335,
+        "Assault": 0.08353365384615384,
+        "Burglary": 0.4794007490636704,
+        "Explosion": 0.21081830790568654,
+        "Fighting": 0.00045423574835339536,
+        "Normal_Videos_event": 0.7926285160038797,
+        "RoadAccidents": 0.4507683551508253,
+        "Robbery": 0.2589245368278355,
+        "Shooting": 0.4559873116574148,
+        "Shoplifting": 0.6029353431178104,
+        "Stealing": 0.14770853939993406,
+        "Vandalism": 0.16299349928650705
+      },
+      "run_dir": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z",
+      "run_id": "p1c-video-frame-baseline-011-ar-fold1-s1-20260827T204443Z",
+      "runtime_seconds": 4489.816465094686,
+      "seed": 1,
+      "selected_checkpoint": "checkpoint_epoch_001.pt",
+      "storage_bytes": 1980650760,
+      "video_accuracy": 0.375,
+      "video_macro_f1": 0.35389701335079493
+    },
+    {
+      "cluster_count": 56,
+      "clustered_ci_unit": "source_video_id",
+      "epochs_run": 7,
+      "frame_accuracy": 0.27611702127659576,
+      "frame_macro_f1": 0.273166553204957,
+      "frame_macro_f1_clustered_ci_95": [
+        0.15368527431872067,
+        0.3347740877182034
+      ],
+      "peak_device_bytes": 3173520384,
+      "per_class_frame_f1": {
+        "Abuse": 0.45417633410672853,
+        "Arrest": 0.25287356321839083,
+        "Arson": 0.27413086860623886,
+        "Assault": 0.0,
+        "Burglary": 0.5446670276123444,
+        "Explosion": 0.06778019849915275,
+        "Fighting": 0.0018643190056965304,
+        "Normal_Videos_event": 0.860284928767808,
+        "RoadAccidents": 0.2087132725430598,
+        "Robbery": 0.09698231009365242,
+        "Shooting": 0.0012383900928792568,
+        "Shoplifting": 0.15303318537307123,
+        "Stealing": 0.6274696500833136,
+        "Vandalism": 0.2811176968670618
+      },
+      "run_dir": "results/p1c/p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z",
+      "run_id": "p1c-video-frame-baseline-011-ar-fold1-s2-20260827T215933Z",
+      "runtime_seconds": 4491.583002090454,
+      "seed": 2,
+      "selected_checkpoint": "checkpoint_epoch_001.pt",
+      "storage_bytes": 1980650712,
+      "video_accuracy": 0.32142857142857145,
+      "video_macro_f1": 0.31513605442176873
+    }
+  ],
+  "selection_rule": "best_validation_macro_f1 (frame level only; video-level aggregation is evaluation-only)",
+  "split_evaluated": "validation",
+  "test_evaluation_performed": false,
+  "total_wall_seconds": 13030.5,
+  "video_macro_f1": {
+    "aggregation": "majority_vote",
+    "max": 0.36679550608122036,
+    "mean": 0.3452761912845947,
+    "min": 0.31513605442176873,
+    "n": 3,
+    "sd": 0.026887053878430392
+  }
+}

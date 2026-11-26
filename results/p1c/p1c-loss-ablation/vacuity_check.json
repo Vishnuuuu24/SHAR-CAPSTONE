@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "balanced_softmax": {
+      "balanced_softmax_validation_macro_f1": 0.3684831460220223,
+      "cross_entropy_validation_macro_f1": 0.3684831460220223,
+      "max_abs_logit_delta": 1.9073486328125e-06,
+      "validation_macro_f1_exactly_equal_to_cross_entropy": true
+    },
+    "weighted_cross_entropy": {
+      "cross_entropy_validation_macro_f1": 0.3684831460220223,
+      "max_abs_logit_delta": 0.0,
+      "validation_macro_f1_exactly_equal_to_cross_entropy": true,
+      "weighted_cross_entropy_validation_macro_f1": 0.3684831460220223
+    }
+  },
+  "control_loss": "cross_entropy",
+  "fold": 1,
+  "seed": 0
+}

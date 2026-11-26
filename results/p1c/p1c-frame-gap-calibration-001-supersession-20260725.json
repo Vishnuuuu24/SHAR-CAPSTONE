@@ -1,0 +1,6 @@
+{
+  "status": "INVALID",
+  "invalid_artifact": "results/p1c/p1c-frame-gap-calibration-001-20260725T170042Z",
+  "replacement_artifact": "results/p1c/p1c-frame-gap-calibration-001-20260725T170504Z",
+  "replacement_aggregate_sha256": "7fd8831d69adbe4a9d2d55b707a329af5c2a999e1ae9b3d8d31b8da794c41902"
+}

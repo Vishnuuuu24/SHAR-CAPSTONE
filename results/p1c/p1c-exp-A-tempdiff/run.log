@@ -1,0 +1,141 @@
+########## EXP A fold1: [f_t, f_t - f_{t-1}]  (05:59:35Z) ##########
+train 3808 rows (variant=diff, radius=2, sampled 8/video) -> dim 3072, validation 37600 rows (full, untouched), cache 56c0312b9122
+
+--- seed 0 ---
+best epoch 3 (early-stopped), frame macro-F1 0.3550 (clustered 95% CI 0.2514-0.4358), video-level macro-F1 0.4011 over 56 videos, train 7.9s
+wrote results/p1c/p1c-exp-A-tempdiff/fold1/seed-0.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold1/seed-0-validation-probabilities.npy
+
+--- seed 1 ---
+best epoch 4 (early-stopped), frame macro-F1 0.4103 (clustered 95% CI 0.2834-0.4782), video-level macro-F1 0.4457 over 56 videos, train 5.5s
+wrote results/p1c/p1c-exp-A-tempdiff/fold1/seed-1.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold1/seed-1-validation-probabilities.npy
+
+--- seed 2 ---
+best epoch 3 (early-stopped), frame macro-F1 0.4216 (clustered 95% CI 0.2904-0.4922), video-level macro-F1 0.4566 over 56 videos, train 4.9s
+wrote results/p1c/p1c-exp-A-tempdiff/fold1/seed-2.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold1/seed-2-validation-probabilities.npy
+########## EXP B fold1: background-masked loss  (06:02:34Z) ##########
+train 3808 rows sampled (8/video, per-label overrides none, sampling_seed=None), validation 37600 rows (full, untouched), dim 1536, cache 56c0312b9122
+background mask label=Shooting: 14 annotated videos, 91 rows zeroed, 181 rows kept (of 3808 sampled train rows)
+
+--- seed 0 ---
+best epoch 3 (early-stopped), validation macro-F1 0.3677 (clustered 95% CI 0.2515-0.4457), video-level macro-F1 0.3973 over 56 videos, train 4.1s
+wrote results/p1c/p1c-exp-B-bgmask/fold1/seed-0.json
+wrote results/p1c/p1c-exp-B-bgmask/fold1/seed-0-validation-probabilities.npy
+
+--- seed 1 ---
+best epoch 3 (early-stopped), validation macro-F1 0.4096 (clustered 95% CI 0.2833-0.4866), video-level macro-F1 0.5126 over 56 videos, train 4.3s
+wrote results/p1c/p1c-exp-B-bgmask/fold1/seed-1.json
+wrote results/p1c/p1c-exp-B-bgmask/fold1/seed-1-validation-probabilities.npy
+
+--- seed 2 ---
+best epoch 3 (early-stopped), validation macro-F1 0.3906 (clustered 95% CI 0.2705-0.4648), video-level macro-F1 0.4253 over 56 videos, train 3.1s
+wrote results/p1c/p1c-exp-B-bgmask/fold1/seed-2.json
+wrote results/p1c/p1c-exp-B-bgmask/fold1/seed-2-validation-probabilities.npy
+########## EXP A fold2: [f_t, f_t - f_{t-1}]  (06:05:18Z) ##########
+train 3808 rows (variant=diff, radius=2, sampled 8/video) -> dim 3072, validation 47726 rows (full, untouched), cache ea8c33fbecf3
+
+--- seed 0 ---
+best epoch 5 (early-stopped), frame macro-F1 0.2769 (clustered 95% CI 0.2001-0.3381), video-level macro-F1 0.3422 over 56 videos, train 5.9s
+wrote results/p1c/p1c-exp-A-tempdiff/fold2/seed-0.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold2/seed-0-validation-probabilities.npy
+
+--- seed 1 ---
+best epoch 5 (early-stopped), frame macro-F1 0.2831 (clustered 95% CI 0.2127-0.3579), video-level macro-F1 0.3547 over 56 videos, train 6.2s
+wrote results/p1c/p1c-exp-A-tempdiff/fold2/seed-1.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold2/seed-1-validation-probabilities.npy
+
+--- seed 2 ---
+best epoch 3 (early-stopped), frame macro-F1 0.2974 (clustered 95% CI 0.2197-0.3510), video-level macro-F1 0.3531 over 56 videos, train 3.6s
+wrote results/p1c/p1c-exp-A-tempdiff/fold2/seed-2.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold2/seed-2-validation-probabilities.npy
+########## EXP B fold2: background-masked loss  (06:08:27Z) ##########
+train 3808 rows sampled (8/video, per-label overrides none, sampling_seed=None), validation 47726 rows (full, untouched), dim 1536, cache ea8c33fbecf3
+background mask label=Shooting: 14 annotated videos, 95 rows zeroed, 177 rows kept (of 3808 sampled train rows)
+
+--- seed 0 ---
+best epoch 7 (early-stopped), validation macro-F1 0.2623 (clustered 95% CI 0.1835-0.3333), video-level macro-F1 0.3540 over 56 videos, train 6.6s
+wrote results/p1c/p1c-exp-B-bgmask/fold2/seed-0.json
+wrote results/p1c/p1c-exp-B-bgmask/fold2/seed-0-validation-probabilities.npy
+
+--- seed 1 ---
+best epoch 0 (early-stopped), validation macro-F1 0.2818 (clustered 95% CI 0.1959-0.3693), video-level macro-F1 0.3797 over 56 videos, train 3.1s
+wrote results/p1c/p1c-exp-B-bgmask/fold2/seed-1.json
+wrote results/p1c/p1c-exp-B-bgmask/fold2/seed-1-validation-probabilities.npy
+
+--- seed 2 ---
+best epoch 2 (early-stopped), validation macro-F1 0.2975 (clustered 95% CI 0.2133-0.3580), video-level macro-F1 0.3898 over 56 videos, train 3.4s
+wrote results/p1c/p1c-exp-B-bgmask/fold2/seed-2.json
+wrote results/p1c/p1c-exp-B-bgmask/fold2/seed-2-validation-probabilities.npy
+########## EXP A fold3: [f_t, f_t - f_{t-1}]  (06:11:27Z) ##########
+train 3808 rows (variant=diff, radius=2, sampled 8/video) -> dim 3072, validation 49719 rows (full, untouched), cache 681f53307dbd
+
+--- seed 0 ---
+best epoch 10 (early-stopped), frame macro-F1 0.3195 (clustered 95% CI 0.2080-0.3855), video-level macro-F1 0.3961 over 56 videos, train 7.8s
+wrote results/p1c/p1c-exp-A-tempdiff/fold3/seed-0.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold3/seed-0-validation-probabilities.npy
+
+--- seed 1 ---
+best epoch 2 (early-stopped), frame macro-F1 0.3322 (clustered 95% CI 0.2214-0.4029), video-level macro-F1 0.3761 over 56 videos, train 5.1s
+wrote results/p1c/p1c-exp-A-tempdiff/fold3/seed-1.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold3/seed-1-validation-probabilities.npy
+
+--- seed 2 ---
+best epoch 3 (early-stopped), frame macro-F1 0.3484 (clustered 95% CI 0.2352-0.4121), video-level macro-F1 0.3625 over 56 videos, train 5.6s
+wrote results/p1c/p1c-exp-A-tempdiff/fold3/seed-2.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold3/seed-2-validation-probabilities.npy
+########## EXP B fold3: background-masked loss  (06:14:42Z) ##########
+train 3808 rows sampled (8/video, per-label overrides none, sampling_seed=None), validation 49719 rows (full, untouched), dim 1536, cache 681f53307dbd
+background mask label=Shooting: 15 annotated videos, 101 rows zeroed, 171 rows kept (of 3808 sampled train rows)
+
+--- seed 0 ---
+best epoch 8 (early-stopped), validation macro-F1 0.3314 (clustered 95% CI 0.2309-0.4046), video-level macro-F1 0.4397 over 56 videos, train 4.4s
+wrote results/p1c/p1c-exp-B-bgmask/fold3/seed-0.json
+wrote results/p1c/p1c-exp-B-bgmask/fold3/seed-0-validation-probabilities.npy
+
+--- seed 1 ---
+best epoch 8 (early-stopped), validation macro-F1 0.3312 (clustered 95% CI 0.2253-0.4136), video-level macro-F1 0.4072 over 56 videos, train 6.5s
+wrote results/p1c/p1c-exp-B-bgmask/fold3/seed-1.json
+wrote results/p1c/p1c-exp-B-bgmask/fold3/seed-1-validation-probabilities.npy
+
+--- seed 2 ---
+best epoch 4 (early-stopped), validation macro-F1 0.3322 (clustered 95% CI 0.2262-0.3971), video-level macro-F1 0.3735 over 56 videos, train 5.2s
+wrote results/p1c/p1c-exp-B-bgmask/fold3/seed-2.json
+wrote results/p1c/p1c-exp-B-bgmask/fold3/seed-2-validation-probabilities.npy
+########## EXP A fold4: [f_t, f_t - f_{t-1}]  (06:17:50Z) ##########
+train 3808 rows (variant=diff, radius=2, sampled 8/video) -> dim 3072, validation 41319 rows (full, untouched), cache 3b4aaed3037e
+
+--- seed 0 ---
+best epoch 5 (early-stopped), frame macro-F1 0.3265 (clustered 95% CI 0.2110-0.4051), video-level macro-F1 0.3789 over 56 videos, train 5.5s
+wrote results/p1c/p1c-exp-A-tempdiff/fold4/seed-0.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold4/seed-0-validation-probabilities.npy
+
+--- seed 1 ---
+best epoch 5 (early-stopped), frame macro-F1 0.3264 (clustered 95% CI 0.2048-0.3963), video-level macro-F1 0.3793 over 56 videos, train 5.7s
+wrote results/p1c/p1c-exp-A-tempdiff/fold4/seed-1.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold4/seed-1-validation-probabilities.npy
+
+--- seed 2 ---
+best epoch 6 (early-stopped), frame macro-F1 0.3387 (clustered 95% CI 0.2052-0.4050), video-level macro-F1 0.3795 over 56 videos, train 3.7s
+wrote results/p1c/p1c-exp-A-tempdiff/fold4/seed-2.json
+wrote results/p1c/p1c-exp-A-tempdiff/fold4/seed-2-validation-probabilities.npy
+########## EXP B fold4: background-masked loss  (06:20:49Z) ##########
+train 3808 rows sampled (8/video, per-label overrides none, sampling_seed=None), validation 41319 rows (full, untouched), dim 1536, cache 3b4aaed3037e
+background mask label=Shooting: 17 annotated videos, 115 rows zeroed, 157 rows kept (of 3808 sampled train rows)
+
+--- seed 0 ---
+best epoch 20 (early-stopped), validation macro-F1 0.3501 (clustered 95% CI 0.2200-0.4250), video-level macro-F1 0.3742 over 56 videos, train 11.8s
+wrote results/p1c/p1c-exp-B-bgmask/fold4/seed-0.json
+wrote results/p1c/p1c-exp-B-bgmask/fold4/seed-0-validation-probabilities.npy
+
+--- seed 1 ---
+best epoch 12 (early-stopped), validation macro-F1 0.3765 (clustered 95% CI 0.2370-0.4459), video-level macro-F1 0.3898 over 56 videos, train 9.3s
+wrote results/p1c/p1c-exp-B-bgmask/fold4/seed-1.json
+wrote results/p1c/p1c-exp-B-bgmask/fold4/seed-1-validation-probabilities.npy
+
+--- seed 2 ---
+best epoch 15 (early-stopped), validation macro-F1 0.3342 (clustered 95% CI 0.2015-0.4072), video-level macro-F1 0.3680 over 56 videos, train 11.0s
+wrote results/p1c/p1c-exp-B-bgmask/fold4/seed-2.json
+wrote results/p1c/p1c-exp-B-bgmask/fold4/seed-2-validation-probabilities.npy
+########## A+B DONE 2026-09-11T06:23:59Z ##########

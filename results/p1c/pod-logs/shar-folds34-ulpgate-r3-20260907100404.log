@@ -1,0 +1,144 @@
+--- staging <repo>/results/p1c/p1c-video-frames -> /scratch-emptydir ---
+--- staged 9.06356e+10 bytes in 5 files in 145s ---
+/dev/md1        1870026616 149201880 1720824736       8% /scratch-emptydir
+drop-cache: hinted 10 files; cgroup 16.00 GiB -> 0.01 GiB (recovered 15.98 GiB)
+=== started 2026-09-07T10:06:36Z ===
+########## A: re-verify existing folds under the ULP gate ##########
+----- reverify fold1 frozen train -----
+already verified under the ULP gate, skipping
+----- reverify fold1 frozen validation -----
+already verified under the ULP gate, skipping
+----- reverify fold1 dinov2 train -----
+{
+  "bit_identical_rows": 512,
+  "cache_dir": "results/p1c/p1c-dinov2-feature-cache-ar-fold1/train",
+  "cache_sha256": "56c0312b912253811ed37f22c214814c5fd7c863d9bb082faf2e2bad373e0c4a",
+  "dtype": "float16",
+  "feature_dim": 1536,
+  "max_abs_delta": 0.0,
+  "max_significant_ulps": 0,
+  "max_ulps": 0,
+  "max_ulps_allowed": 8,
+  "rows_sampled": 512,
+  "rows_total": 391014,
+  "sample_seed": 0,
+  "ulp_floor_magnitude": 1.0,
+  "verify_batch_size": 64
+}
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold1/train/verification-ulp-gate.json
+----- reverify fold1 dinov2 validation -----
+{
+  "bit_identical_rows": 512,
+  "cache_dir": "results/p1c/p1c-dinov2-feature-cache-ar-fold1/validation",
+  "cache_sha256": "6cd288bdcd90158efa1ac128a2bbfd8b2d1b33ca09283413298dc2a44f4353de",
+  "dtype": "float16",
+  "feature_dim": 1536,
+  "max_abs_delta": 0.0,
+  "max_significant_ulps": 0,
+  "max_ulps": 0,
+  "max_ulps_allowed": 8,
+  "rows_sampled": 512,
+  "rows_total": 37600,
+  "sample_seed": 0,
+  "ulp_floor_magnitude": 1.0,
+  "verify_batch_size": 64
+}
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold1/validation/verification-ulp-gate.json
+----- reverify fold2 frozen train -----
+{
+  "bit_identical_rows": 483,
+  "cache_dir": "results/p1c/p1c-frozen-feature-cache-ar-fold2/train",
+  "cache_sha256": "b546abe7f5673d66ddc3a236312ca00b6c2b0fd0893e2aef5c85ae2958cc326e",
+  "dtype": "float16",
+  "feature_dim": 2048,
+  "max_abs_delta": 0.00390625,
+  "max_significant_ulps": 2,
+  "max_ulps": 1647,
+  "max_ulps_allowed": 8,
+  "rows_sampled": 512,
+  "rows_total": 384702,
+  "sample_seed": 0,
+  "ulp_floor_magnitude": 1.0,
+  "verify_batch_size": 64
+}
+wrote results/p1c/p1c-frozen-feature-cache-ar-fold2/train/verification-ulp-gate.json
+----- reverify fold2 frozen validation -----
+{
+  "bit_identical_rows": 478,
+  "cache_dir": "results/p1c/p1c-frozen-feature-cache-ar-fold2/validation",
+  "cache_sha256": "e1d2c105228226520f4d9d07955b8aaed157ce69c715b113957038006593340f",
+  "dtype": "float16",
+  "feature_dim": 2048,
+  "max_abs_delta": 0.00390625,
+  "max_significant_ulps": 2,
+  "max_ulps": 1869,
+  "max_ulps_allowed": 8,
+  "rows_sampled": 512,
+  "rows_total": 47726,
+  "sample_seed": 0,
+  "ulp_floor_magnitude": 1.0,
+  "verify_batch_size": 64
+}
+wrote results/p1c/p1c-frozen-feature-cache-ar-fold2/validation/verification-ulp-gate.json
+----- reverify fold2 dinov2 train -----
+{
+  "bit_identical_rows": 512,
+  "cache_dir": "results/p1c/p1c-dinov2-feature-cache-ar-fold2/train",
+  "cache_sha256": "ea8c33fbecf37a6b0420885b6fba9fe4dddb1c59d08436d161ed622ce0bc144c",
+  "dtype": "float16",
+  "feature_dim": 1536,
+  "max_abs_delta": 0.0,
+  "max_significant_ulps": 0,
+  "max_ulps": 0,
+  "max_ulps_allowed": 8,
+  "rows_sampled": 512,
+  "rows_total": 384702,
+  "sample_seed": 0,
+  "ulp_floor_magnitude": 1.0,
+  "verify_batch_size": 64
+}
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold2/train/verification-ulp-gate.json
+----- reverify fold2 dinov2 validation -----
+{
+  "bit_identical_rows": 512,
+  "cache_dir": "results/p1c/p1c-dinov2-feature-cache-ar-fold2/validation",
+  "cache_sha256": "d2c042acf5040fc2baded1bff6eb4e6e3a00bd049d3f2c67617c3f0d33a0ee43",
+  "dtype": "float16",
+  "feature_dim": 1536,
+  "max_abs_delta": 0.0,
+  "max_significant_ulps": 0,
+  "max_ulps": 0,
+  "max_ulps_allowed": 8,
+  "rows_sampled": 512,
+  "rows_total": 47726,
+  "sample_seed": 0,
+  "ulp_floor_magnitude": 1.0,
+  "verify_batch_size": 64
+}
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold2/validation/verification-ulp-gate.json
+########## B: build folds 3 and 4 ##########
+----- build fold3 frozen train (10:26:17Z) -----
+wrote results/p1c/p1c-frozen-feature-cache-ar-fold3/train/manifest.json
+verified 480/512 sampled rows bit-identical against the live backbone (worst |delta| 3.906e-03, 1808 ULPs, 3 at or above magnitude 1; gate 8 ULPs) (400419 rows total, float16, dim 2048)
+----- build fold3 frozen validation (10:37:59Z) -----
+wrote results/p1c/p1c-frozen-feature-cache-ar-fold3/validation/manifest.json
+verified 477/512 sampled rows bit-identical against the live backbone (worst |delta| 3.906e-03, 2616 ULPs, 2 at or above magnitude 1; gate 8 ULPs) (49719 rows total, float16, dim 2048)
+----- build fold3 dinov2 train (10:42:11Z) -----
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold3/train/manifest.json
+verified 511/512 sampled rows bit-identical against the live backbone (worst |delta| 2.930e-03, 575 ULPs, 2 at or above magnitude 1; gate 8 ULPs) (400419 rows total, float16, dim 1536)
+----- build fold3 dinov2 validation (11:03:39Z) -----
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold3/validation/manifest.json
+verified 512/512 sampled rows bit-identical against the live backbone (worst |delta| 0.000e+00, 0 ULPs, 0 at or above magnitude 1; gate 8 ULPs) (49719 rows total, float16, dim 1536)
+----- build fold4 frozen train (11:09:03Z) -----
+wrote results/p1c/p1c-frozen-feature-cache-ar-fold4/train/manifest.json
+verified 479/512 sampled rows bit-identical against the live backbone (worst |delta| 3.906e-03, 1914 ULPs, 2 at or above magnitude 1; gate 8 ULPs) (357643 rows total, float16, dim 2048)
+----- build fold4 frozen validation (11:19:51Z) -----
+wrote results/p1c/p1c-frozen-feature-cache-ar-fold4/validation/manifest.json
+verified 483/512 sampled rows bit-identical against the live backbone (worst |delta| 3.906e-03, 2350 ULPs, 2 at or above magnitude 1; gate 8 ULPs) (41319 rows total, float16, dim 2048)
+----- build fold4 dinov2 train (11:23:44Z) -----
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold4/train/manifest.json
+verified 512/512 sampled rows bit-identical against the live backbone (worst |delta| 0.000e+00, 0 ULPs, 0 at or above magnitude 1; gate 8 ULPs) (357643 rows total, float16, dim 1536)
+----- build fold4 dinov2 validation (11:43:15Z) -----
+wrote results/p1c/p1c-dinov2-feature-cache-ar-fold4/validation/manifest.json
+verified 511/512 sampled rows bit-identical against the live backbone (worst |delta| 2.930e-03, 2683 ULPs, 3 at or above magnitude 1; gate 8 ULPs) (41319 rows total, float16, dim 1536)
+########## ALL DONE 2026-09-07T11:48:19Z ##########

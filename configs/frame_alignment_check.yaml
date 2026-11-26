@@ -1,0 +1,58 @@
+schema_version: 1.0.0
+status: VERIFICATION_TOOLING_NO_MANIFEST_OR_RESEARCH
+
+# This tool exists to systematically test the assumption documented at the
+# top of data/ucf_intervals.py: that a Kaggle mirror filename's frame number
+# is already an unscaled original-video frame index. It compares decoded
+# pixels, not just numeric-key membership, across many source videos per
+# label rather than the three anecdotal faculty-preview examples.
+frame_root: Datasets/UCF Crime Dataset Kaggle
+video_root: Datasets/UCF Crime Official/raw/UCF_Crimes
+results_root: results/p0b
+split: Test
+
+# All headline labels must be represented. A missing label, an undersized
+# source-video population, or a malformed/unresolved frame makes the run
+# inconclusive rather than silently shrinking the evidence sample.
+required_labels:
+  - Abuse
+  - Arrest
+  - Arson
+  - Assault
+  - Burglary
+  - Explosion
+  - Fighting
+  - Normal
+  - RoadAccidents
+  - Robbery
+  - Shooting
+  - Shoplifting
+  - Stealing
+  - Vandalism
+
+sample:
+  # Distinct source videos sampled per registered label (14 labels), chosen
+  # deterministically via core.reproducibility.stable_sample_seed (SHA-256),
+  # never Python's hash() or unseeded randomness.
+  videos_per_label: 5
+  # First/middle/last available frame within each sampled video's mirrored
+  # set, so a systematic scaling or off-by-one bug shows up consistently
+  # rather than being diluted by a single random pick per video.
+  frames_per_video: 3
+  global_seed: 20260731
+
+# The Kaggle mirror's resize/crop policy from source resolution to 64x64 is
+# undocumented and the aspect ratios differ, so both registered policies
+# (stretch_to_target, center_crop_then_resize) are always tried per pair; the
+# report keeps whichever scores higher, which is itself evidence about which
+# (if either) policy the mirror used.
+interpolation: area
+ssim_pass_threshold: 0.60
+
+# The declared frame number must beat every plausible competing index by this
+# SSIM margin. This prevents a low-motion adjacent frame from being accepted
+# merely because it clears an absolute threshold.
+index_hypotheses:
+  offsets: [-1, 1]
+  scale_factors: [0.1, 10.0]
+  minimum_declared_margin: 0.05

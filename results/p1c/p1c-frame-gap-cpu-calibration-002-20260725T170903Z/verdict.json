@@ -1,0 +1,13 @@
+{
+  "checkpoint_disposition": "none; calibration checkpoints are prohibited",
+  "claim_state": "NOT_APPLICABLE",
+  "next_action": "Fix the loader memory path and repeat calibration under a new immutable attempt.",
+  "peak_memory_bytes": 0,
+  "reason": "The host terminated calibration before its first recorded batch; no ETA or research result exists.",
+  "runtime_seconds": 0.0,
+  "status": "ABORTED",
+  "stop_reason": "external process termination",
+  "storage_bytes": 2786,
+  "summary_artifact_digest": "bd63963c87c467a4687d205dfcd9ed51ea8439aedcf70b32cae2613d8ad38915",
+  "verdict": "INCONCLUSIVE"
+}

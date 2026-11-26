@@ -1,0 +1,46 @@
+{
+  "arms": {
+    "k0": 0,
+    "k2": 2,
+    "k4": 4
+  },
+  "backbone_weight_sha256": "065cfde56f97671da4d196e1a3a6d3cf9304dcad92eb671e3632a6c6cdd04f73",
+  "cache_array_sha256": "21a9a855a74f7945a36819d02d6080643db10b1394f21b5d3a2c961631661467",
+  "cache_manifest_sha256": "a74fef5cfb1261ac705acbcfd03de41d3705ca83d32e167f0ab6e44dc79a2109",
+  "epochs_run": 8,
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "git": {
+    "commit": "8a5d3544db545df34b96c257afbdfe77d2995559",
+    "dirty_tracked_files": []
+  },
+  "grad_checkpoint": false,
+  "hyperparameters": {
+    "augmentation": "none",
+    "batch_size": 16,
+    "block_lr": 1e-05,
+    "epochs": 8,
+    "fc_norm": "frozen in every arm",
+    "grad_clip": 1.0,
+    "head_lr": 0.001,
+    "loss": "cross_entropy",
+    "optimizer": "AdamW",
+    "precision": "bf16 autocast",
+    "schedule": "per-step linear warmup then cosine to 0",
+    "selection": "none -- final epoch is the reported metric",
+    "warmup_epochs": 1,
+    "weight_decay": 0.05
+  },
+  "labels": "inherited video-level UCF labels; validation only, Test never read (D-40)",
+  "limits": {},
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "smoke": false
+}

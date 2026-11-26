@@ -1,0 +1,13 @@
+{
+  "checkpoint_disposition": "no selected checkpoint is eligible",
+  "claim_state": "NOT_SUPPORTED",
+  "next_action": "Inspect the immutable failure artifact; resume only with the same registered configuration.",
+  "peak_memory_bytes": 3179025408,
+  "reason": "No research result is valid from a failed or interrupted seed.",
+  "runtime_seconds": 2036.0447105010971,
+  "status": "FAILED",
+  "stop_reason": "AttributeError",
+  "storage_bytes": 565881990,
+  "summary_artifact_digest": "3f7899b512a26d7cb2a7852cc18efde6d7442c407ca8ab38e50240a2c15d0600",
+  "verdict": "INCONCLUSIVE"
+}

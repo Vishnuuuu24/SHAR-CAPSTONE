@@ -1,0 +1,29 @@
+train 384702 rows (stride 1), validation 47726 rows, dim 2048, scaling ['standardize'], cache b546abe7f567
+
+--- logistic_regression-standardize-C0.0001 ---
+frame macro-F1 0.2119 (clustered 95% CI 0.1338-0.2876), accuracy 0.2366, video-level macro-F1 0.3239 over 56 videos (0 tie-broken), fit 210.0s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-frozen-csweep-diagnostic/logistic_regression-standardize-C0.0001.json
+
+--- logistic_regression-standardize-C0.001 ---
+frame macro-F1 0.2019 (clustered 95% CI 0.1292-0.2709), accuracy 0.2196, video-level macro-F1 0.3294 over 56 videos (0 tie-broken), fit 199.7s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-frozen-csweep-diagnostic/logistic_regression-standardize-C0.001.json
+
+--- logistic_regression-standardize-C0.003 ---
+frame macro-F1 0.2013 (clustered 95% CI 0.1273-0.2684), accuracy 0.2255, video-level macro-F1 0.3265 over 56 videos (2 tie-broken), fit 179.2s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-frozen-csweep-diagnostic/logistic_regression-standardize-C0.003.json
+
+--- logistic_regression-standardize-C0.01 ---
+frame macro-F1 0.2001 (clustered 95% CI 0.1243-0.2742), accuracy 0.2286, video-level macro-F1 0.2796 over 56 videos (1 tie-broken), fit 167.3s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-frozen-csweep-diagnostic/logistic_regression-standardize-C0.01.json
+
+--- logistic_regression-standardize-C0.03 ---
+frame macro-F1 0.1963 (clustered 95% CI 0.1207-0.2672), accuracy 0.2249, video-level macro-F1 0.2966 over 56 videos (0 tie-broken), fit 210.6s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-frozen-csweep-diagnostic/logistic_regression-standardize-C0.03.json
+
+--- logistic_regression-standardize-C0.1 ---
+frame macro-F1 0.1919 (clustered 95% CI 0.1183-0.2652), accuracy 0.2183, video-level macro-F1 0.2922 over 56 videos (0 tie-broken), fit 277.7s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-frozen-csweep-diagnostic/logistic_regression-standardize-C0.1.json
+
+--- logistic_regression-standardize-C1 ---
+frame macro-F1 0.1922 (clustered 95% CI 0.1217-0.2656), accuracy 0.2145, video-level macro-F1 0.3099 over 56 videos (1 tie-broken), fit 209.4s predict 0.2s, converged=True
+wrote results/p1c/p1c-probes-folds-confirm/fold2-frozen-csweep-diagnostic/logistic_regression-standardize-C1.json

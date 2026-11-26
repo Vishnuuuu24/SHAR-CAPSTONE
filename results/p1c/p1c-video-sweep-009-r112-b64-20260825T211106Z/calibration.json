@@ -1,0 +1,174 @@
+{
+  "config_sha256": "5d8325e5c4d09961006e13531d1b70985c5e7ce701f318cb0739ad1839093aa6",
+  "device": {
+    "cpu_fallback_allowed": false,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_name": "NVIDIA H200 MIG 1g.18gb",
+    "deterministic_warn_only": false,
+    "mps_available": false,
+    "mps_built": false,
+    "mps_fallback_environment": null,
+    "policy": "cuda_strict",
+    "selected": "cuda",
+    "supports_pin_memory": true,
+    "torch_threads": 112
+  },
+  "eta": {
+    "formula": "3 * (digest_initialization + full_epochs * (train_batches * train_median_wall + validation_batches * validation_median_wall)) * overhead_factor",
+    "full_digest_initialization_seconds_per_seed": 3.2485172171145678,
+    "max_epochs_per_seed": 20,
+    "median_basis": "wall_seconds_per_batch_including_data_loading",
+    "median_epoch_seconds": 390.2026256592944,
+    "overhead_factor_range": [
+      1.15,
+      1.35
+    ],
+    "reestimate_rule": "re-estimate after first full epoch if actual pace differs by more than 20 percent",
+    "sequential_seeds": 3,
+    "three_seed_wall_seconds_range": [
+      26935.18855489036,
+      31619.569173132164
+    ],
+    "train_batches_per_epoch": 6110,
+    "validation_batches_per_epoch": 588
+  },
+  "experiment_id": "P1C-VIDEO-SWEEP-009-R112-B64",
+  "kind": "P1C real-loader CUDA calibration; not training, model selection, or Test evaluation",
+  "loader_initialization_seconds_with_full_digest_verification": 3.2485172171145678,
+  "loader_mode": "per_file",
+  "measurements": {
+    "device_memory_after": {
+      "current_allocated_memory": 453754368,
+      "driver_allocated_memory": 1270874112,
+      "peak_allocated_memory": 1183023616,
+      "recommended_max_memory": 17179869184
+    },
+    "device_memory_before": {
+      "current_allocated_memory": 67108864,
+      "driver_allocated_memory": 67108864,
+      "peak_allocated_memory": 67108864,
+      "recommended_max_memory": 17179869184
+    },
+    "loader_num_workers": 6,
+    "measured_train_batches": 10,
+    "measured_validation_batches": 10,
+    "process_rss_after_bytes": 2459561984,
+    "process_rss_before_bytes": 1596219392,
+    "skipped_optimizer_steps": 0,
+    "train": {
+      "compute_step_seconds": [
+        0.061942496336996555,
+        0.061966437846422195,
+        0.061961427330970764,
+        0.06199275050312281,
+        0.06193873751908541,
+        0.06185282766819,
+        0.06187422201037407,
+        0.061886055395007133,
+        0.06204630248248577,
+        0.061875405721366405
+      ],
+      "load_share_of_wall": 0.0010874300439343667,
+      "load_step_seconds": [
+        5.518924444913864e-05,
+        6.616860628128052e-05,
+        7.671676576137543e-05,
+        8.955877274274826e-05,
+        7.233768701553345e-05,
+        6.576720625162125e-05,
+        6.65830448269844e-05,
+        6.628129631280899e-05,
+        6.82678073644638e-05,
+        7.712282240390778e-05
+      ],
+      "median_compute_seconds": 0.06194061692804098,
+      "median_load_seconds": 6.74254260957241e-05,
+      "median_wall_seconds": 0.06200438039377332,
+      "wall_step_seconds": [
+        0.061997685581445694,
+        0.062032606452703476,
+        0.06203814409673214,
+        0.062082309275865555,
+        0.06201107520610094,
+        0.061918594874441624,
+        0.061940805055201054,
+        0.06195233669131994,
+        0.062114570289850235,
+        0.06195252854377031
+      ]
+    },
+    "train_compute_only_images_per_second": 1033.2477003635836,
+    "train_median_images_per_second": 1032.1851390749014,
+    "validation": {
+      "compute_step_seconds": [
+        0.02103304024785757,
+        0.022829010151326656,
+        0.021999954245984554,
+        0.01938795018941164,
+        0.01906791888177395,
+        0.018529350869357586,
+        0.01871035248041153,
+        0.018713807687163353,
+        0.023182788863778114,
+        0.018539960496127605
+      ],
+      "load_share_of_wall": 0.004388565906309025,
+      "load_step_seconds": [
+        0.14676813874393702,
+        0.00018969271332025528,
+        0.00013548694550991058,
+        8.343067020177841e-05,
+        8.607935160398483e-05,
+        7.990188896656036e-05,
+        0.00012558046728372574,
+        7.677823305130005e-05,
+        7.716100662946701e-05,
+        6.931088864803314e-05
+      ],
+      "median_compute_seconds": 0.019227934535592794,
+      "median_load_seconds": 8.475501090288162e-05,
+      "median_wall_seconds": 0.019312689546495676,
+      "wall_step_seconds": [
+        0.1678011789917946,
+        0.02301870286464691,
+        0.022135441191494465,
+        0.01947138085961342,
+        0.019153998233377934,
+        0.018609252758324146,
+        0.018835932947695255,
+        0.018790585920214653,
+        0.02325994987040758,
+        0.01860927138477564
+      ]
+    },
+    "validation_compute_only_images_per_second": 3328.490633329842,
+    "validation_median_images_per_second": 3313.8833328169417,
+    "warmup_train_batches": 3
+  },
+  "packed_frames_blob_sha256": null,
+  "parent_id": "P1C-VIDEO-PRECISION-CALIBRATION-007-BF16",
+  "precision": {
+    "autocast": true,
+    "autocast_dtype": "torch.bfloat16",
+    "device_type": "cuda",
+    "grad_scaler": false,
+    "precision": "amp_bfloat16"
+  },
+  "scope_assertions": {
+    "checkpoint_saved": false,
+    "configuration_selection": false,
+    "held_out_test_access": false,
+    "research_training": false
+  },
+  "source_scope": {
+    "held_out_test_access": false,
+    "train_rows": 391014,
+    "validation_rows": 37600
+  },
+  "thread_configuration": {
+    "torch_threads_before": 112,
+    "torch_threads_used": 112
+  },
+  "weight_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+}

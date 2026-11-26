@@ -1,0 +1,18 @@
+                         0     1     2     3     4     5     6     7     8     9    10    11    12    13
+                     (columns = predicted index)
+              Abuse 0     2     1     0     0     0     0     0     0     0     0     0     0     1     0
+             Arrest 1     0     2     0     0     0     1     0     0     0     1     0     0     0     0
+              Arson 2     1     0     1     0     0     0     1     0     0     0     1     0     0     0
+            Assault 3     0     0     1     0     0     0     0     0     0     0     1     0     1     1
+           Burglary 4     1     0     1     1     1     0     0     0     0     0     0     0     0     0
+          Explosion 5     0     0     0     1     0     2     0     0     0     0     0     1     0     0
+           Fighting 6     0     0     1     0     0     0     0     0     0     1     1     0     0     1
+Normal_Videos_event 7     0     0     0     0     0     0     0     2     1     1     0     0     0     0
+      RoadAccidents 8     0     0     0     0     0     2     0     0     0     0     0     0     2     0
+            Robbery 9     0     0     0     0     1     0     0     0     0     1     1     0     1     0
+           Shooting 10     1     0     0     0     0     0     0     0     1     0     2     0     0     0
+        Shoplifting 11     1     0     0     0     0     0     0     0     0     1     0     2     0     0
+           Stealing 12     0     0     0     0     1     0     1     0     0     0     0     0     2     0
+          Vandalism 13     0     0     2     0     0     0     0     0     0     0     0     0     0     2
+
+index -> label: 0=Abuse, 1=Arrest, 2=Arson, 3=Assault, 4=Burglary, 5=Explosion, 6=Fighting, 7=Normal_Videos_event, 8=RoadAccidents, 9=Robbery, 10=Shooting, 11=Shoplifting, 12=Stealing, 13=Vandalism
